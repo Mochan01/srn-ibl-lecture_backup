@@ -7,7 +7,7 @@ import { Slide } from "../../molecules/Slide/Slide";
 import { steps } from "../../../data/mock";
 
 export default {
-  title: "atoms/Slider",
+  title: "organisms/Slider",
   component: Slider
 } as Meta;
 
