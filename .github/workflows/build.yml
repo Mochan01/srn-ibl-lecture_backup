@@ -1,0 +1,66 @@
+name: "Build lib and storybook's page."
+
+on:
+  workflow_dispatch:
+    inputs:
+      npm-version:
+        required: true
+        description: Enter command of npm version.
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js for npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+
+      - name: Setup github SSH for private repository
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.ORG_SUGA_PEM }}
+
+      - name: Check out
+        uses: actions/checkout@v3
+
+      # Build lib.
+      - name: Build lib
+        run: | 
+          npm ci
+          npm run build
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Package was build by github actions."
+
+      - name: Update version
+        run: |
+          npm version ${{ github.event.inputs.npm-version }}
+          git push origin --tags
+
+      - name: Get tag name
+        run: |
+          node -e "console.log('version=v' + require('./package.json').version)" >> $GITHUB_ENV
+
+      - name: Create release pr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: "build/${{ env.version }}"
+
+      # Build storybook.
+      - name: Run npm
+        run: | 
+          npm i git+ssh://git@github.com:Fantamstick/public-page-protector.git#semver:1.0.1
+          npx build-storybook -o ./docs
+          npx public-page-protector
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
