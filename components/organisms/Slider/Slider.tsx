@@ -13,11 +13,12 @@ export const Slider: FC<SliderProps> = ({
   return (
     <>
       <Swiper
-        navigation={true}
-        pagination={true}
-        mousewheel={true}
-        keyboard={true}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+        navigation={ true }
+        pagination={ true }
+        mousewheel={ true } // デバッグ用
+        allowTouchMove={ false }
+        speed={ 1 } // スライドエフェクトを止める
+        modules={ [Navigation, Pagination, Mousewheel, Keyboard] }
         className="mySwiper"
       >
         { slides.map((x, i) => <SwiperSlide key={ i }>{ x }</SwiperSlide>) }
