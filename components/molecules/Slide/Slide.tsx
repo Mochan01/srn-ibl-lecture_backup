@@ -5,6 +5,7 @@ import { Step, StepProps } from "../../atoms/Step/Step";
 
 export interface SlideProps {
   steps: StepProps[];
+  currentStep: number;
 }
 
 const Main = styled(SwiperSlide)`
@@ -21,12 +22,17 @@ const Main = styled(SwiperSlide)`
 `;
 
 export const Slide: FC<SlideProps> = ({
-  steps
+  steps,
+  currentStep
 }) => {
   return (
     <>
       <Main>
-        { steps.map(({ $src }, i) => <Step key={ i } $src={ $src } />) }
+        {/** currentStepに応じてステップを描画 */}
+        { steps.map(({ $src }, i) => {
+          if (i >= currentStep) return;
+          return <Step key={ i } $src={ $src } />;
+        }) }
       </Main>
     </>
   );

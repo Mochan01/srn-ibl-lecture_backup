@@ -13,5 +13,6 @@ const Template: Story<SlideProps> = (args) => <Slide {...args} />;
 
 export const Sample: { args: SlideProps } = Template.bind({});
 Sample.args = {
-  steps
+  steps,
+  currentStep: 3
 };
