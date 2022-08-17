@@ -4,6 +4,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 
 import { Slider, SliderProps } from "./Slider";
 import { Slide } from "../../molecules/Slide/Slide";
+import { steps } from "../../../data/mock";
 
 export default {
   title: "atoms/Slider",
@@ -15,18 +16,6 @@ const Template: Story<SliderProps> = (args) => <Slider {...args} />;
 export const Sample: { args: SliderProps } = Template.bind({});
 Sample.args = {
   slides: [
-    <Slide
-      steps={ [
-        {
-          $src: "https://placehold.jp/1280x960.png"
-        },
-        {
-          $src: "https://placehold.jp/1280x960.png"
-        },
-        {
-          $src: "https://placehold.jp/1280x960.png"
-        }
-      ] }
-    / >
+    <Slide steps={ steps } / >
   ]
 };
