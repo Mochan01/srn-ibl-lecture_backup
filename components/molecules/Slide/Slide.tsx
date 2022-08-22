@@ -30,7 +30,7 @@ export const Slide: FC<SlideProps> = ({
   return (
     <>
       <Main>
-        {/** currentStepに応じてステップを描画 */}
+        { /** stepに応じて描画 */ }
         { steps.map(({ $src }, i) => {
           if (i >= step) return;
           return <Step key={ i } $src={ $src } />;
