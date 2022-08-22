@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 import { ArrowBtn } from "../../atoms/ArrowBtn/ArrowBtn";
+import { Paginate } from "../../atoms/Paginate/Pagenate";
 
 export interface SliderProps {
   slides: ReactElement[];
@@ -14,6 +15,7 @@ export const Slider: FC<SliderProps> = ({
 
   const idPrev = "button_prev";
   const idNext = "button_next";
+  const idPaginate = "paginate";
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -28,7 +30,10 @@ export const Slider: FC<SliderProps> = ({
           prevEl: `#${ idPrev }`,
           nextEl: `#${ idNext }`
         } }
-        pagination={ true }
+        pagination={ {
+          el: `#${ idPaginate }`,
+          clickable: true
+        } }
         onInit={ ({ activeIndex }) => {
           setActiveIndex(activeIndex);
         } }
@@ -43,6 +48,7 @@ export const Slider: FC<SliderProps> = ({
       </Swiper>
       <ArrowBtn id={ idPrev } dir="prev" />
       <ArrowBtn id={ idNext } dir="next" />
+      <Paginate id={ idPaginate } />
     </>
   );
 };

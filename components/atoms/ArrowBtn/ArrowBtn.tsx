@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 export interface ArrowBtnProps {
-  id: string;
+  id?: string;
   dir: "prev" | "next";
 }
 
