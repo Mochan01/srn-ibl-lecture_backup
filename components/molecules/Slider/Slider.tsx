@@ -2,7 +2,7 @@ import React, { FC, ReactElement, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
-import { ArrowBtn } from "../ArrowBtn/ArrowBtn";
+import { ArrowBtn } from "../../atoms/ArrowBtn/ArrowBtn";
 
 export interface SliderProps {
   slides: ReactElement[];
@@ -20,7 +20,6 @@ export const Slider: FC<SliderProps> = ({
   return (
     <>
       <Swiper
-        pagination={ true }
         allowTouchMove={ false }
         speed={ 1 } // スライドエフェクトを止める
         modules={ [Navigation, Pagination, Mousewheel, Keyboard] }
@@ -29,6 +28,7 @@ export const Slider: FC<SliderProps> = ({
           prevEl: `#${ idPrev }`,
           nextEl: `#${ idNext }`
         } }
+        pagination={ true }
         onInit={ ({ activeIndex }) => {
           setActiveIndex(activeIndex);
         } }

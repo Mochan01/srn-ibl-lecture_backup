@@ -1,5 +1,5 @@
-import React, { FC, useEffect } from "react";
-import { Slider } from "../../atoms/Slider/Slider";
+import React, { FC } from "react";
+import { Slider } from "../../molecules/Slider/Slider";
 import { Slide } from "../../molecules/Slide/Slide";
 import { StepsFactory } from "../../../factories/StepsFactory";
 
