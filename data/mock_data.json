@@ -1,0 +1,375 @@
+{
+  "steps": [
+      {
+          "progress": {
+              "slide": 1,
+              "step": 1
+          },
+          "narrative": {
+              "narration": "ハーイ、今日も私のラボにようこそ。",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "ST_L1U1_01",
+              "time": "1899-12-29T15:00:04.000Z",
+              "total_time": "1899-12-29T15:00:04.000Z",
+              "seekbar_start": 0,
+              "seekbar_end": 0.09756097560975609
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": "",
+              "display_file": "",
+              "slideshow_width": "",
+              "slide_show_height": "",
+              "width": "",
+              "height": "",
+              "x_axis": "",
+              "y_axis": ""
+          },
+          "question": {
+              "button_1": "",
+              "ans_1": false,
+              "button_2": "",
+              "ans_2": false,
+              "button_3": "",
+              "ans_3": false,
+              "button_4": "",
+              "ans_4": false,
+              "answer_button": "",
+              "is_result_step": false
+          },
+          "motion": {
+              "motion_1": "",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": "0_2",
+              "if_correct": "",
+              "if_wrong": ""
+          }
+      },
+      {
+          "progress": {
+              "slide": 1,
+              "step": 2
+          },
+          "narrative": {
+              "narration": "前回、初めてのグループワークはどうだった？",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "ST_L1U2_02",
+              "time": "1899-12-29T15:00:04.000Z",
+              "total_time": "1899-12-29T15:00:08.000Z",
+              "seekbar_start": 0.09766097560975609,
+              "seekbar_end": 0.19512195121951217
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": "",
+              "display_file": "",
+              "slideshow_width": "",
+              "slide_show_height": "",
+              "width": "",
+              "height": "",
+              "x_axis": "",
+              "y_axis": ""
+          },
+          "question": {
+              "button_1": "",
+              "ans_1": false,
+              "button_2": "",
+              "ans_2": false,
+              "button_3": "",
+              "ans_3": false,
+              "button_4": "",
+              "ans_4": false,
+              "answer_button": "",
+              "is_result_step": false
+          },
+          "motion": {
+              "motion_1": "",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": "0_3",
+              "if_correct": "",
+              "if_wrong": ""
+          }
+      },
+      {
+          "progress": {
+              "slide": 2,
+              "step": 1
+          },
+          "narrative": {
+              "narration": "突然だけど、あなたは、人工衛星を見たことある？",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "ST_L1U2_07",
+              "time": "1899-12-29T15:00:06.000Z",
+              "total_time": "1899-12-29T15:00:14.000Z",
+              "seekbar_start": 0.0801,
+              "seekbar_end": 0.14
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_3"
+          },
+          "image": {
+              "display_object_1": "image",
+              "display_file": "1_1.png",
+              "slideshow_width": "",
+              "slide_show_height": "",
+              "width": "",
+              "height": "",
+              "x_axis": "",
+              "y_axis": ""
+          },
+          "question": {
+              "button_1": "",
+              "ans_1": false,
+              "button_2": "",
+              "ans_2": false,
+              "button_3": "",
+              "ans_3": false,
+              "button_4": "",
+              "ans_4": false,
+              "answer_button": "",
+              "is_result_step": false
+          },
+          "motion": {
+              "motion_1": "fadein",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": "1_2",
+              "if_correct": "",
+              "if_wrong": ""
+          }
+      },
+      {
+          "progress": {
+              "slide": 2,
+              "step": 2
+          },
+          "narrative": {
+              "narration": "実は、夜空を見上げても、肉眼ではほとんど見えないけれど、たくさんの人工衛星が地球の周りを周回しているわ。",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "ST_L1U2_08",
+              "time": "1899-12-29T15:00:11.000Z",
+              "total_time": "1899-12-29T15:00:25.000Z",
+              "seekbar_start": 0.1401,
+              "seekbar_end": 0.25
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": "image",
+              "display_file": "1_2.png",
+              "slideshow_width": "",
+              "slide_show_height": "",
+              "width": "",
+              "height": "",
+              "x_axis": "",
+              "y_axis": ""
+          },
+          "question": {
+              "button_1": "",
+              "ans_1": false,
+              "button_2": "",
+              "ans_2": false,
+              "button_3": "",
+              "ans_3": false,
+              "button_4": "",
+              "ans_4": false,
+              "answer_button": "",
+              "is_result_step": false
+          },
+          "motion": {
+              "motion_1": "fadein",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": "1_3",
+              "if_correct": "",
+              "if_wrong": ""
+          }
+      },
+      {
+          "progress": {
+              "slide": 2,
+              "step": 3
+          },
+          "narrative": {
+              "narration": "見たことがある人は、なかなかの天文マニアね（笑）",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "ST_L1U2_09",
+              "time": "1899-12-29T15:00:05.000Z",
+              "total_time": "1899-12-29T15:00:30.000Z",
+              "seekbar_start": 0.2501,
+              "seekbar_end": 0.3
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": "",
+              "display_file": "",
+              "slideshow_width": "",
+              "slide_show_height": "",
+              "width": "",
+              "height": "",
+              "x_axis": "",
+              "y_axis": ""
+          },
+          "question": {
+              "button_1": "",
+              "ans_1": false,
+              "button_2": "",
+              "ans_2": false,
+              "button_3": "",
+              "ans_3": false,
+              "button_4": "",
+              "ans_4": false,
+              "answer_button": "",
+              "is_result_step": false
+          },
+          "motion": {
+              "motion_1": "",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": "1_4",
+              "if_correct": "",
+              "if_wrong": ""
+          }
+      },
+      {
+          "progress": {
+              "slide": 3,
+              "step": 1
+          },
+          "narrative": {
+              "narration": "前回のグループワークでは、「使われなくなった人工衛星や、打ち上げ時に使用したロケットの一部は宇宙空間でどうなるか」を考えてもらったわね。",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "ST_L1U2_23",
+              "time": "1899-12-29T15:00:13.000Z",
+              "total_time": "1899-12-29T15:00:43.000Z",
+              "seekbar_start": 0.16052780748663098,
+              "seekbar_end": 0.22994652406417115
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": "image",
+              "display_file": "2_1.png",
+              "slideshow_width": "",
+              "slide_show_height": "",
+              "width": "",
+              "height": "",
+              "x_axis": "",
+              "y_axis": ""
+          },
+          "question": {
+              "button_1": "",
+              "ans_1": false,
+              "button_2": "",
+              "ans_2": false,
+              "button_3": "",
+              "ans_3": false,
+              "button_4": "",
+              "ans_4": false,
+              "answer_button": "",
+              "is_result_step": false
+          },
+          "motion": {
+              "motion_1": "fadein",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": "2_2",
+              "if_correct": "",
+              "if_wrong": ""
+          }
+      },
+      {
+          "progress": {
+              "slide": 3,
+              "step": 2
+          },
+          "narrative": {
+              "narration": "これらは「スペースデブリ」、宇宙ゴミと呼ばれていて、",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "ST_L1U2_24",
+              "time": "1899-12-29T15:00:05.000Z",
+              "total_time": "1899-12-29T15:00:48.000Z",
+              "seekbar_start": 0.23004652406417114,
+              "seekbar_end": 0.25668449197860965
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": "image",
+              "display_file": "2_2.png",
+              "slideshow_width": "",
+              "slide_show_height": "",
+              "width": "",
+              "height": "",
+              "x_axis": "",
+              "y_axis": ""
+          },
+          "question": {
+              "button_1": "",
+              "ans_1": false,
+              "button_2": "",
+              "ans_2": false,
+              "button_3": "",
+              "ans_3": false,
+              "button_4": "",
+              "ans_4": false,
+              "answer_button": "",
+              "is_result_step": false
+          },
+          "motion": {
+              "motion_1": "fadein",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": "2_3",
+              "if_correct": "",
+              "if_wrong": ""
+          }
+      }
+  ]
+}
