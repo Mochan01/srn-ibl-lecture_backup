@@ -10,7 +10,8 @@
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "resolveJsonModule": true
   },
   "include": ["./components/**/*.tsx"],
   "exclude": ["./components/**/*.stories.tsx"]

@@ -21,8 +21,8 @@
               "student": "animation_1"
           },
           "image": {
-              "display_object_1": "",
-              "display_file": "",
+              "display_object_1": "image",
+              "display_file": "sample_a.png",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
@@ -74,8 +74,8 @@
               "student": "animation_1"
           },
           "image": {
-              "display_object_1": "",
-              "display_file": "",
+              "display_object_1": "image",
+              "display_file": "sample_a.png",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
@@ -128,7 +128,7 @@
           },
           "image": {
               "display_object_1": "image",
-              "display_file": "1_1.png",
+              "display_file": "sample_b.png",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
@@ -181,7 +181,7 @@
           },
           "image": {
               "display_object_1": "image",
-              "display_file": "1_2.png",
+              "display_file": "sample_b.png",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
@@ -233,8 +233,8 @@
               "student": "animation_1"
           },
           "image": {
-              "display_object_1": "",
-              "display_file": "",
+              "display_object_1": "image",
+              "display_file": "sample_b.png",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
@@ -287,7 +287,7 @@
           },
           "image": {
               "display_object_1": "image",
-              "display_file": "2_1.png",
+              "display_file": "sample_c.png",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
@@ -340,7 +340,7 @@
           },
           "image": {
               "display_object_1": "image",
-              "display_file": "2_2.png",
+              "display_file": "sample_c.png",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
