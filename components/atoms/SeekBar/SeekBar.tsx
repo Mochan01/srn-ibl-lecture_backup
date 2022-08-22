@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import styled from "styled-components";
 import * as SliderPrimitive from '@radix-ui/react-slider';
 
@@ -60,9 +60,28 @@ const StyledThumb = styled(SliderPrimitive.Thumb)`
  */
 export const SeekBar: FC<SeekBarProps> = ({
 }) => {
+
+  const [value, setValue] = useState([0]);
+
+  const valueChangeHandler = e => {
+    setValue(e);
+  };
+
+  const pointerUpHandler = () => {
+    console.log(value);
+    setValue([0]);
+  };
+
   return (
     <form>
-      <StyledSlider max={ 100 } step={ 1 } aria-label="Volume">
+      <StyledSlider
+        max={ 100 }
+        step={ 1 }
+        value={ value }
+        onValueChange={ valueChangeHandler }
+        aria-label="Volume"
+        onClick={ pointerUpHandler }
+      >
         <StyledTrack>
           <StyledRange />
         </StyledTrack>
