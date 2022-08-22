@@ -75,7 +75,7 @@
           },
           "image": {
               "display_object_1": "image",
-              "display_file": "sample_a.png",
+              "display_file": "sample_b.png",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
@@ -128,7 +128,7 @@
           },
           "image": {
               "display_object_1": "image",
-              "display_file": "sample_b.png",
+              "display_file": "sample_a.png",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
@@ -234,7 +234,7 @@
           },
           "image": {
               "display_object_1": "image",
-              "display_file": "sample_b.png",
+              "display_file": "sample_c.png",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
@@ -287,7 +287,7 @@
           },
           "image": {
               "display_object_1": "image",
-              "display_file": "sample_c.png",
+              "display_file": "sample_a.png",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
@@ -340,7 +340,7 @@
           },
           "image": {
               "display_object_1": "image",
-              "display_file": "sample_c.png",
+              "display_file": "sample_b.png",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
