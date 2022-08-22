@@ -2,10 +2,10 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 import { Step, StepProps } from "../../atoms/Step/Step";
+import { useStepProgress } from "../../../hooks/useStepProgress";
 
 export interface SlideProps {
   steps: StepProps[];
-  currentStep: number;
 }
 
 const Main = styled(SwiperSlide)`
@@ -22,15 +22,17 @@ const Main = styled(SwiperSlide)`
 `;
 
 export const Slide: FC<SlideProps> = ({
-  steps,
-  currentStep
+  steps
 }) => {
+
+  const step = useStepProgress(steps.length);
+
   return (
     <>
       <Main>
         {/** currentStepに応じてステップを描画 */}
         { steps.map(({ $src }, i) => {
-          if (i >= currentStep) return;
+          if (i >= step) return;
           return <Step key={ i } $src={ $src } />;
         }) }
       </Main>

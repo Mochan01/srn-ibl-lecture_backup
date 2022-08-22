@@ -19,7 +19,6 @@ export const Slider: FC<SliderProps> = ({
     <>
       <Swiper
         pagination={ true }
-        mousewheel={ true } // デバッグ用
         allowTouchMove={ false }
         speed={ 1 } // スライドエフェクトを止める
         modules={ [Navigation, Pagination, Mousewheel, Keyboard] }
