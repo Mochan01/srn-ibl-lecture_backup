@@ -4,7 +4,14 @@ import * as SliderPrimitive from '@radix-ui/react-slider';
 import _ from "lodash";
 
 export interface SeekBarProps {
-  points: number[]; // 0 ~ 100
+  /**
+   * どのパーセンテージでシークを止める？
+   * 0 ~ 100
+   */
+  points: number[];
+  /**
+   * シークを掴んで、離したときのコールバック
+   */
   onChange: () => void;
 }
 
@@ -17,7 +24,7 @@ const StyledSlider = styled(SliderPrimitive.Root)`
   align-items: center;
   user-select: none;
   touch-action: none;
-  width: 200px;
+  width: 100%;
   &[data-orientation="horizontal"] {
     height: 20px;
   }
