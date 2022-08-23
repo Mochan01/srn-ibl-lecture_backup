@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import * as SliderPrimitive from '@radix-ui/react-slider';
 import _ from "lodash";
@@ -73,7 +73,8 @@ export const SeekBar: FC<SeekBarProps> = ({
   onChange = () => {}
 }) => {
 
-  const [value, setValue] = useState([points[0]]);
+  const [value, setValue] = useState([0]);
+  useEffect(() => setValue([points[0]]), [points]);
 
   const pointerUpHandler = () => {
 

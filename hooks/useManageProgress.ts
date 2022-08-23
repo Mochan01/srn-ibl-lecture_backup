@@ -1,8 +1,9 @@
 import { Dispatch, useMemo, useReducer } from "react";
+import { Step } from "src-ibl-lecture-master/variable_types/Step";
 
-interface UseAllProgress {
-  slide?: number;
-  step?: number;
+export interface UseAllProgress {
+  slide?: Step["progress"]["slide"];
+  step?: Step["progress"]["step"];
 }
 
 /**

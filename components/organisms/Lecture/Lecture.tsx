@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import { Slider } from "../../molecules/Slider/Slider";
 import { Slide } from "../../molecules/Slide/Slide";
 import { StepsFactory } from "../../../factories/StepsFactory";
@@ -14,11 +14,6 @@ export const Lecture: FC<LectureProps> = ({
   const stepsFactory = new StepsFactory();
   const [progress, setProgress] = useManageProgress();
 
-  useEffect(() => {
-    const slide = progress.slide;
-    const seekBarStarts = stepsFactory.getSeekBarStartsBySlide(slide);
-  }, [progress]);
-
   return <>
     <Slider
       onChange={ slide => setProgress({ slide }) }
@@ -29,6 +24,9 @@ export const Lecture: FC<LectureProps> = ({
           onChange={ step => setProgress({ step }) }
         / > )) }
     </Slider>
-    <ControlPanel points={ [20] } />
+    <ControlPanel
+      stepsFactory={ stepsFactory }
+      progress={ progress }
+    / >
   </>;
 };
