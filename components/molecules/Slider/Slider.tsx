@@ -6,13 +6,15 @@ import { classNames } from "../../../data/ClassNames";
 
 export interface SliderProps {
   children: ReactElement[];
+  initialSlide?: number;
 }
 
 export const Slider: FC<SliderProps> = ({
-  children
+  children,
+  initialSlide = 0
 }) => {
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(initialSlide);
 
   return (
     <>
@@ -29,6 +31,7 @@ export const Slider: FC<SliderProps> = ({
           el: `#${ classNames.paginate }`,
           clickable: true
         } }
+        initialSlide={ activeIndex }
         onInit={ ({ activeIndex }) => {
           setActiveIndex(activeIndex);
         } }
