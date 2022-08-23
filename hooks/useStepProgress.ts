@@ -11,14 +11,14 @@ export const useStepProgress = (len: number) => {
   ): StepProgressState => {
     switch(action) {
       case "ArrowRight":
-        return state >= len ? state : state + 1;
+        return state >= len - 1 ? state : state + 1;
       default:
-        return state <= 1 ? 1 : state - 1;
+        return state <= 0 ? 0 : state - 1;
     }
   };
 
-  // 1はじまり
-  const initialState: StepProgressState = 1;
+  // 0はじまり
+  const initialState: StepProgressState = 0;
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
