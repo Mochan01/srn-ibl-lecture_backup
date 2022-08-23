@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 import { Step, StepProps } from "../../atoms/Step/Step";
@@ -6,6 +6,7 @@ import { useStepProgress } from "../../../hooks/useStepProgress";
 
 export interface SlideProps {
   steps: StepProps[];
+  onChange?: (step: number) => void;
 }
 
 const Main = styled(SwiperSlide)`
@@ -22,10 +23,13 @@ const Main = styled(SwiperSlide)`
 `;
 
 export const Slide: FC<SlideProps> = ({
-  steps
+  steps,
+  onChange = () => {}
 }) => {
 
   const step = useStepProgress(steps.length);
+
+  useEffect(() => onChange(step), [step]);
 
   return (
     <>

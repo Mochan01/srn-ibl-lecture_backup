@@ -13,10 +13,17 @@ export const Lecture: FC<LectureProps> = ({
   const stepsFactory = new StepsFactory();
 
   return <>
-    <Slider>
+    <Slider
+      onChange={ slide => {
+        console.log(slide);
+      } }
+    >
       { stepsFactory.slides.map(x => ( <Slide
           key={ x }
           steps={ stepsFactory.getStepsBySlide(x) }
+          onChange={ step => {
+            console.log(step);
+          } }
         / > )) }
     </Slider>
     <ControlPanel />

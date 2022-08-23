@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useState } from "react";
+import React, { FC, ReactElement, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
@@ -7,14 +7,18 @@ import { classNames } from "../../../data/ClassNames";
 export interface SliderProps {
   children: ReactElement[];
   initialSlide?: number;
+  onChange?: (slide: number) => void;
 }
 
 export const Slider: FC<SliderProps> = ({
   children,
-  initialSlide = 0
+  initialSlide = 0,
+  onChange = () => {}
 }) => {
 
   const [activeIndex, setActiveIndex] = useState(initialSlide);
+
+  useEffect(() => onChange(activeIndex), [activeIndex]);
 
   return (
     <>
