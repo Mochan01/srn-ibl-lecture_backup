@@ -13,4 +13,5 @@ const Template: Story<SeekBarProps> = (args) => <SeekBar {...args} />;
 
 export const Sample: { args: SeekBarProps } = Template.bind({});
 Sample.args = {
+  points: [0, 25, 50, 75]
 };

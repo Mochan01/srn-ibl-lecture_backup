@@ -1,8 +1,10 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
 import * as SliderPrimitive from '@radix-ui/react-slider';
+import _ from "lodash";
 
 export interface SeekBarProps {
+  points: number[]; // 0 ~ 100
 }
 
 interface MainProps {
@@ -59,24 +61,28 @@ const StyledThumb = styled(SliderPrimitive.Thumb)`
  * @returns 
  */
 export const SeekBar: FC<SeekBarProps> = ({
+  points
 }) => {
 
-  const [value, setValue] = useState([0]);
+  const [value, setValue] = useState([points[0]]);
 
   const valueChangeHandler = e => {
     setValue(e);
   };
 
   const pointerUpHandler = () => {
-    console.log(value);
-    setValue([0]);
+
+    // 最も近いコンテンツの有る位置にシークバーを固定する
+    const closest = points.reduce((prev, curr) => {
+      return Math.abs(curr - value[0]) < Math.abs(prev - value[0]) ? curr : prev;
+    });
+    setValue([closest]);
   };
 
   return (
     <form>
       <StyledSlider
         max={ 100 }
-        step={ 1 }
         value={ value }
         onValueChange={ valueChangeHandler }
         aria-label="Volume"
