@@ -5,11 +5,11 @@ import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 import { classNames } from "../../../data/ClassNames";
 
 export interface SliderProps {
-  slides: ReactElement[];
+  children: ReactElement[];
 }
 
 export const Slider: FC<SliderProps> = ({
-  slides
+  children
 }) => {
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -37,7 +37,7 @@ export const Slider: FC<SliderProps> = ({
         } }
       >
         { /** activeIndexのスライドのみ描画する */ }
-        { slides.map((slide, i) => <SwiperSlide key={ i }>
+        { children.map((slide, i) => <SwiperSlide key={ i }>
           { i === activeIndex && slide }
         </SwiperSlide>) }
       </Swiper>

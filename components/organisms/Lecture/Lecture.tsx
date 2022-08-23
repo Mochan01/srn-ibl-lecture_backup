@@ -9,19 +9,18 @@ export interface LectureProps {
 
 export const Lecture: FC<LectureProps> = ({
 }) => {
+
   const stepsFactory = new StepsFactory();
 
-  const slides = stepsFactory.slides.map(x => {
-    return <>
-      <Slide
-        key={ x }
-        steps={ stepsFactory.getStepsBySlide(x) }
-      / >
-    </>;
-  });
-
   return <>
-    <Slider slides={ slides } />
+    <Slider>
+      { stepsFactory.slides.map(x => { return <>
+        <Slide
+          key={ x }
+          steps={ stepsFactory.getStepsBySlide(x) }
+        / >
+      </>; }) }
+    </Slider>
     <ControlPanel />
   </>;
 };
