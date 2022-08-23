@@ -5,6 +5,7 @@ import _ from "lodash";
 
 export interface SeekBarProps {
   points: number[]; // 0 ~ 100
+  onChange: () => void;
 }
 
 interface MainProps {
@@ -61,22 +62,22 @@ const StyledThumb = styled(SliderPrimitive.Thumb)`
  * @returns 
  */
 export const SeekBar: FC<SeekBarProps> = ({
-  points
+  points,
+  onChange
 }) => {
 
   const [value, setValue] = useState([points[0]]);
 
-  const valueChangeHandler = e => {
-    setValue(e);
-  };
-
   const pointerUpHandler = () => {
+
+    onChange();
 
     // 最も近いコンテンツの有る位置にシークバーを固定する
     const closest = points.reduce((prev, curr) => {
       return Math.abs(curr - value[0]) < Math.abs(prev - value[0]) ? curr : prev;
     });
     setValue([closest]);
+
   };
 
   return (
@@ -84,7 +85,7 @@ export const SeekBar: FC<SeekBarProps> = ({
       <StyledSlider
         max={ 100 }
         value={ value }
-        onValueChange={ valueChangeHandler }
+        onValueChange={ setValue }
         aria-label="Volume"
         onClick={ pointerUpHandler }
       >
