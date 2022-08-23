@@ -14,12 +14,10 @@ export const Lecture: FC<LectureProps> = ({
 
   return <>
     <Slider>
-      { stepsFactory.slides.map(x => { return <>
-        <Slide
+      { stepsFactory.slides.map(x => ( <Slide
           key={ x }
           steps={ stepsFactory.getStepsBySlide(x) }
-        / >
-      </>; }) }
+        / > )) }
     </Slider>
     <ControlPanel />
   </>;
