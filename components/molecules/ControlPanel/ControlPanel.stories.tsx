@@ -13,4 +13,5 @@ const Template: Story<ControlPanelProps> = (args) => <ControlPanel {...args} />;
 
 export const Sample: { args: ControlPanelProps } = Template.bind({});
 Sample.args = {
+  points: [25, 30, 60]
 };

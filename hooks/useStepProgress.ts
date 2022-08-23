@@ -18,9 +18,9 @@ export const useStepProgress = (len: number) => {
   };
 
   // 0はじまり
-  const initialState: StepProgressState = 0;
+  const initState: StepProgressState = 0;
 
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initState);
 
   useEffect(() => {
 

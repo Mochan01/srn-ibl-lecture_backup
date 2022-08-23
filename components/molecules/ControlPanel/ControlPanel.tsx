@@ -3,21 +3,22 @@ import styled from "styled-components";
 import { ArrowBtn } from "../../atoms/ArrowBtn/ArrowBtn";
 import { Paginate } from "../../atoms/Paginate/Pagenate";
 import { classNames } from "../../../data/ClassNames";
-import { SeekBar } from "../../atoms/SeekBar/SeekBar";
+import { SeekBar, SeekBarProps } from "../../atoms/SeekBar/SeekBar";
 
-export interface ControlPanelProps {
+export interface ControlPanelProps extends SeekBarProps {
 }
 
 const Main = styled.div`
 `;
 
 export const ControlPanel: FC<ControlPanelProps> = ({
+  points
 }) => {
   return (
     <>
       <Main>
         <SeekBar
-          points={ [0, 50, 75] }
+          points={ points }
           onChange={ () => {} }
         />
         <ArrowBtn id={ classNames.arrowPrev } dir="prev" />

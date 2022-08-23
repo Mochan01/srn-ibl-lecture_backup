@@ -12,14 +12,23 @@ export class StepsFactory {
     this._steps = data.steps;
   }
 
-  public getStepsBySlide(slide: number): StepProps[] {
-    const steps = this._steps.filter(({ progress }) => progress.slide === slide);
+  public getStepPropsBySlide(slide: number): StepProps[] {
+    const steps = this.getStepBySlide(slide);
     return steps.map(x => { return { $src: x.image.display_file }} );
   }
 
+  public getSeekBarStartsBySlide(slide: number): Step["audio"]["seekbar_start"][] {
+    const steps = this.getStepBySlide(slide);
+    return steps.map(x => x.audio.seekbar_start);
+  }
+
   public get slides(): number[] {
-    const slides = this._steps.map(({ progress }) => progress.slide);
+    const slides = this._steps.map(({ progress }) => progress.slide - 1);
     return _.uniq(slides);
+  }
+
+  private getStepBySlide(slide: number): Step[] {
+    return this._steps.filter(({ progress }) => progress.slide - 1 === slide);
   }
 
 }

@@ -12,7 +12,7 @@ export interface SeekBarProps {
   /**
    * シークを掴んで、離したときのコールバック
    */
-  onChange: () => void;
+  onChange?: () => void;
 }
 
 interface MainProps {
@@ -70,7 +70,7 @@ const StyledThumb = styled(SliderPrimitive.Thumb)`
  */
 export const SeekBar: FC<SeekBarProps> = ({
   points,
-  onChange
+  onChange = () => {}
 }) => {
 
   const [value, setValue] = useState([points[0]]);
