@@ -14,7 +14,7 @@
               "time": "1899-12-29T15:00:04.000Z",
               "total_time": "1899-12-29T15:00:04.000Z",
               "seekbar_start": 0,
-              "seekbar_end": 0.09756097560975609
+              "seekbar_end": 9.76
           },
           "animation": {
               "teacher": "animation_2",
@@ -66,8 +66,8 @@
               "mp3": "ST_L1U2_02",
               "time": "1899-12-29T15:00:04.000Z",
               "total_time": "1899-12-29T15:00:08.000Z",
-              "seekbar_start": 0.09766097560975609,
-              "seekbar_end": 0.19512195121951217
+              "seekbar_start": 9.77,
+              "seekbar_end": 19.51
           },
           "animation": {
               "teacher": "animation_2",
@@ -119,8 +119,8 @@
               "mp3": "ST_L1U2_07",
               "time": "1899-12-29T15:00:06.000Z",
               "total_time": "1899-12-29T15:00:14.000Z",
-              "seekbar_start": 0.0801,
-              "seekbar_end": 0.14
+              "seekbar_start": 8.01,
+              "seekbar_end": 14
           },
           "animation": {
               "teacher": "animation_2",
@@ -172,8 +172,8 @@
               "mp3": "ST_L1U2_08",
               "time": "1899-12-29T15:00:11.000Z",
               "total_time": "1899-12-29T15:00:25.000Z",
-              "seekbar_start": 0.1401,
-              "seekbar_end": 0.25
+              "seekbar_start": 14.01,
+              "seekbar_end": 25
           },
           "animation": {
               "teacher": "animation_2",
@@ -225,8 +225,8 @@
               "mp3": "ST_L1U2_09",
               "time": "1899-12-29T15:00:05.000Z",
               "total_time": "1899-12-29T15:00:30.000Z",
-              "seekbar_start": 0.2501,
-              "seekbar_end": 0.3
+              "seekbar_start": 25.01,
+              "seekbar_end": 30
           },
           "animation": {
               "teacher": "animation_2",
@@ -278,8 +278,8 @@
               "mp3": "ST_L1U2_23",
               "time": "1899-12-29T15:00:13.000Z",
               "total_time": "1899-12-29T15:00:43.000Z",
-              "seekbar_start": 0.16052780748663098,
-              "seekbar_end": 0.22994652406417115
+              "seekbar_start": 16.05,
+              "seekbar_end": 22.99
           },
           "animation": {
               "teacher": "animation_2",
@@ -331,8 +331,8 @@
               "mp3": "ST_L1U2_24",
               "time": "1899-12-29T15:00:05.000Z",
               "total_time": "1899-12-29T15:00:48.000Z",
-              "seekbar_start": 0.23004652406417114,
-              "seekbar_end": 0.25668449197860965
+              "seekbar_start": 23,
+              "seekbar_end": 25.67
           },
           "animation": {
               "teacher": "animation_2",
