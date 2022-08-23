@@ -2,8 +2,7 @@ import React, { FC, ReactElement, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
-import { ArrowBtn } from "../../atoms/ArrowBtn/ArrowBtn";
-import { Paginate } from "../../atoms/Paginate/Pagenate";
+import { classNames } from "../../../data/ClassNames";
 
 export interface SliderProps {
   slides: ReactElement[];
@@ -12,10 +11,6 @@ export interface SliderProps {
 export const Slider: FC<SliderProps> = ({
   slides
 }) => {
-
-  const idPrev = "button_prev";
-  const idNext = "button_next";
-  const idPaginate = "paginate";
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -27,11 +22,11 @@ export const Slider: FC<SliderProps> = ({
         modules={ [Navigation, Pagination, Mousewheel, Keyboard] }
         className="mySwiper"
         navigation={ {
-          prevEl: `#${ idPrev }`,
-          nextEl: `#${ idNext }`
+          prevEl: `#${ classNames.arrowPrev }`,
+          nextEl: `#${ classNames.arrowNext }`
         } }
         pagination={ {
-          el: `#${ idPaginate }`,
+          el: `#${ classNames.paginate }`,
           clickable: true
         } }
         onInit={ ({ activeIndex }) => {
@@ -46,9 +41,6 @@ export const Slider: FC<SliderProps> = ({
           { i === activeIndex && slide }
         </SwiperSlide>) }
       </Swiper>
-      <ArrowBtn id={ idPrev } dir="prev" />
-      <ArrowBtn id={ idNext } dir="next" />
-      <Paginate id={ idPaginate } />
     </>
   );
 };
