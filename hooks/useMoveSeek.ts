@@ -1,5 +1,6 @@
 import { useEffect, useState, Dispatch, SetStateAction } from "react";
-import { SeekPoints } from "./useCreateSeekPoints";
+
+type SeekPoints = number[];
 
 export const useMoveSeek = (points: SeekPoints)
   : [SeekPoints, Dispatch<SetStateAction<SeekPoints>>] => {

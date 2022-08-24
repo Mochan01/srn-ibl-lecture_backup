@@ -1,8 +1,7 @@
-import React, { FC, useContext } from "react";
+import React, { FC, useContext, useMemo } from "react";
 import styled from "styled-components";
 import * as SliderPrimitive from '@radix-ui/react-slider';
 import { SlideProgressContext, StepsFactoryContext } from "../../providers/Context/Context";
-import { useCreateSeekPoints } from "../../../hooks/useCreateSeekPoints";
 import { useMoveSeek } from "../../../hooks/useMoveSeek";
 
 export interface SeekBarProps {
@@ -69,7 +68,9 @@ export const SeekBar: FC<SeekBarProps> = ({
   const stepsFactory = useContext(StepsFactoryContext);
 
   // create points and set value to seek bar
-  const points = useCreateSeekPoints(slideProgress, stepsFactory);
+  const points = useMemo(() => {
+    return stepsFactory.getSeekBarStartsBySlide(slideProgress);
+  }, [slideProgress]);
   const [value, setValue] = useMoveSeek(points);
 
   const pointerUpHandler = () => {
