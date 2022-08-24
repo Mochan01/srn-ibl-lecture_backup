@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 import { Step, StepProps } from "../../atoms/Step/Step";
 import { useStepProgress } from "../../../hooks/useStepProgress";
-import { StepsProgressContext } from "../../providers/Context/Context";
+import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 
 export interface SlideProps {
   steps: StepProps[];

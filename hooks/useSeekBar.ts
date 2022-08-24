@@ -1,5 +1,6 @@
 import { useEffect, useState, Dispatch, SetStateAction, useContext, useMemo } from "react";
-import { SlideProgressContext, StepsFactoryContext } from "../components/providers/Context/Context";
+import { StepsFactoryContext } from "../components/providers/StepsFactoryProvider/StepsFactoryProvider";
+import { SlideProgressContext } from "../components/providers/SlideProgressProvider/SlideProgressProvider";
 
 export interface useSeekBarExport {
   seekValue: number,

@@ -1,10 +1,10 @@
 import React from "react";
 // also exported from "@storybook/react" if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
-
 import { SeekBar, SeekBarProps } from "./SeekBar";
-import { Context } from "../../providers/Context/Context";
 import { StepsFactory } from "../../../factories/StepsFactory";
+import { SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
+import { StepsFactoryProvider } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
 
 export default {
   title: "atoms/SeekBar",
@@ -13,7 +13,13 @@ export default {
 
 const Template: Story<SeekBarProps> = (args) => {
   const stepsFactory = new StepsFactory();
-  return <Context stepsFactory={ stepsFactory }><SeekBar {...args} /></Context>;
+  return <>
+    <SlideProgressProvider>
+      <StepsFactoryProvider stepsFactory={ stepsFactory }>
+        <SeekBar {...args} />
+      </StepsFactoryProvider>;
+    </SlideProgressProvider>
+  </>
 };
 
 export const Sample: { args: SeekBarProps } = Template.bind({});

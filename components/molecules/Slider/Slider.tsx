@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 import { classNames } from "../../../data/ClassNames";
-import { SlideProgressContext } from "../../providers/Context/Context";
+import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 
 export interface SliderProps {
   children: ReactElement[];

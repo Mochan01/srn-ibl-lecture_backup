@@ -3,8 +3,7 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { steps } from "../../../data/mock";
 import { Slide, SlideProps } from "./Slide";
-import { Context } from "../../providers/Context/Context";
-import { StepsFactory } from "../../../factories/StepsFactory";
+import { StepsProgressProvider } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 
 export default {
   title: "molecules/Slide",
@@ -12,8 +11,7 @@ export default {
 } as Meta;
 
 const Template: Story<SlideProps> = (args) => {
-  const stepsFactory = new StepsFactory();
-  return <Context stepsFactory={ stepsFactory }><Slide {...args} /></Context>
+  return <StepsProgressProvider><Slide {...args} /></StepsProgressProvider>
 };
 
 export const Sample: { args: SlideProps } = Template.bind({});
