@@ -1,11 +1,7 @@
-import React, { FC, useContext, useMemo } from "react";
+import React, { FC, useCallback, memo } from "react";
 import styled from "styled-components";
 import * as SliderPrimitive from '@radix-ui/react-slider';
-import { SlideProgressContext, StepsFactoryContext } from "../../providers/Context/Context";
-import { useMoveSeek } from "../../../hooks/useMoveSeek";
-
-export interface SeekBarProps {
-}
+import { useSeekBar } from "../../../hooks/useSeekBar";
 
 interface MainProps {
 }
@@ -55,46 +51,65 @@ const StyledThumb = styled(SliderPrimitive.Thumb)`
   &:focus { box-shadow: 0 0 0 5px #000; }
 `;
 
+export interface SeekBarMemoProps {
+  value: number;
+  onValueChange: (nextValue: number[]) => void;
+  onPointerUp: () => void;
+}
+
 /**
  * https://www.radix-ui.com/docs/primitives/components/slider
  * @param param0 
  * @returns 
  */
+const SeekBarMemo: FC<SeekBarMemoProps> = memo(({
+  value,
+  onValueChange,
+  onPointerUp
+}) => {
+  return (
+    <StyledSlider
+      max={ 100 }
+      value={ [value] }
+      onValueChange={ onValueChange }
+      onClick={ onPointerUp }
+    >
+      <StyledTrack>
+        <StyledRange />
+      </StyledTrack>
+      <StyledThumb />
+    </StyledSlider>
+  );
+});
+
+export interface SeekBarProps {
+}
+
 export const SeekBar: FC<SeekBarProps> = ({
 }) => {
 
-  // get context api
-  const { slideProgress } = useContext(SlideProgressContext);
-  const stepsFactory = useContext(StepsFactoryContext);
+  const { seekValue, seekValueDispatch, points } = useSeekBar();
 
-  // create points and set value to seek bar
-  const points = useMemo(() => {
-    return stepsFactory.getSeekBarStartsBySlide(slideProgress);
-  }, [slideProgress]);
-  const [value, setValue] = useMoveSeek(points);
+  // シークバーを動かす
+  const onValueChange
+    = useCallback(nextValue => seekValueDispatch(nextValue[0]), []);
 
-  const pointerUpHandler = () => {
-    // 最も近いコンテンツの有る位置にシークバーを固定する
+  // シークバーを離したときに発火
+  const pointerUpHandler = useCallback(() => {
+
+    // シークバーを特定の位置にfixさせる
     const closest = points.reduce((prev, curr) => {
-      return Math.abs(curr - value[0]) < Math.abs(prev - value[0]) ? curr : prev;
+      return Math.abs(curr - seekValue) < Math.abs(prev - seekValue) ? curr : prev;
     });
-    setValue([closest]);
-  };
+
+    seekValueDispatch(closest);
+  }, [seekValue]);
 
   return (
-    <form>
-      <StyledSlider
-        max={ 100 }
-        value={ value }
-        onValueChange={ setValue }
-        aria-label="Volume"
-        onClick={ pointerUpHandler }
-      >
-        <StyledTrack>
-          <StyledRange />
-        </StyledTrack>
-        <StyledThumb />
-      </StyledSlider>
-    </form>
+    <SeekBarMemo
+      value={ seekValue }
+      onValueChange={ onValueChange }
+      onPointerUp={ pointerUpHandler }
+    />
   );
 };
