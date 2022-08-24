@@ -3,6 +3,7 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
 import { ControlPanel, ControlPanelProps } from "./ControlPanel";
+import { StepsFactory } from "../../../factories/StepsFactory";
 
 export default {
   title: "molecules/ControlPanel",
@@ -13,5 +14,9 @@ const Template: Story<ControlPanelProps> = (args) => <ControlPanel {...args} />;
 
 export const Sample: { args: ControlPanelProps } = Template.bind({});
 Sample.args = {
-  points: [25, 30, 60]
+  stepsFactory: new StepsFactory(),
+  progress: {
+    slide: 0,
+    step: 0
+  }
 };
