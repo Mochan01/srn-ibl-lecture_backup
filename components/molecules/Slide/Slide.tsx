@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 import { Step, StepProps } from "../../atoms/Step/Step";
 import { useStepProgress } from "../../../hooks/useStepProgress";
-import { ManageProgress } from "../../providers/Context/Context";
+import { StepsProgressContext } from "../../providers/Context/Context";
 
 export interface SlideProps {
   steps: StepProps[];
@@ -26,20 +26,20 @@ export const Slide: FC<SlideProps> = ({
   steps
 }) => {
 
-  const step = useStepProgress(steps.length);
+  const nextStep = useStepProgress(steps.length);
 
   // 進捗の状態管理
-  const [progress, setProgress] = useContext(ManageProgress);
+  const { stepsProgress, setStepsProgress } = useContext(StepsProgressContext);
   useEffect(() => {
-    setProgress({ step });
-  }, [step]);
+    setStepsProgress(nextStep);
+  }, [nextStep]);
 
   return (
     <>
       <Main>
         { /** stepに応じて描画 */ }
         { steps.map(({ $src }, i) => {
-          if (i > step) return;
+          if (i > stepsProgress) return;
           return <Step key={ i } $src={ $src } />;
         }) }
       </Main>

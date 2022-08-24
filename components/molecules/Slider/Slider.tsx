@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 import { classNames } from "../../../data/ClassNames";
-import { ManageProgress } from "../../providers/Context/Context";
+import { SlideProgressContext } from "../../providers/Context/Context";
 
 export interface SliderProps {
   children: ReactElement[];
@@ -18,9 +18,9 @@ export const Slider: FC<SliderProps> = ({
   const [activeIndex, setActiveIndex] = useState(initialSlide);
 
   // 進捗の状態管理
-  const [progress, setProgress] = useContext(ManageProgress);
+  const { slideProgress, setSlideProgress } = useContext(SlideProgressContext);
   useEffect(() => {
-    setProgress({ slide: activeIndex });
+    setSlideProgress(activeIndex);
   }, [activeIndex]);
 
   return (

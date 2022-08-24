@@ -1,29 +1,34 @@
-import React, { FC, createContext, ReactNode, Dispatch } from "react";
+import React, { FC, createContext, ReactNode, Dispatch, useState } from "react";
 import { StepsFactory } from "../../../factories/StepsFactory";
-import { useManageProgress, UseAllProgress } from "../../../hooks/useManageProgress";
 
 export interface ProgressProps {
   stepsFactory: StepsFactory;
   children: ReactNode;
 }
 
-export const ManageProgress
-  = createContext<[UseAllProgress, Dispatch<UseAllProgress>]>(null);
+type SlideProgressContextState = { slideProgress: number, setSlideProgress: Dispatch<number> };
+export const SlideProgressContext = createContext<SlideProgressContextState>(null);
 
-export const StepsFactoryProvider = createContext<StepsFactory>(null);
+type StepsProgressContextState = { stepsProgress: number, setStepsProgress: Dispatch<number> };
+export const StepsProgressContext = createContext<StepsProgressContextState>(null);
+
+export const StepsFactoryContext = createContext<StepsFactory>(null);
 
 export const Context: FC<ProgressProps> = ({
   stepsFactory,
   children
 }) => {
 
-  const manageProgress = useManageProgress();
+  const [slideProgress, setSlideProgress] = useState(0);
+  const [stepsProgress, setStepsProgress] = useState(0);
 
   return (
-    <ManageProgress.Provider value={ manageProgress }>
-      <StepsFactoryProvider.Provider value={ stepsFactory }>
-        { children }
-      </StepsFactoryProvider.Provider>
-    </ManageProgress.Provider>
+    <SlideProgressContext.Provider value={ { slideProgress, setSlideProgress } }>
+      <StepsProgressContext.Provider value={ { stepsProgress, setStepsProgress } }>
+        <StepsFactoryContext.Provider value={ stepsFactory }>
+          { children }
+        </StepsFactoryContext.Provider>
+      </StepsProgressContext.Provider>
+    </SlideProgressContext.Provider>
   );
 };
