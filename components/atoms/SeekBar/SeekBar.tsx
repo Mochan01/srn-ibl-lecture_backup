@@ -3,6 +3,8 @@ import styled from "styled-components";
 import * as SliderPrimitive from '@radix-ui/react-slider';
 import _ from "lodash";
 import { ManageProgress, StepsFactoryProvider } from "../../providers/Context/Context";
+import { useCreateSeekPoints } from "../../../hooks/useCreateSeekPoints";
+import { useMoveSeek } from "../../../hooks/useMoveSeek";
 
 export interface SeekBarProps {
 }
@@ -63,18 +65,13 @@ const StyledThumb = styled(SliderPrimitive.Thumb)`
 export const SeekBar: FC<SeekBarProps> = ({
 }) => {
 
-  const [points, setPoints] = useState<number[]>([0]);
-
+  // get context api
   const [progress] = useContext(ManageProgress);
   const stepsFactory = useContext(StepsFactoryProvider);
-  useEffect(() => {
-    const slide = progress.slide;
-    const points = stepsFactory.getSeekBarStartsBySlide(slide);
-    setPoints(points)
-  }, [progress]);
 
-  const [value, setValue] = useState([0]);
-  useEffect(() => setValue([points[0]]), [points]);
+  // create points and set value to seek bar
+  const points = useCreateSeekPoints(progress, stepsFactory);
+  const [value, setValue] = useMoveSeek(points);
 
   const pointerUpHandler = () => {
     // 最も近いコンテンツの有る位置にシークバーを固定する
