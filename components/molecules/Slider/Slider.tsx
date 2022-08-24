@@ -1,24 +1,27 @@
-import React, { FC, ReactElement, useState, useEffect } from "react";
+import React, { FC, ReactElement, useState, useEffect, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 import { classNames } from "../../../data/ClassNames";
+import { ManageProgress } from "../../providers/Context/Context";
 
 export interface SliderProps {
   children: ReactElement[];
   initialSlide?: number;
-  onChange?: (slide: number) => void;
 }
 
 export const Slider: FC<SliderProps> = ({
   children,
-  initialSlide = 0,
-  onChange = () => {}
+  initialSlide = 0
 }) => {
 
   const [activeIndex, setActiveIndex] = useState(initialSlide);
 
-  useEffect(() => onChange(activeIndex), [activeIndex]);
+  // 進捗の状態管理
+  const [progress, setProgress] = useContext(ManageProgress);
+  useEffect(() => {
+    setProgress({ slide: activeIndex });
+  }, [activeIndex]);
 
   return (
     <>

@@ -1,12 +1,12 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useContext, useEffect } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 import { Step, StepProps } from "../../atoms/Step/Step";
 import { useStepProgress } from "../../../hooks/useStepProgress";
+import { ManageProgress } from "../../providers/Context/Context";
 
 export interface SlideProps {
   steps: StepProps[];
-  onChange?: (step: number) => void;
 }
 
 const Main = styled(SwiperSlide)`
@@ -23,13 +23,16 @@ const Main = styled(SwiperSlide)`
 `;
 
 export const Slide: FC<SlideProps> = ({
-  steps,
-  onChange = () => {}
+  steps
 }) => {
 
   const step = useStepProgress(steps.length);
 
-  useEffect(() => onChange(step), [step]);
+  // 進捗の状態管理
+  const [progress, setProgress] = useContext(ManageProgress);
+  useEffect(() => {
+    setProgress({ step });
+  }, [step]);
 
   return (
     <>

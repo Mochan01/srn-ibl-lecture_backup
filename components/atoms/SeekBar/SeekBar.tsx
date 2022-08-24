@@ -1,18 +1,10 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import * as SliderPrimitive from '@radix-ui/react-slider';
 import _ from "lodash";
+import { ManageProgress, StepsFactoryProvider } from "../../providers/Context/Context";
 
 export interface SeekBarProps {
-  /**
-   * どのパーセンテージでシークを止める？
-   * 0 ~ 100
-   */
-  points: number[];
-  /**
-   * シークを掴んで、離したときのコールバック
-   */
-  onChange?: () => void;
 }
 
 interface MainProps {
@@ -69,23 +61,27 @@ const StyledThumb = styled(SliderPrimitive.Thumb)`
  * @returns 
  */
 export const SeekBar: FC<SeekBarProps> = ({
-  points,
-  onChange = () => {}
 }) => {
+
+  const [points, setPoints] = useState<number[]>([0]);
+
+  const [progress] = useContext(ManageProgress);
+  const stepsFactory = useContext(StepsFactoryProvider);
+  useEffect(() => {
+    const slide = progress.slide;
+    const points = stepsFactory.getSeekBarStartsBySlide(slide);
+    setPoints(points)
+  }, [progress]);
 
   const [value, setValue] = useState([0]);
   useEffect(() => setValue([points[0]]), [points]);
 
   const pointerUpHandler = () => {
-
-    onChange();
-
     // 最も近いコンテンツの有る位置にシークバーを固定する
     const closest = points.reduce((prev, curr) => {
       return Math.abs(curr - value[0]) < Math.abs(prev - value[0]) ? curr : prev;
     });
     setValue([closest]);
-
   };
 
   return (
