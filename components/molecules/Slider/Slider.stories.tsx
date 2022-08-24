@@ -5,17 +5,22 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { Slider, SliderProps } from "./Slider";
 import { Slide } from "../../molecules/Slide/Slide";
 import { steps } from "../../../data/mock";
+import { Context } from "../../providers/Context/Context";
+import { StepsFactory } from "../../../factories/StepsFactory";
 
 export default {
   title: "molecules/Slider",
   component: Slider
 } as Meta;
 
-const Template: Story<SliderProps> = (args) => <Slider {...args} />;
+const Template: Story<SliderProps> = (args) => {
+  const stepsFactory = new StepsFactory();
+  return <Context stepsFactory={ stepsFactory }><Slider {...args} /></Context>;
+};
 
 export const Sample: { args: SliderProps } = Template.bind({});
 Sample.args = {
-  slides: [
+  children: [
     <Slide steps={ steps } / >,
     <Slide steps={ steps } / >,
     <Slide steps={ steps } / >
