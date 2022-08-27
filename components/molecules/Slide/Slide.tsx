@@ -1,12 +1,15 @@
-import React, { FC, useContext, useEffect } from "react";
+import React, { FC, useContext, useEffect, Fragment } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 import { Step, StepProps } from "../../atoms/Step/Step";
 import { useStepProgress } from "../../../hooks/useStepProgress";
 import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
+import { Narration, NarrationProps } from "../../atoms/Narration/Narration";
+
+export type StepNarrationProps = StepProps & NarrationProps;
 
 export interface SlideProps {
-  steps: StepProps[];
+  steps: StepNarrationProps[];
 }
 
 const Main = styled(SwiperSlide)`
@@ -36,9 +39,12 @@ export const Slide: FC<SlideProps> = ({
     <>
       <Main>
         { /** stepに応じて描画 */ }
-        { steps.map(({ $src }, i) => {
+        { steps.map(({ image, sound }, i) => {
           if (i > stepsProgress) return;
-          return <Step key={ i } $src={ $src } />;
+          return <Fragment key={ i }>
+            { i <= stepsProgress && <Step image={ image } /> }
+            { i === stepsProgress && <Narration sound={ sound } /> }
+          </Fragment>;
         }) }
       </Main>
     </>

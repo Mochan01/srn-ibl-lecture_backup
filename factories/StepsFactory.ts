@@ -1,7 +1,7 @@
 import data from "../data/mock_data.json";
 import { Step } from "src-ibl-lecture-master/variable_types/Step";
-import { StepProps } from "../components/atoms/Step/Step";
 import _ from "lodash";
+import { StepNarrationProps } from "../components/molecules/Slide/Slide";
 
 export class StepsFactory {
 
@@ -12,9 +12,14 @@ export class StepsFactory {
     this._steps = data.steps;
   }
 
-  public getStepPropsBySlide(slide: number): StepProps[] {
+  public getStepPropsBySlide(slide: number): StepNarrationProps[] {
     const steps = this.getStepBySlide(slide);
-    return steps.map(x => { return { $src: x.image.display_file }} );
+    return steps.map(x => {
+      return {
+        image: x.image.display_file,
+        sound: x.audio.mp3
+      }
+    });
   }
 
   public getSeekBarStartsBySlide(slide: number): Step["audio"]["seekbar_start"][] {

@@ -2,11 +2,15 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 export interface StepProps {
-  $src: string;
+  image: string;
 }
 
-const Main = styled.div<StepProps>`
-  background-image: url(${({ $src }) => $src});
+interface MainProps {
+  image: StepProps["image"];
+}
+
+const Main = styled.div<MainProps>`
+  background-image: url(${({ image }) => image});
   background-repeat: no-repeat;
   background-size: contain;
   &:before {
@@ -18,11 +22,11 @@ const Main = styled.div<StepProps>`
 `;
 
 export const Step: FC<StepProps> = ({
-  $src
+  image
 }) => {
   return (
     <>
-      <Main $src={ $src } />
+      <Main image={ image } />
     </>
   );
 };

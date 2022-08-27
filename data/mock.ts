@@ -1,18 +1,23 @@
-import { StepProps } from "../components/atoms/Step/Step";
+import { StepNarrationProps } from "../components/molecules/Slide/Slide";
 
-export const stepA: StepProps = {
-  $src: "sample_a.png"
+export const sound = "sample.mp3";
+
+export const stepA: StepNarrationProps = {
+  image: "sample_a.png",
+  sound
 };
 
-export const stepB: StepProps = {
-  $src: "sample_b.png"
+export const stepB: StepNarrationProps = {
+  image: "sample_b.png",
+  sound
 };
 
-export const stepC: StepProps = {
-  $src: "sample_c.png"
+export const stepC: StepNarrationProps = {
+  image: "sample_c.png",
+  sound
 };
 
-export const steps: StepProps[] = [
+export const steps: StepNarrationProps[] = [
   stepA,
   stepB,
   stepC
