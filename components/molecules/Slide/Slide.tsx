@@ -30,9 +30,7 @@ export const Slide: FC<SlideProps> = ({
 
   // 進捗の状態管理
   const { stepsProgress, setStepsProgress } = useContext(StepsProgressContext);
-  useEffect(() => {
-    setStepsProgress(nextStep);
-  }, [nextStep]);
+  useEffect(() => setStepsProgress(nextStep), [nextStep]);
 
   return (
     <>

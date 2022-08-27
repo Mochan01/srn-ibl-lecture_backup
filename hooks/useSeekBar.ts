@@ -1,17 +1,28 @@
-import { useEffect, useState, Dispatch, SetStateAction, useContext, useMemo } from "react";
+import { useEffect, useState, Dispatch, SetStateAction, useContext, useMemo, useCallback } from "react";
 import { StepsFactoryContext } from "../components/providers/StepsFactoryProvider/StepsFactoryProvider";
 import { SlideProgressContext } from "../components/providers/SlideProgressProvider/SlideProgressProvider";
+import { StepsProgressContext } from "../components/providers/StepsProgressProvider/StepsProgressProvider";
 
 export interface useSeekBarExport {
-  seekValue: number,
-  seekValueDispatch: Dispatch<SetStateAction<number>>;
-  points: number[];
+  /**
+   * シークバーの進捗
+   */
+  seekValue: number;
+  /**
+   * シークバーを操作したとき
+   */
+  onValueChange: (nextValue: number[]) => void;
+  /**
+   * シークバーから手を離したとき
+   */
+  onPointerUp: () => void;
 }
 
 export const useSeekBar = (): useSeekBarExport => {
 
-  // コンテキストAPIからデータとスライドが何枚目かを取得
+  // コンテキストAPI 状態管理
   const { slideProgress } = useContext(SlideProgressContext);
+  const { stepsProgress, setStepsProgress } = useContext(StepsProgressContext);
   const stepsFactory = useContext(StepsFactoryContext);
 
   // シークバーがfixする位置を生成
@@ -23,9 +34,28 @@ export const useSeekBar = (): useSeekBarExport => {
   const [seekValue, seekValueDispatch] = useState<number>(0);
   useEffect(() => seekValueDispatch(points[0]), [points]);
 
+  // ステップのページが変わったときにシークバーの初期位置を更新する
+  useEffect(() => seekValueDispatch(points[stepsProgress]), [stepsProgress]);
+
+  // シークバーを操作したとき
+  const onValueChange
+    = useCallback(nextValue => seekValueDispatch(nextValue[0]), []);
+
+  // シークバーから手を離したとき
+  const onPointerUp = useCallback(() => {
+
+    // シークバーを特定の位置にfixさせる
+    const closest = points.reduce((prev, curr) => {
+      return Math.abs(curr - seekValue) < Math.abs(prev - seekValue) ? curr : prev;
+    });
+
+    seekValueDispatch(closest);
+    setStepsProgress(points.indexOf(closest));
+  }, [seekValue]);
+
   return {
     seekValue,
-    seekValueDispatch,
-    points
+    onValueChange,
+    onPointerUp
   };
 };

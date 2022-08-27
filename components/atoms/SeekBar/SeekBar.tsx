@@ -1,10 +1,7 @@
-import React, { FC, useCallback, memo } from "react";
+import React, { FC, memo } from "react";
 import styled from "styled-components";
-import * as SliderPrimitive from '@radix-ui/react-slider';
+import * as SliderPrimitive from "@radix-ui/react-slider";
 import { useSeekBar } from "../../../hooks/useSeekBar";
-
-interface MainProps {
-}
 
 const StyledSlider = styled(SliderPrimitive.Root)`
   position: relative;
@@ -82,34 +79,15 @@ const SeekBarMemo: FC<SeekBarMemoProps> = memo(({
   );
 });
 
-export interface SeekBarProps {
-}
+export const SeekBar: FC = () => {
 
-export const SeekBar: FC<SeekBarProps> = ({
-}) => {
-
-  const { seekValue, seekValueDispatch, points } = useSeekBar();
-
-  // シークバーを動かす
-  const onValueChange
-    = useCallback(nextValue => seekValueDispatch(nextValue[0]), []);
-
-  // シークバーを離したときに発火
-  const pointerUpHandler = useCallback(() => {
-
-    // シークバーを特定の位置にfixさせる
-    const closest = points.reduce((prev, curr) => {
-      return Math.abs(curr - seekValue) < Math.abs(prev - seekValue) ? curr : prev;
-    });
-
-    seekValueDispatch(closest);
-  }, [seekValue]);
+  const { seekValue, onValueChange, onPointerUp } = useSeekBar();
 
   return (
     <SeekBarMemo
       value={ seekValue }
       onValueChange={ onValueChange }
-      onPointerUp={ pointerUpHandler }
+      onPointerUp={ onPointerUp }
     />
   );
 };
