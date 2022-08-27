@@ -29,18 +29,24 @@ export const Slide: FC<SlideProps> = ({
   steps
 }) => {
 
-  const { stepsProgress } = useContext(StepsProgressContext);
+  const { stepsProgress, setStepsProgress } = useContext(StepsProgressContext);
   const { play } = useContext(PlayContext);
+
+  // 音声が終わったら次のステップに進む
+  const onEnd = () => {
+    setStepsProgress(s => s + 1);
+  };
 
   return (
     <>
       <Main>
-        { /** stepに応じて描画 */ }
+        { /** ステップに応じて描画 */ }
         { steps.map(({ image, sound }, i) => {
           if (i > stepsProgress) return;
           return <Fragment key={ i }>
             { i <= stepsProgress && <Step image={ image } /> }
-            { play && i === stepsProgress && <Narration sound={ sound } /> }
+            { play && i === stepsProgress &&
+              <Narration sound={ sound } onEnd={ onEnd } /> }
           </Fragment>;
         }) }
       </Main>
