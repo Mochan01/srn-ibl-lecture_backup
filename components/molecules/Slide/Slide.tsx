@@ -1,8 +1,7 @@
-import React, { FC, useContext, useEffect, Fragment } from "react";
+import React, { FC, useContext, Fragment } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 import { Step, StepProps } from "../../atoms/Step/Step";
-import { useStepProgress } from "../../../hooks/useStepProgress";
 import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 import { Narration, NarrationProps } from "../../atoms/Narration/Narration";
 
@@ -29,11 +28,7 @@ export const Slide: FC<SlideProps> = ({
   steps
 }) => {
 
-  const nextStep = useStepProgress(steps.length);
-
-  // 進捗の状態管理
-  const { stepsProgress, setStepsProgress } = useContext(StepsProgressContext);
-  useEffect(() => setStepsProgress(nextStep), [nextStep]);
+  const { stepsProgress } = useContext(StepsProgressContext);
 
   return (
     <>
