@@ -4,6 +4,7 @@ import { SwiperSlide } from "swiper/react";
 import { Step, StepProps } from "../../atoms/Step/Step";
 import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 import { Narration, NarrationProps } from "../../atoms/Narration/Narration";
+import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 
 export type StepNarrationProps = StepProps & NarrationProps;
 
@@ -29,6 +30,7 @@ export const Slide: FC<SlideProps> = ({
 }) => {
 
   const { stepsProgress } = useContext(StepsProgressContext);
+  const { play } = useContext(PlayContext);
 
   return (
     <>
@@ -38,7 +40,7 @@ export const Slide: FC<SlideProps> = ({
           if (i > stepsProgress) return;
           return <Fragment key={ i }>
             { i <= stepsProgress && <Step image={ image } /> }
-            { i === stepsProgress && <Narration sound={ sound } /> }
+            { play && i === stepsProgress && <Narration sound={ sound } /> }
           </Fragment>;
         }) }
       </Main>

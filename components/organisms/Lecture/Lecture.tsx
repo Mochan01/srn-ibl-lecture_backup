@@ -6,7 +6,7 @@ import { ControlPanel } from "../../molecules/ControlPanel/ControlPanel";
 import { StepsFactoryProvider } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
 import { SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepsProgressProvider } from "../../providers/StepsProgressProvider/StepsProgressProvider";
-import { PauseProvider } from "../../providers/PauseProvider/PauseProvider";
+import { PlayProvider } from "../../providers/PlayProvider/PlayProvider";
 
 export interface LectureProps {
 }
@@ -20,14 +20,14 @@ export const Lecture: FC<LectureProps> = ({
     <StepsProgressProvider>
       <SlideProgressProvider>
         <StepsFactoryProvider stepsFactory={ stepsFactory }>
-          <PauseProvider>
+          <PlayProvider>
             <Slider>
               { stepsFactory.slides.map(x => (
                 <Slide key={ x } steps={ stepsFactory.getStepPropsBySlide(x) } />
               )) }
             </Slider>
             <ControlPanel />
-          </PauseProvider>
+          </PlayProvider>
         </StepsFactoryProvider>
       </SlideProgressProvider>
     </StepsProgressProvider>

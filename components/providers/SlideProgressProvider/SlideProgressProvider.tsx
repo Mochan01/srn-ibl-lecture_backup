@@ -1,12 +1,18 @@
-import React, { FC, createContext, ReactNode, Dispatch, useState } from "react";
+import React, { FC, createContext, ReactNode, Dispatch, useState, SetStateAction } from "react";
 
 export interface SlideProgressProviderProps {
   children: ReactNode;
 }
 
-type SlideProgressContextState = { slideProgress: number, setSlideProgress: Dispatch<number> };
+type SlideProgressContextState
+  = { slideProgress: number, setSlideProgress: Dispatch<SetStateAction<number>> };
 export const SlideProgressContext = createContext<SlideProgressContextState>(null);
 
+/**
+ * スライドの進捗を管理
+ * @param param0 
+ * @returns 
+ */
 export const SlideProgressProvider: FC<SlideProgressProviderProps> = ({
   children
 }) => {

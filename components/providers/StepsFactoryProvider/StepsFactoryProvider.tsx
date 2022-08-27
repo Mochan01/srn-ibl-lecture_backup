@@ -8,6 +8,11 @@ export interface StepsFactoryProviderProps {
 
 export const StepsFactoryContext = createContext<StepsFactory>(null);
 
+/**
+ * jsonからコンポーネントに渡すpropsを生成するクラスを渡す
+ * @param param0 
+ * @returns 
+ */
 export const StepsFactoryProvider: FC<StepsFactoryProviderProps> = ({
   stepsFactory,
   children

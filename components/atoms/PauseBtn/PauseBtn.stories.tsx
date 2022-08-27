@@ -3,7 +3,7 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
 import { PauseBtn, PauseBtnProps } from "./PauseBtn";
-import { PauseProvider } from "../../providers/PauseProvider/PauseProvider";
+import { PlayProvider } from "../../providers/PlayProvider/PlayProvider";
 
 export default {
   title: "atoms/PauseBtn",
@@ -11,7 +11,7 @@ export default {
 } as Meta;
 
 const Template: Story<PauseBtnProps> = (args) => {
-  return <PauseProvider><PauseBtn {...args} /></PauseProvider>;
+  return <PlayProvider><PauseBtn {...args} /></PlayProvider>;
 };
 
 export const Sample: { args: PauseBtnProps } = Template.bind({});

@@ -1,7 +1,6 @@
-import React, { FC, useContext, useEffect, useState } from "react";
+import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import { PauseContext } from "../../providers/PauseProvider/PauseProvider";
-import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
+import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 
 export interface PauseBtnProps {
 }
@@ -20,23 +19,12 @@ const Main = styled.div.attrs<MainProps>(
 export const PauseBtn: FC<PauseBtnProps> = ({
 }) => {
 
-  const { setStepsProgress } = useContext(StepsProgressContext);
-  const { pause, setPause } = useContext(PauseContext);
-
-  // 再生 / 停止したとき
-  useEffect(() => {
-    if (pause) {
-      setStepsProgress(null);
-      return;
-    }
-
-    setStepsProgress(0);
-  }, [pause]);
+  const { play, setPlay } = useContext(PlayContext);
 
   return (
     <>
-      <button onClick={ () => setPause(s => !s) }>
-        { pause ? "再生" : "一時停止" }
+      <button onClick={ () => setPlay(s => !s) }>
+        { play ? "一時停止" : "再生" }
       </button>
     </>
   );

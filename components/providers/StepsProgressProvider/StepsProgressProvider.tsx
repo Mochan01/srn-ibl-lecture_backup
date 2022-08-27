@@ -1,12 +1,18 @@
-import React, { FC, createContext, ReactNode, Dispatch, useState } from "react";
+import React, { FC, createContext, ReactNode, Dispatch, useState, SetStateAction } from "react";
 
 export interface StepsProgressProviderProps {
   children: ReactNode;
 }
 
-type StepsProgressProviderState = { stepsProgress: number, setStepsProgress: Dispatch<number> };
+type StepsProgressProviderState
+  = { stepsProgress: number, setStepsProgress: Dispatch<SetStateAction<number>> };
 export const StepsProgressContext = createContext<StepsProgressProviderState>(null);
 
+/**
+ * スライド内のステップの進捗を管理
+ * @param param0 
+ * @returns 
+ */
 export const StepsProgressProvider: FC<StepsProgressProviderProps> = ({
   children
 }) => {

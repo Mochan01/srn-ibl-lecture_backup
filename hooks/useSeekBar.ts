@@ -1,4 +1,4 @@
-import { useEffect, useState, Dispatch, SetStateAction, useContext, useMemo, useCallback } from "react";
+import { useEffect, useState, useContext, useMemo, useCallback } from "react";
 import { StepsFactoryContext } from "../components/providers/StepsFactoryProvider/StepsFactoryProvider";
 import { SlideProgressContext } from "../components/providers/SlideProgressProvider/SlideProgressProvider";
 import { StepsProgressContext } from "../components/providers/StepsProgressProvider/StepsProgressProvider";
