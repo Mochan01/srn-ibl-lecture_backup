@@ -3,6 +3,9 @@ import styled from "styled-components";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 import { useSeekBar } from "../../../hooks/useSeekBar";
 
+export interface SeekBarProps {
+}
+
 const StyledSlider = styled(SliderPrimitive.Root)`
   position: relative;
   display: flex;

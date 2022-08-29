@@ -3,6 +3,7 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { SeekBar, SeekBarProps } from "./SeekBar";
 import { StepsFactory } from "../../../factories/StepsFactory";
+import { StepsProgressProvider } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 import { SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepsFactoryProvider } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
 
@@ -15,9 +16,11 @@ const Template: Story<SeekBarProps> = (args) => {
   const stepsFactory = new StepsFactory();
   return <>
     <SlideProgressProvider>
-      <StepsFactoryProvider stepsFactory={ stepsFactory }>
-        <SeekBar {...args} />
-      </StepsFactoryProvider>;
+      <StepsProgressProvider>
+        <StepsFactoryProvider stepsFactory={ stepsFactory }>
+          <SeekBar {...args} />
+        </StepsFactoryProvider>
+      </StepsProgressProvider>
     </SlideProgressProvider>
   </>
 };
