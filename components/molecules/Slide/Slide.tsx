@@ -32,11 +32,6 @@ export const Slide: FC<SlideProps> = ({
   const { stepsProgress, setStepsProgress } = useContext(StepsProgressContext);
   const { play } = useContext(PlayContext);
 
-  // 音声が終わったら次のステップに進む
-  const onEnd = () => {
-    setStepsProgress(s => s + 1);
-  };
-
   return (
     <>
       <Main>
@@ -46,7 +41,7 @@ export const Slide: FC<SlideProps> = ({
           return <Fragment key={ i }>
             { i <= stepsProgress && <Step image={ image } /> }
             { play && i === stepsProgress &&
-              <Narration sound={ sound } onEnd={ onEnd } /> }
+              <Narration sound={ sound } /> }
           </Fragment>;
         }) }
       </Main>

@@ -54,6 +54,7 @@ const StyledThumb = styled(SliderPrimitive.Thumb)`
 export interface SeekBarMemoProps {
   value: number;
   onValueChange: (nextValue: number[]) => void;
+  onPointerDown: () => void;
   onPointerUp: () => void;
 }
 
@@ -65,6 +66,7 @@ export interface SeekBarMemoProps {
 const SeekBarMemo: FC<SeekBarMemoProps> = memo(({
   value,
   onValueChange,
+  onPointerDown,
   onPointerUp
 }) => {
   return (
@@ -72,7 +74,8 @@ const SeekBarMemo: FC<SeekBarMemoProps> = memo(({
       max={ 100 }
       value={ [value] }
       onValueChange={ onValueChange }
-      onClick={ onPointerUp }
+      onPointerUp={ onPointerUp }
+      onPointerDown={ onPointerDown }
     >
       <StyledTrack>
         <StyledRange />
@@ -84,13 +87,14 @@ const SeekBarMemo: FC<SeekBarMemoProps> = memo(({
 
 export const SeekBar: FC = () => {
 
-  const { seekValue, onValueChange, onPointerUp } = useSeekBar();
+  const { seekValue, onValueChange, onPointerUp, onPointerDown } = useSeekBar();
 
   return (
     <SeekBarMemo
       value={ seekValue }
       onValueChange={ onValueChange }
       onPointerUp={ onPointerUp }
+      onPointerDown={ onPointerDown }
     />
   );
 };
