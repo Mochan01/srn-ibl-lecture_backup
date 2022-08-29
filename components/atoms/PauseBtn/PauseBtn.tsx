@@ -23,14 +23,16 @@ export const PauseBtn: FC<PauseBtnProps> = ({
   const { play, setPlay } = useContext(PlayContext);
   const { setStepsProgress } = useContext(StepsProgressContext);
 
-  useEffect(() => {
-    if (play) return;
-    setStepsProgress(0);
-  }, [play]);
-
   return (
     <>
-      <button onClick={ () => setPlay(s => !s) }>
+      <button onClick={ () => {
+        setPlay(s => {
+
+          if (s) setStepsProgress(0);
+
+          return !s;
+        });
+      } }>
         { play ? "一時停止" : "再生" }
       </button>
     </>

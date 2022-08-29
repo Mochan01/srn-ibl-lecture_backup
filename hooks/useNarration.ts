@@ -28,7 +28,8 @@ export const useNarration = ({ sound, onEnd }: UseNarration) => {
     onend: () => {
       if (!onEnd) return;
       onEnd();
-    }
+    },
+    volume: .1
   });
 
   useEffect(() => {
