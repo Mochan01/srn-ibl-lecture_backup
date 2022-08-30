@@ -12,7 +12,6 @@ interface MainProps {
 }
 
 const Main = styled.div<MainProps>`
-  background-color: #aaa;
   transform: ${ ({ dir }) => dir === "prev" ? "scale(-1, 1)": "none" };
 `;
 

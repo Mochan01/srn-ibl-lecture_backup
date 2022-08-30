@@ -17,32 +17,32 @@ interface MainProps {
 const styleSpacer = css`
   display: inline-block;
   ${ customMedia.greaterThan<MainProps>("pc")`
-    width: ${ ({ $width }) => $width.pc }px;
-    height: ${ ({ $height }) => $height.pc }px;
+    width: ${ ({ $width }) => $width.pc }%;
+    height: ${ ({ $height }) => $height.pc }%;
   ` };
   ${ customMedia.between<MainProps>("sp", "tb")`
-    width: ${ ({ $width }) => $width.tb }px;
-    height: ${ ({ $height }) => $height.tb }px;
+    width: ${ ({ $width }) => $width.tb }%;
+    height: ${ ({ $height }) => $height.tb }%;
   ` };
   ${ customMedia.lessThan<MainProps>("sp")`
-    width: ${ ({ $width }) => $width.sp }px;
-    height: ${ ({ $height }) => $height.sp }px;
+    width: ${ ({ $width }) => $width.sp }%;
+    height: ${ ({ $height }) => $height.sp }%;
   ` };
 `;
 
 const styleStacker = css`
   & > * {
     ${ customMedia.greaterThan<MainProps>("pc")`
-      margin-left: ${ ({ $width }) => $width.pc }px;
-      margin-bottom: ${ ({ $height }) => $height.pc }px;
+      margin-left: ${ ({ $width }) => $width.pc }%;
+      margin-bottom: ${ ({ $height }) => $height.pc }%;
     ` };
     ${ customMedia.between<MainProps>("sp", "tb")`
-      margin-left: ${ ({ $width }) => $width.tb }px;
-      margin-bottom: ${ ({ $height }) => $height.tb }px;
+      margin-left: ${ ({ $width }) => $width.tb }%;
+      margin-bottom: ${ ({ $height }) => $height.tb }%;
     ` };
     ${ customMedia.lessThan<MainProps>("sp")`
-      margin-left: ${ ({ $width }) => $width.sp }px;
-      margin-bottom: ${ ({ $height }) => $height.sp }px;
+      margin-left: ${ ({ $width }) => $width.sp }%;
+      margin-bottom: ${ ({ $height }) => $height.sp }%;
     ` };
     &:first-child { margin-left: 0; }
     &:last-child { margin-bottom: 0; }

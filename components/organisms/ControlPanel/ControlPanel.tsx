@@ -10,6 +10,7 @@ import { StepsProgressContext } from "../../providers/StepsProgressProvider/Step
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepsFactoryContext } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
+import { Spacer } from "../../providers/Spacer/Spacer";
 
 const SeekBarWrapper = styled.div`
   position: relative;
@@ -86,8 +87,80 @@ const SeekBarMemo: FC = memo(() => {
 export interface ControlPanelProps {
 }
 
-const Main = styled.div`
+const PanelB = styled.div`
+  background-image: url("lecture_panel_b.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+
+  & > div {
+    margin-top: 1.5%;
+    width: 100%;
+  }
+  &:before {
+    content: "";
+    padding-top: 15.417%;
+  }
 `;
+
+const PanelTypo = styled.p`
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  line-height: 1;
+  margin-top: 4%;
+  white-space: nowrap;
+  user-select: none;
+  @media (min-width: 320px) {
+    & {
+      font-size: calc(0.5625rem + ((1vw - 3.2px) * 1.4375));
+      min-height: 0vw;
+    }
+  }
+  @media (min-width: 1920px) {
+    & {
+      font-size: 32px;
+    }
+  }
+`;
+
+/**
+ * 3つのうち中央のパネル
+ * @param param0 
+ * @returns 
+ */
+export const PanelCenter: FC<ControlPanelProps> = ({
+}) => {
+
+  const { play, setPlay } = useContext(PlayContext);
+
+  return (
+    <PanelB>
+      <Spacer size={ 40 } />
+      <div>
+        <ArrowBtn id={ classNames.arrowPrev } dir="prev" />
+        <PanelTypo>前ページ</PanelTypo>
+      </div>
+      <Spacer size={ 18 } />
+      <div>
+        <PlayBtn isPlay={ play } onClick={ () => setPlay(s => !s) } />
+        <PanelTypo>{ play ? "一時停止" : "再生" }</PanelTypo>
+      </div>
+      <Spacer size={ 18 } />
+      <div>
+        <ArrowBtn id={ classNames.arrowNext } dir="next" />
+        <PanelTypo>次ページ</PanelTypo>
+      </div>
+      <Spacer size={ 80 } />
+      <div>
+        <ArrowBtn id={ classNames.arrowNext } dir="next" />
+        <PanelTypo>もう一度</PanelTypo>
+      </div>
+      <Spacer size={ 40 } />
+    </PanelB>
+  );
+};
 
 /**
  * コントロールパネル
@@ -96,18 +169,11 @@ const Main = styled.div`
  */
 export const ControlPanel: FC<ControlPanelProps> = ({
 }) => {
-
-  const { play, setPlay } = useContext(PlayContext);
-
   return (
     <>
-      <Main>
-        <SeekBarMemo />
-        <PlayBtn isPlay={ play } onClick={ () => setPlay(s => !s) } />
-        <ArrowBtn id={ classNames.arrowPrev } dir="prev" />
-        <ArrowBtn id={ classNames.arrowNext } dir="next" />
-        <Paginate id={ classNames.paginate } />
-      </Main>
+      <SeekBarMemo />
+      <PanelCenter />
+      <Paginate id={ classNames.paginate } />
     </>
   );
 };

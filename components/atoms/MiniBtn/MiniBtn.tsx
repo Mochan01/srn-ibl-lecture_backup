@@ -26,8 +26,13 @@ const Main = styled.div<MainProps>`
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
-  padding-top: 58.75%;
   cursor: pointer;
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 58.75%;
+  }
 `;
 
 export const MiniBtn: FC<MiniBtnProps> = ({
