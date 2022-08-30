@@ -1,12 +1,12 @@
-import React, { FC, useCallback, useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import { SeekBar } from "../../atoms/SeekBar/SeekBar";
 
 export interface SeekBarControllerProps {
   points: number[];
   stepsProgress: number;
-  pointerDown?: () => void;
-  pointerUp?: (nextProgress: number) => void;
+  onPointerDown?: () => void;
+  onPointerUp?: (nextProgress: number) => void;
 }
 
 const Main = styled.div`
@@ -15,8 +15,8 @@ const Main = styled.div`
 export const SeekBarController: FC<SeekBarControllerProps> = ({
   points,
   stepsProgress,
-  pointerDown = () => {},
-  pointerUp = () => {}
+  onPointerDown = () => {},
+  onPointerUp = () => {}
 }) => {
 
   // スライドのページが変わったときにシークバーの初期位置を更新する
@@ -34,14 +34,14 @@ export const SeekBarController: FC<SeekBarControllerProps> = ({
     });
 
     setValue(closest);
-    pointerUp(points.indexOf(closest));
+    onPointerUp(points.indexOf(closest));
   };
 
   return (
     <SeekBar
       value={ value }
       setValue={ setValue }
-      onPointerDown={ pointerDown }
+      onPointerDown={ onPointerDown }
       onPointerUp={ pointerUpHandle }
     />
   );

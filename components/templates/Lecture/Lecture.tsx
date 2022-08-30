@@ -1,12 +1,11 @@
 import React, { FC } from "react";
-import { Slider } from "../../molecules/Slider/Slider";
-import { Slide } from "../../molecules/Slide/Slide";
 import { StepsFactory } from "../../../factories/StepsFactory";
 import { ControlPanel } from "../../organisms/ControlPanel/ControlPanel";
 import { StepsFactoryProvider } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
 import { SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepsProgressProvider } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 import { PlayProvider } from "../../providers/PlayProvider/PlayProvider";
+import { Slider } from "../../organisms/Slider/Slider";
 
 export interface LectureProps {
 }
@@ -21,11 +20,7 @@ export const Lecture: FC<LectureProps> = ({
       <SlideProgressProvider>
         <StepsFactoryProvider stepsFactory={ stepsFactory }>
           <PlayProvider>
-            <Slider>
-              { stepsFactory.slides.map(x => (
-                <Slide key={ x } steps={ stepsFactory.getStepPropsBySlide(x) } />
-              )) }
-            </Slider>
+            <Slider />
             <ControlPanel />
           </PlayProvider>
         </StepsFactoryProvider>

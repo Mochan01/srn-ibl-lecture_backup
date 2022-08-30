@@ -1,15 +1,15 @@
-import React, { FC, useContext, Fragment } from "react";
+import React, { FC, Fragment } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 import { Step, StepProps } from "../../atoms/Step/Step";
-import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 import { Narration, NarrationProps } from "../../atoms/Narration/Narration";
-import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 
 export type StepNarrationProps = StepProps & NarrationProps;
 
 export interface SlideProps {
   steps: StepNarrationProps[];
+  stepsProgress: number;
+  play: boolean;
 }
 
 const Main = styled(SwiperSlide)`
@@ -26,12 +26,10 @@ const Main = styled(SwiperSlide)`
 `;
 
 export const Slide: FC<SlideProps> = ({
-  steps
+  steps,
+  stepsProgress,
+  play
 }) => {
-
-  const { stepsProgress, setStepsProgress } = useContext(StepsProgressContext);
-  const { play } = useContext(PlayContext);
-
   return (
     <>
       <Main>

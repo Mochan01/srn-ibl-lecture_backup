@@ -10,7 +10,6 @@ export interface SeekBarProps {
 }
 
 const StyledSlider = styled(SliderPrimitive.Root)`
-  position: absolute;
   display: flex;
   align-items: center;
   user-select: none;

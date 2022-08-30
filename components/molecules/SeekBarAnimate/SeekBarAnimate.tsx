@@ -5,6 +5,7 @@ import { SeekBar } from "../../atoms/SeekBar/SeekBar";
 
 export interface SeekBarAnimateProps {
   duration: number;
+  onRunning?: (percentage: number) => void;
   defaultPercentage?: number;
   isRunning?: boolean;
 }
@@ -20,6 +21,7 @@ const Main = styled.div`
  */
 export const SeekBarAnimate: FC<SeekBarAnimateProps> = ({
   duration,
+  onRunning = () => {},
   defaultPercentage = 0,
   isRunning = true
 }) => {
@@ -30,6 +32,8 @@ export const SeekBarAnimate: FC<SeekBarAnimateProps> = ({
   // 100%で停止
   const [value, setValue] = useState(defaultPercentage);
   useEffect(() => {
+    onRunning(value);
+
     if (value <= 100) return;
     setIsRunning(false);
   }, [value]);

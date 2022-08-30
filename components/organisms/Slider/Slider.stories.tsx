@@ -1,40 +1,35 @@
 import React from "react";
 // also exported from "@storybook/react" if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
+import { Slider, SliderProps } from "./Slider";
 import { StepsFactoryProvider } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
+import { StepsFactory } from "../../../factories/StepsFactory";
 import { SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepsProgressProvider } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 import { PlayProvider } from "../../providers/PlayProvider/PlayProvider";
-import { ControlPanel, ControlPanelProps } from "./ControlPanel";
-import { StepsFactory } from "../../../factories/StepsFactory";
 
 export default {
-  title: "organisms/ControlPanel",
-  component: ControlPanel
+  title: "organisms/Slider",
+  component: Slider
 } as Meta;
 
-const Template: Story<ControlPanelProps> = (args) => {
+const Template: Story<SliderProps> = (args) => {
 
   const stepsFactory = new StepsFactory();
 
-  return (
-    <StepsProgressProvider>
-      <SlideProgressProvider>
+  return <>
+    <SlideProgressProvider>
+      <StepsProgressProvider>
         <StepsFactoryProvider stepsFactory={ stepsFactory }>
           <PlayProvider>
-            <ControlPanel {...args} />
+            <Slider {...args} />
           </PlayProvider>
         </StepsFactoryProvider>
-      </SlideProgressProvider>
-    </StepsProgressProvider>
-  );
+      </StepsProgressProvider>
+    </SlideProgressProvider>
+  </>;
 };
 
-export const Sample: { args: ControlPanelProps } = Template.bind({});
+export const Sample: { args: SliderProps } = Template.bind({});
 Sample.args = {
-  stepsFactory: new StepsFactory(),
-  progress: {
-    slide: 0,
-    step: 0
-  }
 };
