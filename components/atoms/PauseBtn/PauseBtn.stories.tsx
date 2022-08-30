@@ -16,4 +16,5 @@ const Template: Story<PauseBtnProps> = (args) => {
 
 export const Sample: { args: PauseBtnProps } = Template.bind({});
 Sample.args = {
+  isPlay: false
 };
