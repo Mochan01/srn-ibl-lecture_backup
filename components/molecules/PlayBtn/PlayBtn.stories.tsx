@@ -6,7 +6,7 @@ import { PlayBtn, PlayBtnProps } from "./PlayBtn";
 import { PlayProvider } from "../../providers/PlayProvider/PlayProvider";
 
 export default {
-  title: "atoms/PlayBtn",
+  title: "molecules/PlayBtn",
   component: PlayBtn
 } as Meta;
 

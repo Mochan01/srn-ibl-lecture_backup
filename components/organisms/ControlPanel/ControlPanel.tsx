@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ArrowBtn } from "../../atoms/ArrowBtn/ArrowBtn";
 import { Paginate } from "../../atoms/Paginate/Pagenate";
 import { classNames } from "../../../data/ClassNames";
-import { PlayBtn } from "../../atoms/PlayBtn/PlayBtn";
+import { PlayBtn } from "../../molecules/PlayBtn/PlayBtn";
 import { SeekBarAnimate } from "../../molecules/SeekBarAnimate/SeekBarAnimate";
 import { SeekBarController } from "../../molecules/SeekBarController/SeekBarController";
 import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
