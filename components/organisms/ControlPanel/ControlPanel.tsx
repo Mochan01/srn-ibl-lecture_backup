@@ -1,6 +1,6 @@
 import React, { FC, useContext, useMemo, memo } from "react";
 import styled from "styled-components";
-import { ArrowBtn } from "../../atoms/ArrowBtn/ArrowBtn";
+import { ArrowBtn } from "../../molecules/ArrowBtn/ArrowBtn";
 import { Paginate } from "../../atoms/Paginate/Pagenate";
 import { classNames } from "../../../data/ClassNames";
 import { PlayBtn } from "../../molecules/PlayBtn/PlayBtn";

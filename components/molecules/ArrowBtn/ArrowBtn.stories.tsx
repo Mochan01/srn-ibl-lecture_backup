@@ -5,7 +5,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { ArrowBtn, ArrowBtnProps } from "./ArrowBtn";
 
 export default {
-  title: "atoms/ArrowBtn",
+  title: "molecules/ArrowBtn",
   component: ArrowBtn
 } as Meta;
 

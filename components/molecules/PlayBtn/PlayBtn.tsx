@@ -12,8 +12,8 @@ export const PlayBtn: FC<PlayBtnProps> = ({
 }) => {
   return (
     <>
-      <link rel="preload" href={ MINI_BUTTON_MUTATIONS.PLAY_OFF } as="image" />
       <link rel="preload" href={ MINI_BUTTON_MUTATIONS.PLAY_ON } as="image" />
+      <link rel="preload" href={ MINI_BUTTON_MUTATIONS.PLAY_OFF } as="image" />
       <MiniBtn
         onClick={ onClick }
         mutation={
