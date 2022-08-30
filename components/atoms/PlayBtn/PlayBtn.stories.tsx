@@ -2,19 +2,19 @@ import React from "react";
 // also exported from "@storybook/react" if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-import { PauseBtn, PauseBtnProps } from "./PauseBtn";
+import { PlayBtn, PlayBtnProps } from "./PlayBtn";
 import { PlayProvider } from "../../providers/PlayProvider/PlayProvider";
 
 export default {
-  title: "atoms/PauseBtn",
-  component: PauseBtn
+  title: "atoms/PlayBtn",
+  component: PlayBtn
 } as Meta;
 
-const Template: Story<PauseBtnProps> = (args) => {
-  return <PlayProvider><PauseBtn {...args} /></PlayProvider>;
+const Template: Story<PlayBtnProps> = (args) => {
+  return <PlayProvider><PlayBtn {...args} /></PlayProvider>;
 };
 
-export const Sample: { args: PauseBtnProps } = Template.bind({});
+export const Sample: { args: PlayBtnProps } = Template.bind({});
 Sample.args = {
   isPlay: false
 };

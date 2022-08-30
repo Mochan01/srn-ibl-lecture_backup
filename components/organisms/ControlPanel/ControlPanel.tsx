@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ArrowBtn } from "../../atoms/ArrowBtn/ArrowBtn";
 import { Paginate } from "../../atoms/Paginate/Pagenate";
 import { classNames } from "../../../data/ClassNames";
-import { PauseBtn } from "../../atoms/PauseBtn/PauseBtn";
+import { PlayBtn } from "../../atoms/PlayBtn/PlayBtn";
 import { SeekBarAnimate } from "../../molecules/SeekBarAnimate/SeekBarAnimate";
 import { SeekBarController } from "../../molecules/SeekBarController/SeekBarController";
 import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
@@ -103,7 +103,7 @@ export const ControlPanel: FC<ControlPanelProps> = ({
     <>
       <Main>
         <SeekBarMemo />
-        <PauseBtn isPlay={ play } onClick={ () => setPlay(s => !s) } />
+        <PlayBtn isPlay={ play } onClick={ () => setPlay(s => !s) } />
         <ArrowBtn id={ classNames.arrowPrev } dir="prev" />
         <ArrowBtn id={ classNames.arrowNext } dir="next" />
         <Paginate id={ classNames.paginate } />
