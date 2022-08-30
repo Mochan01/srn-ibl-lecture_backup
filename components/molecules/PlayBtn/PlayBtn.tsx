@@ -2,13 +2,13 @@ import React, { FC } from "react";
 import { MiniBtn, MINI_BUTTON_MUTATIONS } from "../../atoms/MiniBtn/MiniBtn";
 
 export interface PlayBtnProps {
-  isPlay: boolean;
+  isPlay?: boolean;
   onClick?: () => void;
 }
 
 export const PlayBtn: FC<PlayBtnProps> = ({
- isPlay,
- onClick = () => {}
+  isPlay = false,
+  onClick = () => {}
 }) => {
   return (
     <>
@@ -17,9 +17,9 @@ export const PlayBtn: FC<PlayBtnProps> = ({
       <MiniBtn
         onClick={ onClick }
         mutation={
-          isPlay
-            ? MINI_BUTTON_MUTATIONS.PLAY_OFF
-            : MINI_BUTTON_MUTATIONS.PLAY_ON
+          !isPlay
+            ? MINI_BUTTON_MUTATIONS.PLAY_ON
+            : MINI_BUTTON_MUTATIONS.PLAY_OFF
         }
       />
     </>
