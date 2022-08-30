@@ -5,7 +5,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { Lecture, LectureProps } from "./Lecture";
 
 export default {
-  title: "organisms/Lecture",
+  title: "templates/Lecture",
   component: Lecture
 } as Meta;
 

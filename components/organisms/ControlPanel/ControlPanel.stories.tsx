@@ -6,7 +6,7 @@ import { ControlPanel, ControlPanelProps } from "./ControlPanel";
 import { StepsFactory } from "../../../factories/StepsFactory";
 
 export default {
-  title: "molecules/ControlPanel",
+  title: "organisms/ControlPanel",
   component: ControlPanel
 } as Meta;
 
