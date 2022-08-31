@@ -9,7 +9,13 @@ export default {
   component: QuizChoiceBtn
 } as Meta;
 
-const Template: Story<QuizChoiceBtnProps> = (args) => <QuizChoiceBtn {...args} />;
+const Template: Story<QuizChoiceBtnProps> = (args) => {
+  return (
+    <div style={ { padding: 100 } }>
+      <QuizChoiceBtn {...args} />
+    </div>
+  );
+};
 
 export const Sample: { args: QuizChoiceBtnProps } = Template.bind({});
 Sample.args = {

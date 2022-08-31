@@ -23,7 +23,7 @@ const Main = styled.div<MainProps>`
   border-image-source: url(${ ({ mutation }) => mutation });
   border-image-slice: 15 15 15 15 fill;
   border-image-repeat: stretch;
-  cursor: pointer;
+  cursor: ${ ({ mutation }) => mutation === QUIZ_ANSWER_BTN.GRAY ? "auto" : "pointer" };
 `;
 
 interface CommentProps {

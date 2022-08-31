@@ -14,16 +14,34 @@ export interface QuizChoiceBtnProps extends MainProps {
 
 interface MainProps {
   mutation: typeof QUIZ_CHOICE_BTN[keyof typeof QUIZ_CHOICE_BTN];
+  isCorrect?: boolean;
 }
+
+const BORDER_W = 5;
+const SIGN_SIZE = 18;
 
 const Main = styled.div<MainProps>`
   padding: 2%;
   border-style: solid;
-  border-width: 5px;
+  border-width: ${ BORDER_W }px;
   border-image-source: url(${ ({ mutation }) => mutation });
   border-image-slice: 5 5 5 5 fill;
   border-image-repeat: stretch;
   cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: ${ SIGN_SIZE }%;
+    padding-top: ${ SIGN_SIZE }%;
+    background-image: url(${ ({ isCorrect }) => typeof isCorrect === "boolean" ? (isCorrect ? "Correct.png" : "Wrong.png") : "none" });
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -35%;
+    left: -10%;
+  }
 `;
 
 interface CommentProps {
@@ -51,6 +69,7 @@ const Comment = styled.p.attrs<CommentProps>(
 export const QuizChoiceBtn: FC<QuizChoiceBtnProps> = ({
   mutation,
   children,
+  isCorrect,
   onClick = () => {}
 }) => {
 
@@ -72,7 +91,12 @@ export const QuizChoiceBtn: FC<QuizChoiceBtnProps> = ({
 
   return (
     <>
-      <Main role="button" mutation={ mutation } onClick={ onClick }>
+      <Main
+        role="button"
+        mutation={ mutation }
+        isCorrect={ isCorrect }
+        onClick={ onClick }
+      >
         <Comment ref={ ref } fz={ fz } color={ color }>{ children }</Comment>
       </Main>
     </>
