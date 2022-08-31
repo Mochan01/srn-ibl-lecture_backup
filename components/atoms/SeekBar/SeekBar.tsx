@@ -9,48 +9,49 @@ export interface SeekBarProps {
   onPointerUp?: (value: number) => void;
 }
 
+const SLIDER_H = 12;
 const StyledSlider = styled(SliderPrimitive.Root)`
   display: flex;
   align-items: center;
   user-select: none;
   touch-action: none;
   width: 100%;
+  background-color: #042f78;
+  padding: 0 2px;
   &[data-orientation="horizontal"] {
-    height: 20px;
+    height: ${ SLIDER_H }px;
   }
   &[data-orientation="vertical"] {
     flex-direction: column;
-    width: 20px;
+    width: ${ SLIDER_H }px;
     height: 100px;
   }
 `;
 
+const BAR_H = 6;
 const StyledTrack = styled(SliderPrimitive.Track)`
-  background-color: red;
+  background: linear-gradient(to top, #b2b7c1, #fbfcfd);
   position: relative;
   flex-grow: 1;
-  border-radius: 9999px;
-  &[data-orientation="horizontal"] { height: 3px; }
+  &[data-orientation="horizontal"] { height: ${ BAR_H }px; }
   &[data-orientation="vertical"] { width: 3px; }
 `;
 
 const StyledRange = styled(SliderPrimitive.Range)`
   position: absolute;
-  background-color: #aaa;
-  border-radius: 9999px;
+  background: linear-gradient(to top, #05cff3, #a5ebfd);
   height: 100%;
 `;
 
+const THUMB_SIZE = 14;
 const StyledThumb = styled(SliderPrimitive.Thumb)`
   all: unset;
   display: block;
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  box-shadow: 0 2px 10px #000;
-  border-radius: 10px;
-  &:hover { background-color: pink; }
-  &:focus { box-shadow: 0 0 0 5px #000; }
+  width: ${ THUMB_SIZE }px;
+  height: ${ THUMB_SIZE }px;
+  background-image: url("lecture_play_circle.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 `;
 
 export interface SeekBarMemoProps extends SeekBarProps {
