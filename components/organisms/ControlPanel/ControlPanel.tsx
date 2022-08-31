@@ -14,7 +14,7 @@ import { Spacer } from "../../providers/Spacer/Spacer";
 
 const SeekBarWrapper = styled.div`
   position: relative;
-  height: 50px;
+  height: 12px;
 `;
 
 const SeekBarChild = styled.div<{ alpha?: number }>`
@@ -87,19 +87,25 @@ const SeekBarMemo: FC = memo(() => {
 export interface ControlPanelProps {
 }
 
-const PanelB = styled.div`
-  background-image: url("lecture_panel_b.png");
+const Panel = styled.div`
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   display: flex;
   justify-content: center;
+  &:before {
+    content: "";
+    display: block;
+  }
+`;
 
+const PanelB = styled(Panel)`
+  background-image: url("lecture_panel_b.png");
+  width: 48%;
   & > div {
     margin-top: 1.5%;
     width: 100%;
   }
   &:before {
-    content: "";
     padding-top: 15.417%;
   }
 `;
@@ -109,20 +115,9 @@ const PanelTypo = styled.p`
   text-align: center;
   color: #fff;
   line-height: 1;
-  margin-top: 4%;
   white-space: nowrap;
   user-select: none;
-  @media (min-width: 320px) {
-    & {
-      font-size: calc(0.5625rem + ((1vw - 3.2px) * 1.4375));
-      min-height: 0vw;
-    }
-  }
-  @media (min-width: 1920px) {
-    & {
-      font-size: 32px;
-    }
-  }
+  font-size: 9px;
 `;
 
 /**
@@ -142,12 +137,12 @@ export const PanelCenter: FC<ControlPanelProps> = ({
         <ArrowBtn id={ classNames.arrowPrev } dir="prev" />
         <PanelTypo>前ページ</PanelTypo>
       </div>
-      <Spacer size={ 18 } />
+      <Spacer size={ 24 } />
       <div>
         <PlayBtn isPlay={ play } onClick={ () => setPlay(s => !s) } />
         <PanelTypo>{ play ? "一時停止" : "再生" }</PanelTypo>
       </div>
-      <Spacer size={ 18 } />
+      <Spacer size={ 24 } />
       <div>
         <ArrowBtn id={ classNames.arrowNext } dir="next" />
         <PanelTypo>次ページ</PanelTypo>
@@ -162,6 +157,18 @@ export const PanelCenter: FC<ControlPanelProps> = ({
   );
 };
 
+const PanelA = styled(Panel)`
+  background-image: url("lecture_panel_a.png");
+  width: 26%;
+  &:before {
+    padding-top: 28.462%;
+  }
+`;
+
+const PanelWrapper = styled.div`
+  display: flex;
+`;
+
 /**
  * コントロールパネル
  * @param param0 
@@ -172,8 +179,14 @@ export const ControlPanel: FC<ControlPanelProps> = ({
   return (
     <>
       <SeekBarMemo />
-      <PanelCenter />
-      <Paginate id={ classNames.paginate } />
+      <PanelWrapper>
+        <PanelA>
+          <Paginate id={ classNames.paginate } />
+        </PanelA>
+        <PanelCenter />
+        <PanelA>
+        </PanelA>
+      </PanelWrapper>
     </>
   );
 };
