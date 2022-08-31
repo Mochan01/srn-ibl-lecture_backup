@@ -8,13 +8,19 @@ export interface PaginateProps {
 const Main = styled.div`
   & .swiper-pagination-bullet {
     display: block;
-    background-color: #ddd;
     width: 100%;
-    height: 50px;
+    max-width: 200px;
     margin-bottom: 10px;
-    opacity: 0.5;
+    background-image: url("lecture_star_off.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
     &.swiper-pagination-bullet-active {
-      opacity: 1;
+      background-image: url("lecture_star_on.png");
     }
   }
 `;
