@@ -13,6 +13,7 @@ const Main = styled.div<MainProps>`
   background-image: url(${({ image }) => image});
   background-repeat: no-repeat;
   background-size: contain;
+  background-color: #ddd;
   &:before {
     content: "";
     display: block;

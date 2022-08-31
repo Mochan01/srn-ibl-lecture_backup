@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 import { Step, StepProps } from "../../atoms/Step/Step";
 import { Narration, NarrationProps } from "../../atoms/Narration/Narration";
+import { QuizArea } from "../../molecules/QuizArea/QuizArea";
 
 export type StepNarrationProps = StepProps & NarrationProps;
 
@@ -36,11 +37,26 @@ export const Slide: FC<SlideProps> = ({
         { /** ステップに応じて描画 */ }
         { steps.map(({ image, sound }, i) => {
           if (i > stepsProgress) return;
-          return <Fragment key={ i }>
-            { i <= stepsProgress && <Step image={ image } /> }
-            { play && i === stepsProgress &&
-              <Narration sound={ sound } /> }
-          </Fragment>;
+          return (
+            <Fragment key={ i }>
+              { i <= stepsProgress && <Step image={ image } /> }
+              { play && i === stepsProgress &&
+                <Narration sound={ sound } /> }
+              <QuizArea
+                questions={[
+                  "アリスは川辺でおねえさんのよこにすわって",
+                  "なんにもすることがないのでとても退屈",
+                  "一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。",
+                  "「絵や会話のない本なんて、なんの役にもたたないじゃないの」とアリスは"
+                ]}
+                correctIndex={ 0 }
+                x={ 50 }
+                y={ 50 }
+                width={ 50 }
+                height={ 50 }
+              />
+            </Fragment>
+          );
         }) }
       </Main>
     </>
