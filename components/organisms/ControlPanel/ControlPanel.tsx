@@ -64,13 +64,6 @@ const SeekBarMemo: FC = memo(() => {
 
   return (
     <SeekBarWrapper>
-      <SeekBarChild alpha={ play ? 0 : 1 }>
-        <SeekBarController
-          points={ points }
-          stepsProgress={ stepsProgress }
-          onPointerUp={ nextValue => setStepsProgress(nextValue) }
-        />
-      </SeekBarChild>
       <SeekBarChild>
         { play &&
           <SeekBarAnimate
@@ -78,6 +71,14 @@ const SeekBarMemo: FC = memo(() => {
             onRunning={ onRunning }
             duration={ 5000 }
           /> }
+      </SeekBarChild>
+      <SeekBarChild alpha={ play ? 0 : 1 }>
+        <SeekBarController
+          points={ points }
+          stepsProgress={ stepsProgress }
+          onPointerDown={ () => setPlay(false) }
+          onPointerUp={ nextValue => setStepsProgress(nextValue) }
+        />
       </SeekBarChild>
     </SeekBarWrapper>
 
