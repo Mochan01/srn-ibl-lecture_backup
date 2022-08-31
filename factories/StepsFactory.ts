@@ -1,7 +1,7 @@
 import data from "../data/mock_data.json";
 import { Step } from "src-ibl-lecture-master/variable_types/Step";
 import _ from "lodash";
-import { StepNarrationProps } from "../components/molecules/Slide/Slide";
+import { StepNarrationProps } from "../components/organisms/Slide/Slide";
 
 export class StepsFactory {
 

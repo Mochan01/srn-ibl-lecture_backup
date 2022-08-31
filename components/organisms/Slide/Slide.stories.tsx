@@ -5,7 +5,7 @@ import { steps } from "../../../data/mock";
 import { Slide, SlideProps } from "./Slide";
 
 export default {
-  title: "molecules/Slide",
+  title: "organisms/Slide",
   component: Slide
 } as Meta;
 
