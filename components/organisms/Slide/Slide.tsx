@@ -51,7 +51,7 @@ export const Slide: FC<SlideProps> = ({
           return (
             <Fragment key={ i }>
               { i <= stepsProgress && <Step image={ image } /> }
-              { questions && i === stepsProgress && 
+              { questions && i <= stepsProgress && 
                 <QuizArea
                   questions={ questions }
                   correctIndex={ correctIndex }
