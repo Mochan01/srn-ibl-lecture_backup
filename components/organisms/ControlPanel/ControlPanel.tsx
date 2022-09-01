@@ -64,14 +64,16 @@ const SeekBarMemo: FC = memo(() => {
 
   return (
     <SeekBarWrapper>
-      <SeekBarChild>
-        { play &&
+      { /** 再生中にアニメーションするシークバー */ }
+      { play &&
+        <SeekBarChild>
           <SeekBarAnimate
             defaultPercentage={ points[stepsProgress] }
             onRunning={ onRunning }
             duration={ 5000 }
-          /> }
-      </SeekBarChild>
+          />
+        </SeekBarChild> }
+      { /** ユーザーが操作できるシークバー */ }
       <SeekBarChild alpha={ play ? 0 : 1 }>
         <SeekBarController
           points={ points }
