@@ -79,7 +79,7 @@ const SlideMemo: FC<SlideMemoProps>  = memo(({
 
   return (
     <Slide
-      steps={ stepsFactory.getStepPropsBySlide(index) }
+      steps={ stepsFactory.getStepDataPropsBySlide(index) }
       stepsProgress={ stepsProgress }
       play={ play }
     /> 

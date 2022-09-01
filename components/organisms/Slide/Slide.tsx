@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 import { Step, StepProps } from "../../atoms/Step/Step";
 import { Narration, NarrationProps } from "../../atoms/Narration/Narration";
-import { QuizArea } from "../../molecules/QuizArea/QuizArea";
+import { QuizArea, QuizAreaProps } from "../../molecules/QuizArea/QuizArea";
 
-export type StepNarrationProps = StepProps & NarrationProps;
+export type StepDataProps = StepProps & NarrationProps & QuizAreaProps;
 
 export interface SlideProps {
-  steps: StepNarrationProps[];
+  steps: StepDataProps[];
   stepsProgress: number;
   play: boolean;
 }
@@ -34,25 +34,31 @@ export const Slide: FC<SlideProps> = ({
   return (
     <>
       <Main>
-        { /** ステップに応じて描画 */ }
-        { steps.map(({ image, sound }, i) => {
+        { steps.map(({
+            image,
+            sound,
+            questions,
+            correctIndex,
+            x,
+            y,
+            width,
+            height
+          }, i) => {
+  
+          // ステップに応じて描画 
           if (i > stepsProgress) return;
+
           return (
             <Fragment key={ i }>
               { i <= stepsProgress && <Step image={ image } /> }
-              { i === stepsProgress && 
+              { questions && i === stepsProgress && 
                 <QuizArea
-                  questions={[
-                    "アリスは川辺でおねえさんのよこにすわって",
-                    "なんにもすることがないのでとても退屈",
-                    "一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。",
-                    "「絵や会話のない本なんて、なんの役にもたたないじゃないの」とアリスは"
-                  ]}
-                  correctIndex={ 0 }
-                  x={ 50 }
-                  y={ 50 }
-                  width={ 50 }
-                  height={ 50 } /> }
+                  questions={ questions }
+                  correctIndex={ correctIndex }
+                  x={ x }
+                  y={ y }
+                  width={ width }
+                  height={ height } /> }
               { play && i === stepsProgress &&
                 <Narration sound={ sound } /> }
             </Fragment>

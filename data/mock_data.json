@@ -14,7 +14,7 @@
               "time": "1899-12-29T15:00:04.000Z",
               "total_time": "1899-12-29T15:00:04.000Z",
               "seekbar_start": 0,
-              "seekbar_end": 9.76
+              "seekbar_end": 50
           },
           "animation": {
               "teacher": "animation_2",
@@ -66,44 +66,44 @@
               "mp3": "sample.mp3",
               "time": "1899-12-29T15:00:04.000Z",
               "total_time": "1899-12-29T15:00:08.000Z",
-              "seekbar_start": 9.77,
-              "seekbar_end": 19.51
+              "seekbar_start": 50.01,
+              "seekbar_end": 100
           },
           "animation": {
               "teacher": "animation_2",
               "student": "animation_1"
           },
           "image": {
-              "display_object_1": "image",
-              "display_file": "sample_b.png",
-              "slideshow_width": "",
-              "slide_show_height": "",
-              "width": "",
-              "height": "",
-              "x_axis": "",
-              "y_axis": ""
+              "display_object_1": "question_area",
+              "display_file": "",
+              "slideshow_width": 1200,
+              "slide_show_height": 800,
+              "width": 400,
+              "height": 100,
+              "x_axis": 50,
+              "y_axis": 50
           },
           "question": {
-              "button_1": "",
+              "button_1": "ほげほげほげ",
               "ans_1": false,
-              "button_2": "",
+              "button_2": "本日は晴天なり",
               "ans_2": false,
-              "button_3": "",
+              "button_3": "あああああああああああああああああ",
               "ans_3": false,
-              "button_4": "",
-              "ans_4": false,
+              "button_4": "てすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすと",
+              "ans_4": true,
               "answer_button": "",
               "is_result_step": false
           },
           "motion": {
-              "motion_1": "",
+              "motion_1": "fadein",
               "motion_2": ""
           },
           "next_steps": {
-              "next_step": "audio_end",
-              "go_to": "0_3",
-              "if_correct": "",
-              "if_wrong": ""
+              "next_step": "on_answer",
+              "go_to": "",
+              "if_correct": "1_6",
+              "if_wrong": "1_7"
           }
       },
       {
@@ -119,8 +119,8 @@
               "mp3": "sample.mp3",
               "time": "1899-12-29T15:00:06.000Z",
               "total_time": "1899-12-29T15:00:14.000Z",
-              "seekbar_start": 8.01,
-              "seekbar_end": 14
+              "seekbar_start": 26.68,
+              "seekbar_end": 46.67
           },
           "animation": {
               "teacher": "animation_2",
@@ -153,7 +153,7 @@
               "motion_2": ""
           },
           "next_steps": {
-              "next_step": "audio_end",
+              "next_step": "slide_end",
               "go_to": "1_2",
               "if_correct": "",
               "if_wrong": ""
@@ -171,9 +171,9 @@
           "audio": {
               "mp3": "sample.mp3",
               "time": "1899-12-29T15:00:11.000Z",
-              "total_time": "1899-12-29T15:00:25.000Z",
-              "seekbar_start": 14.01,
-              "seekbar_end": 25
+              "total_time": "1899-12-29T15:00:11.000Z",
+              "seekbar_start": 0.01,
+              "seekbar_end": 36.67
           },
           "animation": {
               "teacher": "animation_2",
@@ -224,9 +224,9 @@
           "audio": {
               "mp3": "sample.mp3",
               "time": "1899-12-29T15:00:05.000Z",
-              "total_time": "1899-12-29T15:00:30.000Z",
-              "seekbar_start": 25.01,
-              "seekbar_end": 30
+              "total_time": "1899-12-29T15:00:16.000Z",
+              "seekbar_start": 36.68,
+              "seekbar_end": 53.33
           },
           "animation": {
               "teacher": "animation_2",
@@ -259,7 +259,7 @@
               "motion_2": ""
           },
           "next_steps": {
-              "next_step": "audio_end",
+              "next_step": "slide_end",
               "go_to": "1_4",
               "if_correct": "",
               "if_wrong": ""
@@ -277,16 +277,16 @@
           "audio": {
               "mp3": "sample.mp3",
               "time": "1899-12-29T15:00:13.000Z",
-              "total_time": "1899-12-29T15:00:43.000Z",
-              "seekbar_start": 16.05,
-              "seekbar_end": 22.99
+              "total_time": "1899-12-29T15:00:13.000Z",
+              "seekbar_start": 0.01,
+              "seekbar_end": 6.95
           },
           "animation": {
               "teacher": "animation_2",
               "student": "animation_1"
           },
           "image": {
-              "display_object_1": "image",
+              "display_object_1": "question_area",
               "display_file": "sample_a.png",
               "slideshow_width": "",
               "slide_show_height": "",
@@ -330,9 +330,9 @@
           "audio": {
               "mp3": "sample.mp3",
               "time": "1899-12-29T15:00:05.000Z",
-              "total_time": "1899-12-29T15:00:48.000Z",
-              "seekbar_start": 23,
-              "seekbar_end": 25.67
+              "total_time": "1899-12-29T15:00:18.000Z",
+              "seekbar_start": 6.96,
+              "seekbar_end": 9.63
           },
           "animation": {
               "teacher": "animation_2",

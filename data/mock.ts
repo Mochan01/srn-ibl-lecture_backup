@@ -1,23 +1,23 @@
-import { StepNarrationProps } from "../components/molecules/Slide/Slide";
+import { StepDataProps } from "../components/organisms/Slide/Slide";
 
 export const sound = "sample.mp3";
 
-export const stepA: StepNarrationProps = {
+export const stepA: StepDataProps = {
   image: "sample_a.png",
   sound
 };
 
-export const stepB: StepNarrationProps = {
+export const stepB: StepDataProps = {
   image: "sample_b.png",
   sound
 };
 
-export const stepC: StepNarrationProps = {
+export const stepC: StepDataProps = {
   image: "sample_c.png",
   sound
 };
 
-export const steps: StepNarrationProps[] = [
+export const steps: StepDataProps[] = [
   stepA,
   stepB,
   stepC
