@@ -72,7 +72,10 @@ export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
 
   return (
     <>
-      <Main role="button" mutation={ mutation } onClick={ onClick }>
+      <Main role="button" mutation={ mutation } onClick={ () => {
+        if (mutation === QUIZ_ANSWER_BTN.GRAY) return;
+        onClick();
+      } }>
         <Comment ref={ ref } fz={ fz } color={ color }>解答</Comment>
       </Main>
     </>

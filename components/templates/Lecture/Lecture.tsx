@@ -14,6 +14,7 @@ import { Slide } from "../../organisms/Slide/Slide";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
+import { SeekProgressProvider, SeekProgressContext } from "../../providers/SeekProgressProvider/SeekProgressProvider";
 
 const Main: FC = ({
 }) => {
@@ -23,11 +24,13 @@ const Main: FC = ({
   const stepsFactory = useContext(StepsFactoryContext);
   const { setSlideProgress } = useContext(SlideProgressContext);
   const { setStepsProgress } = useContext(StepsProgressContext);
+  const { setSeekProgress } = useContext(SeekProgressContext);
 
-  // スライドが変わったとき、スライドとステップのインデックス初期化
+  // スライドが変わったとき諸々の進捗を初期化
   useEffect(() => {
     setSlideProgress(activeIndex);
     setStepsProgress(0);
+    setSeekProgress(0);
   }, [activeIndex]);
 
   return <>
@@ -88,16 +91,19 @@ const SlideMemo: FC<SlideMemoProps>  = memo(({
 
 export const Lecture = ({
 }) => {
+
   const stepsFactory = new StepsFactory();
 
   return <>
     <StepsProgressProvider>
       <SlideProgressProvider>
-        <StepsFactoryProvider stepsFactory={ stepsFactory }>
-          <PlayProvider>
-            <Main />
-          </PlayProvider>
-        </StepsFactoryProvider>
+        <SeekProgressProvider>
+          <StepsFactoryProvider stepsFactory={ stepsFactory }>
+            <PlayProvider>
+              <Main />
+            </PlayProvider>
+          </StepsFactoryProvider>
+        </SeekProgressProvider>
       </SlideProgressProvider>
     </StepsProgressProvider>
   </>;

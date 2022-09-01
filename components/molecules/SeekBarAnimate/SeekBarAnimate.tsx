@@ -26,9 +26,6 @@ export const SeekBarAnimate: FC<SeekBarAnimateProps> = ({
   isRunning = true
 }) => {
 
-  // defaultPercentageが変わったら位置を更新する
-  useEffect(() => setValue(defaultPercentage), [defaultPercentage]);
-
   // 100%で停止
   const [value, setValue] = useState(defaultPercentage);
   useEffect(() => {

@@ -14,7 +14,7 @@
               "time": "1899-12-29T15:00:04.000Z",
               "total_time": "1899-12-29T15:00:04.000Z",
               "seekbar_start": 0,
-              "seekbar_end": 50
+              "seekbar_end": 25
           },
           "animation": {
               "teacher": "animation_2",
@@ -43,12 +43,12 @@
               "is_result_step": false
           },
           "motion": {
-              "motion_1": "",
+              "motion_1": "fadein",
               "motion_2": ""
           },
           "next_steps": {
               "next_step": "audio_end",
-              "go_to": "0_2",
+              "go_to": "1_2",
               "if_correct": "",
               "if_wrong": ""
           }
@@ -66,114 +66,8 @@
               "mp3": "sample.mp3",
               "time": "1899-12-29T15:00:04.000Z",
               "total_time": "1899-12-29T15:00:08.000Z",
-              "seekbar_start": 50.01,
-              "seekbar_end": 100
-          },
-          "animation": {
-              "teacher": "animation_2",
-              "student": "animation_1"
-          },
-          "image": {
-              "display_object_1": "question_area",
-              "display_file": "",
-              "slideshow_width": 1200,
-              "slide_show_height": 800,
-              "width": 400,
-              "height": 100,
-              "x_axis": 50,
-              "y_axis": 50
-          },
-          "question": {
-              "button_1": "ほげほげほげ",
-              "ans_1": false,
-              "button_2": "本日は晴天なり",
-              "ans_2": false,
-              "button_3": "あああああああああああああああああ",
-              "ans_3": false,
-              "button_4": "てすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすと",
-              "ans_4": true,
-              "answer_button": "",
-              "is_result_step": false
-          },
-          "motion": {
-              "motion_1": "fadein",
-              "motion_2": ""
-          },
-          "next_steps": {
-              "next_step": "on_answer",
-              "go_to": "",
-              "if_correct": "1_6",
-              "if_wrong": "1_7"
-          }
-      },
-      {
-          "progress": {
-              "slide": 2,
-              "step": 1
-          },
-          "narrative": {
-              "narration": "突然だけど、あなたは、人工衛星を見たことある？",
-              "speech": ""
-          },
-          "audio": {
-              "mp3": "sample.mp3",
-              "time": "1899-12-29T15:00:06.000Z",
-              "total_time": "1899-12-29T15:00:14.000Z",
-              "seekbar_start": 26.68,
-              "seekbar_end": 46.67
-          },
-          "animation": {
-              "teacher": "animation_2",
-              "student": "animation_3"
-          },
-          "image": {
-              "display_object_1": "image",
-              "display_file": "sample_a.png",
-              "slideshow_width": "",
-              "slide_show_height": "",
-              "width": "",
-              "height": "",
-              "x_axis": "",
-              "y_axis": ""
-          },
-          "question": {
-              "button_1": "",
-              "ans_1": false,
-              "button_2": "",
-              "ans_2": false,
-              "button_3": "",
-              "ans_3": false,
-              "button_4": "",
-              "ans_4": false,
-              "answer_button": "",
-              "is_result_step": false
-          },
-          "motion": {
-              "motion_1": "fadein",
-              "motion_2": ""
-          },
-          "next_steps": {
-              "next_step": "slide_end",
-              "go_to": "1_2",
-              "if_correct": "",
-              "if_wrong": ""
-          }
-      },
-      {
-          "progress": {
-              "slide": 2,
-              "step": 2
-          },
-          "narrative": {
-              "narration": "実は、夜空を見上げても、肉眼ではほとんど見えないけれど、たくさんの人工衛星が地球の周りを周回しているわ。",
-              "speech": ""
-          },
-          "audio": {
-              "mp3": "sample.mp3",
-              "time": "1899-12-29T15:00:11.000Z",
-              "total_time": "1899-12-29T15:00:11.000Z",
-              "seekbar_start": 0.01,
-              "seekbar_end": 36.67
+              "seekbar_start": 25.01,
+              "seekbar_end": 50
           },
           "animation": {
               "teacher": "animation_2",
@@ -207,9 +101,221 @@
           },
           "next_steps": {
               "next_step": "audio_end",
-              "go_to": "1_3",
+              "go_to": "1_4",
               "if_correct": "",
               "if_wrong": ""
+          }
+      },
+      {
+          "progress": {
+              "slide": 1,
+              "step": 3
+          },
+          "narrative": {
+              "narration": "ハーイ、今日も私のラボにようこそ。",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "sample.mp3",
+              "time": "1899-12-29T15:00:04.000Z",
+              "total_time": "1899-12-29T15:00:12.000Z",
+              "seekbar_start": 50.01,
+              "seekbar_end": 75
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": "image",
+              "display_file": "",
+              "slideshow_width": "",
+              "slide_show_height": "",
+              "width": "",
+              "height": "",
+              "x_axis": "",
+              "y_axis": ""
+          },
+          "question": {
+              "button_1": "",
+              "ans_1": false,
+              "button_2": "",
+              "ans_2": false,
+              "button_3": "",
+              "ans_3": false,
+              "button_4": "",
+              "ans_4": false,
+              "answer_button": "",
+              "is_result_step": false
+          },
+          "motion": {
+              "motion_1": "",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": "1_4",
+              "if_correct": "",
+              "if_wrong": ""
+          }
+      },
+      {
+          "progress": {
+              "slide": 1,
+              "step": 4
+          },
+          "narrative": {
+              "narration": "ハーイ、今日も私のラボにようこそ。",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "sample.mp3",
+              "time": "1899-12-29T15:00:04.000Z",
+              "total_time": "1899-12-29T15:00:16.000Z",
+              "seekbar_start": 75.01,
+              "seekbar_end": 100
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": "image",
+              "display_file": "sample_c.png",
+              "slideshow_width": "",
+              "slide_show_height": "",
+              "width": "",
+              "height": "",
+              "x_axis": "",
+              "y_axis": ""
+          },
+          "question": {
+              "button_1": "",
+              "ans_1": false,
+              "button_2": "",
+              "ans_2": false,
+              "button_3": "",
+              "ans_3": false,
+              "button_4": "",
+              "ans_4": false,
+              "answer_button": "",
+              "is_result_step": false
+          },
+          "motion": {
+              "motion_1": "",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "slide_end",
+              "go_to": "2_1",
+              "if_correct": "",
+              "if_wrong": ""
+          }
+      },
+      {
+          "progress": {
+              "slide": 2,
+              "step": 1
+          },
+          "narrative": {
+              "narration": "突然だけど、あなたは、人工衛星を見たことある？",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "sample.mp3",
+              "time": "1899-12-29T15:00:10.000Z",
+              "total_time": "1899-12-29T15:00:22.000Z",
+              "seekbar_start": 40.01,
+              "seekbar_end": 73.33
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_3"
+          },
+          "image": {
+              "display_object_1": "image",
+              "display_file": "sample_a.png",
+              "slideshow_width": "",
+              "slide_show_height": "",
+              "width": "",
+              "height": "",
+              "x_axis": "",
+              "y_axis": ""
+          },
+          "question": {
+              "button_1": "",
+              "ans_1": false,
+              "button_2": "",
+              "ans_2": false,
+              "button_3": "",
+              "ans_3": false,
+              "button_4": "",
+              "ans_4": false,
+              "answer_button": "",
+              "is_result_step": false
+          },
+          "motion": {
+              "motion_1": "fadein",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": "1_2",
+              "if_correct": "",
+              "if_wrong": ""
+          }
+      },
+      {
+          "progress": {
+              "slide": 2,
+              "step": 2
+          },
+          "narrative": {
+              "narration": "実は、夜空を見上げても、肉眼ではほとんど見えないけれど、たくさんの人工衛星が地球の周りを周回しているわ。",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "sample.mp3",
+              "time": "1899-12-29T15:00:10.000Z",
+              "total_time": "1899-12-29T15:00:32.000Z",
+              "seekbar_start": 73.34,
+              "seekbar_end": 106.67
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": "question_area",
+              "display_file": "",
+              "slideshow_width": 1200,
+              "slide_show_height": 800,
+              "width": 100,
+              "height": 100,
+              "x_axis": 0,
+              "y_axis": 0
+          },
+          "question": {
+              "button_1": "ほげほげほげ",
+              "ans_1": false,
+              "button_2": "クイズ位置代目",
+              "ans_2": false,
+              "button_3": "あああああああああああああああああ",
+              "ans_3": false,
+              "button_4": "てすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすと",
+              "ans_4": true,
+              "answer_button": "",
+              "is_result_step": false
+          },
+          "motion": {
+              "motion_1": "fadein",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": "",
+              "if_correct": "1_2",
+              "if_wrong": "1_3"
           }
       },
       {
@@ -223,10 +329,10 @@
           },
           "audio": {
               "mp3": "sample.mp3",
-              "time": "1899-12-29T15:00:05.000Z",
-              "total_time": "1899-12-29T15:00:16.000Z",
-              "seekbar_start": 36.68,
-              "seekbar_end": 53.33
+              "time": "1899-12-29T15:00:10.000Z",
+              "total_time": "1899-12-29T15:00:42.000Z",
+              "seekbar_start": 106.68,
+              "seekbar_end": 140
           },
           "animation": {
               "teacher": "animation_2",
@@ -279,14 +385,14 @@
               "time": "1899-12-29T15:00:13.000Z",
               "total_time": "1899-12-29T15:00:13.000Z",
               "seekbar_start": 0.01,
-              "seekbar_end": 6.95
+              "seekbar_end": 72.22
           },
           "animation": {
               "teacher": "animation_2",
               "student": "animation_1"
           },
           "image": {
-              "display_object_1": "question_area",
+              "display_object_1": "image",
               "display_file": "sample_a.png",
               "slideshow_width": "",
               "slide_show_height": "",
@@ -331,8 +437,8 @@
               "mp3": "sample.mp3",
               "time": "1899-12-29T15:00:05.000Z",
               "total_time": "1899-12-29T15:00:18.000Z",
-              "seekbar_start": 6.96,
-              "seekbar_end": 9.63
+              "seekbar_start": 72.23,
+              "seekbar_end": 100
           },
           "animation": {
               "teacher": "animation_2",

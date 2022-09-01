@@ -1,7 +1,12 @@
-import React, { FC, memo, useCallback, useState } from "react";
+import React, { FC, memo, useCallback, useContext, useState } from "react";
 import styled from "styled-components";
 import { QuizAnswerBtn, QuizAnswerBtnProps, QUIZ_ANSWER_BTN } from "../../atoms/QuizAnswerBtn/QuizAnswerBtn";
 import { QuizChoiceBtn, QUIZ_CHOICE_BTN } from "../../atoms/QuizChoiceBtn/QuizChoiceBtn";
+import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
+import { SeekProgressContext } from "../../providers/SeekProgressProvider/SeekProgressProvider";
+import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
+import { StepsFactoryContext } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
+import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 
 export interface QuizAreaProps extends ContainerProps {
   questions: string[];
@@ -70,14 +75,33 @@ export const QuizArea: FC<QuizAreaProps> = ({
 
   // 解答ボタン 状態管理
   const [isAnswered, setAnswered] = useState<boolean>();
+  const { setPlay } = useContext(PlayContext);
+  const { slideProgress } = useContext(SlideProgressContext);
+  const { stepsProgress, setStepsProgress } = useContext(StepsProgressContext);
+  const { seekProgress, setSeekProgress } = useContext(SeekProgressContext);
+  const stepsFactory = useContext(StepsFactoryContext);
+
   const answerBtnProps = {
     len: questions.length,
     mutation: typeof isAnswered === "boolean"
       ? (isAnswered ? QUIZ_ANSWER_BTN.RED : QUIZ_ANSWER_BTN.WHITE)
       : QUIZ_ANSWER_BTN.GRAY,
     onClick: useCallback(() => {
+
+      // 再生中の場合は押させない
+      if (stepsProgress === seekProgress) return;
+
       setAnswered(true);
-    }, [])
+      setPlay(true);
+
+      const [correctStep, incorrectStep]
+        = stepsFactory.getNextStepOnQuiz(slideProgress, stepsProgress);
+      const isCorrect = chooseIndex === correctIndex;
+
+      setStepsProgress(isCorrect ? correctStep : incorrectStep);
+      setSeekProgress(isCorrect ? correctStep : incorrectStep);
+
+    }, [slideProgress, stepsProgress, seekProgress, chooseIndex])
   };
 
   return(
