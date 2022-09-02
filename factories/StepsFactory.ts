@@ -16,14 +16,11 @@ export class StepsFactory {
    * 次に進むべきステップを取得
    * @param slide 
    * @param step 
-   * @returns [正解した場合, 不正解した場合]
+   * @returns ステップの番号
    */
   public getNextStep(slide: number, step: number): number {
     const steps = this.getStepBySlide(slide);
     let { go_to } = steps[step].next_steps;
-
-    go_to = go_to.split("_")[1];
-
     return this.generateNum(go_to);
   }
 
@@ -32,38 +29,48 @@ export class StepsFactory {
    * 解答ステップの後の分岐に使う
    * @param slide 
    * @param step 
-   * @returns [正解した場合, 不正解した場合]
+   * @returns [正解した場合のステップの番号, 不正解した場合のステップの番号]
    */
   public getNextStepOnQuiz(slide: number, step: number): [number, number] {
     const steps = this.getStepBySlide(slide);
     let { if_correct, if_wrong } = steps[step].next_steps;
-
-    if_correct = if_correct.split("_")[1];
-    if_wrong = if_wrong.split("_")[1];
-
     return [this.generateNum(if_correct), this.generateNum(if_wrong)];
   }
 
-  public getNextStepDataProps(slide: number, step: number, correct = true): StepDataProps {
+  public getCurrentStepData(slide: number, step: number): StepDataProps {
     const stepData = this.getStepBySlide(slide);
-    let { next_steps }= stepData[step];
+    return this.generateStepDataProps(stepData[step]);
+  }
+
+  public getNextStepDataOnQuiz(slide: number, step: number): [StepDataProps, StepDataProps] {
+    const stepData = this.getStepBySlide(slide);
+    let { next_steps } = stepData[step];
 
     // ステップが終わりだったとき
     if (next_steps.next_step === "lecture_end") return;
+
+    let { if_correct, if_wrong } = stepData[step].next_steps;
+
+    return [
+      this.generateStepDataProps(
+        stepData[this.generateNum(if_correct)]
+      ),
+      this.generateStepDataProps(
+        stepData[this.generateNum(if_wrong)]
+      )
+    ]
+  }
+
+  public getNextStepData(slide: number, step: number): StepDataProps {
+    const stepData = this.getStepBySlide(slide);
+    let { next_steps } = stepData[step];
+
+    // ステップが終わりだったとき
+    if (next_steps.next_step === "lecture_end") return;
+
+    const nextStep = next_steps.go_to;
+    if (!nextStep) return;
   
-    let nextStep: string;
-    if (next_steps.next_step === "on_answer") {
-
-      // 解答ステップだったとき
-      if (correct) {
-        nextStep = next_steps.if_correct;
-      } else {
-        nextStep = next_steps.if_correct;
-      }
-    } else {
-      nextStep = next_steps.go_to;
-    }
-
     return this.generateStepDataProps(
       stepData[this.generateNum(nextStep)]
     );

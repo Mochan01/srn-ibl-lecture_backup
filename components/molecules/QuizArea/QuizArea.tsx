@@ -7,7 +7,7 @@ import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { SeekProgressContext } from "../../providers/SeekProgressProvider/SeekProgressProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepsFactoryContext } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
-import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
+import { useGetStepList } from "../../../hooks/useGetStepList"
 
 export interface QuizAreaProps extends ContainerProps {
   questions: StepDataProps["questions"];
@@ -78,9 +78,11 @@ export const QuizArea: FC<QuizAreaProps> = ({
   const [isAnswered, setAnswered] = useState<boolean>();
   const { setPlay } = useContext(PlayContext);
   const { slideProgress } = useContext(SlideProgressContext);
-  const { stepsProgress, setStepsProgress } = useContext(StepsProgressContext);
+  // const { stepsProgress, setStepsProgress } = useContext(StepsProgressContext);
   const { seekProgress, setSeekProgress } = useContext(SeekProgressContext);
   const stepsFactory = useContext(StepsFactoryContext);
+
+  const { currentProgress, stepList, setStepList } = useGetStepList();
 
   const answerBtnProps = {
     len: questions.length,
@@ -90,19 +92,19 @@ export const QuizArea: FC<QuizAreaProps> = ({
     onClick: useCallback(() => {
 
       // 再生中の場合は押させない
-      if (stepsProgress === seekProgress) return;
+      // if (stepsProgress === seekProgress) return;
 
       setAnswered(true);
       setPlay(true);
 
-      const [correctStep, incorrectStep]
-        = stepsFactory.getNextStepOnQuiz(slideProgress, stepsProgress);
-      const isCorrect = chooseIndex === correctIndex;
+      const [correct, inCorrect] = stepsFactory.getNextStepDataOnQuiz(
+        slideProgress,
+        stepList[stepList.length - 1].stepProgress
+      );
+  
+      setStepList(s => [...s, chooseIndex === correctIndex ? correct : inCorrect]);
 
-      setStepsProgress(isCorrect ? correctStep : incorrectStep);
-      setSeekProgress(isCorrect ? correctStep : incorrectStep);
-
-    }, [slideProgress, stepsProgress, seekProgress, chooseIndex])
+    }, [slideProgress, currentProgress, seekProgress, chooseIndex])
   };
 
   return(

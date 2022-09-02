@@ -128,7 +128,7 @@
           },
           "image": {
               "display_object_1": "image",
-              "display_file": "",
+              "display_file": "sample_d.png",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
@@ -225,8 +225,8 @@
               "mp3": "sample.mp3",
               "time": "1899-12-29T15:00:10.000Z",
               "total_time": "1899-12-29T15:00:22.000Z",
-              "seekbar_start": 40.01,
-              "seekbar_end": 73.33
+              "seekbar_start": 30.01,
+              "seekbar_end": 55
           },
           "animation": {
               "teacher": "animation_2",
@@ -279,7 +279,7 @@
               "time": "1899-12-29T15:00:10.000Z",
               "total_time": "1899-12-29T15:00:10.000Z",
               "seekbar_start": 0.01,
-              "seekbar_end": 33.33
+              "seekbar_end": 25
           },
           "animation": {
               "teacher": "animation_2",
@@ -314,7 +314,7 @@
           "next_steps": {
               "next_step": "audio_end",
               "go_to": "",
-              "if_correct": "1_2",
+              "if_correct": "1_4",
               "if_wrong": "1_3"
           }
       },
@@ -331,8 +331,61 @@
               "mp3": "sample.mp3",
               "time": "1899-12-29T15:00:10.000Z",
               "total_time": "1899-12-29T15:00:20.000Z",
-              "seekbar_start": 33.34,
-              "seekbar_end": 66.67
+              "seekbar_start": 25.01,
+              "seekbar_end": 50
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": "image",
+              "display_file": "sample_d.png",
+              "slideshow_width": "",
+              "slide_show_height": "",
+              "width": "",
+              "height": "",
+              "x_axis": "",
+              "y_axis": ""
+          },
+          "question": {
+              "button_1": "",
+              "ans_1": false,
+              "button_2": "",
+              "ans_2": false,
+              "button_3": "",
+              "ans_3": false,
+              "button_4": "",
+              "ans_4": false,
+              "answer_button": "",
+              "is_result_step": true
+          },
+          "motion": {
+              "motion_1": "",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "slide_end",
+              "go_to": "1_3",
+              "if_correct": "",
+              "if_wrong": ""
+          }
+      },
+      {
+          "progress": {
+              "slide": 2,
+              "step": 4
+          },
+          "narrative": {
+              "narration": "見たことがある人は、なかなかの天文マニアね（笑）",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "sample.mp3",
+              "time": "1899-12-29T15:00:10.000Z",
+              "total_time": "1899-12-29T15:00:10.000Z",
+              "seekbar_start": 0.01,
+              "seekbar_end": 25
           },
           "animation": {
               "teacher": "animation_2",
@@ -365,7 +418,7 @@
               "motion_2": ""
           },
           "next_steps": {
-              "next_step": "slide_end",
+              "next_step": "lecture_end",
               "go_to": "1_4",
               "if_correct": "",
               "if_wrong": ""

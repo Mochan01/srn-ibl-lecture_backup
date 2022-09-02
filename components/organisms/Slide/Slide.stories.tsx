@@ -3,11 +3,13 @@ import React, { useContext, useEffect } from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { steps } from "../../../data/mock";
 import { Slide, SlideProps } from "./Slide";
-import { SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
+import { SlideProgressContext, SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepsFactoryProvider } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
 import { StepsProgressContext, StepsProgressProvider } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 import { StepsFactory } from "../../../factories/StepsFactory";
 import { PlayContext, PlayProvider } from "../../providers/PlayProvider/PlayProvider";
+import { SeekProgressProvider } from "../../providers/SeekProgressProvider/SeekProgressProvider";
+import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
 
 export default {
   title: "organisms/Slide",
@@ -22,10 +24,14 @@ const Template: Story<SlideProps>  = (args) => {
     <SlideProgressProvider>
       <StepsFactoryProvider stepsFactory={ stepsFactory }>
         <StepsProgressProvider>
-          <PlayProvider>
-            <Init />
-            <Slide {...args} />
-          </PlayProvider>
+          <SeekProgressProvider>
+            <StepListProvider stepsFactory={ stepsFactory }>
+              <PlayProvider>
+                <Init />
+                <Slide {...args} />
+              </PlayProvider>
+            </StepListProvider>
+          </SeekProgressProvider>
         </StepsProgressProvider>
       </StepsFactoryProvider>
     </SlideProgressProvider>
@@ -36,10 +42,12 @@ const Init = () => {
 
   const { setPlay } = useContext(PlayContext);
   const { setStepsProgress } = useContext(StepsProgressContext);
+  const { setSlideProgress } = useContext(SlideProgressContext);
 
   useEffect(() => {
     setPlay(true);
     setStepsProgress(0);
+    setSlideProgress(1);
   }, []);
 
   return null;

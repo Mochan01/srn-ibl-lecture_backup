@@ -1,14 +1,14 @@
-import React, { FC, Fragment, useContext, useMemo } from "react";
+import React, { FC, Fragment, useContext } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
 import { Step } from "../../atoms/Step/Step";
 import { Narration } from "../../atoms/Narration/Narration";
-import { QuizArea, QuizAreaProps } from "../../molecules/QuizArea/QuizArea";
+import { QuizArea } from "../../molecules/QuizArea/QuizArea";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
-import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
+import { Boy } from "../../atoms/Boy/Boy";
 import { StepsFactoryContext } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
-import { Boy } from "../../atoms/Boy/Boy";
+import { useGetStepList } from "../../../hooks/useGetStepList";
 
 export interface SlideProps {
 }
@@ -30,31 +30,21 @@ export const Slide: FC<SlideProps> = ({
 }) => {
 
   const { play } = useContext(PlayContext);
+  const { stepList, setStepList, currentProgress } = useGetStepList();
   const { slideProgress } = useContext(SlideProgressContext);
-  const { stepsProgress, setStepsProgress } = useContext(StepsProgressContext);
   const stepsFactory = useContext(StepsFactoryContext);
 
-  const stepData = useMemo(() => {
-    return stepsFactory.getStepDataPropsBySlide(slideProgress);
-  }, [slideProgress]);
-
   const onEnd = () => {
-    const { stepProgress, questions }
-      = stepsFactory.getNextStepDataProps(slideProgress, stepsProgress);
+    const stepData = stepsFactory.getNextStepData(slideProgress, currentProgress);
+    if (!stepData) return;
 
-    // ステップが終わりだったとき
-    if (!stepProgress) return;
-
-    // 解答ステップだったとき
-    if (questions) return;
-
-    setStepsProgress(stepProgress);
+    setStepList(s => [...s, stepData]);
   };
 
   return (
     <>
       <Main>
-        { stepData.map(({
+        { stepList && stepList.map(({
             image,
             sound,
             boySpeechDuration,
@@ -65,16 +55,13 @@ export const Slide: FC<SlideProps> = ({
             width,
             height
           }, i) => {
-  
-          // ステップに応じて描画
-          if (i > stepsProgress) return;
+
+          const currentProgress = stepList[stepList.length - 1].stepProgress;
 
           return (
             <Fragment key={ i }>
-              { i <= stepsProgress && <Step image={ image } /> }
-              {/**
-               * 
-              { questions && i <= stepsProgress && 
+              { i <= currentProgress && <Step image={ image } /> }
+              { questions && i <= currentProgress && 
                 <QuizArea
                   questions={ questions }
                   correctIndex={ correctIndex }
@@ -82,11 +69,9 @@ export const Slide: FC<SlideProps> = ({
                   y={ y }
                   width={ width }
                   height={ height } /> }
-               * 
-               */}
-              { play && i === stepsProgress && !boySpeechDuration &&
+              { play && i === currentProgress && !boySpeechDuration &&
                 <Narration sound={ sound } onEnd={ onEnd } /> }
-              { play && i === stepsProgress && boySpeechDuration &&
+              { play && i === currentProgress && boySpeechDuration &&
                 <Boy boySpeechDuration={ boySpeechDuration } onEnd={ onEnd } /> }
             </Fragment>
           );
