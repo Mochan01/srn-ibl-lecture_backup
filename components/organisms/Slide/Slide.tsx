@@ -8,6 +8,7 @@ import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 import { StepsFactoryContext } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
+import { Boy } from "../../atoms/Boy/Boy";
 
 export interface SlideProps {
 }
@@ -56,6 +57,7 @@ export const Slide: FC<SlideProps> = ({
         { stepData.map(({
             image,
             sound,
+            boySpeechDuration,
             questions,
             correctIndex,
             x,
@@ -64,7 +66,7 @@ export const Slide: FC<SlideProps> = ({
             height
           }, i) => {
   
-          // ステップに応じて描画 
+          // ステップに応じて描画
           if (i > stepsProgress) return;
 
           return (
@@ -82,8 +84,10 @@ export const Slide: FC<SlideProps> = ({
                   height={ height } /> }
                * 
                */}
-              { play && i === stepsProgress &&
+              { play && i === stepsProgress && !boySpeechDuration &&
                 <Narration sound={ sound } onEnd={ onEnd } /> }
+              { play && i === stepsProgress && boySpeechDuration &&
+                <Boy boySpeechDuration={ boySpeechDuration } onEnd={ onEnd } /> }
             </Fragment>
           );
         }) }

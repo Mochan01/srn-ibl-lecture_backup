@@ -59,8 +59,8 @@
               "step": 2
           },
           "narrative": {
-              "narration": "前回、初めてのグループワークはどうだった？",
-              "speech": ""
+              "narration": "",
+              "speech": "前回、初めてのグループワークはどうだった？"
           },
           "audio": {
               "mp3": "sample.mp3",
@@ -100,7 +100,7 @@
               "motion_2": ""
           },
           "next_steps": {
-              "next_step": "audio_end",
+              "next_step": "3_seconds",
               "go_to": "1_4",
               "if_correct": "",
               "if_wrong": ""
@@ -206,7 +206,7 @@
               "motion_2": ""
           },
           "next_steps": {
-              "next_step": "slide_end",
+              "next_step": "audio_end",
               "go_to": "2_1",
               "if_correct": "",
               "if_wrong": ""
@@ -259,7 +259,7 @@
               "motion_2": ""
           },
           "next_steps": {
-              "next_step": "audio_end",
+              "next_step": "slide_end",
               "go_to": "1_2",
               "if_correct": "",
               "if_wrong": ""
@@ -277,9 +277,9 @@
           "audio": {
               "mp3": "sample.mp3",
               "time": "1899-12-29T15:00:10.000Z",
-              "total_time": "1899-12-29T15:00:32.000Z",
-              "seekbar_start": 73.34,
-              "seekbar_end": 106.67
+              "total_time": "1899-12-29T15:00:10.000Z",
+              "seekbar_start": 0.01,
+              "seekbar_end": 33.33
           },
           "animation": {
               "teacher": "animation_2",
@@ -330,9 +330,9 @@
           "audio": {
               "mp3": "sample.mp3",
               "time": "1899-12-29T15:00:10.000Z",
-              "total_time": "1899-12-29T15:00:42.000Z",
-              "seekbar_start": 106.68,
-              "seekbar_end": 140
+              "total_time": "1899-12-29T15:00:20.000Z",
+              "seekbar_start": 33.34,
+              "seekbar_end": 66.67
           },
           "animation": {
               "teacher": "animation_2",
@@ -358,7 +358,7 @@
               "button_4": "",
               "ans_4": false,
               "answer_button": "",
-              "is_result_step": false
+              "is_result_step": true
           },
           "motion": {
               "motion_1": "",
