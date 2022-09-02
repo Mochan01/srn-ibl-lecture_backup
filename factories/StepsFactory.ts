@@ -12,31 +12,6 @@ export class StepsFactory {
     this._steps = data.steps;
   }
 
-  /**
-   * 次に進むべきステップを取得
-   * @param slide 
-   * @param step 
-   * @returns ステップの番号
-   */
-  public getNextStep(slide: number, step: number): number {
-    const steps = this.getStepBySlide(slide);
-    let { go_to } = steps[step].next_steps;
-    return this.generateNum(go_to);
-  }
-
-  /**
-   * 次に進むべきステップを取得
-   * 解答ステップの後の分岐に使う
-   * @param slide 
-   * @param step 
-   * @returns [正解した場合のステップの番号, 不正解した場合のステップの番号]
-   */
-  public getNextStepOnQuiz(slide: number, step: number): [number, number] {
-    const steps = this.getStepBySlide(slide);
-    let { if_correct, if_wrong } = steps[step].next_steps;
-    return [this.generateNum(if_correct), this.generateNum(if_wrong)];
-  }
-
   public getCurrentStepData(slide: number, step: number): StepDataProps {
     const stepData = this.getStepBySlide(slide);
     return this.generateStepDataProps(stepData[step]);
@@ -74,16 +49,6 @@ export class StepsFactory {
     return this.generateStepDataProps(
       stepData[this.generateNum(nextStep)]
     );
-  }
-
-  /**
-   * ステップを生成するためのデータを取得
-   * @param slide 
-   * @returns 
-   */
-  public getStepDataPropsBySlide(slide: number): StepDataProps[] {
-    const steps = this.getStepBySlide(slide);
-    return steps.map(x => this.generateStepDataProps(x));
   }
 
   /**

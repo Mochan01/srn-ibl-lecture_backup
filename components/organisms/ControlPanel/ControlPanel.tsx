@@ -133,6 +133,7 @@ const SeekBarMemo: FC = memo(() => {
   }, [slideProgress]);
 
   const onRunning = percentage => {
+    /*
 
     // 100%に達したとき
     if (percentage > 100) {
@@ -161,6 +162,7 @@ const SeekBarMemo: FC = memo(() => {
 
       return;
     }
+    */
   };
 
   return <>
