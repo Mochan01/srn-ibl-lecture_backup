@@ -1,12 +1,11 @@
 import data from "../data/mock_data.json";
-import { Step } from "src-ibl-lecture-master/variable_types/Step";
+import { StepData } from "src-ibl-lecture-master/variable_types/Step";
 import _ from "lodash";
-import { StepDataProps } from "../components/organisms/Slide/Slide";
-import { QuizAreaProps } from "../components/molecules/QuizArea/QuizArea";
+import { StepDataProps, BoySpeechProps, QuizProps } from "../variable_types/StepDataProps";
 
 export class StepsFactory {
 
-  private _steps: Step[];
+  private _steps: StepData[];
 
   constructor() {
     // @ts-ignore あとでデータの型をあわせる
@@ -45,6 +44,31 @@ export class StepsFactory {
     return [this.generateNum(if_correct), this.generateNum(if_wrong)];
   }
 
+  public getNextStepDataProps(slide: number, step: number, correct = true): StepDataProps {
+    const stepData = this.getStepBySlide(slide);
+    let { next_steps }= stepData[step];
+
+    // ステップが終わりだったとき
+    if (next_steps.next_step === "lecture_end") return;
+  
+    let nextStep: string;
+    if (next_steps.next_step === "on_answer") {
+
+      // 解答ステップだったとき
+      if (correct) {
+        nextStep = next_steps.if_correct;
+      } else {
+        nextStep = next_steps.if_correct;
+      }
+    } else {
+      nextStep = next_steps.go_to;
+    }
+
+    return this.generateStepDataProps(
+      stepData[this.generateNum(nextStep)]
+    );
+  }
+
   /**
    * ステップを生成するためのデータを取得
    * @param slide 
@@ -52,13 +76,7 @@ export class StepsFactory {
    */
   public getStepDataPropsBySlide(slide: number): StepDataProps[] {
     const steps = this.getStepBySlide(slide);
-    return steps.map(x => {
-      return {
-        image: x.image.display_file,
-        sound: x.audio.mp3,
-        ...this.buildQuizData(x)
-      }
-    });
+    return steps.map(x => this.generateStepDataProps(x));
   }
 
   /**
@@ -66,7 +84,7 @@ export class StepsFactory {
    * @param slide 
    * @returns 
    */
-  public getSeekBarStartsBySlide(slide: number): Step["audio"]["seekbar_start"][] {
+  public getSeekBarStartsBySlide(slide: number): StepData["audio"]["seekbar_start"][] {
     const steps = this.getStepBySlide(slide);
     return steps.map(x => x.audio.seekbar_start);
   }
@@ -79,12 +97,48 @@ export class StepsFactory {
     return _.uniq(slides);
   }
 
+  private generateStepDataProps(data: StepData): StepDataProps {
+    return {
+      stepProgress: data.progress.step - 1,
+      image: data.image.display_file,
+      sound: data.audio.mp3,
+      ...this.buildQuizData(data),
+      ...this.generateBoySpeechDuration(data.next_steps.next_step)
+    }
+  }
+
+  private generateBoySpeechDuration(ev: StepData["next_steps"]["next_step"]): BoySpeechProps {
+
+    let boySpeechDuration: number;
+
+    switch(ev) {
+      case "1_second":
+        boySpeechDuration = 1000;
+        break;
+      case "2_seconds":
+        boySpeechDuration = 2000;
+        break;
+      case "3_seconds":
+        boySpeechDuration = 3000;
+        break;
+      case "4_seconds":
+        boySpeechDuration = 4000;
+        break;
+      case "5_seconds":
+        boySpeechDuration = 5000;
+        break;
+    }
+
+    if (!boySpeechDuration) return;
+    return { boySpeechDuration };
+  }
+
   /**
    * 指定したスライドのステップを取得
    * @param slide 
    * @returns 
    */
-  private getStepBySlide(slide: number): Step[] {
+  private getStepBySlide(slide: number): StepData[] {
     return this._steps.filter(({ progress }) => progress.slide - 1 === slide);
   }
 
@@ -93,7 +147,7 @@ export class StepsFactory {
    * @returns 
    */
   private generateNum(val: string): number {
-    return Number(val) - 1;
+    return Number(val.split("_")[1]) - 1;
   }
 
   /**
@@ -101,9 +155,9 @@ export class StepsFactory {
    * @param step 
    * @returns 
    */
-  private buildQuizData(step: Step): QuizAreaProps {
-    const { question, image } = step;
-    if (step.image.display_object_1 !== "question_area") return;
+  private buildQuizData(data: StepData): QuizProps {
+    const { question, image } = data;
+    if (data.image.display_object_1 !== "question_area") return;
 
     const questions = [
       question.button_1,

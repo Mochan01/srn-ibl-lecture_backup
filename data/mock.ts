@@ -1,4 +1,4 @@
-import { StepDataProps } from "../components/organisms/Slide/Slide";
+import { StepDataProps } from "../variable_types/StepDataProps";
 
 export const sound = "sample.mp3";
 
@@ -10,6 +10,7 @@ export const questions = [
 ];
 
 export const stepA: StepDataProps = {
+  stepProgress: 0,
   image: "sample_a.png",
   questions,
   correctIndex: 0,
@@ -17,6 +18,7 @@ export const stepA: StepDataProps = {
 };
 
 export const stepB: StepDataProps = {
+  stepProgress: 0,
   image: "sample_b.png",
   questions,
   correctIndex: 0,
@@ -24,6 +26,7 @@ export const stepB: StepDataProps = {
 };
 
 export const stepC: StepDataProps = {
+  stepProgress: 0,
   image: "sample_c.png",
   questions,
   correctIndex: 0,

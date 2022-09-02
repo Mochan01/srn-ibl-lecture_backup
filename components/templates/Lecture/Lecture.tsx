@@ -59,7 +59,7 @@ const Main: FC = ({
           return (
             <SwiperSlide key={ x }>
               { /** activeIndexのスライドのみ描画する */ }
-              { x === activeIndex && <SlideMemo index={ x } /> }
+              { x === activeIndex && <Slide  /> }
             </SwiperSlide>
           );
       }) }
@@ -68,26 +68,8 @@ const Main: FC = ({
   </>;
 };
 
-interface SlideMemoProps {
-  index: number;
+export interface LectureProps {
 }
-
-const SlideMemo: FC<SlideMemoProps>  = memo(({
-  index
-}) => {
-
-  const stepsFactory = useContext(StepsFactoryContext);
-  const { stepsProgress } = useContext(StepsProgressContext);
-  const { play } = useContext(PlayContext);
-
-  return (
-    <Slide
-      steps={ stepsFactory.getStepDataPropsBySlide(index) }
-      stepsProgress={ stepsProgress }
-      play={ play }
-    /> 
-  );
-});
 
 export const Lecture = ({
 }) => {

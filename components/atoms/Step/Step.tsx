@@ -1,12 +1,13 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import { StepDataProps } from "../../../variable_types/StepDataProps";
 
 export interface StepProps {
-  image: string;
+  image: StepDataProps["image"];
 }
 
 interface MainProps {
-  image: StepProps["image"];
+  image: StepDataProps["image"];
 }
 
 const Main = styled.div<MainProps>`

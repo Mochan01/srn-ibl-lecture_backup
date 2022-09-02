@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import {useSound} from "use-sound";
+import { StepDataProps } from "../variable_types/StepDataProps";
 
 export interface UseNarration {
   /**
    * 音声ファイルのパス
    */
-  sound: string;
+  sound: StepDataProps["sound"];
   /**
    * 音声が終わったとき
    */

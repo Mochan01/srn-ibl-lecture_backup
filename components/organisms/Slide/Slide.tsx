@@ -1,16 +1,15 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment, useContext, useMemo } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
-import { Step, StepProps } from "../../atoms/Step/Step";
-import { Narration, NarrationProps } from "../../atoms/Narration/Narration";
+import { Step } from "../../atoms/Step/Step";
+import { Narration } from "../../atoms/Narration/Narration";
 import { QuizArea, QuizAreaProps } from "../../molecules/QuizArea/QuizArea";
-
-export type StepDataProps = StepProps & NarrationProps & QuizAreaProps;
+import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
+import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
+import { StepsFactoryContext } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
+import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 
 export interface SlideProps {
-  steps: StepDataProps[];
-  stepsProgress: number;
-  play: boolean;
 }
 
 const Main = styled(SwiperSlide)`
@@ -27,14 +26,34 @@ const Main = styled(SwiperSlide)`
 `;
 
 export const Slide: FC<SlideProps> = ({
-  steps,
-  stepsProgress,
-  play
 }) => {
+
+  const { play } = useContext(PlayContext);
+  const { slideProgress } = useContext(SlideProgressContext);
+  const { stepsProgress, setStepsProgress } = useContext(StepsProgressContext);
+  const stepsFactory = useContext(StepsFactoryContext);
+
+  const stepData = useMemo(() => {
+    return stepsFactory.getStepDataPropsBySlide(slideProgress);
+  }, [slideProgress]);
+
+  const onEnd = () => {
+    const { stepProgress, questions }
+      = stepsFactory.getNextStepDataProps(slideProgress, stepsProgress);
+
+    // ステップが終わりだったとき
+    if (!stepProgress) return;
+
+    // 解答ステップだったとき
+    if (questions) return;
+
+    setStepsProgress(stepProgress);
+  };
+
   return (
     <>
       <Main>
-        { steps.map(({
+        { stepData.map(({
             image,
             sound,
             questions,
@@ -51,6 +70,8 @@ export const Slide: FC<SlideProps> = ({
           return (
             <Fragment key={ i }>
               { i <= stepsProgress && <Step image={ image } /> }
+              {/**
+               * 
               { questions && i <= stepsProgress && 
                 <QuizArea
                   questions={ questions }
@@ -59,8 +80,10 @@ export const Slide: FC<SlideProps> = ({
                   y={ y }
                   width={ width }
                   height={ height } /> }
+               * 
+               */}
               { play && i === stepsProgress &&
-                <Narration sound={ sound } /> }
+                <Narration sound={ sound } onEnd={ onEnd } /> }
             </Fragment>
           );
         }) }
