@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { classNames } from "../../../data/ClassNames";
 import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
+import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
 
 export default {
   title: "organisms/ControlPanel",
@@ -43,7 +44,9 @@ const Template: Story<ControlPanelProps> = (args) => {
     <SlideProgressProvider>
       <StepListProvider>
         <PlayProvider>
-          <ControlPanel {...args} />
+          <RunSeekProvider>
+            <ControlPanel {...args} />
+          </RunSeekProvider>
         </PlayProvider>
       </StepListProvider>
     </SlideProgressProvider>

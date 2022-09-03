@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect, useState, memo } from "react";
+import React, { FC, useContext, useEffect, useState } from "react";
 import { StepsFactory } from "../../../factories/StepsFactory";
 import { ControlPanel } from "../../organisms/ControlPanel/ControlPanel";
 import { SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
@@ -11,6 +11,7 @@ import { Slide } from "../../organisms/Slide/Slide";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList";
+import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
 
 const Main: FC = ({
 }) => {
@@ -69,7 +70,9 @@ export const Lecture = ({
     <SlideProgressProvider>
       <StepListProvider>
         <PlayProvider>
-          <Main />
+          <RunSeekProvider>
+            <Main />
+          </RunSeekProvider>
         </PlayProvider>
       </StepListProvider>
     </SlideProgressProvider>

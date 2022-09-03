@@ -3,13 +3,20 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
 import { SeekBarAnimate, SeekBarAnimateProps } from "./SeekBarAnimate";
+import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
 
 export default {
   title: "molecules/SeekBarAnimate",
   component: SeekBarAnimate
 } as Meta;
 
-const Template: Story<SeekBarAnimateProps> = (args) => <SeekBarAnimate {...args} />;
+const Template: Story<SeekBarAnimateProps> = (args) => {
+  return (
+    <RunSeekProvider>
+      <SeekBarAnimate {...args} />
+    </RunSeekProvider>
+  );
+};
 
 export const Sample: { args: SeekBarAnimateProps } = Template.bind({});
 Sample.args = {

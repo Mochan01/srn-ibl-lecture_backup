@@ -1,7 +1,8 @@
-import React, { FC, useEffect, useMemo, useState } from "react";
+import React, { FC, useContext, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import { useAnimationFrame } from "../../../hooks/useAnimationFrame";
 import { SeekBar } from "../../atoms/SeekBar/SeekBar";
+import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 
 export interface SeekBarAnimateProps {
   duration: number;
@@ -32,16 +33,15 @@ export const SeekBarAnimate: FC<SeekBarAnimateProps> = ({
     onRunning(value);
 
     if (value <= 100) return;
-    setIsRunning(false);
+    setIsRunSeek(false);
   }, [value]);
 
   // 停止 / 再開
-  const [isRunning, setIsRunning] = useState(true);
-  useEffect(() => setIsRunning(isRunning), [isRunning]);
+  const { isRunSeek, setIsRunSeek } = useContext(RunSeekContext);
 
   // アニメーション開始
-  const time = useMemo(() => new Date().getTime(), []);
-  useAnimationFrame(isRunning, () => {
+  const time = useMemo(() => new Date().getTime(), [isRunSeek]);
+  useAnimationFrame(isRunSeek, () => {
 
     // % 計算
     const _duration = duration - (duration * (_percentage / 100));

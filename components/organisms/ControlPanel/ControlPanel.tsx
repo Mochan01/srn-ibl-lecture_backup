@@ -1,4 +1,4 @@
-import React, { FC, useContext, useMemo, memo } from "react";
+import React, { FC, useContext, useMemo, memo, useState } from "react";
 import styled from "styled-components";
 import { ArrowBtn } from "../../molecules/ArrowBtn/ArrowBtn";
 import { Paginate } from "../../atoms/Paginate/Pagenate";
@@ -11,6 +11,7 @@ import { SlideProgressContext } from "../../providers/SlideProgressProvider/Slid
 import { Spacer } from "../../providers/Spacer/Spacer";
 import { useGetStepList } from "../../../hooks/useGetStepList";
 import { StepsFactory } from "../../../factories/StepsFactory";
+import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 
 export interface ControlPanelProps {
 }
@@ -132,11 +133,12 @@ const SeekBarMemo: FC = memo(() => {
     return StepsFactory.getTotalTime(slideProgress);
   }, [slideProgress]);
 
+  const [isTouched, setIsTouched] = useState(false);
 
   return <>
     <SeekBarWrapper key= {`${ slideProgress }_${ currentProgress }`}>
       { /** アニメーション */ }
-      { play &&
+      { (!isTouched && play) &&
         <SeekBarChild>
           <SeekBarAnimate
             percentage={ points[currentProgress] }
@@ -144,13 +146,17 @@ const SeekBarMemo: FC = memo(() => {
           />
         </SeekBarChild> }
       { /** 操作 */ }
-      <SeekBarChild alpha={ play ? 0 : 1 }>
+      <SeekBarChild alpha={ (isTouched || !play) ? 1 : 0 }>
         <SeekBarController
           index={ currentProgress }
-          onPointerDown={ () => setPlay(false) }
+          onPointerDown={ () => {
+            setPlay(false);
+            setIsTouched(true);
+          } }
           onPointerUp={ progress => {
             const stepList = StepsFactory.getStepList(slideProgress, progress);
             setStepList({ type: "UPDATE", stepList });
+            setIsTouched(false);
           }}
           { ...{ points } }
         />
@@ -164,13 +170,17 @@ const SeekBarMemo: FC = memo(() => {
  */
 const PlayBtnMemo: FC = memo(() => {
 
-  // const { seekProgress } = useContext(SeekProgressContext);
   const { play, setPlay } = useContext(PlayContext);
+  const { setIsRunSeek } = useContext(RunSeekContext);
 
   const onClick = () => {
-    // 解答ステップなら再生させない
-    // if (seekProgress !== stepsProgress) return;
-    setPlay(s => !s);
+    setPlay(s => {
+
+      const state = !s;
+
+      setIsRunSeek(state);
+      return state;
+    });
   };
 
   return (

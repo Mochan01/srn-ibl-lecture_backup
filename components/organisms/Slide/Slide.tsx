@@ -9,6 +9,7 @@ import { Timer } from "../../atoms/Timer/Timer";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList";
 import { StepsFactory } from "../../../factories/StepsFactory";
+import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 
 export interface SlideProps {
 }
@@ -31,11 +32,16 @@ export const Slide: FC<SlideProps> = ({
 
   const { play } = useContext(PlayContext);
   const { stepList, setStepList, currentProgress } = useGetStepList();
+  const { setIsRunSeek } = useContext(RunSeekContext);
   const { slideProgress } = useContext(SlideProgressContext);
 
   const onEnd = () => {
     const stepData = StepsFactory.getNextStepData(slideProgress, currentProgress);
-    if (!stepData) return;
+
+    if (!stepData) {
+      setIsRunSeek(false);
+      return;
+    }
 
     setStepList({ type: "ADD", stepList: [stepData] });
   };
