@@ -5,7 +5,7 @@ import { Step } from "../../atoms/Step/Step";
 import { Narration } from "../../atoms/Narration/Narration";
 import { QuizArea } from "../../molecules/QuizArea/QuizArea";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
-import { Boy } from "../../atoms/Boy/Boy";
+import { Timer } from "../../atoms/Timer/Timer";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList";
 import { StepsFactory } from "../../../factories/StepsFactory";
@@ -55,11 +55,8 @@ export const Slide: FC<SlideProps> = ({
             width,
             height
           }, i) => {
-
-          const currentProgress = stepList[stepList.length - 1].stepProgress;
-
           return (
-            <Fragment key={ i }>
+            <Fragment key={ `${ slideProgress }_${ i }` }>
               { i <= currentProgress && <Step image={ image } /> }
               { questions && i <= currentProgress && 
                 <QuizArea
@@ -69,10 +66,10 @@ export const Slide: FC<SlideProps> = ({
                   y={ y }
                   width={ width }
                   height={ height } /> }
-              { play && i === currentProgress && talking === "teacher" &&
-                <Narration { ...{ sound, onEnd, duration } } /> }
-              { play && i === currentProgress && talking === "boy" &&
-                <Boy { ...{ onEnd, duration } } /> }
+              { play && i === currentProgress && sound &&
+                <Narration { ...{ sound } } /> }
+              { play && i === currentProgress &&
+                <Timer { ...{ onEnd, duration } } /> }
             </Fragment>
           );
         }) }

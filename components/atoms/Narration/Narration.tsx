@@ -1,19 +1,15 @@
 import { FC } from "react";
 import { useNarration } from "../../../hooks/useNarration";
-import { useTimeout, UseTimeoutProps } from "../../../hooks/useTimeout";
 
-export interface NarrationProps extends UseTimeoutProps {
+export interface NarrationProps {
   sound: string;
 }
 
 export const Narration: FC<NarrationProps> = ({
-  sound,
-  onEnd,
-  duration
+  sound
 }) => {
 
   useNarration(sound);
-  useTimeout({ duration, onEnd });
 
   return null;
 };

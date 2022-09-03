@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { useTimeout, UseTimeoutProps } from "../../../hooks/useTimeout";
 
-export interface BoyProps extends UseTimeoutProps {
+export interface TimerProps extends UseTimeoutProps {
 }
 
 interface MainProps {
@@ -16,7 +16,7 @@ const Main = styled.div.attrs<MainProps>(
 )<MainProps>`
 `;
 
-export const Boy: FC<BoyProps> = ({
+export const Timer: FC<TimerProps> = ({
   duration,
   onEnd
 }) => {
