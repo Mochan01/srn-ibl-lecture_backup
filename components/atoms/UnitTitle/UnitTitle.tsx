@@ -18,6 +18,7 @@ const Comment = styled.p<{ fz: number }>`
   color: #fff;
   line-height: 1;
   white-space: nowrap;
+  overflow: hidden;
 `;
 
 export const UnitTitle: FC<UnitTitleProps> = ({

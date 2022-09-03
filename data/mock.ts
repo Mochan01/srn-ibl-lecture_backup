@@ -1,6 +1,12 @@
+import { UnitTitleProps } from "../components/atoms/UnitTitle/UnitTitle";
 import { StepProps } from "../variable_types/StepProps";
 
 export const sound = "sample.mp3";
+
+export const unitTitleProps: UnitTitleProps = {
+  unitName: "Unit 21",
+  unitTitle: "ダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストです"
+};
 
 export const questions = [
   "アリスは川辺でおねえさんのよこにすわって",
