@@ -1,7 +1,7 @@
 import React, { FC, Fragment, useContext } from "react";
 import styled from "styled-components";
 import { SwiperSlide } from "swiper/react";
-import { Step } from "../../atoms/Step/Step";
+import { Panel } from "../../atoms/Panel/Panel";
 import { Narration } from "../../atoms/Narration/Narration";
 import { QuizArea } from "../../molecules/QuizArea/QuizArea";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
@@ -67,11 +67,11 @@ export const Slide: FC<SlideProps> = ({
           
           return (
             <Fragment key={ `${ slideProgress }_${ i }` }>
-              { isOver && <Step image={ image } /> }
+              { isOver && <Panel image={ image } /> }
               { play && isEqual && sound && <Narration { ...{ sound } } /> }
               { play && isEqual && <Timer { ...{ onEnd, duration } } /> }
               { questions && isOver && 
-                <Step>
+                <Panel>
                   <QuizArea
                     questions={ questions }
                     correctIndex={ correctIndex }
@@ -79,7 +79,7 @@ export const Slide: FC<SlideProps> = ({
                     y={ y }
                     width={ width }
                     height={ height } />
-                </Step> }
+                </Panel> }
             </Fragment>
           );
         }) }

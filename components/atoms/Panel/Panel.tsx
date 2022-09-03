@@ -3,7 +3,7 @@ import { MotionType } from "src-ibl-lecture-master/variable_types/StepType";
 import styled from "styled-components";
 import { StepDataProps } from "../../../variable_types/StepDataProps";
 
-export interface StepProps {
+export interface PanelProps {
   image?: StepDataProps["image"];
   motion1?: MotionType;
   motion2?: MotionType;
@@ -12,7 +12,7 @@ export interface StepProps {
 
 const SLIDE_DISTANCE = 200;
 
-const Main = styled.div<StepProps>`
+const Main = styled.div<PanelProps>`
   background-image: url(${({ image }) => image});
   background-image: ${({ image }) => image ? `url(${ image })` : "none" };
   background-repeat: no-repeat;
@@ -78,6 +78,6 @@ const Main = styled.div<StepProps>`
   }
 `;
 
-export const Step: FC<StepProps> = props => {
+export const Panel: FC<PanelProps> = props => {
   return <Main { ...props }>{ props.children }</Main>;
 };
