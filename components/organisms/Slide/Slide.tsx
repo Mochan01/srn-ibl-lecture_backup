@@ -69,11 +69,11 @@ export const Slide: FC<SlideProps> = ({
           
           return (
             <Fragment key={ `${ slideProgress }_${ i }` }>
-              { isOver && <Panel image={ image } /> }
+              { isOver && <Panel { ...{ image, motion1, motion2 } } /> }
               { play && isEqual && sound && <Narration { ...{ sound } } /> }
               { play && isEqual && <Timer { ...{ onEnd, duration } } /> }
               { questions && isOver && 
-                <Panel>
+                <Panel { ...{ motion1, motion2 } }>
                   <QuizArea
                     questions={ questions }
                     correctIndex={ correctIndex }
