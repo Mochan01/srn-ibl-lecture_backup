@@ -11,6 +11,7 @@ import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { classNames } from "../../../data/ClassNames";
+import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
 
 export default {
   title: "organisms/ControlPanel",
@@ -48,9 +49,11 @@ const Template: Story<ControlPanelProps> = (args) => {
     <StepsProgressProvider>
       <SlideProgressProvider>
         <StepsFactoryProvider stepsFactory={ stepsFactory }>
-          <PlayProvider>
-            <ControlPanel {...args} />
-          </PlayProvider>
+          <StepListProvider stepsFactory={ stepsFactory }>
+            <PlayProvider>
+              <ControlPanel {...args} />
+            </PlayProvider>
+          </StepListProvider>
         </StepsFactoryProvider>
       </SlideProgressProvider>
     </StepsProgressProvider>

@@ -12,6 +12,13 @@ export class StepsFactory {
     this._steps = data.steps;
   }
 
+  public getStepList(slide: number, step: number): StepDataProps[] {
+    let data = this.getStepBySlide(slide).map(x => this.generateStepDataProps(x));
+    data = data.filter(x => x.stepProgress <= step);
+
+    return data;
+  }
+
   public getCurrentStepData(slide: number, step: number): StepDataProps {
     const stepData = this.getStepBySlide(slide);
     return this.generateStepDataProps(stepData[step]);
@@ -57,7 +64,8 @@ export class StepsFactory {
    * @returns 
    */
   public getSeekBarStartsBySlide(slide: number): StepData["audio"]["seekbar_start"][] {
-    const steps = this.getStepBySlide(slide);
+    let steps = this.getStepBySlide(slide);
+    steps = steps.filter(x => !x.question.is_result_step);
     return steps.map(x => x.audio.seekbar_start);
   }
 

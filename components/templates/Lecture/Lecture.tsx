@@ -15,6 +15,7 @@ import { SlideProgressContext } from "../../providers/SlideProgressProvider/Slid
 import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { SeekProgressProvider, SeekProgressContext } from "../../providers/SeekProgressProvider/SeekProgressProvider";
+import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
 
 const Main: FC = ({
 }) => {
@@ -81,9 +82,11 @@ export const Lecture = ({
       <SlideProgressProvider>
         <SeekProgressProvider>
           <StepsFactoryProvider stepsFactory={ stepsFactory }>
-            <PlayProvider>
-              <Main />
-            </PlayProvider>
+            <StepListProvider stepsFactory={ stepsFactory }>
+              <PlayProvider>
+                <Main />
+              </PlayProvider>
+            </StepListProvider>
           </StepsFactoryProvider>
         </SeekProgressProvider>
       </SlideProgressProvider>

@@ -12,6 +12,7 @@ import { SlideProgressContext } from "../../providers/SlideProgressProvider/Slid
 import { StepsFactoryContext } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
 import { Spacer } from "../../providers/Spacer/Spacer";
 import { SeekProgressContext } from "../../providers/SeekProgressProvider/SeekProgressProvider";
+import { useGetStepList } from "../../../hooks/useGetStepList";
 
 export interface ControlPanelProps {
 }
@@ -121,16 +122,13 @@ const SeekBarChild = styled.div<{ alpha?: number }>`
  */
 const SeekBarMemo: FC = memo(() => {
 
-  const { stepsProgress, setStepsProgress } = useContext(StepsProgressContext);
   const { play, setPlay } = useContext(PlayContext);
   const { slideProgress } = useContext(SlideProgressContext);
-  const { seekProgress, setSeekProgress } = useContext(SeekProgressContext);
+  // const { seekProgress, setSeekProgress } = useContext(SeekProgressContext);
 
   // シークバーが止まる位置を取得
   const stepsFactory = useContext(StepsFactoryContext);
-  const points = useMemo(() => {
-    return stepsFactory.getSeekBarStartsBySlide(slideProgress);
-  }, [slideProgress]);
+
 
   const onRunning = percentage => {
     /*
@@ -165,9 +163,18 @@ const SeekBarMemo: FC = memo(() => {
     */
   };
 
+  const { currentProgress, setStepList } = useGetStepList();
+  const stepFactory = useContext(StepsFactoryContext);
+
+  const points = useMemo(() => {
+    return stepsFactory.getSeekBarStartsBySlide(slideProgress);;
+  }, [slideProgress]);
+
   return <>
     <SeekBarWrapper>
       { /** 再生中にアニメーションするシークバー */ }
+      { /**
+       * 
       { play &&
         <SeekBarChild>
           <SeekBarAnimate
@@ -177,15 +184,17 @@ const SeekBarMemo: FC = memo(() => {
             duration={ 5000 }
           />
         </SeekBarChild> }
+       *  */ }
+
       { /** ユーザーが操作できるシークバー */ }
       <SeekBarChild alpha={ play ? 0 : 1 }>
         <SeekBarController
           points={ points }
-          index={ seekProgress }
+          index={ currentProgress }
           onPointerDown={ () => setPlay(false) }
           onPointerUp={ progress => {
-            setStepsProgress(progress);
-            setSeekProgress(progress) 
+            const stepList = stepFactory.getStepList(slideProgress, progress);
+            setStepList(stepList);
           }}
         />
       </SeekBarChild>
@@ -198,13 +207,13 @@ const SeekBarMemo: FC = memo(() => {
  */
 const PlayBtnMemo: FC = memo(() => {
 
-  const { seekProgress } = useContext(SeekProgressContext);
+  // const { seekProgress } = useContext(SeekProgressContext);
   const { play, setPlay } = useContext(PlayContext);
   const { stepsProgress } = useContext(StepsProgressContext);
 
   const onClick = () => {
     // 解答ステップなら再生させない
-    if (seekProgress !== stepsProgress) return;
+    // if (seekProgress !== stepsProgress) return;
     setPlay(s => !s);
   };
 
