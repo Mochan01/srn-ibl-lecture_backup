@@ -3,7 +3,6 @@ import { StepDataProps } from "../../../variable_types/StepDataProps";
 import { StepsFactory } from "../../../factories/StepsFactory";
 
 export interface StepListProviderProps {
-  stepsFactory: StepsFactory,
   children: ReactNode;
 }
 
@@ -17,11 +16,10 @@ export const StepListContext = createContext<StepListProviderState>(null);
  * @returns 
  */
 export const StepListProvider: FC<StepListProviderProps> = ({
-  stepsFactory,
   children
 }) => {
 
-  const stepData = stepsFactory.getCurrentStepData(0, 0);
+  const stepData = StepsFactory.getCurrentStepData(0, 0);
   const [stepList, setStepList] = useState([stepData]);
 
   return (

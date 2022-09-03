@@ -5,26 +5,19 @@ import { StepDataProps, BoySpeechProps, QuizProps } from "../variable_types/Step
 
 export class StepsFactory {
 
-  private _steps: StepData[];
-
-  constructor() {
-    // @ts-ignore あとでデータの型をあわせる
-    this._steps = data.steps;
-  }
-
-  public getStepList(slide: number, step: number): StepDataProps[] {
+  public static getStepList(slide: number, step: number): StepDataProps[] {
     let data = this.getStepBySlide(slide).map(x => this.generateStepDataProps(x));
     data = data.filter(x => x.stepProgress <= step);
 
     return data;
   }
 
-  public getCurrentStepData(slide: number, step: number): StepDataProps {
+  public static getCurrentStepData(slide: number, step: number): StepDataProps {
     const stepData = this.getStepBySlide(slide);
     return this.generateStepDataProps(stepData[step]);
   }
 
-  public getNextStepDataOnQuiz(slide: number, step: number): [StepDataProps, StepDataProps] {
+  public static getNextStepDataOnQuiz(slide: number, step: number): [StepDataProps, StepDataProps] {
     const stepData = this.getStepBySlide(slide);
     let { next_steps } = stepData[step];
 
@@ -43,7 +36,7 @@ export class StepsFactory {
     ]
   }
 
-  public getNextStepData(slide: number, step: number): StepDataProps {
+  public static getNextStepData(slide: number, step: number): StepDataProps {
     const stepData = this.getStepBySlide(slide);
     let { next_steps } = stepData[step];
 
@@ -63,7 +56,7 @@ export class StepsFactory {
    * @param slide 
    * @returns 
    */
-  public getSeekBarStartsBySlide(slide: number): StepData["audio"]["seekbar_start"][] {
+  public static getSeekBarStartsBySlide(slide: number): StepData["audio"]["seekbar_start"][] {
     let steps = this.getStepBySlide(slide);
     steps = steps.filter(x => !x.question.is_result_step);
     return steps.map(x => x.audio.seekbar_start);
@@ -72,12 +65,12 @@ export class StepsFactory {
   /**
    * スライドの数を取得
    */
-  public get slides(): number[] {
-    const slides = this._steps.map(({ progress }) => progress.slide - 1);
+  public static get slides(): number[] {
+    const slides = this.steps.map(({ progress }) => progress.slide - 1);
     return _.uniq(slides);
   }
 
-  private generateStepDataProps(data: StepData): StepDataProps {
+  private static generateStepDataProps(data: StepData): StepDataProps {
     return {
       stepProgress: data.progress.step - 1,
       image: data.image.display_file,
@@ -87,7 +80,7 @@ export class StepsFactory {
     }
   }
 
-  private generateBoySpeechDuration(ev: StepData["next_steps"]["next_step"]): BoySpeechProps {
+  private static generateBoySpeechDuration(ev: StepData["next_steps"]["next_step"]): BoySpeechProps {
 
     let boySpeechDuration: number;
 
@@ -118,15 +111,15 @@ export class StepsFactory {
    * @param slide 
    * @returns 
    */
-  private getStepBySlide(slide: number): StepData[] {
-    return this._steps.filter(({ progress }) => progress.slide - 1 === slide);
+  private static getStepBySlide(slide: number): StepData[] {
+    return this.steps.filter(({ progress }) => progress.slide - 1 === slide);
   }
 
   /**
    * マスターの文字列「*_*」を数字に変換
    * @returns 
    */
-  private generateNum(val: string): number {
+  private static generateNum(val: string): number {
     return Number(val.split("_")[1]) - 1;
   }
 
@@ -135,7 +128,7 @@ export class StepsFactory {
    * @param step 
    * @returns 
    */
-  private buildQuizData(data: StepData): QuizProps {
+  private static buildQuizData(data: StepData): QuizProps {
     const { question, image } = data;
     if (data.image.display_object_1 !== "question_area") return;
 
@@ -161,6 +154,11 @@ export class StepsFactory {
       width: image.width,
       height: image.height,
     }
+  }
+
+  private static get steps(): StepData[] {
+    // @ts-ignore
+    return data.steps;
   }
 
 }

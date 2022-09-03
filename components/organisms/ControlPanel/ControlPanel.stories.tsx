@@ -1,7 +1,6 @@
 import React from "react";
 // also exported from "@storybook/react" if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { StepsFactoryProvider } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
 import { SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepsProgressProvider } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 import { PlayProvider } from "../../providers/PlayProvider/PlayProvider";
@@ -19,9 +18,6 @@ export default {
 } as Meta;
 
 const Template: Story<ControlPanelProps> = (args) => {
-
-  const stepsFactory = new StepsFactory();
-
   return <>
     <Swiper
       allowTouchMove={ false }
@@ -48,13 +44,11 @@ const Template: Story<ControlPanelProps> = (args) => {
     </Swiper>
     <StepsProgressProvider>
       <SlideProgressProvider>
-        <StepsFactoryProvider stepsFactory={ stepsFactory }>
-          <StepListProvider stepsFactory={ stepsFactory }>
-            <PlayProvider>
-              <ControlPanel {...args} />
-            </PlayProvider>
-          </StepListProvider>
-        </StepsFactoryProvider>
+        <StepListProvider>
+          <PlayProvider>
+            <ControlPanel {...args} />
+          </PlayProvider>
+        </StepListProvider>
       </SlideProgressProvider>
     </StepsProgressProvider>
   </>;
@@ -62,7 +56,6 @@ const Template: Story<ControlPanelProps> = (args) => {
 
 export const Sample: { args: ControlPanelProps } = Template.bind({});
 Sample.args = {
-  stepsFactory: new StepsFactory(),
   progress: {
     slide: 0,
     step: 0

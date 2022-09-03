@@ -4,7 +4,6 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { steps } from "../../../data/mock";
 import { Slide, SlideProps } from "./Slide";
 import { SlideProgressContext, SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
-import { StepsFactoryProvider } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
 import { StepsProgressContext, StepsProgressProvider } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 import { StepsFactory } from "../../../factories/StepsFactory";
 import { PlayContext, PlayProvider } from "../../providers/PlayProvider/PlayProvider";
@@ -17,23 +16,18 @@ export default {
 } as Meta;
 
 const Template: Story<SlideProps>  = (args) => {
-
-  const stepsFactory = new StepsFactory();
-
   return (
     <SlideProgressProvider>
-      <StepsFactoryProvider stepsFactory={ stepsFactory }>
-        <StepsProgressProvider>
-          <SeekProgressProvider>
-            <StepListProvider stepsFactory={ stepsFactory }>
-              <PlayProvider>
-                <Init />
-                <Slide {...args} />
-              </PlayProvider>
-            </StepListProvider>
-          </SeekProgressProvider>
-        </StepsProgressProvider>
-      </StepsFactoryProvider>
+      <StepsProgressProvider>
+        <SeekProgressProvider>
+          <StepListProvider>
+            <PlayProvider>
+              <Init />
+              <Slide {...args} />
+            </PlayProvider>
+          </StepListProvider>
+        </SeekProgressProvider>
+      </StepsProgressProvider>
     </SlideProgressProvider>
   );
 };

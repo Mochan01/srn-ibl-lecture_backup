@@ -9,10 +9,10 @@ import { SeekBarController } from "../../molecules/SeekBarController/SeekBarCont
 import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
-import { StepsFactoryContext } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
 import { Spacer } from "../../providers/Spacer/Spacer";
 import { SeekProgressContext } from "../../providers/SeekProgressProvider/SeekProgressProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList";
+import { StepsFactory } from "../../../factories/StepsFactory";
 
 export interface ControlPanelProps {
 }
@@ -124,11 +124,6 @@ const SeekBarMemo: FC = memo(() => {
 
   const { play, setPlay } = useContext(PlayContext);
   const { slideProgress } = useContext(SlideProgressContext);
-  // const { seekProgress, setSeekProgress } = useContext(SeekProgressContext);
-
-  // シークバーが止まる位置を取得
-  const stepsFactory = useContext(StepsFactoryContext);
-
 
   const onRunning = percentage => {
     /*
@@ -164,10 +159,9 @@ const SeekBarMemo: FC = memo(() => {
   };
 
   const { currentProgress, setStepList } = useGetStepList();
-  const stepFactory = useContext(StepsFactoryContext);
 
   const points = useMemo(() => {
-    return stepsFactory.getSeekBarStartsBySlide(slideProgress);;
+    return StepsFactory.getSeekBarStartsBySlide(slideProgress);;
   }, [slideProgress]);
 
   return <>
@@ -193,7 +187,7 @@ const SeekBarMemo: FC = memo(() => {
           index={ currentProgress }
           onPointerDown={ () => setPlay(false) }
           onPointerUp={ progress => {
-            const stepList = stepFactory.getStepList(slideProgress, progress);
+            const stepList = StepsFactory.getStepList(slideProgress, progress);
             setStepList(stepList);
           }}
         />

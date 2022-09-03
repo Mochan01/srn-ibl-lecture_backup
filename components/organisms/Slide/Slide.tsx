@@ -6,9 +6,9 @@ import { Narration } from "../../atoms/Narration/Narration";
 import { QuizArea } from "../../molecules/QuizArea/QuizArea";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { Boy } from "../../atoms/Boy/Boy";
-import { StepsFactoryContext } from "../../providers/StepsFactoryProvider/StepsFactoryProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList";
+import { StepsFactory } from "../../../factories/StepsFactory";
 
 export interface SlideProps {
 }
@@ -32,10 +32,9 @@ export const Slide: FC<SlideProps> = ({
   const { play } = useContext(PlayContext);
   const { stepList, setStepList, currentProgress } = useGetStepList();
   const { slideProgress } = useContext(SlideProgressContext);
-  const stepsFactory = useContext(StepsFactoryContext);
 
   const onEnd = () => {
-    const stepData = stepsFactory.getNextStepData(slideProgress, currentProgress);
+    const stepData = StepsFactory.getNextStepData(slideProgress, currentProgress);
     if (!stepData) return;
 
     setStepList(s => [...s, stepData]);
