@@ -181,7 +181,7 @@ const SeekBarMemo: FC = memo(() => {
       <SeekBarChild alpha={ play ? 0 : 1 }>
         <SeekBarController
           points={ points }
-          stepsProgress={ seekProgress }
+          index={ seekProgress }
           onPointerDown={ () => setPlay(false) }
           onPointerUp={ progress => {
             setStepsProgress(progress);

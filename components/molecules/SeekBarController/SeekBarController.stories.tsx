@@ -14,5 +14,5 @@ const Template: Story<SeekBarControllerProps> = (args) => <SeekBarController {..
 export const Sample: { args: SeekBarControllerProps } = Template.bind({});
 Sample.args = {
   points: [10, 50, 75],
-  stepsProgress: 1
+  index: 1
 };

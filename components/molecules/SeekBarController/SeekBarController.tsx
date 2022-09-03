@@ -1,48 +1,30 @@
-import React, { FC, useEffect, useState } from "react";
-import styled from "styled-components";
+import React, { FC } from "react";
 import { SeekBar } from "../../atoms/SeekBar/SeekBar";
+import { useSeekControl } from "../../../hooks/useSeekControl";
 
 export interface SeekBarControllerProps {
   points: number[];
-  stepsProgress: number;
+  index: number;
   onPointerDown?: () => void;
   onPointerUp?: (nextProgress: number) => void;
 }
 
-const Main = styled.div`
-`;
-
 export const SeekBarController: FC<SeekBarControllerProps> = ({
   points,
-  stepsProgress,
+  index,
   onPointerDown = () => {},
   onPointerUp = () => {}
 }) => {
 
-  // スライドのページが変わったときにシークバーの初期位置を更新する
-  const [value, setValue] = useState(points[stepsProgress]);
-  useEffect(() => setValue(points[0]), [points]);
-
-  // ステップのページが変わったときにシークバーの初期位置を更新する
-  useEffect(() => setValue(points[stepsProgress]), [stepsProgress]);
-
-  const pointerUpHandle = () => {
-
-    // シークバーを特定の位置にfixさせる
-    const closest = points.reduce((prev, curr) => {
-      return Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev;
-    });
-
-    setValue(closest);
-    onPointerUp(points.indexOf(closest));
-  };
+  const { value, setValue, getClosest } = useSeekControl(points, index, "EDGE");
 
   return (
     <SeekBar
-      value={ value }
-      setValue={ setValue }
-      onPointerDown={ onPointerDown }
-      onPointerUp={ pointerUpHandle }
+      onPointerUp={ () => {
+        const closest = getClosest();
+        onPointerUp(points.indexOf(closest));
+      } }
+      { ...{ value, setValue, onPointerDown } }
     />
   );
 };
