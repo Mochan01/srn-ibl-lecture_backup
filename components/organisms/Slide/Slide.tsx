@@ -51,6 +51,8 @@ export const Slide: FC<SlideProps> = ({
       <Main>
         { stepList && stepList.map(({
             image,
+            motion1,
+            motion2,
             sound,
             duration,
             talking,

@@ -1,6 +1,6 @@
 import React, { FC, memo, useCallback, useContext, useState } from "react";
 import styled from "styled-components";
-import { StepDataProps } from "../../../variable_types/StepDataProps";
+import { StepProps } from "../../../variable_types/StepProps";
 import { QuizAnswerBtn, QuizAnswerBtnProps, QUIZ_ANSWER_BTN } from "../../atoms/QuizAnswerBtn/QuizAnswerBtn";
 import { QuizChoiceBtn, QUIZ_CHOICE_BTN } from "../../atoms/QuizChoiceBtn/QuizChoiceBtn";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
@@ -10,8 +10,8 @@ import { StepsFactory } from "../../../factories/StepsFactory";
 import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 
 export interface QuizAreaProps extends ContainerProps {
-  questions: StepDataProps["questions"];
-  correctIndex: StepDataProps["correctIndex"];
+  questions: StepProps["questions"];
+  correctIndex: StepProps["correctIndex"];
 }
 
 const GAP = 2;
@@ -28,10 +28,10 @@ const Questions = styled.div`
 `;
 
 interface ContainerProps {
-  x?: StepDataProps["x"];
-  y?: StepDataProps["y"];
-  width?: StepDataProps["width"];
-  height?: StepDataProps["height"];
+  x?: StepProps["x"];
+  y?: StepProps["y"];
+  width?: StepProps["width"];
+  height?: StepProps["height"];
 }
 
 const Container = styled.div.attrs<ContainerProps>(

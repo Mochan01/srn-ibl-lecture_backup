@@ -1,13 +1,12 @@
-import React, { FC, ReactElement } from "react";
+import React, { FC } from "react";
 import { MotionType } from "src-ibl-lecture-master/variable_types/StepType";
 import styled from "styled-components";
-import { StepDataProps } from "../../../variable_types/StepDataProps";
+import { Children } from "../../../variable_types/Children";
 
 export interface PanelProps {
-  image?: StepDataProps["image"];
+  image?: string;
   motion1?: MotionType;
   motion2?: MotionType;
-  children?: ReactElement;
 }
 
 const SLIDE_DISTANCE = 200;
@@ -78,6 +77,6 @@ const Main = styled.div<PanelProps>`
   }
 `;
 
-export const Panel: FC<PanelProps> = props => {
+export const Panel: FC<PanelProps & Children> = props => {
   return <Main { ...props }>{ props.children }</Main>;
 };

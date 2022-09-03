@@ -1,23 +1,23 @@
 import data from "../data/mock_data.json";
 import { StepType } from "src-ibl-lecture-master/variable_types/StepType";
 import _ from "lodash";
-import { StepDataProps, QuizProps } from "../variable_types/StepDataProps";
+import { StepProps, QuizProps } from "../variable_types/StepProps";
 
 export class StepsFactory {
 
-  public static getStepList(slide: number, step: number): StepDataProps[] {
-    let data = this.getStepBySlide(slide).map(x => this.generateStepDataProps(x));
+  public static getStepList(slide: number, step: number): StepProps[] {
+    let data = this.getStepBySlide(slide).map(x => this.generateStepProps(x));
     data = data.filter(x => x.stepProgress <= step);
 
     return data;
   }
 
-  public static getCurrentStepData(slide: number, step: number): StepDataProps {
+  public static getCurrentStepData(slide: number, step: number): StepProps {
     const stepData = this.getStepBySlide(slide);
-    return this.generateStepDataProps(stepData[step]);
+    return this.generateStepProps(stepData[step]);
   }
 
-  public static getNextStepDataOnQuiz(slide: number, step: number): [StepDataProps, StepDataProps] {
+  public static getNextStepDataOnQuiz(slide: number, step: number): [StepProps, StepProps] {
     const stepData = this.getStepBySlide(slide);
     let { next_steps } = stepData[step];
 
@@ -27,16 +27,16 @@ export class StepsFactory {
     let { if_correct, if_wrong } = stepData[step].next_steps;
 
     return [
-      this.generateStepDataProps(
+      this.generateStepProps(
         stepData[this.generateNum(if_correct)]
       ),
-      this.generateStepDataProps(
+      this.generateStepProps(
         stepData[this.generateNum(if_wrong)]
       )
     ]
   }
 
-  public static getNextStepData(slide: number, step: number): StepDataProps {
+  public static getNextStepData(slide: number, step: number): StepProps {
     const stepData = this.getStepBySlide(slide);
     let { next_steps } = stepData[step];
 
@@ -46,7 +46,7 @@ export class StepsFactory {
     const nextStep = next_steps.go_to;
     if (!nextStep) return;
   
-    return this.generateStepDataProps(
+    return this.generateStepProps(
       stepData[this.generateNum(nextStep)]
     );
   }
@@ -75,13 +75,15 @@ export class StepsFactory {
     return _.uniq(slides);
   }
 
-  private static generateStepDataProps(data: StepType): StepDataProps {
+  private static generateStepProps(data: StepType): StepProps {
   
     const duration = this.generateDuration(data.next_steps.next_step);
 
     return {
       stepProgress: data.progress.step - 1,
       image: data.image.display_file,
+      motion1: data.motion.motion_1,
+      motion2: data.motion.motion_2,
       sound: data.audio.mp3,
       duration: duration || data.audio.time,
       talking: duration ? "boy" : "teacher",

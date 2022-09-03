@@ -1,4 +1,4 @@
-import { StepDataProps } from "../variable_types/StepDataProps";
+import { StepProps } from "../variable_types/StepProps";
 
 export const sound = "sample.mp3";
 
@@ -9,7 +9,7 @@ export const questions = [
   "「絵や会話のない本なんて、なんの役にもたたないじゃないの」とアリスは"
 ];
 
-export const stepA: StepDataProps = {
+export const stepA: StepProps = {
   stepProgress: 0,
   image: "sample_a.png",
   questions,
@@ -17,7 +17,7 @@ export const stepA: StepDataProps = {
   sound
 };
 
-export const stepB: StepDataProps = {
+export const stepB: StepProps = {
   stepProgress: 0,
   image: "sample_b.png",
   questions,
@@ -25,7 +25,7 @@ export const stepB: StepDataProps = {
   sound
 };
 
-export const stepC: StepDataProps = {
+export const stepC: StepProps = {
   stepProgress: 0,
   image: "sample_c.png",
   questions,
@@ -33,7 +33,7 @@ export const stepC: StepDataProps = {
   sound
 };
 
-export const steps: StepDataProps[] = [
+export const steps: StepProps[] = [
   stepA,
   stepB,
   stepC

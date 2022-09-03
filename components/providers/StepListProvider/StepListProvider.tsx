@@ -1,5 +1,5 @@
 import React, { FC, createContext, ReactNode, Dispatch, useReducer } from "react";
-import { StepDataProps } from "../../../variable_types/StepDataProps";
+import { StepProps } from "../../../variable_types/StepProps";
 import { StepsFactory } from "../../../factories/StepsFactory";
 
 export interface StepListProviderProps {
@@ -8,7 +8,7 @@ export interface StepListProviderProps {
 
 interface Action {
   type: "ADD" | "UPDATE";
-  stepList: StepDataProps[];
+  stepList: StepProps[];
 }
 
 interface ResetAction {
@@ -17,11 +17,11 @@ interface ResetAction {
 }
 
 export type StepListProviderState
-  = { stepList: StepDataProps[], setStepList: Dispatch<Action | ResetAction> };
+  = { stepList: StepProps[], setStepList: Dispatch<Action | ResetAction> };
 
 export const StepListContext = createContext<StepListProviderState>(null);
 
-const reducerFunc = (state: StepDataProps[], action: Action | ResetAction)=> {
+const reducerFunc = (state: StepProps[], action: Action | ResetAction)=> {
   switch (action.type) {
     case "ADD":
       return [...state, ...action.stepList];

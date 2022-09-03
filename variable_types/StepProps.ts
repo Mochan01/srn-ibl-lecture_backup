@@ -1,3 +1,5 @@
+import { PanelProps } from "../components/atoms/Panel/Panel";
+
 /**
  * 解答画面用
  */
@@ -10,9 +12,8 @@ export interface QuizProps {
   height: number;
 }
 
-export interface StepDataProps extends QuizProps {
+export interface StepProps extends QuizProps, Required<PanelProps> {
   stepProgress: number;
-  image: string;
   sound: string;
   talking: "boy" | "teacher";
   duration: number;
