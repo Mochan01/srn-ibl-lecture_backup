@@ -64,6 +64,10 @@ export const Slide: FC<SlideProps> = ({
           return (
             <Fragment key={ `${ slideProgress }_${ i }` }>
               { i <= currentProgress && <Step image={ image } /> }
+              { play && i === currentProgress && sound &&
+                <Narration { ...{ sound } } /> }
+              { play && i === currentProgress &&
+                <Timer { ...{ onEnd, duration } } /> }
               { questions && i <= currentProgress && 
                 <QuizArea
                   questions={ questions }
@@ -72,10 +76,6 @@ export const Slide: FC<SlideProps> = ({
                   y={ y }
                   width={ width }
                   height={ height } /> }
-              { play && i === currentProgress && sound &&
-                <Narration { ...{ sound } } /> }
-              { play && i === currentProgress &&
-                <Timer { ...{ onEnd, duration } } /> }
             </Fragment>
           );
         }) }

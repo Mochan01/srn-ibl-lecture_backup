@@ -7,6 +7,7 @@ import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList"
 import { StepsFactory } from "../../../factories/StepsFactory";
+import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 
 export interface QuizAreaProps extends ContainerProps {
   questions: StepDataProps["questions"];
@@ -76,6 +77,7 @@ export const QuizArea: FC<QuizAreaProps> = ({
   // 解答ボタン 状態管理
   const [isAnswered, setAnswered] = useState<boolean>();
   const { setPlay } = useContext(PlayContext);
+  const { setIsRunSeek } = useContext(RunSeekContext);
   const { slideProgress } = useContext(SlideProgressContext);
 
   const { currentProgress, stepList, setStepList } = useGetStepList();
@@ -87,11 +89,9 @@ export const QuizArea: FC<QuizAreaProps> = ({
       : QUIZ_ANSWER_BTN.GRAY,
     onClick: useCallback(() => {
 
-      // 再生中の場合は押させない
-      // if (stepsProgress === seekProgress) return;
-
       setAnswered(true);
       setPlay(true);
+      setIsRunSeek(true);
 
       const [correct, inCorrect] = StepsFactory.getNextStepDataOnQuiz(
         slideProgress,
