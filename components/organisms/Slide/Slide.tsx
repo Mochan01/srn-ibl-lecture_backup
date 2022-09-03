@@ -37,7 +37,7 @@ export const Slide: FC<SlideProps> = ({
     const stepData = StepsFactory.getNextStepData(slideProgress, currentProgress);
     if (!stepData) return;
 
-    setStepList(s => [...s, stepData]);
+    setStepList({ type: "ADD", stepList: [stepData] });
   };
 
   return (

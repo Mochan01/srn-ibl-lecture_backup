@@ -97,8 +97,11 @@ export const QuizArea: FC<QuizAreaProps> = ({
         slideProgress,
         stepList[stepList.length - 1].stepProgress
       );
-  
-      setStepList(s => [...s, chooseIndex === correctIndex ? correct : inCorrect]);
+
+      setStepList({
+        type: "ADD",
+        stepList: [chooseIndex === correctIndex ? correct : inCorrect]
+      });
 
     }, [slideProgress, currentProgress, chooseIndex])
   };

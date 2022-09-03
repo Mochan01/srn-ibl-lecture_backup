@@ -10,16 +10,19 @@ import { classNames } from "../../../data/ClassNames";
 import { Slide } from "../../organisms/Slide/Slide";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
+import { useGetStepList } from "../../../hooks/useGetStepList";
 
 const Main: FC = ({
 }) => {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const { setSlideProgress } = useContext(SlideProgressContext);
+  const { setStepList } = useGetStepList();
 
   // スライドが変わったとき諸々の進捗を初期化
   useEffect(() => {
     setSlideProgress(activeIndex);
+    setStepList({ type: "INIT", slideProgress: activeIndex });
   }, [activeIndex]);
 
   return <>

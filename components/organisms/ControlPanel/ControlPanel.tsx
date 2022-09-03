@@ -132,13 +132,13 @@ const SeekBarMemo: FC = memo(() => {
     return StepsFactory.getTotalTime(slideProgress);
   }, [slideProgress]);
 
+
   return <>
-    <SeekBarWrapper>
+    <SeekBarWrapper key= {`${ slideProgress }_${ currentProgress }`}>
       { /** アニメーション */ }
       { play &&
         <SeekBarChild>
           <SeekBarAnimate
-            key={ currentProgress }
             percentage={ points[currentProgress] }
             { ...{ duration } }
           />
@@ -146,14 +146,13 @@ const SeekBarMemo: FC = memo(() => {
       { /** 操作 */ }
       <SeekBarChild alpha={ play ? 0 : 1 }>
         <SeekBarController
-          key={ currentProgress }
           index={ currentProgress }
           onPointerDown={ () => setPlay(false) }
           onPointerUp={ progress => {
             const stepList = StepsFactory.getStepList(slideProgress, progress);
-            setStepList(stepList);
+            setStepList({ type: "UPDATE", stepList });
           }}
-          { ...{ points} }
+          { ...{ points } }
         />
       </SeekBarChild>
     </SeekBarWrapper>
