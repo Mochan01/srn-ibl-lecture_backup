@@ -6,8 +6,7 @@ import { SeekBar } from "../../atoms/SeekBar/SeekBar";
 export interface SeekBarAnimateProps {
   duration: number;
   onRunning?: (percentage: number) => void;
-  defaultPercentage?: number;
-  isRunning?: boolean;
+  percentage?: number;
 }
 
 const Main = styled.div`
@@ -22,12 +21,13 @@ const Main = styled.div`
 export const SeekBarAnimate: FC<SeekBarAnimateProps> = ({
   duration,
   onRunning = () => {},
-  defaultPercentage = 0,
-  isRunning = true
+  percentage = 0,
 }) => {
 
   // 100%で停止
-  const [value, setValue] = useState(defaultPercentage);
+  const _percentage = useMemo(() => percentage, []);
+  const [value, setValue] = useState(_percentage);
+
   useEffect(() => {
     onRunning(value);
 
@@ -36,23 +36,20 @@ export const SeekBarAnimate: FC<SeekBarAnimateProps> = ({
   }, [value]);
 
   // 停止 / 再開
-  const [_isRunning, setIsRunning] = useState(isRunning);
+  const [isRunning, setIsRunning] = useState(true);
   useEffect(() => setIsRunning(isRunning), [isRunning]);
 
-  // 停止したあと同じ位置から始めるためにメモ噛ませる
-  const _defaultPercentage = useMemo(() => value, [isRunning]);
-  const currentTime = useMemo(() => new Date().getTime(), [isRunning]);
-
   // アニメーション開始
-  useAnimationFrame(_isRunning, () => {
+  const time = useMemo(() => new Date().getTime(), []);
+  useAnimationFrame(isRunning, () => {
 
     // % 計算
-    const _duration = duration - (duration * (_defaultPercentage / 100));
+    const _duration = duration - (duration * (_percentage / 100));
 
     let percentage
-      = ((new Date().getTime() - currentTime) / _duration) * (100 - _defaultPercentage);
+      = ((new Date().getTime() - time) / _duration) * (100 - _percentage);
 
-    percentage += _defaultPercentage;
+    percentage += _percentage;
 
     const zero = 10;
     percentage *= zero;

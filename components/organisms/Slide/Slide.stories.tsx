@@ -5,9 +5,7 @@ import { steps } from "../../../data/mock";
 import { Slide, SlideProps } from "./Slide";
 import { SlideProgressContext, SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepsProgressContext, StepsProgressProvider } from "../../providers/StepsProgressProvider/StepsProgressProvider";
-import { StepsFactory } from "../../../factories/StepsFactory";
 import { PlayContext, PlayProvider } from "../../providers/PlayProvider/PlayProvider";
-import { SeekProgressProvider } from "../../providers/SeekProgressProvider/SeekProgressProvider";
 import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
 
 export default {
@@ -19,14 +17,12 @@ const Template: Story<SlideProps>  = (args) => {
   return (
     <SlideProgressProvider>
       <StepsProgressProvider>
-        <SeekProgressProvider>
-          <StepListProvider>
-            <PlayProvider>
-              <Init />
-              <Slide {...args} />
-            </PlayProvider>
-          </StepListProvider>
-        </SeekProgressProvider>
+        <StepListProvider>
+          <PlayProvider>
+            <Init />
+            <Slide {...args} />
+          </PlayProvider>
+        </StepListProvider>
       </StepsProgressProvider>
     </SlideProgressProvider>
   );

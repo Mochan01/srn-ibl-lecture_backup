@@ -14,6 +14,5 @@ const Template: Story<SeekBarAnimateProps> = (args) => <SeekBarAnimate {...args}
 export const Sample: { args: SeekBarAnimateProps } = Template.bind({});
 Sample.args = {
   duration: 5000,
-  defaultPercentage: 0,
-  isRunning: true
+  percentage: 0
 };

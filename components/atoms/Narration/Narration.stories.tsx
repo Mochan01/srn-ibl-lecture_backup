@@ -13,5 +13,7 @@ const Template: Story<NarrationProps> = (args) => <Narration {...args} />;
 
 export const Sample: { args: NarrationProps } = Template.bind({});
 Sample.args = {
+  duration: 2000,
+  onEnd: () => {},
   sound
 };

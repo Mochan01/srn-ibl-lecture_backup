@@ -11,8 +11,8 @@
           },
           "audio": {
               "mp3": "sample.mp3",
-              "time": "1899-12-29T15:00:04.000Z",
-              "total_time": "1899-12-29T15:00:04.000Z",
+              "time": 4000,
+              "total_time": 4000,
               "seekbar_start": 0,
               "seekbar_end": 25
           },
@@ -64,8 +64,8 @@
           },
           "audio": {
               "mp3": "sample.mp3",
-              "time": "1899-12-29T15:00:04.000Z",
-              "total_time": "1899-12-29T15:00:08.000Z",
+              "time": 4000,
+              "total_time": 8000,
               "seekbar_start": 25.01,
               "seekbar_end": 50
           },
@@ -117,8 +117,8 @@
           },
           "audio": {
               "mp3": "sample.mp3",
-              "time": "1899-12-29T15:00:04.000Z",
-              "total_time": "1899-12-29T15:00:12.000Z",
+              "time": 4000,
+              "total_time": 12000,
               "seekbar_start": 50.01,
               "seekbar_end": 75
           },
@@ -170,8 +170,8 @@
           },
           "audio": {
               "mp3": "sample.mp3",
-              "time": "1899-12-29T15:00:04.000Z",
-              "total_time": "1899-12-29T15:00:16.000Z",
+              "time": 4000,
+              "total_time": 16000,
               "seekbar_start": 75.01,
               "seekbar_end": 100
           },
@@ -223,8 +223,8 @@
           },
           "audio": {
               "mp3": "sample.mp3",
-              "time": "1899-12-29T15:00:10.000Z",
-              "total_time": "1899-12-29T15:00:22.000Z",
+              "time": 10000,
+              "total_time": 22000,
               "seekbar_start": 30.01,
               "seekbar_end": 55
           },
@@ -276,8 +276,8 @@
           },
           "audio": {
               "mp3": "sample.mp3",
-              "time": "1899-12-29T15:00:10.000Z",
-              "total_time": "1899-12-29T15:00:10.000Z",
+              "time": 10000,
+              "total_time": 10000,
               "seekbar_start": 0.01,
               "seekbar_end": 25
           },
@@ -329,8 +329,8 @@
           },
           "audio": {
               "mp3": "sample.mp3",
-              "time": "1899-12-29T15:00:10.000Z",
-              "total_time": "1899-12-29T15:00:20.000Z",
+              "time": 10000,
+              "total_time": 20000,
               "seekbar_start": 25.01,
               "seekbar_end": 50
           },
@@ -382,8 +382,8 @@
           },
           "audio": {
               "mp3": "sample.mp3",
-              "time": "1899-12-29T15:00:10.000Z",
-              "total_time": "1899-12-29T15:00:10.000Z",
+              "time": 10000,
+              "total_time": 10000,
               "seekbar_start": 0.01,
               "seekbar_end": 25
           },
@@ -435,8 +435,8 @@
           },
           "audio": {
               "mp3": "sample.mp3",
-              "time": "1899-12-29T15:00:13.000Z",
-              "total_time": "1899-12-29T15:00:13.000Z",
+              "time": 13000,
+              "total_time": 13000,
               "seekbar_start": 0.01,
               "seekbar_end": 72.22
           },
@@ -488,8 +488,8 @@
           },
           "audio": {
               "mp3": "sample.mp3",
-              "time": "1899-12-29T15:00:05.000Z",
-              "total_time": "1899-12-29T15:00:18.000Z",
+              "time": 5000,
+              "total_time": 18000,
               "seekbar_start": 72.23,
               "seekbar_end": 100
           },

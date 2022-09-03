@@ -1,11 +1,3 @@
-
-/**
- * 男の子解説用
- */
-export interface BoySpeechProps {
-  boySpeechDuration: number;
-}
-
 /**
  * 解答画面用
  */
@@ -18,8 +10,10 @@ export interface QuizProps {
   height: number;
 }
 
-export interface StepDataProps extends BoySpeechProps, QuizProps {
+export interface StepDataProps extends QuizProps {
   stepProgress: number;
   image: string;
   sound: string;
+  talking: "boy" | "teacher";
+  duration: number;
 }

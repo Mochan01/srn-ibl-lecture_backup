@@ -1,9 +1,8 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
-import { BoySpeechProps } from "../../../variable_types/StepDataProps";
+import { useTimeout, UseTimeoutProps } from "../../../hooks/useTimeout";
 
-export interface BoyProps extends BoySpeechProps {
-  onEnd?: () => void;
+export interface BoyProps extends UseTimeoutProps {
 }
 
 interface MainProps {
@@ -18,16 +17,11 @@ const Main = styled.div.attrs<MainProps>(
 `;
 
 export const Boy: FC<BoyProps> = ({
-  boySpeechDuration,
-  onEnd = () => {}
+  duration,
+  onEnd
 }) => {
 
-  useEffect(() => {
-    let timer: NodeJS.Timeout;
-    timer = setTimeout(onEnd, boySpeechDuration);
-
-    return () => clearTimeout(timer);
-  }, [boySpeechDuration]);
+  useTimeout({ duration, onEnd });
 
   return (
     <>

@@ -10,7 +10,6 @@ import { StepsProgressContext } from "../../providers/StepsProgressProvider/Step
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { Spacer } from "../../providers/Spacer/Spacer";
-import { SeekProgressContext } from "../../providers/SeekProgressProvider/SeekProgressProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList";
 import { StepsFactory } from "../../../factories/StepsFactory";
 
@@ -124,72 +123,38 @@ const SeekBarMemo: FC = memo(() => {
 
   const { play, setPlay } = useContext(PlayContext);
   const { slideProgress } = useContext(SlideProgressContext);
-
-  const onRunning = percentage => {
-    /*
-
-    // 100%に達したとき
-    if (percentage > 100) {
-      setPlay(false);
-      return;
-    }
-
-    // 次のステップの位置に達したとき
-    const nextStep = stepsFactory.getNextStep(slideProgress, seekProgress);
-
-    if (!points[nextStep]) return;
-
-    if (percentage > points[seekProgress + 1]) {
-
-      setSeekProgress(nextStep);
-
-      // クイズ画面なら一旦停止
-      const { questions }
-        = stepsFactory.getStepDataPropsBySlide(slideProgress)[seekProgress];
-
-      if (questions) {
-        setPlay(false);
-      } else {
-        setStepsProgress(nextStep);
-      }
-
-      return;
-    }
-    */
-  };
-
   const { currentProgress, setStepList } = useGetStepList();
 
   const points = useMemo(() => {
-    return StepsFactory.getSeekBarStartsBySlide(slideProgress);;
+    return StepsFactory.getSeekBarStartsBySlide(slideProgress);
+  }, [slideProgress]);
+
+  const duration = useMemo(() => {
+    return StepsFactory.getTotalTime(slideProgress);
   }, [slideProgress]);
 
   return <>
     <SeekBarWrapper>
-      { /** 再生中にアニメーションするシークバー */ }
-      { /**
-       * 
+      { /** アニメーション */ }
       { play &&
         <SeekBarChild>
           <SeekBarAnimate
-            key={ points[seekProgress] }
-            defaultPercentage={ points[seekProgress] }
-            onRunning={ onRunning }
-            duration={ 5000 }
+            key={ currentProgress }
+            percentage={ points[currentProgress] }
+            { ...{ duration } }
           />
         </SeekBarChild> }
-       *  */ }
-
-      { /** ユーザーが操作できるシークバー */ }
+      { /** 操作 */ }
       <SeekBarChild alpha={ play ? 0 : 1 }>
         <SeekBarController
-          points={ points }
+          key={ currentProgress }
           index={ currentProgress }
           onPointerDown={ () => setPlay(false) }
           onPointerUp={ progress => {
             const stepList = StepsFactory.getStepList(slideProgress, progress);
             setStepList(stepList);
           }}
+          { ...{ points} }
         />
       </SeekBarChild>
     </SeekBarWrapper>

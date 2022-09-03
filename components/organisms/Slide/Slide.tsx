@@ -46,7 +46,8 @@ export const Slide: FC<SlideProps> = ({
         { stepList && stepList.map(({
             image,
             sound,
-            boySpeechDuration,
+            duration,
+            talking,
             questions,
             correctIndex,
             x,
@@ -68,10 +69,10 @@ export const Slide: FC<SlideProps> = ({
                   y={ y }
                   width={ width }
                   height={ height } /> }
-              { play && i === currentProgress && !boySpeechDuration &&
-                <Narration sound={ sound } onEnd={ onEnd } /> }
-              { play && i === currentProgress && boySpeechDuration &&
-                <Boy boySpeechDuration={ boySpeechDuration } onEnd={ onEnd } /> }
+              { play && i === currentProgress && talking === "teacher" &&
+                <Narration { ...{ sound, onEnd, duration } } /> }
+              { play && i === currentProgress && talking === "boy" &&
+                <Boy { ...{ onEnd, duration } } /> }
             </Fragment>
           );
         }) }

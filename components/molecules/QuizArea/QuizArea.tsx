@@ -4,7 +4,6 @@ import { StepDataProps } from "../../../variable_types/StepDataProps";
 import { QuizAnswerBtn, QuizAnswerBtnProps, QUIZ_ANSWER_BTN } from "../../atoms/QuizAnswerBtn/QuizAnswerBtn";
 import { QuizChoiceBtn, QUIZ_CHOICE_BTN } from "../../atoms/QuizChoiceBtn/QuizChoiceBtn";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
-import { SeekProgressContext } from "../../providers/SeekProgressProvider/SeekProgressProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList"
 import { StepsFactory } from "../../../factories/StepsFactory";
@@ -78,8 +77,6 @@ export const QuizArea: FC<QuizAreaProps> = ({
   const [isAnswered, setAnswered] = useState<boolean>();
   const { setPlay } = useContext(PlayContext);
   const { slideProgress } = useContext(SlideProgressContext);
-  // const { stepsProgress, setStepsProgress } = useContext(StepsProgressContext);
-  const { seekProgress, setSeekProgress } = useContext(SeekProgressContext);
 
   const { currentProgress, stepList, setStepList } = useGetStepList();
 
@@ -103,7 +100,7 @@ export const QuizArea: FC<QuizAreaProps> = ({
   
       setStepList(s => [...s, chooseIndex === correctIndex ? correct : inCorrect]);
 
-    }, [slideProgress, currentProgress, seekProgress, chooseIndex])
+    }, [slideProgress, currentProgress, chooseIndex])
   };
 
   return(

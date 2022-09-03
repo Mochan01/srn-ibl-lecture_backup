@@ -1,7 +1,7 @@
 import data from "../data/mock_data.json";
 import { StepData } from "src-ibl-lecture-master/variable_types/Step";
 import _ from "lodash";
-import { StepDataProps, BoySpeechProps, QuizProps } from "../variable_types/StepDataProps";
+import { StepDataProps, QuizProps } from "../variable_types/StepDataProps";
 
 export class StepsFactory {
 
@@ -51,6 +51,11 @@ export class StepsFactory {
     );
   }
 
+  public static getTotalTime(slide: number): StepData["audio"]["total_time"] {
+    const list = this.getStepBySlide(slide);
+    return list[list.length - 1].audio.total_time;
+  }
+
   /**
    * シークバーの位置を取得
    * @param slide 
@@ -71,39 +76,32 @@ export class StepsFactory {
   }
 
   private static generateStepDataProps(data: StepData): StepDataProps {
+  
+    const duration = this.generateDuration(data.next_steps.next_step);
+
     return {
       stepProgress: data.progress.step - 1,
       image: data.image.display_file,
       sound: data.audio.mp3,
-      ...this.buildQuizData(data),
-      ...this.generateBoySpeechDuration(data.next_steps.next_step)
+      duration: duration || data.audio.time,
+      talking: duration ? "boy" : "teacher",
+      ...this.buildQuizData(data)
     }
   }
 
-  private static generateBoySpeechDuration(ev: StepData["next_steps"]["next_step"]): BoySpeechProps {
-
-    let boySpeechDuration: number;
-
+  private static generateDuration(ev: StepData["next_steps"]["next_step"]): number {
     switch(ev) {
       case "1_second":
-        boySpeechDuration = 1000;
-        break;
+        return 1000;
       case "2_seconds":
-        boySpeechDuration = 2000;
-        break;
+        return 2000;
       case "3_seconds":
-        boySpeechDuration = 3000;
-        break;
+        return 3000;
       case "4_seconds":
-        boySpeechDuration = 4000;
-        break;
+        return 4000;
       case "5_seconds":
-        boySpeechDuration = 5000;
-        break;
+        return 5000;
     }
-
-    if (!boySpeechDuration) return;
-    return { boySpeechDuration };
   }
 
   /**

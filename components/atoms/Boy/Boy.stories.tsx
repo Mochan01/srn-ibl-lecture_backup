@@ -12,5 +12,6 @@ const Template: Story<BoyProps> = (args) => <Boy {...args} />;
 
 export const Sample: { args: BoyProps } = Template.bind({});
 Sample.args = {
-  boySpeechDuration: 2000
+  duration: 2000,
+  onEnd: () => {}
 };
