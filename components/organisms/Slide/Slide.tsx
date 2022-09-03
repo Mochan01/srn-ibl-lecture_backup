@@ -61,21 +61,25 @@ export const Slide: FC<SlideProps> = ({
             width,
             height
           }, i) => {
+
+          const isOver = i <= currentProgress;
+          const isEqual =  i === currentProgress;
+          
           return (
             <Fragment key={ `${ slideProgress }_${ i }` }>
-              { i <= currentProgress && <Step image={ image } /> }
-              { play && i === currentProgress && sound &&
-                <Narration { ...{ sound } } /> }
-              { play && i === currentProgress &&
-                <Timer { ...{ onEnd, duration } } /> }
-              { questions && i <= currentProgress && 
-                <QuizArea
-                  questions={ questions }
-                  correctIndex={ correctIndex }
-                  x={ x }
-                  y={ y }
-                  width={ width }
-                  height={ height } /> }
+              { isOver && <Step image={ image } /> }
+              { play && isEqual && sound && <Narration { ...{ sound } } /> }
+              { play && isEqual && <Timer { ...{ onEnd, duration } } /> }
+              { questions && isOver && 
+                <Step>
+                  <QuizArea
+                    questions={ questions }
+                    correctIndex={ correctIndex }
+                    x={ x }
+                    y={ y }
+                    width={ width }
+                    height={ height } />
+                </Step> }
             </Fragment>
           );
         }) }

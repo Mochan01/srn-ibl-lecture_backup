@@ -42,13 +42,10 @@ const Container = styled.div.attrs<ContainerProps>(
   })
 )<ContainerProps>`
   transform-origin: left top;
-  position: relative;
   width: 100%;
-  &:before {
-    content: "";
-    display: block;
-    padding-top: 75%;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 const Main = styled.div<{ touchedEnable: boolean }>`
