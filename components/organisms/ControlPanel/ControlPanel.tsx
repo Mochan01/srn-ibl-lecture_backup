@@ -6,7 +6,6 @@ import { classNames } from "../../../data/ClassNames";
 import { PlayBtn } from "../../molecules/PlayBtn/PlayBtn";
 import { SeekBarAnimate } from "../../molecules/SeekBarAnimate/SeekBarAnimate";
 import { SeekBarController } from "../../molecules/SeekBarController/SeekBarController";
-import { StepsProgressContext } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { Spacer } from "../../providers/Spacer/Spacer";
@@ -168,7 +167,6 @@ const PlayBtnMemo: FC = memo(() => {
 
   // const { seekProgress } = useContext(SeekProgressContext);
   const { play, setPlay } = useContext(PlayContext);
-  const { stepsProgress } = useContext(StepsProgressContext);
 
   const onClick = () => {
     // 解答ステップなら再生させない

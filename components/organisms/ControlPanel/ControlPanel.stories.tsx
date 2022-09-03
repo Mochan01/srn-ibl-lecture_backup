@@ -2,10 +2,8 @@ import React from "react";
 // also exported from "@storybook/react" if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
-import { StepsProgressProvider } from "../../providers/StepsProgressProvider/StepsProgressProvider";
 import { PlayProvider } from "../../providers/PlayProvider/PlayProvider";
 import { ControlPanel, ControlPanelProps } from "./ControlPanel";
-import { StepsFactory } from "../../../factories/StepsFactory";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
@@ -42,15 +40,13 @@ const Template: Story<ControlPanelProps> = (args) => {
       <SwiperSlide />
       <SwiperSlide />
     </Swiper>
-    <StepsProgressProvider>
-      <SlideProgressProvider>
-        <StepListProvider>
-          <PlayProvider>
-            <ControlPanel {...args} />
-          </PlayProvider>
-        </StepListProvider>
-      </SlideProgressProvider>
-    </StepsProgressProvider>
+    <SlideProgressProvider>
+      <StepListProvider>
+        <PlayProvider>
+          <ControlPanel {...args} />
+        </PlayProvider>
+      </StepListProvider>
+    </SlideProgressProvider>
   </>;
 };
 
