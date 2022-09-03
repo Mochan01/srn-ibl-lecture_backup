@@ -11,4 +11,6 @@ const template: Story<FrameProps> = (args) => <Frame {...args} />;
 
 export const sample: { args: FrameProps } = template.bind({});
 sample.args = {
+  unitName: "Unit 21",
+  unitTitle: "ダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストです"
 };

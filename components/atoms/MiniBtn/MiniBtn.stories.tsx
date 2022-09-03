@@ -16,5 +16,6 @@ const Template: Story<MiniBtnProps> = (args) => {
 
 export const Sample: { args: MiniBtnProps } = Template.bind({});
 Sample.args = {
-  mutation: MINI_BUTTON_MUTATIONS.AGAIN_OFF
+  mutation: MINI_BUTTON_MUTATIONS.AGAIN_OFF,
+  caption: "一時停止"
 };

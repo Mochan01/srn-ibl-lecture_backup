@@ -16,6 +16,7 @@ export const ReplayBtn: FC<ReplayBtnProps> = ({
       <link rel="preload" href={ MINI_BUTTON_MUTATIONS.AGAIN_OFF } as="image" />
       <MiniBtn
         onClick={ onClick }
+        caption="もう一度"
         mutation={
           active
             ? MINI_BUTTON_MUTATIONS.AGAIN_ON

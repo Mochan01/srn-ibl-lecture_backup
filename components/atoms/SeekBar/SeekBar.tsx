@@ -1,6 +1,7 @@
 import React, { FC, memo, Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import * as SliderPrimitive from "@radix-ui/react-slider";
+import { SIZE } from "../../../data/SIZE";
 
 export interface SeekBarProps {
   value: number;
@@ -15,9 +16,10 @@ const StyledSlider = styled(SliderPrimitive.Root)`
   align-items: center;
   user-select: none;
   touch-action: none;
-  width: 100%;
+  width: ${ SIZE.W }px;
   background-color: #042f78;
   padding: 0 2px;
+  position: relative;
   &[data-orientation="horizontal"] {
     height: ${ SLIDER_H }px;
   }

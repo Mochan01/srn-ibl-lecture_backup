@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { MotionType } from "src-ibl-lecture-master/variable_types/StepType";
 import styled from "styled-components";
+import { SIZE } from "../../../data/SIZE";
 import { Children } from "../../../variable_types/Children";
 
 export interface PanelProps {
@@ -12,15 +13,17 @@ export interface PanelProps {
 const SLIDE_DISTANCE = 200;
 
 const Main = styled.div<PanelProps>`
-  background-image: url(${({ image }) => image});
+  background-image: url(${ ({ image }) => image });
   background-image: ${({ image }) => image ? `url(${ image })` : "none" };
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   position: relative;
   animation-name:
     ${({ motion1 }) => motion1 ? motion1 : "none" },
     ${({ motion2 }) => motion2 ? motion2 : "none" };
   animation-duration: .3s;
+  width: ${ SIZE.W }px;
+  height: ${ SIZE.H }px;
   @keyframes fadein {
     from {
       opacity: 0;
@@ -68,12 +71,6 @@ const Main = styled.div<PanelProps>`
     to {
       transform: scale(1);
     }
-  }
-  &:before {
-    content: "";
-    display: block;
-    width: 100%;
-    padding-top: 75%;
   }
 `;
 

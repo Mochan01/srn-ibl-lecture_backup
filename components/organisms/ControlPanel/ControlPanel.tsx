@@ -1,20 +1,26 @@
 import React, { FC, useContext, useMemo, memo, useState } from "react";
 import styled from "styled-components";
 import { ArrowBtn } from "../../molecules/ArrowBtn/ArrowBtn";
-import { Paginate } from "../../atoms/Paginate/Pagenate";
+import { ControlPanelL } from "../../molecules/ControlPanelL/ControlPanelL";
 import { classNames } from "../../../data/ClassNames";
 import { PlayBtn } from "../../molecules/PlayBtn/PlayBtn";
 import { SeekBarAnimate } from "../../molecules/SeekBarAnimate/SeekBarAnimate";
 import { SeekBarController } from "../../molecules/SeekBarController/SeekBarController";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
-import { Spacer } from "../../providers/Spacer/Spacer";
+import { SIZE } from "../../../data/SIZE";
 import { useGetStepList } from "../../../hooks/useGetStepList";
 import { StepsFactory } from "../../../factories/StepsFactory";
 import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
+import { ControlPanelR } from "../../molecules/ControlPanelR/ControlPanelR";
 
 export interface ControlPanelProps {
 }
+
+const Main = styled.div`
+  display: flex;
+  width: ${ SIZE.W }px;
+`;
 
 const Panel = styled.div`
   background-repeat: no-repeat;
@@ -29,36 +35,22 @@ const Panel = styled.div`
 
 const PanelB = styled(Panel)`
   background-image: url("lecture_panel_b.png");
-  width: 48%;
-  & > div {
-    margin-top: 1.5%;
-    width: 100%;
-  }
-  &:before {
-    padding-top: 15.417%;
-  }
+  width: ${ SIZE.PANEL_B_W }px;
+  height: ${ SIZE.PANEL_B_H }px;
+  padding: 6px 30px 0 30px;
 `;
 
-const PanelTypo = styled.p`
-  width: 100%;
-  text-align: center;
-  color: #fff;
-  line-height: 1;
-  white-space: nowrap;
-  user-select: none;
-  font-size: 9px;
-`;
-
-const PanelA = styled(Panel)`
-  background-image: url("lecture_panel_a.png");
-  width: 26%;
-  &:before {
-    padding-top: 28.462%;
-  }
-`;
-
-const PanelWrapper = styled.div`
+const BtnWrapperL = styled.div`
   display: flex;
+  & > div:not(:first-of-type) {
+    margin-left: 22px;
+  }
+`;
+
+const BtnWrapperR = styled.div`
+  & > div {
+    margin-left: 64px;
+  }
 `;
 
 /**
@@ -71,33 +63,20 @@ export const ControlPanel: FC<ControlPanelProps> = ({
   return (
     <>
       <SeekBarMemo />
-      <PanelWrapper>
-        <PanelA>
-          <Paginate id={ classNames.paginate } />
-        </PanelA>
+      <Main>
+        <ControlPanelL id={ classNames.paginate } />
         <PanelB>
-          <Spacer size={ 40 } />
-          <div>
-            <ArrowBtn id={ classNames.arrowPrev } dir="prev" />
-            <PanelTypo>前ページ</PanelTypo>
-          </div>
-          <Spacer size={ 24 } />
-          <PlayBtnMemo />
-          <Spacer size={ 24 } />
-          <div>
-            <ArrowBtn id={ classNames.arrowNext } dir="next" />
-            <PanelTypo>次ページ</PanelTypo>
-          </div>
-          <Spacer size={ 80 } />
-          <div>
-            <ArrowBtn id={ classNames.arrowNext } dir="next" />
-            <PanelTypo>もう一度</PanelTypo>
-          </div>
-          <Spacer size={ 40 } />
+          <BtnWrapperL>
+            <ArrowBtn id={ classNames.arrowPrev } $dir="prev" />
+            <PlayBtnMemo />
+            <ArrowBtn id={ classNames.arrowNext } $dir="next" />
+          </BtnWrapperL>
+          <BtnWrapperR>
+            <ArrowBtn id={ classNames.arrowNext } $dir="next" />
+          </BtnWrapperR>
         </PanelB>
-        <PanelA>
-        </PanelA>
-      </PanelWrapper>
+        <ControlPanelR />
+      </Main>
     </>
   );
 };
@@ -183,10 +162,5 @@ const PlayBtnMemo: FC = memo(() => {
     });
   };
 
-  return (
-    <div>
-      <PlayBtn isPlay={ play } onClick={ onClick } />
-      <PanelTypo>{ play ? "一時停止" : "再生" }</PanelTypo>
-    </div>
-  );
+  return <PlayBtn isPlay={ play } onClick={ onClick } />;
 });

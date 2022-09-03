@@ -1,7 +1,7 @@
-import React, { FC, memo, useCallback, useContext, useState } from "react";
+import React, { FC, useCallback, useContext, useState } from "react";
 import styled from "styled-components";
 import { StepProps } from "../../../variable_types/StepProps";
-import { QuizAnswerBtn, QuizAnswerBtnProps, QUIZ_ANSWER_BTN } from "../../atoms/QuizAnswerBtn/QuizAnswerBtn";
+import { QuizAnswerBtn, QUIZ_ANSWER_BTN } from "../../atoms/QuizAnswerBtn/QuizAnswerBtn";
 import { QuizChoiceBtn, QUIZ_CHOICE_BTN } from "../../atoms/QuizChoiceBtn/QuizChoiceBtn";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
@@ -14,46 +14,40 @@ export interface QuizAreaProps extends ContainerProps {
   correctIndex: StepProps["correctIndex"];
 }
 
-const GAP = 2;
-const Questions = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  position: relative;
-  align-items: flex-end;
-  & > div {
-    width: ${ 50 - GAP }%;
-    margin-bottom: ${ GAP * 2 }%;
-  }
-`;
-
 interface ContainerProps {
   x?: StepProps["x"];
   y?: StepProps["y"];
   width?: StepProps["width"];
   height?: StepProps["height"];
+  touchedEnable: boolean;
 }
 
-const Container = styled.div.attrs<ContainerProps>(
+const Main = styled.div.attrs<ContainerProps>(
   ({ x, y, width, height }) => ({
     style: {
       transform: `translate(${ x }%, ${ y }%) scale(${ width }%, ${ height }%)`
     }
   })
 )<ContainerProps>`
-  transform-origin: left top;
-  width: 100%;
+  pointer-events: ${ ({ touchedEnable }) => touchedEnable ? "auto" : "none" };
   position: absolute;
+  transform-origin: left top;
   top: 0;
   left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 32px;
+  row-gap: 24px;
 `;
 
-const Main = styled.div<{ touchedEnable: boolean }>`
-  pointer-events: ${ ({ touchedEnable }) => touchedEnable ? "auto" : "none" };
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+const AnswerBtnWrapper = styled.div<{ len: number }>`
+  justify-self: ${ ({ len }) => len === 4 ? "center" : "end" };
+  align-self: end;
+  ${ ({ len }) => len === 4 && `
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+  ` }
 `;
 
 export const QuizArea: FC<QuizAreaProps> = ({
@@ -80,7 +74,7 @@ export const QuizArea: FC<QuizAreaProps> = ({
 
   const { currentProgress, stepList, setStepList } = useGetStepList();
 
-  const answerBtnProps = {
+  const props = {
     len: questions.length,
     mutation: typeof isAnswered === "boolean"
       ? (isAnswered ? QUIZ_ANSWER_BTN.RED : QUIZ_ANSWER_BTN.WHITE)
@@ -105,53 +99,23 @@ export const QuizArea: FC<QuizAreaProps> = ({
   };
 
   return(
-    <Container x={ x } y={ y } width={ width } height={ height }>
-      <Main touchedEnable={ !isAnswered }>
-        <Questions>
-          { questions.map((x, i) => (
-            <QuizChoiceBtn
-              key={ i }
-              mutation={
-                chooseIndex === i
-                  ? QUIZ_CHOICE_BTN.ORANGE
-                  : QUIZ_CHOICE_BTN.WHITE
-              }
-              onClick={ () => choiceClickHandler(i) }
-              isCorrect={ isAnswered ? i === correctIndex : null }
-            >
-              { x }
-            </QuizChoiceBtn> )) }
-          { questions.length === 3 && <QuizAnswerBtnMemo { ...answerBtnProps } /> }
-        </Questions>
-        { questions.length === 4 && <QuizAnswerBtnMemo { ...answerBtnProps } /> }
-      </Main>
-    </Container>
+    <Main touchedEnable={ !isAnswered } { ...{ x, y, width, height } }>
+      { questions.map((x, i) => (
+        <QuizChoiceBtn
+          key={ i }
+          mutation={
+            chooseIndex === i
+              ? QUIZ_CHOICE_BTN.ORANGE
+              : QUIZ_CHOICE_BTN.WHITE
+          }
+          onClick={ () => choiceClickHandler(i) }
+          isCorrect={ isAnswered ? i === correctIndex : null }
+        >
+          { x }
+        </QuizChoiceBtn> )) }
+        <AnswerBtnWrapper len={ questions.length } >
+          <QuizAnswerBtn { ...props } />
+        </AnswerBtnWrapper>
+    </Main>
   );
 };
-
-interface QuizAnswerBtnMemoProps extends QuizAnswerBtnProps, QuizAnswerBtnWrapperProps {
-}
-
-interface QuizAnswerBtnWrapperProps {
-  len: number;
-}
-
-const QuizAnswerBtnWrapper = styled.div<QuizAnswerBtnWrapperProps>`
-  width: 26% !important;
-  margin: ${ ({ len }) => len === 4 ? "0 auto" : "0" };
-`;
-
-export const QuizAnswerBtnMemo: FC<QuizAnswerBtnMemoProps> = memo(({
-  len,
-  mutation,
-  onClick
-}) => {
-  return <>
-    <QuizAnswerBtnWrapper len={ len }>
-      <QuizAnswerBtn
-        mutation={ mutation }
-        onClick={ onClick }
-      />
-    </QuizAnswerBtnWrapper>
-  </>;
-});

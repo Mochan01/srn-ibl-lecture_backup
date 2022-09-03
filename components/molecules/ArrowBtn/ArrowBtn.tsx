@@ -4,27 +4,32 @@ import { MiniBtn, MINI_BUTTON_MUTATIONS } from "../../atoms/MiniBtn/MiniBtn";
 
 export interface ArrowBtnProps {
   id?: string;
-  dir: "prev" | "next";
+  $dir: "prev" | "next";
 }
 
-interface MainProps {
-  dir: ArrowBtnProps["dir"];
-}
-
-const Main = styled.div<MainProps>`
-  transform: ${ ({ dir }) => dir === "prev" ? "scale(-1, 1)": "none" };
+const Main = styled.div`
+  display: inline-block;
 `;
 
 export const ArrowBtn: FC<ArrowBtnProps> = ({
   id,
-  dir
+  $dir
 }) => {
   return (
     <>
       <link rel="preload" href={ MINI_BUTTON_MUTATIONS.NEXT_ON } as="image" />
       <link rel="preload" href={ MINI_BUTTON_MUTATIONS.NEXT_OFF } as="image" />
-      <Main id={ id } dir={ dir }>
-        <MiniBtn mutation={ MINI_BUTTON_MUTATIONS.NEXT_ON } />
+      <Main id={ id }>
+        { $dir === "next" &&
+          <MiniBtn
+            caption="次ページ"
+            mutation={ MINI_BUTTON_MUTATIONS.NEXT_ON }
+          /> }
+        { $dir === "prev" &&
+          <MiniBtn
+            caption="前ページ"
+            mutation={ MINI_BUTTON_MUTATIONS.PREVIOUS_ON }
+          /> }
       </Main>
     </>
   );

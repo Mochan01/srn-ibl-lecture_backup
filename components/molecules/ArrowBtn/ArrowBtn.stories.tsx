@@ -9,14 +9,9 @@ export default {
   component: ArrowBtn
 } as Meta;
 
-const Template: Story<ArrowBtnProps> = (args) => <ArrowBtn {...args} />;
+const template: Story<ArrowBtnProps> = (args) => <ArrowBtn {...args} />;
 
-export const Prev: { args: ArrowBtnProps } = Template.bind({});
-Prev.args = {
-  dir: "prev"
-};
-
-export const Next: { args: ArrowBtnProps } = Template.bind({});
-Next.args = {
-  dir: "next"
+export const sample: { args: ArrowBtnProps } = template.bind({});
+sample.args = {
+  $dir: "prev"
 };

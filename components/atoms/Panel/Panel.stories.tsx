@@ -1,7 +1,6 @@
 import React from "react";
 // also exported from "@storybook/react" if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { stepA, stepB, stepC } from "../../../data/mock";
 import { Panel, PanelProps } from "./Panel";
 
 export default {
@@ -12,10 +11,22 @@ export default {
 const Template: Story<PanelProps> = (args) => <Panel {...args} />;
 
 export const a: { args: PanelProps } = Template.bind({});
-a.args = stepA;
+a.args = {
+  image: "sample_a.png",
+  motion1: "enlarge",
+  motion2: "fadein"
+};
 
 export const b: { args: PanelProps } = Template.bind({});
-b.args = stepB;
+b.args = {
+  image: "sample_b.png",
+  motion1: "enlarge",
+  motion2: "fadein"
+};
 
 export const c: { args: PanelProps } = Template.bind({});
-c.args = stepC;
+c.args = {
+  image: "sample_c.png",
+  motion1: "enlarge",
+  motion2: "fadein"
+};

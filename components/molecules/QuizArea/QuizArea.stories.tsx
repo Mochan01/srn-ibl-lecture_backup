@@ -2,7 +2,6 @@ import React from "react";
 // also exported from "@storybook/react" if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { QuizArea, QuizAreaProps } from "./QuizArea";
-import { questions } from "../../../data/mock";
 import { SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
 import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
@@ -13,7 +12,7 @@ export default {
   component: QuizArea
 } as Meta;
 
-const Template: Story<QuizAreaProps> = (args) => {
+const template: Story<QuizAreaProps> = (args) => {
   return (
     <SlideProgressProvider>
       <StepListProvider>
@@ -27,14 +26,25 @@ const Template: Story<QuizAreaProps> = (args) => {
   );
 };
 
-export const Three: { args: QuizAreaProps } = Template.bind({});
-Three.args = {
-  questions,
-  correctIndex: 0
+export const three: { args: QuizAreaProps } = template.bind({});
+three.args = {
+  questions: [
+    "アリスは川辺でおねえさんのよこにすわって",
+    "なんにもすることがないのでとても退屈",
+    "一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。",
+    "「絵や会話のない本なんて、なんの役にもたたないじゃないの」とアリスは"
+  ],
+  correctIndex: 0,
+  touchedEnable: true
 };
 
-export const Four: { args: QuizAreaProps } = Template.bind({});
-Four.args = {
-  questions,
-  correctIndex: 0
+export const four: { args: QuizAreaProps } = template.bind({});
+four.args = {
+  questions: [
+    "アリスは川辺でおねえさんのよこにすわって",
+    "なんにもすることがないのでとても退屈",
+    "一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。"
+  ],
+  correctIndex: 0,
+  touchedEnable: true
 };

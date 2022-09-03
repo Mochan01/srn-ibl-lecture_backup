@@ -4,15 +4,15 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
-import { Paginate, PaginateProps } from "./Pagenate";
+import { ControlPanelL, ControlPanelLProps } from "./ControlPanelL";
 import { classNames } from "../../../data/ClassNames";
 
 export default {
-  title: "atoms/Paginate",
-  component: Paginate
+  title: "molecules/ControlPanelL",
+  component: ControlPanelL
 } as Meta;
 
-const Template: Story<PaginateProps> = (args) => {
+const template: Story<ControlPanelLProps> = (args) => {
 
 
 
@@ -40,11 +40,11 @@ const Template: Story<PaginateProps> = (args) => {
       <SwiperSlide />
       <SwiperSlide />
     </Swiper>
-    <Paginate {...args} />
+    <ControlPanelL {...args} />
   </>;
 };
 
-export const Sample: { args: PaginateProps } = Template.bind({});
-Sample.args = {
+export const sample: { args: ControlPanelLProps } = template.bind({});
+sample.args = {
   id: classNames.paginate
 };

@@ -1,6 +1,5 @@
 import React, { FC, useMemo } from "react";
 import styled from "styled-components";
-import { useCalcFntSz } from "../../../hooks/useCalcFntSz";
 
 export const QUIZ_ANSWER_BTN = {
   GRAY: "Answer_button_greyout.png",
@@ -18,40 +17,35 @@ interface MainProps {
 }
 
 const Main = styled.div<MainProps>`
+  width: 116px;
+  height: 46px;
   border-style: solid;
   border-width: 15px;
   border-image-source: url(${ ({ mutation }) => mutation });
   border-image-slice: 15 15 15 15 fill;
   border-image-repeat: stretch;
   cursor: ${ ({ mutation }) => mutation === QUIZ_ANSWER_BTN.GRAY ? "auto" : "pointer" };
+  position: relative;
 `;
 
-interface CommentProps {
-  fz: number;
-  color: string;
-}
-
-const Comment = styled.p.attrs<CommentProps>(
-  ({ fz }) => ({
-    style: {
-      fontSize: fz + "px"
-    }
-  })
-)<CommentProps>`
+const Comment = styled.p`
   color: ${ ({ color }) => color };
+  font-size: 28px;
   text-align: center;
   user-select: none;
   line-height: 1;
   white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  transform: translateY(-50%);
 `;
 
 export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
   mutation,
   onClick = () => {}
 }) => {
-
-  // ボタン幅に4文字分入るくらいのフォントサイズにしたいので
-  const [ref, fz] = useCalcFntSz(4);
 
   // 文字色
   const color = useMemo(() => {
@@ -76,7 +70,7 @@ export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
         if (mutation === QUIZ_ANSWER_BTN.GRAY) return;
         onClick();
       } }>
-        <Comment ref={ ref } fz={ fz } color={ color }>解答</Comment>
+        <Comment color={ color }>解答</Comment>
       </Main>
     </>
   );

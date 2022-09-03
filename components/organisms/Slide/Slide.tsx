@@ -1,11 +1,10 @@
 import React, { FC, Fragment, useContext } from "react";
 import styled from "styled-components";
-import { SwiperSlide } from "swiper/react";
 import { Panel } from "../../atoms/Panel/Panel";
-import { Narration } from "../../atoms/Narration/Narration";
+import { Narration } from "../../providers/Narration/Narration";
 import { QuizArea } from "../../molecules/QuizArea/QuizArea";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
-import { Timer } from "../../atoms/Timer/Timer";
+import { Timer } from "../../providers/Timer/Timer";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList";
 import { StepsFactory } from "../../../factories/StepsFactory";
@@ -14,14 +13,12 @@ import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider"
 export interface SlideProps {
 }
 
-const Main = styled(SwiperSlide)`
+const Main = styled.div`
   & > div {
     &:first-child {
       position: static;
     }
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
   }
@@ -75,6 +72,7 @@ export const Slide: FC<SlideProps> = ({
               { questions && isOver && 
                 <Panel { ...{ motion1, motion2 } }>
                   <QuizArea
+                    touchedEnable={ true }
                     questions={ questions }
                     correctIndex={ correctIndex }
                     x={ x }
