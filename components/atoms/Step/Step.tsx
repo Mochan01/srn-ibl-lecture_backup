@@ -1,12 +1,12 @@
 import React, { FC, ReactElement } from "react";
-import { StepData } from "src-ibl-lecture-master/variable_types/Step";
+import { MotionType } from "src-ibl-lecture-master/variable_types/StepType";
 import styled from "styled-components";
 import { StepDataProps } from "../../../variable_types/StepDataProps";
 
 export interface StepProps {
   image?: StepDataProps["image"];
-  motion1?: StepData["motion"]["motion_1"];
-  motion2?: StepData["motion"]["motion_2"];
+  motion1?: MotionType;
+  motion2?: MotionType;
   children?: ReactElement;
 }
 

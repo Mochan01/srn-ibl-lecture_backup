@@ -32,7 +32,7 @@
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "5.1.26",
     "babel-loader": "8.2.5",
-    "src-ibl-lecture-master": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master.git#semver:0.1.0"
+    "src-ibl-lecture-master": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master.git#semver:0.1.1"
   },
   "homepage": "",
   "keywords": [

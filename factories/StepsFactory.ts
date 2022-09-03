@@ -1,5 +1,5 @@
 import data from "../data/mock_data.json";
-import { StepData } from "src-ibl-lecture-master/variable_types/Step";
+import { StepType } from "src-ibl-lecture-master/variable_types/StepType";
 import _ from "lodash";
 import { StepDataProps, QuizProps } from "../variable_types/StepDataProps";
 
@@ -51,7 +51,7 @@ export class StepsFactory {
     );
   }
 
-  public static getTotalTime(slide: number): StepData["audio"]["total_time"] {
+  public static getTotalTime(slide: number): StepType["audio"]["total_time"] {
     const list = this.getStepBySlide(slide);
     return list[list.length - 1].audio.total_time;
   }
@@ -61,7 +61,7 @@ export class StepsFactory {
    * @param slide 
    * @returns 
    */
-  public static getSeekBarStartsBySlide(slide: number): StepData["audio"]["seekbar_start"][] {
+  public static getSeekBarStartsBySlide(slide: number): StepType["audio"]["seekbar_start"][] {
     let steps = this.getStepBySlide(slide);
     steps = steps.filter(x => !x.question.is_result_step);
     return steps.map(x => x.audio.seekbar_start);
@@ -75,7 +75,7 @@ export class StepsFactory {
     return _.uniq(slides);
   }
 
-  private static generateStepDataProps(data: StepData): StepDataProps {
+  private static generateStepDataProps(data: StepType): StepDataProps {
   
     const duration = this.generateDuration(data.next_steps.next_step);
 
@@ -89,7 +89,7 @@ export class StepsFactory {
     }
   }
 
-  private static generateDuration(ev: StepData["next_steps"]["next_step"]): number {
+  private static generateDuration(ev: StepType["next_steps"]["next_step"]): number {
     switch(ev) {
       case "1_second":
         return 1000;
@@ -109,7 +109,7 @@ export class StepsFactory {
    * @param slide 
    * @returns 
    */
-  private static getStepBySlide(slide: number): StepData[] {
+  private static getStepBySlide(slide: number): StepType[] {
     return this.steps.filter(({ progress }) => progress.slide - 1 === slide);
   }
 
@@ -126,7 +126,7 @@ export class StepsFactory {
    * @param step 
    * @returns 
    */
-  private static buildQuizData(data: StepData): QuizProps {
+  private static buildQuizData(data: StepType): QuizProps {
     const { question, image } = data;
     if (data.image.display_object_1 !== "question_area") return;
 
@@ -154,7 +154,7 @@ export class StepsFactory {
     }
   }
 
-  private static get steps(): StepData[] {
+  private static get steps(): StepType[] {
     // @ts-ignore
     return data.steps;
   }
