@@ -17,8 +17,14 @@ const Template: Story<QuizChoiceBtnProps> = (args) => {
   );
 };
 
-export const Sample: { args: QuizChoiceBtnProps } = Template.bind({});
-Sample.args = {
+export const oneLine: { args: QuizChoiceBtnProps } = Template.bind({});
+oneLine.args = {
+  mutation: QUIZ_CHOICE_BTN.ORANGE,
+  children: "ダミー"
+};
+
+export const twoLine: { args: QuizChoiceBtnProps } = Template.bind({});
+twoLine.args = {
   mutation: QUIZ_CHOICE_BTN.ORANGE,
   children: "ダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストです"
 };

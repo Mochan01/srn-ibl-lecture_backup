@@ -33,6 +33,11 @@ const Main = styled.div<MainProps>`
   &:before {
     content: "";
     display: block;
+    padding-top: 23%;
+  }
+  &:after {
+    content: "";
+    display: block;
     position: absolute;
     width: ${ SIGN_SIZE }%;
     padding-top: ${ SIGN_SIZE }%;
@@ -56,6 +61,10 @@ const Comment = styled.p.attrs<CommentProps>(
     }
   })
 )<CommentProps>`
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
   color: ${ ({ color }) => color };
   width: 100%;
   display: -webkit-box;

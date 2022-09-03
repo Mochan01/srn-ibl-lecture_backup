@@ -53,6 +53,7 @@ const Container = styled.div.attrs<ContainerProps>(
 
 const Main = styled.div<{ touchedEnable: boolean }>`
   pointer-events: ${ ({ touchedEnable }) => touchedEnable ? "auto" : "none" };
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
