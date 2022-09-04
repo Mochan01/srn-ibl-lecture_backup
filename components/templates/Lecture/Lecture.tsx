@@ -21,7 +21,6 @@ interface WrapperProps {
   scale: number;
 }
 
-
 const Wrapper = styled.div.attrs<WrapperProps>(
   ({ scale }) => ({
     style: {

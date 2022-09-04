@@ -77,6 +77,8 @@ export class StepsFactory {
 
   private static generateStepProps(data: StepType): StepProps {
   
+    if (!data) return;
+
     const duration = this.generateDuration(data.next_steps.next_step);
 
     return {
