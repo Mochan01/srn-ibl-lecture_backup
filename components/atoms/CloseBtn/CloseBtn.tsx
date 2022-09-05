@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 // @ts-ignore
 import lectureButtonClose from "../../../assets/lecture_button_close.png";
+new URL("../../../assets/lecture_button_close.png", import.meta.url).toString();
 
 export interface CloseBtnProps {
   onClick?: () => void;
