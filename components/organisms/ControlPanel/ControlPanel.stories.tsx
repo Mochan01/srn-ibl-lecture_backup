@@ -6,7 +6,7 @@ import { PlayProvider } from "../../providers/PlayProvider/PlayProvider";
 import { ControlPanel, ControlPanelProps } from "./ControlPanel";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper.min.css";
+import "swiper/css/bundle";
 import { classNames } from "../../../data/ClassNames";
 import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
 import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";

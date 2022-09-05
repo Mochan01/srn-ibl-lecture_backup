@@ -4,7 +4,7 @@ import { ControlPanel } from "../../organisms/ControlPanel/ControlPanel";
 import { SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { PlayProvider } from "../../providers/PlayProvider/PlayProvider";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper.min.css";
+import "swiper/css/bundle";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 import { classNames } from "../../../data/ClassNames";
 import { Slide } from "../../organisms/Slide/Slide";

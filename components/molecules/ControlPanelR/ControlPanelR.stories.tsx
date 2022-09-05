@@ -3,7 +3,7 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper.min.css";
+import "swiper/css/bundle";
 import { ControlPanelR, ControlPanelRProps } from "./ControlPanelR";
 import { classNames } from "../../../data/ClassNames";
 
