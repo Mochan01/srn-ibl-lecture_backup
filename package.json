@@ -31,6 +31,7 @@
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "5.1.26",
     "babel-loader": "8.2.5",
+    "copyfiles": "^2.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "src-ibl-lecture-master": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master.git#semver:0.1.1",
@@ -51,7 +52,7 @@
   },
   "scripts": {
     "storybook": "start-storybook -s ./assets -p 6006",
-    "build": "npx tsc",
+    "build": "npx tsc && copyfiles ./assets/*.png lib/",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
