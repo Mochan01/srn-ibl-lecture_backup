@@ -1,6 +1,9 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 
+// @ts-ignore
+import lectureButtonClose from "../../../assets/lecture_button_close.png";
+
 export interface CloseBtnProps {
   onClick?: () => void;
 }
@@ -8,7 +11,7 @@ export interface CloseBtnProps {
 const Main = styled.div`
   width: 98px;
   height: 83px;
-  background-image: url("lecture_button_close.png");
+  background-image: url(lectureButtonClose);
   cursor: pointer;
 `;
 
