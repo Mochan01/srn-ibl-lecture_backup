@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { ControlPanelA } from "../../atoms/ControlPanelA/ControlPanelA";
+const lecture_star_off = new URL("../../../assets/lecture_star_off.png", import.meta.url).toString();
+const lecture_star_on = new URL("../../../assets/lecture_star_on.png", import.meta.url).toString();
 
 export interface ControlPanelLProps {
   id?: string;
@@ -16,7 +18,7 @@ const Grid = styled.div`
 const StyleControlPanelL = createGlobalStyle`
   .swiper-pagination-bullet {
     display: block;
-    background-image: url("lecture_star_off.png");
+    background-image: url(${ lecture_star_off });
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -25,7 +27,7 @@ const StyleControlPanelL = createGlobalStyle`
     margin: auto;
   }
   .swiper-pagination-bullet-active {
-    background-image: url("lecture_star_on.png");
+    background-image: url(${ lecture_star_on });
   }
 `;
 

@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+const lecture_title_skip
+  = new URL("../../../assets/lecture_title_skip.png", import.meta.url).toString();
 
 export interface SkipBtnProps {
   onClick?: () => void;
@@ -8,7 +10,7 @@ export interface SkipBtnProps {
 const Main = styled.div`
   width: 180px;
   height: 59px;
-  background-image: url("lecture_title_skip.png");
+  background-image: url(${ lecture_title_skip });
   cursor: pointer;
 `;
 

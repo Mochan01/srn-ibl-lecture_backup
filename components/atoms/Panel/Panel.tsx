@@ -13,7 +13,6 @@ export interface PanelProps {
 const SLIDE_DISTANCE = 200;
 
 const Main = styled.div<PanelProps>`
-  background-image: url(${ ({ image }) => image });
   background-image: ${({ image }) => image ? `url(${ image })` : "none" };
   background-repeat: no-repeat;
   background-size: cover;

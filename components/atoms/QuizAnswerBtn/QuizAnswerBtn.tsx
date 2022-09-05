@@ -2,9 +2,9 @@ import React, { FC, useMemo } from "react";
 import styled from "styled-components";
 
 export const QUIZ_ANSWER_BTN = {
-  GRAY: "Answer_button_greyout.png",
-  RED: "Answer_button_select.png",
-  WHITE: "Answer_button.png"
+  GRAY: new URL("../../../assets/Answer_button_greyout.png", import.meta.url).toString(),
+  RED: new URL("../../../assets/Answer_button_select.png", import.meta.url).toString(),
+  WHITE: new URL("../../../assets/Answer_button.png", import.meta.url).toString()
 } as const;
 
 export interface QuizAnswerBtnProps extends MainProps {

@@ -1,7 +1,7 @@
 import { FC } from "react";
 export declare const QUIZ_CHOICE_BTN: {
-    readonly ORANGE: "Question_button_select.png";
-    readonly WHITE: "Question_button.png";
+    readonly ORANGE: string;
+    readonly WHITE: string;
 };
 export interface QuizChoiceBtnProps extends MainProps {
     children: string;

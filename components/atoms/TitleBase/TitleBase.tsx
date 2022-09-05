@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+const lecture_title_base
+  = new URL("../../../assets/lecture_title_base.png", import.meta.url).toString();
 
 export interface TitleBaseProps {
   unitName: string;
@@ -9,7 +11,7 @@ export interface TitleBaseProps {
 const Main = styled.div`
   width: 700px;
   height: 327px;
-  background-image: url("lecture_title_base.png");
+  background-image: url(${ lecture_title_base });
   position: relative;
 `;
 

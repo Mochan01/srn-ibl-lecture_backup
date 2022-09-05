@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { SIZE } from "../../../data/SIZE";
+const lecture_headline = new URL("../../../assets/lecture_headline.png", import.meta.url).toString();
+const lecture_flame = new URL("../../../assets/lecture_flame.png", import.meta.url).toString();
 
 export interface FrameProps {
   unitName: string;
@@ -14,7 +16,7 @@ const Main = styled.div`
 `;
 
 const Head = styled.div`
-  background-image: url("lecture_headline.png");
+  background-image: url(${ lecture_headline });
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom;
@@ -27,7 +29,7 @@ const Head = styled.div`
 `;
 
 const Rectangle = styled.div`
-  background-image: url("lecture_flame.png");
+  background-image: url(${ lecture_flame });
   background-repeat: no-repeat;
   background-size: contain;
   width: 1000px;

@@ -28,7 +28,7 @@ export const ArrowBtn: FC<ArrowBtnProps> = ({
         { $dir === "prev" &&
           <MiniBtn
             caption="前ページ"
-            mutation={ MINI_BUTTON_MUTATIONS.PREVIOUS_ON }
+            mutation={ MINI_BUTTON_MUTATIONS.PREV_ON }
           /> }
       </Main>
     </>

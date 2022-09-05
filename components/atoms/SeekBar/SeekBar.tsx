@@ -1,7 +1,9 @@
-import React, { FC, memo, Dispatch, SetStateAction } from "react";
+import React, { FC, Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 import { SIZE } from "../../../data/SIZE";
+const lecture_play_circle
+  = new URL("../../../assets/lecture_play_circle.png", import.meta.url).toString();
 
 export interface SeekBarProps {
   value: number;
@@ -51,7 +53,7 @@ const StyledThumb = styled(SliderPrimitive.Thumb)`
   display: block;
   width: ${ THUMB_SIZE }px;
   height: ${ THUMB_SIZE }px;
-  background-image: url("lecture_play_circle.png");
+  background-image: url(${ lecture_play_circle });
   background-size: contain;
   background-repeat: no-repeat;
 `;

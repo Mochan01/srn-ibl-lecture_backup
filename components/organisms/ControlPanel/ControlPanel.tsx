@@ -13,6 +13,7 @@ import { useGetStepList } from "../../../hooks/useGetStepList";
 import { StepsFactory } from "../../../factories/StepsFactory";
 import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 import { ControlPanelR } from "../../molecules/ControlPanelR/ControlPanelR";
+const lecture_panel_b = new URL("../../../assets/lecture_panel_b.png", import.meta.url).toString();
 
 export interface ControlPanelProps {
 }
@@ -34,7 +35,7 @@ const Panel = styled.div`
 `;
 
 const PanelB = styled(Panel)`
-  background-image: url("lecture_panel_b.png");
+  background-image: url(${ lecture_panel_b });
   width: ${ SIZE.PANEL_B_W }px;
   height: ${ SIZE.PANEL_B_H }px;
   padding: 6px 30px 0 30px;

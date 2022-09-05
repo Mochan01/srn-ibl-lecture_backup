@@ -1,9 +1,13 @@
 import React, { FC, useMemo } from "react";
 import styled from "styled-components";
+const Correct
+  = new URL("../../../assets/Correct.png", import.meta.url).toString();
+const Wrong
+  = new URL("../../../assets/Wrong.png", import.meta.url).toString();
 
 export const QUIZ_CHOICE_BTN = {
-  ORANGE: "Question_button_select.png",
-  WHITE: "Question_button.png"
+  ORANGE: new URL("../../../assets/Question_button_select.png", import.meta.url).toString(),
+  WHITE: new URL("../../../assets/Question_button.png", import.meta.url).toString()
 } as const;
 
 export interface QuizChoiceBtnProps extends MainProps {
@@ -38,7 +42,7 @@ const Main = styled.div<MainProps>`
     top: -${ SIGN_SIZE / 2 }px;
     left: -${ SIGN_SIZE / 2 }px;
     background-image: ${ ({ isCorrect }) => typeof isCorrect === "boolean"
-      ? (isCorrect ? "url(Correct.png)" :  "url(Wrong.png)")
+      ? (isCorrect ? `url(${ Correct })` :  `url(${ Wrong })`)
       : "none" };
     background-size: contain;
     background-repeat: no-repeat;
