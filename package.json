@@ -52,7 +52,7 @@
   },
   "scripts": {
     "storybook": "start-storybook -s ./assets -p 6006",
-    "build": "npx tsc && copyfiles ./assets/*.png lib/",
+    "build": "npx tsc && copyfiles ./assets/*.{png,css} lib/",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
