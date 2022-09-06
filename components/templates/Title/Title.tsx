@@ -6,7 +6,6 @@ import { useScalable } from "../../../hooks/useScalable";
 import { StepsFactory } from "../../../factories/StepsFactory";
 import { Narration } from "../../providers/Narration/Narration";
 import { Timer } from "../../providers/Timer/Timer";
-import { Box } from "../../providers/Box/Box";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 
 export interface TitleProps {
@@ -28,7 +27,7 @@ const Main = styled.div.attrs<WrapperProps>(
   transform-origin: left top;
   display: grid;
   grid-template-columns: 914px 236px;
-  grid-template-rows: 202px 332px 90px;
+  grid-template-rows: 202px 332px 90px 456px;
 `;
 
 export const Title: FC<TitleProps> = ({
@@ -76,6 +75,15 @@ export const Title: FC<TitleProps> = ({
       } }>
         <SkipBtn onClick={ onClickSkip } />
       </div>
+      <img
+        style={ {
+          gridColumn: "1 / 3",
+          gridRow: "4 / 5",
+          alignSelf: "end",
+          justifySelf: "end"
+        } }
+        src={ new URL("../../../assets/lecture_title_offer.png", import.meta.url).toString() }
+      />
       <div style={ {
         gridColumn: "2 / 3",
         gridRow: "1 / 2",
