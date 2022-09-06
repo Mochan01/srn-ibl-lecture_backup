@@ -35,6 +35,8 @@ export const Slide: FC<SlideProps> = ({
   const onEnd = () => {
     const stepData = StepsFactory.getNextStepData(slideProgress, currentProgress);
 
+    // スライドが終わりだったとき
+    // レクチャーが終わりだったとき
     if (!stepData) {
       setIsRunSeek(false);
       return;

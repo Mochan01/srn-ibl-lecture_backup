@@ -40,7 +40,10 @@ export class StepsFactory {
     const stepData = this.getStepBySlide(slide);
     let { next_steps } = stepData[step];
 
-    // ステップが終わりだったとき
+    // スライドが終わりだったとき
+    if (next_steps.next_step === "slide_end") return;
+
+    // レクチャーが終わりだったとき
     if (next_steps.next_step === "lecture_end") return;
 
     const nextStep = next_steps.go_to;

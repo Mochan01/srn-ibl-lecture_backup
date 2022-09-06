@@ -11,7 +11,7 @@ import { Slide } from "../../organisms/Slide/Slide";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList";
-import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
+import { RunSeekContext, RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
 import { useScalable } from "../../../hooks/useScalable";
 import styled from "styled-components";
 import { SIZE } from "../../../data/SIZE";
@@ -54,11 +54,13 @@ const Main: FC = ({
   const [activeIndex, setActiveIndex] = useState(0);
   const { setSlideProgress } = useContext(SlideProgressContext);
   const { setStepList } = useGetStepList();
+  const { setIsRunSeek } = useContext(RunSeekContext);
 
   // スライドが変わったとき諸々の進捗を初期化
   useEffect(() => {
     setSlideProgress(activeIndex);
     setStepList({ type: "INIT", slideProgress: activeIndex });
+    setIsRunSeek(true);
   }, [activeIndex]);
 
   const scale = useScalable();
