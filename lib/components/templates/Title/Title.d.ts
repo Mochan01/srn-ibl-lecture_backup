@@ -1,5 +1,6 @@
 import { FC } from "react";
 export interface TitleProps {
-    onOver?: () => void;
+    onClickSkip?: () => void;
+    onClickClose?: () => void;
 }
 export declare const Title: FC<TitleProps>;
