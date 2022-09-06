@@ -6,8 +6,8 @@ import { QuizChoiceBtn, QUIZ_CHOICE_BTN } from "../../atoms/QuizChoiceBtn/QuizCh
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList"
-import { StepsFactory } from "../../../factories/StepsFactory";
 import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
+import { FactoryContext } from "../../providers/FactoryProvider/FactoryProvider";
 
 export interface QuizAreaProps extends ContainerProps {
   questions: StepProps["questions"];
@@ -68,9 +68,11 @@ export const QuizArea: FC<QuizAreaProps> = ({
 
   // 解答ボタン 状態管理
   const [isAnswered, setAnswered] = useState<boolean>();
+
   const { setPlay } = useContext(PlayContext);
   const { setIsRunSeek } = useContext(RunSeekContext);
   const { slideProgress } = useContext(SlideProgressContext);
+  const factory = useContext(FactoryContext);
 
   const { currentProgress, stepList, setStepList } = useGetStepList();
 
@@ -85,7 +87,7 @@ export const QuizArea: FC<QuizAreaProps> = ({
       setPlay(true);
       setIsRunSeek(true);
 
-      const [correct, inCorrect] = StepsFactory.getNextStepDataOnQuiz(
+      const [correct, inCorrect] = factory.getNextStepDataOnQuiz(
         slideProgress,
         stepList[stepList.length - 1].stepProgress
       );

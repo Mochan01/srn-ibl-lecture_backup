@@ -7,13 +7,9 @@ interface Action {
     type: "ADD" | "UPDATE";
     stepList: StepProps[];
 }
-interface ResetAction {
-    type: "INIT";
-    slideProgress: number;
-}
 export declare type StepListProviderState = {
     stepList: StepProps[];
-    setStepList: Dispatch<Action | ResetAction>;
+    setStepList: Dispatch<Action>;
 };
 export declare const StepListContext: React.Context<StepListProviderState>;
 /**

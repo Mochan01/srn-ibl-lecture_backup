@@ -1,23 +1,29 @@
-import data from "../data/mock_data.json";
+import json from "../data/mock_data.json";
 import { StepType } from "src-ibl-lecture-master/variable_types/StepType";
 import _ from "lodash";
 import { StepProps, QuizProps } from "../variable_types/StepProps";
 
 export class StepsFactory {
 
-  public static getStepList(slide: number, step: number): StepProps[] {
+  private _steps: StepType[];
+
+  constructor(data: object = json) {
+    this._steps = data["steps"] as StepType[];
+  }
+
+  public getStepList(slide: number, step: number): StepProps[] {
     let data = this.getStepBySlide(slide).map(x => this.generateStepProps(x));
     data = data.filter(x => x.stepProgress <= step);
 
     return data;
   }
 
-  public static getCurrentStepData(slide: number, step: number): StepProps {
+  public getCurrentStepData(slide: number, step: number): StepProps {
     const stepData = this.getStepBySlide(slide);
     return this.generateStepProps(stepData[step]);
   }
 
-  public static getNextStepDataOnQuiz(slide: number, step: number): [StepProps, StepProps] {
+  public getNextStepDataOnQuiz(slide: number, step: number): [StepProps, StepProps] {
     const stepData = this.getStepBySlide(slide);
     let { next_steps } = stepData[step];
 
@@ -36,7 +42,7 @@ export class StepsFactory {
     ]
   }
 
-  public static getNextStepData(slide: number, step: number): StepProps {
+  public getNextStepData(slide: number, step: number): StepProps {
     const stepData = this.getStepBySlide(slide);
     let { next_steps } = stepData[step];
 
@@ -54,7 +60,7 @@ export class StepsFactory {
     );
   }
 
-  public static getTotalTime(slide: number): StepType["audio"]["total_time"] {
+  public getTotalTime(slide: number): StepType["audio"]["total_time"] {
     const list = this.getStepBySlide(slide);
     return list[list.length - 1].audio.total_time;
   }
@@ -64,7 +70,7 @@ export class StepsFactory {
    * @param slide 
    * @returns 
    */
-  public static getSeekBarStartsBySlide(slide: number): StepType["audio"]["seekbar_start"][] {
+  public getSeekBarStartsBySlide(slide: number): StepType["audio"]["seekbar_start"][] {
     let steps = this.getStepBySlide(slide);
     steps = steps.filter(x => !x.question.is_result_step);
     return steps.map(x => x.audio.seekbar_start);
@@ -73,12 +79,12 @@ export class StepsFactory {
   /**
    * スライドの数を取得
    */
-  public static get slides(): number[] {
-    const slides = this.steps.map(({ progress }) => progress.slide - 1);
+  public get slides(): number[] {
+    const slides = this._steps.map(({ progress }) => progress.slide - 1);
     return _.uniq(slides);
   }
 
-  private static generateStepProps(data: StepType): StepProps {
+  private generateStepProps(data: StepType): StepProps {
   
     if (!data) return;
 
@@ -96,7 +102,7 @@ export class StepsFactory {
     }
   }
 
-  private static generateDuration(ev: StepType["next_steps"]["next_step"]): number {
+  private generateDuration(ev: StepType["next_steps"]["next_step"]): number {
     switch(ev) {
       case "1_second":
         return 1000;
@@ -116,15 +122,15 @@ export class StepsFactory {
    * @param slide 
    * @returns 
    */
-  private static getStepBySlide(slide: number): StepType[] {
-    return this.steps.filter(({ progress }) => progress.slide - 1 === slide);
+  private getStepBySlide(slide: number): StepType[] {
+    return this._steps.filter(({ progress }) => progress.slide - 1 === slide);
   }
 
   /**
    * マスターの文字列「*_*」を数字に変換
    * @returns 
    */
-  private static generateNum(val: string): number {
+  private generateNum(val: string): number {
     return Number(val.split("_")[1]) - 1;
   }
 
@@ -133,7 +139,7 @@ export class StepsFactory {
    * @param step 
    * @returns 
    */
-  private static buildQuizData(data: StepType): QuizProps {
+  private buildQuizData(data: StepType): QuizProps {
     const { question, image } = data;
     if (data.image.display_object_1 !== "question_area") return;
 
@@ -159,10 +165,6 @@ export class StepsFactory {
       width: image.width,
       height: image.height,
     }
-  }
-
-  private static get steps(): StepType[] {
-    return data.steps as StepType[];
   }
 
 }

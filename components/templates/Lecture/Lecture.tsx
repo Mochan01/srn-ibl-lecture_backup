@@ -1,5 +1,4 @@
 import React, { FC, useContext, useEffect, useState } from "react";
-import { StepsFactory } from "../../../factories/StepsFactory";
 import { ControlPanel } from "../../organisms/ControlPanel/ControlPanel";
 import { SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { PlayProvider } from "../../providers/PlayProvider/PlayProvider";
@@ -18,6 +17,7 @@ import { SIZE } from "../../../data/SIZE";
 import { Frame } from "../../atoms/Frame/Frame";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 import { LectureBase } from "../../atoms/LectureBase/LectureBase";
+import { FactoryContext, FactoryProvider } from "../../providers/FactoryProvider/FactoryProvider";
 
 interface ContainerProps {
   scale: number;
@@ -57,14 +57,19 @@ const Main: FC<LectureProps> = ({
 }) => {
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const { setSlideProgress } = useContext(SlideProgressContext);
   const { setStepList } = useGetStepList();
+
+  const { setSlideProgress } = useContext(SlideProgressContext);
   const { setIsRunSeek } = useContext(RunSeekContext);
+  const factory = useContext(FactoryContext);
 
   // スライドが変わったとき諸々の進捗を初期化
   useEffect(() => {
     setSlideProgress(activeIndex);
-    setStepList({ type: "INIT", slideProgress: activeIndex });
+
+    const stepList = [factory.getCurrentStepData(activeIndex, 0)];
+    setStepList({ type: "UPDATE", stepList });
+  
     setIsRunSeek(true);
   }, [activeIndex]);
 
@@ -101,7 +106,7 @@ const Main: FC<LectureProps> = ({
             setActiveIndex(activeIndex);
           } }
         >
-          { StepsFactory.slides.map(x => (
+          { factory.slides.map(x => (
             <SwiperSlide key={ x }>
               { /** activeIndexのスライドのみ描画する */ }
               { x === activeIndex && <Slide  /> }
@@ -127,18 +132,21 @@ const Main: FC<LectureProps> = ({
 
 export interface LectureProps {
   onClickClose?: () => void;
+  data?: object;
 }
 
 export const Lecture = (props) => {
   return <>
-    <SlideProgressProvider>
-      <StepListProvider>
-        <PlayProvider>
-          <RunSeekProvider>
-            <Main { ...props } />
-          </RunSeekProvider>
-        </PlayProvider>
-      </StepListProvider>
-    </SlideProgressProvider>
+    <FactoryProvider { ...props }>
+      <SlideProgressProvider>
+          <StepListProvider>
+            <PlayProvider>
+              <RunSeekProvider>
+                <Main { ...props } />
+              </RunSeekProvider>
+            </PlayProvider>
+          </StepListProvider>
+        </SlideProgressProvider>
+    </FactoryProvider>
 </>;
 };

@@ -1,6 +1,6 @@
-import React, { FC, createContext, ReactNode, Dispatch, useReducer } from "react";
+import React, { FC, createContext, ReactNode, Dispatch, useReducer, useContext } from "react";
 import { StepProps } from "../../../variable_types/StepProps";
-import { StepsFactory } from "../../../factories/StepsFactory";
+import { FactoryContext } from "../FactoryProvider/FactoryProvider";
 
 export interface StepListProviderProps {
   children: ReactNode;
@@ -11,24 +11,17 @@ interface Action {
   stepList: StepProps[];
 }
 
-interface ResetAction {
-  type: "INIT";
-  slideProgress: number;
-}
-
 export type StepListProviderState
-  = { stepList: StepProps[], setStepList: Dispatch<Action | ResetAction> };
+  = { stepList: StepProps[], setStepList: Dispatch<Action> };
 
 export const StepListContext = createContext<StepListProviderState>(null);
 
-const reducerFunc = (state: StepProps[], action: Action | ResetAction)=> {
+const reducerFunc = (state: StepProps[], action: Action)=> {
   switch (action.type) {
     case "ADD":
       return [...state, ...action.stepList];
     case "UPDATE":
       return action.stepList;
-    case "INIT":
-      return [StepsFactory.getCurrentStepData(action.slideProgress, 0)];
   }
 };
 
@@ -41,8 +34,9 @@ export const StepListProvider: FC<StepListProviderProps> = ({
   children
 }) => {
 
+  const factory = useContext(FactoryContext);
   const [stepList, setStepList]
-    = useReducer(reducerFunc, [StepsFactory.getCurrentStepData(0, 0)]);
+    = useReducer(reducerFunc, [factory.getCurrentStepData(0, 0)]);
 
   return (
     <StepListContext.Provider value={ { stepList, setStepList } }>

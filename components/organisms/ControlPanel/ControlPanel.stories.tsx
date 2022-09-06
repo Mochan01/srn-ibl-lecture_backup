@@ -10,6 +10,7 @@ import "swiper/css/bundle";
 import { classNames } from "../../../data/ClassNames";
 import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
 import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
+import { FactoryProvider } from "../../providers/FactoryProvider/FactoryProvider";
 
 export default {
   title: "organisms/ControlPanel",
@@ -41,15 +42,17 @@ const Template: Story<ControlPanelProps> = (args) => {
       <SwiperSlide />
       <SwiperSlide />
     </Swiper>
-    <SlideProgressProvider>
-      <StepListProvider>
-        <PlayProvider>
-          <RunSeekProvider>
-            <ControlPanel {...args} />
-          </RunSeekProvider>
-        </PlayProvider>
-      </StepListProvider>
-    </SlideProgressProvider>
+    <FactoryProvider>
+      <SlideProgressProvider>
+        <StepListProvider>
+          <PlayProvider>
+            <RunSeekProvider>
+              <ControlPanel {...args} />
+            </RunSeekProvider>
+          </PlayProvider>
+        </StepListProvider>
+      </SlideProgressProvider>
+    </FactoryProvider>
   </>;
 };
 

@@ -10,9 +10,9 @@ import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { SIZE } from "../../../data/SIZE";
 import { useGetStepList } from "../../../hooks/useGetStepList";
-import { StepsFactory } from "../../../factories/StepsFactory";
 import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 import { ControlPanelR } from "../../molecules/ControlPanelR/ControlPanelR";
+import { FactoryContext } from "../../providers/FactoryProvider/FactoryProvider";
 const lecture_panel_b = new URL("../../../assets/lecture_panel_b.png", import.meta.url).toString();
 
 export interface ControlPanelProps {
@@ -103,14 +103,16 @@ const SeekBarMemo: FC = memo(() => {
 
   const { play, setPlay } = useContext(PlayContext);
   const { slideProgress } = useContext(SlideProgressContext);
+  const factory = useContext(FactoryContext);
+
   const { currentProgress, setStepList } = useGetStepList();
 
   const points = useMemo(() => {
-    return StepsFactory.getSeekBarStartsBySlide(slideProgress);
+    return factory.getSeekBarStartsBySlide(slideProgress);
   }, [slideProgress]);
 
   const duration = useMemo(() => {
-    return StepsFactory.getTotalTime(slideProgress);
+    return factory.getTotalTime(slideProgress);
   }, [slideProgress]);
 
   const [isTouched, setIsTouched] = useState(false);
@@ -134,7 +136,7 @@ const SeekBarMemo: FC = memo(() => {
             setIsTouched(true);
           } }
           onPointerUp={ progress => {
-            const stepList = StepsFactory.getStepList(slideProgress, progress);
+            const stepList = factory.getStepList(slideProgress, progress);
             setStepList({ type: "UPDATE", stepList });
             setIsTouched(false);
           }}

@@ -7,8 +7,8 @@ import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { Timer } from "../../providers/Timer/Timer";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList";
-import { StepsFactory } from "../../../factories/StepsFactory";
 import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
+import { FactoryContext } from "../../providers/FactoryProvider/FactoryProvider";
 
 export interface SlideProps {
 }
@@ -27,13 +27,15 @@ const Main = styled.div`
 export const Slide: FC<SlideProps> = ({
 }) => {
 
-  const { play } = useContext(PlayContext);
   const { stepList, setStepList, currentProgress } = useGetStepList();
+
+  const { play } = useContext(PlayContext);
   const { setIsRunSeek } = useContext(RunSeekContext);
   const { slideProgress } = useContext(SlideProgressContext);
+  const factory = useContext(FactoryContext);
 
   const onEnd = () => {
-    const stepData = StepsFactory.getNextStepData(slideProgress, currentProgress);
+    const stepData = factory.getNextStepData(slideProgress, currentProgress);
 
     // スライドが終わりだったとき
     // レクチャーが終わりだったとき

@@ -9,6 +9,7 @@ import { Timer } from "../../providers/Timer/Timer";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 
 export interface TitleProps {
+  data?: object;
   onClickSkip?: () => void;
   onClickClose?: () => void;
 }
@@ -31,17 +32,19 @@ const Main = styled.div.attrs<WrapperProps>(
 `;
 
 export const Title: FC<TitleProps> = ({
+  data,
   onClickSkip = () => {},
   onClickClose = () => {}
 }) => {
 
   const scale = useScalable();
+  const factory = new StepsFactory(data);
 
-  const initStep = useMemo(() => StepsFactory.getCurrentStepData(0, 0), []);
+  const initStep = useMemo(() => factory.getCurrentStepData(0, 0), []);
   const [step, setStep] = useState(initStep);
 
   const onEnd = () => {
-    const next = StepsFactory.getCurrentStepData(0, step.stepProgress + 1);
+    const next = factory.getCurrentStepData(0, step.stepProgress + 1);
 
     // 終わり
     if (!next) {

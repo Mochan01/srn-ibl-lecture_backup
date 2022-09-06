@@ -6,6 +6,7 @@ import { SlideProgressProvider } from "../../providers/SlideProgressProvider/Sli
 import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
 import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
 import { PlayProvider } from "../../providers/PlayProvider/PlayProvider";
+import { FactoryProvider } from "../../providers/FactoryProvider/FactoryProvider";
 
 export default {
   title: "molecules/QuizArea",
@@ -14,15 +15,17 @@ export default {
 
 const template: Story<QuizAreaProps> = (args) => {
   return (
-    <SlideProgressProvider>
-      <StepListProvider>
-        <PlayProvider>
-          <RunSeekProvider>
-            <QuizArea {...args} />
-          </RunSeekProvider>
-        </PlayProvider>
-      </StepListProvider>
-    </SlideProgressProvider>
+    <FactoryProvider>
+      <SlideProgressProvider>
+        <StepListProvider>
+          <PlayProvider>
+            <RunSeekProvider>
+              <QuizArea {...args} />
+            </RunSeekProvider>
+          </PlayProvider>
+        </StepListProvider>
+      </SlideProgressProvider>
+    </FactoryProvider>
   );
 };
 

@@ -6,6 +6,7 @@ import { SlideProgressContext, SlideProgressProvider } from "../../providers/Sli
 import { PlayContext, PlayProvider } from "../../providers/PlayProvider/PlayProvider";
 import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
 import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
+import { FactoryProvider } from "../../providers/FactoryProvider/FactoryProvider";
 
 export default {
   title: "organisms/Slide",
@@ -14,16 +15,18 @@ export default {
 
 const template: Story<SlideProps>  = (args) => {
   return (
-    <SlideProgressProvider>
-      <StepListProvider>
-        <PlayProvider>
-          <RunSeekProvider>
-            <Init />
-            <Slide {...args} />
-          </RunSeekProvider>
-        </PlayProvider>
-      </StepListProvider>
-    </SlideProgressProvider>
+    <FactoryProvider>
+      <SlideProgressProvider>
+        <StepListProvider>
+          <PlayProvider>
+            <RunSeekProvider>
+              <Init />
+              <Slide {...args} />
+            </RunSeekProvider>
+          </PlayProvider>
+        </StepListProvider>
+      </SlideProgressProvider>
+    </FactoryProvider>
   );
 };
 
