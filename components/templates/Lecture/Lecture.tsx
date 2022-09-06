@@ -16,6 +16,7 @@ import { useScalable } from "../../../hooks/useScalable";
 import styled from "styled-components";
 import { SIZE } from "../../../data/SIZE";
 import { Frame } from "../../atoms/Frame/Frame";
+import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 
 interface WrapperProps {
   scale: number;
@@ -30,7 +31,9 @@ const Wrapper = styled.div.attrs<WrapperProps>(
 )<WrapperProps>`
   transform-origin: left top;
   position: relative;
-  padding-top: ${ SIZE.HEAD_H }px;
+  display: grid;
+  grid-template-columns: ${ SIZE.W }px 184px;
+  grid-template-rows: auto 1fr 1fr;
   & .swiper, & .swiper-wrapper {
     position: static;
   }
@@ -48,7 +51,8 @@ const FrameWrapper = styled.div`
   pointer-events: none;
 `;
 
-const Main: FC = ({
+const Main: FC<LectureProps> = ({
+  onClickClose = () => {}
 }) => {
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -67,55 +71,67 @@ const Main: FC = ({
 
   return (
     <Wrapper scale={ scale }>
-      <Swiper
-        allowTouchMove={ false }
-        speed={ 1 } // スライドエフェクトを止める
-        modules={ [Navigation, Pagination, Mousewheel, Keyboard] }
-        className="mySwiper"
-        navigation={ {
-          prevEl: `#${ classNames.arrowPrev }`,
-          nextEl: `#${ classNames.arrowNext }`
-        } }
-        pagination={ {
-          el: `#${ classNames.paginate }`,
-          clickable: true
-        } }
-        initialSlide={ activeIndex }
-        onInit={ ({ activeIndex }) => {
-          setActiveIndex(activeIndex);
-        } }
-        onSlideChange={ ({ activeIndex }) => {
-          setActiveIndex(activeIndex);
-        } }
-      >
-        { StepsFactory.slides.map(x => {
-            return (
-              <SwiperSlide key={ x }>
-                { /** activeIndexのスライドのみ描画する */ }
-                { x === activeIndex && <Slide  /> }
-              </SwiperSlide>
-            );
-        }) }
-      </Swiper>
-      <FrameWrapper>
-        <Frame unitName="unit22" unitTitle="ほげほげ" />
-      </FrameWrapper>
-      <ControlPanel />
+      <div style={ {
+        gridColumn: "1 / 2",
+        gridRow: "1 / 4",
+        paddingTop:  SIZE.HEAD_H
+      } }>
+        <Swiper
+          allowTouchMove={ false }
+          speed={ 1 } // スライドエフェクトを止める
+          modules={ [Navigation, Pagination, Mousewheel, Keyboard] }
+          className="mySwiper"
+          navigation={ {
+            prevEl: `#${ classNames.arrowPrev }`,
+            nextEl: `#${ classNames.arrowNext }`
+          } }
+          pagination={ {
+            el: `#${ classNames.paginate }`,
+            clickable: true
+          } }
+          initialSlide={ activeIndex }
+          onInit={ ({ activeIndex }) => {
+            setActiveIndex(activeIndex);
+          } }
+          onSlideChange={ ({ activeIndex }) => {
+            setActiveIndex(activeIndex);
+          } }
+        >
+          { StepsFactory.slides.map(x => (
+            <SwiperSlide key={ x }>
+              { /** activeIndexのスライドのみ描画する */ }
+              { x === activeIndex && <Slide  /> }
+            </SwiperSlide> )) }
+        </Swiper>
+        <FrameWrapper>
+          <Frame unitName="unit22" unitTitle="ほげほげ" />
+        </FrameWrapper>
+        <ControlPanel />
+      </div>
+      <div style={ {
+        gridColumn: 2 / 3,
+        gridRow: 1 / 2,
+        justifySelf: "end",
+        alignSelf: "end",
+        marginTop: 16
+      } }>
+        <CloseBtn onClick={ onClickClose } />
+      </div>
     </Wrapper>
   );
 };
 
 export interface LectureProps {
+  onClickClose?: () => void;
 }
 
-export const Lecture = ({
-}) => {
+export const Lecture = (props) => {
   return <>
     <SlideProgressProvider>
       <StepListProvider>
         <PlayProvider>
           <RunSeekProvider>
-            <Main />
+            <Main { ...props } />
           </RunSeekProvider>
         </PlayProvider>
       </StepListProvider>
