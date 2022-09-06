@@ -17,18 +17,19 @@ import styled from "styled-components";
 import { SIZE } from "../../../data/SIZE";
 import { Frame } from "../../atoms/Frame/Frame";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
+import { LectureBase } from "../../atoms/LectureBase/LectureBase";
 
-interface WrapperProps {
+interface ContainerProps {
   scale: number;
 }
 
-const Wrapper = styled.div.attrs<WrapperProps>(
+const Container = styled.div.attrs<ContainerProps>(
   ({ scale }) => ({
     style: {
       transform: `scale(${ scale })`
     }
   })
-)<WrapperProps>`
+)<ContainerProps>`
   transform-origin: left top;
   position: relative;
   display: grid;
@@ -44,7 +45,7 @@ const Wrapper = styled.div.attrs<WrapperProps>(
   }
 `;
 
-const FrameWrapper = styled.div`
+const Wrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -70,12 +71,15 @@ const Main: FC<LectureProps> = ({
   const scale = useScalable();
 
   return (
-    <Wrapper scale={ scale }>
+    <Container scale={ scale }>
       <div style={ {
         gridColumn: "1 / 2",
         gridRow: "1 / 4",
         paddingTop:  SIZE.HEAD_H
       } }>
+        <Wrapper>
+          <LectureBase />
+        </Wrapper>
         <Swiper
           allowTouchMove={ false }
           speed={ 1 } // スライドエフェクトを止める
@@ -103,9 +107,9 @@ const Main: FC<LectureProps> = ({
               { x === activeIndex && <Slide  /> }
             </SwiperSlide> )) }
         </Swiper>
-        <FrameWrapper>
+        <Wrapper>
           <Frame unitName="unit22" unitTitle="ほげほげ" />
-        </FrameWrapper>
+        </Wrapper>
         <ControlPanel />
       </div>
       <div style={ {
@@ -117,7 +121,7 @@ const Main: FC<LectureProps> = ({
       } }>
         <CloseBtn onClick={ onClickClose } />
       </div>
-    </Wrapper>
+    </Container>
   );
 };
 

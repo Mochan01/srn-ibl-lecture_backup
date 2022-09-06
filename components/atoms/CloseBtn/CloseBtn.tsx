@@ -11,6 +11,8 @@ const Main = styled.div`
   width: 98px;
   height: 83px;
   background-image: url(${ lecture_button_close });
+  background-repeat: no-repeat;
+  background-size: contain;
   cursor: pointer;
 `;
 

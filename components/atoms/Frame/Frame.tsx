@@ -10,8 +10,8 @@ export interface FrameProps {
 }
 
 const Main = styled.div`
-  width: 1000px;
-  height: 750px;
+  width: ${ SIZE.W }px;
+  height: ${ SIZE.FRAME_H }px;
   position: relative;
 `;
 
@@ -32,8 +32,8 @@ const Rectangle = styled.div`
   background-image: url(${ lecture_flame });
   background-repeat: no-repeat;
   background-size: contain;
-  width: 1000px;
-  height: 750px;
+  width: ${ SIZE.W }px;
+  height: ${ SIZE.FRAME_H }px;
   position: absolute;
 `;
 
