@@ -162,8 +162,7 @@ export class StepsFactory {
   }
 
   private static get steps(): StepType[] {
-    // @ts-ignore
-    return data.steps;
+    return data.steps as StepType[];
   }
 
 }

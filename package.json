@@ -35,7 +35,7 @@
     "@types/styled-components": "5.1.26",
     "babel-loader": "8.2.5",
     "copyfiles": "^2.4.1",
-    "src-ibl-lecture-master": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master.git#semver:0.1.1"
+    "src-ibl-lecture-master": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master.git#semver:0.1.2"
   },
   "homepage": "",
   "keywords": [
