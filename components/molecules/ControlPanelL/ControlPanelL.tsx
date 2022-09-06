@@ -17,6 +17,7 @@ const Grid = styled.div`
 
 const StyleControlPanelL = createGlobalStyle`
   .swiper-pagination-bullet {
+    all: unset;
     display: block;
     background-image: url(${ lecture_star_off });
     background-size: contain;
