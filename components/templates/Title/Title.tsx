@@ -3,13 +3,15 @@ import styled from "styled-components";
 import { SkipBtn } from "../../atoms/SkipBtn/SkipBtn";
 import { TitleBase } from "../../atoms/TitleBase/TitleBase";
 import { useScalable } from "../../../hooks/useScalable";
-import { Spacer } from "../../providers/Spacer/Spacer";
 import { StepsFactory } from "../../../factories/StepsFactory";
 import { Narration } from "../../providers/Narration/Narration";
 import { Timer } from "../../providers/Timer/Timer";
+import { Box } from "../../providers/Box/Box";
+import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 
 export interface TitleProps {
-  onOver?: () => void;
+  onClickSkip?: () => void;
+  onClickClose?: () => void;
 }
 
 interface WrapperProps {
@@ -24,14 +26,14 @@ const Main = styled.div.attrs<WrapperProps>(
   })
 )<WrapperProps>`
   transform-origin: left top;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: fit-content;
+  display: grid;
+  grid-template-columns: 914px 236px;
+  grid-template-rows: 202px 332px 90px;
 `;
 
 export const Title: FC<TitleProps> = ({
-  onOver = () => {}
+  onClickSkip = () => {},
+  onClickClose = () => {}
 }) => {
 
   const scale = useScalable();
@@ -44,23 +46,44 @@ export const Title: FC<TitleProps> = ({
 
     // 終わり
     if (!next) {
-      onOver();
+      onClickSkip();
       return;
     }
 
     setStep(next);
   };
 
-  return (
+  return <>
+    <Narration key={ "narration" + step.stepProgress } sound={ step.sound } />
+    <Timer key={ "timer" + step.stepProgress } duration={ step.duration } onEnd={ onEnd } />
     <Main scale={ scale }>
-      <Narration key={ "narration" + step.stepProgress } sound={ step.sound } />
-      <Timer key={ "timer" + step.stepProgress } duration={ step.duration } onEnd={ onEnd } />
-      <TitleBase
-        unitName="ダミーテキスト"
-        unitTitle="ダミーテキストダミーテキスト"
-      />
-      <Spacer size={ 32 } />
-      <SkipBtn onClick={ onOver } />
+      <div style={ {
+        gridColumn: "1 / 2",
+        gridRow: "2 / 3",
+        alignSelf: "end",
+        justifySelf: "end"
+      } }>
+        <TitleBase
+          unitName="ダミーテキスト"
+          unitTitle="ダミーテキストダミーテキスト"
+        />
+      </div>
+      <div style={ {
+        gridColumn: "1 / 2",
+        gridRow: "3 / 4",
+        alignSelf: "end",
+        justifySelf: "end"
+      } }>
+        <SkipBtn onClick={ onClickSkip } />
+      </div>
+      <div style={ {
+        gridColumn: "2 / 3",
+        gridRow: "1 / 2",
+        justifySelf: "end",
+        marginTop: 16
+      } }>
+        <CloseBtn onClick={ onClickClose } />
+      </div>
     </Main>
-  );
+  </>;
 };
