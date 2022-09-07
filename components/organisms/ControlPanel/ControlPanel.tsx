@@ -153,6 +153,7 @@ const SeekBarMemo: FC = memo(() => {
  */
 const ReplayBtnMemo: FC = memo(() => {
 
+  const { setIsRunSeek } = useContext(RunSeekContext);
   const { slideProgress } = useContext(SlideProgressContext);
   const { stepList, setStepList } = useGetStepList();
   const factory = useContext(FactoryContext);
@@ -169,6 +170,8 @@ const ReplayBtnMemo: FC = memo(() => {
       type: "UPDATE",
       stepList: [factory.getCurrentStepData(slideProgress, 0)]
     });
+
+    setIsRunSeek(true);
   }, [stepList]);
 
   return <ReplayBtn active={ true } onClick={ onClick } />;
