@@ -14,7 +14,7 @@ import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider"
 import { ControlPanelR } from "../../molecules/ControlPanelR/ControlPanelR";
 import { FactoryContext } from "../../providers/FactoryProvider/FactoryProvider";
 const lecture_panel_b = new URL("../../../assets/lecture_panel_b.png", import.meta.url).toString();
-import { ReplayBtn } from "../../../lib/components/molecules/ReplayBtn/ReplayBtn";
+import { ReplayBtn } from "../../molecules/ReplayBtn/ReplayBtn";
 
 export interface ControlPanelProps {
 }
