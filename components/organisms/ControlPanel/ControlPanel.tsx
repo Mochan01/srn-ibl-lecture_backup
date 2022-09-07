@@ -1,4 +1,4 @@
-import React, { FC, useContext, useMemo, memo, useState } from "react";
+import React, { FC, useContext, useMemo, memo, useState, useEffect } from "react";
 import styled from "styled-components";
 import { ArrowBtn } from "../../molecules/ArrowBtn/ArrowBtn";
 import { ControlPanelL } from "../../molecules/ControlPanelL/ControlPanelL";
@@ -14,6 +14,7 @@ import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider"
 import { ControlPanelR } from "../../molecules/ControlPanelR/ControlPanelR";
 import { FactoryContext } from "../../providers/FactoryProvider/FactoryProvider";
 const lecture_panel_b = new URL("../../../assets/lecture_panel_b.png", import.meta.url).toString();
+import { ReplayBtn } from "../../../lib/components/molecules/ReplayBtn/ReplayBtn";
 
 export interface ControlPanelProps {
 }
@@ -73,7 +74,7 @@ export const ControlPanel: FC<ControlPanelProps> = ({
             <ArrowBtn id={ classNames.arrowNext } $dir="next" />
           </BtnWrapperL>
           <BtnWrapperR>
-            <ArrowBtn id={ classNames.arrowNext } $dir="next" />
+            <ReplayBtnMemo />
           </BtnWrapperR>
         </PanelB>
         <ControlPanelR />
@@ -145,6 +146,32 @@ const SeekBarMemo: FC = memo(() => {
       </SeekBarChild>
     </SeekBarWrapper>
   </>;
+});
+
+/**
+ * リプレイボタン
+ */
+const ReplayBtnMemo: FC = memo(() => {
+
+  const { slideProgress } = useContext(SlideProgressContext);
+  const { stepList, setStepList } = useGetStepList();
+  const factory = useContext(FactoryContext);
+
+  // 一旦ステップをすべてアンマウントしてから最初のステップを描画する
+  const onClick = () => {
+    setStepList({ type: "UPDATE", stepList: [] });
+  };
+
+  useEffect(() => {
+    if (stepList.length !== 0) return;
+
+    setStepList({
+      type: "UPDATE",
+      stepList: [factory.getCurrentStepData(slideProgress, 0)]
+    });
+  }, [stepList]);
+
+  return <ReplayBtn active={ true } onClick={ onClick } />;
 });
 
 /**
