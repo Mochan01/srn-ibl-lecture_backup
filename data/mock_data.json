@@ -10,121 +10,15 @@
               "speech": ""
           },
           "audio": {
-              "mp3": "ST_L1U1_01",
-              "time": "1899-12-29T15:00:04.000Z",
-              "total_time": "1899-12-29T15:00:04.000Z",
+              "mp3": "sample.mp3",
+              "time": 4000,
+              "total_time": 4000,
               "seekbar_start": 0,
-              "seekbar_end": 9.76
+              "seekbar_end": 25
           },
           "animation": {
               "teacher": "animation_2",
               "student": "animation_1"
-          },
-          "image": {
-              "display_object_1": "image",
-              "display_file": "sample_a.png",
-              "slideshow_width": "",
-              "slide_show_height": "",
-              "width": "",
-              "height": "",
-              "x_axis": "",
-              "y_axis": ""
-          },
-          "question": {
-              "button_1": "",
-              "ans_1": false,
-              "button_2": "",
-              "ans_2": false,
-              "button_3": "",
-              "ans_3": false,
-              "button_4": "",
-              "ans_4": false,
-              "answer_button": "",
-              "is_result_step": false
-          },
-          "motion": {
-              "motion_1": "",
-              "motion_2": ""
-          },
-          "next_steps": {
-              "next_step": "audio_end",
-              "go_to": "0_2",
-              "if_correct": "",
-              "if_wrong": ""
-          }
-      },
-      {
-          "progress": {
-              "slide": 1,
-              "step": 2
-          },
-          "narrative": {
-              "narration": "前回、初めてのグループワークはどうだった？",
-              "speech": ""
-          },
-          "audio": {
-              "mp3": "ST_L1U2_02",
-              "time": "1899-12-29T15:00:04.000Z",
-              "total_time": "1899-12-29T15:00:08.000Z",
-              "seekbar_start": 9.77,
-              "seekbar_end": 19.51
-          },
-          "animation": {
-              "teacher": "animation_2",
-              "student": "animation_1"
-          },
-          "image": {
-              "display_object_1": "image",
-              "display_file": "sample_b.png",
-              "slideshow_width": "",
-              "slide_show_height": "",
-              "width": "",
-              "height": "",
-              "x_axis": "",
-              "y_axis": ""
-          },
-          "question": {
-              "button_1": "",
-              "ans_1": false,
-              "button_2": "",
-              "ans_2": false,
-              "button_3": "",
-              "ans_3": false,
-              "button_4": "",
-              "ans_4": false,
-              "answer_button": "",
-              "is_result_step": false
-          },
-          "motion": {
-              "motion_1": "",
-              "motion_2": ""
-          },
-          "next_steps": {
-              "next_step": "audio_end",
-              "go_to": "0_3",
-              "if_correct": "",
-              "if_wrong": ""
-          }
-      },
-      {
-          "progress": {
-              "slide": 2,
-              "step": 1
-          },
-          "narrative": {
-              "narration": "突然だけど、あなたは、人工衛星を見たことある？",
-              "speech": ""
-          },
-          "audio": {
-              "mp3": "ST_L1U2_07",
-              "time": "1899-12-29T15:00:06.000Z",
-              "total_time": "1899-12-29T15:00:14.000Z",
-              "seekbar_start": 8.01,
-              "seekbar_end": 14
-          },
-          "animation": {
-              "teacher": "animation_2",
-              "student": "animation_3"
           },
           "image": {
               "display_object_1": "image",
@@ -161,19 +55,19 @@
       },
       {
           "progress": {
-              "slide": 2,
+              "slide": 1,
               "step": 2
           },
           "narrative": {
-              "narration": "実は、夜空を見上げても、肉眼ではほとんど見えないけれど、たくさんの人工衛星が地球の周りを周回しているわ。",
-              "speech": ""
+              "narration": "",
+              "speech": "前回、初めてのグループワークはどうだった？"
           },
           "audio": {
-              "mp3": "ST_L1U2_08",
-              "time": "1899-12-29T15:00:11.000Z",
-              "total_time": "1899-12-29T15:00:25.000Z",
-              "seekbar_start": 14.01,
-              "seekbar_end": 25
+              "mp3": "sample.mp3",
+              "time": 4000,
+              "total_time": 8000,
+              "seekbar_start": 25.01,
+              "seekbar_end": 50
           },
           "animation": {
               "teacher": "animation_2",
@@ -206,27 +100,27 @@
               "motion_2": ""
           },
           "next_steps": {
-              "next_step": "audio_end",
-              "go_to": "1_3",
+              "next_step": "3_seconds",
+              "go_to": "1_4",
               "if_correct": "",
               "if_wrong": ""
           }
       },
       {
           "progress": {
-              "slide": 2,
+              "slide": 1,
               "step": 3
           },
           "narrative": {
-              "narration": "見たことがある人は、なかなかの天文マニアね（笑）",
+              "narration": "ハーイ、今日も私のラボにようこそ。",
               "speech": ""
           },
           "audio": {
-              "mp3": "ST_L1U2_09",
-              "time": "1899-12-29T15:00:05.000Z",
-              "total_time": "1899-12-29T15:00:30.000Z",
-              "seekbar_start": 25.01,
-              "seekbar_end": 30
+              "mp3": "sample.mp3",
+              "time": 4000,
+              "total_time": 12000,
+              "seekbar_start": 50.01,
+              "seekbar_end": 75
           },
           "animation": {
               "teacher": "animation_2",
@@ -234,7 +128,7 @@
           },
           "image": {
               "display_object_1": "image",
-              "display_file": "sample_c.png",
+              "display_file": "sample_d.png",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
@@ -267,19 +161,19 @@
       },
       {
           "progress": {
-              "slide": 3,
-              "step": 1
+              "slide": 1,
+              "step": 4
           },
           "narrative": {
-              "narration": "前回のグループワークでは、「使われなくなった人工衛星や、打ち上げ時に使用したロケットの一部は宇宙空間でどうなるか」を考えてもらったわね。",
+              "narration": "ハーイ、今日も私のラボにようこそ。",
               "speech": ""
           },
           "audio": {
-              "mp3": "ST_L1U2_23",
-              "time": "1899-12-29T15:00:13.000Z",
-              "total_time": "1899-12-29T15:00:43.000Z",
-              "seekbar_start": 16.05,
-              "seekbar_end": 22.99
+              "mp3": "sample.mp3",
+              "time": 4000,
+              "total_time": 16000,
+              "seekbar_start": 75.01,
+              "seekbar_end": 100
           },
           "animation": {
               "teacher": "animation_2",
@@ -287,7 +181,60 @@
           },
           "image": {
               "display_object_1": "image",
-              "display_file": "sample_a.png",
+              "display_file": "sample_c.png",
+              "slideshow_width": "",
+              "slide_show_height": "",
+              "width": "",
+              "height": "",
+              "x_axis": "",
+              "y_axis": ""
+          },
+          "question": {
+              "button_1": "",
+              "ans_1": false,
+              "button_2": "",
+              "ans_2": false,
+              "button_3": "",
+              "ans_3": false,
+              "button_4": "",
+              "ans_4": false,
+              "answer_button": "",
+              "is_result_step": false
+          },
+          "motion": {
+              "motion_1": "",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "slide_end",
+              "go_to": "2_1",
+              "if_correct": "",
+              "if_wrong": ""
+          }
+      },
+      {
+          "progress": {
+              "slide": 2,
+              "step": 1
+          },
+          "narrative": {
+              "narration": "じゃあ、どのくらいの数の人工衛星が、地球の周りを周回していると思う？",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "sample.mp3",
+              "time": 4000,
+              "total_time": 4000,
+              "seekbar_start": 0.01,
+              "seekbar_end": 20
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_3"
+          },
+          "image": {
+              "display_object_1": "image",
+              "display_file": "https://placehold.jp/24/cccccc/ffffff/1280x960.png?text=1",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
@@ -320,19 +267,178 @@
       },
       {
           "progress": {
-              "slide": 3,
+              "slide": 2,
               "step": 2
           },
           "narrative": {
-              "narration": "これらは「スペースデブリ」、宇宙ゴミと呼ばれていて、",
+              "narration": "イメージで予想してみて。",
               "speech": ""
           },
           "audio": {
-              "mp3": "ST_L1U2_24",
-              "time": "1899-12-29T15:00:05.000Z",
-              "total_time": "1899-12-29T15:00:48.000Z",
-              "seekbar_start": 23,
-              "seekbar_end": 25.67
+              "mp3": "sample.mp3",
+              "time": 4000,
+              "total_time": 8000,
+              "seekbar_start": 20.01,
+              "seekbar_end": 40
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_3"
+          },
+          "image": {
+              "display_object_1": "question_area",
+              "display_file": "",
+              "slideshow_width": 1200,
+              "slide_show_height": 800,
+              "width": 100,
+              "height": 100,
+              "x_axis": 0,
+              "y_axis": 0
+          },
+          "question": {
+              "button_1": "ほげほげほげ",
+              "ans_1": false,
+              "button_2": "クイズ位置代目",
+              "ans_2": false,
+              "button_3": "あああああああああああああああああ",
+              "ans_3": false,
+              "button_4": "てすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすと",
+              "ans_4": true,
+              "answer_button": "",
+              "is_result_step": false
+          },
+          "motion": {
+              "motion_1": "fadein",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "on_answer",
+              "go_to": "",
+              "if_correct": "2_4",
+              "if_wrong": "2_3"
+          }
+      },
+      {
+          "progress": {
+              "slide": 2,
+              "step": 3
+          },
+          "narrative": {
+              "narration": "【correct】そう、なかなかの数だと思わない？",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "sample.mp3",
+              "time": 4000,
+              "total_time": 12000,
+              "seekbar_start": 40.01,
+              "seekbar_end": 60
+          },
+          "animation": {
+              "teacher": "animation_5",
+              "student": "animation_5"
+          },
+          "image": {
+              "display_object_1": "image",
+              "display_file": "https://placehold.jp/24/cccccc/ffffff/1280x960.png?text=3",
+              "slideshow_width": "",
+              "slide_show_height": "",
+              "width": "",
+              "height": "",
+              "x_axis": "",
+              "y_axis": ""
+          },
+          "question": {
+              "button_1": "",
+              "ans_1": false,
+              "button_2": "",
+              "ans_2": false,
+              "button_3": "",
+              "ans_3": false,
+              "button_4": "",
+              "ans_4": false,
+              "answer_button": "",
+              "is_result_step": true
+          },
+          "motion": {
+              "motion_1": "",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": "2_5",
+              "if_correct": "",
+              "if_wrong": ""
+          }
+      },
+      {
+          "progress": {
+              "slide": 2,
+              "step": 4
+          },
+          "narrative": {
+              "narration": "【wrong】実、もっとあるのよ",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "sample.mp3",
+              "time": 4000,
+              "total_time": 12000,
+              "seekbar_start": 60.01,
+              "seekbar_end": 60
+          },
+          "animation": {
+              "teacher": "animation_6",
+              "student": "animation_6"
+          },
+          "image": {
+              "display_object_1": "image",
+              "display_file": "https://placehold.jp/24/cccccc/ffffff/1280x960.png?text=4",
+              "slideshow_width": "",
+              "slide_show_height": "",
+              "width": "",
+              "height": "",
+              "x_axis": "",
+              "y_axis": ""
+          },
+          "question": {
+              "button_1": "",
+              "ans_1": false,
+              "button_2": "",
+              "ans_2": false,
+              "button_3": "",
+              "ans_3": false,
+              "button_4": "",
+              "ans_4": false,
+              "answer_button": "",
+              "is_result_step": true
+          },
+          "motion": {
+              "motion_1": "",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": "2_5",
+              "if_correct": "",
+              "if_wrong": ""
+          }
+      },
+      {
+          "progress": {
+              "slide": 2,
+              "step": 5
+          },
+          "narrative": {
+              "narration": "なんと、2017年時点で、4,400機もの人工衛星が、地球の周りをまわっているわ。",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "sample.mp3",
+              "time": 4000,
+              "total_time": 16000,
+              "seekbar_start": 60.01,
+              "seekbar_end": 80
           },
           "animation": {
               "teacher": "animation_2",
@@ -340,7 +446,7 @@
           },
           "image": {
               "display_object_1": "image",
-              "display_file": "sample_b.png",
+              "display_file": "https://placehold.jp/24/cccccc/ffffff/1280x960.png?text=5",
               "slideshow_width": "",
               "slide_show_height": "",
               "width": "",
@@ -366,7 +472,60 @@
           },
           "next_steps": {
               "next_step": "audio_end",
-              "go_to": "2_3",
+              "go_to": "2_6",
+              "if_correct": "",
+              "if_wrong": ""
+          }
+      },
+      {
+          "progress": {
+              "slide": 2,
+              "step": 6
+          },
+          "narrative": {
+              "narration": "なんと、2017年時点で、4,400機もの人工衛星が、地球の周りをまわっているわ。",
+              "speech": ""
+          },
+          "audio": {
+              "mp3": "sample.mp3",
+              "time": 4000,
+              "total_time": 20000,
+              "seekbar_start": 80.01,
+              "seekbar_end": 100
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": "image",
+              "display_file": "https://placehold.jp/24/cccccc/ffffff/1280x960.png?text=6",
+              "slideshow_width": "",
+              "slide_show_height": "",
+              "width": "",
+              "height": "",
+              "x_axis": "",
+              "y_axis": ""
+          },
+          "question": {
+              "button_1": "",
+              "ans_1": false,
+              "button_2": "",
+              "ans_2": false,
+              "button_3": "",
+              "ans_3": false,
+              "button_4": "",
+              "ans_4": false,
+              "answer_button": "",
+              "is_result_step": false
+          },
+          "motion": {
+              "motion_1": "fadein",
+              "motion_2": ""
+          },
+          "next_steps": {
+              "next_step": "slide_end",
+              "go_to": "3_1",
               "if_correct": "",
               "if_wrong": ""
           }
