@@ -1,8 +1,9 @@
 import { FC } from "react";
+import { StepProps } from "../../../variable_types/StepProps";
 export interface SeekBarControllerProps {
-    points: number[];
+    steps: StepProps[];
     index: number;
     onPointerDown?: () => void;
-    onPointerUp?: (nextProgress: number) => void;
+    onPointerUp?: (next: StepProps) => void;
 }
 export declare const SeekBarController: FC<SeekBarControllerProps>;

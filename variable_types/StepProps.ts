@@ -17,4 +17,6 @@ export interface StepProps extends QuizProps, Required<PanelProps> {
   sound: string;
   talking: "boy" | "teacher";
   duration: number;
+  seekStart: number;
+  isResultStep: boolean;
 }

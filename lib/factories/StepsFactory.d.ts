@@ -4,16 +4,11 @@ export declare class StepsFactory {
     private _steps;
     constructor(data?: object);
     getStepList(slide: number, step: number): StepProps[];
+    getStepListAll(slide: number): StepProps[];
     getCurrentStepData(slide: number, step: number): StepProps;
     getNextStepDataOnQuiz(slide: number, step: number): [StepProps, StepProps];
     getNextStepData(slide: number, step: number): StepProps;
     getTotalTime(slide: number): StepType["audio"]["total_time"];
-    /**
-     * シークバーの位置を取得
-     * @param slide
-     * @returns
-     */
-    getSeekBarStartsBySlide(slide: number): StepType["audio"]["seekbar_start"][];
     /**
      * スライドの数を取得
      */

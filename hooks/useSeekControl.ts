@@ -1,9 +1,10 @@
 import { useCallback, useState, Dispatch, SetStateAction } from "react";
+import { StepProps } from "../variable_types/StepProps";
 
 interface UseSeekControl {
   value: number;
   setValue: Dispatch<SetStateAction<number>>;
-  getClosest: () => number;
+  getClosest: () => StepProps;
 }
 
 /**
@@ -14,32 +15,41 @@ interface UseSeekControl {
  * @returns 
  */
 export const useSeekControl = (
-  points: number[],
+  steps: StepProps[],
   index: number,
   fixBasis: "CENTER" | "EDGE"
 ): UseSeekControl => {
 
-  const [value, setValue] = useState(points[index]);
+  const { seekStart } = steps.filter(x => x.stepProgress === index)[0];
+  const [value, setValue] = useState(seekStart);
 
   const getClosest = useCallback(() => {
 
-    let closest: number;
+    // 結果発表ステップには止まれない仕様の為
+    // 除いておく
+    const _steps = steps.filter(x => !x.isResultStep);
 
+    let closest: StepProps;
     switch (fixBasis) {
       case "CENTER":
-        closest = points.reduce((prev, curr) => {
-          return Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev;
+        closest = _steps.reduce((prev, curr) => {
+
+          const conditions
+            = Math.abs(curr.seekStart - value) < Math.abs(prev.seekStart - value);
+
+          return conditions ? curr : prev;
         });
         break;
       case "EDGE":
-        closest = points.reduce((prev, curr) => {
-          return curr < value ? curr : prev;
+
+        closest = _steps.reduce((prev, curr) => {
+          return curr.seekStart < value ? curr : prev;
         });
+
         break;
     };
 
-    setValue(closest);
-
+    setValue(closest.seekStart);
     return closest;
   }, [value]);
 

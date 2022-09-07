@@ -1,8 +1,9 @@
 import { Dispatch, SetStateAction } from "react";
+import { StepProps } from "../variable_types/StepProps";
 interface UseSeekControl {
     value: number;
     setValue: Dispatch<SetStateAction<number>>;
-    getClosest: () => number;
+    getClosest: () => StepProps;
 }
 /**
  * control the seek bar
@@ -11,5 +12,5 @@ interface UseSeekControl {
  * @param fixBasis the basis of which the position of trigger to fix
  * @returns
  */
-export declare const useSeekControl: (points: number[], index: number, fixBasis: "CENTER" | "EDGE") => UseSeekControl;
+export declare const useSeekControl: (steps: StepProps[], index: number, fixBasis: "CENTER" | "EDGE") => UseSeekControl;
 export {};

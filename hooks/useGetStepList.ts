@@ -10,7 +10,7 @@ export const useGetStepList = (): UseGetStepListExport => {
   const { stepList, setStepList } = useContext(StepListContext);
 
   const currentProgress = useMemo(() => {
-    return stepList && stepList.length - 1;
+    return stepList && stepList[stepList.length - 1].stepProgress;
   }, [JSON.stringify(stepList)]);
 
   return {

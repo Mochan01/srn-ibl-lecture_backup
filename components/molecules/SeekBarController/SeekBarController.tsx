@@ -1,29 +1,27 @@
 import React, { FC } from "react";
 import { SeekBar } from "../../atoms/SeekBar/SeekBar";
 import { useSeekControl } from "../../../hooks/useSeekControl";
+import { StepProps } from "../../../variable_types/StepProps";
 
 export interface SeekBarControllerProps {
-  points: number[];
+  steps: StepProps[];
   index: number;
   onPointerDown?: () => void;
-  onPointerUp?: (nextProgress: number) => void;
+  onPointerUp?: (next: StepProps) => void;
 }
 
 export const SeekBarController: FC<SeekBarControllerProps> = ({
-  points,
+  steps,
   index,
   onPointerDown = () => {},
   onPointerUp = () => {}
 }) => {
 
-  const { value, setValue, getClosest } = useSeekControl(points, index, "EDGE");
+  const { value, setValue, getClosest } = useSeekControl(steps, index, "EDGE");
 
   return (
     <SeekBar
-      onPointerUp={ () => {
-        const closest = getClosest();
-        onPointerUp(points.indexOf(closest));
-      } }
+      onPointerUp={ () => onPointerUp(getClosest()) }
       { ...{ value, setValue, onPointerDown } }
     />
   );

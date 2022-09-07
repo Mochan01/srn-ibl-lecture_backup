@@ -18,6 +18,11 @@ export class StepsFactory {
     return data;
   }
 
+  public getStepListAll(slide: number): StepProps[] {
+    const steps = this.getStepBySlide(slide);
+    return steps.map(x => this.generateStepProps(x));
+  }
+
   public getCurrentStepData(slide: number, step: number): StepProps {
     const stepData = this.getStepBySlide(slide);
     return this.generateStepProps(stepData[step]);
@@ -66,17 +71,6 @@ export class StepsFactory {
   }
 
   /**
-   * シークバーの位置を取得
-   * @param slide 
-   * @returns 
-   */
-  public getSeekBarStartsBySlide(slide: number): StepType["audio"]["seekbar_start"][] {
-    let steps = this.getStepBySlide(slide);
-    steps = steps.filter(x => !x.question.is_result_step);
-    return steps.map(x => x.audio.seekbar_start);
-  }
-
-  /**
    * スライドの数を取得
    */
   public get slides(): number[] {
@@ -97,6 +91,8 @@ export class StepsFactory {
       motion2: data.motion.motion_2,
       sound: data.audio.mp3,
       duration: duration || data.audio.time,
+      seekStart: data.audio.seekbar_start,
+      isResultStep: data.question.is_result_step,
       talking: duration ? "boy" : "teacher",
       ...this.buildQuizData(data)
     }
