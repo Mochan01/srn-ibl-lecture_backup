@@ -1,60 +1,64 @@
-import React, { FC, useCallback, memo } from "react";
+import React, { FC, Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
-import * as SliderPrimitive from '@radix-ui/react-slider';
-import { useSeekBar } from "../../../hooks/useSeekBar";
+import * as SliderPrimitive from "@radix-ui/react-slider";
+import { SIZE } from "../../../data/SIZE";
+const lecture_play_circle
+  = new URL("../../../assets/lecture_play_circle.png", import.meta.url).toString();
 
-interface MainProps {
+export interface SeekBarProps {
+  value: number;
+  setValue: Dispatch<SetStateAction<number>>;
+  onPointerDown?: (value: number) => void;
+  onPointerUp?: (value: number) => void;
 }
 
+const SLIDER_H = 12;
 const StyledSlider = styled(SliderPrimitive.Root)`
-  position: relative;
   display: flex;
   align-items: center;
   user-select: none;
   touch-action: none;
-  width: 100%;
+  width: ${ SIZE.W }px;
+  background-color: #042f78;
+  padding: 0 2px;
+  position: relative;
   &[data-orientation="horizontal"] {
-    height: 20px;
+    height: ${ SLIDER_H }px;
   }
   &[data-orientation="vertical"] {
     flex-direction: column;
-    width: 20px;
+    width: ${ SLIDER_H }px;
     height: 100px;
   }
 `;
 
+const BAR_H = 6;
 const StyledTrack = styled(SliderPrimitive.Track)`
-  background-color: red;
+  background: linear-gradient(to top, #b2b7c1, #fbfcfd);
   position: relative;
   flex-grow: 1;
-  border-radius: 9999px;
-  &[data-orientation="horizontal"] { height: 3px; }
+  &[data-orientation="horizontal"] { height: ${ BAR_H }px; }
   &[data-orientation="vertical"] { width: 3px; }
 `;
 
 const StyledRange = styled(SliderPrimitive.Range)`
   position: absolute;
-  background-color: #aaa;
-  border-radius: 9999px;
+  background: linear-gradient(to top, #05cff3, #a5ebfd);
   height: 100%;
 `;
 
+const THUMB_SIZE = 14;
 const StyledThumb = styled(SliderPrimitive.Thumb)`
   all: unset;
   display: block;
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  box-shadow: 0 2px 10px #000;
-  border-radius: 10px;
-  &:hover { background-color: pink; }
-  &:focus { box-shadow: 0 0 0 5px #000; }
+  width: ${ THUMB_SIZE }px;
+  height: ${ THUMB_SIZE }px;
+  background-image: url(${ lecture_play_circle });
+  background-size: contain;
+  background-repeat: no-repeat;
 `;
 
-export interface SeekBarMemoProps {
-  value: number;
-  onValueChange: (nextValue: number[]) => void;
-  onPointerUp: () => void;
+export interface SeekBarMemoProps extends SeekBarProps {
 }
 
 /**
@@ -62,54 +66,24 @@ export interface SeekBarMemoProps {
  * @param param0 
  * @returns 
  */
-const SeekBarMemo: FC<SeekBarMemoProps> = memo(({
+export const SeekBar: FC<SeekBarProps> = ({
   value,
-  onValueChange,
-  onPointerUp
+  setValue,
+  onPointerDown = () => {},
+  onPointerUp = () => {}
 }) => {
   return (
     <StyledSlider
       max={ 100 }
       value={ [value] }
-      onValueChange={ onValueChange }
-      onClick={ onPointerUp }
+      onValueChange={ nextValue => setValue(nextValue[0]) }
+      onPointerDown={ () => onPointerDown(value) }
+      onPointerUp={ () => onPointerUp(value) }
     >
       <StyledTrack>
         <StyledRange />
       </StyledTrack>
       <StyledThumb />
     </StyledSlider>
-  );
-});
-
-export interface SeekBarProps {
-}
-
-export const SeekBar: FC<SeekBarProps> = ({
-}) => {
-
-  const { seekValue, seekValueDispatch, points } = useSeekBar();
-
-  // シークバーを動かす
-  const onValueChange
-    = useCallback(nextValue => seekValueDispatch(nextValue[0]), []);
-
-  // シークバーを離したときに発火
-  const pointerUpHandler = useCallback(() => {
-
-    // シークバーを特定の位置にfixさせる
-    const closest = points.reduce((prev, curr) => {
-      return Math.abs(curr - seekValue) < Math.abs(prev - seekValue) ? curr : prev;
-    });
-
-    seekValueDispatch(closest);
-  }, [seekValue]);
-
-  return (
-    <SeekBarMemo
-      value={ seekValue }
-      onValueChange={ onValueChange }
-      onPointerUp={ pointerUpHandler }
-    />
   );
 };

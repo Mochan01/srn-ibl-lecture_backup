@@ -1,0 +1,481 @@
+{
+    "steps": [
+        {
+            "progress": {
+                "slide": 1,
+                "step": 1
+            },
+            "narrative": {
+                "narration": "ハーイ、今日も私のラボにようこそ。",
+                "speech": ""
+            },
+            "audio": {
+                "mp3": "sample.mp3",
+                "time": 4000,
+                "total_time": 4000,
+                "seekbar_start": 0,
+                "seekbar_end": 25
+            },
+            "animation": {
+                "teacher": "animation_2",
+                "student": "animation_1"
+            },
+            "image": {
+                "display_object_1": "image",
+                "display_file": "sample_a.png",
+                "slideshow_width": "",
+                "slide_show_height": "",
+                "width": "",
+                "height": "",
+                "x_axis": "",
+                "y_axis": ""
+            },
+            "question": {
+                "button_1": "",
+                "ans_1": false,
+                "button_2": "",
+                "ans_2": false,
+                "button_3": "",
+                "ans_3": false,
+                "button_4": "",
+                "ans_4": false,
+                "answer_button": "",
+                "is_result_step": false
+            },
+            "motion": {
+                "motion_1": "fadein",
+                "motion_2": ""
+            },
+            "next_steps": {
+                "next_step": "audio_end",
+                "go_to": "1_2",
+                "if_correct": "",
+                "if_wrong": ""
+            }
+        },
+        {
+            "progress": {
+                "slide": 1,
+                "step": 2
+            },
+            "narrative": {
+                "narration": "",
+                "speech": "前回、初めてのグループワークはどうだった？"
+            },
+            "audio": {
+                "mp3": "sample.mp3",
+                "time": 4000,
+                "total_time": 8000,
+                "seekbar_start": 25.01,
+                "seekbar_end": 50
+            },
+            "animation": {
+                "teacher": "animation_2",
+                "student": "animation_1"
+            },
+            "image": {
+                "display_object_1": "image",
+                "display_file": "sample_b.png",
+                "slideshow_width": "",
+                "slide_show_height": "",
+                "width": "",
+                "height": "",
+                "x_axis": "",
+                "y_axis": ""
+            },
+            "question": {
+                "button_1": "",
+                "ans_1": false,
+                "button_2": "",
+                "ans_2": false,
+                "button_3": "",
+                "ans_3": false,
+                "button_4": "",
+                "ans_4": false,
+                "answer_button": "",
+                "is_result_step": false
+            },
+            "motion": {
+                "motion_1": "fadein",
+                "motion_2": ""
+            },
+            "next_steps": {
+                "next_step": "3_seconds",
+                "go_to": "1_4",
+                "if_correct": "",
+                "if_wrong": ""
+            }
+        },
+        {
+            "progress": {
+                "slide": 1,
+                "step": 3
+            },
+            "narrative": {
+                "narration": "ハーイ、今日も私のラボにようこそ。",
+                "speech": ""
+            },
+            "audio": {
+                "mp3": "sample.mp3",
+                "time": 4000,
+                "total_time": 12000,
+                "seekbar_start": 50.01,
+                "seekbar_end": 75
+            },
+            "animation": {
+                "teacher": "animation_2",
+                "student": "animation_1"
+            },
+            "image": {
+                "display_object_1": "image",
+                "display_file": "sample_d.png",
+                "slideshow_width": "",
+                "slide_show_height": "",
+                "width": "",
+                "height": "",
+                "x_axis": "",
+                "y_axis": ""
+            },
+            "question": {
+                "button_1": "",
+                "ans_1": false,
+                "button_2": "",
+                "ans_2": false,
+                "button_3": "",
+                "ans_3": false,
+                "button_4": "",
+                "ans_4": false,
+                "answer_button": "",
+                "is_result_step": false
+            },
+            "motion": {
+                "motion_1": "",
+                "motion_2": ""
+            },
+            "next_steps": {
+                "next_step": "audio_end",
+                "go_to": "1_4",
+                "if_correct": "",
+                "if_wrong": ""
+            }
+        },
+        {
+            "progress": {
+                "slide": 1,
+                "step": 4
+            },
+            "narrative": {
+                "narration": "ハーイ、今日も私のラボにようこそ。",
+                "speech": ""
+            },
+            "audio": {
+                "mp3": "sample.mp3",
+                "time": 4000,
+                "total_time": 16000,
+                "seekbar_start": 75.01,
+                "seekbar_end": 100
+            },
+            "animation": {
+                "teacher": "animation_2",
+                "student": "animation_1"
+            },
+            "image": {
+                "display_object_1": "image",
+                "display_file": "sample_c.png",
+                "slideshow_width": "",
+                "slide_show_height": "",
+                "width": "",
+                "height": "",
+                "x_axis": "",
+                "y_axis": ""
+            },
+            "question": {
+                "button_1": "",
+                "ans_1": false,
+                "button_2": "",
+                "ans_2": false,
+                "button_3": "",
+                "ans_3": false,
+                "button_4": "",
+                "ans_4": false,
+                "answer_button": "",
+                "is_result_step": false
+            },
+            "motion": {
+                "motion_1": "",
+                "motion_2": ""
+            },
+            "next_steps": {
+                "next_step": "slide_end",
+                "go_to": "2_1",
+                "if_correct": "",
+                "if_wrong": ""
+            }
+        },
+        {
+            "progress": {
+                "slide": 2,
+                "step": 1
+            },
+            "narrative": {
+                "narration": "じゃあ、どのくらいの数の人工衛星が、地球の周りを周回していると思う？",
+                "speech": ""
+            },
+            "audio": {
+                "mp3": "sample.mp3",
+                "time": 4000,
+                "total_time": 4000,
+                "seekbar_start": 0.01,
+                "seekbar_end": 25
+            },
+            "animation": {
+                "teacher": "animation_2",
+                "student": "animation_3"
+            },
+            "image": {
+                "display_object_1": "image",
+                "display_file": "sample_a.png",
+                "slideshow_width": "",
+                "slide_show_height": "",
+                "width": "",
+                "height": "",
+                "x_axis": "",
+                "y_axis": ""
+            },
+            "question": {
+                "button_1": "",
+                "ans_1": false,
+                "button_2": "",
+                "ans_2": false,
+                "button_3": "",
+                "ans_3": false,
+                "button_4": "",
+                "ans_4": false,
+                "answer_button": "",
+                "is_result_step": false
+            },
+            "motion": {
+                "motion_1": "fadein",
+                "motion_2": ""
+            },
+            "next_steps": {
+                "next_step": "audio_end",
+                "go_to": "2_2",
+                "if_correct": "",
+                "if_wrong": ""
+            }
+        },
+        {
+            "progress": {
+                "slide": 2,
+                "step": 2
+            },
+            "narrative": {
+                "narration": "イメージで予想してみて。",
+                "speech": ""
+            },
+            "audio": {
+                "mp3": "sample.mp3",
+                "time": 4000,
+                "total_time": 8000,
+                "seekbar_start": 25.01,
+                "seekbar_end": 50
+            },
+            "animation": {
+                "teacher": "animation_2",
+                "student": "animation_3"
+            },
+            "image": {
+                "display_object_1": "question_area",
+                "display_file": "",
+                "slideshow_width": 1200,
+                "slide_show_height": 800,
+                "width": 100,
+                "height": 100,
+                "x_axis": 0,
+                "y_axis": 0
+            },
+            "question": {
+                "button_1": "ほげほげほげ",
+                "ans_1": false,
+                "button_2": "クイズ位置代目",
+                "ans_2": false,
+                "button_3": "あああああああああああああああああ",
+                "ans_3": false,
+                "button_4": "てすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすとてすと",
+                "ans_4": true,
+                "answer_button": "",
+                "is_result_step": false
+            },
+            "motion": {
+                "motion_1": "fadein",
+                "motion_2": ""
+            },
+            "next_steps": {
+                "next_step": "on_answer",
+                "go_to": "",
+                "if_correct": "2_4",
+                "if_wrong": "2_3"
+            }
+        },
+        {
+            "progress": {
+                "slide": 2,
+                "step": 3
+            },
+            "narrative": {
+                "narration": "【correct】そう、なかなかの数だと思わない？",
+                "speech": ""
+            },
+            "audio": {
+                "mp3": "sample.mp3",
+                "time": 4000,
+                "total_time": 12000,
+                "seekbar_start": 50.01,
+                "seekbar_end": 75
+            },
+            "animation": {
+                "teacher": "animation_5",
+                "student": "animation_5"
+            },
+            "image": {
+                "display_object_1": "image",
+                "display_file": "sample_d.png",
+                "slideshow_width": "",
+                "slide_show_height": "",
+                "width": "",
+                "height": "",
+                "x_axis": "",
+                "y_axis": ""
+            },
+            "question": {
+                "button_1": "",
+                "ans_1": false,
+                "button_2": "",
+                "ans_2": false,
+                "button_3": "",
+                "ans_3": false,
+                "button_4": "",
+                "ans_4": false,
+                "answer_button": "",
+                "is_result_step": true
+            },
+            "motion": {
+                "motion_1": "",
+                "motion_2": ""
+            },
+            "next_steps": {
+                "next_step": "audio_end",
+                "go_to": "2_5",
+                "if_correct": "",
+                "if_wrong": ""
+            }
+        },
+        {
+            "progress": {
+                "slide": 2,
+                "step": 4
+            },
+            "narrative": {
+                "narration": "【wrong】実は、もっとあるのよ！",
+                "speech": ""
+            },
+            "audio": {
+                "mp3": "sample.mp3",
+                "time": 4000,
+                "total_time": 12000,
+                "seekbar_start": 75.01,
+                "seekbar_end": 75
+            },
+            "animation": {
+                "teacher": "animation_6",
+                "student": "animation_6"
+            },
+            "image": {
+                "display_object_1": "image",
+                "display_file": "sample_c.png",
+                "slideshow_width": "",
+                "slide_show_height": "",
+                "width": "",
+                "height": "",
+                "x_axis": "",
+                "y_axis": ""
+            },
+            "question": {
+                "button_1": "",
+                "ans_1": false,
+                "button_2": "",
+                "ans_2": false,
+                "button_3": "",
+                "ans_3": false,
+                "button_4": "",
+                "ans_4": false,
+                "answer_button": "",
+                "is_result_step": true
+            },
+            "motion": {
+                "motion_1": "",
+                "motion_2": ""
+            },
+            "next_steps": {
+                "next_step": "audio_end",
+                "go_to": "2_5",
+                "if_correct": "",
+                "if_wrong": ""
+            }
+        },
+        {
+            "progress": {
+                "slide": 2,
+                "step": 5
+            },
+            "narrative": {
+                "narration": "なんと、2017年時点で、4,400機もの人工衛星が、地球の周りをまわっているわ。",
+                "speech": ""
+            },
+            "audio": {
+                "mp3": "sample.mp3",
+                "time": 4000,
+                "total_time": 16000,
+                "seekbar_start": 75.01,
+                "seekbar_end": 100
+            },
+            "animation": {
+                "teacher": "animation_2",
+                "student": "animation_1"
+            },
+            "image": {
+                "display_object_1": "image",
+                "display_file": "sample_a.png",
+                "slideshow_width": "",
+                "slide_show_height": "",
+                "width": "",
+                "height": "",
+                "x_axis": "",
+                "y_axis": ""
+            },
+            "question": {
+                "button_1": "",
+                "ans_1": false,
+                "button_2": "",
+                "ans_2": false,
+                "button_3": "",
+                "ans_3": false,
+                "button_4": "",
+                "ans_4": false,
+                "answer_button": "",
+                "is_result_step": false
+            },
+            "motion": {
+                "motion_1": "fadein",
+                "motion_2": ""
+            },
+            "next_steps": {
+                "next_step": "slide_end",
+                "go_to": "3_1",
+                "if_correct": "",
+                "if_wrong": ""
+            }
+        }
+    ]
+}
