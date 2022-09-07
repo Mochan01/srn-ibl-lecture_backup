@@ -57,19 +57,20 @@ export const Slide: FC<SlideProps> = ({
             sound,
             duration,
             talking,
+            stepProgress,
             questions,
             correctIndex,
             x,
             y,
             width,
             height
-          }, i) => {
+          }) => {
 
-          const isOver = i <= currentProgress;
-          const isEqual =  i === currentProgress;
-          
+          const isOver = stepProgress <= currentProgress;
+          const isEqual =  stepProgress === currentProgress;
+
           return (
-            <Fragment key={ `${ slideProgress }_${ i }` }>
+            <Fragment key={ `${ slideProgress }_${ stepProgress }` }>
               { isOver && <Panel { ...{ image, motion1, motion2 } } /> }
               { play && isEqual && sound && <Narration { ...{ sound } } /> }
               { play && isEqual && <Timer { ...{ onEnd, duration } } /> }
@@ -91,3 +92,4 @@ export const Slide: FC<SlideProps> = ({
     </>
   );
 };
+
