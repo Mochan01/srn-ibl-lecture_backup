@@ -157,7 +157,7 @@ export class StepsFactory {
       questions: _.compact(questions),
       correctIndex: answers.indexOf(true),
       x: image.x_axis,
-      y: image.x_axis,
+      y: image.y_axis,
       width: image.width,
       height: image.height,
     }
