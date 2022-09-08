@@ -9,6 +9,7 @@ import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider"
 import { FactoryContext } from "../../providers/FactoryProvider/FactoryProvider";
 import { ProgressionTrigger } from "../../providers/ProgressionTrigger/ProgressionTrigger";
 import { IsSlideEndContext } from "../../providers/IsSlideEndProvider/IsSlideEndProvider";
+import { IsStepEndContext } from "../../providers/IsStepEndProvider/IsStepEndProvider";
 
 export interface SlideProps {
 }
@@ -33,6 +34,7 @@ export const Slide: FC<SlideProps> = ({
   const { setIsRunSeek } = useContext(RunSeekContext);
   const { slideProgress } = useContext(SlideProgressContext);
   const { setIsSlideEnd } = useContext(IsSlideEndContext);
+  const { setIsStepEnd } = useContext(IsStepEndContext);
   const factory = useContext(FactoryContext);
 
   const onLoad = () => {
@@ -47,13 +49,13 @@ export const Slide: FC<SlideProps> = ({
     setIsRunSeek(false);
     const stepData = factory.getNextStepData(slideProgress, currentProgress);
 
-    // スライドが終わりだったとき
+    // 次のステップがないとき
     if (!stepData) {
 
-      // レクチャーが終わりだったとき
-      if (factory.slides.length - 1 <= slideProgress) {
-        setIsSlideEnd(true);
-      }
+      const isLectureEnd = factory.slides.length - 1 <= slideProgress;
+      setIsSlideEnd(isLectureEnd);
+      setIsStepEnd(!isLectureEnd);
+
       return;
     }
 

@@ -1,6 +1,5 @@
 import React, { FC, useContext, useMemo, memo, useState, useEffect } from "react";
 import styled from "styled-components";
-import { ArrowBtn } from "../../molecules/ArrowBtn/ArrowBtn";
 import { ControlPanelL } from "../../molecules/ControlPanelL/ControlPanelL";
 import { classNames } from "../../../data/ClassNames";
 import { PlayBtn } from "../../molecules/PlayBtn/PlayBtn";
@@ -16,6 +15,9 @@ const lecture_panel_b = new URL("../../../assets/lecture_panel_b.png", import.me
 import { ReplayBtn } from "../../molecules/ReplayBtn/ReplayBtn";
 import { IsSlideEndContext } from "../../providers/IsSlideEndProvider/IsSlideEndProvider";
 import { LectureEndBtn } from "../../molecules/LectureEndBtn/LectureEndBtn";
+import { PrevBtn } from "../../molecules/PrevBtn/PrevBtn";
+import { NextBtn } from "../../molecules/NextBtn/NextBtn";
+import { IsStepEndContext } from "../../providers/IsStepEndProvider/IsStepEndProvider";
 
 export interface ControlPanelProps {
 }
@@ -70,7 +72,7 @@ export const ControlPanel: FC<ControlPanelProps> = ({
         <ControlPanelL id={ classNames.paginate } />
         <PanelB>
           <BtnWrapperL>
-            <ArrowBtn id={ classNames.arrowPrev } $dir="prev" />
+            <PrevBtn />
             <PlayBtnMemo />
             <NextBtnMemo />
           </BtnWrapperL>
@@ -104,10 +106,19 @@ const SeekBarChild = styled.div<{ alpha?: number }>`
 const NextBtnMemo: FC = memo(() => {
 
   const { isSlideEnd } = useContext(IsSlideEndContext);
+  const { isStepEnd } = useContext(IsStepEndContext);
 
   return <>
     { isSlideEnd && <LectureEndBtn /> }
-    { !isSlideEnd &&<ArrowBtn id={ classNames.arrowNext } $dir="next" /> }
+    { /**
+     * アンマウントした瞬間にswiper-buttonの機能を失うので
+     * display: noneすること
+     * */ }
+    <div style={ {
+      display: isSlideEnd ? "none" : "block"
+    } }>
+      <NextBtn isBlink={ isStepEnd } />
+    </div>
   </>;
 });
 

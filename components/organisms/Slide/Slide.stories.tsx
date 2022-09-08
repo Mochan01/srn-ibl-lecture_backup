@@ -8,6 +8,7 @@ import { StepListProvider } from "../../providers/StepListProvider/StepListProvi
 import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
 import { FactoryProvider } from "../../providers/FactoryProvider/FactoryProvider";
 import { IsSlideEndProvider } from "../../providers/IsSlideEndProvider/IsSlideEndProvider";
+import { IsStepEndProvider } from "../../providers/IsStepEndProvider/IsStepEndProvider";
 
 export default {
   title: "organisms/Slide",
@@ -22,8 +23,10 @@ const template: Story<SlideProps>  = (args) => {
           <PlayProvider>
             <RunSeekProvider>
               <IsSlideEndProvider>
-                <Init />
-                <Slide {...args} />
+                <IsStepEndProvider>
+                  <Init />
+                  <Slide {...args} />
+                </IsStepEndProvider>
               </IsSlideEndProvider>
             </RunSeekProvider>
           </PlayProvider>
