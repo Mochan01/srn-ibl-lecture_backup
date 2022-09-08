@@ -1,6 +1,6 @@
 /**
  * ナレーション再生
  * @param sound
- * @param onend
+ * @param onLoaded
  */
-export declare const useNarration: (sound: string) => void;
+export declare const useNarration: (sound: string, onLoaded: () => void) => void;
