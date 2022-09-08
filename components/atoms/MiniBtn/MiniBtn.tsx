@@ -9,7 +9,11 @@ export const MINI_BUTTON_MUTATIONS = {
   PREV_ON: new URL("../../../assets/lecture_button_previous_on.png", import.meta.url).toString(),
   PREV_OFF: new URL("../../../assets/lecture_button_previous_off.png", import.meta.url).toString(),
   PLAY_ON: new URL("../../../assets/lecture_button_play_on.png", import.meta.url).toString(),
-  PLAY_OFF: new URL("../../../assets/lecture_button_play_off.png", import.meta.url).toString()
+  PLAY_OFF: new URL("../../../assets/lecture_button_play_off.png", import.meta.url).toString(),
+  PAUSE_ON: new URL("../../../assets/lecture_button_stop_on.png", import.meta.url).toString(),
+  PAUSE_OFF: new URL("../../../assets/lecture_button_stop_off.png", import.meta.url).toString(),
+  LECTURE_END_ON: new URL("../../../assets/lecture_button_end_on.png", import.meta.url).toString(),
+  LECTURE_END_OFF: new URL("../../../assets/lecture_button_end_off.png", import.meta.url).toString()
 } as const;
 
 export interface MiniBtnProps {
