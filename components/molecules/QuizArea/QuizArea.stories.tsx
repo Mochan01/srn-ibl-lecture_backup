@@ -51,3 +51,18 @@ four.args = {
   correctIndex: 0,
   touchedEnable: true
 };
+
+export const transform: { args: QuizAreaProps } = template.bind({});
+transform.args = {
+  questions: [
+    "アリスは川辺でおねえさんのよこにすわって",
+    "なんにもすることがないのでとても退屈",
+    "一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。"
+  ],
+  correctIndex: 0,
+  touchedEnable: true,
+  x: 0,
+  y: 0,
+  width: 413,
+  height: 211
+};
