@@ -25,6 +25,10 @@ const Grid = styled.div`
 
 const StyleControlPanelL = createGlobalStyle`
   .swiper-pagination-bullet {
+    // todo: マスターデータの方で最初のプログレス消す
+    &:first-child {
+      display: none;
+    }
     all: unset;
     display: block;
     background-image: url(${ lecture_star_off });

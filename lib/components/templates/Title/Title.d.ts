@@ -1,5 +1,6 @@
 import { FC } from "react";
-export interface TitleProps {
+import { TitleBaseProps } from "../../atoms/TitleBase/TitleBase";
+export interface TitleProps extends TitleBaseProps {
     data?: object;
     onClickSkip?: () => void;
     onClickClose?: () => void;

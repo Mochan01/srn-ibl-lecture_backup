@@ -60,7 +60,8 @@ const Main: FC<LectureProps> = ({
   onClickClose = () => {}
 }) => {
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  // todo: マスターデータの方で最初のプログレス消す
+  const [activeIndex, setActiveIndex] = useState(1);
   const { setStepList } = useGetStepList();
 
   const { setSlideProgress } = useContext(SlideProgressContext);
@@ -97,6 +98,10 @@ const Main: FC<LectureProps> = ({
           speed={ 1 } // スライドエフェクトを止める
           modules={ [Navigation, Pagination, Mousewheel, Keyboard] }
           className="mySwiper"
+          onTransitionStart={ swiper => {
+            // todo: マスターデータの方で最初のプログレス消す
+            swiper.allowSlidePrev = swiper.activeIndex !== 1;
+          } }
           navigation={ {
             prevEl: `#${ classNames.arrowPrev }`,
             nextEl: `#${ classNames.arrowNext }`
