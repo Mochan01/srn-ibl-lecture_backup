@@ -1,9 +1,10 @@
-import React, { FC, useContext, useEffect } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { Timer, TimerProps } from "../Timer/Timer";
 import { useNarration } from "../../../hooks/useNarration";
-import { RunSeekContext } from "../../../components/providers/RunSeekProvider/RunSeekProvider";
 
 export interface ProgressionTriggerProps extends TimerProps {
+  onLoad?: () => void;
+  onUnMount?: () => void;
   sound?: string;
 }
 
@@ -16,22 +17,19 @@ export interface ProgressionTriggerProps extends TimerProps {
 export const ProgressionTrigger: FC<ProgressionTriggerProps> = ({
   onEnd,
   duration,
+  onLoad = () => {},
+  onUnMount = () => {},
   sound
 }) => {
 
-  const { isRunSeek, setIsRunSeek } = useContext(RunSeekContext);
+  const [isLoad, setIsLoad] = useState(!sound);
 
   useNarration(sound, () => {
-    setIsRunSeek(true);
+    setIsLoad(true);
+    onLoad();
   });
 
-  useEffect(() => () => setIsRunSeek(false), []);
+  useEffect(() => onUnMount, []);
 
-  return isRunSeek && <Timer
-    duration={ duration }
-    onEnd={ () => {
-      setIsRunSeek(false);
-      onEnd();
-    } }
-  /> ;
+  return isLoad && <Timer { ...{ duration, onEnd } } /> ;
 };

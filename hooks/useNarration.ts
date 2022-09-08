@@ -14,7 +14,7 @@ export const useNarration = (
   const [isLoaded, setIsLoaded] = useState(false);
 
   const [play, { stop }] = useSound(sound, {
-    onload: async () => {
+    onload: () => {
       setIsLoaded(true);
       onLoaded();
     },

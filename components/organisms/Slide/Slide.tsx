@@ -33,15 +33,21 @@ export const Slide: FC<SlideProps> = ({
   const { slideProgress } = useContext(SlideProgressContext);
   const factory = useContext(FactoryContext);
 
+  const onLoad = () => {
+    setIsRunSeek(true);
+  };
+
+  const onUnMount = () => {
+    setIsRunSeek(false);
+  };
+
   const onEnd = () => {
+    setIsRunSeek(false);
     const stepData = factory.getNextStepData(slideProgress, currentProgress);
 
     // スライドが終わりだったとき
     // レクチャーが終わりだったとき
-    if (!stepData) {
-      setIsRunSeek(false);
-      return;
-    }
+    if (!stepData) return;
 
     setStepList({ type: "ADD", stepList: [stepData] });
   };
@@ -72,7 +78,7 @@ export const Slide: FC<SlideProps> = ({
             <Fragment key={ `${ slideProgress }_${ stepProgress }` }>
               { isOver && <Panel { ...{ image, motion1, motion2 } } /> }
               { play && isEqual &&
-                <ProgressionTrigger { ...{ sound, onEnd, duration } } /> }
+                <ProgressionTrigger { ...{ sound, onEnd, duration, onLoad, onUnMount } } /> }
               { questions && isOver && 
                 <Panel { ...{ motion1, motion2 } }>
                   <QuizArea
