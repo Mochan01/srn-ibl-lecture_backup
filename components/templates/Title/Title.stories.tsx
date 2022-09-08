@@ -11,4 +11,6 @@ const template: Story<TitleProps> = (args) => <Title {...args} />;
 
 export const sample: { args: TitleProps } = template.bind({});
 sample.args = {
+  unitName: "unit00",
+  unitTitle: "ダミーテキストダミーテキスト"
 };

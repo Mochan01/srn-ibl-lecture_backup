@@ -1,13 +1,13 @@
 import React, { FC, useMemo, useState } from "react";
 import styled from "styled-components";
 import { SkipBtn } from "../../atoms/SkipBtn/SkipBtn";
-import { TitleBase } from "../../atoms/TitleBase/TitleBase";
+import { TitleBase, TitleBaseProps } from "../../atoms/TitleBase/TitleBase";
 import { useScalable } from "../../../hooks/useScalable";
 import { StepsFactory } from "../../../factories/StepsFactory";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 import { ProgressionTrigger } from "../../providers/ProgressionTrigger/ProgressionTrigger";
 
-export interface TitleProps {
+export interface TitleProps extends TitleBaseProps {
   data?: object;
   onClickSkip?: () => void;
   onClickClose?: () => void;
@@ -31,6 +31,8 @@ const Main = styled.div.attrs<WrapperProps>(
 `;
 
 export const Title: FC<TitleProps> = ({
+  unitName,
+  unitTitle,
   data,
   onClickSkip = () => {},
   onClickClose = () => {}
@@ -68,10 +70,7 @@ export const Title: FC<TitleProps> = ({
         alignSelf: "end",
         justifySelf: "end"
       } }>
-        <TitleBase
-          unitName="ダミーテキスト"
-          unitTitle="ダミーテキストダミーテキスト"
-        />
+        <TitleBase { ...{ unitName, unitTitle } } />
       </div>
       <div style={ {
         gridColumn: "1 / 2",

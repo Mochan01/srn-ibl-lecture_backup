@@ -14,7 +14,7 @@ import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider
 import { useScalable } from "../../../hooks/useScalable";
 import styled from "styled-components";
 import { SIZE } from "../../../data/SIZE";
-import { Frame } from "../../atoms/Frame/Frame";
+import { Frame, FrameProps } from "../../atoms/Frame/Frame";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 import { LectureBase } from "../../atoms/LectureBase/LectureBase";
 import { FactoryContext, FactoryProvider } from "../../providers/FactoryProvider/FactoryProvider";
@@ -55,6 +55,8 @@ const Wrapper = styled.div`
 `;
 
 const Main: FC<LectureProps> = ({
+  unitName,
+  unitTitle,
   onClickClose = () => {}
 }) => {
 
@@ -118,7 +120,7 @@ const Main: FC<LectureProps> = ({
             </SwiperSlide> )) }
         </Swiper>
         <Wrapper>
-          <Frame unitName="unit22" unitTitle="ほげほげ" />
+          <Frame { ...{ unitName, unitTitle } } />
         </Wrapper>
         <ControlPanel />
       </div>
@@ -135,7 +137,7 @@ const Main: FC<LectureProps> = ({
   );
 };
 
-export interface LectureProps {
+export interface LectureProps extends FrameProps {
   onClickClose?: () => void;
   data?: object;
 }
