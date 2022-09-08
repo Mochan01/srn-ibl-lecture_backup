@@ -14,4 +14,10 @@ export const SIZE = {
   QUIZ_Q_BTN_W: 190,
   QUIZ_Q_BTN_H: 58,
   QUIZ_A_BTN_H: 46,
+  get QUIZ_AREA_W() {
+    return SIZE.QUIZ_Q_BTN_W * 2 + SIZE.QUIZ_COLUMN_G
+  },
+  get QUIZ_AREA_H() {
+    return SIZE.QUIZ_Q_BTN_H * 2 + SIZE.QUIZ_ROW_G * 2 + SIZE.QUIZ_A_BTN_H
+  }
 } as const;

@@ -61,8 +61,8 @@ transform.args = {
   ],
   correctIndex: 0,
   touchedEnable: true,
-  x: 0,
-  y: 0,
+  x: 63,
+  y: 455,
   width: 413,
   height: 211
 };

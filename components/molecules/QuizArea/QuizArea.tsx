@@ -55,8 +55,8 @@ export const QuizArea: FC<QuizAreaProps> = ({
   correctIndex,
   x = 0,
   y = 0,
-  width = SIZE.QUIZ_Q_BTN_W * 2 + SIZE.QUIZ_COLUMN_G,
-  height = SIZE.QUIZ_Q_BTN_H * 2 + SIZE.QUIZ_ROW_G * 2 + SIZE.QUIZ_A_BTN_H
+  width = SIZE.QUIZ_AREA_W,
+  height = SIZE.QUIZ_AREA_H
 }) => {
 
   // 選択ボタン 状態管理
@@ -101,9 +101,10 @@ export const QuizArea: FC<QuizAreaProps> = ({
   return(
     <Main
       touchedEnable={ !isAnswered }
-      width={ calcRatio(412, width) }
-      height={ calcRatio(210, height) }
-      { ...{ x, y } }
+      width={ calcRatio(SIZE.QUIZ_AREA_W, width) }
+      height={ calcRatio(SIZE.QUIZ_AREA_H, height) }
+      x={ calcRatio(SIZE.W, x) }
+      y={ calcRatio(SIZE.H, y) }
     >
       { questions.map((x, i) => (
         <QuizChoiceBtn
