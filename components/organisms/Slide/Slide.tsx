@@ -1,14 +1,13 @@
 import React, { FC, Fragment, useContext } from "react";
 import styled from "styled-components";
 import { Panel } from "../../atoms/Panel/Panel";
-import { Narration } from "../../providers/Narration/Narration";
 import { QuizArea } from "../../molecules/QuizArea/QuizArea";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
-import { Timer } from "../../providers/Timer/Timer";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList";
 import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 import { FactoryContext } from "../../providers/FactoryProvider/FactoryProvider";
+import { ProgressionTrigger } from "../../providers/ProgressionTrigger/ProgressionTrigger";
 
 export interface SlideProps {
 }
@@ -72,8 +71,8 @@ export const Slide: FC<SlideProps> = ({
           return (
             <Fragment key={ `${ slideProgress }_${ stepProgress }` }>
               { isOver && <Panel { ...{ image, motion1, motion2 } } /> }
-              { play && isEqual && sound && <Narration { ...{ sound } } /> }
-              { play && isEqual && <Timer { ...{ onEnd, duration } } /> }
+              { play && isEqual &&
+                <ProgressionTrigger { ...{ sound, onEnd, duration } } /> }
               { questions && isOver && 
                 <Panel { ...{ motion1, motion2 } }>
                   <QuizArea

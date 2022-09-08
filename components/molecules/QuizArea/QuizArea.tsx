@@ -85,7 +85,6 @@ export const QuizArea: FC<QuizAreaProps> = ({
 
       setAnswered(true);
       setPlay(true);
-      setIsRunSeek(true);
 
       const [correct, inCorrect] = factory.getNextStepDataOnQuiz(
         slideProgress,

@@ -10,7 +10,6 @@ import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { SIZE } from "../../../data/SIZE";
 import { useGetStepList } from "../../../hooks/useGetStepList";
-import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 import { ControlPanelR } from "../../molecules/ControlPanelR/ControlPanelR";
 import { FactoryContext } from "../../providers/FactoryProvider/FactoryProvider";
 const lecture_panel_b = new URL("../../../assets/lecture_panel_b.png", import.meta.url).toString();
@@ -153,7 +152,6 @@ const SeekBarMemo: FC = memo(() => {
  */
 const ReplayBtnMemo: FC = memo(() => {
 
-  const { setIsRunSeek } = useContext(RunSeekContext);
   const { slideProgress } = useContext(SlideProgressContext);
   const { stepList, setStepList } = useGetStepList();
   const factory = useContext(FactoryContext);
@@ -170,8 +168,6 @@ const ReplayBtnMemo: FC = memo(() => {
       type: "UPDATE",
       stepList: [factory.getCurrentStepData(slideProgress, 0)]
     });
-
-    setIsRunSeek(true);
   }, [stepList]);
 
   return <ReplayBtn active={ true } onClick={ onClick } />;
@@ -183,16 +179,9 @@ const ReplayBtnMemo: FC = memo(() => {
 const PlayBtnMemo: FC = memo(() => {
 
   const { play, setPlay } = useContext(PlayContext);
-  const { setIsRunSeek } = useContext(RunSeekContext);
 
   const onClick = () => {
-    setPlay(s => {
-
-      const state = !s;
-
-      setIsRunSeek(state);
-      return state;
-    });
+    setPlay(s => !s);
   };
 
   return <PlayBtn isPlay={ play } onClick={ onClick } />;

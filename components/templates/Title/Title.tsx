@@ -4,9 +4,8 @@ import { SkipBtn } from "../../atoms/SkipBtn/SkipBtn";
 import { TitleBase } from "../../atoms/TitleBase/TitleBase";
 import { useScalable } from "../../../hooks/useScalable";
 import { StepsFactory } from "../../../factories/StepsFactory";
-import { Narration } from "../../providers/Narration/Narration";
-import { Timer } from "../../providers/Timer/Timer";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
+import { ProgressionTrigger } from "../../providers/ProgressionTrigger/ProgressionTrigger";
 
 export interface TitleProps {
   data?: object;
@@ -56,8 +55,12 @@ export const Title: FC<TitleProps> = ({
   };
 
   return <>
-    <Narration key={ "narration" + step.stepProgress } sound={ step.sound } />
-    <Timer key={ "timer" + step.stepProgress } duration={ step.duration } onEnd={ onEnd } />
+    <ProgressionTrigger
+      key={ step.stepProgress }
+      sound={ step.sound }
+      duration={ step.duration }
+      onEnd={ onEnd }
+    />
     <Main scale={ scale }>
       <div style={ {
         gridColumn: "1 / 2",

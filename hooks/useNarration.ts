@@ -4,23 +4,27 @@ import {useSound} from "use-sound";
 /**
  * ナレーション再生
  * @param sound 
- * @param onend 
+ * @param onLoaded 
  */
-export const useNarration = (sound: string) => {
+export const useNarration = (
+  sound: string,
+  onLoaded: () => void
+) => {
 
-  const [soundLoaded, setSoundLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const [play, { stop }] = useSound(sound, {
-    onload: () => {
-      setSoundLoaded(true);
+    onload: async () => {
+      setIsLoaded(true);
+      onLoaded();
     },
     volume: .1
   });
 
   useEffect(() => {
-    if (!soundLoaded) return;
+    if (!isLoaded) return;
 
     play();
     return () => stop();
-  }, [soundLoaded]);
+  }, [isLoaded]);
 };

@@ -10,7 +10,7 @@ import { Slide } from "../../organisms/Slide/Slide";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList";
-import { RunSeekContext, RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
+import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
 import { useScalable } from "../../../hooks/useScalable";
 import styled from "styled-components";
 import { SIZE } from "../../../data/SIZE";
@@ -60,7 +60,6 @@ const Main: FC<LectureProps> = ({
   const { setStepList } = useGetStepList();
 
   const { setSlideProgress } = useContext(SlideProgressContext);
-  const { setIsRunSeek } = useContext(RunSeekContext);
   const factory = useContext(FactoryContext);
 
   // スライドが変わったとき諸々の進捗を初期化
@@ -69,8 +68,6 @@ const Main: FC<LectureProps> = ({
 
     const stepList = [factory.getCurrentStepData(activeIndex, 0)];
     setStepList({ type: "UPDATE", stepList });
-  
-    setIsRunSeek(true);
   }, [activeIndex]);
 
   const scale = useScalable();
