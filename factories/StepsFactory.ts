@@ -1,7 +1,7 @@
 import json from "../data/mock_data.json";
 import { StepType } from "src-ibl-lecture-master/variable_types/StepType";
 import _ from "lodash";
-import { StepProps, QuizProps } from "../variable_types/StepProps";
+import { StepProps } from "../variable_types/StepProps";
 
 export class StepsFactory {
 
@@ -94,7 +94,22 @@ export class StepsFactory {
       seekStart: data.audio.seekbar_start,
       isResultStep: data.question.is_result_step,
       talking: duration ? "boy" : "teacher",
-      ...this.buildQuizData(data)
+      questions: _.compact([
+        data.question.button_1,
+        data.question.button_2,
+        data.question.button_3,
+        data.question.button_4
+      ]),
+      correctIndex: [
+        data.question.ans_1,
+        data.question.ans_2,
+        data.question.ans_3,
+        data.question.ans_4
+      ].indexOf(true),
+      $x: data.image.x_axis,
+      $y: data.image.y_axis,
+      $width: data.image.width,
+      $height: data.image.height
     }
   }
 
@@ -128,39 +143,6 @@ export class StepsFactory {
    */
   private generateNum(val: string): number {
     return Number(val.split("_")[1]) - 1;
-  }
-
-  /**
-   * クイズデータを生成
-   * @param step 
-   * @returns 
-   */
-  private buildQuizData(data: StepType): QuizProps {
-    const { question, image } = data;
-    if (data.image.display_object_1 !== "question_area") return;
-
-    const questions = [
-      question.button_1,
-      question.button_2,
-      question.button_3,
-      question.button_4
-    ];
-
-    const answers = [
-      question.ans_1,
-      question.ans_2,
-      question.ans_3,
-      question.ans_4
-    ];
-
-    return {
-      questions: _.compact(questions),
-      correctIndex: answers.indexOf(true),
-      x: image.x_axis,
-      y: image.y_axis,
-      width: image.width,
-      height: image.height,
-    }
   }
 
 }

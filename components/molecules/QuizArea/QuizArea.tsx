@@ -1,6 +1,5 @@
 import React, { FC, useCallback, useContext, useState } from "react";
 import styled from "styled-components";
-import { StepProps } from "../../../variable_types/StepProps";
 import { QuizAnswerBtn, QUIZ_ANSWER_BTN } from "../../atoms/QuizAnswerBtn/QuizAnswerBtn";
 import { QuizChoiceBtn, QUIZ_CHOICE_BTN } from "../../atoms/QuizChoiceBtn/QuizChoiceBtn";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
@@ -9,31 +8,29 @@ import { useGetStepList } from "../../../hooks/useGetStepList"
 import { FactoryContext } from "../../providers/FactoryProvider/FactoryProvider";
 import { SIZE } from "../../../data/SIZE";
 
-export interface QuizAreaProps extends ContainerProps {
-  questions: StepProps["questions"];
-  correctIndex: StepProps["correctIndex"];
+export interface QuizAreaProps extends MainProps {
+  questions: string[];
+  correctIndex: number;
 }
 
-interface ContainerProps {
-  x?: StepProps["x"];
-  y?: StepProps["y"];
-  width?: StepProps["width"];
-  height?: StepProps["height"];
-  touchedEnable: boolean;
+interface MainProps {
+  $x?: number;
+  $y?: number;
+  $width?: number;
+  $height?: number;
 }
 
-const Main = styled.div.attrs<ContainerProps>(
-  ({ x, y, width, height }) => ({
+const Main = styled.div.attrs<MainProps>(
+  ({ $x, $y, $width, $height }) => ({
     style: {
-      transform: `translate(${ x }%, ${ y }%) scale(${ width }%, ${ height }%)`
+      transform: `scale(${ $width }%, ${ $height }%)`,
+      left: `${ $x }%`,
+      top: `${ $y }%`
     }
   })
-)<ContainerProps>`
-  pointer-events: ${ ({ touchedEnable }) => touchedEnable ? "auto" : "none" };
+)<MainProps>`
   position: absolute;
   transform-origin: left top;
-  top: 0;
-  left: 0;
   display: grid;
   grid-template-columns: ${ SIZE.QUIZ_Q_BTN_W }px ${ SIZE.QUIZ_Q_BTN_W }px;
   grid-template-rows: ${ SIZE.QUIZ_Q_BTN_H }px ${ SIZE.QUIZ_Q_BTN_H }px ${ SIZE.QUIZ_A_BTN_H }px;
@@ -53,10 +50,10 @@ const AnswerBtnWrapper = styled.div<{ len: number }>`
 export const QuizArea: FC<QuizAreaProps> = ({
   questions,
   correctIndex,
-  x = 0,
-  y = 0,
-  width = SIZE.QUIZ_AREA_W,
-  height = SIZE.QUIZ_AREA_H
+  $x = 0,
+  $y = 0,
+  $width = SIZE.QUIZ_AREA_W,
+  $height = SIZE.QUIZ_AREA_H
 }) => {
 
   // 選択ボタン 状態管理
@@ -100,11 +97,10 @@ export const QuizArea: FC<QuizAreaProps> = ({
 
   return(
     <Main
-      touchedEnable={ !isAnswered }
-      width={ calcRatio(SIZE.QUIZ_AREA_W, width) }
-      height={ calcRatio(SIZE.QUIZ_AREA_H, height) }
-      x={ calcRatio(SIZE.W, x) }
-      y={ calcRatio(SIZE.H, y) }
+      $width={ calcRatio(SIZE.QUIZ_AREA_W, $width) }
+      $height={ calcRatio(SIZE.QUIZ_AREA_H, $height) }
+      $x={ calcRatio(SIZE.W, $x) }
+      $y={ calcRatio(SIZE.H, $y) }
     >
       { questions.map((x, i) => (
         <QuizChoiceBtn

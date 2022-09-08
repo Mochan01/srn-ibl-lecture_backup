@@ -1,15 +1,13 @@
 import { FC } from "react";
-import { StepProps } from "../../../variable_types/StepProps";
-export interface QuizAreaProps extends ContainerProps {
-    questions: StepProps["questions"];
-    correctIndex: StepProps["correctIndex"];
+export interface QuizAreaProps extends MainProps {
+    questions: string[];
+    correctIndex: number;
 }
-interface ContainerProps {
-    x?: StepProps["x"];
-    y?: StepProps["y"];
-    width?: StepProps["width"];
-    height?: StepProps["height"];
-    touchedEnable: boolean;
+interface MainProps {
+    $x?: number;
+    $y?: number;
+    $width?: number;
+    $height?: number;
 }
 export declare const QuizArea: FC<QuizAreaProps>;
 export {};

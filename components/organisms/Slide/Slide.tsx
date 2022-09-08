@@ -75,10 +75,10 @@ export const Slide: FC<SlideProps> = ({
             stepProgress,
             questions,
             correctIndex,
-            x,
-            y,
-            width,
-            height
+            $x,
+            $y,
+            $width,
+            $height
           }) => {
 
           const isOver = stepProgress <= currentProgress;
@@ -89,16 +89,9 @@ export const Slide: FC<SlideProps> = ({
               { isOver && <Panel { ...{ image, motion1, motion2 } } /> }
               { play && isEqual &&
                 <ProgressionTrigger { ...{ sound, onEnd, duration, onLoad, onUnMount } } /> }
-              { questions && isOver && 
+              { questions.length && isOver && 
                 <Panel { ...{ motion1, motion2 } }>
-                  <QuizArea
-                    touchedEnable={ true }
-                    questions={ questions }
-                    correctIndex={ correctIndex }
-                    x={ x }
-                    y={ y }
-                    width={ width }
-                    height={ height } />
+                  <QuizArea { ...{ questions, correctIndex, $x, $y, $width, $height } } />
                 </Panel> }
             </Fragment>
           );

@@ -26,10 +26,4 @@ export declare class StepsFactory {
      * @returns
      */
     private generateNum;
-    /**
-     * クイズデータを生成
-     * @param step
-     * @returns
-     */
-    private buildQuizData;
 }
