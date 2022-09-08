@@ -19,17 +19,26 @@ export const ArrowBtn: FC<ArrowBtnProps> = ({
     <>
       <link rel="preload" href={ MINI_BUTTON_MUTATIONS.NEXT_ON } as="image" />
       <link rel="preload" href={ MINI_BUTTON_MUTATIONS.NEXT_OFF } as="image" />
+      <link rel="preload" href={ MINI_BUTTON_MUTATIONS.PREV_ON } as="image" />
+      <link rel="preload" href={ MINI_BUTTON_MUTATIONS.PREV_OFF } as="image" />
       <Main id={ id }>
-        { $dir === "next" &&
-          <MiniBtn
-            caption="次ページ"
-            mutation={ MINI_BUTTON_MUTATIONS.NEXT_ON }
-          /> }
-        { $dir === "prev" &&
-          <MiniBtn
-            caption="前ページ"
-            mutation={ MINI_BUTTON_MUTATIONS.PREV_ON }
-          /> }
+        <MiniBtn
+          caption={
+            $dir === "next"
+              ? "次ページ"
+              : "前ページ"
+          }
+          mutation={
+            $dir === "next"
+              ? MINI_BUTTON_MUTATIONS.NEXT_ON
+              : MINI_BUTTON_MUTATIONS.PREV_ON
+          }
+          hoverMutation={
+            $dir === "next"
+              ? MINI_BUTTON_MUTATIONS.NEXT_OFF
+              : MINI_BUTTON_MUTATIONS.PREV_OFF
+          }
+        />
       </Main>
     </>
   );

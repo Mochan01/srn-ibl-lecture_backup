@@ -18,6 +18,7 @@ export const MINI_BUTTON_MUTATIONS = {
 
 export interface MiniBtnProps {
   mutation: typeof MINI_BUTTON_MUTATIONS[keyof typeof MINI_BUTTON_MUTATIONS];
+  hoverMutation: typeof MINI_BUTTON_MUTATIONS[keyof typeof MINI_BUTTON_MUTATIONS];
   caption: string;
   onClick?: () => void;
 }
@@ -44,12 +45,11 @@ const Main = styled.div<MiniBtnProps>`
     height:  ${ TEXT_H }px;
     color: #fff;
   }
+  &:hover {
+    background-image: url(${ ({ hoverMutation }) => hoverMutation });
+  }
 `;
 
-export const MiniBtn: FC<MiniBtnProps> = ({
- mutation,
- caption,
- onClick = () => {}
-}) => {
-  return <Main role="button" { ...{ mutation, caption, onClick } } />;
+export const MiniBtn: FC<MiniBtnProps> = (props) => {
+  return <Main role="button" { ...props } />;
 };
