@@ -38,7 +38,7 @@ const PanelB = styled(Panel)`
   background-image: url(${ lecture_panel_b });
   width: ${ SIZE.PANEL_B_W }px;
   height: ${ SIZE.PANEL_B_H }px;
-  padding: 6px 30px 0 30px;
+  padding: ${ SIZE.BTN_PAD_T }px 30px 0 30px;
 `;
 
 const BtnWrapperL = styled.div`

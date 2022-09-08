@@ -8,6 +8,14 @@ export interface ControlPanelLProps {
   id?: string;
 }
 
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  height: 100%;
+`;
+
 const Grid = styled.div`
   width: 100%;
   display: grid;
@@ -39,7 +47,9 @@ export const ControlPanelL: FC<ControlPanelLProps> = ({
     <>
       <StyleControlPanelL />
       <ControlPanelA>
-        <Grid id={ id } />
+        <Wrapper>
+          <Grid id={ id } />
+        </Wrapper>
       </ControlPanelA>
     </>
   );

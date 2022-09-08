@@ -7,5 +7,6 @@ export const SIZE = {
   PANEL_A_H: 74,
   PANEL_B_W: 480,
   PANEL_B_H: 74,
-  HEAD_H: 58
+  HEAD_H: 58,
+  BTN_PAD_T: 6
 } as const;
