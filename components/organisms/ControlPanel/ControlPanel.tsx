@@ -14,6 +14,8 @@ import { ControlPanelR } from "../../molecules/ControlPanelR/ControlPanelR";
 import { FactoryContext } from "../../providers/FactoryProvider/FactoryProvider";
 const lecture_panel_b = new URL("../../../assets/lecture_panel_b.png", import.meta.url).toString();
 import { ReplayBtn } from "../../molecules/ReplayBtn/ReplayBtn";
+import { IsSlideEndContext } from "../../providers/IsSlideEndProvider/IsSlideEndProvider";
+import { LectureEndBtn } from "../../molecules/LectureEndBtn/LectureEndBtn";
 
 export interface ControlPanelProps {
 }
@@ -70,7 +72,7 @@ export const ControlPanel: FC<ControlPanelProps> = ({
           <BtnWrapperL>
             <ArrowBtn id={ classNames.arrowPrev } $dir="prev" />
             <PlayBtnMemo />
-            <ArrowBtn id={ classNames.arrowNext } $dir="next" />
+            <NextBtnMemo />
           </BtnWrapperL>
           <BtnWrapperR>
             <ReplayBtnMemo />
@@ -94,6 +96,20 @@ const SeekBarChild = styled.div<{ alpha?: number }>`
   left: 0;
   opacity: ${ ({ alpha }) => typeof alpha === "number" ? alpha : 1 };
 `;
+
+/**
+ * 次へボタン
+ * スライドが終わるとレクチャー終了ボタンに変わる
+ */
+const NextBtnMemo: FC = memo(() => {
+
+  const { isSlideEnd } = useContext(IsSlideEndContext);
+
+  return <>
+    { isSlideEnd && <LectureEndBtn /> }
+    { !isSlideEnd &&<ArrowBtn id={ classNames.arrowNext } $dir="next" /> }
+  </>;
+});
 
 /**
  *  シークバー
@@ -170,7 +186,7 @@ const ReplayBtnMemo: FC = memo(() => {
     });
   }, [stepList]);
 
-  return <ReplayBtn active={ true } onClick={ onClick } />;
+  return <ReplayBtn onClick={ onClick } />;
 });
 
 /**

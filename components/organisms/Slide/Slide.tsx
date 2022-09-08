@@ -8,6 +8,7 @@ import { useGetStepList } from "../../../hooks/useGetStepList";
 import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 import { FactoryContext } from "../../providers/FactoryProvider/FactoryProvider";
 import { ProgressionTrigger } from "../../providers/ProgressionTrigger/ProgressionTrigger";
+import { IsSlideEndContext } from "../../providers/IsSlideEndProvider/IsSlideEndProvider";
 
 export interface SlideProps {
 }
@@ -31,6 +32,7 @@ export const Slide: FC<SlideProps> = ({
   const { play } = useContext(PlayContext);
   const { setIsRunSeek } = useContext(RunSeekContext);
   const { slideProgress } = useContext(SlideProgressContext);
+  const { setIsSlideEnd } = useContext(IsSlideEndContext);
   const factory = useContext(FactoryContext);
 
   const onLoad = () => {
@@ -46,8 +48,14 @@ export const Slide: FC<SlideProps> = ({
     const stepData = factory.getNextStepData(slideProgress, currentProgress);
 
     // スライドが終わりだったとき
-    // レクチャーが終わりだったとき
-    if (!stepData) return;
+    if (!stepData) {
+
+      // レクチャーが終わりだったとき
+      if (factory.slides.length - 1 <= slideProgress) {
+        setIsSlideEnd(true);
+      }
+      return;
+    }
 
     setStepList({ type: "ADD", stepList: [stepData] });
   };
@@ -97,4 +105,3 @@ export const Slide: FC<SlideProps> = ({
     </>
   );
 };
-

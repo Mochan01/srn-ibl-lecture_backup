@@ -18,6 +18,7 @@ import { Frame } from "../../atoms/Frame/Frame";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 import { LectureBase } from "../../atoms/LectureBase/LectureBase";
 import { FactoryContext, FactoryProvider } from "../../providers/FactoryProvider/FactoryProvider";
+import { IsSlideEndProvider } from "../../providers/IsSlideEndProvider/IsSlideEndProvider";
 
 interface ContainerProps {
   scale: number;
@@ -133,17 +134,19 @@ export interface LectureProps {
 }
 
 export const Lecture = (props) => {
-  return <>
+  return (
     <FactoryProvider { ...props }>
       <SlideProgressProvider>
           <StepListProvider>
             <PlayProvider>
               <RunSeekProvider>
-                <Main { ...props } />
+                <IsSlideEndProvider>
+                  <Main { ...props } />
+                </IsSlideEndProvider>
               </RunSeekProvider>
             </PlayProvider>
           </StepListProvider>
         </SlideProgressProvider>
     </FactoryProvider>
-</>;
+  );
 };
