@@ -11,7 +11,7 @@ export const useScalable = (): number => {
   useEffect(() => {
 
     const func = () => {
-      const FULL_WIDTH = 1920;
+      const FULL_WIDTH = 1200;
       const ZERO = 100;
       
       let percentage = window.innerWidth / FULL_WIDTH;

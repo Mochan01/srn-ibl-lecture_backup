@@ -28,6 +28,7 @@ const Main = styled.div.attrs<WrapperProps>(
   display: grid;
   grid-template-columns: 914px 236px;
   grid-template-rows: 202px 332px 90px 456px;
+  height: 0;
 `;
 
 export const Title: FC<TitleProps> = ({
