@@ -47,14 +47,15 @@ export const Slide: FC<SlideProps> = ({
 
   const onEnd = () => {
     setIsRunSeek(false);
-    const stepData = factory.getNextStepData(slideProgress, currentProgress);
+    const [stepData, trigger] = factory.getNextStepData(slideProgress, currentProgress);
 
-    // 次のステップがないとき
     if (!stepData) {
 
-      const isLectureEnd = factory.slides.length - 1 <= slideProgress;
-      setIsSlideEnd(isLectureEnd);
-      setIsStepEnd(!isLectureEnd);
+      if (trigger !== "on_answer") {
+        const isLectureEnd = factory.slides.length - 1 <= slideProgress;
+        setIsSlideEnd(isLectureEnd);
+        setIsStepEnd(!isLectureEnd);
+      }
 
       return;
     }

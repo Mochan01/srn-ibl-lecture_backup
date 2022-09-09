@@ -47,22 +47,30 @@ export class StepsFactory {
     ]
   }
 
-  public getNextStepData(slide: number, step: number): StepProps {
+  /**
+   * 次のステップのデータを取得する
+   * @param slide 
+   * @param step 
+   * @returns [次のデータ、次のステップへ進むトリガーが何か]
+   */
+  public getNextStepData(slide: number, step: number): [StepProps, StepType["next_steps"]["next_step"]] {
     const stepData = this.getStepBySlide(slide);
     let { next_steps } = stepData[step];
 
-    // スライドが終わりだったとき
-    if (next_steps.next_step === "slide_end") return;
+    const arr: Array<StepProps | StepType["next_steps"]["next_step"]>
+      = [next_steps.next_step];
 
-    // レクチャーが終わりだったとき
-    if (next_steps.next_step === "lecture_end") return;
+    let stepProps;
+    if (
+      next_steps.next_step !== "slide_end" &&
+      next_steps.next_step !== "lecture_end" &&
+      next_steps.next_step !== "on_answer")
+    {
+      stepProps = this.generateStepProps(stepData[this.generateNum(next_steps.go_to)]);
+    }
+    arr.unshift(stepProps);
 
-    const nextStep = next_steps.go_to;
-    if (!nextStep) return;
-  
-    return this.generateStepProps(
-      stepData[this.generateNum(nextStep)]
-    );
+    return arr as [StepProps, StepType["next_steps"]["next_step"]];
   }
 
   public getTotalTime(slide: number): StepType["audio"]["total_time"] {
