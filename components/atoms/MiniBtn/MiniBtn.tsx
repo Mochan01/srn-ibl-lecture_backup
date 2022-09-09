@@ -35,7 +35,7 @@ const Main = styled.div<MiniBtnProps>`
   &:before {
     content: "${ ({ caption }) => caption }";
     position: absolute;
-    bottom: -${ TEXT_H + 4 }px;
+    bottom: -${ TEXT_H + 2 }px;
     left: 0;
     right: 0;
     text-align: center;
@@ -44,6 +44,7 @@ const Main = styled.div<MiniBtnProps>`
     font-size: ${ TEXT_H }px;
     height:  ${ TEXT_H }px;
     color: #fff;
+    pointer-events: none;
   }
   &:hover {
     background-image: url(${ ({ hoverMutation }) => hoverMutation });
