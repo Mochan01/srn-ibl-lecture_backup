@@ -43,6 +43,8 @@ export const Slide: FC<SlideProps> = ({
 
   const onUnMount = () => {
     setIsRunSeek(false);
+    setIsSlideEnd(false);
+    setIsStepEnd(false);
   };
 
   const onEnd = () => {

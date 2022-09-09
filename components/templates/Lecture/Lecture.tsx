@@ -18,8 +18,8 @@ import { Frame, FrameProps } from "../../atoms/Frame/Frame";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 import { LectureBase } from "../../atoms/LectureBase/LectureBase";
 import { FactoryContext, FactoryProvider } from "../../providers/FactoryProvider/FactoryProvider";
-import { IsSlideEndContext, IsSlideEndProvider } from "../../providers/IsSlideEndProvider/IsSlideEndProvider";
-import { IsStepEndContext, IsStepEndProvider } from "../../providers/IsStepEndProvider/IsStepEndProvider";
+import { IsSlideEndProvider } from "../../providers/IsSlideEndProvider/IsSlideEndProvider";
+import { IsStepEndProvider } from "../../providers/IsStepEndProvider/IsStepEndProvider";
 
 interface ContainerProps {
   scale: number;
@@ -66,8 +66,6 @@ const Main: FC<LectureProps> = ({
 
   const { setSlideProgress } = useContext(SlideProgressContext);
   const factory = useContext(FactoryContext);
-  const { setIsSlideEnd } = useContext(IsSlideEndContext);
-  const { setIsStepEnd } = useContext(IsStepEndContext);
 
   // スライドが変わったとき諸々の進捗を初期化
   useEffect(() => {
@@ -75,10 +73,6 @@ const Main: FC<LectureProps> = ({
 
     const stepList = [factory.getCurrentStepData(activeIndex, 0)];
     setStepList({ type: "UPDATE", stepList });
-
-    setIsSlideEnd(false);
-    setIsStepEnd(false);
-
   }, [activeIndex]);
 
   const scale = useScalable();
