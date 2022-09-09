@@ -17,7 +17,7 @@ export const RunSeekProvider: FC<RunSeekProviderProps> = ({
   children
 }) => {
 
-  const [isRunSeek, setIsRunSeek] = useState(false);
+  const [isRunSeek, setIsRunSeek] = useState(true);
 
   return (
     <RunSeekContext.Provider value={ { isRunSeek, setIsRunSeek } }>

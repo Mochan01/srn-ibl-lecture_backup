@@ -1,44 +1,41 @@
 import React, { FC, useCallback, useContext, useState } from "react";
 import styled from "styled-components";
-import { StepProps } from "../../../variable_types/StepProps";
 import { QuizAnswerBtn, QUIZ_ANSWER_BTN } from "../../atoms/QuizAnswerBtn/QuizAnswerBtn";
 import { QuizChoiceBtn, QUIZ_CHOICE_BTN } from "../../atoms/QuizChoiceBtn/QuizChoiceBtn";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList"
-import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 import { FactoryContext } from "../../providers/FactoryProvider/FactoryProvider";
+import { SIZE } from "../../../data/SIZE";
 
-export interface QuizAreaProps extends ContainerProps {
-  questions: StepProps["questions"];
-  correctIndex: StepProps["correctIndex"];
+export interface QuizAreaProps extends MainProps {
+  questions: string[];
+  correctIndex: number;
 }
 
-interface ContainerProps {
-  x?: StepProps["x"];
-  y?: StepProps["y"];
-  width?: StepProps["width"];
-  height?: StepProps["height"];
-  touchedEnable: boolean;
+interface MainProps {
+  $x?: number;
+  $y?: number;
+  $width?: number;
+  $height?: number;
 }
 
-const Main = styled.div.attrs<ContainerProps>(
-  ({ x, y, width, height }) => ({
+const Main = styled.div.attrs<MainProps>(
+  ({ $x, $y, $width, $height }) => ({
     style: {
-      transform: `translate(${ x }%, ${ y }%) scale(${ width }%, ${ height }%)`
+      transform: `scale(${ $width }%, ${ $height }%)`,
+      left: `${ $x }%`,
+      top: `${ $y }%`
     }
   })
-)<ContainerProps>`
-  pointer-events: ${ ({ touchedEnable }) => touchedEnable ? "auto" : "none" };
+)<MainProps>`
   position: absolute;
   transform-origin: left top;
-  top: 0;
-  left: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  column-gap: 32px;
-  row-gap: 24px;
+  grid-template-columns: ${ SIZE.QUIZ_Q_BTN_W }px ${ SIZE.QUIZ_Q_BTN_W }px;
+  grid-template-rows: ${ SIZE.QUIZ_Q_BTN_H }px ${ SIZE.QUIZ_Q_BTN_H }px ${ SIZE.QUIZ_A_BTN_H }px;
+  column-gap: ${ SIZE.QUIZ_COLUMN_G }px;
+  row-gap: ${ SIZE.QUIZ_ROW_G }px;
 `;
 
 const AnswerBtnWrapper = styled.div<{ len: number }>`
@@ -53,10 +50,10 @@ const AnswerBtnWrapper = styled.div<{ len: number }>`
 export const QuizArea: FC<QuizAreaProps> = ({
   questions,
   correctIndex,
-  x = 0,
-  y = 0,
-  width = 100,
-  height = 100
+  $x = 0,
+  $y = 0,
+  $width = SIZE.QUIZ_AREA_W,
+  $height = SIZE.QUIZ_AREA_H
 }) => {
 
   // 選択ボタン 状態管理
@@ -70,7 +67,6 @@ export const QuizArea: FC<QuizAreaProps> = ({
   const [isAnswered, setAnswered] = useState<boolean>();
 
   const { setPlay } = useContext(PlayContext);
-  const { setIsRunSeek } = useContext(RunSeekContext);
   const { slideProgress } = useContext(SlideProgressContext);
   const factory = useContext(FactoryContext);
 
@@ -85,7 +81,6 @@ export const QuizArea: FC<QuizAreaProps> = ({
 
       setAnswered(true);
       setPlay(true);
-      setIsRunSeek(true);
 
       const [correct, inCorrect] = factory.getNextStepDataOnQuiz(
         slideProgress,
@@ -101,7 +96,12 @@ export const QuizArea: FC<QuizAreaProps> = ({
   };
 
   return(
-    <Main touchedEnable={ !isAnswered } { ...{ x, y, width, height } }>
+    <Main
+      $width={ calcRatio(SIZE.QUIZ_AREA_W, $width) }
+      $height={ calcRatio(SIZE.QUIZ_AREA_H, $height) }
+      $x={ calcRatio(SIZE.W, $x) }
+      $y={ calcRatio(SIZE.H, $y) }
+    >
       { questions.map((x, i) => (
         <QuizChoiceBtn
           key={ i }
@@ -120,4 +120,13 @@ export const QuizArea: FC<QuizAreaProps> = ({
         </AnswerBtnWrapper>
     </Main>
   );
+};
+
+
+const calcRatio = (fullSize: number, size: number): number => {
+  let percentage = size / fullSize;
+  percentage = percentage * 100;
+  percentage = Math.floor(percentage);
+
+  return percentage;
 };

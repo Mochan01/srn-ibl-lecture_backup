@@ -10,14 +10,16 @@ import { Slide } from "../../organisms/Slide/Slide";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList";
-import { RunSeekContext, RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
+import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
 import { useScalable } from "../../../hooks/useScalable";
 import styled from "styled-components";
 import { SIZE } from "../../../data/SIZE";
-import { Frame } from "../../atoms/Frame/Frame";
+import { Frame, FrameProps } from "../../atoms/Frame/Frame";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 import { LectureBase } from "../../atoms/LectureBase/LectureBase";
 import { FactoryContext, FactoryProvider } from "../../providers/FactoryProvider/FactoryProvider";
+import { IsSlideEndProvider } from "../../providers/IsSlideEndProvider/IsSlideEndProvider";
+import { IsStepEndProvider } from "../../providers/IsStepEndProvider/IsStepEndProvider";
 
 interface ContainerProps {
   scale: number;
@@ -53,14 +55,16 @@ const Wrapper = styled.div`
 `;
 
 const Main: FC<LectureProps> = ({
+  unitName,
+  unitTitle,
   onClickClose = () => {}
 }) => {
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  // todo: マスターデータの方で最初のプログレス消す
+  const [activeIndex, setActiveIndex] = useState(1);
   const { setStepList } = useGetStepList();
 
   const { setSlideProgress } = useContext(SlideProgressContext);
-  const { setIsRunSeek } = useContext(RunSeekContext);
   const factory = useContext(FactoryContext);
 
   // スライドが変わったとき諸々の進捗を初期化
@@ -69,8 +73,6 @@ const Main: FC<LectureProps> = ({
 
     const stepList = [factory.getCurrentStepData(activeIndex, 0)];
     setStepList({ type: "UPDATE", stepList });
-  
-    setIsRunSeek(true);
   }, [activeIndex]);
 
   const scale = useScalable();
@@ -90,6 +92,10 @@ const Main: FC<LectureProps> = ({
           speed={ 1 } // スライドエフェクトを止める
           modules={ [Navigation, Pagination, Mousewheel, Keyboard] }
           className="mySwiper"
+          onTransitionStart={ swiper => {
+            // todo: マスターデータの方で最初のプログレス消す
+            swiper.allowSlidePrev = swiper.activeIndex !== 1;
+          } }
           navigation={ {
             prevEl: `#${ classNames.arrowPrev }`,
             nextEl: `#${ classNames.arrowNext }`
@@ -113,7 +119,7 @@ const Main: FC<LectureProps> = ({
             </SwiperSlide> )) }
         </Swiper>
         <Wrapper>
-          <Frame unitName="unit22" unitTitle="ほげほげ" />
+          <Frame { ...{ unitName, unitTitle } } />
         </Wrapper>
         <ControlPanel />
       </div>
@@ -130,23 +136,27 @@ const Main: FC<LectureProps> = ({
   );
 };
 
-export interface LectureProps {
+export interface LectureProps extends FrameProps {
   onClickClose?: () => void;
   data?: object;
 }
 
 export const Lecture = (props) => {
-  return <>
+  return (
     <FactoryProvider { ...props }>
       <SlideProgressProvider>
           <StepListProvider>
             <PlayProvider>
               <RunSeekProvider>
-                <Main { ...props } />
+                <IsSlideEndProvider>
+                  <IsStepEndProvider>
+                    <Main { ...props } />
+                  </IsStepEndProvider>
+                </IsSlideEndProvider>
               </RunSeekProvider>
             </PlayProvider>
           </StepListProvider>
         </SlideProgressProvider>
     </FactoryProvider>
-</>;
+  );
 };

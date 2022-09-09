@@ -2,12 +2,10 @@ import React, { FC } from "react";
 import { MiniBtn, MINI_BUTTON_MUTATIONS } from "../../atoms/MiniBtn/MiniBtn";
 
 export interface ReplayBtnProps {
-  active?: boolean;
   onClick?: () => void;
 }
 
 export const ReplayBtn: FC<ReplayBtnProps> = ({
-  active = false,
   onClick = () => {}
 }) => {
   return (
@@ -17,11 +15,8 @@ export const ReplayBtn: FC<ReplayBtnProps> = ({
       <MiniBtn
         onClick={ onClick }
         caption="もう一度"
-        mutation={
-          active
-            ? MINI_BUTTON_MUTATIONS.AGAIN_ON
-            : MINI_BUTTON_MUTATIONS.AGAIN_OFF
-        }
+        mutation={ MINI_BUTTON_MUTATIONS.AGAIN_ON }
+        hoverMutation={ MINI_BUTTON_MUTATIONS.AGAIN_OFF }
       />
     </>
   );

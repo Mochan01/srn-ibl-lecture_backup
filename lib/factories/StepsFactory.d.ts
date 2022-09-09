@@ -7,7 +7,13 @@ export declare class StepsFactory {
     getStepListAll(slide: number): StepProps[];
     getCurrentStepData(slide: number, step: number): StepProps;
     getNextStepDataOnQuiz(slide: number, step: number): [StepProps, StepProps];
-    getNextStepData(slide: number, step: number): StepProps;
+    /**
+     * 次のステップのデータを取得する
+     * @param slide
+     * @param step
+     * @returns [次のデータ、次のステップへ進むトリガーが何か]
+     */
+    getNextStepData(slide: number, step: number): [StepProps, StepType["next_steps"]["next_step"]];
     getTotalTime(slide: number): StepType["audio"]["total_time"];
     /**
      * スライドの数を取得
@@ -26,10 +32,4 @@ export declare class StepsFactory {
      * @returns
      */
     private generateNum;
-    /**
-     * クイズデータを生成
-     * @param step
-     * @returns
-     */
-    private buildQuizData;
 }

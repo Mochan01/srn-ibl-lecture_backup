@@ -13,4 +13,6 @@ const Template: Story<LectureProps> = (args) => <Lecture {...args} />;
 
 export const Sample: { args: LectureProps } = Template.bind({});
 Sample.args = {
+  unitName: "unit00",
+  unitTitle: "ダミーテキストダミーテキスト"
 };

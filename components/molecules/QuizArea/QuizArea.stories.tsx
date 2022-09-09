@@ -37,8 +37,7 @@ three.args = {
     "一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。",
     "「絵や会話のない本なんて、なんの役にもたたないじゃないの」とアリスは"
   ],
-  correctIndex: 0,
-  touchedEnable: true
+  correctIndex: 0
 };
 
 export const four: { args: QuizAreaProps } = template.bind({});
@@ -48,6 +47,19 @@ four.args = {
     "なんにもすることがないのでとても退屈",
     "一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。"
   ],
+  correctIndex: 0
+};
+
+export const transform: { args: QuizAreaProps } = template.bind({});
+transform.args = {
+  questions: [
+    "アリスは川辺でおねえさんのよこにすわって",
+    "なんにもすることがないのでとても退屈",
+    "一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。"
+  ],
   correctIndex: 0,
-  touchedEnable: true
+  $x: 63,
+  $y: 455,
+  $width: 413,
+  $height: 211
 };

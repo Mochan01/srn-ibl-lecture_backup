@@ -17,7 +17,7 @@ export const PlayProvider: FC<PlayProviderProps> = ({
   children
 }) => {
 
-  const [play, setPlay] = useState(false);
+  const [play, setPlay] = useState(true);
 
   return (
     <PlayContext.Provider value={ { play, setPlay } }>

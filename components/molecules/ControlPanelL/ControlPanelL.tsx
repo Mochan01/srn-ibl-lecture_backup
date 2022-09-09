@@ -8,6 +8,14 @@ export interface ControlPanelLProps {
   id?: string;
 }
 
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  height: 100%;
+`;
+
 const Grid = styled.div`
   width: 100%;
   display: grid;
@@ -17,6 +25,10 @@ const Grid = styled.div`
 
 const StyleControlPanelL = createGlobalStyle`
   .swiper-pagination-bullet {
+    // todo: マスターデータの方で最初のプログレス消す
+    &:first-child {
+      display: none;
+    }
     all: unset;
     display: block;
     background-image: url(${ lecture_star_off });
@@ -39,7 +51,9 @@ export const ControlPanelL: FC<ControlPanelLProps> = ({
     <>
       <StyleControlPanelL />
       <ControlPanelA>
-        <Grid id={ id } />
+        <Wrapper>
+          <Grid id={ id } />
+        </Wrapper>
       </ControlPanelA>
     </>
   );

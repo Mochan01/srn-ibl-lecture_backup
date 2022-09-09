@@ -1,7 +1,7 @@
 import json from "../data/mock_data.json";
 import { StepType } from "src-ibl-lecture-master/variable_types/StepType";
 import _ from "lodash";
-import { StepProps, QuizProps } from "../variable_types/StepProps";
+import { StepProps } from "../variable_types/StepProps";
 
 export class StepsFactory {
 
@@ -47,22 +47,30 @@ export class StepsFactory {
     ]
   }
 
-  public getNextStepData(slide: number, step: number): StepProps {
+  /**
+   * 次のステップのデータを取得する
+   * @param slide 
+   * @param step 
+   * @returns [次のデータ、次のステップへ進むトリガーが何か]
+   */
+  public getNextStepData(slide: number, step: number): [StepProps, StepType["next_steps"]["next_step"]] {
     const stepData = this.getStepBySlide(slide);
     let { next_steps } = stepData[step];
 
-    // スライドが終わりだったとき
-    if (next_steps.next_step === "slide_end") return;
+    const arr: Array<StepProps | StepType["next_steps"]["next_step"]>
+      = [next_steps.next_step];
 
-    // レクチャーが終わりだったとき
-    if (next_steps.next_step === "lecture_end") return;
+    let stepProps;
+    if (
+      next_steps.next_step !== "slide_end" &&
+      next_steps.next_step !== "lecture_end" &&
+      next_steps.next_step !== "on_answer")
+    {
+      stepProps = this.generateStepProps(stepData[this.generateNum(next_steps.go_to)]);
+    }
+    arr.unshift(stepProps);
 
-    const nextStep = next_steps.go_to;
-    if (!nextStep) return;
-  
-    return this.generateStepProps(
-      stepData[this.generateNum(nextStep)]
-    );
+    return arr as [StepProps, StepType["next_steps"]["next_step"]];
   }
 
   public getTotalTime(slide: number): StepType["audio"]["total_time"] {
@@ -94,7 +102,22 @@ export class StepsFactory {
       seekStart: data.audio.seekbar_start,
       isResultStep: data.question.is_result_step,
       talking: duration ? "boy" : "teacher",
-      ...this.buildQuizData(data)
+      questions: _.compact([
+        data.question.button_1,
+        data.question.button_2,
+        data.question.button_3,
+        data.question.button_4
+      ]),
+      correctIndex: [
+        data.question.ans_1,
+        data.question.ans_2,
+        data.question.ans_3,
+        data.question.ans_4
+      ].indexOf(true),
+      $x: data.image.x_axis,
+      $y: data.image.y_axis,
+      $width: data.image.width,
+      $height: data.image.height
     }
   }
 
@@ -128,39 +151,6 @@ export class StepsFactory {
    */
   private generateNum(val: string): number {
     return Number(val.split("_")[1]) - 1;
-  }
-
-  /**
-   * クイズデータを生成
-   * @param step 
-   * @returns 
-   */
-  private buildQuizData(data: StepType): QuizProps {
-    const { question, image } = data;
-    if (data.image.display_object_1 !== "question_area") return;
-
-    const questions = [
-      question.button_1,
-      question.button_2,
-      question.button_3,
-      question.button_4
-    ];
-
-    const answers = [
-      question.ans_1,
-      question.ans_2,
-      question.ans_3,
-      question.ans_4
-    ];
-
-    return {
-      questions: _.compact(questions),
-      correctIndex: answers.indexOf(true),
-      x: image.x_axis,
-      y: image.x_axis,
-      width: image.width,
-      height: image.height,
-    }
   }
 
 }

@@ -9,11 +9,16 @@ export const MINI_BUTTON_MUTATIONS = {
   PREV_ON: new URL("../../../assets/lecture_button_previous_on.png", import.meta.url).toString(),
   PREV_OFF: new URL("../../../assets/lecture_button_previous_off.png", import.meta.url).toString(),
   PLAY_ON: new URL("../../../assets/lecture_button_play_on.png", import.meta.url).toString(),
-  PLAY_OFF: new URL("../../../assets/lecture_button_play_off.png", import.meta.url).toString()
+  PLAY_OFF: new URL("../../../assets/lecture_button_play_off.png", import.meta.url).toString(),
+  PAUSE_ON: new URL("../../../assets/lecture_button_stop_on.png", import.meta.url).toString(),
+  PAUSE_OFF: new URL("../../../assets/lecture_button_stop_off.png", import.meta.url).toString(),
+  LECTURE_END_ON: new URL("../../../assets/lecture_button_end_on.png", import.meta.url).toString(),
+  LECTURE_END_OFF: new URL("../../../assets/lecture_button_end_off.png", import.meta.url).toString()
 } as const;
 
 export interface MiniBtnProps {
   mutation: typeof MINI_BUTTON_MUTATIONS[keyof typeof MINI_BUTTON_MUTATIONS];
+  hoverMutation: typeof MINI_BUTTON_MUTATIONS[keyof typeof MINI_BUTTON_MUTATIONS];
   caption: string;
   onClick?: () => void;
 }
@@ -30,7 +35,7 @@ const Main = styled.div<MiniBtnProps>`
   &:before {
     content: "${ ({ caption }) => caption }";
     position: absolute;
-    bottom: -${ TEXT_H + 4 }px;
+    bottom: -${ TEXT_H + 2 }px;
     left: 0;
     right: 0;
     text-align: center;
@@ -39,13 +44,13 @@ const Main = styled.div<MiniBtnProps>`
     font-size: ${ TEXT_H }px;
     height:  ${ TEXT_H }px;
     color: #fff;
+    pointer-events: none;
+  }
+  &:hover {
+    background-image: url(${ ({ hoverMutation }) => hoverMutation });
   }
 `;
 
-export const MiniBtn: FC<MiniBtnProps> = ({
- mutation,
- caption,
- onClick = () => {}
-}) => {
-  return <Main role="button" { ...{ mutation, caption, onClick } } />;
+export const MiniBtn: FC<MiniBtnProps> = (props) => {
+  return <Main role="button" { ...props } />;
 };

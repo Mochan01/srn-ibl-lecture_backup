@@ -1,14 +1,15 @@
 import React, { FC, Fragment, useContext } from "react";
 import styled from "styled-components";
 import { Panel } from "../../atoms/Panel/Panel";
-import { Narration } from "../../providers/Narration/Narration";
 import { QuizArea } from "../../molecules/QuizArea/QuizArea";
 import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
-import { Timer } from "../../providers/Timer/Timer";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList";
 import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 import { FactoryContext } from "../../providers/FactoryProvider/FactoryProvider";
+import { ProgressionTrigger } from "../../providers/ProgressionTrigger/ProgressionTrigger";
+import { IsSlideEndContext } from "../../providers/IsSlideEndProvider/IsSlideEndProvider";
+import { IsStepEndContext } from "../../providers/IsStepEndProvider/IsStepEndProvider";
 
 export interface SlideProps {
 }
@@ -32,15 +33,32 @@ export const Slide: FC<SlideProps> = ({
   const { play } = useContext(PlayContext);
   const { setIsRunSeek } = useContext(RunSeekContext);
   const { slideProgress } = useContext(SlideProgressContext);
+  const { setIsSlideEnd } = useContext(IsSlideEndContext);
+  const { setIsStepEnd } = useContext(IsStepEndContext);
   const factory = useContext(FactoryContext);
 
-  const onEnd = () => {
-    const stepData = factory.getNextStepData(slideProgress, currentProgress);
+  const onLoad = () => {
+    setIsRunSeek(true);
+  };
 
-    // スライドが終わりだったとき
-    // レクチャーが終わりだったとき
+  const onUnMount = () => {
+    setIsRunSeek(false);
+    setIsSlideEnd(false);
+    setIsStepEnd(false);
+  };
+
+  const onEnd = () => {
+    setIsRunSeek(false);
+    const [stepData, trigger] = factory.getNextStepData(slideProgress, currentProgress);
+
     if (!stepData) {
-      setIsRunSeek(false);
+
+      if (trigger !== "on_answer") {
+        const isLectureEnd = factory.slides.length - 1 <= slideProgress;
+        setIsSlideEnd(isLectureEnd);
+        setIsStepEnd(!isLectureEnd);
+      }
+
       return;
     }
 
@@ -60,10 +78,10 @@ export const Slide: FC<SlideProps> = ({
             stepProgress,
             questions,
             correctIndex,
-            x,
-            y,
-            width,
-            height
+            $x,
+            $y,
+            $width,
+            $height
           }) => {
 
           const isOver = stepProgress <= currentProgress;
@@ -72,18 +90,11 @@ export const Slide: FC<SlideProps> = ({
           return (
             <Fragment key={ `${ slideProgress }_${ stepProgress }` }>
               { isOver && <Panel { ...{ image, motion1, motion2 } } /> }
-              { play && isEqual && sound && <Narration { ...{ sound } } /> }
-              { play && isEqual && <Timer { ...{ onEnd, duration } } /> }
-              { questions && isOver && 
+              { play && isEqual &&
+                <ProgressionTrigger { ...{ sound, onEnd, duration, onLoad, onUnMount } } /> }
+              { questions.length && isOver && 
                 <Panel { ...{ motion1, motion2 } }>
-                  <QuizArea
-                    touchedEnable={ true }
-                    questions={ questions }
-                    correctIndex={ correctIndex }
-                    x={ x }
-                    y={ y }
-                    width={ width }
-                    height={ height } />
+                  <QuizArea { ...{ questions, correctIndex, $x, $y, $width, $height } } />
                 </Panel> }
             </Fragment>
           );
@@ -92,4 +103,3 @@ export const Slide: FC<SlideProps> = ({
     </>
   );
 };
-

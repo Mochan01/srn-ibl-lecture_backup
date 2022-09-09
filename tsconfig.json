@@ -14,5 +14,5 @@
     "resolveJsonModule": true
   },
   "include": ["./components/**/*.tsx"],
-  "exclude": ["./components/**/*.stories.tsx"]
+  "exclude": ["./components/**/*.stories.tsx", "./lib/**"]
 }

@@ -1,14 +1,13 @@
 import React, { FC, useMemo, useState } from "react";
 import styled from "styled-components";
 import { SkipBtn } from "../../atoms/SkipBtn/SkipBtn";
-import { TitleBase } from "../../atoms/TitleBase/TitleBase";
+import { TitleBase, TitleBaseProps } from "../../atoms/TitleBase/TitleBase";
 import { useScalable } from "../../../hooks/useScalable";
 import { StepsFactory } from "../../../factories/StepsFactory";
-import { Narration } from "../../providers/Narration/Narration";
-import { Timer } from "../../providers/Timer/Timer";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
+import { ProgressionTrigger } from "../../providers/ProgressionTrigger/ProgressionTrigger";
 
-export interface TitleProps {
+export interface TitleProps extends TitleBaseProps {
   data?: object;
   onClickSkip?: () => void;
   onClickClose?: () => void;
@@ -29,9 +28,12 @@ const Main = styled.div.attrs<WrapperProps>(
   display: grid;
   grid-template-columns: 914px 236px;
   grid-template-rows: 202px 332px 90px 456px;
+  height: 0;
 `;
 
 export const Title: FC<TitleProps> = ({
+  unitName,
+  unitTitle,
   data,
   onClickSkip = () => {},
   onClickClose = () => {}
@@ -56,8 +58,12 @@ export const Title: FC<TitleProps> = ({
   };
 
   return <>
-    <Narration key={ "narration" + step.stepProgress } sound={ step.sound } />
-    <Timer key={ "timer" + step.stepProgress } duration={ step.duration } onEnd={ onEnd } />
+    <ProgressionTrigger
+      key={ step.stepProgress }
+      sound={ step.sound }
+      duration={ step.duration }
+      onEnd={ onEnd }
+    />
     <Main scale={ scale }>
       <div style={ {
         gridColumn: "1 / 2",
@@ -65,10 +71,7 @@ export const Title: FC<TitleProps> = ({
         alignSelf: "end",
         justifySelf: "end"
       } }>
-        <TitleBase
-          unitName="ダミーテキスト"
-          unitTitle="ダミーテキストダミーテキスト"
-        />
+        <TitleBase { ...{ unitName, unitTitle } } />
       </div>
       <div style={ {
         gridColumn: "1 / 2",

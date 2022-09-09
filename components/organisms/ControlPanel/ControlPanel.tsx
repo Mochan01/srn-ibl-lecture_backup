@@ -1,6 +1,5 @@
 import React, { FC, useContext, useMemo, memo, useState, useEffect } from "react";
 import styled from "styled-components";
-import { ArrowBtn } from "../../molecules/ArrowBtn/ArrowBtn";
 import { ControlPanelL } from "../../molecules/ControlPanelL/ControlPanelL";
 import { classNames } from "../../../data/ClassNames";
 import { PlayBtn } from "../../molecules/PlayBtn/PlayBtn";
@@ -10,11 +9,15 @@ import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
 import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { SIZE } from "../../../data/SIZE";
 import { useGetStepList } from "../../../hooks/useGetStepList";
-import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 import { ControlPanelR } from "../../molecules/ControlPanelR/ControlPanelR";
 import { FactoryContext } from "../../providers/FactoryProvider/FactoryProvider";
 const lecture_panel_b = new URL("../../../assets/lecture_panel_b.png", import.meta.url).toString();
 import { ReplayBtn } from "../../molecules/ReplayBtn/ReplayBtn";
+import { IsSlideEndContext } from "../../providers/IsSlideEndProvider/IsSlideEndProvider";
+import { LectureEndBtn } from "../../molecules/LectureEndBtn/LectureEndBtn";
+import { PrevBtn } from "../../molecules/PrevBtn/PrevBtn";
+import { NextBtn } from "../../molecules/NextBtn/NextBtn";
+import { IsStepEndContext } from "../../providers/IsStepEndProvider/IsStepEndProvider";
 
 export interface ControlPanelProps {
 }
@@ -39,7 +42,7 @@ const PanelB = styled(Panel)`
   background-image: url(${ lecture_panel_b });
   width: ${ SIZE.PANEL_B_W }px;
   height: ${ SIZE.PANEL_B_H }px;
-  padding: 6px 30px 0 30px;
+  padding: ${ SIZE.BTN_PAD_T }px 30px 0 30px;
 `;
 
 const BtnWrapperL = styled.div`
@@ -69,9 +72,9 @@ export const ControlPanel: FC<ControlPanelProps> = ({
         <ControlPanelL id={ classNames.paginate } />
         <PanelB>
           <BtnWrapperL>
-            <ArrowBtn id={ classNames.arrowPrev } $dir="prev" />
+            <PrevBtn />
             <PlayBtnMemo />
-            <ArrowBtn id={ classNames.arrowNext } $dir="next" />
+            <NextBtnMemo />
           </BtnWrapperL>
           <BtnWrapperR>
             <ReplayBtnMemo />
@@ -95,6 +98,29 @@ const SeekBarChild = styled.div<{ alpha?: number }>`
   left: 0;
   opacity: ${ ({ alpha }) => typeof alpha === "number" ? alpha : 1 };
 `;
+
+/**
+ * 次へボタン
+ * スライドが終わるとレクチャー終了ボタンに変わる
+ */
+const NextBtnMemo: FC = memo(() => {
+
+  const { isSlideEnd } = useContext(IsSlideEndContext);
+  const { isStepEnd } = useContext(IsStepEndContext);
+
+  return <>
+    { isSlideEnd && <LectureEndBtn /> }
+    { /**
+     * アンマウントした瞬間にswiper-buttonの機能を失うので
+     * display: noneすること
+     * */ }
+    <div style={ {
+      display: isSlideEnd ? "none" : "block"
+    } }>
+      <NextBtn isBlink={ isStepEnd } />
+    </div>
+  </>;
+});
 
 /**
  *  シークバー
@@ -153,7 +179,6 @@ const SeekBarMemo: FC = memo(() => {
  */
 const ReplayBtnMemo: FC = memo(() => {
 
-  const { setIsRunSeek } = useContext(RunSeekContext);
   const { slideProgress } = useContext(SlideProgressContext);
   const { stepList, setStepList } = useGetStepList();
   const factory = useContext(FactoryContext);
@@ -170,11 +195,9 @@ const ReplayBtnMemo: FC = memo(() => {
       type: "UPDATE",
       stepList: [factory.getCurrentStepData(slideProgress, 0)]
     });
-
-    setIsRunSeek(true);
   }, [stepList]);
 
-  return <ReplayBtn active={ true } onClick={ onClick } />;
+  return <ReplayBtn onClick={ onClick } />;
 });
 
 /**
@@ -183,16 +206,9 @@ const ReplayBtnMemo: FC = memo(() => {
 const PlayBtnMemo: FC = memo(() => {
 
   const { play, setPlay } = useContext(PlayContext);
-  const { setIsRunSeek } = useContext(RunSeekContext);
 
   const onClick = () => {
-    setPlay(s => {
-
-      const state = !s;
-
-      setIsRunSeek(state);
-      return state;
-    });
+    setPlay(s => !s);
   };
 
   return <PlayBtn isPlay={ play } onClick={ onClick } />;
