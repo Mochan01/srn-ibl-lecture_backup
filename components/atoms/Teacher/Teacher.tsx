@@ -91,7 +91,7 @@ export const Teacher: FC<TeacherProps> = ({
     <>
       { Object.keys(TEACHER).map(key => (
         <link rel="preload" href={ TEACHER[key] } as="image" /> )) }
-      <Main id={ animation } animation={ animation } />
+      <Main animation={ animation } />
     </>
   );
 };
