@@ -26,9 +26,11 @@ const Main = styled.div.attrs<WrapperProps>(
 )<WrapperProps>`
   transform-origin: left top;
   display: grid;
+  width: 1150px;
   grid-template-columns: 914px 236px;
   grid-template-rows: 202px 332px 90px 456px;
   height: 0;
+  margin: 0 auto;
 `;
 
 export const Title: FC<TitleProps> = ({
@@ -39,7 +41,7 @@ export const Title: FC<TitleProps> = ({
   onClickClose = () => {}
 }) => {
 
-  const scale = useScalable();
+  const scale = useScalable(1150);
   const factory = new StepsFactory(data);
 
   const initStep = useMemo(() => factory.getCurrentStepData(0, 0), []);
