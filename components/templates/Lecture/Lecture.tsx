@@ -37,6 +37,8 @@ const Container = styled.div.attrs<ContainerProps>(
   display: grid;
   grid-template-columns: ${ SIZE.W }px 184px;
   grid-template-rows: auto 1fr 1fr;
+  width: 1200px;
+  margin: 0 auto;
   & .swiper, & .swiper-wrapper {
     position: static;
   }
@@ -75,7 +77,7 @@ const Main: FC<LectureProps> = ({
     setStepList({ type: "UPDATE", stepList });
   }, [activeIndex]);
 
-  const scale = useScalable();
+  const scale = useScalable(1200);
 
   return (
     <Container scale={ scale }>
