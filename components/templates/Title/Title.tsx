@@ -7,8 +7,10 @@ import { StepsFactory } from "../../../factories/StepsFactory";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 import { ProgressionTrigger } from "../../providers/ProgressionTrigger/ProgressionTrigger";
 
-export interface TitleProps extends TitleBaseProps {
+export interface TitleProps {
   data?: object;
+  unitName: TitleBaseProps["unitName"];
+  unitTitle: TitleBaseProps["unitTitle"];
   onClickSkip?: () => void;
   onClickClose?: () => void;
 }
@@ -57,13 +59,16 @@ export const Title: FC<TitleProps> = ({
     setStep(next);
   };
 
+  const [isPlay, setIsPlay] = useState(false);
+
   return <>
-    <ProgressionTrigger
-      key={ step.stepProgress }
-      sound={ step.sound }
-      duration={ step.duration }
-      onEnd={ onEnd }
-    />
+    { isPlay &&
+      <ProgressionTrigger
+        key={ step.stepProgress }
+        sound={ step.sound }
+        duration={ step.duration }
+        onEnd={ onEnd }
+      /> }
     <Main scale={ scale }>
       <div style={ {
         gridColumn: "1 / 2",
@@ -71,7 +76,10 @@ export const Title: FC<TitleProps> = ({
         alignSelf: "end",
         justifySelf: "end"
       } }>
-        <TitleBase { ...{ unitName, unitTitle } } />
+        <TitleBase
+          onClick={ () => setIsPlay(true) }
+          { ...{ unitName, unitTitle } }
+        />
       </div>
       <div style={ {
         gridColumn: "1 / 2",
@@ -79,7 +87,7 @@ export const Title: FC<TitleProps> = ({
         alignSelf: "end",
         justifySelf: "end"
       } }>
-        <SkipBtn onClick={ onClickSkip } />
+        { isPlay && <SkipBtn onClick={ onClickSkip } /> }
       </div>
       <img
         style={ {
