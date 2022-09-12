@@ -1,21 +1,26 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import styled from "styled-components";
 const lecture_title_base
   = new URL("../../../assets/lecture_title_base.png", import.meta.url).toString();
+const lecture_button_start
+  = new URL("../../../assets/lecture_button_start.png", import.meta.url).toString();
 
 export interface TitleBaseProps {
   unitName: string;
   unitTitle: string;
+  onClick: () => void;
 }
 
 const Main = styled.div`
   width: 700px;
   height: 327px;
   background-image: url(${ lecture_title_base });
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
 `;
 
-const CommentArea = styled.div`
+const Wrapper = styled.div`
   position: absolute;
   padding: 40px 32px;
   width: 400px;
@@ -36,16 +41,50 @@ const CommentArea = styled.div`
   }
 `;
 
+const ButtonArea = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  & > button {
+    background: #000;
+  }
+`;
+
+const StartBtn = styled.div`
+  width: 253px;
+  height: 82px;
+  background-image: url(${ lecture_button_start });
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+`;
+
 export const TitleBase: FC<TitleBaseProps> = ({
   unitName,
-  unitTitle
+  unitTitle,
+  onClick
 }) => {
+
+  const [isShow, setShow] = useState(true);
+
   return (
     <Main>
-      <CommentArea>
-        <h1>{ unitName }</h1>
-        <h2>{ unitTitle }</h2>
-      </CommentArea>
+      <Wrapper>
+        { !isShow &&
+          <>
+            <h1>{ unitName }</h1>
+            <h2>{ unitTitle }</h2> 
+          </> }
+        { isShow &&
+          <ButtonArea>
+            <StartBtn onClick={ () => {
+              console.log(onClick);
+              onClick();
+              setShow(false);
+            } }/>
+          </ButtonArea> }
+      </Wrapper>
     </Main>
   );
 };
