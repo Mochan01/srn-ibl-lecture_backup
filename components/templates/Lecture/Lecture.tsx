@@ -20,6 +20,7 @@ import { LectureBase } from "../../atoms/LectureBase/LectureBase";
 import { FactoryContext, FactoryProvider } from "../../providers/FactoryProvider/FactoryProvider";
 import { IsSlideEndProvider } from "../../providers/IsSlideEndProvider/IsSlideEndProvider";
 import { IsStepEndProvider } from "../../providers/IsStepEndProvider/IsStepEndProvider";
+import { Cast } from "../../molecules/Cast/Cast";
 
 interface ContainerProps {
   scale: number;
@@ -56,6 +57,12 @@ const Wrapper = styled.div`
   pointer-events: none;
 `;
 
+const CastWrapper = styled.div`
+  position: absolute;
+  top: 140px;
+  right: -40px;
+`;
+
 const Main: FC<LectureProps> = ({
   unitName,
   unitTitle,
@@ -64,7 +71,7 @@ const Main: FC<LectureProps> = ({
 
   // todo: マスターデータの方で最初のプログレス消す
   const [activeIndex, setActiveIndex] = useState(1);
-  const { setStepList } = useGetStepList();
+  const { stepList, setStepList, currentProgress } = useGetStepList();
 
   const { setSlideProgress } = useContext(SlideProgressContext);
   const factory = useContext(FactoryContext);
@@ -86,6 +93,14 @@ const Main: FC<LectureProps> = ({
         gridRow: "1 / 4",
         paddingTop:  SIZE.HEAD_H
       } }>
+        <CastWrapper>
+          <Cast
+            teacher={ stepList[currentProgress].teacher }
+            student={ stepList[currentProgress].student } 
+          >
+            { stepList[currentProgress].speech }
+          </Cast>
+        </CastWrapper>
         <Wrapper>
           <LectureBase />
         </Wrapper>

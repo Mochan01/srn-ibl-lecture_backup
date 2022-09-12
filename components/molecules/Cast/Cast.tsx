@@ -12,6 +12,9 @@ export interface CastProps extends BubbleProps {
 
 const Main = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const TeacherWrapper = styled.div`
