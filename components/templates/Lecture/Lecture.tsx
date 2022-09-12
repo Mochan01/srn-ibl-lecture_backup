@@ -71,7 +71,7 @@ const Main: FC<LectureProps> = ({
 
   // todo: マスターデータの方で最初のプログレス消す
   const [activeIndex, setActiveIndex] = useState(1);
-  const { stepList, setStepList, currentProgress } = useGetStepList();
+  const { setStepList, currentStep } = useGetStepList();
 
   const { setSlideProgress } = useContext(SlideProgressContext);
   const factory = useContext(FactoryContext);
@@ -94,11 +94,8 @@ const Main: FC<LectureProps> = ({
         paddingTop:  SIZE.HEAD_H
       } }>
         <CastWrapper>
-          <Cast
-            teacher={ stepList[currentProgress].teacher }
-            student={ stepList[currentProgress].student } 
-          >
-            { stepList[currentProgress].speech }
+          <Cast teacher={ currentStep.teacher } student={ currentStep.student  }>
+            { currentStep.speech }
           </Cast>
         </CastWrapper>
         <Wrapper>
