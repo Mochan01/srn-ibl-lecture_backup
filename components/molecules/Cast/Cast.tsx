@@ -38,7 +38,7 @@ export const Cast: FC<CastProps> = ({
       </TeacherWrapper>
       { children &&
         <BubbleWrapper>
-          <Bubble>ほげほげほげ</Bubble>
+          <Bubble>{ children }</Bubble>
         </BubbleWrapper> }
       <Student animation={ student } />
     </Main>
