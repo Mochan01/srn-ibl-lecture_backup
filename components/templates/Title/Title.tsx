@@ -6,6 +6,7 @@ import { useScalable } from "../../../hooks/useScalable";
 import { StepsFactory } from "../../../factories/StepsFactory";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 import { ProgressionTrigger } from "../../providers/ProgressionTrigger/ProgressionTrigger";
+import { Cast } from "../../molecules/Cast/Cast";
 
 export interface TitleProps {
   data?: object;
@@ -33,6 +34,13 @@ const Main = styled.div.attrs<WrapperProps>(
   grid-template-rows: 202px 332px 90px 456px;
   height: 0;
   margin: 0 auto;
+  position: relative;
+`;
+
+const CastWrapper = styled.div`
+  position: absolute;
+  top: 100px;
+  right: 0;
 `;
 
 export const Title: FC<TitleProps> = ({
@@ -108,6 +116,14 @@ export const Title: FC<TitleProps> = ({
       } }>
         <CloseBtn onClick={ onClickClose } />
       </div>
+      <CastWrapper>
+        <Cast
+          teacher={ step.teacher }
+          student={ step.student } 
+        >
+          { step.speech }
+        </Cast>
+      </CastWrapper>
     </Main>
   </>;
 };
