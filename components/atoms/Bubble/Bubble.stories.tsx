@@ -11,10 +11,10 @@ const template: Story<BubbleProps> = (args) => <Bubble {...args} />;
 
 export const textMin: { args: BubbleProps } = template.bind({});
 textMin.args = {
-  children: <>ダミーテキスト</>
+  children: "ダミーテキスト"
 };
 
 export const textMax: { args: BubbleProps } = template.bind({});
 textMax.args = {
-  children: <>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</>
+  children: "ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト"
 };

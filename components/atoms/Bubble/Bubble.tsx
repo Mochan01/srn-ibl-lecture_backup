@@ -4,7 +4,7 @@ const speech_Bubble
   = new URL("../../../assets/speech_bubble.png", import.meta.url).toString();
 
 export interface BubbleProps {
-  children?: ReactElement;
+  children?: string;
 }
 
 interface MainProps {
@@ -27,7 +27,6 @@ const Main = styled.div.attrs<MainProps>(
 
 const Wrapper = styled.div`
   height: 100%;
-  opacity: .5;
   overflow: hidden;
   line-height: 1.4;
 `;
