@@ -14,5 +14,6 @@ export declare const SIZE: {
     readonly QUIZ_Q_BTN_H: 58;
     readonly QUIZ_A_BTN_H: 46;
     readonly QUIZ_AREA_W: number;
-    readonly QUIZ_AREA_H: number;
+    readonly QUIZ_AREA_FOUR_H: number;
+    readonly QUIZ_AREA_TREE_H: number;
 };

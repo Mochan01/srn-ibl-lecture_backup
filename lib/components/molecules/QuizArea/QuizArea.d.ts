@@ -4,10 +4,10 @@ export interface QuizAreaProps extends MainProps {
     correctIndex: number;
 }
 interface MainProps {
-    $x?: number;
-    $y?: number;
-    $width?: number;
-    $height?: number;
+    $x: number;
+    $y: number;
+    $width: number;
+    $height: number;
 }
 export declare const QuizArea: FC<QuizAreaProps>;
 export {};
