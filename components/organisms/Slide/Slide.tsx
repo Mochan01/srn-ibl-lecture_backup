@@ -74,7 +74,6 @@ export const Slide: FC<SlideProps> = ({
             motion2,
             sound,
             duration,
-            talking,
             stepProgress,
             questions,
             correctIndex,
