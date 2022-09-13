@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { AnimationType } from "src-ibl-lecture-master/variable_types/StepType";
 
 export interface TeacherProps {
-  animation: AnimationType;
+  animation?: AnimationType;
 }
 
 const TEACHER = {
@@ -89,7 +89,7 @@ const Main = styled.div<TeacherProps>`
 `;
 
 export const Teacher: FC<TeacherProps> = ({
-  animation
+  animation = "animation_1"
 }) => {
   return (
     <>

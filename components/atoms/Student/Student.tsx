@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { AnimationType } from "src-ibl-lecture-master/variable_types/StepType";
 
 export interface StudentProps {
-  animation: AnimationType;
+  animation?: AnimationType;
 }
 
 const STUDENT = {
@@ -146,7 +146,7 @@ const Main = styled.div<StudentProps>`
 `;
 
 export const Student: FC<StudentProps> = ({
-  animation
+  animation = "animation_1"
 }) => {
   return (
     <>
