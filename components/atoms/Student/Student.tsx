@@ -151,7 +151,7 @@ export const Student: FC<StudentProps> = ({
   return (
     <>
       { Object.keys(STUDENT).map(key => (
-        <link rel="preload" href={ STUDENT[key] } as="image" /> )) }
+        <link key={ key } rel="preload" href={ STUDENT[key] } as="image" /> )) }
       <Main animation={ animation } />
     </>
   );
