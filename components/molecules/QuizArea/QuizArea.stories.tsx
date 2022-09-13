@@ -7,6 +7,7 @@ import { StepListProvider } from "../../providers/StepListProvider/StepListProvi
 import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
 import { PlayProvider } from "../../providers/PlayProvider/PlayProvider";
 import { FactoryProvider } from "../../providers/FactoryProvider/FactoryProvider";
+import { SIZE } from "../../../data/SIZE";
 
 export default {
   title: "molecules/QuizArea",
@@ -29,14 +30,18 @@ const template: Story<QuizAreaProps> = (args) => {
   );
 };
 
+
 export const three: { args: QuizAreaProps } = template.bind({});
 three.args = {
   questions: [
     "アリスは川辺でおねえさんのよこにすわって",
     "なんにもすることがないのでとても退屈",
-    "一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。",
-    "「絵や会話のない本なんて、なんの役にもたたないじゃないの」とアリスは"
+    "一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。"
   ],
+  $x: 0,
+  $y: 0,
+  $width: SIZE.QUIZ_AREA_W,
+  $height: SIZE.QUIZ_AREA_TREE_H,
   correctIndex: 0
 };
 
@@ -45,8 +50,13 @@ four.args = {
   questions: [
     "アリスは川辺でおねえさんのよこにすわって",
     "なんにもすることがないのでとても退屈",
-    "一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。"
+    "一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。",
+    "「絵や会話のない本なんて、なんの役にもたたないじゃないの」とアリスは"
   ],
+  $x: 0,
+  $y: 0,
+  $width: SIZE.QUIZ_AREA_W,
+  $height: SIZE.QUIZ_AREA_FOUR_H,
   correctIndex: 0
 };
 

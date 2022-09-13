@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useContext, useState } from "react";
+import React, { FC, useCallback, useContext, useMemo, useState, memo } from "react";
 import styled from "styled-components";
 import { QuizAnswerBtn, QUIZ_ANSWER_BTN } from "../../atoms/QuizAnswerBtn/QuizAnswerBtn";
 import { QuizChoiceBtn, QUIZ_CHOICE_BTN } from "../../atoms/QuizChoiceBtn/QuizChoiceBtn";
@@ -14,13 +14,17 @@ export interface QuizAreaProps extends MainProps {
 }
 
 interface MainProps {
-  $x?: number;
-  $y?: number;
-  $width?: number;
-  $height?: number;
+  $x: number;
+  $y: number;
+  $width: number;
+  $height: number;
 }
 
-const Main = styled.div.attrs<MainProps>(
+interface IsMaxLen {
+  isMaxLen: boolean;
+}
+
+const Main = styled.div.attrs<MainProps & IsMaxLen>(
   ({ $x, $y, $width, $height }) => ({
     style: {
       transform: `scale(${ $width }%, ${ $height }%)`,
@@ -28,20 +32,23 @@ const Main = styled.div.attrs<MainProps>(
       top: `${ $y }%`
     }
   })
-)<MainProps>`
+)<MainProps & IsMaxLen>`
   position: absolute;
   transform-origin: left top;
   display: grid;
   grid-template-columns: ${ SIZE.QUIZ_Q_BTN_W }px ${ SIZE.QUIZ_Q_BTN_W }px;
-  grid-template-rows: ${ SIZE.QUIZ_Q_BTN_H }px ${ SIZE.QUIZ_Q_BTN_H }px ${ SIZE.QUIZ_A_BTN_H }px;
+  grid-template-rows:
+    ${ SIZE.QUIZ_Q_BTN_H }px
+    ${ SIZE.QUIZ_Q_BTN_H }px
+    ${ ({ isMaxLen }) => isMaxLen && `${ SIZE.QUIZ_A_BTN_H }px` };
   column-gap: ${ SIZE.QUIZ_COLUMN_G }px;
   row-gap: ${ SIZE.QUIZ_ROW_G }px;
 `;
 
-const AnswerBtnWrapper = styled.div<{ len: number }>`
-  justify-self: ${ ({ len }) => len === 4 ? "center" : "end" };
+const AnswerBtnWrapper = styled.div<IsMaxLen>`
+  justify-self: ${ ({ isMaxLen }) => isMaxLen ? "center" : "end" };
   align-self: end;
-  ${ ({ len }) => len === 4 && `
+  ${ ({ isMaxLen }) => isMaxLen && `
     grid-column: 1 / 3;
     grid-row: 3 / 4;
   ` }
@@ -50,10 +57,10 @@ const AnswerBtnWrapper = styled.div<{ len: number }>`
 export const QuizArea: FC<QuizAreaProps> = ({
   questions,
   correctIndex,
-  $x = 0,
-  $y = 0,
-  $width = SIZE.QUIZ_AREA_W,
-  $height = SIZE.QUIZ_AREA_H
+  $x,
+  $y,
+  $width,
+  $height
 }) => {
 
   // 選択ボタン 状態管理
@@ -95,12 +102,16 @@ export const QuizArea: FC<QuizAreaProps> = ({
     }, [slideProgress, currentProgress, chooseIndex])
   };
 
+  // 選択肢が4択の場合と３択の場合を出し仕分け
+  const isMaxLen = useMemo(() => questions.length === 4, [questions]);
+
   return(
     <Main
       $width={ calcRatio(SIZE.QUIZ_AREA_W, $width) }
-      $height={ calcRatio(SIZE.QUIZ_AREA_H, $height) }
+      $height={ calcRatio(isMaxLen ? SIZE.QUIZ_AREA_FOUR_H : SIZE.QUIZ_AREA_TREE_H, $height) }
       $x={ calcRatio(SIZE.W, $x) }
       $y={ calcRatio(SIZE.H, $y) }
+      { ...{ isMaxLen } }
     >
       { questions.map((x, i) => (
         <QuizChoiceBtn
@@ -115,13 +126,12 @@ export const QuizArea: FC<QuizAreaProps> = ({
         >
           { x }
         </QuizChoiceBtn> )) }
-        <AnswerBtnWrapper len={ questions.length } >
+        <AnswerBtnWrapper { ...{ isMaxLen } }>
           <QuizAnswerBtn { ...props } />
         </AnswerBtnWrapper>
     </Main>
   );
 };
-
 
 const calcRatio = (fullSize: number, size: number): number => {
   let percentage = size / fullSize;
