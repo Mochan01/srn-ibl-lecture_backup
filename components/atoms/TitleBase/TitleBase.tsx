@@ -79,7 +79,6 @@ export const TitleBase: FC<TitleBaseProps> = ({
         { isShow &&
           <ButtonArea>
             <StartBtn onClick={ () => {
-              console.log(onClick);
               onClick();
               setShow(false);
             } }/>

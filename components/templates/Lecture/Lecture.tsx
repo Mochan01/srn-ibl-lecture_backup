@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect, useState } from "react";
+import React, { FC, useContext, useEffect, useState, memo } from "react";
 import { ControlPanel } from "../../organisms/ControlPanel/ControlPanel";
 import { SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
 import { PlayProvider } from "../../providers/PlayProvider/PlayProvider";
@@ -21,6 +21,7 @@ import { FactoryContext, FactoryProvider } from "../../providers/FactoryProvider
 import { IsSlideEndProvider } from "../../providers/IsSlideEndProvider/IsSlideEndProvider";
 import { IsStepEndProvider } from "../../providers/IsStepEndProvider/IsStepEndProvider";
 import { Cast } from "../../molecules/Cast/Cast";
+import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 
 interface ContainerProps {
   scale: number;
@@ -57,12 +58,6 @@ const Wrapper = styled.div`
   pointer-events: none;
 `;
 
-const CastWrapper = styled.div`
-  position: absolute;
-  top: 140px;
-  right: -40px;
-`;
-
 const Main: FC<LectureProps> = ({
   unitName,
   unitTitle,
@@ -71,7 +66,7 @@ const Main: FC<LectureProps> = ({
 
   // todo: マスターデータの方で最初のプログレス消す
   const [activeIndex, setActiveIndex] = useState(1);
-  const { setStepList, currentStep } = useGetStepList();
+  const { setStepList } = useGetStepList();
 
   const { setSlideProgress } = useContext(SlideProgressContext);
   const factory = useContext(FactoryContext);
@@ -93,11 +88,7 @@ const Main: FC<LectureProps> = ({
         gridRow: "1 / 4",
         paddingTop:  SIZE.HEAD_H
       } }>
-        <CastWrapper>
-          <Cast teacher={ currentStep.teacher } student={ currentStep.student  }>
-            { currentStep.speech }
-          </Cast>
-        </CastWrapper>
+        <CastMemo />
         <Wrapper>
           <LectureBase />
         </Wrapper>
@@ -150,6 +141,36 @@ const Main: FC<LectureProps> = ({
   );
 };
 
+/**
+ *　先生と生徒
+ */
+const CastWrapper = styled.div`
+  position: absolute;
+  top: 140px;
+  right: -40px;
+`;
+
+const CastMemo = memo(({
+}) => {
+
+  const { currentStep } = useGetStepList();
+  const { isRunSeek } = useContext(RunSeekContext);
+
+  return (
+    <CastWrapper>
+      <Cast
+        teacher={ isRunSeek ? currentStep.teacher : "animation_1" }
+        student={ currentStep.student }
+      >
+        { currentStep.speech }
+      </Cast>
+    </CastWrapper>
+  );
+});
+
+/**
+ * レクチャー 本体
+ */
 export interface LectureProps extends FrameProps {
   onClickClose?: () => void;
   data?: object;

@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useState } from "react";
+import React, { FC, useMemo, useState, memo } from "react";
 import styled from "styled-components";
 import { SkipBtn } from "../../atoms/SkipBtn/SkipBtn";
 import { TitleBase, TitleBaseProps } from "../../atoms/TitleBase/TitleBase";
@@ -7,6 +7,7 @@ import { StepsFactory } from "../../../factories/StepsFactory";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 import { ProgressionTrigger } from "../../providers/ProgressionTrigger/ProgressionTrigger";
 import { Cast } from "../../molecules/Cast/Cast";
+import { StepProps } from "../../../variable_types/StepProps";
 
 export interface TitleProps {
   data?: object;
@@ -35,12 +36,6 @@ const Main = styled.div.attrs<WrapperProps>(
   height: 0;
   margin: 0 auto;
   position: relative;
-`;
-
-const CastWrapper = styled.div`
-  position: absolute;
-  top: 100px;
-  right: 0;
 `;
 
 export const Title: FC<TitleProps> = ({
@@ -80,6 +75,7 @@ export const Title: FC<TitleProps> = ({
         onEnd={ onEnd }
       /> }
     <Main scale={ scale }>
+      <CastMemo { ...{ isPlay, step } } />
       <div style={ {
         gridColumn: "1 / 2",
         gridRow: "2 / 3",
@@ -116,14 +112,31 @@ export const Title: FC<TitleProps> = ({
       } }>
         <CloseBtn onClick={ onClickClose } />
       </div>
-      <CastWrapper>
-        <Cast
-          teacher={ step.teacher }
-          student={ step.student } 
-        >
-          { step.speech }
-        </Cast>
-      </CastWrapper>
     </Main>
   </>;
 };
+
+/**
+ *　先生と生徒
+ */
+const CastWrapper = styled.div`
+  position: absolute;
+  top: 100px;
+  right: 0;
+`;
+
+const CastMemo: FC<{ isPlay: boolean, step: StepProps }> = memo(({
+  isPlay,
+  step
+}) => {
+  return (
+    <CastWrapper>
+      <Cast
+        teacher={ isPlay ? step.teacher : "animation_1" }
+        student={ step.student } 
+      >
+        { step.speech }
+      </Cast>
+    </CastWrapper>
+  );
+});
