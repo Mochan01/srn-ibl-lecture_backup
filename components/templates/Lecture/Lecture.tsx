@@ -79,7 +79,7 @@ const Main: FC<LectureProps> = ({
     setStepList({ type: "UPDATE", stepList });
   }, [activeIndex]);
 
-  const scale = useScalable(1920);
+  const scale = useScalable(1150);
 
   return (
     <Container scale={ scale }>
