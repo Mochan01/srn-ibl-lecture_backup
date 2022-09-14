@@ -46,7 +46,7 @@ export const Title: FC<TitleProps> = ({
   onClickClose = () => {}
 }) => {
 
-  const scale = useScalable(1150);
+  const scale = useScalable(1250);
   const factory = new StepsFactory(data);
 
   const initStep = useMemo(() => factory.getCurrentStepData(0, 0), []);
