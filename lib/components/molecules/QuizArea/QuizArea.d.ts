@@ -1,13 +1,6 @@
 import { FC } from "react";
-export interface QuizAreaProps extends MainProps {
-    questions: string[];
-    correctIndex: number;
-}
-interface MainProps {
-    $x: number;
-    $y: number;
-    $width: number;
-    $height: number;
+import { QuizProps } from "../../../variable_types/StepProps";
+export interface QuizAreaProps extends QuizProps {
+    onAnswer?: (isCorrect: boolean) => void;
 }
 export declare const QuizArea: FC<QuizAreaProps>;
-export {};
