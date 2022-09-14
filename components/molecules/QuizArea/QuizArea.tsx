@@ -1,16 +1,13 @@
-import React, { FC, useCallback, useContext, useMemo, useState, memo } from "react";
+import React, { FC, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import { QuizAnswerBtn, QUIZ_ANSWER_BTN } from "../../atoms/QuizAnswerBtn/QuizAnswerBtn";
 import { QuizChoiceBtn, QUIZ_CHOICE_BTN } from "../../atoms/QuizChoiceBtn/QuizChoiceBtn";
-import { PlayContext } from "../../providers/PlayProvider/PlayProvider";
-import { SlideProgressContext } from "../../providers/SlideProgressProvider/SlideProgressProvider";
-import { useGetStepList } from "../../../hooks/useGetStepList"
-import { FactoryContext } from "../../providers/FactoryProvider/FactoryProvider";
 import { SIZE } from "../../../data/SIZE";
 
 export interface QuizAreaProps extends MainProps {
   questions: string[];
   correctIndex: number;
+  onAnswer?: (isCorrect: boolean) => void;
 }
 
 interface MainProps {
@@ -60,7 +57,8 @@ export const QuizArea: FC<QuizAreaProps> = ({
   $x,
   $y,
   $width,
-  $height
+  $height,
+  onAnswer = () => {}
 }) => {
 
   // 選択ボタン 状態管理
@@ -72,35 +70,20 @@ export const QuizArea: FC<QuizAreaProps> = ({
 
   // 解答ボタン 状態管理
   const [isAnswered, setAnswered] = useState<boolean>();
+  useEffect(() => {
+    if (!isAnswered) return;
 
-  const { setPlay } = useContext(PlayContext);
-  const { slideProgress } = useContext(SlideProgressContext);
-  const factory = useContext(FactoryContext);
+    // 正解音の為、1秒待機
+    const timer = setTimeout(() => {
+      onAnswer(chooseIndex === correctIndex);
+    }, 1000);
 
-  const { currentProgress, stepList, setStepList } = useGetStepList();
+    return () => clearTimeout(timer);
+  }, [isAnswered]);
 
-  const props = {
-    len: questions.length,
-    mutation: typeof isAnswered === "boolean"
-      ? (isAnswered ? QUIZ_ANSWER_BTN.RED : QUIZ_ANSWER_BTN.WHITE)
-      : QUIZ_ANSWER_BTN.GRAY,
-    onClick: useCallback(() => {
-
-      setAnswered(true);
-      setPlay(true);
-
-      const [correct, inCorrect] = factory.getNextStepDataOnQuiz(
-        slideProgress,
-        stepList[stepList.length - 1].stepProgress
-      );
-
-      setStepList({
-        type: "ADD",
-        stepList: [chooseIndex === correctIndex ? correct : inCorrect]
-      });
-
-    }, [slideProgress, currentProgress, chooseIndex])
-  };
+  const mutation = typeof isAnswered === "boolean"
+    ? (isAnswered ? QUIZ_ANSWER_BTN.RED : QUIZ_ANSWER_BTN.WHITE)
+    : QUIZ_ANSWER_BTN.GRAY;
 
   // 選択肢が4択の場合と３択の場合を出し仕分け
   const isMaxLen = useMemo(() => questions.length === 4, [questions]);
@@ -127,7 +110,7 @@ export const QuizArea: FC<QuizAreaProps> = ({
           { x }
         </QuizChoiceBtn> )) }
         <AnswerBtnWrapper { ...{ isMaxLen } }>
-          <QuizAnswerBtn { ...props } />
+          <QuizAnswerBtn mutation={ mutation } onClick={ () => setAnswered(true) } />
         </AnswerBtnWrapper>
     </Main>
   );

@@ -2,11 +2,6 @@ import React from "react";
 // also exported from "@storybook/react" if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { QuizArea, QuizAreaProps } from "./QuizArea";
-import { SlideProgressProvider } from "../../providers/SlideProgressProvider/SlideProgressProvider";
-import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
-import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
-import { PlayProvider } from "../../providers/PlayProvider/PlayProvider";
-import { FactoryProvider } from "../../providers/FactoryProvider/FactoryProvider";
 import { SIZE } from "../../../data/SIZE";
 
 export default {
@@ -14,22 +9,7 @@ export default {
   component: QuizArea
 } as Meta;
 
-const template: Story<QuizAreaProps> = (args) => {
-  return (
-    <FactoryProvider>
-      <SlideProgressProvider>
-        <StepListProvider>
-          <PlayProvider>
-            <RunSeekProvider>
-              <QuizArea {...args} />
-            </RunSeekProvider>
-          </PlayProvider>
-        </StepListProvider>
-      </SlideProgressProvider>
-    </FactoryProvider>
-  );
-};
-
+const template: Story<QuizAreaProps> = (args) => <QuizArea {...args} />
 
 export const three: { args: QuizAreaProps } = template.bind({});
 three.args = {

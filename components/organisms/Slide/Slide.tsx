@@ -58,12 +58,24 @@ export const Slide: FC<SlideProps> = ({
         setIsSlideEnd(isLectureEnd);
         setIsStepEnd(!isLectureEnd);
       }
-
       return;
     }
 
     setStepList({ type: "ADD", stepList: [stepData] });
   };
+
+  const { setPlay } = useContext(PlayContext);
+
+  const onAnswer = (isCorrect: boolean) => {
+    setPlay(true);
+
+    const [correct, inCorrect] = factory.getNextStepDataOnQuiz(
+      slideProgress,
+      stepList[stepList.length - 1].stepProgress
+    );
+
+    setStepList({ type: "ADD", stepList: [isCorrect ? correct : inCorrect] });
+  }
 
   return (
     <>
@@ -90,10 +102,10 @@ export const Slide: FC<SlideProps> = ({
             <Fragment key={ `${ slideProgress }_${ stepProgress }` }>
               { isOver && <Panel { ...{ image, motion1, motion2 } } /> }
               { play && isEqual &&
-                <ProgressionTrigger { ...{ sound, onEnd, duration, onLoad, onUnMount } } /> }
+                <ProgressionTrigger { ...{ sound, duration, onLoad, onUnMount, onEnd } } /> }
               { questions.length && isOver && 
                 <Panel { ...{ motion1, motion2 } }>
-                  <QuizArea { ...{ questions, correctIndex, $x, $y, $width, $height } } />
+                  <QuizArea { ...{ questions, correctIndex, $x, $y, $width, $height, onAnswer } } />
                 </Panel> }
             </Fragment>
           );
