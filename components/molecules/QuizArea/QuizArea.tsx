@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { QuizAnswerBtn, QUIZ_ANSWER_BTN } from "../../atoms/QuizAnswerBtn/QuizAnswerBtn";
 import { QuizChoiceBtn, QUIZ_CHOICE_BTN } from "../../atoms/QuizChoiceBtn/QuizChoiceBtn";
 import { SIZE } from "../../../data/SIZE";
+import { useSound } from "use-sound";
+const quiz_correct
+  = new URL("../../../assets/quiz_correct.mp3", import.meta.url).toString();
 
 export interface QuizAreaProps extends MainProps {
   questions: string[];
@@ -68,15 +71,19 @@ export const QuizArea: FC<QuizAreaProps> = ({
     setAnswered(false);
   };
 
+  // 正解音
+  const [play] = useSound(quiz_correct, { volume: .1 });
+
   // 解答ボタン 状態管理
   const [isAnswered, setAnswered] = useState<boolean>();
   useEffect(() => {
     if (!isAnswered) return;
 
+    const isCorrect = chooseIndex === correctIndex;
+
     // 正解音の為、1秒待機
-    const timer = setTimeout(() => {
-      onAnswer(chooseIndex === correctIndex);
-    }, 1000);
+    if (isCorrect) play();
+    const timer = setTimeout(() => onAnswer(isCorrect), 1000);
 
     return () => clearTimeout(timer);
   }, [isAnswered]);
