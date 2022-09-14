@@ -22,7 +22,6 @@ const Main = styled.div.attrs<MainProps>(
   width: 185px;
   height: 127px;
   padding: 22px 22px 40px 22px;
-
 `;
 
 const Wrapper = styled.div`
@@ -36,9 +35,7 @@ export const Bubble: FC<BubbleProps> = ({
 }) => {
   return (
     <Main>
-      <Wrapper>
-        { children }
-      </Wrapper>
+      <Wrapper dangerouslySetInnerHTML={ { __html: children } } />
     </Main>
   );
 };

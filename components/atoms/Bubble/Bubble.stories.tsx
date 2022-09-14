@@ -18,3 +18,8 @@ export const textMax: { args: BubbleProps } = template.bind({});
 textMax.args = {
   children: "ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト"
 };
+
+export const newLine: { args: BubbleProps } = template.bind({});
+newLine.args = {
+  children: "改行します<br>1行目<br>2行目<br>3行目"
+};

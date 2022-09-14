@@ -9,7 +9,7 @@ export default {
   component: QuizChoiceBtn
 } as Meta;
 
-const Template: Story<QuizChoiceBtnProps> = (args) => {
+const template: Story<QuizChoiceBtnProps> = (args) => {
   return (
     <div style={ { padding: 100 } }>
       <QuizChoiceBtn {...args} />
@@ -17,14 +17,20 @@ const Template: Story<QuizChoiceBtnProps> = (args) => {
   );
 };
 
-export const oneLine: { args: QuizChoiceBtnProps } = Template.bind({});
+export const oneLine: { args: QuizChoiceBtnProps } = template.bind({});
 oneLine.args = {
   mutation: QUIZ_CHOICE_BTN.ORANGE,
   children: "ダミー"
 };
 
-export const twoLine: { args: QuizChoiceBtnProps } = Template.bind({});
+export const twoLine: { args: QuizChoiceBtnProps } = template.bind({});
 twoLine.args = {
   mutation: QUIZ_CHOICE_BTN.ORANGE,
   children: "ダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストです"
+};
+
+export const newLine: { args: QuizChoiceBtnProps } = template.bind({});
+newLine.args = {
+  mutation: QUIZ_CHOICE_BTN.ORANGE,
+  children: "改行します<br>1行目"
 };

@@ -94,7 +94,10 @@ export const QuizChoiceBtn: FC<QuizChoiceBtnProps> = ({
         isCorrect={ isCorrect }
         onClick={ onClick }
       >
-        <Comment color={ color }>{ children }</Comment>
+        <Comment
+          color={ color }
+          dangerouslySetInnerHTML={ { __html: children } }
+        / >
       </Main>
     </>
   );
