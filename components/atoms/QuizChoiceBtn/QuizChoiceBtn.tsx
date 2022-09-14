@@ -63,6 +63,7 @@ const Comment = styled.p`
   line-height: 1.2;
   user-select: none;
   font-size: 18px;
+  text-align: center;
 `;
 
 export const QuizChoiceBtn: FC<QuizChoiceBtnProps> = ({
