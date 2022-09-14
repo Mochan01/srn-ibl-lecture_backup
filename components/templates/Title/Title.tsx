@@ -102,7 +102,7 @@ export const Title: FC<TitleProps> = ({
           alignSelf: "end",
           justifySelf: "end"
         } }
-        src={ new URL("../../../assets/lecture_title_offer.png", import.meta.url).toString() }
+        src={ new URL("../../../assets/prod/lecture_title_offer.png", import.meta.url).toString() }
       />
       <div style={ {
         gridColumn: "2 / 3",

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-const lecture_title_offer = new URL("../../../assets/lecture_title_offer.png", import.meta.url).toString();
+const lecture_title_offer = new URL("../../../assets/prod/lecture_title_offer.png", import.meta.url).toString();
 
 export interface PresentedByProps {
 }

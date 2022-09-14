@@ -6,7 +6,7 @@ import { SIZE } from "../../../data/SIZE";
 import { useSound } from "use-sound";
 import { QuizProps } from "../../../variable_types/StepProps";
 const quiz_correct
-  = new URL("../../../assets/quiz_correct.mp3", import.meta.url).toString();
+  = new URL("../../../assets/prod/quiz_correct.mp3", import.meta.url).toString();
 
 export interface QuizAreaProps extends QuizProps {
   onAnswer?: (isCorrect: boolean) => void;

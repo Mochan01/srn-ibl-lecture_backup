@@ -1,13 +1,13 @@
 import React, { FC, useMemo } from "react";
 import styled from "styled-components";
 const Correct
-  = new URL("../../../assets/Correct.png", import.meta.url).toString();
+  = new URL("../../../assets/prod/Correct.png", import.meta.url).toString();
 const Wrong
-  = new URL("../../../assets/Wrong.png", import.meta.url).toString();
+  = new URL("../../../assets/prod/Wrong.png", import.meta.url).toString();
 
 export const QUIZ_CHOICE_BTN = {
-  ORANGE: new URL("../../../assets/Question_button_select.png", import.meta.url).toString(),
-  WHITE: new URL("../../../assets/Question_button.png", import.meta.url).toString()
+  ORANGE: new URL("../../../assets/prod/Question_button_select.png", import.meta.url).toString(),
+  WHITE: new URL("../../../assets/prod/Question_button.png", import.meta.url).toString()
 } as const;
 
 export interface QuizChoiceBtnProps extends MainProps {

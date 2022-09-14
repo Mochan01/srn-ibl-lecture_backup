@@ -2,9 +2,9 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 export const SPEED_BUTTON_MUTATIONS = {
-  LEVEL1: new URL("../../../assets/lecture_button_speed_1.png", import.meta.url).toString(),
-  LEVEL2: new URL("../../../assets/lecture_button_speed_1.5.png", import.meta.url).toString(),
-  LEVEL3: new URL("../../../assets/lecture_button_speed_2.png", import.meta.url).toString(),
+  LEVEL1: new URL("../../../assets/prod/lecture_button_speed_1.png", import.meta.url).toString(),
+  LEVEL2: new URL("../../../assets/prod/lecture_button_speed_1.5.png", import.meta.url).toString(),
+  LEVEL3: new URL("../../../assets/prod/lecture_button_speed_2.png", import.meta.url).toString(),
 } as const;
 
 export interface SpeedBtnProps {

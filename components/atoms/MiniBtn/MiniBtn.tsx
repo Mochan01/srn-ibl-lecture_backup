@@ -2,18 +2,18 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 export const MINI_BUTTON_MUTATIONS = {
-  AGAIN_ON: new URL("../../../assets/lecture_button_again_on.png", import.meta.url).toString(),
-  AGAIN_OFF: new URL("../../../assets/lecture_button_again_off.png", import.meta.url).toString(),
-  NEXT_ON: new URL("../../../assets/lecture_button_next_on.png", import.meta.url).toString(),
-  NEXT_OFF: new URL("../../../assets/lecture_button_next_off.png", import.meta.url).toString(),
-  PREV_ON: new URL("../../../assets/lecture_button_previous_on.png", import.meta.url).toString(),
-  PREV_OFF: new URL("../../../assets/lecture_button_previous_off.png", import.meta.url).toString(),
-  PLAY_ON: new URL("../../../assets/lecture_button_play_on.png", import.meta.url).toString(),
-  PLAY_OFF: new URL("../../../assets/lecture_button_play_off.png", import.meta.url).toString(),
-  PAUSE_ON: new URL("../../../assets/lecture_button_stop_on.png", import.meta.url).toString(),
-  PAUSE_OFF: new URL("../../../assets/lecture_button_stop_off.png", import.meta.url).toString(),
-  LECTURE_END_ON: new URL("../../../assets/lecture_button_end_on.png", import.meta.url).toString(),
-  LECTURE_END_OFF: new URL("../../../assets/lecture_button_end_off.png", import.meta.url).toString()
+  AGAIN_ON: new URL("../../../assets/prod/lecture_button_again_on.png", import.meta.url).toString(),
+  AGAIN_OFF: new URL("../../../assets/prod/lecture_button_again_off.png", import.meta.url).toString(),
+  NEXT_ON: new URL("../../../assets/prod/lecture_button_next_on.png", import.meta.url).toString(),
+  NEXT_OFF: new URL("../../../assets/prod/lecture_button_next_off.png", import.meta.url).toString(),
+  PREV_ON: new URL("../../../assets/prod/lecture_button_previous_on.png", import.meta.url).toString(),
+  PREV_OFF: new URL("../../../assets/prod/lecture_button_previous_off.png", import.meta.url).toString(),
+  PLAY_ON: new URL("../../../assets/prod/lecture_button_play_on.png", import.meta.url).toString(),
+  PLAY_OFF: new URL("../../../assets/prod/lecture_button_play_off.png", import.meta.url).toString(),
+  PAUSE_ON: new URL("../../../assets/prod/lecture_button_stop_on.png", import.meta.url).toString(),
+  PAUSE_OFF: new URL("../../../assets/prod/lecture_button_stop_off.png", import.meta.url).toString(),
+  LECTURE_END_ON: new URL("../../../assets/prod/lecture_button_end_on.png", import.meta.url).toString(),
+  LECTURE_END_OFF: new URL("../../../assets/prod/lecture_button_end_off.png", import.meta.url).toString()
 } as const;
 
 export interface MiniBtnProps {

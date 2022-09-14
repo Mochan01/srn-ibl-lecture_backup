@@ -3,7 +3,7 @@ import styled from "styled-components";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 import { SIZE } from "../../../data/SIZE";
 const lecture_play_circle
-  = new URL("../../../assets/lecture_play_circle.png", import.meta.url).toString();
+  = new URL("../../../assets/prod/lecture_play_circle.png", import.meta.url).toString();
 
 export interface SeekBarProps {
   value: number;

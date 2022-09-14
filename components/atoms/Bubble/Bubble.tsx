@@ -1,21 +1,13 @@
-import React, { FC, ReactElement } from "react";
+import React, { FC } from "react";
 import styled from "styled-components"
 const speech_Bubble
-  = new URL("../../../assets/speech_bubble.png", import.meta.url).toString();
+  = new URL("../../../assets/prod/speech_bubble.png", import.meta.url).toString();
 
 export interface BubbleProps {
   children?: string;
 }
 
-interface MainProps {
-}
-
-const Main = styled.div.attrs<MainProps>(
-  (props) => ({
-    style: {
-    }
-  })
-)<MainProps>`
+const Main = styled.div`
   background-image: url(${ speech_Bubble });
   background-repeat: no-repeat;
   background-size: cover;

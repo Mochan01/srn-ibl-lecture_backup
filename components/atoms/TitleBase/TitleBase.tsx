@@ -1,9 +1,9 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
 const lecture_title_base
-  = new URL("../../../assets/lecture_title_base.png", import.meta.url).toString();
+  = new URL("../../../assets/prod/lecture_title_base.png", import.meta.url).toString();
 const lecture_button_start
-  = new URL("../../../assets/lecture_button_start.png", import.meta.url).toString();
+  = new URL("../../../assets/prod/lecture_button_start.png", import.meta.url).toString();
 
 export interface TitleBaseProps {
   unitName: string;

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { SIZE } from "../../../data/SIZE";
-const lecture_base = new URL("../../../assets/lecture_base.png", import.meta.url).toString();
+const lecture_base = new URL("../../../assets/prod/lecture_base.png", import.meta.url).toString();
 
 export interface LectureBaseProps {
   onClick?: () => void;

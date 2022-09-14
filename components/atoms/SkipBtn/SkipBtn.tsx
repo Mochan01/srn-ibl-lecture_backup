@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 const lecture_title_skip
-  = new URL("../../../assets/lecture_title_skip.png", import.meta.url).toString();
+  = new URL("../../../assets/prod/lecture_title_skip.png", import.meta.url).toString();
 
 export interface SkipBtnProps {
   onClick?: () => void;

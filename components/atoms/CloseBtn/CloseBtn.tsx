@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 const lecture_button_close
-  = new URL("../../../assets/lecture_button_close.png", import.meta.url).toString();
+  = new URL("../../../assets/prod/lecture_button_close.png", import.meta.url).toString();
 
 export interface CloseBtnProps {
   onClick?: () => void;

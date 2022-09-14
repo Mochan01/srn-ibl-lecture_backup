@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { SIZE } from "../../../data/SIZE";
-const lecture_headline = new URL("../../../assets/lecture_headline.png", import.meta.url).toString();
-const lecture_flame = new URL("../../../assets/lecture_flame.png", import.meta.url).toString();
+const lecture_headline = new URL("../../../assets/prod/lecture_headline.png", import.meta.url).toString();
+const lecture_flame = new URL("../../../assets/prod/lecture_flame.png", import.meta.url).toString();
 
 export interface FrameProps {
   unitName: string;

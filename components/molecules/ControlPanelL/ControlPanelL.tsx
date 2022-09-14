@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { ControlPanelA } from "../../atoms/ControlPanelA/ControlPanelA";
-const lecture_star_off = new URL("../../../assets/lecture_star_off.png", import.meta.url).toString();
-const lecture_star_on = new URL("../../../assets/lecture_star_on.png", import.meta.url).toString();
+const lecture_star_off = new URL("../../../assets/prod/lecture_star_off.png", import.meta.url).toString();
+const lecture_star_on = new URL("../../../assets/prod/lecture_star_on.png", import.meta.url).toString();
 
 export interface ControlPanelLProps {
   id?: string;
