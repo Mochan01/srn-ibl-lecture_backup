@@ -4,17 +4,12 @@ import { QuizAnswerBtn, QUIZ_ANSWER_BTN } from "../../atoms/QuizAnswerBtn/QuizAn
 import { QuizChoiceBtn, QUIZ_CHOICE_BTN } from "../../atoms/QuizChoiceBtn/QuizChoiceBtn";
 import { SIZE } from "../../../data/SIZE";
 import { useSound } from "use-sound";
+import { QuizProps } from "../../../variable_types/StepProps";
 const quiz_correct
   = new URL("../../../assets/quiz_correct.mp3", import.meta.url).toString();
 
-export interface QuizAreaProps {
-  questions: string[];
-  correctIndex: number;
+export interface QuizAreaProps extends QuizProps {
   onAnswer?: (isCorrect: boolean) => void;
-  $x: number;
-  $y: number;
-  $width: number;
-  $height: number;
 }
 
 interface IsMaxLen {
@@ -22,10 +17,10 @@ interface IsMaxLen {
 }
 
 interface MainProps extends IsMaxLen {
-  $x: QuizAreaProps["$x"];
-  $y: QuizAreaProps["$y"];
-  $width: QuizAreaProps["$width"];
-  $height: QuizAreaProps["$height"];
+  $x: QuizProps["$x"];
+  $y: QuizProps["$y"];
+  $width: QuizProps["$width"];
+  $height: QuizProps["$height"];
   touchEnabled: boolean;
 }
 

@@ -1,8 +1,16 @@
 import { PanelProps } from "../components/atoms/Panel/Panel";
-import { QuizAreaProps } from "../components/molecules/QuizArea/QuizArea";
 import { AnimationType } from "src-ibl-lecture-master/variable_types/StepType";
 
-export interface StepProps extends Required<QuizAreaProps>, Required<PanelProps> {
+export interface QuizProps {
+  questions: string[];
+  correctIndex: number;
+  $x: number;
+  $y: number;
+  $width: number;
+  $height: number;
+}
+
+export interface StepProps extends QuizProps, Required<PanelProps> {
   stepProgress: number;
   sound: string;
   duration: number;
