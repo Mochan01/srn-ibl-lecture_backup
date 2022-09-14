@@ -7,13 +7,10 @@ import { useSound } from "use-sound";
 const quiz_correct
   = new URL("../../../assets/quiz_correct.mp3", import.meta.url).toString();
 
-export interface QuizAreaProps extends MainProps {
+export interface QuizAreaProps {
   questions: string[];
   correctIndex: number;
   onAnswer?: (isCorrect: boolean) => void;
-}
-
-interface MainProps {
   $x: number;
   $y: number;
   $width: number;
@@ -24,7 +21,15 @@ interface IsMaxLen {
   isMaxLen: boolean;
 }
 
-const Main = styled.div.attrs<MainProps & IsMaxLen>(
+interface MainProps extends IsMaxLen {
+  $x: QuizAreaProps["$x"];
+  $y: QuizAreaProps["$y"];
+  $width: QuizAreaProps["$width"];
+  $height: QuizAreaProps["$height"];
+  touchEnabled: boolean;
+}
+
+const Main = styled.div.attrs<MainProps>(
   ({ $x, $y, $width, $height }) => ({
     style: {
       transform: `scale(${ $width }%, ${ $height }%)`,
@@ -32,7 +37,7 @@ const Main = styled.div.attrs<MainProps & IsMaxLen>(
       top: `${ $y }%`
     }
   })
-)<MainProps & IsMaxLen>`
+)<MainProps>`
   position: absolute;
   transform-origin: left top;
   display: grid;
@@ -43,6 +48,7 @@ const Main = styled.div.attrs<MainProps & IsMaxLen>(
     ${ ({ isMaxLen }) => isMaxLen && `${ SIZE.QUIZ_A_BTN_H }px` };
   column-gap: ${ SIZE.QUIZ_COLUMN_G }px;
   row-gap: ${ SIZE.QUIZ_ROW_G }px;
+  pointer-events: ${ ({ touchEnabled }) => touchEnabled ? "auto" : "none" };
 `;
 
 const AnswerBtnWrapper = styled.div<IsMaxLen>`
@@ -64,18 +70,16 @@ export const QuizArea: FC<QuizAreaProps> = ({
   onAnswer = () => {}
 }) => {
 
+  // 解答ボタン 状態管理
+  const [isAnswered, setAnswered] = useState(false);
+
   // 選択ボタン 状態管理
   const [chooseIndex, setChooseIndex] = useState<number>();
-  const choiceClickHandler = i => {
-    setChooseIndex(i);
-    setAnswered(false);
-  };
 
   // 正解音
   const [play] = useSound(quiz_correct, { volume: .1 });
 
   // 解答ボタン 状態管理
-  const [isAnswered, setAnswered] = useState<boolean>();
   useEffect(() => {
     if (!isAnswered) return;
 
@@ -88,20 +92,21 @@ export const QuizArea: FC<QuizAreaProps> = ({
     return () => clearTimeout(timer);
   }, [isAnswered]);
 
-  const mutation = typeof isAnswered === "boolean"
+  const mutation = typeof chooseIndex === "number"
     ? (isAnswered ? QUIZ_ANSWER_BTN.RED : QUIZ_ANSWER_BTN.WHITE)
     : QUIZ_ANSWER_BTN.GRAY;
 
   // 選択肢が4択の場合と３択の場合を出し仕分け
   const isMaxLen = useMemo(() => questions.length === 4, [questions]);
 
-  return(
+  return (
     <Main
       $width={ calcRatio(SIZE.QUIZ_AREA_W, $width) }
       $height={ calcRatio(isMaxLen ? SIZE.QUIZ_AREA_FOUR_H : SIZE.QUIZ_AREA_TREE_H, $height) }
       $x={ calcRatio(SIZE.W, $x) }
       $y={ calcRatio(SIZE.H, $y) }
-      { ...{ isMaxLen } }
+      touchEnabled={ !isAnswered }
+      isMaxLen={ isMaxLen }
     >
       { questions.map((x, i) => (
         <QuizChoiceBtn
@@ -111,12 +116,12 @@ export const QuizArea: FC<QuizAreaProps> = ({
               ? QUIZ_CHOICE_BTN.ORANGE
               : QUIZ_CHOICE_BTN.WHITE
           }
-          onClick={ () => choiceClickHandler(i) }
+          onClick={ () => setChooseIndex(i) }
           isCorrect={ isAnswered ? i === correctIndex : null }
         >
           { x }
         </QuizChoiceBtn> )) }
-        <AnswerBtnWrapper { ...{ isMaxLen } }>
+        <AnswerBtnWrapper isMaxLen={ isMaxLen }>
           <QuizAnswerBtn mutation={ mutation } onClick={ () => setAnswered(true) } />
         </AnswerBtnWrapper>
     </Main>
