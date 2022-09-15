@@ -1,6 +1,6 @@
 import React, { FC, ReactElement, useEffect } from "react";
 import styled from "styled-components";
-import { useGetWider } from "../../../hooks/useGetWider";
+import { useGetAxis } from "../../../hooks/useGetAxis";
 
 export interface ScaleWrapperProps {
   children: ReactElement;
@@ -27,11 +27,11 @@ export const ScaleWrapper: FC<ScaleWrapperProps> = ({
   children
 }) => {
 
-  const wider = useGetWider();
+  const axis = useGetAxis();
 
   useEffect(() => {
-    console.log(wider);
-  }, [wider]);
+    console.log(axis);
+  }, [axis]);
 
   return (
     <Main>
