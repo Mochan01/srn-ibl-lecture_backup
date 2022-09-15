@@ -11,7 +11,6 @@ import { SlideProgressContext } from "../../providers/SlideProgressProvider/Slid
 import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList";
 import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
-import { useScalable } from "../../../hooks/useScalable";
 import styled from "styled-components";
 import { SIZE } from "../../../data/SIZE";
 import { Frame, FrameProps } from "../../atoms/Frame/Frame";
@@ -23,17 +22,7 @@ import { IsStepEndProvider } from "../../providers/IsStepEndProvider/IsStepEndPr
 import { Cast } from "../../molecules/Cast/Cast";
 import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 
-interface ContainerProps {
-  scale: number;
-}
-
-const Container = styled.div.attrs<ContainerProps>(
-  ({ scale }) => ({
-    style: {
-      transform: `scale(${ scale })`
-    }
-  })
-)<ContainerProps>`
+const Container = styled.div`
   transform-origin: left top;
   position: relative;
   display: grid;
@@ -79,10 +68,8 @@ const Main: FC<LectureProps> = ({
     setStepList({ type: "UPDATE", stepList });
   }, [activeIndex]);
 
-  const scale = useScalable(1250);
-
   return (
-    <Container scale={ scale }>
+    <Container>
       <div style={ {
         gridColumn: "1 / 2",
         gridRow: "1 / 4",

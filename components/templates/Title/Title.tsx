@@ -2,7 +2,6 @@ import React, { FC, useMemo, useState, memo } from "react";
 import styled from "styled-components";
 import { SkipBtn } from "../../atoms/SkipBtn/SkipBtn";
 import { TitleBase, TitleBaseProps } from "../../atoms/TitleBase/TitleBase";
-import { useScalable } from "../../../hooks/useScalable";
 import { StepsFactory } from "../../../factories/StepsFactory";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 import { ProgressionTrigger } from "../../providers/ProgressionTrigger/ProgressionTrigger";
@@ -21,13 +20,7 @@ interface WrapperProps {
   scale: number;
 }
 
-const Main = styled.div.attrs<WrapperProps>(
-  ({ scale }) => ({
-    style: {
-      transform: `scale(${ scale })`
-    }
-  })
-)<WrapperProps>`
+const Main = styled.div`
   transform-origin: left top;
   display: grid;
   width: 1150px;
@@ -46,7 +39,6 @@ export const Title: FC<TitleProps> = ({
   onClickClose = () => {}
 }) => {
 
-  const scale = useScalable(1250);
   const factory = new StepsFactory(data);
 
   const initStep = useMemo(() => factory.getCurrentStepData(0, 0), []);
@@ -74,7 +66,7 @@ export const Title: FC<TitleProps> = ({
         duration={ step.duration }
         onEnd={ onEnd }
       /> }
-    <Main scale={ scale }>
+    <Main>
       <CastMemo { ...{ isPlay, step } } />
       <div style={ {
         gridColumn: "1 / 2",
