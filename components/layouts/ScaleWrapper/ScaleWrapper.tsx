@@ -1,6 +1,7 @@
 import React, { FC, ReactElement, useEffect } from "react";
 import styled from "styled-components";
 import { useGetAxis } from "../../../hooks/useGetAxis";
+import { useResizeWindow } from "../../../hooks/useResizeWindow";
 
 export interface ScaleWrapperProps {
   children: ReactElement;
@@ -27,11 +28,11 @@ export const ScaleWrapper: FC<ScaleWrapperProps> = ({
   children
 }) => {
 
-  const axis = useGetAxis();
+  const size = useResizeWindow();
 
   useEffect(() => {
-    console.log(axis);
-  }, [axis]);
+    console.log(size);
+  }, [size]);
 
   return (
     <Main>
