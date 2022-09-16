@@ -51,6 +51,7 @@ const LectureContents = styled.div`
   margin: auto;
   width: fit-content;
   height: fit-content;
+  transform: scale(1.295);
 `;
 
 const Wrapper = styled.div`
