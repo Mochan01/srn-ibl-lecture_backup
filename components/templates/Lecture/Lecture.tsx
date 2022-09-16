@@ -144,7 +144,7 @@ const Main: FC<LectureProps> = ({
 const _Cast = styled(Cast)`
   position: absolute;
   top: 50%;
-  right: 240px;
+  right: 74px;
   transform: translateY(-50%);
 `;
 const CastMemo = memo(({
