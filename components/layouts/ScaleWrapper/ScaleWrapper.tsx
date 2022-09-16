@@ -40,7 +40,7 @@ export const ScaleWrapper: FC<ScaleWrapperProps> = ({
       ? windowWidth / clientWidth
       : windowHeight / clientHeight;
 
-    setScale(Math.floor(scale * 100) / 100);
+    setScale(Math.floor(scale * 1000) / 1000);
 
   }, [windowWidth, windowHeight, ref.current]);
 
