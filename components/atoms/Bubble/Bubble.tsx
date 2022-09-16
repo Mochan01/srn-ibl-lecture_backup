@@ -4,6 +4,7 @@ const speech_Bubble
   = new URL("../../../assets/prod/speech_bubble.png", import.meta.url).toString();
 
 export interface BubbleProps {
+  className?: string;
   children?: string;
 }
 
@@ -23,10 +24,11 @@ const Wrapper = styled.div`
 `;
 
 export const Bubble: FC<BubbleProps> = ({
+  className,
   children
 }) => {
   return (
-    <Main>
+    <Main className={ className }>
       <Wrapper dangerouslySetInnerHTML={ { __html: children } } />
     </Main>
   );

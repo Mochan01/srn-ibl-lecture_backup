@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useState, memo } from "react";
+import React, { FC, useMemo, useState } from "react";
 import styled from "styled-components";
 import { SkipBtn } from "../../atoms/SkipBtn/SkipBtn";
 import { TitleBase, TitleBaseProps } from "../../atoms/TitleBase/TitleBase";
@@ -6,7 +6,9 @@ import { StepsFactory } from "../../../factories/StepsFactory";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 import { ProgressionTrigger } from "../../providers/ProgressionTrigger/ProgressionTrigger";
 import { Cast } from "../../molecules/Cast/Cast";
-import { StepProps } from "../../../variable_types/StepProps";
+import { ScaleWrapper } from "../../layouts/ScaleWrapper/ScaleWrapper";
+const ImgPresented = new URL("../../../assets/prod/lecture_title_offer.png", import.meta.url).toString();
+const ImgBg = new URL("../../../assets/prod/lecture_bg.png", import.meta.url).toString();
 
 export interface TitleProps {
   data?: object;
@@ -16,19 +18,53 @@ export interface TitleProps {
   onClickClose?: () => void;
 }
 
-interface WrapperProps {
-  scale: number;
-}
-
 const Main = styled.div`
-  transform-origin: left top;
-  display: grid;
-  width: 1150px;
-  grid-template-columns: 914px 236px;
-  grid-template-rows: 202px 332px 90px 192px;
-  height: 0;
-  margin: 0 auto;
+  width: 1920px;
+  height: 1080px;
   position: relative;
+  background-color: #fff;
+  background-image: url(${ ImgBg });
+  background-size: contain;
+  background-repeat: no-repeat;
+`;
+
+const _TitleBase = styled(TitleBase)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+`;
+
+const _CloseBtn = styled(CloseBtn)`
+  position: absolute;
+  top: 20px;
+  right: 62px;
+`;
+
+const Presented = styled.div`
+  background-image: url(${ ImgPresented });
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 600px;
+  height: 42px;
+  position: absolute;
+  bottom: 20px;
+  right: 62px;
+`;
+
+const _Cast = styled(Cast)`
+  position: absolute;
+  top: 50%;
+  right: 360px;
+  transform: translateY(-50%);
+`;
+
+const _SkipBtn = styled(SkipBtn)`
+  position: absolute;
+  right: 615px;
+  bottom: 300px;
 `;
 
 export const Title: FC<TitleProps> = ({
@@ -66,69 +102,23 @@ export const Title: FC<TitleProps> = ({
         duration={ step.duration }
         onEnd={ onEnd }
       /> }
-    <Main>
-      <CastMemo { ...{ isPlay, step } } />
-      <div style={ {
-        gridColumn: "1 / 2",
-        gridRow: "2 / 3",
-        alignSelf: "end",
-        justifySelf: "end"
-      } }>
-        <TitleBase
+    <ScaleWrapper>
+      <Main>
+        <Presented />
+        <_CloseBtn onClick={ onClickClose } />
+        <_Cast
+          teacher={ isPlay ? step.teacher : "animation_1" }
+          student={ step.student } 
+        >
+          { step.speech }
+        </_Cast>
+        <_TitleBase
           onClick={ () => setIsPlay(true) }
           { ...{ unitName, unitTitle } }
         />
-      </div>
-      <div style={ {
-        gridColumn: "1 / 2",
-        gridRow: "3 / 4",
-        alignSelf: "end",
-        justifySelf: "end"
-      } }>
-        { isPlay && <SkipBtn onClick={ onClickSkip } /> }
-      </div>
-      <img
-        style={ {
-          gridColumn: "1 / 3",
-          gridRow: "4 / 5",
-          alignSelf: "end",
-          justifySelf: "end"
-        } }
-        src={ new URL("../../../assets/prod/lecture_title_offer.png", import.meta.url).toString() }
-      />
-      <div style={ {
-        gridColumn: "2 / 3",
-        gridRow: "1 / 2",
-        justifySelf: "end",
-        marginTop: 16
-      } }>
-        <CloseBtn onClick={ onClickClose } />
-      </div>
-    </Main>
+        { isPlay && <_SkipBtn onClick={ onClickSkip } /> }
+      </Main>
+    </ScaleWrapper>
   </>;
 };
 
-/**
- *　先生と生徒
- */
-const CastWrapper = styled.div`
-  position: absolute;
-  top: 100px;
-  right: 0;
-`;
-
-const CastMemo: FC<{ isPlay: boolean, step: StepProps }> = memo(({
-  isPlay,
-  step
-}) => {
-  return (
-    <CastWrapper>
-      <Cast
-        teacher={ isPlay ? step.teacher : "animation_1" }
-        student={ step.student } 
-      >
-        { step.speech }
-      </Cast>
-    </CastWrapper>
-  );
-});

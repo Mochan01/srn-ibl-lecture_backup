@@ -8,20 +8,21 @@ import { AnimationType } from "src-ibl-lecture-master/variable_types/StepType";
 export interface CastProps extends BubbleProps {
   student: AnimationType;
   teacher: AnimationType;
+  className?: string;
 }
 
 const Main = styled.div`
   position: relative;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
 `;
 
-const TeacherWrapper = styled.div`
+const _Teacher = styled(Teacher)`
   margin-bottom: 32px;
 `;
 
-const BubbleWrapper = styled.div`
+const _Bubble = styled(Bubble)`
   position: absolute;
   bottom: 254px;
 `;
@@ -29,17 +30,13 @@ const BubbleWrapper = styled.div`
 export const Cast: FC<CastProps> = ({
   student,
   teacher,
-  children
+  children,
+  className
 }) => {
   return (
-    <Main>
-      <TeacherWrapper>
-        <Teacher animation={ teacher } />
-      </TeacherWrapper>
-      { children &&
-        <BubbleWrapper>
-          <Bubble>{ children }</Bubble>
-        </BubbleWrapper> }
+    <Main className={ className }>
+      <_Teacher animation={ teacher } />
+      { children && <_Bubble>{ children }</_Bubble> }
       <Student animation={ student } />
     </Main>
   );

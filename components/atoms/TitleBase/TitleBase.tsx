@@ -9,6 +9,7 @@ export interface TitleBaseProps {
   unitName: string;
   unitTitle: string;
   onClick: () => void;
+  className?: string;
 }
 
 const Main = styled.div`
@@ -63,13 +64,14 @@ const StartBtn = styled.div`
 export const TitleBase: FC<TitleBaseProps> = ({
   unitName,
   unitTitle,
-  onClick
+  onClick,
+  className
 }) => {
 
   const [isShow, setShow] = useState(true);
 
   return (
-    <Main>
+    <Main className={ className }>
       <Wrapper>
         { !isShow &&
           <>
