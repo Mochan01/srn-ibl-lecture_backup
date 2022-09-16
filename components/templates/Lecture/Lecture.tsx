@@ -21,15 +21,16 @@ import { IsSlideEndProvider } from "../../providers/IsSlideEndProvider/IsSlideEn
 import { IsStepEndProvider } from "../../providers/IsStepEndProvider/IsStepEndProvider";
 import { Cast } from "../../molecules/Cast/Cast";
 import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
+import { ScaleWrapper } from "../../layouts/ScaleWrapper/ScaleWrapper";
+const ImgBg = new URL("../../../assets/prod/lecture_bg.png", import.meta.url).toString();
 
 const Container = styled.div`
-  transform-origin: left top;
+  width: 1920px;
+  height: 1080px;
   position: relative;
-  display: grid;
-  grid-template-columns: ${ SIZE.W }px 184px;
-  grid-template-rows: auto 1fr 1fr;
-  width: 1200px;
-  margin: 0 auto;
+  background-image: url(${ ImgBg });
+  background-size: contain;
+  background-repeat: no-repeat;
   & .swiper, & .swiper-wrapper {
     position: static;
   }
@@ -40,11 +41,29 @@ const Container = styled.div`
   }
 `;
 
+const LectureContents = styled.div`
+  padding-top: ${ SIZE.HEAD_H }px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+`;
+
 const Wrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   pointer-events: none;
+`;
+
+const _CloseBtn = styled(CloseBtn)`
+  position: absolute;
+  top: 20px;
+  right: 62px;
 `;
 
 const Main: FC<LectureProps> = ({
@@ -69,74 +88,64 @@ const Main: FC<LectureProps> = ({
   }, [activeIndex]);
 
   return (
-    <Container>
-      <div style={ {
-        gridColumn: "1 / 2",
-        gridRow: "1 / 4",
-        paddingTop:  SIZE.HEAD_H
-      } }>
+    <ScaleWrapper>
+      <Container>
+        <_CloseBtn onClick={ onClickClose } />
         <CastMemo />
-        <Wrapper>
-          <LectureBase />
-        </Wrapper>
-        <Swiper
-          allowTouchMove={ false }
-          speed={ 1 } // スライドエフェクトを止める
-          modules={ [Navigation, Pagination, Mousewheel, Keyboard] }
-          className="mySwiper"
-          onTransitionStart={ swiper => {
-            // todo: マスターデータの方で最初のプログレス消す
-            swiper.allowSlidePrev = swiper.activeIndex !== 1;
-          } }
-          navigation={ {
-            prevEl: `#${ classNames.arrowPrev }`,
-            nextEl: `#${ classNames.arrowNext }`
-          } }
-          pagination={ {
-            el: `#${ classNames.paginate }`,
-            clickable: true
-          } }
-          initialSlide={ activeIndex }
-          onInit={ ({ activeIndex }) => {
-            setActiveIndex(activeIndex);
-          } }
-          onSlideChange={ ({ activeIndex }) => {
-            setActiveIndex(activeIndex);
-          } }
-        >
-          { factory.slides.map(x => (
-            <SwiperSlide key={ x }>
-              { /** activeIndexのスライドのみ描画する */ }
-              { x === activeIndex && <Slide  /> }
-            </SwiperSlide> )) }
-        </Swiper>
-        <Wrapper>
-          <Frame { ...{ unitName, unitTitle } } />
-        </Wrapper>
-        <ControlPanel />
-      </div>
-      <div style={ {
-        gridColumn: 2 / 3,
-        gridRow: 1 / 2,
-        justifySelf: "end",
-        alignSelf: "end",
-        marginTop: 16
-      } }>
-        <CloseBtn onClick={ onClickClose } />
-      </div>
-    </Container>
+        <LectureContents>
+          <Wrapper>
+            <LectureBase />
+          </Wrapper>
+          <Swiper
+            allowTouchMove={ false }
+            speed={ 1 } // スライドエフェクトを止める
+            modules={ [Navigation, Pagination, Mousewheel, Keyboard] }
+            className="mySwiper"
+            onTransitionStart={ swiper => {
+              // todo: マスターデータの方で最初のプログレス消す
+              swiper.allowSlidePrev = swiper.activeIndex !== 1;
+            } }
+            navigation={ {
+              prevEl: `#${ classNames.arrowPrev }`,
+              nextEl: `#${ classNames.arrowNext }`
+            } }
+            pagination={ {
+              el: `#${ classNames.paginate }`,
+              clickable: true
+            } }
+            initialSlide={ activeIndex }
+            onInit={ ({ activeIndex }) => {
+              setActiveIndex(activeIndex);
+            } }
+            onSlideChange={ ({ activeIndex }) => {
+              setActiveIndex(activeIndex);
+            } }
+          >
+            { factory.slides.map(x => (
+              <SwiperSlide key={ x }>
+                { /** activeIndexのスライドのみ描画する */ }
+                { x === activeIndex && <Slide  /> }
+              </SwiperSlide> )) }
+          </Swiper>
+          <Wrapper>
+            <Frame { ...{ unitName, unitTitle } } />
+          </Wrapper>
+          <ControlPanel />
+        </LectureContents>
+      </Container>
+    </ScaleWrapper>
   );
 };
 
 /**
  *　先生と生徒
  */
-const CastWrapper = styled.div`
+const _Cast = styled(Cast)`
   position: absolute;
-  top: 140px;
-  right: -40px;
+  top: 50%;
+  right: 240px;
+  transform: translateY(-50%);
 `;
-
 const CastMemo = memo(({
 }) => {
 
@@ -144,14 +153,12 @@ const CastMemo = memo(({
   const { isRunSeek } = useContext(RunSeekContext);
 
   return (
-    <CastWrapper>
-      <Cast
-        teacher={ isRunSeek ? currentStep.teacher : "animation_1" }
-        student={ currentStep.student }
-      >
-        { currentStep.speech }
-      </Cast>
-    </CastWrapper>
+    <_Cast
+      teacher={ isRunSeek ? currentStep.teacher : "animation_1" }
+      student={ currentStep.student }
+    >
+      { currentStep.speech }
+    </_Cast>
   );
 });
 

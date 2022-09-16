@@ -22,7 +22,6 @@ const Main = styled.div`
   width: 1920px;
   height: 1080px;
   position: relative;
-  background-color: #fff;
   background-image: url(${ ImgBg });
   background-size: contain;
   background-repeat: no-repeat;
