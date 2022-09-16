@@ -4,6 +4,7 @@ const lecture_button_close
   = new URL("../../../assets/prod/lecture_button_close.png", import.meta.url).toString();
 
 export interface CloseBtnProps {
+  className?: string;
   onClick?: () => void;
 }
 
@@ -17,7 +18,8 @@ const Main = styled.div`
 `;
 
 export const CloseBtn: FC<CloseBtnProps> = ({
+  className,
   onClick = () => {}
 }) => {
-  return <Main role="button" onClick={ onClick } />;
+  return <Main className={ className } role="button" onClick={ onClick } />;
 };

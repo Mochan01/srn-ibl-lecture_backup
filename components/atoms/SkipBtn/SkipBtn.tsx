@@ -5,6 +5,7 @@ const lecture_title_skip
 
 export interface SkipBtnProps {
   onClick?: () => void;
+  className?: string;
 }
 
 const Main = styled.div`
@@ -15,7 +16,8 @@ const Main = styled.div`
 `;
 
 export const SkipBtn: FC<SkipBtnProps> = ({
-  onClick = () => {}
+  onClick = () => {},
+  className
 }) => {
-  return <Main role="button" onClick={ onClick } />;
+  return <Main role="button" { ...{ onClick, className } } />;
 };

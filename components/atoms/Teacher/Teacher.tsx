@@ -4,6 +4,7 @@ import { AnimationType } from "src-ibl-lecture-master/variable_types/StepType";
 
 export interface TeacherProps {
   animation?: AnimationType;
+  className?: string;
 }
 
 const TEACHER = {
@@ -89,13 +90,14 @@ const Main = styled.div<TeacherProps>`
 `;
 
 export const Teacher: FC<TeacherProps> = ({
-  animation = "animation_1"
+  animation = "animation_1",
+  className
 }) => {
   return (
     <>
       { Object.keys(TEACHER).map(key => (
         <link key={ key } rel="preload" href={ TEACHER[key] } as="image" /> )) }
-      <Main animation={ animation } />
+      <Main { ...{ animation, className } } />
     </>
   );
 };
