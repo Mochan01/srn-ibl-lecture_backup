@@ -1,42 +1,54 @@
-import React, { FC, ReactElement, useEffect } from "react";
+import React, { FC, ReactElement, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { useGetAxis } from "../../../hooks/useGetAxis";
 import { useResizeWindow } from "../../../hooks/useResizeWindow";
 
 export interface ScaleWrapperProps {
   children: ReactElement;
 }
 
-interface MainProps {
-}
-
-const Main = styled.div.attrs<MainProps>(
-  (props) => ({
-    style: {
-    }
-  })
-)<MainProps>`
+const Wrapper = styled.div`
   background: #000;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;
+
+interface ContainerProps { $scale: number; };
+const Container = styled.div.attrs<ContainerProps>(
+  ({ $scale }) => ({ style: { transform: `scale(${ $scale })` } })
+)<ContainerProps>``;
 
 export const ScaleWrapper: FC<ScaleWrapperProps> = ({
   children
 }) => {
 
-  const size = useResizeWindow();
+  const [windowWidth, windowHeight] = useResizeWindow();
+  const ref = useRef<HTMLDivElement>();
+  const [$scale, setScale] = useState(1);
 
   useEffect(() => {
-    console.log(size);
-  }, [size]);
+
+    const { clientWidth, clientHeight } = ref.current.children[0];
+
+    const windowRatio = windowHeight / windowWidth;
+    const clientRatio = clientHeight / clientWidth;
+
+    const scale = windowRatio > clientRatio
+      ? windowWidth / clientWidth
+      : windowHeight / clientHeight;
+
+    setScale(Math.floor(scale * 100) / 100);
+
+  }, [windowWidth, windowHeight, ref.current]);
 
   return (
-    <Main>
-      { children }
-    </Main>
+    <Wrapper>
+      <Container { ...{ ref, $scale } }>
+        { children }
+      </Container>
+    </Wrapper>
   );
 };
