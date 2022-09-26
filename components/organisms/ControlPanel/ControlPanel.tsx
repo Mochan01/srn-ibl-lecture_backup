@@ -20,6 +20,7 @@ import { NextBtn } from "../../molecules/NextBtn/NextBtn";
 import { IsStepEndContext } from "../../providers/IsStepEndProvider/IsStepEndProvider";
 
 export interface ControlPanelProps {
+  onClickPrev?: () => void;
 }
 
 const Main = styled.div`
@@ -64,6 +65,7 @@ const BtnWrapperR = styled.div`
  * @returns 
  */
 export const ControlPanel: FC<ControlPanelProps> = ({
+  onClickPrev
 }) => {
   return (
     <>
@@ -72,7 +74,7 @@ export const ControlPanel: FC<ControlPanelProps> = ({
         <ControlPanelL id={ classNames.paginate } />
         <PanelB>
           <BtnWrapperL>
-            <PrevBtn />
+            <PrevBtnMemo { ...{ onClickPrev } } />
             <PlayBtnMemo />
             <NextBtnMemo />
           </BtnWrapperL>
@@ -86,18 +88,26 @@ export const ControlPanel: FC<ControlPanelProps> = ({
   );
 };
 
-const SeekBarWrapper = styled.div`
-  position: relative;
-  height: 12px;
-`;
+/**
+ * 前へボタン
+ * 1ページ目で押すと、タイトル画面に戻る
+ */
+ const PrevBtnMemo: FC<ControlPanelProps> = memo(({
+  onClickPrev
+ }) => {
 
-const SeekBarChild = styled.div<{ alpha?: number }>`
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: ${ ({ alpha }) => typeof alpha === "number" ? alpha : 1 };
-`;
+  const { slideProgress } = useContext(SlideProgressContext);
+
+  return <>
+    <div onClick={ () => {
+      if (slideProgress !== 1) return;
+      if (!onClickPrev) return;
+      onClickPrev();
+    } }>
+      <PrevBtn />
+    </div>
+  </>;
+});
 
 /**
  * 次へボタン
@@ -121,6 +131,19 @@ const NextBtnMemo: FC = memo(() => {
     </div>
   </>;
 });
+
+const SeekBarWrapper = styled.div`
+  position: relative;
+  height: 12px;
+`;
+
+const SeekBarChild = styled.div<{ alpha?: number }>`
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: ${ ({ alpha }) => typeof alpha === "number" ? alpha : 1 };
+`;
 
 /**
  *  シークバー

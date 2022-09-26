@@ -13,9 +13,6 @@ export default {
 } as Meta;
 
 const template: Story<ControlPanelLProps> = (args) => {
-
-
-
   return <>
     <Swiper
       allowTouchMove={ false }
@@ -30,6 +27,7 @@ const template: Story<ControlPanelLProps> = (args) => {
         el: `#${ classNames.paginate }`,
         clickable: true
       } }
+      initialSlide={ 1 }
     >
       <SwiperSlide />
       <SwiperSlide />

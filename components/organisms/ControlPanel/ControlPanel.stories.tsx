@@ -64,8 +64,4 @@ const Template: Story<ControlPanelProps> = (args) => {
 
 export const Sample: { args: ControlPanelProps } = Template.bind({});
 Sample.args = {
-  progress: {
-    slide: 0,
-    step: 0
-  }
 };

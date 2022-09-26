@@ -70,7 +70,8 @@ const _CloseBtn = styled(CloseBtn)`
 const Main: FC<LectureProps> = ({
   unitName,
   unitTitle,
-  onClickClose = () => {}
+  onClickClose = () => {},
+  onClickPrev = () => {},
 }) => {
 
   // todo: マスターデータの方で最初のプログレス消す
@@ -131,7 +132,7 @@ const Main: FC<LectureProps> = ({
           <Wrapper>
             <Frame { ...{ unitName, unitTitle } } />
           </Wrapper>
-          <ControlPanel />
+          <ControlPanel { ...{ onClickPrev } } />
         </LectureContents>
       </Container>
     </ScaleWrapper>
@@ -168,6 +169,7 @@ const CastMemo = memo(({
  */
 export interface LectureProps extends FrameProps {
   onClickClose?: () => void;
+  onClickPrev?: () => void;
   data?: object;
 }
 
@@ -175,18 +177,18 @@ export const Lecture = (props) => {
   return (
     <FactoryProvider { ...props }>
       <SlideProgressProvider>
-          <StepListProvider>
-            <PlayProvider>
-              <RunSeekProvider>
-                <IsSlideEndProvider>
-                  <IsStepEndProvider>
-                    <Main { ...props } />
-                  </IsStepEndProvider>
-                </IsSlideEndProvider>
-              </RunSeekProvider>
-            </PlayProvider>
-          </StepListProvider>
-        </SlideProgressProvider>
+        <StepListProvider>
+          <PlayProvider>
+            <RunSeekProvider>
+              <IsSlideEndProvider>
+                <IsStepEndProvider>
+                  <Main { ...props } />
+                </IsStepEndProvider>
+              </IsSlideEndProvider>
+            </RunSeekProvider>
+          </PlayProvider>
+        </StepListProvider>
+      </SlideProgressProvider>
     </FactoryProvider>
   );
 };
