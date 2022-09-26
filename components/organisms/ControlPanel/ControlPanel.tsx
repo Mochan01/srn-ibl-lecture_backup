@@ -150,7 +150,9 @@ const SeekBarMemo: FC = memo(() => {
       { (!isTouched && play) &&
         <SeekBarChild>
           <SeekBarAnimate
-            percentage={ steps.filter(x => x.stepProgress === currentProgress)[0].seekStart }
+            percentage={
+              steps.filter(x => x.stepProgress === currentProgress)[0].seekStart
+            }
             { ...{ duration } }
           />
         </SeekBarChild> }
@@ -163,8 +165,12 @@ const SeekBarMemo: FC = memo(() => {
             setIsTouched(true);
           } }
           onPointerUp={ step => {
-            const stepList = factory.getStepList(slideProgress, step.stepProgress);
+            setPlay(true);
+
+            const stepList
+              = factory.getStepList(slideProgress, step.stepProgress);
             setStepList({ type: "UPDATE", stepList });
+
             setIsTouched(false);
           }}
           { ...{ steps } }
