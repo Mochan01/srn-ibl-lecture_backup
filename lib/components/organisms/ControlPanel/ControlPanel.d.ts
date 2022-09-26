@@ -1,5 +1,6 @@
 import { FC } from "react";
 export interface ControlPanelProps {
+    onClickPrev?: () => void;
 }
 /**
  * コントロールパネル

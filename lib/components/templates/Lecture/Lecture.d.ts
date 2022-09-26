@@ -6,6 +6,7 @@ import { FrameProps } from "../../atoms/Frame/Frame";
  */
 export interface LectureProps extends FrameProps {
     onClickClose?: () => void;
+    onClickPrev?: () => void;
     data?: object;
 }
 export declare const Lecture: (props: any) => JSX.Element;
