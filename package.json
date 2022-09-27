@@ -9,7 +9,7 @@
   "dependencies": {
     "@radix-ui/react-slider": "^1.0.0",
     "lodash": "^4.17.21",
-    "styled-components": "5.3.5",
+    "styled-components": "5.3.6",
     "styled-media-query": "2.1.2",
     "swiper": "^8.3.2",
     "use-sound": "^4.0.1"
