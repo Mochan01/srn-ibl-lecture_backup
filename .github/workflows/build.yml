@@ -1,4 +1,4 @@
-name: "Build lib and storybook's page."
+name: "build"
 
 on:
   workflow_dispatch:
@@ -50,17 +50,3 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           branch: "build/${{ env.version }}"
-
-      # Build storybook.
-      - name: Run npm
-        run: | 
-          npm i git+ssh://git@github.com:Fantamstick/public-page-protector.git#semver:1.0.1
-          npx build-storybook -o ./docs
-          npx public-page-protector
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
-          publish_branch: gh-pages
