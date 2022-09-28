@@ -7,7 +7,7 @@ import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 import { ProgressionTrigger } from "../../providers/ProgressionTrigger/ProgressionTrigger";
 import { Cast } from "../../molecules/Cast/Cast";
 import { ScaleWrapper } from "../../layouts/ScaleWrapper/ScaleWrapper";
-const ImgPresented = new URL("../../../assets/prod/lecture_title_offer.png", import.meta.url).toString();
+import { PresentedBy } from "../../atoms/PresentedBy/PresentedBy";
 const ImgBg = new URL("../../../assets/prod/lecture_bg.png", import.meta.url).toString();
 
 export interface TitleProps {
@@ -42,12 +42,7 @@ const _CloseBtn = styled(CloseBtn)`
   right: 62px;
 `;
 
-const Presented = styled.div`
-  background-image: url(${ ImgPresented });
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 600px;
-  height: 42px;
+const _PresentedBy = styled(PresentedBy)`
   position: absolute;
   bottom: 20px;
   right: 62px;
@@ -103,7 +98,7 @@ export const Title: FC<TitleProps> = ({
       /> }
     <ScaleWrapper>
       <Main>
-        <Presented />
+        <_PresentedBy />
         <_CloseBtn onClick={ onClickClose } />
         <_Cast
           teacher={ isPlay ? step.teacher : "animation_1" }

@@ -1,9 +1,6 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
-const lecture_title_base
-  = new URL("../../../assets/prod/lecture_title_base.png", import.meta.url).toString();
-const lecture_button_start
-  = new URL("../../../assets/prod/lecture_button_start.png", import.meta.url).toString();
+const ImageTitle = new URL("../../../assets/prod/lecture_title.png", import.meta.url).toString();
 
 export interface TitleBaseProps {
   unitName: string;
@@ -13,22 +10,25 @@ export interface TitleBaseProps {
 }
 
 const Main = styled.div`
-  width: 700px;
-  height: 327px;
-  background-image: url(${ lecture_title_base });
+  width: 1007px;
+  height: 468px;
+  background-image: url(${ ImageTitle });
+  background-position: 0 0;
   background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
 `;
 
 const Wrapper = styled.div`
   position: absolute;
   padding: 40px 32px;
-  width: 400px;
-  height: 240px;
-  left: 270px;
-  top: 56px;
+  width: 575px;
+  height: 345px;
+  left: 389px;
+  top: 81px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   h1 {
     font-size: 24px;
     line-height: 1;
@@ -42,22 +42,12 @@ const Wrapper = styled.div`
   }
 `;
 
-const ButtonArea = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  & > button {
-    background: #000;
-  }
-`;
-
 const StartBtn = styled.div`
-  width: 253px;
-  height: 82px;
-  background-image: url(${ lecture_button_start });
+  width: 252px;
+  height: 80px;
+  background-image: url(${ ImageTitle });
+  background-position:0 -472px;
   background-repeat: no-repeat;
-  background-size: cover;
   cursor: pointer;
 `;
 
@@ -74,17 +64,15 @@ export const TitleBase: FC<TitleBaseProps> = ({
     <Main className={ className }>
       <Wrapper>
         { !isShow &&
-          <>
+          <div>
             <h1>{ unitName }</h1>
             <h2>{ unitTitle }</h2> 
-          </> }
+          </div> }
         { isShow &&
-          <ButtonArea>
-            <StartBtn onClick={ () => {
-              onClick();
-              setShow(false);
-            } }/>
-          </ButtonArea> }
+          <StartBtn onClick={ () => {
+            onClick();
+            setShow(false);
+          } }/> }
       </Wrapper>
     </Main>
   );
