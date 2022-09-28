@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-const lecture_button_close
-  = new URL("../../../assets/prod/lecture_button_close.png", import.meta.url).toString();
+const ImageCommon = new URL("../../../assets/prod/close_character_spritesheet.png", import.meta.url).toString();
 
 export interface CloseBtnProps {
   className?: string;
@@ -11,9 +10,9 @@ export interface CloseBtnProps {
 const Main = styled.div`
   width: 98px;
   height: 83px;
-  background-image: url(${ lecture_button_close });
+  background-image: url(${ ImageCommon });
   background-repeat: no-repeat;
-  background-size: contain;
+  background-position: 0 0;
   cursor: pointer;
 `;
 
