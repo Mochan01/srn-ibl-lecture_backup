@@ -1,10 +1,14 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+const ImageLecture = new URL("../../../assets/prod/lecture_panel_answer.png", import.meta.url).toString();
 
 export const SPEED_BUTTON_MUTATIONS = {
-  LEVEL1: new URL("../../../assets/prod/lecture_button_speed_1.png", import.meta.url).toString(),
-  LEVEL2: new URL("../../../assets/prod/lecture_button_speed_1.5.png", import.meta.url).toString(),
-  LEVEL3: new URL("../../../assets/prod/lecture_button_speed_2.png", import.meta.url).toString(),
+  /* lecture_button_speed_1.5.png */
+  LEVEL1: "0 -3124px",
+  /* lecture_button_speed_1.png */
+  LEVEL2: "0 -3188px",
+  /* lecture_button_speed_2.png */
+  LEVEL3: "0 -3252px"
 } as const;
 
 export interface SpeedBtnProps {
@@ -19,11 +23,11 @@ interface MainProps {
 
 const TEXT_H = 14;
 const Main = styled.div<MainProps>`
-  background-image: url(${ ({ mutation }) => mutation });
-  background-size: contain;
+  background-image: url(${ ImageLecture });
+  background-position: ${ ({ mutation }) => mutation };
   background-repeat: no-repeat;
-  width: 140px;
-  height: 47px;
+	width:180px;
+	height:60px;
   cursor: pointer;
   position: relative;
   &:before {
@@ -45,10 +49,5 @@ export const SpeedBtn: FC<SpeedBtnProps> = ({
  mutation,
  onClick = () => {}
 }) => {
-  return (
-    <Main
-      caption="速度 × 1"
-      role="button" { ...{ mutation, onClick } }
-    />
-  );
+  return <Main caption="速度 × 1" role="button" { ...{ mutation, onClick } } />;
 };

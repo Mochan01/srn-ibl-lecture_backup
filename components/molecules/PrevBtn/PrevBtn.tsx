@@ -9,8 +9,6 @@ export const PrevBtn: FC<PrevBtnProps> = ({
 }) => {
   return (
     <>
-      <link rel="preload" href={ MINI_BUTTON_MUTATIONS.PREV_ON } as="image" />
-      <link rel="preload" href={ MINI_BUTTON_MUTATIONS.PREV_OFF } as="image" />
       <div id={ classNames.arrowPrev }>
         <MiniBtn
           caption="前ページ"

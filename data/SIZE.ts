@@ -1,7 +1,7 @@
 export const SIZE = {
-  W: 1000,
+  W: 1286,
   H: 692,
-  FRAME_H: 750,
+  FRAME_H: 965,
   PANEL_A_W: 260,
   PANEL_A_H: 74,
   PANEL_B_W: 480,

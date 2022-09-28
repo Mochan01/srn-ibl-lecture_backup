@@ -17,20 +17,24 @@ const template: Story<QuizChoiceBtnProps> = (args) => {
   );
 };
 
-export const oneLine: { args: QuizChoiceBtnProps } = template.bind({});
-oneLine.args = {
+const children = "ダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストです";
+
+export const orange: { args: QuizChoiceBtnProps } = template.bind({});
+orange.args = {
   mutation: QUIZ_CHOICE_BTN.ORANGE,
-  children: "ダミー"
+  isCorrect: true,
+  children
 };
 
-export const twoLine: { args: QuizChoiceBtnProps } = template.bind({});
-twoLine.args = {
-  mutation: QUIZ_CHOICE_BTN.ORANGE,
-  children: "ダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストです"
+export const white: { args: QuizChoiceBtnProps } = template.bind({});
+white.args = {
+  mutation: QUIZ_CHOICE_BTN.WHITE,
+  isCorrect: true,
+  children
 };
 
-export const newLine: { args: QuizChoiceBtnProps } = template.bind({});
-newLine.args = {
+export const without: { args: QuizChoiceBtnProps } = template.bind({});
+without.args = {
   mutation: QUIZ_CHOICE_BTN.ORANGE,
-  children: "改行します<br>1行目"
+  children
 };

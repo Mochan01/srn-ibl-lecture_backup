@@ -10,12 +10,11 @@ export const LectureEndBtn: FC<LectureEndBtnProps> = ({
   onClick = () => {}
 }) => {
 
-  const [mutation, setMutation] = useState(MINI_BUTTON_MUTATIONS.LECTURE_END_ON);
+  const [mutation, setMutation]
+    = useState<typeof MINI_BUTTON_MUTATIONS[keyof typeof MINI_BUTTON_MUTATIONS]>(MINI_BUTTON_MUTATIONS.LECTURE_END_ON);
 
   return (
     <>
-      <link rel="preload" href={ MINI_BUTTON_MUTATIONS.LECTURE_END_ON } as="image" />
-      <link rel="preload" href={ MINI_BUTTON_MUTATIONS.LECTURE_END_OFF } as="image" />
       <MiniBtn
         onClick={ onClick }
         caption="レクチャー終了"

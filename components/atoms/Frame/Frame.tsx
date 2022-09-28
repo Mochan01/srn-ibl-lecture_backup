@@ -1,8 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { SIZE } from "../../../data/SIZE";
-const lecture_headline = new URL("../../../assets/prod/lecture_headline.png", import.meta.url).toString();
-const lecture_flame = new URL("../../../assets/prod/lecture_flame.png", import.meta.url).toString();
+const ImageLecture = new URL("../../../assets/prod/lecture_panel_answer.png", import.meta.url).toString();
 
 export interface FrameProps {
   unitName: string;
@@ -10,31 +8,30 @@ export interface FrameProps {
 }
 
 const Main = styled.div`
-  width: ${ SIZE.W }px;
-  height: ${ SIZE.FRAME_H }px;
   position: relative;
 `;
 
+/* lecture_headline.png */
 const Head = styled.div`
-  background-image: url(${ lecture_headline });
+  background-image: url(${ ImageLecture });
+  width: 1286px;
+	height: 67px;
+  background-position: 0 -1938px;
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom;
   position: absolute;
-  width: 998px;
-  height: ${ SIZE.HEAD_H }px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 `;
 
+/* lecture_flame.png */
 const Rectangle = styled.div`
-  background-image: url(${ lecture_flame });
+  background-image: url(${ ImageLecture });
+  width: 1286px;
+	height: 965px;
+  background-position:0 -969px;
   background-repeat: no-repeat;
-  background-size: contain;
-  width: ${ SIZE.W }px;
-  height: ${ SIZE.FRAME_H }px;
-  position: absolute;
+  position: relative;
 `;
 
 const Comment = styled.p`

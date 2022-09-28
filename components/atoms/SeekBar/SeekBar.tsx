@@ -2,8 +2,7 @@ import React, { FC, Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 import { SIZE } from "../../../data/SIZE";
-const lecture_play_circle
-  = new URL("../../../assets/prod/lecture_play_circle.png", import.meta.url).toString();
+const ImageLecture = new URL("../../../assets/prod/lecture_panel_answer.png", import.meta.url).toString();
 
 export interface SeekBarProps {
   value: number;
@@ -47,14 +46,16 @@ const StyledRange = styled(SliderPrimitive.Range)`
   height: 100%;
 `;
 
-const THUMB_SIZE = 14;
+/**
+ * lecture_play_circle.png
+ */
 const StyledThumb = styled(SliderPrimitive.Thumb)`
   all: unset;
   display: block;
-  width: ${ THUMB_SIZE }px;
-  height: ${ THUMB_SIZE }px;
-  background-image: url(${ lecture_play_circle });
-  background-size: contain;
+  width: 21px;
+  height: 21px;
+  background-position: 0 -2232px;
+  background-image: url(${ ImageLecture });
   background-repeat: no-repeat;
 `;
 

@@ -1,13 +1,27 @@
 import React, { FC, useMemo } from "react";
 import styled from "styled-components";
-const Correct
-  = new URL("../../../assets/prod/Correct.png", import.meta.url).toString();
-const Wrong
-  = new URL("../../../assets/prod/Wrong.png", import.meta.url).toString();
+const ImageLecture = new URL("../../../assets/prod/lecture_panel_answer.png", import.meta.url).toString();
 
 export const QUIZ_CHOICE_BTN = {
-  ORANGE: new URL("../../../assets/prod/Question_button_select.png", import.meta.url).toString(),
-  WHITE: new URL("../../../assets/prod/Question_button.png", import.meta.url).toString()
+  /**
+   * Question_button_select.png
+   */
+  ORANGE: "0 -3774px",
+  /**
+   * Question_button.png
+   */
+  WHITE: "0 -3854px"
+} as const;
+
+export const QUIZ_SIGN = {
+  /**
+   * Correct.png
+   */
+  CORRECT: "0 -3636px",
+  /**
+   * Wrong.png
+   */
+  INCORRECT: "0 -3934px"
 } as const;
 
 export interface QuizChoiceBtnProps extends MainProps {
@@ -20,19 +34,14 @@ interface MainProps {
   isCorrect?: boolean;
 }
 
-const BORDER_W = 5;
-const SIGN_SIZE = 42;
+const SIGN_SIZE = 54;
 const Main = styled.div<MainProps>`
-  border-style: solid;
-  border-width: ${ BORDER_W }px;
-  border-image-source: url(${ ({ mutation }) => mutation });
-  border-image-slice: 5 5 5 5 fill;
-  border-image-repeat: stretch;
   cursor: pointer;
   position: relative;
-  box-sizing: border-box;
-  width: 190px;
-  height: 58px;
+  width: 246px;
+  height: 76px;
+  background-image: url(${ ImageLecture });
+  background-position: ${ ({ mutation }) => mutation };
   &:after {
     content: "";
     display: block;
@@ -41,11 +50,12 @@ const Main = styled.div<MainProps>`
     padding-top: ${ SIGN_SIZE }px;
     top: -${ SIGN_SIZE / 2 }px;
     left: -${ SIGN_SIZE / 2 }px;
-    background-image: ${ ({ isCorrect }) => typeof isCorrect === "boolean"
-      ? (isCorrect ? `url(${ Correct })` :  `url(${ Wrong })`)
-      : "none" };
-    background-size: contain;
+    background-position:
+      ${ ({ isCorrect }) => isCorrect ? QUIZ_SIGN.CORRECT :  QUIZ_SIGN.INCORRECT };
+    background-image: ${ ({ isCorrect }) =>
+      typeof isCorrect === "boolean" ? `url(${ ImageLecture })` : "none"  };
     background-repeat: no-repeat;
+    pointer-events: none;
   }
 `;
 
