@@ -1,21 +1,38 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import { Children } from "../../../variable_types/Children";
 const ImageLecture = new URL("../../../assets/prod/lecture_panel_answer.png", import.meta.url).toString();
 
-export interface FrameProps {
+export interface LectureFrameProps extends Children {
   unitName: string;
   unitTitle: string;
 }
 
-const Main = styled.div`
+/* lecture_base.png */
+const LectureBase = styled.div`
+	width: 1286px;
+	height: 965px;
+  background-image: url(${ ImageLecture });
+  background-repeat: no-repeat;
+  background-position: 0 0;
   position: relative;
 `;
 
+const Frame = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
 /* lecture_headline.png */
-const Head = styled.div`
-  background-image: url(${ ImageLecture });
+const HeadLine = styled.div`
   width: 1286px;
-	height: 67px;
+  height: 67px;
+`;
+
+/* lecture_headline.png */
+const LectureHeadLine = styled(HeadLine)`
+  background-image: url(${ ImageLecture });
   background-position: 0 -1938px;
   background-repeat: no-repeat;
   position: absolute;
@@ -53,18 +70,22 @@ const UnitTitle = styled(Comment)`
   width: 880px;
 `;
 
-export const Frame: FC<FrameProps> = ({
+export const LectureFrame: FC<LectureFrameProps> = ({
   unitName,
-  unitTitle
+  unitTitle,
+  children
 }) => {
   return (
-    <Main>
-      <Head>
-        <UnitName>{ unitName }</UnitName>
-        <UnitTitle>{ unitTitle }</UnitTitle>
-      </Head>
-      <Rectangle />
-    </Main>
+    <LectureBase>
+      <HeadLine />
+      { children }
+      <Frame>
+        <LectureHeadLine>
+          <UnitName>{ unitName }</UnitName>
+          <UnitTitle>{ unitTitle }</UnitTitle>
+        </LectureHeadLine>
+        <Rectangle />
+      </Frame>
+    </LectureBase>
   );
 };
-

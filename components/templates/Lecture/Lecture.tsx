@@ -13,15 +13,14 @@ import { useGetStepList } from "../../../hooks/useGetStepList";
 import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
 import styled from "styled-components";
 import { SIZE } from "../../../data/SIZE";
-import { Frame, FrameProps } from "../../atoms/Frame/Frame";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
-import { LectureBase } from "../../atoms/LectureBase/LectureBase";
 import { FactoryContext, FactoryProvider } from "../../providers/FactoryProvider/FactoryProvider";
 import { IsSlideEndProvider } from "../../providers/IsSlideEndProvider/IsSlideEndProvider";
 import { IsStepEndProvider } from "../../providers/IsStepEndProvider/IsStepEndProvider";
 import { Cast } from "../../molecules/Cast/Cast";
 import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 import { ScaleWrapper } from "../../layouts/ScaleWrapper/ScaleWrapper";
+import { LectureFrame, LectureFrameProps } from "../../atoms/LectureFrame/LectureFrame";
 const ImgBg = new URL("../../../assets/prod/lecture_bg.png", import.meta.url).toString();
 
 const Container = styled.div`
@@ -42,7 +41,6 @@ const Container = styled.div`
 `;
 
 const LectureContents = styled.div`
-  padding-top: ${ SIZE.HEAD_H }px;
   position: absolute;
   top: 0;
   left: 0;
@@ -51,7 +49,6 @@ const LectureContents = styled.div`
   margin: auto;
   width: fit-content;
   height: fit-content;
-  transform: scale(1.295);
 `;
 
 const Wrapper = styled.div`
@@ -95,43 +92,39 @@ const Main: FC<LectureProps> = ({
         <_CloseBtn onClick={ onClickClose } />
         <CastMemo />
         <LectureContents>
-          <Wrapper>
-            <LectureBase />
-          </Wrapper>
-          <Swiper
-            allowTouchMove={ false }
-            speed={ 1 } // スライドエフェクトを止める
-            modules={ [Navigation, Pagination, Mousewheel, Keyboard] }
-            className="mySwiper"
-            onTransitionStart={ swiper => {
-              // todo: マスターデータの方で最初のプログレス消す
-              swiper.allowSlidePrev = swiper.activeIndex !== 1;
-            } }
-            navigation={ {
-              prevEl: `#${ classNames.arrowPrev }`,
-              nextEl: `#${ classNames.arrowNext }`
-            } }
-            pagination={ {
-              el: `#${ classNames.paginate }`,
-              clickable: true
-            } }
-            initialSlide={ activeIndex }
-            onInit={ ({ activeIndex }) => {
-              setActiveIndex(activeIndex);
-            } }
-            onSlideChange={ ({ activeIndex }) => {
-              setActiveIndex(activeIndex);
-            } }
-          >
-            { factory.slides.map(x => (
-              <SwiperSlide key={ x }>
-                { /** activeIndexのスライドのみ描画する */ }
-                { x === activeIndex && <Slide  /> }
-              </SwiperSlide> )) }
-          </Swiper>
-          <Wrapper>
-            <Frame { ...{ unitName, unitTitle } } />
-          </Wrapper>
+          <LectureFrame { ...{ unitName, unitTitle } }>
+            <Swiper
+              allowTouchMove={ false }
+              speed={ 1 } // スライドエフェクトを止める
+              modules={ [Navigation, Pagination, Mousewheel, Keyboard] }
+              className="mySwiper"
+              onTransitionStart={ swiper => {
+                // todo: マスターデータの方で最初のプログレス消す
+                swiper.allowSlidePrev = swiper.activeIndex !== 1;
+              } }
+              navigation={ {
+                prevEl: `#${ classNames.arrowPrev }`,
+                nextEl: `#${ classNames.arrowNext }`
+              } }
+              pagination={ {
+                el: `#${ classNames.paginate }`,
+                clickable: true
+              } }
+              initialSlide={ activeIndex }
+              onInit={ ({ activeIndex }) => {
+                setActiveIndex(activeIndex);
+              } }
+              onSlideChange={ ({ activeIndex }) => {
+                setActiveIndex(activeIndex);
+              } }
+            >
+              { factory.slides.map(x => (
+                <SwiperSlide key={ x }>
+                  { /** activeIndexのスライドのみ描画する */ }
+                  { x === activeIndex && <Slide  /> }
+                </SwiperSlide> )) }
+            </Swiper>
+          </LectureFrame>
           <ControlPanel { ...{ onClickPrev } } />
         </LectureContents>
       </Container>
@@ -167,7 +160,7 @@ const CastMemo = memo(({
 /**
  * レクチャー 本体
  */
-export interface LectureProps extends FrameProps {
+export interface LectureProps extends LectureFrameProps {
   onClickClose?: () => void;
   onClickPrev?: () => void;
   data?: object;
