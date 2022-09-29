@@ -51,13 +51,6 @@ const LectureContents = styled.div`
   height: fit-content;
 `;
 
-const Wrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-`;
-
 const _CloseBtn = styled(CloseBtn)`
   position: absolute;
   top: 20px;
