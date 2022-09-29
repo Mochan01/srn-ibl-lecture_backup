@@ -1,11 +1,6 @@
 export const SIZE = {
   W: 1286,
   H: 692,
-  FRAME_H: 965,
-  PANEL_A_W: 260,
-  PANEL_A_H: 74,
-  PANEL_B_W: 480,
-  PANEL_B_H: 74,
   HEAD_H: 58,
   BTN_PAD_T: 6,
   QUIZ_ROW_G: 24,
