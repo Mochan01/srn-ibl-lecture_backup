@@ -1,6 +1,5 @@
 import React, { FC, useMemo, useState } from "react";
 import styled, { css } from "styled-components";
-import { SkipBtn } from "../../atoms/SkipBtn/SkipBtn";
 import { TitleBase, TitleBaseProps } from "../../atoms/TitleBase/TitleBase";
 import { StepsFactory } from "../../../factories/StepsFactory";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
@@ -27,15 +26,6 @@ const Main = styled.div`
   background-repeat: no-repeat;
 `;
 
-const _TitleBase = styled(TitleBase)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-`;
-
 const _CloseBtn = styled(CloseBtn)`
   position: absolute;
   top: 20px;
@@ -46,12 +36,6 @@ const _PresentedBy = styled(PresentedBy)`
   position: absolute;
   bottom: 20px;
   right: 62px;
-`;
-
-const _SkipBtn = styled(SkipBtn)`
-  position: absolute;
-  right: 615px;
-  bottom: 300px;
 `;
 
 export const Title: FC<TitleProps> = ({
@@ -105,11 +89,18 @@ export const Title: FC<TitleProps> = ({
         >
           { step.speech }
         </Cast>
-        <_TitleBase
-          onClick={ () => setIsPlay(true) }
-          { ...{ unitName, unitTitle } }
+        <TitleBase
+          css={ css`
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+          ` }
+          onClickStart={ () => setIsPlay(true) }
+          { ...{ unitName, unitTitle, onClickSkip } }
         />
-        { isPlay && <_SkipBtn onClick={ onClickSkip } /> }
       </Main>
     </ScaleWrapper>
   </>;
