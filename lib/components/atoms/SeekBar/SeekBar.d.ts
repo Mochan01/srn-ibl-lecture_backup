@@ -2,6 +2,7 @@ import { FC, Dispatch, SetStateAction } from "react";
 export interface SeekBarProps {
     value: number;
     setValue: Dispatch<SetStateAction<number>>;
+    className?: string;
     onPointerDown?: (value: number) => void;
     onPointerUp?: (value: number) => void;
 }

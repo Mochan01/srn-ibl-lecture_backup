@@ -1,6 +1,7 @@
 import { FC } from "react";
 export interface SeekBarAnimateProps {
     duration: number;
+    className?: string;
     onRunning?: (percentage: number) => void;
     percentage?: number;
 }

@@ -3,6 +3,7 @@ import { StepProps } from "../../../variable_types/StepProps";
 export interface SeekBarControllerProps {
     steps: StepProps[];
     index: number;
+    className?: string;
     onPointerDown?: () => void;
     onPointerUp?: (next: StepProps) => void;
 }
