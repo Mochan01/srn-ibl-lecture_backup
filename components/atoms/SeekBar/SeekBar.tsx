@@ -7,11 +7,12 @@ const ImageLecture = new URL("../../../assets/prod/lecture_panel_answer.png", im
 export interface SeekBarProps {
   value: number;
   setValue: Dispatch<SetStateAction<number>>;
+  className?: string;
   onPointerDown?: (value: number) => void;
   onPointerUp?: (value: number) => void;
 }
 
-const SLIDER_H = 12;
+const SLIDER_H = 21;
 const StyledSlider = styled(SliderPrimitive.Root)`
   display: flex;
   align-items: center;
@@ -31,12 +32,11 @@ const StyledSlider = styled(SliderPrimitive.Root)`
   }
 `;
 
-const BAR_H = 6;
 const StyledTrack = styled(SliderPrimitive.Track)`
   background: linear-gradient(to top, #b2b7c1, #fbfcfd);
   position: relative;
   flex-grow: 1;
-  &[data-orientation="horizontal"] { height: ${ BAR_H }px; }
+  &[data-orientation="horizontal"] { height: ${ SLIDER_H * .5 }px; }
   &[data-orientation="vertical"] { width: 3px; }
 `;
 
@@ -52,8 +52,8 @@ const StyledRange = styled(SliderPrimitive.Range)`
 const StyledThumb = styled(SliderPrimitive.Thumb)`
   all: unset;
   display: block;
-  width: 21px;
-  height: 21px;
+  width: ${ SLIDER_H }px;
+  height: ${ SLIDER_H }px;
   background-position: 0 -2232px;
   background-image: url(${ ImageLecture });
   background-repeat: no-repeat;
@@ -70,6 +70,7 @@ export interface SeekBarMemoProps extends SeekBarProps {
 export const SeekBar: FC<SeekBarProps> = ({
   value,
   setValue,
+  className,
   onPointerDown = () => {},
   onPointerUp = () => {}
 }) => {
@@ -80,6 +81,7 @@ export const SeekBar: FC<SeekBarProps> = ({
       onValueChange={ nextValue => setValue(nextValue[0]) }
       onPointerDown={ () => onPointerDown(value) }
       onPointerUp={ () => onPointerUp(value) }
+      { ...{ className } }
     >
       <StyledTrack>
         <StyledRange />

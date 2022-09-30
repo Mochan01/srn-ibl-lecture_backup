@@ -1,5 +1,5 @@
 import React, { FC, useContext, useMemo, memo, useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ControlPanelL } from "../../molecules/ControlPanelL/ControlPanelL";
 import { classNames } from "../../../data/ClassNames";
 import { PlayBtn } from "../../molecules/PlayBtn/PlayBtn";
@@ -114,19 +114,6 @@ const NextBtnMemo: FC = memo(() => {
   </>;
 });
 
-const SeekBarWrapper = styled.div`
-  position: relative;
-  height: 12px;
-`;
-
-const SeekBarChild = styled.div<{ alpha?: number }>`
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: ${ ({ alpha }) => typeof alpha === "number" ? alpha : 1 };
-`;
-
 /**
  *  シークバー
  *  アニメーションするバーと手で操作するバーはコンポーネントを分けてます
@@ -150,38 +137,39 @@ const SeekBarMemo: FC = memo(() => {
   const [isTouched, setIsTouched] = useState(false);
 
   return <>
-    <SeekBarWrapper key= {`${ slideProgress }_${ currentProgress }`}>
+    <div
+      key= {`${ slideProgress }_${ currentProgress }`}
+      css={ css`position: relative;` }
+    >
       { /** アニメーション */ }
       { (!isTouched && play) &&
-        <SeekBarChild>
-          <SeekBarAnimate
-            percentage={
-              steps.filter(x => x.stepProgress === currentProgress)[0].seekStart
-            }
-            { ...{ duration } }
-          />
-        </SeekBarChild> }
+        <SeekBarAnimate
+          css={ css`position: absolute;` }
+          percentage={
+            steps.filter(x => x.stepProgress === currentProgress)[0].seekStart
+          }
+          { ...{ duration } }
+        /> }
       { /** 操作 */ }
-      <SeekBarChild alpha={ (isTouched || !play) ? 1 : 0 }>
-        <SeekBarController
-          index={ currentProgress }
-          onPointerDown={ () => {
-            setPlay(false);
-            setIsTouched(true);
-          } }
-          onPointerUp={ step => {
-            setPlay(true);
+      <SeekBarController
+        index={ currentProgress }
+        css={ css`opacity: ${ (isTouched || !play) ? 1 : 0 };` }
+        onPointerDown={ () => {
+          setPlay(false);
+          setIsTouched(true);
+        } }
+        onPointerUp={ step => {
+          setPlay(true);
 
-            const stepList
-              = factory.getStepList(slideProgress, step.stepProgress);
-            setStepList({ type: "UPDATE", stepList });
+          const stepList
+            = factory.getStepList(slideProgress, step.stepProgress);
+          setStepList({ type: "UPDATE", stepList });
 
-            setIsTouched(false);
-          }}
-          { ...{ steps } }
-        />
-      </SeekBarChild>
-    </SeekBarWrapper>
+          setIsTouched(false);
+        }}
+        { ...{ steps } }
+      />
+    </div>
   </>;
 });
 
