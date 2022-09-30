@@ -20,7 +20,7 @@ const StyledSlider = styled(SliderPrimitive.Root)`
   touch-action: none;
   width: ${ SIZE.W }px;
   background-color: #042f78;
-  padding: 0 2px;
+  padding: 0 ${ (SLIDER_H - SLIDER_H * .5) / 2 }px;
   position: relative;
   &[data-orientation="horizontal"] {
     height: ${ SLIDER_H }px;
