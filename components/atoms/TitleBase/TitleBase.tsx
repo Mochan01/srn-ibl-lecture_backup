@@ -5,17 +5,27 @@ const ImageTitle = new URL("../../../assets/prod/lecture_title.png", import.meta
 export interface TitleBaseProps {
   unitName: string;
   unitTitle: string;
-  onClick: () => void;
+  onClickStart?: () => void;
+  onClickSkip?: () => void;
   className?: string;
 }
 
 const Main = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: fit-content;
+  height: fit-content;
+`;
+
+const Base = styled.div`
   width: 1007px;
   height: 468px;
   background-image: url(${ ImageTitle });
   background-position: 0 0;
   background-repeat: no-repeat;
   position: relative;
+  margin-bottom: 32px;
 `;
 
 const Wrapper = styled.div`
@@ -27,19 +37,21 @@ const Wrapper = styled.div`
   top: 81px;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  h1 {
-    font-size: 24px;
-    line-height: 1;
-    margin-bottom: 40px;
-    color: #1a6cf1;
-    font-weight: bold;
-  }
-  h2 {
-    font-size: 16px;
-    color: #5a5a5a;
-  }
+`;
+
+const UnitName = styled.h1`
+  font-size: 40px;
+  line-height: 1;
+  margin-bottom: 40px;
+  color: #1a6cf1;
+  font-weight: bold;
+`;
+
+const UnitTitle = styled.h2`
+  font-size: 30px;
+  color: #5a5a5a;
 `;
 
 const StartBtn = styled.div`
@@ -48,32 +60,55 @@ const StartBtn = styled.div`
   background-image: url(${ ImageTitle });
   background-position:0 -472px;
   background-repeat: no-repeat;
+  align-self: center;
   cursor: pointer;
 `;
+
+const SkipBtn = styled.div<{ isStartClicked: boolean }>(({ isStartClicked }) => `
+  visibility: ${ isStartClicked ? "visible" : "hidden" };
+  width: 180px;
+  height: 59px;
+  background-image: url(${ ImageTitle });
+  background-position: 0 -556px;
+  cursor: pointer;
+`);
 
 export const TitleBase: FC<TitleBaseProps> = ({
   unitName,
   unitTitle,
-  onClick,
+  onClickStart,
+  onClickSkip,
   className
 }) => {
 
-  const [isShow, setShow] = useState(true);
+  const [isStartClicked, setIsStartClicked] = useState(false);
 
   return (
-    <Main className={ className }>
-      <Wrapper>
-        { !isShow &&
-          <div>
-            <h1>{ unitName }</h1>
-            <h2>{ unitTitle }</h2> 
-          </div> }
-        { isShow &&
-          <StartBtn onClick={ () => {
-            onClick();
-            setShow(false);
-          } }/> }
-      </Wrapper>
+    <Main { ...{ className } }>
+      <Base>
+        <Wrapper>
+          { isStartClicked && <UnitName>{ unitName }</UnitName> }
+          { isStartClicked && <UnitTitle>{ unitTitle }</UnitTitle> }
+          { !isStartClicked &&
+            <StartBtn
+              role="button"
+              onClick={ () => {
+                setIsStartClicked(true);
+
+                if (!onClickStart) return;
+                onClickStart();
+              } }
+            /> }
+        </Wrapper>
+      </Base>
+      <SkipBtn
+        role="button"
+        onClick={ () => {
+          if (!onClickSkip) return;
+          onClickSkip();
+        } }
+        { ...{ isStartClicked } }
+      />
     </Main>
   );
 };
