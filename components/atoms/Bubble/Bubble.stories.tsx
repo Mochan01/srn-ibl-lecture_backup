@@ -16,7 +16,7 @@ textMin.args = {
 
 export const textMax: { args: BubbleProps } = template.bind({});
 textMax.args = {
-  children: "ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト"
+  children: "ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト"
 };
 
 export const newLine: { args: BubbleProps } = template.bind({});

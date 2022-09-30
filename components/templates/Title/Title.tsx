@@ -1,5 +1,5 @@
 import React, { FC, useMemo, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { SkipBtn } from "../../atoms/SkipBtn/SkipBtn";
 import { TitleBase, TitleBaseProps } from "../../atoms/TitleBase/TitleBase";
 import { StepsFactory } from "../../../factories/StepsFactory";
@@ -7,7 +7,7 @@ import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 import { ProgressionTrigger } from "../../providers/ProgressionTrigger/ProgressionTrigger";
 import { Cast } from "../../molecules/Cast/Cast";
 import { ScaleWrapper } from "../../layouts/ScaleWrapper/ScaleWrapper";
-const ImgPresented = new URL("../../../assets/prod/lecture_title_offer.png", import.meta.url).toString();
+import { PresentedBy } from "../../atoms/PresentedBy/PresentedBy";
 const ImgBg = new URL("../../../assets/prod/lecture_bg.png", import.meta.url).toString();
 
 export interface TitleProps {
@@ -42,22 +42,10 @@ const _CloseBtn = styled(CloseBtn)`
   right: 62px;
 `;
 
-const Presented = styled.div`
-  background-image: url(${ ImgPresented });
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 600px;
-  height: 42px;
+const _PresentedBy = styled(PresentedBy)`
   position: absolute;
   bottom: 20px;
   right: 62px;
-`;
-
-const _Cast = styled(Cast)`
-  position: absolute;
-  top: 50%;
-  right: 360px;
-  transform: translateY(-50%);
 `;
 
 const _SkipBtn = styled(SkipBtn)`
@@ -103,14 +91,20 @@ export const Title: FC<TitleProps> = ({
       /> }
     <ScaleWrapper>
       <Main>
-        <Presented />
+        <_PresentedBy />
         <_CloseBtn onClick={ onClickClose } />
-        <_Cast
+        <Cast
           teacher={ isPlay ? step.teacher : "animation_1" }
-          student={ step.student } 
+          student={ step.student }
+          css={ css`
+            position: absolute;
+            top: 50%;
+            right: 90px;
+            transform: translateY(-50%);
+          ` }
         >
           { step.speech }
-        </_Cast>
+        </Cast>
         <_TitleBase
           onClick={ () => setIsPlay(true) }
           { ...{ unitName, unitTitle } }

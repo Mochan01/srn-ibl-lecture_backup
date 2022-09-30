@@ -1,18 +1,15 @@
 import React, { FC, useContext, useEffect, useMemo, useState } from "react";
-import styled from "styled-components";
+import { css } from "styled-components";
 import { useAnimationFrame } from "../../../hooks/useAnimationFrame";
 import { SeekBar } from "../../atoms/SeekBar/SeekBar";
 import { RunSeekContext } from "../../providers/RunSeekProvider/RunSeekProvider";
 
 export interface SeekBarAnimateProps {
   duration: number;
+  className?: string;
   onRunning?: (percentage: number) => void;
   percentage?: number;
 }
-
-const Main = styled.div`
-  pointer-events: none;
-`;
 
 /**
  * 等速直線運動するだけのシークバー
@@ -21,6 +18,7 @@ const Main = styled.div`
  */
 export const SeekBarAnimate: FC<SeekBarAnimateProps> = ({
   duration,
+  className,
   onRunning = () => {},
   percentage = 0,
 }) => {
@@ -60,11 +58,11 @@ export const SeekBarAnimate: FC<SeekBarAnimateProps> = ({
   });
 
   return (
-    <Main>
-      <SeekBar
-        value={ value }
-        setValue={ setValue }
-      />
-    </Main>
+    <SeekBar
+      value={ value }
+      setValue={ setValue }
+      css={ css`pointer-events: none;` }
+      { ...{ className } }
+    />
   );
 };

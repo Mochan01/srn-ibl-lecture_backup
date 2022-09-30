@@ -1,8 +1,7 @@
 import React, { FC } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { ControlPanelA } from "../../atoms/ControlPanelA/ControlPanelA";
-const lecture_star_off = new URL("../../../assets/prod/lecture_star_off.png", import.meta.url).toString();
-const lecture_star_on = new URL("../../../assets/prod/lecture_star_on.png", import.meta.url).toString();
+const ImageLecture = new URL("../../../assets/prod/lecture_panel_answer.png", import.meta.url).toString();
 
 export interface ControlPanelLProps {
   id?: string;
@@ -23,6 +22,10 @@ const Grid = styled.div`
   row-gap: 4px;
 `;
 
+/**
+ * lecture_star_on.png
+ * lecture_star_off.png
+ */
 const StyleControlPanelL = createGlobalStyle`
   .swiper-pagination-bullet {
     // todo: マスターデータの方で最初のプログレス消す
@@ -31,15 +34,14 @@ const StyleControlPanelL = createGlobalStyle`
     }
     all: unset;
     display: block;
-    background-image: url(${ lecture_star_on });
-    background-size: contain;
-    background-position: center;
+    background-image: url(${ ImageLecture });
     background-repeat: no-repeat;
-    width: 32px;
-    height: 30px;
+    width:41px;
+    height:38px;
+    background-position: 0 -2314px;
     margin: auto;
     .swiper-pagination-bullet-active ~ & {
-      background-image: url(${ lecture_star_off });
+      background-position: 0 -2272px;
     }
   }
 `;

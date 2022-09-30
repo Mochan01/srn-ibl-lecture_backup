@@ -11,7 +11,17 @@ export default {
 
 const Template: Story<QuizAnswerBtnProps> = (args) => <QuizAnswerBtn {...args} />;
 
-export const Sample: { args: QuizAnswerBtnProps } = Template.bind({});
-Sample.args = {
+export const gray: { args: QuizAnswerBtnProps } = Template.bind({});
+gray.args = {
+  mutation: QUIZ_ANSWER_BTN.GRAY
+};
+
+export const red: { args: QuizAnswerBtnProps } = Template.bind({});
+red.args = {
   mutation: QUIZ_ANSWER_BTN.RED
+};
+
+export const white: { args: QuizAnswerBtnProps } = Template.bind({});
+white.args = {
+  mutation: QUIZ_ANSWER_BTN.WHITE
 };

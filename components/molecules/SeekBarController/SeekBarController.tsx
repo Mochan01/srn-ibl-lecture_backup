@@ -6,6 +6,7 @@ import { StepProps } from "../../../variable_types/StepProps";
 export interface SeekBarControllerProps {
   steps: StepProps[];
   index: number;
+  className?: string;
   onPointerDown?: () => void;
   onPointerUp?: (next: StepProps) => void;
 }
@@ -13,6 +14,7 @@ export interface SeekBarControllerProps {
 export const SeekBarController: FC<SeekBarControllerProps> = ({
   steps,
   index,
+  className,
   onPointerDown = () => {},
   onPointerUp = () => {}
 }) => {
@@ -22,7 +24,7 @@ export const SeekBarController: FC<SeekBarControllerProps> = ({
   return (
     <SeekBar
       onPointerUp={ () => onPointerUp(getClosest()) }
-      { ...{ value, setValue, onPointerDown } }
+      { ...{ value, setValue, onPointerDown, className } }
     />
   );
 };

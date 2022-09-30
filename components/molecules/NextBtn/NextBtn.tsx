@@ -11,13 +11,12 @@ export const NextBtn: FC<NextBtnProps> = ({
   isBlink = false
 }) => {
 
-  const [mutation, setMutation] = useState(MINI_BUTTON_MUTATIONS.NEXT_ON);
+  const [mutation, setMutation]
+    = useState<typeof MINI_BUTTON_MUTATIONS[keyof typeof MINI_BUTTON_MUTATIONS]>(MINI_BUTTON_MUTATIONS.NEXT_ON);
   useEffect(() => setMutation(MINI_BUTTON_MUTATIONS.NEXT_ON), [isBlink]);
 
   return (
     <>
-      <link rel="preload" href={ MINI_BUTTON_MUTATIONS.NEXT_ON } as="image" />
-      <link rel="preload" href={ MINI_BUTTON_MUTATIONS.NEXT_OFF } as="image" />
       <div id={ classNames.arrowNext }>
         <MiniBtn
           caption="次ページ"

@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components"
-const speech_Bubble
-  = new URL("../../../assets/prod/speech_bubble.png", import.meta.url).toString();
+const ImageCommon = new URL("../../../assets/prod/close_character_spritesheet.png", import.meta.url).toString();
 
 export interface BubbleProps {
   className?: string;
@@ -9,12 +8,12 @@ export interface BubbleProps {
 }
 
 const Main = styled.div`
-  background-image: url(${ speech_Bubble });
+  background-image: url(${ ImageCommon });
   background-repeat: no-repeat;
-  background-size: cover;
-  width: 185px;
-  height: 127px;
-  padding: 22px 22px 40px 22px;
+  background-position: 0 -4851px;
+  width: 293px;
+  height: 221px;
+  padding: 40px 40px 70px 40px;
 `;
 
 const Wrapper = styled.div`
