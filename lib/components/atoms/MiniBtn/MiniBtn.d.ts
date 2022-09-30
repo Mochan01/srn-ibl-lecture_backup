@@ -1,17 +1,17 @@
 import { FC } from "react";
 export declare const MINI_BUTTON_MUTATIONS: {
-    readonly AGAIN_ON: string;
-    readonly AGAIN_OFF: string;
-    readonly NEXT_ON: string;
-    readonly NEXT_OFF: string;
-    readonly PREV_ON: string;
-    readonly PREV_OFF: string;
-    readonly PLAY_ON: string;
-    readonly PLAY_OFF: string;
-    readonly PAUSE_ON: string;
-    readonly PAUSE_OFF: string;
-    readonly LECTURE_END_ON: string;
-    readonly LECTURE_END_OFF: string;
+    readonly AGAIN_ON: "0 -2420px";
+    readonly AGAIN_OFF: "0 -2356px";
+    readonly NEXT_ON: "0 -2804px";
+    readonly NEXT_OFF: "0 -2740px";
+    readonly PREV_ON: "0 -3060px";
+    readonly PREV_OFF: "0 -2996px";
+    readonly PLAY_ON: "0 -2932px";
+    readonly PLAY_OFF: "0 -2868px";
+    readonly PAUSE_ON: "0 -3380px";
+    readonly PAUSE_OFF: "0 -3316px";
+    readonly LECTURE_END_ON: "0 -3380px";
+    readonly LECTURE_END_OFF: "0 -3316px";
 };
 export interface MiniBtnProps {
     mutation: typeof MINI_BUTTON_MUTATIONS[keyof typeof MINI_BUTTON_MUTATIONS];

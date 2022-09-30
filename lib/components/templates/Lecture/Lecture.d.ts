@@ -1,10 +1,10 @@
 /// <reference types="react" />
 import "swiper/css/bundle";
-import { FrameProps } from "../../atoms/Frame/Frame";
+import { LectureFrameProps } from "../../atoms/LectureFrame/LectureFrame";
 /**
  * レクチャー 本体
  */
-export interface LectureProps extends FrameProps {
+export interface LectureProps extends LectureFrameProps {
     onClickClose?: () => void;
     onClickPrev?: () => void;
     data?: object;

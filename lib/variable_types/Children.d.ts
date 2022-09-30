@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 export interface Children {
-    children?: ReactElement;
+    children?: ReactNode;
 }
