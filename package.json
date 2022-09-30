@@ -11,6 +11,8 @@
     "lodash": "^4.17.21",
     "styled-components": "5.3.6",
     "styled-media-query": "2.1.2",
+    "babel-plugin-styled-components": "2.0.7",
+    "src-ibl-lecture-master": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master.git#semver:0.1.2",
     "swiper": "^8.3.2",
     "use-sound": "^4.0.1"
   },
@@ -31,11 +33,8 @@
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "5.1.26",
     "babel-loader": "8.2.5",
-    "babel-plugin-styled-components": "2.0.7",
-    "copyfiles": "2.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "src-ibl-lecture-master": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master.git#semver:0.1.2",
     "typescript": "4.8.4"
   },
   "homepage": "",
@@ -53,7 +52,6 @@
   },
   "scripts": {
     "storybook": "start-storybook -s ./assets -p 6006",
-    "build": "npx tsc && copyfiles ./assets/prod/*.{png,css,mp3} lib/",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
