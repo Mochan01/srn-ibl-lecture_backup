@@ -42,7 +42,7 @@ const Wrapper = styled.div`
 `;
 
 const UnitName = styled.h1`
-  font-size: 24px;
+  font-size: 40px;
   line-height: 1;
   margin-bottom: 40px;
   color: #1a6cf1;
@@ -50,7 +50,7 @@ const UnitName = styled.h1`
 `;
 
 const UnitTitle = styled.h2`
-  font-size: 16px;
+  font-size: 30px;
   color: #5a5a5a;
 `;
 
