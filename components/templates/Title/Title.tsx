@@ -1,5 +1,5 @@
 import React, { FC, useMemo, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { SkipBtn } from "../../atoms/SkipBtn/SkipBtn";
 import { TitleBase, TitleBaseProps } from "../../atoms/TitleBase/TitleBase";
 import { StepsFactory } from "../../../factories/StepsFactory";
@@ -48,13 +48,6 @@ const _PresentedBy = styled(PresentedBy)`
   right: 62px;
 `;
 
-const _Cast = styled(Cast)`
-  position: absolute;
-  top: 50%;
-  right: 360px;
-  transform: translateY(-50%);
-`;
-
 const _SkipBtn = styled(SkipBtn)`
   position: absolute;
   right: 615px;
@@ -100,12 +93,18 @@ export const Title: FC<TitleProps> = ({
       <Main>
         <_PresentedBy />
         <_CloseBtn onClick={ onClickClose } />
-        <_Cast
+        <Cast
           teacher={ isPlay ? step.teacher : "animation_1" }
-          student={ step.student } 
+          student={ step.student }
+          css={ css`
+            position: absolute;
+            top: 50%;
+            right: 90px;
+            transform: translateY(-50%);
+          ` }
         >
           { step.speech }
-        </_Cast>
+        </Cast>
         <_TitleBase
           onClick={ () => setIsPlay(true) }
           { ...{ unitName, unitTitle } }

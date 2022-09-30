@@ -11,7 +11,7 @@ import { SlideProgressContext } from "../../providers/SlideProgressProvider/Slid
 import { StepListProvider } from "../../providers/StepListProvider/StepListProvider";
 import { useGetStepList } from "../../../hooks/useGetStepList";
 import { RunSeekProvider } from "../../providers/RunSeekProvider/RunSeekProvider";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { SIZE } from "../../../data/SIZE";
 import { CloseBtn } from "../../atoms/CloseBtn/CloseBtn";
 import { FactoryContext, FactoryProvider } from "../../providers/FactoryProvider/FactoryProvider";
@@ -128,12 +128,6 @@ const Main: FC<LectureProps> = ({
 /**
  *　先生と生徒
  */
-const _Cast = styled(Cast)`
-  position: absolute;
-  top: 50%;
-  right: 74px;
-  transform: translateY(-50%);
-`;
 const CastMemo = memo(({
 }) => {
 
@@ -141,12 +135,18 @@ const CastMemo = memo(({
   const { isRunSeek } = useContext(RunSeekContext);
 
   return (
-    <_Cast
+    <Cast
       teacher={ isRunSeek ? currentStep.teacher : "animation_1" }
       student={ currentStep.student }
+      css={ css`
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        transform: translateY(-50%);
+      ` }
     >
       { currentStep.speech }
-    </_Cast>
+    </Cast>
   );
 });
 
