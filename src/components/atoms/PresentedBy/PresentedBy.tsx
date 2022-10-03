@@ -10,7 +10,8 @@ const Main = styled.div`
   width: 600px;
   height: 42px;
   background-image: url(${ ImageTitle });
-  background-position:0 -619px;
+  /* lecture_title_offer.png */
+  background-position: 0 -472px;
 `;
 
 export const PresentedBy: FC<PresentedByProps> = ({
