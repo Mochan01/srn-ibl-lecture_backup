@@ -45,7 +45,7 @@
     "storybook"
   ],
   "license": "ISC",
-  "main": "index.js",
+  "main": "lib/index.ts",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:Fantamstick/srn-ibl-component.git"
