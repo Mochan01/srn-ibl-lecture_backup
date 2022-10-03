@@ -18,15 +18,6 @@ const Main = styled.div`
   align-items: center;
 `;
 
-const _Teacher = styled(Teacher)`
-  margin-bottom: 32px;
-`;
-
-const _Bubble = styled(Bubble)`
-  position: absolute;
-  bottom: 254px;
-`;
-
 export const Cast: FC<CastProps> = ({
   student,
   teacher,
@@ -35,8 +26,9 @@ export const Cast: FC<CastProps> = ({
 }) => {
   return (
     <Main className={ className }>
-      <_Teacher animation={ teacher } />
-      { children && <_Bubble>{ children }</_Bubble> }
+      <Teacher animation={ teacher } css="margin-bottom: 32px;" />
+      { children && 
+        <Bubble css="position: absolute; bottom: 365px;">{ children }</Bubble> }
       <Student animation={ student } />
     </Main>
   );
