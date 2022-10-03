@@ -13,5 +13,20 @@ export const sample: { args: LectureFrameProps } = template.bind({});
 sample.args = {
   unitName: "Unit 21",
   unitTitle: "ダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストです",
-  children: <div style={ { width: 140, height: 140, background: "red", border: "solid 5px" } } />
+  children: (
+    <div
+      style={ {
+        width: 140,
+        height: 140,
+        background: "red",
+        border: "solid 5px",
+        marginTop: 100,
+        marginLeft: 100,
+        cursor: "pointer"
+      } }
+      onClick={ () => alert("クリックできた") }
+    >
+      クリックできるか確認
+    </div>
+  )
 };
