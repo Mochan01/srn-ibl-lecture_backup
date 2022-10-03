@@ -22,19 +22,20 @@ const children = "ダミーテキストですダミーテキストですダミ�
 export const orange: { args: QuizChoiceBtnProps } = template.bind({});
 orange.args = {
   mutation: QUIZ_CHOICE_BTN.ORANGE,
-  isCorrect: true,
+  sign: "circle",
   children
 };
 
 export const white: { args: QuizChoiceBtnProps } = template.bind({});
 white.args = {
   mutation: QUIZ_CHOICE_BTN.WHITE,
-  isCorrect: true,
+  sign: "circle",
   children
 };
 
-export const without: { args: QuizChoiceBtnProps } = template.bind({});
-without.args = {
-  mutation: QUIZ_CHOICE_BTN.ORANGE,
+export const gray: { args: QuizChoiceBtnProps } = template.bind({});
+gray.args = {
+  mutation: QUIZ_CHOICE_BTN.GRAY,
+  sign: "circle",
   children
 };

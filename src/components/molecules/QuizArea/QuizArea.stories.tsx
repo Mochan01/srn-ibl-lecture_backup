@@ -20,8 +20,8 @@ three.args = {
   ],
   $x: 0,
   $y: 0,
-  $width: SIZE.QUIZ_AREA_W,
-  $height: SIZE.QUIZ_AREA_TREE_H,
+  $width: 524,
+  $height: 176,
   correctIndex: 0
 };
 
@@ -35,8 +35,8 @@ four.args = {
   ],
   $x: 0,
   $y: 0,
-  $width: SIZE.QUIZ_AREA_W,
-  $height: SIZE.QUIZ_AREA_FOUR_H,
+  $width: 524,
+  $height: 260,
   correctIndex: 0
 };
 
@@ -48,8 +48,8 @@ transform.args = {
     "一、二回はおねえさんの読んでいる本をのぞいてみたけれど、そこには絵も会話もないのです。"
   ],
   correctIndex: 0,
-  $x: 63,
-  $y: 455,
-  $width: 413,
-  $height: 211
+  $x: 100,
+  $y: 100,
+  $width: 524 / 2,
+  $height: 176 / 2
 };
