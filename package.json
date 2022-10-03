@@ -51,7 +51,7 @@
     "url": "git+ssh://git@github.com:Fantamstick/srn-ibl-component.git"
   },
   "scripts": {
-    "storybook": "start-storybook -s ./assets -p 6006",
+    "storybook": "start-storybook -s src/assets -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
