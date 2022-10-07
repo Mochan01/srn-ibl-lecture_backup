@@ -13,15 +13,30 @@ const Main = styled.div`
   background-position: 0 -4851px;
   width: 293px;
   height: 221px;
-  padding: 40px 40px 70px 40px;
+  padding: 20px;
+  padding-top: 40px;
+  padding-bottom: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Wrapper = styled.div`
-  height: 100%;
   overflow: hidden;
-  line-height: 1.4;
+  line-height: 35px;
+  font-size: 28px;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 `;
 
+/**
+ * キャラが喋るときの吹き出し
+ * https://www.notion.so/1ca89cdacc8a4907b2894b2c29d86ba8#7f06b246a2c443f5b6a38d04d3f84089
+ * @param param0 
+ * @returns 
+ */
 export const Bubble: FC<BubbleProps> = ({
   className,
   children
