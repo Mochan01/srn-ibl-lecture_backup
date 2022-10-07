@@ -22,6 +22,8 @@ const Frame = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  // これがないとクイズエリアがタップできなくなる
+  pointer-events: none;
 `;
 
 /* lecture_headline.png */

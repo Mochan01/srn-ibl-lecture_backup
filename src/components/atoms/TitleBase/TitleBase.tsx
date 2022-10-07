@@ -22,6 +22,7 @@ const Base = styled.div`
   width: 1007px;
   height: 468px;
   background-image: url(${ ImageTitle });
+  /* lecture_title_base.png */
   background-position: 0 0;
   background-repeat: no-repeat;
   position: relative;
@@ -58,7 +59,8 @@ const StartBtn = styled.div`
   width: 252px;
   height: 80px;
   background-image: url(${ ImageTitle });
-  background-position:0 -472px;
+  /* lecture_title_start.png */
+  background-position: 0 -581px;
   background-repeat: no-repeat;
   align-self: center;
   cursor: pointer;
@@ -69,7 +71,8 @@ const SkipBtn = styled.div<{ isStartClicked: boolean }>(({ isStartClicked }) => 
   width: 180px;
   height: 59px;
   background-image: url(${ ImageTitle });
-  background-position: 0 -556px;
+  /* lecture_title_skip.png */
+  background-position: 0 -518px;
   cursor: pointer;
 `);
 

@@ -20,6 +20,7 @@ export const QUIZ_ANSWER_BTN = {
 export interface QuizAnswerBtnProps extends MainProps {
   mutation: typeof QUIZ_ANSWER_BTN[keyof typeof QUIZ_ANSWER_BTN];
   onClick?: () => void;
+  className?: string;
 }
 
 interface MainProps {
@@ -51,7 +52,8 @@ const Comment = styled.p`
 
 export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
   mutation,
-  onClick = () => {}
+  onClick,
+  className
 }) => {
 
   // 文字色
@@ -71,14 +73,16 @@ export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
     return color;
   }, [mutation]);
 
+  const clickHandle = () => {
+    if (!onClick) return;
+    if (mutation === QUIZ_ANSWER_BTN.GRAY) return;
+
+    onClick();
+  };
+
   return (
-    <>
-      <Main role="button" mutation={ mutation } onClick={ () => {
-        if (mutation === QUIZ_ANSWER_BTN.GRAY) return;
-        onClick();
-      } }>
-        <Comment color={ color }>解答</Comment>
-      </Main>
-    </>
+    <Main role="button" onClick={ clickHandle } { ...{ mutation, className } }>
+      <Comment { ...{ color } }>解答</Comment>
+    </Main>
   );
 };
