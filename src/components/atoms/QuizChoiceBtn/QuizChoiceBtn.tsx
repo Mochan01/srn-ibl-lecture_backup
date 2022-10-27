@@ -41,7 +41,7 @@ interface MainProps {
   sign?: "circle" | "cross";
 }
 
-const SIGN_SIZE = 54;
+// https://www.notion.so/1ca89cdacc8a4907b2894b2c29d86ba8#d74cb057bc9e4b04b23371e1136ae772
 const Main = styled.div<MainProps>(({ mutation, sign }) => `
   cursor: pointer;
   position: relative;
@@ -53,10 +53,10 @@ const Main = styled.div<MainProps>(({ mutation, sign }) => `
     content: "";
     display: block;
     position: absolute;
-    width: ${ SIGN_SIZE }px;
-    padding-top: ${ SIGN_SIZE }px;
-    top: -${ SIGN_SIZE / 2 }px;
-    left: -${ SIGN_SIZE / 2 }px;
+    width: 54px;
+    padding-top: 54px;
+    top: -22px;
+    left: -17px;
     background-position: ${ sign === "circle" ? QUIZ_SIGN.CORRECT :  QUIZ_SIGN.INCORRECT };
     background-image: ${ typeof sign === "string" ? `url(${ ImageLecture })` : "none"  };
     background-repeat: no-repeat;
