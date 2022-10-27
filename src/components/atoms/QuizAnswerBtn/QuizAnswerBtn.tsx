@@ -27,28 +27,28 @@ interface MainProps {
   mutation: typeof QUIZ_ANSWER_BTN[keyof typeof QUIZ_ANSWER_BTN];
 }
 
-const Main = styled.div<MainProps>`
+const Main = styled.div<MainProps>(({ mutation }) => `
   width: 150px;
   height: 60px;
   background-image: url(${ ImageLecture });
-  background-position: ${ ({ mutation }) => mutation };
-  cursor: ${ ({ mutation }) => mutation === QUIZ_ANSWER_BTN.GRAY ? "auto" : "pointer" };
+  background-position: ${ mutation };
+  cursor: ${ mutation === QUIZ_ANSWER_BTN.GRAY ? "auto" : "pointer" };
   position: relative;
-`;
+`);
 
-const Comment = styled.p`
-  color: ${ ({ color }) => color };
-  font-size: 28px;
+const Comment = styled.p(({ color }) => `
+  color: ${ color };
+  font-size: 30px;
   text-align: center;
   user-select: none;
   line-height: 1;
   white-space: nowrap;
   position: absolute;
-  top: 50%;
+  top: 48%; // ベベルの分少し上にする
   right: 0;
   left: 0;
   transform: translateY(-50%);
-`;
+`);
 
 export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
   mutation,

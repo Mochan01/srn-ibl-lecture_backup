@@ -12,5 +12,5 @@ const template: Story<TitleBaseProps> = (args) => <TitleBase {...args} />;
 export const sample: { args: TitleBaseProps } = template.bind({});
 sample.args = {
   unitName: "Unit 21",
-  unitTitle: "ダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストですダミーテキストです"
+  unitTitle: "ダミーテキストです<br />ダミーテキストですダミーテキストですダミー"
 };
