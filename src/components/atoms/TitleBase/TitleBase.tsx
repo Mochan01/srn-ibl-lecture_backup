@@ -90,8 +90,10 @@ export const TitleBase: FC<TitleBaseProps> = ({
     <Main { ...{ className } }>
       <Base>
         <Wrapper>
-          { isStartClicked && <UnitName>{ unitName }</UnitName> }
-          { isStartClicked && <UnitTitle>{ unitTitle }</UnitTitle> }
+          { isStartClicked && 
+            <UnitName dangerouslySetInnerHTML={ { __html: unitName } } /> }
+          { isStartClicked && 
+            <UnitTitle dangerouslySetInnerHTML={ { __html: unitTitle } } /> }
           { !isStartClicked &&
             <StartBtn
               role="button"
