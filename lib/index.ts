@@ -1,2 +1,2 @@
-export * from "../src/components/templates/Title/Title";
-export * from "../src/components/templates/Lecture/Lecture";
+export * from "../src/features/Title";
+export * from "../src/features/Lecture";
