@@ -23,6 +23,6 @@ export const useAudio = (
   { onload, volume = VOLUME }: UseAudio = { volume: VOLUME }
 ) => {
   const [play] = useSound(audio, { onload, volume });
-  const stop = typeof Howler === "object" ? () => Howler.stop() : () => {};
+  const stop = () => typeof Howler === "object" && Howler.stop();
   return [play, stop];
 };
