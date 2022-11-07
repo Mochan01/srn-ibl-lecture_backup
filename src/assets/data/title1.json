@@ -1,0 +1,716 @@
+{
+  "steps": [
+      {
+          "progress": {
+              "slide": 1,
+              "step": 1
+          },
+          "narrative": {
+              "narration": "はじめまして！私のラボへようこそ。",
+              "speech": null
+          },
+          "audio": {
+              "mp3": "ST_L1U1_01.mp3",
+              "time": 4000,
+              "total_time": 4000,
+              "seekbar_start": 0,
+              "seekbar_end": 5.19
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": null,
+              "display_file": null,
+              "slideshow_width": 0,
+              "slide_show_height": 0,
+              "width": 0,
+              "height": 0,
+              "x_axis": 0,
+              "y_axis": 0
+          },
+          "question": {
+              "button_1": null,
+              "ans_1": null,
+              "button_2": null,
+              "ans_2": null,
+              "button_3": null,
+              "ans_3": null,
+              "button_4": null,
+              "ans_4": null,
+              "is_result_step": null
+          },
+          "motion": {
+              "motion_1": null,
+              "motion_2": null
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": {
+                  "slide": 1,
+                  "step": 2
+              },
+              "if_correct": null,
+              "if_wrong": null
+          }
+      },
+      {
+          "progress": {
+              "slide": 1,
+              "step": 2
+          },
+          "narrative": {
+              "narration": "私はベガ。ここで、人工衛星の開発をしているの。",
+              "speech": null
+          },
+          "audio": {
+              "mp3": "ST_L1U1_02.mp3",
+              "time": 5000,
+              "total_time": 9000,
+              "seekbar_start": 5.2,
+              "seekbar_end": 11.69
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": null,
+              "display_file": null,
+              "slideshow_width": 0,
+              "slide_show_height": 0,
+              "width": 0,
+              "height": 0,
+              "x_axis": 0,
+              "y_axis": 0
+          },
+          "question": {
+              "button_1": null,
+              "ans_1": null,
+              "button_2": null,
+              "ans_2": null,
+              "button_3": null,
+              "ans_3": null,
+              "button_4": null,
+              "ans_4": null,
+              "is_result_step": null
+          },
+          "motion": {
+              "motion_1": null,
+              "motion_2": null
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": {
+                  "slide": 1,
+                  "step": 3
+              },
+              "if_correct": null,
+              "if_wrong": null
+          }
+      },
+      {
+          "progress": {
+              "slide": 1,
+              "step": 3
+          },
+          "narrative": {
+              "narration": "小さいころから宇宙が好きで、よく父と、天体観測をしていたのよ。",
+              "speech": null
+          },
+          "audio": {
+              "mp3": "ST_L1U1_03.mp3",
+              "time": 6000,
+              "total_time": 15000,
+              "seekbar_start": 11.7,
+              "seekbar_end": 19.48
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": null,
+              "display_file": null,
+              "slideshow_width": 0,
+              "slide_show_height": 0,
+              "width": 0,
+              "height": 0,
+              "x_axis": 0,
+              "y_axis": 0
+          },
+          "question": {
+              "button_1": null,
+              "ans_1": null,
+              "button_2": null,
+              "ans_2": null,
+              "button_3": null,
+              "ans_3": null,
+              "button_4": null,
+              "ans_4": null,
+              "is_result_step": null
+          },
+          "motion": {
+              "motion_1": null,
+              "motion_2": null
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": {
+                  "slide": 1,
+                  "step": 4
+              },
+              "if_correct": null,
+              "if_wrong": null
+          }
+      },
+      {
+          "progress": {
+              "slide": 1,
+              "step": 4
+          },
+          "narrative": {
+              "narration": "若いころは、世界のいろんな国のラボに招かれて研究をしていたんだけど、",
+              "speech": null
+          },
+          "audio": {
+              "mp3": "ST_L1U1_04.mp3",
+              "time": 6000,
+              "total_time": 21000,
+              "seekbar_start": 19.49,
+              "seekbar_end": 27.27
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": null,
+              "display_file": null,
+              "slideshow_width": 0,
+              "slide_show_height": 0,
+              "width": 0,
+              "height": 0,
+              "x_axis": 0,
+              "y_axis": 0
+          },
+          "question": {
+              "button_1": null,
+              "ans_1": null,
+              "button_2": null,
+              "ans_2": null,
+              "button_3": null,
+              "ans_3": null,
+              "button_4": null,
+              "ans_4": null,
+              "is_result_step": null
+          },
+          "motion": {
+              "motion_1": null,
+              "motion_2": null
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": {
+                  "slide": 1,
+                  "step": 5
+              },
+              "if_correct": null,
+              "if_wrong": null
+          }
+      },
+      {
+          "progress": {
+              "slide": 1,
+              "step": 5
+          },
+          "narrative": {
+              "narration": "今はこうして自分のラボをもって、世界中の人々を幸せにできるような、人工衛星の開発に取り組んでいるの。",
+              "speech": null
+          },
+          "audio": {
+              "mp3": "ST_L1U1_05.mp3",
+              "time": 10000,
+              "total_time": 31000,
+              "seekbar_start": 27.28,
+              "seekbar_end": 40.26
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": null,
+              "display_file": null,
+              "slideshow_width": 0,
+              "slide_show_height": 0,
+              "width": 0,
+              "height": 0,
+              "x_axis": 0,
+              "y_axis": 0
+          },
+          "question": {
+              "button_1": null,
+              "ans_1": null,
+              "button_2": null,
+              "ans_2": null,
+              "button_3": null,
+              "ans_3": null,
+              "button_4": null,
+              "ans_4": null,
+              "is_result_step": null
+          },
+          "motion": {
+              "motion_1": null,
+              "motion_2": null
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": {
+                  "slide": 1,
+                  "step": 6
+              },
+              "if_correct": null,
+              "if_wrong": null
+          }
+      },
+      {
+          "progress": {
+              "slide": 1,
+              "step": 6
+          },
+          "narrative": {
+              "narration": "そして、ここにいるのが助手のレオン。",
+              "speech": null
+          },
+          "audio": {
+              "mp3": "ST_L1U1_06.mp3",
+              "time": 4000,
+              "total_time": 35000,
+              "seekbar_start": 40.27,
+              "seekbar_end": 45.45
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": null,
+              "display_file": null,
+              "slideshow_width": 0,
+              "slide_show_height": 0,
+              "width": 0,
+              "height": 0,
+              "x_axis": 0,
+              "y_axis": 0
+          },
+          "question": {
+              "button_1": null,
+              "ans_1": null,
+              "button_2": null,
+              "ans_2": null,
+              "button_3": null,
+              "ans_3": null,
+              "button_4": null,
+              "ans_4": null,
+              "is_result_step": null
+          },
+          "motion": {
+              "motion_1": null,
+              "motion_2": null
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": {
+                  "slide": 1,
+                  "step": 7
+              },
+              "if_correct": null,
+              "if_wrong": null
+          }
+      },
+      {
+          "progress": {
+              "slide": 1,
+              "step": 7
+          },
+          "narrative": {
+              "narration": "よろしくね！",
+              "speech": null
+          },
+          "audio": {
+              "mp3": "ST_L1U1_07.mp3",
+              "time": 2000,
+              "total_time": 37000,
+              "seekbar_start": 45.46,
+              "seekbar_end": 48.05
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": null,
+              "display_file": null,
+              "slideshow_width": 0,
+              "slide_show_height": 0,
+              "width": 0,
+              "height": 0,
+              "x_axis": 0,
+              "y_axis": 0
+          },
+          "question": {
+              "button_1": null,
+              "ans_1": null,
+              "button_2": null,
+              "ans_2": null,
+              "button_3": null,
+              "ans_3": null,
+              "button_4": null,
+              "ans_4": null,
+              "is_result_step": null
+          },
+          "motion": {
+              "motion_1": null,
+              "motion_2": null
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": {
+                  "slide": 1,
+                  "step": 8
+              },
+              "if_correct": null,
+              "if_wrong": null
+          }
+      },
+      {
+          "progress": {
+              "slide": 1,
+              "step": 8
+          },
+          "narrative": {
+              "narration": "そうだ！せっかく来てくれたんだし、あなたにも、私の研究開発を手伝ってほしいわ。",
+              "speech": null
+          },
+          "audio": {
+              "mp3": "ST_L1U1_08.mp3",
+              "time": 8000,
+              "total_time": 45000,
+              "seekbar_start": 48.06,
+              "seekbar_end": 58.44
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": null,
+              "display_file": null,
+              "slideshow_width": 0,
+              "slide_show_height": 0,
+              "width": 0,
+              "height": 0,
+              "x_axis": 0,
+              "y_axis": 0
+          },
+          "question": {
+              "button_1": null,
+              "ans_1": null,
+              "button_2": null,
+              "ans_2": null,
+              "button_3": null,
+              "ans_3": null,
+              "button_4": null,
+              "ans_4": null,
+              "is_result_step": null
+          },
+          "motion": {
+              "motion_1": null,
+              "motion_2": null
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": {
+                  "slide": 1,
+                  "step": 9
+              },
+              "if_correct": null,
+              "if_wrong": null
+          }
+      },
+      {
+          "progress": {
+              "slide": 1,
+              "step": 9
+          },
+          "narrative": {
+              "narration": "まずは、2回のオリエンテーションで、ラボの一員になるための心構えや、基本的な知識を紹介するわね。",
+              "speech": null
+          },
+          "audio": {
+              "mp3": "ST_L1U1_09.mp3",
+              "time": 9000,
+              "total_time": 54000,
+              "seekbar_start": 58.45,
+              "seekbar_end": 70.13
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": null,
+              "display_file": null,
+              "slideshow_width": 0,
+              "slide_show_height": 0,
+              "width": 0,
+              "height": 0,
+              "x_axis": 0,
+              "y_axis": 0
+          },
+          "question": {
+              "button_1": null,
+              "ans_1": null,
+              "button_2": null,
+              "ans_2": null,
+              "button_3": null,
+              "ans_3": null,
+              "button_4": null,
+              "ans_4": null,
+              "is_result_step": null
+          },
+          "motion": {
+              "motion_1": null,
+              "motion_2": null
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": {
+                  "slide": 1,
+                  "step": 10
+              },
+              "if_correct": null,
+              "if_wrong": null
+          }
+      },
+      {
+          "progress": {
+              "slide": 1,
+              "step": 10
+          },
+          "narrative": {
+              "narration": "そのあとで、実際に開発を手伝ってちょうだい！",
+              "speech": null
+          },
+          "audio": {
+              "mp3": "ST_L1U1_10.mp3",
+              "time": 5000,
+              "total_time": 59000,
+              "seekbar_start": 70.14,
+              "seekbar_end": 76.62
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": null,
+              "display_file": null,
+              "slideshow_width": 0,
+              "slide_show_height": 0,
+              "width": 0,
+              "height": 0,
+              "x_axis": 0,
+              "y_axis": 0
+          },
+          "question": {
+              "button_1": null,
+              "ans_1": null,
+              "button_2": null,
+              "ans_2": null,
+              "button_3": null,
+              "ans_3": null,
+              "button_4": null,
+              "ans_4": null,
+              "is_result_step": null
+          },
+          "motion": {
+              "motion_1": null,
+              "motion_2": null
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": {
+                  "slide": 1,
+                  "step": 11
+              },
+              "if_correct": null,
+              "if_wrong": null
+          }
+      },
+      {
+          "progress": {
+              "slide": 1,
+              "step": 11
+          },
+          "narrative": {
+              "narration": "第一回目の今日は、そもそも「探究学習って何？」「しかも人工衛星がテーマって、どういうこと？」と思っているあなたのために、",
+              "speech": null
+          },
+          "audio": {
+              "mp3": "ST_L1U1_11.mp3",
+              "time": 12000,
+              "total_time": 71000,
+              "seekbar_start": 76.63,
+              "seekbar_end": 92.21
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_3"
+          },
+          "image": {
+              "display_object_1": null,
+              "display_file": null,
+              "slideshow_width": 0,
+              "slide_show_height": 0,
+              "width": 0,
+              "height": 0,
+              "x_axis": 0,
+              "y_axis": 0
+          },
+          "question": {
+              "button_1": null,
+              "ans_1": null,
+              "button_2": null,
+              "ans_2": null,
+              "button_3": null,
+              "ans_3": null,
+              "button_4": null,
+              "ans_4": null,
+              "is_result_step": null
+          },
+          "motion": {
+              "motion_1": null,
+              "motion_2": null
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": {
+                  "slide": 1,
+                  "step": 12
+              },
+              "if_correct": null,
+              "if_wrong": null
+          }
+      },
+      {
+          "progress": {
+              "slide": 1,
+              "step": 12
+          },
+          "narrative": {
+              "narration": "これから学んでいくことを紹介していくわ。",
+              "speech": null
+          },
+          "audio": {
+              "mp3": "ST_L1U1_12.mp3",
+              "time": 4000,
+              "total_time": 75000,
+              "seekbar_start": 92.22,
+              "seekbar_end": 97.4
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": null,
+              "display_file": null,
+              "slideshow_width": 0,
+              "slide_show_height": 0,
+              "width": 0,
+              "height": 0,
+              "x_axis": 0,
+              "y_axis": 0
+          },
+          "question": {
+              "button_1": null,
+              "ans_1": null,
+              "button_2": null,
+              "ans_2": null,
+              "button_3": null,
+              "ans_3": null,
+              "button_4": null,
+              "ans_4": null,
+              "is_result_step": null
+          },
+          "motion": {
+              "motion_1": null,
+              "motion_2": null
+          },
+          "next_steps": {
+              "next_step": "audio_end",
+              "go_to": {
+                  "slide": 1,
+                  "step": 13
+              },
+              "if_correct": null,
+              "if_wrong": null
+          }
+      },
+      {
+          "progress": {
+              "slide": 1,
+              "step": 13
+          },
+          "narrative": {
+              "narration": "さっそく始めましょう！",
+              "speech": null
+          },
+          "audio": {
+              "mp3": "ST_L1U1_13.mp3",
+              "time": 2000,
+              "total_time": 77000,
+              "seekbar_start": 97.41,
+              "seekbar_end": 100
+          },
+          "animation": {
+              "teacher": "animation_2",
+              "student": "animation_1"
+          },
+          "image": {
+              "display_object_1": null,
+              "display_file": null,
+              "slideshow_width": 0,
+              "slide_show_height": 0,
+              "width": 0,
+              "height": 0,
+              "x_axis": 0,
+              "y_axis": 0
+          },
+          "question": {
+              "button_1": null,
+              "ans_1": null,
+              "button_2": null,
+              "ans_2": null,
+              "button_3": null,
+              "ans_3": null,
+              "button_4": null,
+              "ans_4": null,
+              "is_result_step": null
+          },
+          "motion": {
+              "motion_1": null,
+              "motion_2": null
+          },
+          "next_steps": {
+              "next_step": "slide_end",
+              "go_to": null,
+              "if_correct": null,
+              "if_wrong": null
+          }
+      }
+  ]
+}
