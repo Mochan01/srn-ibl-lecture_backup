@@ -8,13 +8,13 @@
   },
   "dependencies": {
     "@radix-ui/react-slider": "^1.0.0",
+    "babel-plugin-styled-components": "2.0.7",
     "lodash": "^4.17.21",
+    "src-ibl-lecture-master": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master.git#semver:0.1.2",
     "styled-components": "5.3.6",
     "styled-media-query": "2.1.2",
-    "babel-plugin-styled-components": "2.0.7",
-    "src-ibl-lecture-master": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master.git#semver:0.1.2",
-    "swiper": "^8.3.2",
-    "use-sound": "^4.0.1"
+    "use-sound": "^4.0.1",
+    "use-timer": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.19.6",
