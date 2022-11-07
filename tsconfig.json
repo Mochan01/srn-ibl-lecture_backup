@@ -13,6 +13,6 @@
     "moduleResolution": "node",
     "resolveJsonModule": true
   },
-  "include": ["src/components/**/*.tsx", "./@types"],
-  "exclude": ["src/components/**/*.stories.tsx", "./lib/**"]
+  "include": ["src/**/*.tsx", "./@types"],
+  "exclude": ["src/**/*.stories.tsx", "./lib/**"]
 }

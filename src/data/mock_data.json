@@ -62,7 +62,7 @@
               "speech": "前回、初めてのグループワークはどうだった？"
           },
           "audio": {
-              "mp3": "sample.mp3",
+              "mp3": null,
               "time": 4000,
               "total_time": 8000,
               "seekbar_start": 25.01,
