@@ -1,9 +1,6 @@
-.github
-.storybook
-.babelrc
-.env
-.gitconfig
-.gitignore
-README.md
-renovate.json
-tsconfig.json
+*
+*/
+
+!/lib/**
+!/src/**
+!/@types/**
