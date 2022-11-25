@@ -21,4 +21,5 @@ sample.args = {
     console.log("onClickClose");
   },
   json,
+  isPlaying: true
 };

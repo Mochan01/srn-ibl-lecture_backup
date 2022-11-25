@@ -15,8 +15,12 @@ import styled, { css } from "styled-components";
 import { CloseBtn } from "../../elements/CloseBtn";
 import { Container } from "../../elements/Container";
 import { Props } from "../../types";
+import { PlayStatusProviderProps } from "../../stores/providers";
 
-export interface LectureProps extends ControlBarProps, Props {}
+export interface LectureProps
+  extends ControlBarProps,
+    Props,
+    Pick<PlayStatusProviderProps, "isPlaying"> {}
 
 const Wrapper = styled.div`
   position: absolute;
@@ -73,8 +77,8 @@ const Main: FC<LectureProps> = ({
   );
 };
 
-export const Lecture: FC<LectureProps> = ({ json, ...props }) => (
-  <LectureProvider {...{ json }}>
+export const Lecture: FC<LectureProps> = ({ json, isPlaying, ...props }) => (
+  <LectureProvider {...{ json, isPlaying }}>
     <Main {...props} />
   </LectureProvider>
 );
