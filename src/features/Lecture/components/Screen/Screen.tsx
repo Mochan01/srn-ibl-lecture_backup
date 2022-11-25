@@ -15,6 +15,7 @@ import {
   getNextStepIfWrong,
 } from "../../../../utils";
 import { Props } from "../../../../types";
+import { assetsPath } from "../../../../data/assetsPath";
 
 export interface ScreenProps extends Pick<Props, "unitName" | "unitTitle"> {}
 
@@ -52,7 +53,7 @@ export const Screen: FC<ScreenProps> = (props) => {
           <Fragment key={i}>
             <Panel
               css="position: absolute;"
-              image={image.display_file}
+              image={assetsPath[image.display_file]}
               motion1={motion.motion_1}
               motion2={motion.motion_2}
             >
