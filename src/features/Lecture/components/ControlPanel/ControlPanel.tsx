@@ -5,7 +5,7 @@ import {
   PlayStatusProviderContext,
   SeekProviderContext,
 } from "../../../../stores/providers";
-import { StepType } from "src-ibl-lecture-master/variable_types/StepType";
+import { StepType } from "src-ibl-lecture-master/types/StepType";
 import { NextBtn } from "./NextBtn";
 import { PrevBtn } from "./PrevBtn";
 import { PlayBtn } from "./PlayBtn";
@@ -94,7 +94,10 @@ export const ControlPanel: FC<ControlBarProps> = ({
       <NextBtn
         {...{ isBlink }}
         css="margin-left: 30px;"
-        onClick={() => setProgress({ slide: "next" })}
+        onClick={() => {
+          setProgress({ slide: "next" });
+          playStatus === "CONTINUE" && setPlayStatus("PLAYING");
+        }}
       />
       <ReplayBtn
         css="margin-left: 130px;"

@@ -1,4 +1,4 @@
-import { StepType } from "src-ibl-lecture-master/variable_types/StepType";
+import { StepType } from "src-ibl-lecture-master/types/StepType";
 import _ from "lodash";
 
 type Callback<T> = (data: StepType[]) => T;

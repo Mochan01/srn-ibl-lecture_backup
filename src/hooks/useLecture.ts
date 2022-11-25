@@ -46,6 +46,10 @@ export const useLecture = () => {
     // ステップを自動で次に進めるか？判定
     if (getStep(getQuestion)) return;
 
+    // ユーザーに「次ページ」ボタンの押下を促すので、
+    // 次のスライドに進む前に停止する
+    if (!getData(progress.slide, progress.step + 1)) return;
+
     setProgress({ step: "next" });
     setPlayStatus("PLAYING");
   }, [playStatus]);

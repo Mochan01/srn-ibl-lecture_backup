@@ -2,7 +2,7 @@ import React, { FC, useContext, useMemo, Fragment } from "react";
 import { Panel } from "./Panel";
 import { LectureFrame } from "./LectureFrame";
 import { QuizArea } from "./QuizArea";
-import { StepType } from "src-ibl-lecture-master/variable_types/StepType";
+import { StepType } from "src-ibl-lecture-master/types/StepType";
 import {
   GetDataProviderContext,
   ProgressProviderContext,

@@ -1,4 +1,4 @@
-import { StepType } from "src-ibl-lecture-master/variable_types/StepType";
+import { StepType } from "src-ibl-lecture-master/types/StepType";
 
 type Callback = (arr: StepType[]) => StepType[];
 type Fil = (index: number) => Callback;

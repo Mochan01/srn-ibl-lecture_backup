@@ -1,6 +1,6 @@
 import { GetStepData } from "../utils";
 import { useReducer } from "react";
-import { StepType } from "src-ibl-lecture-master/variable_types/StepType";
+import { StepType } from "src-ibl-lecture-master/types/StepType";
 
 type ActionValue = "next" | "prev" | number;
 

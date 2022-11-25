@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled, { css } from "styled-components";
-import { AnimationType } from "src-ibl-lecture-master/variable_types/StepType";
+import { AnimationType } from "src-ibl-lecture-master/types/StepType";
 const ImageCommon = new URL("../../../assets/prod/close_character_spritesheet.png", import.meta.url).toString();
 
 export interface StudentProps {

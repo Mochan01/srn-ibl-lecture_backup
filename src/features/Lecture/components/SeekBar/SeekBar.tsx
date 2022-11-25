@@ -6,7 +6,7 @@ import {
   PlayStatusProviderContext,
   SeekProviderContext,
 } from "../../../../stores/providers";
-import { StepType } from "src-ibl-lecture-master/variable_types/StepType";
+import { StepType } from "src-ibl-lecture-master/types/StepType";
 import { handleStepArray, getSeekStarts } from "../../../../utils";
 
 export interface SeekBarProps {
@@ -28,8 +28,10 @@ export const SeekBar: FC<SeekBarProps> = (props) => {
   const onPointerDown = () => setPlayStatus("STOPPED");
   const onPointerUp = (e) => {
     const seekStarts = handleStepArray(getData(progress.slide))(getSeekStarts);
-    // 比較（x <= e） の部分について、eが0のときundefinedが返ってきてしまうので「以上」にすること
-    const closest = seekStarts.filter((x) => x <= e).reverse()[0];
+    // シークバーの位置がデータ上のスタート位置（seekbar_start）より前にいくことがあり、その場合はundefinedが返る
+    let closest = seekStarts.filter((x) => x <= e).reverse()[0];
+    // なので、ここで補正する
+    closest = typeof closest === "number" ? closest : seekStarts[0];
     let step = seekStarts.indexOf(closest) + 1;
 
     // 結果発表ステップでは止まらないようにする

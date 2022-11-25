@@ -1,4 +1,4 @@
-import { StepType } from "src-ibl-lecture-master/variable_types/StepType";
+import { StepType } from "src-ibl-lecture-master/types/StepType";
 import _ from "lodash";
 
 type Callback<T> = (data: StepType) => T;
@@ -43,7 +43,7 @@ export const getIsResultStep: Callback<StepType["question"]["is_result_step"]> =
  * @returns
  */
 export const getNextStepIfCorrect: Callback<number> = (data: StepType) => {
-  return Number(data.next_steps.if_correct.split("_")[1]);
+  return data.next_steps.if_correct.step;
 };
 
 /**
@@ -52,13 +52,13 @@ export const getNextStepIfCorrect: Callback<number> = (data: StepType) => {
  * @returns
  */
 export const getNextStepIfWrong: Callback<number> = (data: StepType) => {
-  return Number(data.next_steps.if_wrong.split("_")[1]);
+  return data.next_steps.if_wrong.step;
 };
 
 /**
  * アニメーションの種類を取得（先生）
- * @param data 
- * @returns 
+ * @param data
+ * @returns
  */
 export const getTeacherAnimation: Callback<StepType["animation"]["teacher"]> = (
   data: StepType
@@ -66,8 +66,8 @@ export const getTeacherAnimation: Callback<StepType["animation"]["teacher"]> = (
 
 /**
  * アニメーションの種類を取得（生徒）
- * @param data 
- * @returns 
+ * @param data
+ * @returns
  */
 export const getStudentAnimation: Callback<StepType["animation"]["student"]> = (
   data: StepType
@@ -75,8 +75,8 @@ export const getStudentAnimation: Callback<StepType["animation"]["student"]> = (
 
 /**
  * 生徒のセリフを取得
- * @param data 
- * @returns 
+ * @param data
+ * @returns
  */
 export const getStudentDialogue: Callback<StepType["narrative"]["speech"]> = (
   data: StepType
