@@ -1,6 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Lecture, LectureProps } from "./Lecture";
+import json from "../../assets/data/lecture1.json";
 
 export default {
   title: "features/Lecture",
@@ -19,4 +20,5 @@ sample.args = {
   onClickClose: () => {
     console.log("onClickClose");
   },
+  json,
 };

@@ -7,7 +7,6 @@ import { ScaleWrapper } from "../../elements/ScaleWrapper";
 import { Container } from "../../elements/Container";
 import { PresentedBy } from "./components/PresentedBy";
 import { Narration } from "../../elements/Narration";
-import json from "../../data/mock_data.json";
 import {
   PlayStatusProviderContext,
   LectureProvider,
@@ -79,8 +78,8 @@ export const Main: FC<TitleProps> = ({
   );
 };
 
-export const Title: FC<TitleProps> = (props) => (
-  <LectureProvider json={ props.json || json }>
+export const Title: FC<TitleProps> = ({ json, ...props }) => (
+  <LectureProvider {...{ json }}>
     <Main {...props} />
   </LectureProvider>
 );

@@ -1,5 +1,4 @@
 import React, { FC, useContext } from "react";
-import json from "../../data/mock_data.json";
 import { SeekBar } from "./components/SeekBar";
 import {
   PlayStatusProviderContext,
@@ -74,8 +73,8 @@ const Main: FC<LectureProps> = ({
   );
 };
 
-export const Lecture: FC<LectureProps> = (props) => (
-  <LectureProvider json={props.json || json}>
+export const Lecture: FC<LectureProps> = ({ json, ...props }) => (
+  <LectureProvider {...{ json }}>
     <Main {...props} />
   </LectureProvider>
 );
