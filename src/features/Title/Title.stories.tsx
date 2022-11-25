@@ -1,10 +1,11 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Title, TitleProps } from "./Title";
+import json from "../../assets/data/title1.json";
 
 export default {
   title: "features/Title",
-  component: Title
+  component: Title,
 } as Meta;
 
 const template: Story<TitleProps> = (args) => <Title {...args} />;
@@ -12,5 +13,6 @@ const template: Story<TitleProps> = (args) => <Title {...args} />;
 export const sample: { args: TitleProps } = template.bind({});
 sample.args = {
   unitName: "unit00",
-  unitTitle: "ダミーテキストダミーテキスト"
+  unitTitle: "ダミーテキストダミーテキスト",
+  json,
 };
