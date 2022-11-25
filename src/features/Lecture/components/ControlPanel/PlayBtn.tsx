@@ -1,15 +1,15 @@
 import React, { FC } from "react";
-import { MiniBtn } from "./MiniBtn";
+import { MiniBtn, MiniBtnProps } from "./MiniBtn";
 
-export interface PlayBtnProps {
+export interface PlayBtnProps
+  extends Pick<MiniBtnProps, "onClick" | "className"> {
   isPlay?: boolean;
-  onClick?: () => void;
 }
 
-export const PlayBtn: FC<PlayBtnProps> = ({ isPlay = false, onClick }) => {
+export const PlayBtn: FC<PlayBtnProps> = ({ isPlay = false, ...props }) => {
   return (
     <MiniBtn
-      {...{ onClick }}
+      {...props}
       caption={!isPlay ? "再生" : "一時停止"}
       variant={!isPlay ? "playOn" : "pauseOn"}
       hoverVariant={!isPlay ? "playOff" : "pauseOff"}

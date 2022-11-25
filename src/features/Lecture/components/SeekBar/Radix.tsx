@@ -61,7 +61,7 @@ const StyledThumb = styled(SliderPrimitive.Thumb)`
   display: block;
   width: ${SLIDER_H}px;
   height: ${SLIDER_H}px;
-  background-position: 0 -2232px;
+  background-position: 0 -2133px;
   background-image: url(${ImageLecture});
   background-repeat: no-repeat;
 `;

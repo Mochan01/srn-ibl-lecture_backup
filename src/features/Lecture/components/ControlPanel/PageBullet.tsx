@@ -1,12 +1,11 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { ControlPanelA } from "./ControlPanelA";
 const ImageLecture = new URL(
   "../../../../assets/prod/lecture_panel_answer.png",
   import.meta.url
 ).toString();
 
-export interface ControlPanelLProps {
+export interface PageBulletProps {
   slideLen: number;
   slideIndex: number;
   onClick: (i: number) => void;
@@ -27,10 +26,8 @@ const Grid = styled.div`
   row-gap: 4px;
 `;
 
-/**
- * lecture_star_on.png
- * lecture_star_off.png
- */
+/* lecture_star_on.png */
+/* lecture_star_off.png */
 const Bullet = styled.div<{ isActive: boolean }>(
   ({ isActive }) => `
   display: block;
@@ -38,30 +35,28 @@ const Bullet = styled.div<{ isActive: boolean }>(
   background-repeat: no-repeat;
   width: 41px;
   height: 38px;
-  background-position: ${isActive ? "0 -2314px" : "0 -2272px"};
+  background-position: ${isActive ? "0 -2215px" : "0 -2173px"};
   margin: auto;
   cursor: pointer;
 `
 );
 
-export const ControlPanelL: FC<ControlPanelLProps> = ({
+export const PageBullet: FC<PageBulletProps> = ({
   slideLen,
   slideIndex,
   onClick,
 }) => {
   return (
-    <ControlPanelA>
-      <Wrapper>
-        <Grid>
-          {[...Array(slideLen)].map((x, i) => (
-            <Bullet
-              key={i}
-              isActive={slideIndex === i + 1}
-              onClick={() => onClick(i + 1)}
-            />
-          ))}
-        </Grid>
-      </Wrapper>
-    </ControlPanelA>
+    <Wrapper>
+      <Grid>
+        {[...Array(slideLen)].map((x, i) => (
+          <Bullet
+            key={i}
+            isActive={slideIndex === i + 1}
+            onClick={() => onClick(i + 1)}
+          />
+        ))}
+      </Grid>
+    </Wrapper>
   );
 };

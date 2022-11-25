@@ -6,15 +6,15 @@ export const QUIZ_ANSWER_BTN = {
   /**
    * Answer_button_greyout.png
    */
-  GRAY: "0 -3444px",
+  GRAY: "0 -3153px",
   /**
    * Answer_button_select.png
    */
-  RED: "0 -3508px",
+  RED: "0 -3217px",
   /**
    * Answer_button.png
    */
-  WHITE: "0 -3572px"
+  WHITE: "0 -3281px"
 } as const;
 
 export interface QuizAnswerBtnProps extends MainProps {

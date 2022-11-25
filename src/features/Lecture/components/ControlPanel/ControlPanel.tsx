@@ -9,19 +9,32 @@ import { StepType } from "src-ibl-lecture-master/variable_types/StepType";
 import { NextBtn } from "./NextBtn";
 import { PrevBtn } from "./PrevBtn";
 import { PlayBtn } from "./PlayBtn";
-import { ControlPanelL } from "./ControlPanelL";
-import { ControlPanelB } from "./ControlPanelB";
-import { ControlPanelA } from "./ControlPanelA";
+import { ReplayBtn } from "./ReplayBtn";
+import { PageBullet } from "./PageBullet";
+import { SIZE } from "../../../../data/SIZE";
 import { handleStep, getSeekStart } from "../../../../utils";
 import styled from "styled-components";
+const ImageLecture = new URL(
+  "../../../../assets/prod/lecture_panel_answer.png",
+  import.meta.url
+).toString();
 
 export interface ControlBarProps {
   onClickPrev: (progress: number) => void;
   className?: string;
 }
 
+/* lecture_panel.png */
 const Main = styled.div`
   display: flex;
+  width: ${SIZE.W}px;
+  height: 95px;
+  background-position: 0 -2009px;
+  background-image: url(${ImageLecture});
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 10px;
 `;
 
 /**
@@ -51,38 +64,45 @@ export const ControlPanel: FC<ControlBarProps> = ({
 
   return (
     <Main {...{ className }}>
-      <ControlPanelL
+      <PageBullet
         slideLen={slideData[slideData.length - 1].progress.slide}
         slideIndex={progress.slide}
         onClick={(slide) => setProgress({ slide })}
       />
-      <ControlPanelB>
-        <PrevBtn
-          onClick={() => {
-            setProgress({ slide: "prev" });
-            // スライドが最初の時にボタンを押すとタイトルに戻るようにしたいとのこと
-            onClickPrev(progress.slide);
-          }}
-        />
-        <PlayBtn
-          isPlay={playStatus === "PLAYING"}
-          onClick={() => {
-            if (playStatus === "PLAYING") {
-              setValue(
-                handleStep(getData(progress.slide, progress.step))(getSeekStart)
-              );
-              setPlayStatus("STOPPED");
-            } else {
-              setPlayStatus("PLAYING");
-            }
-          }}
-        />
-        <NextBtn
-          onClick={() => setProgress({ slide: "next" })}
-          isBlink={isBlink}
-        />
-      </ControlPanelB>
-      <ControlPanelA />
+      <PrevBtn
+        css="margin-left: 160px;"
+        onClick={() => {
+          setProgress({ slide: "prev" });
+          // スライドが最初の時にボタンを押すとタイトルに戻るようにしたいとのこと
+          onClickPrev(progress.slide);
+        }}
+      />
+      <PlayBtn
+        css="margin-left: 30px;"
+        isPlay={playStatus === "PLAYING"}
+        onClick={() => {
+          if (playStatus === "PLAYING") {
+            setValue(
+              handleStep(getData(progress.slide, progress.step))(getSeekStart)
+            );
+            setPlayStatus("STOPPED");
+          } else {
+            setPlayStatus("PLAYING");
+          }
+        }}
+      />
+      <NextBtn
+        {...{ isBlink }}
+        css="margin-left: 30px;"
+        onClick={() => setProgress({ slide: "next" })}
+      />
+      <ReplayBtn
+        css="margin-left: 130px;"
+        onClick={() => {
+          setProgress({ step: 1 });
+          setPlayStatus("PLAYING");
+        }}
+      />
     </Main>
   );
 };
