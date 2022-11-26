@@ -139,7 +139,7 @@ const animation_6 = css`
   }
 `;
 
-const Main = styled.div<StudentProps>`
+const Main = styled.div<Required<Pick<StudentProps, "animation">>>`
   width: 238px;
   height: 393px;
   background-image: url(${ ImageCommon });
