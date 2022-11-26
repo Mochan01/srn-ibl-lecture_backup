@@ -26,10 +26,10 @@ export const SeekBar: FC<SeekBarProps> = (props) => {
   const { state: value, setState: setValue } = useContext(SeekProviderContext);
   const { setState: setPlayStatus } = useContext(PlayStatusProviderContext);
   const onPointerDown = () => setPlayStatus("STOPPED");
-  const onPointerUp = (e) => {
+  const onPointerUp = (position: number) => {
     const seekStarts = handleStepArray(getData(progress.slide))(getSeekStarts);
     // シークバーの位置がデータ上のスタート位置（seekbar_start）より前にいくことがあり、その場合はundefinedが返る
-    let closest = seekStarts.filter((x) => x <= e).reverse()[0];
+    let closest = seekStarts.filter((x) => x <= position).reverse()[0];
     // なので、ここで補正する
     closest = typeof closest === "number" ? closest : seekStarts[0];
     let step = seekStarts.indexOf(closest) + 1;

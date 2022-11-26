@@ -1,4 +1,4 @@
-import React, { FC, Dispatch, SetStateAction } from "react";
+import React, { FC, Dispatch } from "react";
 import styled from "styled-components";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 import { SIZE } from "../../../../data/SIZE";
@@ -9,7 +9,7 @@ const ImageLecture = new URL(
 
 export interface RadixProps {
   value: number;
-  setValue: Dispatch<SetStateAction<number>>;
+  setValue: Dispatch<number>;
   className?: string;
   onPointerDown?: (value: number) => void;
   onPointerUp?: (value: number) => void;
