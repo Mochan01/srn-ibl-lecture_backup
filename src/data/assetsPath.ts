@@ -1,4 +1,4 @@
-export const assetsPath = {
+export const assetsPath: { [key in string]: string } = {
   "L1U1_0000_S1-01.png": new URL("../assets/L1U1_0000_S1-01.png", import.meta.url).toString(),
   "L1U1_0000_S2-01.png": new URL("../assets/L1U1_0000_S2-01.png", import.meta.url).toString(),
   "L1U1_0000_S3-01.png": new URL("../assets/L1U1_0000_S3-01.png", import.meta.url).toString(),
