@@ -2,33 +2,33 @@ import { StepType } from "src-ibl-lecture-master/types/StepType";
 
 type Callback = (arr: StepType[]) => StepType[];
 type Fil = (index: number) => Callback;
-export type GetStepData = (
-  slideIndex?: number,
-  stepIndex?: number
-) => StepType | StepType[];
+
+export interface GetStepData {
+  (): StepType[];
+  (slideIndex: number): StepType[];
+  (slideIndex: number, stepIndex: number): StepType;
+}
 
 /**
  * JSONデータを受け取る
  * @param data
  * @returns
  */
-export const handleJson: (data: object) => GetStepData =
-  (data) => (slideIndex, stepIndex) => {
-    const steps: StepType[] = data["steps"];
+export const handleJson: (
+  data: { [key in "steps"]: StepType[] }
+) => GetStepData = (data) => (slideIndex?: number, stepIndex?: number) => {
+  // 第一引数が空ならフィルターせずにそのまま返す
+  if (typeof slideIndex !== "number")
+    return data["steps"] as StepType & StepType[];
 
-    // 引数が空ならフィルターせずにそのまま返す
-    if (typeof slideIndex !== "number") return steps;
+  // 第一引数指定したらslideIndexでフィルターする
+  const slide = filBySlide(slideIndex)(data["steps"]);
 
-    // slideIndexを指定したらslideIndexでフィルターする
-    const slide = filBySlide(slideIndex)(steps);
-
-    // stepIndexを指定したらslideIndexとstepIndexでフィルターする
-    return typeof stepIndex === "number"
-      ? filByStep(stepIndex)(slide)[0]
-      : slide.length
-      ? slide
-      : void 0;
-  };
+  // 第二引数指定したらさらにstepIndexでフィルターする
+  return (
+    typeof stepIndex === "number" ? filByStep(stepIndex)(slide)[0] : slide
+  ) as StepType & StepType[];
+};
 
 /**
  * スライドを絞りこみ

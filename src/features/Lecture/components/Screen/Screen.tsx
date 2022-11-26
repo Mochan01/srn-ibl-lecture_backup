@@ -2,7 +2,6 @@ import React, { FC, useContext, useMemo, Fragment } from "react";
 import { Panel } from "./Panel";
 import { LectureFrame } from "./LectureFrame";
 import { QuizArea } from "./QuizArea";
-import { StepType } from "src-ibl-lecture-master/types/StepType";
 import {
   GetDataProviderContext,
   ProgressProviderContext,
@@ -30,9 +29,7 @@ export const Screen: FC<ScreenProps> = (props) => {
   );
   const slideData = useMemo(
     () =>
-      (getData(progress.slide) as StepType[]).filter(
-        (x) => x.progress.step <= progress.step
-      ),
+      getData(progress.slide).filter((x) => x.progress.step <= progress.step),
     [progress.slide, progress.step]
   );
 
