@@ -14,7 +14,7 @@ export const QUIZ_CHOICE_BTN = {
   /**
    * Question_button_incorrect.png
    */
-  GRAY: "0 -3643px"
+  GRAY: "0 -3403px"
 } as const;
 
 export const QUIZ_SIGN = {
@@ -25,7 +25,7 @@ export const QUIZ_SIGN = {
   /**
    * Wrong.png
    */
-  INCORRECT: "0 -3403px"
+  INCORRECT: "0 -3643px"
 } as const;
 
 type Mutation = typeof QUIZ_CHOICE_BTN[keyof typeof QUIZ_CHOICE_BTN];

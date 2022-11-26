@@ -78,7 +78,7 @@ export const Screen: FC<ScreenProps> = (props) => {
                       question.ans_4,
                     ].indexOf(true)}
                     $x={image.x_axis}
-                    $y={image.x_axis}
+                    $y={image.y_axis}
                     $width={image.width}
                     $height={image.height}
                   />

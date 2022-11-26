@@ -1,7 +1,8 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Title, TitleProps } from "./Title";
-import json from "../../assets/data/title1.json";
+import jsonData from "../../assets/data/title1.json";
+import { JsonData } from '../../types';
 
 export default {
   title: "features/Title",
@@ -14,5 +15,5 @@ export const sample: { args: TitleProps } = template.bind({});
 sample.args = {
   unitName: "unit00",
   unitTitle: "ダミーテキストダミーテキスト",
-  json,
+  json: jsonData as JsonData,
 };
