@@ -10,21 +10,18 @@ type Callback<T> = (data: StepType) => T;
  * @returns
  */
 export const handleStep =
-  (data: StepType | StepType[]) =>
-  <T>(callback: Callback<T>): T => {
-    if (Array.isArray(data)) return;
-    return callback(data);
-  };
+  (data: StepType) =>
+  <T>(callback: Callback<T>): T =>
+    callback(data);
 
 /**
- * questionsがあるstepなら4択の問題文を返す
+ * questionsがあるstepなら問題文を返す
  * @param step
  * @returns
  */
 export const getQuestion: Callback<string[]> = (data: StepType) => {
   const q = data.question as StepType["question"];
-  const result = _.compact([q.button_1, q.button_2, q.button_3, q.button_4]);
-  return result.length ? result : void 0;
+  return _.compact([q.button_1, q.button_2, q.button_3, q.button_4]);
 };
 
 /**

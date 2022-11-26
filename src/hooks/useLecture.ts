@@ -44,7 +44,7 @@ export const useLecture = () => {
     if (playStatus !== "CONTINUE") return;
 
     // ステップを自動で次に進めるか？判定
-    if (getStep(getQuestion)) return;
+    if (getStep(getQuestion).length) return;
 
     // ユーザーに「次ページ」ボタンの押下を促すので、
     // 次のスライドに進む前に停止する
