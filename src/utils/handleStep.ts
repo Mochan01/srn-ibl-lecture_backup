@@ -39,8 +39,8 @@ export const getIsResultStep: Callback<StepType["question"]["is_result_step"]> =
  * @param data
  * @returns
  */
-export const getNextStepIfCorrect: Callback<number> = (data: StepType) => {
-  return data.next_steps.if_correct.step;
+export const getNextStepIfCorrect: Callback<number | void> = (data: StepType) => {
+  return data.next_steps.if_correct && data.next_steps.if_correct.step;
 };
 
 /**
@@ -48,8 +48,8 @@ export const getNextStepIfCorrect: Callback<number> = (data: StepType) => {
  * @param data
  * @returns
  */
-export const getNextStepIfWrong: Callback<number> = (data: StepType) => {
-  return data.next_steps.if_wrong.step;
+export const getNextStepIfWrong: Callback<number | void> = (data: StepType) => {
+  return data.next_steps.if_wrong && data.next_steps.if_wrong.step;
 };
 
 /**

@@ -13,9 +13,10 @@ import {
   ProgressProviderContext,
 } from "../../stores";
 import { useLecture } from "../../hooks";
-import { Props } from "../../types";
+import { JsonData, MainComponentProps } from "../../types";
+import jsonData from "../../assets/data/title1.json";
 
-export interface TitleProps extends Props {
+export interface TitleProps extends MainComponentProps {
   onClickSkip?: () => void;
 }
 
@@ -78,7 +79,7 @@ export const Main: FC<TitleProps> = ({
   );
 };
 
-export const Title: FC<TitleProps> = ({ json, ...props }) => (
+export const Title: FC<TitleProps> = ({ json = jsonData as JsonData, ...props }) => (
   <LectureProvider {...{ json }}>
     <Main {...props} />
   </LectureProvider>

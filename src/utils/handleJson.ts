@@ -1,4 +1,5 @@
 import { StepType } from "src-ibl-lecture-master/types/StepType";
+import { JsonData } from "../types";
 
 type Callback = (arr: StepType[]) => StepType[];
 type Fil = (index: number) => Callback;
@@ -14,21 +15,20 @@ export interface GetStepData {
  * @param data
  * @returns
  */
-export const handleJson: (
-  data: { [key in "steps"]: StepType[] }
-) => GetStepData = (data) => (slideIndex?: number, stepIndex?: number) => {
-  // 第一引数が空ならフィルターせずにそのまま返す
-  if (typeof slideIndex !== "number")
-    return data["steps"] as StepType & StepType[];
+export const handleJson: (data: JsonData) => GetStepData =
+  (data) => (slideIndex?: number, stepIndex?: number) => {
+    // 第一引数が空ならフィルターせずにそのまま返す
+    if (typeof slideIndex !== "number")
+      return data["steps"] as StepType & StepType[];
 
-  // 第一引数指定したらslideIndexでフィルターする
-  const slide = filBySlide(slideIndex)(data["steps"]);
+    // 第一引数指定したらslideIndexでフィルターする
+    const slide = filBySlide(slideIndex)(data["steps"]);
 
-  // 第二引数指定したらさらにstepIndexでフィルターする
-  return (
-    typeof stepIndex === "number" ? filByStep(stepIndex)(slide)[0] : slide
-  ) as StepType & StepType[];
-};
+    // 第二引数指定したらさらにstepIndexでフィルターする
+    return (
+      typeof stepIndex === "number" ? filByStep(stepIndex)(slide)[0] : slide
+    ) as StepType & StepType[];
+  };
 
 /**
  * スライドを絞りこみ

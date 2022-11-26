@@ -20,10 +20,10 @@ const VOLUME = 0.7;
  * @returns
  */
 export const useAudio = (
-  audio: string,
+  audio?: string,
   { onload, volume = VOLUME }: UseAudio = { volume: VOLUME }
 ) => {
-  const [play] = useSound(assetsPath[audio], { onload, volume });
+  const [play] = useSound(audio ? assetsPath[audio] : "", { onload, volume });
   const stop = () => typeof Howler === "object" && Howler.stop();
   return [play, stop];
 };

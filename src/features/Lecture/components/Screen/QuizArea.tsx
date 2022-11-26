@@ -24,10 +24,10 @@ import { useAudio, useGetRefSize } from "../../../../hooks";
 export interface QuizAreaProps {
   questions: string[];
   correctIndex: number;
-  $x: number;
-  $y: number;
-  $width: number;
-  $height: number;
+  $x?: number;
+  $y?: number;
+  $width?: number;
+  $height?: number;
   onAnswer?: (isCorrect: boolean) => void;
 }
 
@@ -68,10 +68,10 @@ const AnswerBtn = styled(QuizAnswerBtn)<IsMaxLen>(
 export const QuizArea: FC<QuizAreaProps> = ({
   questions,
   correctIndex,
-  $x,
-  $y,
-  $width,
-  $height,
+  $x = 0,
+  $y = 0,
+  $width = 0,
+  $height = 0,
   onAnswer = () => {},
 }) => {
   // 解答ボタン 状態管理

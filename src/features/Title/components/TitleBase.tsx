@@ -1,12 +1,12 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
-import { Props } from "../../../types";
+import { MainComponentProps } from "../../../types";
 const ImageTitle = new URL(
   "../../../assets/prod/lecture_title.png",
   import.meta.url
 ).toString();
 
-export interface TitleBaseProps extends Pick<Props, "unitName" | "unitTitle"> {
+export interface TitleBaseProps extends Pick<MainComponentProps, "unitName" | "unitTitle"> {
   onClickStart?: () => void;
   onClickSkip?: () => void;
   className?: string;

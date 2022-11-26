@@ -8,10 +8,11 @@ import {
   PlayStatusProviderProps,
 } from "./providers";
 import { handleJson } from "../utils";
+import { JsonData } from '../types';
 
 interface LectureProviderProps
   extends Pick<PlayStatusProviderProps, "isPlaying"> {
-  json: object;
+  json: JsonData;
   children: ReactNode;
 }
 

@@ -6,8 +6,7 @@
               "step": 1
           },
           "narrative": {
-              "narration": "ハーイ、今日も私のラボにようこそ。",
-              "speech": null
+              "narration": "ハーイ、今日も私のラボにようこそ。"
           },
           "audio": {
               "mp3": "ST_L1U2_01.mp3",
@@ -20,39 +19,19 @@
               "teacher": "animation_2",
               "student": "animation_1"
           },
-          "image": {
-              "display_object_1": null,
-              "display_file": null,
-              "slideshow_width": 0,
-              "slide_show_height": 0,
-              "width": 0,
-              "height": 0,
-              "x_axis": 0,
-              "y_axis": 0
-          },
           "question": {
-              "button_1": null,
-              "ans_1": null,
-              "button_2": null,
-              "ans_2": null,
-              "button_3": null,
-              "ans_3": null,
-              "button_4": null,
-              "ans_4": null,
-              "is_result_step": null
-          },
-          "motion": {
-              "motion_1": null,
-              "motion_2": null
+              "ans_1": false,
+              "ans_2": false,
+              "ans_3": false,
+              "ans_4": false,
+              "is_result_step": false
           },
           "next_steps": {
               "next_step": "audio_end",
               "go_to": {
                   "slide": 1,
                   "step": 2
-              },
-              "if_correct": null,
-              "if_wrong": null
+              }
           }
       },
       {
@@ -61,8 +40,7 @@
               "step": 2
           },
           "narrative": {
-              "narration": "前回、初めてのグループワークはどうだった？",
-              "speech": null
+              "narration": "前回、初めてのグループワークはどうだった？"
           },
           "audio": {
               "mp3": "ST_L1U2_02.mp3",
@@ -75,39 +53,19 @@
               "teacher": "animation_2",
               "student": "animation_1"
           },
-          "image": {
-              "display_object_1": null,
-              "display_file": null,
-              "slideshow_width": 0,
-              "slide_show_height": 0,
-              "width": 0,
-              "height": 0,
-              "x_axis": 0,
-              "y_axis": 0
-          },
           "question": {
-              "button_1": null,
-              "ans_1": null,
-              "button_2": null,
-              "ans_2": null,
-              "button_3": null,
-              "ans_3": null,
-              "button_4": null,
-              "ans_4": null,
-              "is_result_step": null
-          },
-          "motion": {
-              "motion_1": null,
-              "motion_2": null
+              "ans_1": false,
+              "ans_2": false,
+              "ans_3": false,
+              "ans_4": false,
+              "is_result_step": false
           },
           "next_steps": {
               "next_step": "audio_end",
               "go_to": {
                   "slide": 1,
                   "step": 3
-              },
-              "if_correct": null,
-              "if_wrong": null
+              }
           }
       },
       {
@@ -116,8 +74,7 @@
               "step": 3
           },
           "narrative": {
-              "narration": "使われなくなった人工衛星や、打ち上げ時に使用したロケットの一部が、宇宙空間でどうなるのかってことを考えてもらったわね。",
-              "speech": null
+              "narration": "使われなくなった人工衛星や、打ち上げ時に使用したロケットの一部が、宇宙空間でどうなるのかってことを考えてもらったわね。"
           },
           "audio": {
               "mp3": "ST_L1U2_03.mp3",
@@ -130,39 +87,19 @@
               "teacher": "animation_2",
               "student": "animation_1"
           },
-          "image": {
-              "display_object_1": null,
-              "display_file": null,
-              "slideshow_width": 0,
-              "slide_show_height": 0,
-              "width": 0,
-              "height": 0,
-              "x_axis": 0,
-              "y_axis": 0
-          },
           "question": {
-              "button_1": null,
-              "ans_1": null,
-              "button_2": null,
-              "ans_2": null,
-              "button_3": null,
-              "ans_3": null,
-              "button_4": null,
-              "ans_4": null,
-              "is_result_step": null
-          },
-          "motion": {
-              "motion_1": null,
-              "motion_2": null
+              "ans_1": false,
+              "ans_2": false,
+              "ans_3": false,
+              "ans_4": false,
+              "is_result_step": false
           },
           "next_steps": {
               "next_step": "audio_end",
               "go_to": {
                   "slide": 1,
                   "step": 4
-              },
-              "if_correct": null,
-              "if_wrong": null
+              }
           }
       },
       {
@@ -171,8 +108,7 @@
               "step": 4
           },
           "narrative": {
-              "narration": "今日は、その課題について、取り組まれていることも解説していくの。",
-              "speech": null
+              "narration": "今日は、その課題について、取り組まれていることも解説していくの。"
           },
           "audio": {
               "mp3": "ST_L1U2_04.mp3",
@@ -185,39 +121,19 @@
               "teacher": "animation_2",
               "student": "animation_1"
           },
-          "image": {
-              "display_object_1": null,
-              "display_file": null,
-              "slideshow_width": 0,
-              "slide_show_height": 0,
-              "width": 0,
-              "height": 0,
-              "x_axis": 0,
-              "y_axis": 0
-          },
           "question": {
-              "button_1": null,
-              "ans_1": null,
-              "button_2": null,
-              "ans_2": null,
-              "button_3": null,
-              "ans_3": null,
-              "button_4": null,
-              "ans_4": null,
-              "is_result_step": null
-          },
-          "motion": {
-              "motion_1": null,
-              "motion_2": null
+              "ans_1": false,
+              "ans_2": false,
+              "ans_3": false,
+              "ans_4": false,
+              "is_result_step": false
           },
           "next_steps": {
               "next_step": "audio_end",
               "go_to": {
                   "slide": 1,
                   "step": 5
-              },
-              "if_correct": null,
-              "if_wrong": null
+              }
           }
       },
       {
@@ -226,8 +142,7 @@
               "step": 5
           },
           "narrative": {
-              "narration": "あとね、実は人工衛星は、遠い宇宙の話じゃなくて、とても身近な存在だってことも紹介していくわ。",
-              "speech": null
+              "narration": "あとね、実は人工衛星は、遠い宇宙の話じゃなくて、とても身近な存在だってことも紹介していくわ。"
           },
           "audio": {
               "mp3": "ST_L1U2_05.mp3",
@@ -240,39 +155,19 @@
               "teacher": "animation_2",
               "student": "animation_1"
           },
-          "image": {
-              "display_object_1": null,
-              "display_file": null,
-              "slideshow_width": 0,
-              "slide_show_height": 0,
-              "width": 0,
-              "height": 0,
-              "x_axis": 0,
-              "y_axis": 0
-          },
           "question": {
-              "button_1": null,
-              "ans_1": null,
-              "button_2": null,
-              "ans_2": null,
-              "button_3": null,
-              "ans_3": null,
-              "button_4": null,
-              "ans_4": null,
-              "is_result_step": null
-          },
-          "motion": {
-              "motion_1": null,
-              "motion_2": null
+              "ans_1": false,
+              "ans_2": false,
+              "ans_3": false,
+              "ans_4": false,
+              "is_result_step": false
           },
           "next_steps": {
               "next_step": "audio_end",
               "go_to": {
                   "slide": 1,
                   "step": 6
-              },
-              "if_correct": null,
-              "if_wrong": null
+              }
           }
       },
       {
@@ -281,8 +176,7 @@
               "step": 6
           },
           "narrative": {
-              "narration": "それじゃ、２回目のオリエンテーション、スタートよ！",
-              "speech": null
+              "narration": "それじゃ、２回目のオリエンテーション、スタートよ！"
           },
           "audio": {
               "mp3": "ST_L1U2_06.mp3",
@@ -295,36 +189,15 @@
               "teacher": "animation_2",
               "student": "animation_1"
           },
-          "image": {
-              "display_object_1": null,
-              "display_file": null,
-              "slideshow_width": 0,
-              "slide_show_height": 0,
-              "width": 0,
-              "height": 0,
-              "x_axis": 0,
-              "y_axis": 0
-          },
           "question": {
-              "button_1": null,
-              "ans_1": null,
-              "button_2": null,
-              "ans_2": null,
-              "button_3": null,
-              "ans_3": null,
-              "button_4": null,
-              "ans_4": null,
-              "is_result_step": null
-          },
-          "motion": {
-              "motion_1": null,
-              "motion_2": null
+              "ans_1": false,
+              "ans_2": false,
+              "ans_3": false,
+              "ans_4": false,
+              "is_result_step": false
           },
           "next_steps": {
-              "next_step": "slide_end",
-              "go_to": null,
-              "if_correct": null,
-              "if_wrong": null
+              "next_step": "slide_end"
           }
       }
   ]

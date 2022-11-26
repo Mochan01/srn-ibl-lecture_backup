@@ -14,12 +14,13 @@ import { Characters } from "../../elements/Characters";
 import styled, { css } from "styled-components";
 import { CloseBtn } from "../../elements/CloseBtn";
 import { Container } from "../../elements/Container";
-import { Props } from "../../types";
+import { JsonData, MainComponentProps } from "../../types";
 import { PlayStatusProviderProps } from "../../stores/providers";
+import jsonData from "../../assets/data/lecture1.json";
 
 export interface LectureProps
   extends ControlBarProps,
-    Props,
+    MainComponentProps,
     Pick<PlayStatusProviderProps, "isPlaying"> {}
 
 const Wrapper = styled.div`
@@ -77,7 +78,11 @@ const Main: FC<LectureProps> = ({
   );
 };
 
-export const Lecture: FC<LectureProps> = ({ json, isPlaying, ...props }) => (
+export const Lecture: FC<LectureProps> = ({
+  json = jsonData as JsonData,
+  isPlaying,
+  ...props
+}) => (
   <LectureProvider {...{ json, isPlaying }}>
     <Main {...props} />
   </LectureProvider>

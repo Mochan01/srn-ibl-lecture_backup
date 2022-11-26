@@ -13,10 +13,10 @@ import {
   getNextStepIfCorrect,
   getNextStepIfWrong,
 } from "../../../../utils";
-import { Props } from "../../../../types";
+import { MainComponentProps } from "../../../../types";
 import { assetsPath } from "../../../../data/assetsPath";
 
-export interface ScreenProps extends Pick<Props, "unitName" | "unitTitle"> {}
+export interface ScreenProps extends Pick<MainComponentProps, "unitName" | "unitTitle"> {}
 
 /**
  * スライドの画面部分
@@ -39,6 +39,12 @@ export const Screen: FC<ScreenProps> = (props) => {
     const step = handleStep(getData(progress.slide, progress.step))(
       isCorrect ? getNextStepIfCorrect : getNextStepIfWrong
     );
+
+    if (!step) {
+      console.error("Next step was undefined.");
+      return;
+    }
+
     setProgress({ step });
     setPlayStatus("PLAYING");
   };
@@ -48,35 +54,37 @@ export const Screen: FC<ScreenProps> = (props) => {
       {slideData &&
         slideData.map(({ image, motion, question }, i) => (
           <Fragment key={i}>
-            <Panel
-              css="position: absolute;"
-              image={assetsPath[image.display_file]}
-              motion1={motion.motion_1}
-              motion2={motion.motion_2}
-            >
-              {/* 回答ステップなら */}
-              {image.display_object_1 === "question_area" && (
-                <QuizArea
-                  {...{ onAnswer }}
-                  questions={_.compact([
-                    question.button_1,
-                    question.button_2,
-                    question.button_3,
-                    question.button_4,
-                  ])}
-                  correctIndex={[
-                    question.ans_1,
-                    question.ans_2,
-                    question.ans_3,
-                    question.ans_4,
-                  ].indexOf(true)}
-                  $x={image.x_axis}
-                  $y={image.x_axis}
-                  $width={image.width}
-                  $height={image.height}
-                />
-              )}
-            </Panel>
+            {image && (
+              <Panel
+                css="position: absolute;"
+                image={image.display_file && assetsPath[image.display_file]}
+                motion1={motion && motion.motion_1}
+                motion2={motion && motion.motion_2}
+              >
+                {/* 回答ステップなら */}
+                {image.display_object_1 === "question_area" && (
+                  <QuizArea
+                    {...{ onAnswer }}
+                    questions={_.compact([
+                      question.button_1,
+                      question.button_2,
+                      question.button_3,
+                      question.button_4,
+                    ])}
+                    correctIndex={[
+                      question.ans_1,
+                      question.ans_2,
+                      question.ans_3,
+                      question.ans_4,
+                    ].indexOf(true)}
+                    $x={image.x_axis}
+                    $y={image.x_axis}
+                    $width={image.width}
+                    $height={image.height}
+                  />
+                )}
+              </Panel>
+            )}
           </Fragment>
         ))}
     </LectureFrame>
