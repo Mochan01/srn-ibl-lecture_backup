@@ -45,14 +45,6 @@ export const Main: FC<TitleProps> = ({
               right: 62px;
             `}
           />
-          <CloseBtn
-            css={css`
-              position: absolute;
-              top: 20px;
-              right: 62px;
-            `}
-            onClick={onClickClose}
-          />
           <Characters
             css={css`
               position: absolute;
@@ -73,13 +65,24 @@ export const Main: FC<TitleProps> = ({
             onClickStart={() => setPlayStatus("PLAYING")}
             {...{ unitName, unitTitle, onClickSkip }}
           />
+          <CloseBtn
+            css={css`
+              position: absolute;
+              top: 20px;
+              right: 62px;
+            `}
+            onClick={onClickClose}
+          />
         </Container>
       </ScaleWrapper>
     </>
   );
 };
 
-export const Title: FC<TitleProps> = ({ json = jsonData as JsonData, ...props }) => (
+export const Title: FC<TitleProps> = ({
+  json = jsonData as JsonData,
+  ...props
+}) => (
   <LectureProvider {...{ json }}>
     <Main {...props} />
   </LectureProvider>
