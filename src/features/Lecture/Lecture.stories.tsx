@@ -15,8 +15,8 @@ export const sample: { args: LectureProps } = template.bind({});
 sample.args = {
   unitName: "unit00",
   unitTitle: "ダミーテキストダミーテキスト",
-  onClickPrev: (progress) => {
-    console.log(`onClickPrev: ${progress}`);
+  onLectureLeave: (key) => {
+    console.log(`onLectureLeave: ${ key }`);
   },
   onClickClose: () => {
     console.log("onClickClose");

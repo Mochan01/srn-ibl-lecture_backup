@@ -3,7 +3,7 @@ import { MiniBtn, MiniBtnProps } from "./MiniBtn";
 import { useTimer } from "use-timer";
 
 export interface NextBtnProps
-  extends Pick<MiniBtnProps, "onClick" | "className"> {
+  extends Pick<MiniBtnProps, "onClick" | "className" | "caption"> {
   isBlink?: boolean;
 }
 
@@ -23,7 +23,6 @@ export const NextBtn: FC<NextBtnProps> = ({ isBlink, ...props }) => {
     <MiniBtn
       {...props}
       {...{ variant }}
-      caption="次ページ"
       hoverVariant="nextOff"
     />
   );

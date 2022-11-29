@@ -20,7 +20,7 @@ const ImageLecture = new URL(
 ).toString();
 
 export interface ControlBarProps {
-  onClickPrev: (progress: number) => void;
+  onLectureLeave: (key: "begin" | "end") => void;
   className?: string;
 }
 
@@ -41,7 +41,7 @@ const Main = styled.div`
  * コントロールパネル
  */
 export const ControlPanel: FC<ControlBarProps> = ({
-  onClickPrev,
+  onLectureLeave,
   className,
 }) => {
   const { state: progress, setState: setProgress } = useContext(
@@ -51,13 +51,23 @@ export const ControlPanel: FC<ControlBarProps> = ({
     PlayStatusProviderContext
   );
 
-  // ステップの最後に達したらボタンを光らせる
   const getData = useContext(GetDataProviderContext);
+  const isFirstSlide = useMemo(() => {
+    return !getData(progress.slide - 1).length;
+  }, [progress.slide]);
+  
+  // スライドの最後に達したら「次へ」ボタンの文言を変える
+  const isLastSlide = useMemo(() => {
+    return !getData(progress.slide + 1).length;
+  }, [progress.slide]);
+
+  // ステップの最後に達したらボタンを光らせる
+  const isLastStep = useMemo(() => {
+    return !getData(progress.slide, progress.step + 1);
+  }, [progress.slide, progress.step]);
   const isBlink = useMemo(() => {
-    return (
-      !getData(progress.slide, progress.step + 1) && playStatus === "CONTINUE"
-    );
-  }, [progress.slide, progress.step, playStatus]);
+    return isLastStep && playStatus === "CONTINUE";
+  }, [isLastStep, playStatus]);
 
   const slideData = useMemo(() => getData(), []) as StepType[];
   const { setState: setValue } = useContext(SeekProviderContext);
@@ -72,9 +82,12 @@ export const ControlPanel: FC<ControlBarProps> = ({
       <PrevBtn
         css="margin-left: 160px;"
         onClick={() => {
+          if (isFirstSlide) {
+            // スライドが最初の時にボタンを押すとタイトルに戻るようにしたいとのこと
+            onLectureLeave("begin");
+            return;
+          }
           setProgress({ slide: "prev" });
-          // スライドが最初の時にボタンを押すとタイトルに戻るようにしたいとのこと
-          onClickPrev(progress.slide);
         }}
       />
       <PlayBtn
@@ -94,7 +107,13 @@ export const ControlPanel: FC<ControlBarProps> = ({
       <NextBtn
         {...{ isBlink }}
         css="margin-left: 30px;"
+        caption={ isLastSlide ? "レクチャーを終了" : "次ページ" }
         onClick={() => {
+          if (isLastSlide) {
+            // スライドが最後の時にボタンを押すとレクチャーを終了させたいとのこと
+            onLectureLeave("end");
+            return;
+          }
           setProgress({ slide: "next" });
           playStatus === "CONTINUE" && setPlayStatus("PLAYING");
         }}

@@ -35,7 +35,7 @@ const Wrapper = styled.div`
 `;
 
 const Main: FC<LectureProps> = ({
-  onClickPrev,
+  onLectureLeave,
   onClickClose,
   unitName,
   unitTitle,
@@ -70,7 +70,7 @@ const Main: FC<LectureProps> = ({
           <Wrapper>
             <Screen {...{ unitName, unitTitle }} />
             <SeekBar />
-            <ControlPanel {...{ onClickPrev }} />
+            <ControlPanel {...{ onLectureLeave }} />
           </Wrapper>
         </Container>
       </ScaleWrapper>
