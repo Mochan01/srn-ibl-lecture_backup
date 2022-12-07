@@ -1,4 +1,4 @@
-import { StepType } from "src-ibl-lecture-master/types/StepType";
+import { Progress, StepType } from "src-ibl-lecture-master/types/StepType";
 
 type Callback<T> = (data: StepType) => T;
 
@@ -34,6 +34,14 @@ export const getIsResultStep: Callback<StepType["question"]["is_result_step"]> =
   (data: StepType) => {
     return data.question.is_result_step;
   };
+
+/**
+ * 次に進むスライドとステップを取得する
+ * @param data
+ * @returns
+ */
+export const getGoTo: Callback<Progress | void> = (data: StepType) =>
+  data.next_steps.go_to;
 
 /**
  * クイズで正解だった時のために、次に進むステップを取得する

@@ -1,18 +1,15 @@
-import React, { FC, createContext, ReactNode, Dispatch } from "react";
-import { useProgress, State, Action } from "../../hooks/useProgress";
-import { GetStepData } from "../../utils";
+import React, { FC, createContext, ReactNode, Dispatch, useState, SetStateAction } from "react";
+import { Progress } from "src-ibl-lecture-master/types/StepType";
 
-interface Props {
-  getData: GetStepData;
+interface ProgressProviderProps {
   children: ReactNode;
 }
 
-type ContextState = { state: State; setState: Dispatch<Action> };
+type ContextState = { state: Progress; setState: Dispatch<SetStateAction<Progress>> };
 export const ProgressProviderContext = createContext<ContextState>({} as ContextState);
 
-export const ProgressProvider: FC<Props> = ({ getData, children }) => {
-  const [state, setState] = useProgress(getData);
-
+export const ProgressProvider: FC<ProgressProviderProps> = ({ children }) => {
+  const [state, setState] = useState<Progress>({ slide: 1, step: 1 });
   return (
     <ProgressProviderContext.Provider value={{ state, setState }}>
       {children}

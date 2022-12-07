@@ -14,6 +14,7 @@ import {
   getLength,
   getSeekStart,
   getQuestion,
+  getGoTo,
 } from "../utils";
 import { useTimer } from "use-timer";
 
@@ -50,7 +51,16 @@ export const useLecture = () => {
     // 次のスライドに進む前に停止する
     if (!getData(progress.slide, progress.step + 1)) return;
 
-    setProgress({ step: "next" });
+    const nextProgress = handleStep(getData(progress.slide, progress.step))(
+      getGoTo
+    );
+
+    if (!nextProgress) {
+      console.error("The property 'go_to' was undefined on the JSON.");
+      return;
+    }
+
+    setProgress(nextProgress);
     setPlayStatus("PLAYING");
   }, [playStatus]);
 

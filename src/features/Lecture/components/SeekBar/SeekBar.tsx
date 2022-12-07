@@ -37,8 +37,9 @@ export const SeekBar: FC<SeekBarProps> = (props) => {
     // 結果発表ステップでは止まらないようにする
     // https://www.notion.so/1ca89cdacc8a4907b2894b2c29d86ba8#28d778653c7641a8863de578b7bebe46
     const getIsResultStep = (step: number) => {
-      return !!(getData(progress.slide, step) as StepType).question.is_result_step;
-    }
+      return !!(getData(progress.slide, step) as StepType).question
+        .is_result_step;
+    };
     // 結果発表ステップならその一個前のstepに止める
     if (getIsResultStep(step)) {
       step = step - 1;
@@ -47,7 +48,7 @@ export const SeekBar: FC<SeekBarProps> = (props) => {
     }
 
     // 現在の進捗の決定
-    setProgress({ step });
+    setProgress((s) => ({ ...s, step }));
     setPlayStatus("PLAYING");
   };
 

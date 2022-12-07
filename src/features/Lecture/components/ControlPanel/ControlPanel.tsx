@@ -55,7 +55,7 @@ export const ControlPanel: FC<ControlBarProps> = ({
   const isFirstSlide = useMemo(() => {
     return !getData(progress.slide - 1).length;
   }, [progress.slide]);
-  
+
   // スライドの最後に達したら「次へ」ボタンの文言を変える
   const isLastSlide = useMemo(() => {
     return !getData(progress.slide + 1).length;
@@ -77,7 +77,7 @@ export const ControlPanel: FC<ControlBarProps> = ({
       <PageBullet
         slideLen={slideData[slideData.length - 1].progress.slide}
         slideIndex={progress.slide}
-        onClick={(slide) => setProgress({ slide })}
+        onClick={(slide) => setProgress({ step: 1, slide })}
       />
       <PrevBtn
         css="margin-left: 160px;"
@@ -87,7 +87,7 @@ export const ControlPanel: FC<ControlBarProps> = ({
             onLectureLeave("begin");
             return;
           }
-          setProgress({ slide: "prev" });
+          setProgress((s) => ({ step: 1, slide: s.slide - 1 }));
         }}
       />
       <PlayBtn
@@ -107,21 +107,21 @@ export const ControlPanel: FC<ControlBarProps> = ({
       <NextBtn
         {...{ isBlink }}
         css="margin-left: 30px;"
-        caption={ isLastSlide ? "レクチャーを終了" : "次ページ" }
+        caption={isLastSlide ? "レクチャーを終了" : "次ページ"}
         onClick={() => {
           if (isLastSlide) {
             // スライドが最後の時にボタンを押すとレクチャーを終了させたいとのこと
             onLectureLeave("end");
             return;
           }
-          setProgress({ slide: "next" });
+          setProgress((s) => ({ step: 1, slide: s.slide + 1 }));
           playStatus === "CONTINUE" && setPlayStatus("PLAYING");
         }}
       />
       <ReplayBtn
         css="margin-left: 130px;"
         onClick={() => {
-          setProgress({ step: 1 });
+          setProgress((s) => ({ ...s, step: 1 }));
           setPlayStatus("PLAYING");
         }}
       />

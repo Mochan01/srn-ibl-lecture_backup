@@ -45,7 +45,7 @@ export const Screen: FC<ScreenProps> = (props) => {
       return;
     }
 
-    setProgress({ step });
+    setProgress((s) => ({ ...s, step }));
     setPlayStatus("PLAYING");
   };
 
