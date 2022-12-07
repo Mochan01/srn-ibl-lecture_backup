@@ -15,10 +15,6 @@ import {
   QUIZ_CHOICE_BTN,
 } from "./QuizChoiceBtn";
 import { SIZE } from "../../../../data/SIZE";
-const quiz_correct = new URL(
-  "../../../../assets/prod/quiz_correct.mp3",
-  import.meta.url
-).toString();
 import { useAudio, useGetRefSize } from "../../../../hooks";
 
 export interface QuizAreaProps {
@@ -81,7 +77,7 @@ export const QuizArea: FC<QuizAreaProps> = ({
   const [chooseIndex, setChooseIndex] = useState<number>();
 
   // 正解音
-  const [play] = useAudio(quiz_correct, { volume: 0.4 });
+  const [play] = useAudio("quiz_correct.mp3", { volume: 0.4 });
 
   // 解答ボタン 状態管理
   useEffect(() => {
