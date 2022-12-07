@@ -5,7 +5,7 @@ interface Props {
 }
 
 type ContextState = { state: boolean; setState: Dispatch<boolean> };
-export const AudioLoadingProviderContext = createContext<ContextState>(null);
+export const AudioLoadingProviderContext = createContext<ContextState>({} as ContextState);
 
 export const AudioLoadingProvider: FC<Props> = ({ children }) => {
   const [state, setState] = useState(false);

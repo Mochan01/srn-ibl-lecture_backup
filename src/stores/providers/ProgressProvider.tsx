@@ -8,7 +8,7 @@ interface Props {
 }
 
 type ContextState = { state: State; setState: Dispatch<Action> };
-export const ProgressProviderContext = createContext<ContextState>(null);
+export const ProgressProviderContext = createContext<ContextState>({} as ContextState);
 
 export const ProgressProvider: FC<Props> = ({ getData, children }) => {
   const [state, setState] = useProgress(getData);

@@ -7,7 +7,7 @@ export interface PlayStatusProviderProps {
 
 type State = "PLAYING" | "CONTINUE" | "STOPPED";
 type ContextState = { state: State; setState: Dispatch<State> };
-export const PlayStatusProviderContext = createContext<ContextState>(null);
+export const PlayStatusProviderContext = createContext<ContextState>({} as ContextState);
 
 export const PlayStatusProvider: FC<PlayStatusProviderProps> = ({ children, isPlaying = false }) => {
   const [state, setState] = useState<State>(isPlaying ? "PLAYING" : "STOPPED");
