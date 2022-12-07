@@ -7,7 +7,6 @@ import {
   ProgressProviderContext,
   PlayStatusProviderContext,
 } from "../../../../stores/providers";
-import _ from "lodash";
 import {
   handleStep,
   getNextStepIfCorrect,
@@ -16,7 +15,8 @@ import {
 import { MainComponentProps } from "../../../../types";
 import { assetsPath } from "../../../../data/assetsPath";
 
-export interface ScreenProps extends Pick<MainComponentProps, "unitName" | "unitTitle"> {}
+export interface ScreenProps
+  extends Pick<MainComponentProps, "unitName" | "unitTitle"> {}
 
 /**
  * スライドの画面部分
@@ -65,12 +65,14 @@ export const Screen: FC<ScreenProps> = (props) => {
                 {image.display_object_1 === "question_area" && (
                   <QuizArea
                     {...{ onAnswer }}
-                    questions={_.compact([
-                      question.button_1,
-                      question.button_2,
-                      question.button_3,
-                      question.button_4,
-                    ])}
+                    questions={
+                      [
+                        question.button_1,
+                        question.button_2,
+                        question.button_3,
+                        question.button_4,
+                      ].filter(Boolean) as string[]
+                    }
                     correctIndex={[
                       question.ans_1,
                       question.ans_2,

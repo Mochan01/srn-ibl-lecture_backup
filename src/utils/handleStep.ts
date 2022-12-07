@@ -1,5 +1,4 @@
 import { StepType } from "src-ibl-lecture-master/types/StepType";
-import _ from "lodash";
 
 type Callback<T> = (data: StepType) => T;
 
@@ -21,7 +20,9 @@ export const handleStep =
  */
 export const getQuestion: Callback<string[]> = (data: StepType) => {
   const q = data.question as StepType["question"];
-  return _.compact([q.button_1, q.button_2, q.button_3, q.button_4]);
+  return [q.button_1, q.button_2, q.button_3, q.button_4].filter(
+    Boolean
+  ) as string[];
 };
 
 /**
@@ -39,7 +40,9 @@ export const getIsResultStep: Callback<StepType["question"]["is_result_step"]> =
  * @param data
  * @returns
  */
-export const getNextStepIfCorrect: Callback<number | void> = (data: StepType) => {
+export const getNextStepIfCorrect: Callback<number | void> = (
+  data: StepType
+) => {
   return data.next_steps.if_correct && data.next_steps.if_correct.step;
 };
 
