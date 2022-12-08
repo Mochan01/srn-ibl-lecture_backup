@@ -5,7 +5,7 @@ import { useEffect, useState, useRef, RefObject } from "react";
  * @returns [ref, 幅, 高]
  */
 export const useGetRefSize = <T>(): [RefObject<T>, number, number] => {
-  const ref = useRef();
+  const ref = useRef(null);
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
 
