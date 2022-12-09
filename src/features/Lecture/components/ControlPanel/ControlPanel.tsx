@@ -5,7 +5,7 @@ import {
   PlayStatusProviderContext,
   SeekProviderContext,
 } from "../../../../stores/providers";
-import { StepType } from "src-ibl-lecture-master/types/StepType";
+import { StepType } from "src-ibl-lecture-master/types/stepType";
 import { NextBtn } from "./NextBtn";
 import { PrevBtn } from "./PrevBtn";
 import { PlayBtn } from "./PlayBtn";

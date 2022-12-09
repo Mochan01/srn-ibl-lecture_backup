@@ -1,4 +1,4 @@
-import { StepType } from "src-ibl-lecture-master/types/StepType";
+import { StepType } from "src-ibl-lecture-master/types/stepType";
 import { JsonData } from "../types";
 
 type Callback = (arr: StepType[]) => StepType[];

@@ -1,4 +1,4 @@
-import { StepType } from "src-ibl-lecture-master/types/StepType";
+import { StepType } from "src-ibl-lecture-master/types/stepType";
 
 type Callback<T> = (data: StepType[]) => T;
 

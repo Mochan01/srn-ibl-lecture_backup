@@ -1,5 +1,5 @@
 import React, { FC, createContext, ReactNode, Dispatch, useState, SetStateAction } from "react";
-import { Progress } from "src-ibl-lecture-master/types/StepType";
+import { Progress } from "src-ibl-lecture-master/types/stepType";
 
 interface ProgressProviderProps {
   children: ReactNode;
