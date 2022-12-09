@@ -4,8 +4,8 @@ import { LectureFrame } from "./LectureFrame";
 import { QuizArea } from "./QuizArea";
 import {
   GetDataProviderContext,
-  ProgressProviderContext,
-  PlayStatusProviderContext,
+  GlobalDispatchContext,
+  GlobalStateContext,
 } from "../../../../stores/providers";
 import {
   handleStep,
@@ -24,9 +24,9 @@ export interface ScreenProps
 export const Screen: FC<ScreenProps> = (props) => {
   //　スライドのデータを取得
   const getData = useContext(GetDataProviderContext);
-  const { state: progress, setState: setProgress } = useContext(
-    ProgressProviderContext
-  );
+  const { progress } = useContext(GlobalStateContext);
+  const dispatch = useContext(GlobalDispatchContext);
+
   const slideData = useMemo(
     () =>
       getData(progress.slide).filter((x) => x.progress.step <= progress.step),
@@ -34,7 +34,6 @@ export const Screen: FC<ScreenProps> = (props) => {
   );
 
   // 回答ボタンを押したときの処理
-  const { setState: setPlayStatus } = useContext(PlayStatusProviderContext);
   const onAnswer = (isCorrect: boolean) => {
     const step = handleStep(getData(progress.slide, progress.step))(
       isCorrect ? getNextStepIfCorrect : getNextStepIfWrong
@@ -45,8 +44,7 @@ export const Screen: FC<ScreenProps> = (props) => {
       return;
     }
 
-    setProgress((s) => ({ ...s, step }));
-    setPlayStatus("PLAYING");
+    dispatch({ type: "progress", val: { ...progress, step } });
   };
 
   return (

@@ -3,8 +3,7 @@ import styled from "styled-components";
 import { Student, Teacher, Bubble, BubbleProps } from "./components";
 import {
   GetDataProviderContext,
-  ProgressProviderContext,
-  PlayStatusProviderContext,
+  GlobalStateContext,
 } from "../../stores/providers";
 import {
   getTeacherAnimation,
@@ -24,11 +23,11 @@ const Main = styled.div`
 
 export const Characters: FC<CharactersProps> = ({ children, className }) => {
   const getData = useContext(GetDataProviderContext);
-  const { state: progress } = useContext(ProgressProviderContext);
+  const { isPlaying, progress } = useContext(GlobalStateContext);
 
   const getStepData = useMemo(
     () => handleStep(getData(progress.slide, progress.step)),
-    [progress.step]
+    [getData, progress]
   );
 
   const teacherAnimation = useMemo(
@@ -44,12 +43,10 @@ export const Characters: FC<CharactersProps> = ({ children, className }) => {
     [getStepData]
   );
 
-  const { state: playStatus } = useContext(PlayStatusProviderContext);
-
   return (
     <Main className={className}>
       <Teacher
-        animation={playStatus === "STOPPED" ? "animation_1" : teacherAnimation}
+        animation={isPlaying ? teacherAnimation : "animation_1"}
         css="margin-bottom: 32px;"
       />
       {studentDialog && (

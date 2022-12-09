@@ -1,14 +1,13 @@
 import React, { FC, useMemo, ReactNode } from "react";
 import {
-  ProgressProvider,
   GetDataProvider,
   SeekProvider,
-  AudioLoadingProvider,
-  PlayStatusProvider,
+  TimerProvider,
   PlayStatusProviderProps,
+  GlobalStateProvider,
 } from "./providers";
 import { handleJson } from "../utils";
-import { JsonData } from '../types';
+import { JsonData } from "../types";
 
 interface LectureProviderProps
   extends Pick<PlayStatusProviderProps, "isPlaying"> {
@@ -23,14 +22,14 @@ export const LectureProvider: FC<LectureProviderProps> = ({
 }) => {
   const getData = useMemo(() => handleJson(json), []);
   return (
-    <PlayStatusProvider {...{ isPlaying }}>
-      <SeekProvider>
-        <GetDataProvider {...{ getData }}>
-          <ProgressProvider {...{ getData }}>
-            <AudioLoadingProvider>{children}</AudioLoadingProvider>
-          </ProgressProvider>
-        </GetDataProvider>
-      </SeekProvider>
-    </PlayStatusProvider>
+    <GlobalStateProvider {...{ isPlaying }}>
+      <GetDataProvider {...{ getData }}>
+        <TimerProvider>
+          <SeekProvider>
+            {children}
+          </SeekProvider>
+        </TimerProvider>
+      </GetDataProvider>
+    </GlobalStateProvider>
   );
 };

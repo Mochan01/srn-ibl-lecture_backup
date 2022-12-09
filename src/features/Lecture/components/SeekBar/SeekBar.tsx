@@ -1,13 +1,8 @@
-import React, { FC, useContext } from "react";
-import { Radix } from "./Radix";
-import {
-  ProgressProviderContext,
-  GetDataProviderContext,
-  PlayStatusProviderContext,
-  SeekProviderContext,
-} from "../../../../stores/providers";
-import { StepType } from "src-ibl-lecture-master/types/stepType";
-import { handleStepArray, getSeekStarts } from "../../../../utils";
+import React, { FC, useState, useContext } from "react";
+import { css } from "styled-components";
+import { SeekBarTouchable } from "./SeekBarTouchable";
+import { SeekBarUntouchable } from "./SeekBarUntouchable";
+import { GlobalDispatchContext } from "../../../../stores/providers/GlobalStateProvider";
 
 export interface SeekBarProps {
   className?: string;
@@ -17,40 +12,36 @@ export interface SeekBarProps {
  * シークバー
  */
 export const SeekBar: FC<SeekBarProps> = (props) => {
-  const { state: progress, setState: setProgress } = useContext(
-    ProgressProviderContext
-  );
-  const getData = useContext(GetDataProviderContext);
+  const [isPointerDown, setIsPointerDown] = useState(false);
+  const dispatch = useContext(GlobalDispatchContext);
 
-  // シークバーを マウスアップ / マウスダウン したときのイベント
-  const { state: value, setState: setValue } = useContext(SeekProviderContext);
-  const { setState: setPlayStatus } = useContext(PlayStatusProviderContext);
-  const onPointerDown = () => setPlayStatus("STOPPED");
-  const onPointerUp = (position: number) => {
-    const seekStarts = handleStepArray(getData(progress.slide))(getSeekStarts);
-    // シークバーの位置がデータ上のスタート位置（seekbar_start）より前にいくことがあり、その場合はundefinedが返る
-    let closest = seekStarts.filter((x) => x <= position).reverse()[0];
-    // なので、ここで補正する
-    closest = typeof closest === "number" ? closest : seekStarts[0];
-    let step = seekStarts.indexOf(closest) + 1;
-
-    // 結果発表ステップでは止まらないようにする
-    // https://www.notion.so/1ca89cdacc8a4907b2894b2c29d86ba8#28d778653c7641a8863de578b7bebe46
-    const getIsResultStep = (step: number) => {
-      return !!(getData(progress.slide, step) as StepType).question
-        .is_result_step;
-    };
-    // 結果発表ステップならその一個前のstepに止める
-    if (getIsResultStep(step)) {
-      step = step - 1;
-      // 一個前が正解ステップかもしれないのでそしたらさらにその前のstepに止める
-      if (getIsResultStep(step)) step = step - 1;
-    }
-
-    // 現在の進捗の決定
-    setProgress((s) => ({ ...s, step }));
-    setPlayStatus("PLAYING");
+  const onPointerDown = () => {
+    setIsPointerDown(true);
+    dispatch({ type: "isPlaying", val: false });
   };
 
-  return <Radix {...{ value, setValue, onPointerUp, onPointerDown }} />;
+  const onPointerUp = () => {
+    setIsPointerDown(false);
+    dispatch({ type: "isPlaying", val: true });
+  };
+
+  return (
+    <div {...props} css="position: relative;">
+      <SeekBarUntouchable
+        css={css`
+          opacity: ${isPointerDown ? 0 : 1};
+        `}
+      />
+      <div {...{ onPointerDown, onPointerUp }}>
+        <SeekBarTouchable
+          css={css`
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: ${isPointerDown ? 1 : 0};
+          `}
+        />
+      </div>
+    </div>
+  );
 };
