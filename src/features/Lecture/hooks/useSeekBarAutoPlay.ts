@@ -17,7 +17,7 @@ import {
  * @param onTimeUp
  * @returns
  */
-export const useSeekBar = () => {
+export const useSeekBarAutoPlay = () => {
   const { progress } = useContext(GlobalStateContext);
   const getData = useContext(GetDataProviderContext);
 

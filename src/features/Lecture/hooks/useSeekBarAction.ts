@@ -1,27 +1,24 @@
-import React, { FC, useContext, useState } from "react";
-import { Radix } from "./Radix";
+import { useContext, useCallback, useState } from "react";
 import {
   GetDataProviderContext,
   GlobalStateContext,
   GlobalDispatchContext,
-} from "../../../../stores/providers";
-import { handleStepArray, getSeekStarts } from "../../../../utils";
+} from "../../../stores/providers";
+import { handleStepArray, getSeekStarts } from "../../../utils";
 import { StepType } from "src-ibl-lecture-master/types/stepType";
 
-export interface SeekBarTouchableProps {
-  className?: string;
-}
-
 /**
- * シークバー（ユーザが操作する用）
+ * シークバーの進捗操作
+ * @param onTimeUp
+ * @returns
  */
-export const SeekBarTouchable: FC<SeekBarTouchableProps> = (props) => {
+export const useSeekBarAction = () => {
   const [value, setValue] = useState(0);
   const { progress } = useContext(GlobalStateContext);
   const dispatch = useContext(GlobalDispatchContext);
   const getData = useContext(GetDataProviderContext);
 
-  const onPointerUp = () => {
+  const updateProgress = useCallback(() => {
     const seekStarts = handleStepArray(getData(progress.slide))(getSeekStarts);
     // シークバーの位置がデータ上のスタート位置（seekbar_start）より前にいくことがあり、その場合はundefinedが返る
     let closest = seekStarts.filter((x) => x <= value).reverse()[0];
@@ -44,11 +41,7 @@ export const SeekBarTouchable: FC<SeekBarTouchableProps> = (props) => {
 
     dispatch({ type: "progress", val: { ...progress, step } });
     dispatch({ type: "timestamp" });
-  };
+  }, [dispatch, getData, progress, value]);
 
-  return (
-    <div {...props} {...{ onPointerUp }}>
-      <Radix {...{ value, setValue }} />
-    </div>
-  );
+  return { value, setValue, updateProgress };
 };

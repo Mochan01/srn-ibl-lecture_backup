@@ -1,8 +1,9 @@
-import React, { FC, useState, useContext } from "react";
-import { css } from "styled-components";
-import { SeekBarTouchable } from "./SeekBarTouchable";
-import { SeekBarUntouchable } from "./SeekBarUntouchable";
-import { GlobalDispatchContext } from "../../../../stores/providers/GlobalStateProvider";
+import React, { FC, useContext, useState } from "react";
+import { Radix } from "./Radix";
+import { useSeekBarAutoPlay, useSeekBarAction } from "../../hooks";
+import { useAutoMoveProgress } from "../../../../hooks";
+import { useWatchStepEnd } from "../../../../hooks/useWatchStepEnd";
+import { GlobalDispatchContext } from "../../../../stores/providers";
 
 export interface SeekBarProps {
   className?: string;
@@ -12,36 +13,27 @@ export interface SeekBarProps {
  * シークバー
  */
 export const SeekBar: FC<SeekBarProps> = (props) => {
+  const isStepEnd = useWatchStepEnd();
+  useAutoMoveProgress(isStepEnd);
+
+  const { value: usrValue, setValue, updateProgress } = useSeekBarAction();
+  const autoValue = useSeekBarAutoPlay();
+
   const [isPointerDown, setIsPointerDown] = useState(false);
   const dispatch = useContext(GlobalDispatchContext);
-
   const onPointerDown = () => {
     setIsPointerDown(true);
     dispatch({ type: "isPlaying", val: false });
   };
-
   const onPointerUp = () => {
+    updateProgress();
     setIsPointerDown(false);
     dispatch({ type: "isPlaying", val: true });
   };
 
   return (
-    <div {...props} css="position: relative;">
-      <SeekBarUntouchable
-        css={css`
-          opacity: ${isPointerDown ? 0 : 1};
-        `}
-      />
-      <div {...{ onPointerDown, onPointerUp }}>
-        <SeekBarTouchable
-          css={css`
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: ${isPointerDown ? 1 : 0};
-          `}
-        />
-      </div>
+    <div {...props} {...{ onPointerDown, onPointerUp }}>
+      <Radix {...{ setValue }} value={isPointerDown ? usrValue : autoValue} />
     </div>
   );
 };

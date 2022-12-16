@@ -1,1 +1,2 @@
-export * from "./useSeekBar";
+export * from "./useSeekBarAutoPlay";
+export * from "./useSeekBarAction";
