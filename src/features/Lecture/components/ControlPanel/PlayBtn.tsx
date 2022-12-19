@@ -1,18 +1,27 @@
-import React, { FC } from "react";
-import { MiniBtn } from "./MiniBtn";
+import React, { FC, useContext } from "react";
+import { MiniBtn, MiniBtnProps } from "./MiniBtn";
+import { GlobalStateContext, GlobalDispatchContext } from "../../../../stores/providers";
 
-export interface PlayBtnProps {
-  isPlay?: boolean;
-  onClick?: () => void;
-}
+export interface PlayBtnProps extends Pick<MiniBtnProps, "className"> {}
 
-export const PlayBtn: FC<PlayBtnProps> = ({ isPlay = false, onClick }) => {
+/**
+ * 再生ボタン
+ * @param props 
+ * @returns 
+ */
+export const PlayBtn: FC<PlayBtnProps> = (props) => {
+  const { isPlaying } = useContext(GlobalStateContext);
+  const dispatch = useContext(GlobalDispatchContext);
   return (
     <MiniBtn
-      {...{ onClick }}
-      caption={!isPlay ? "再生" : "一時停止"}
-      variant={!isPlay ? "playOn" : "pauseOn"}
-      hoverVariant={!isPlay ? "playOff" : "pauseOff"}
+      {...props}
+      onClick={() => {
+        dispatch({ type: "isPlaying", val: !isPlaying });
+        dispatch({ type: "timestamp" });
+      }}
+      caption={!isPlaying ? "再生" : "一時停止"}
+      variant={!isPlaying ? "playOn" : "pauseOn"}
+      hoverVariant={!isPlaying ? "playOff" : "pauseOff"}
     />
   );
 };

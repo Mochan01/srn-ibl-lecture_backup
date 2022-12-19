@@ -1,31 +1,31 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-const ImageLecture = new URL("../../../../assets/prod/lecture_panel_answer.png", import.meta.url).toString();
+const ImageLecture = new URL("../../../assets/prod/lecture_panel_answer.png", import.meta.url).toString();
 
 export const QUIZ_CHOICE_BTN = {
   /**
    * Question_button_select.png
    */
-  ORANGE: "0 -3774px",
+  ORANGE: "0 -3483px",
   /**
    * Question_button.png
    */
-  WHITE: "0 -3854px",
+  WHITE: "0 -3563px",
   /**
    * Question_button_incorrect.png
    */
-  GRAY: "0 -3694px"
+  GRAY: "0 -3403px"
 } as const;
 
 export const QUIZ_SIGN = {
   /**
    * Correct.png
    */
-  CORRECT: "0 -3636px",
+  CORRECT: "0 -3345px",
   /**
    * Wrong.png
    */
-  INCORRECT: "0 -3934px"
+  INCORRECT: "0 -3643px"
 } as const;
 
 type Mutation = typeof QUIZ_CHOICE_BTN[keyof typeof QUIZ_CHOICE_BTN];

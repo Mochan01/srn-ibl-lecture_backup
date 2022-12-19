@@ -1,6 +1,9 @@
 import React, { FC, ReactNode } from "react";
-import styled from "styled-components"
-const ImageCommon = new URL("../../../assets/prod/close_character_spritesheet.png", import.meta.url).toString();
+import styled from "styled-components";
+const ImageCommon = new URL(
+  "../../../assets/prod/close_character_spritesheet.png",
+  import.meta.url
+).toString();
 
 export interface BubbleProps {
   className?: string;
@@ -8,7 +11,7 @@ export interface BubbleProps {
 }
 
 const Main = styled.div`
-  background-image: url(${ ImageCommon });
+  background-image: url(${ImageCommon});
   background-repeat: no-repeat;
   background-position: 0 -4851px;
   width: 293px;
@@ -34,16 +37,13 @@ const Wrapper = styled.div`
 /**
  * キャラが喋るときの吹き出し
  * https://www.notion.so/1ca89cdacc8a4907b2894b2c29d86ba8#7f06b246a2c443f5b6a38d04d3f84089
- * @param param0 
- * @returns 
+ * @param param0
+ * @returns
  */
-export const Bubble: FC<BubbleProps> = ({
-  className,
-  children
-}) => {
+export const Bubble: FC<BubbleProps> = ({ className, children }) => {
   return (
-    <Main className={ className }>
-      <Wrapper dangerouslySetInnerHTML={ { __html: String(children) } } />
+    <Main className={className}>
+      <Wrapper dangerouslySetInnerHTML={{ __html: String(children) }} />
     </Main>
   );
 };

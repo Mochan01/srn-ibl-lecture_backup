@@ -6,7 +6,7 @@ interface Props {
   children: ReactNode;
 }
 
-export const GetDataProviderContext = createContext<GetStepData>(null);
+export const GetDataProviderContext = createContext<GetStepData>({} as GetStepData);
 
 export const GetDataProvider: FC<Props> = ({ getData, children }) => {
   return (

@@ -1,4 +1,4 @@
-import React, { FC, Dispatch, SetStateAction } from "react";
+import React, { FC, Dispatch } from "react";
 import styled from "styled-components";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 import { SIZE } from "../../../../data/SIZE";
@@ -9,10 +9,8 @@ const ImageLecture = new URL(
 
 export interface RadixProps {
   value: number;
-  setValue: Dispatch<SetStateAction<number>>;
+  setValue?: Dispatch<number>;
   className?: string;
-  onPointerDown?: (value: number) => void;
-  onPointerUp?: (value: number) => void;
 }
 
 const SLIDER_H = 21;
@@ -61,7 +59,7 @@ const StyledThumb = styled(SliderPrimitive.Thumb)`
   display: block;
   width: ${SLIDER_H}px;
   height: ${SLIDER_H}px;
-  background-position: 0 -2232px;
+  background-position: 0 -2133px;
   background-image: url(${ImageLecture});
   background-repeat: no-repeat;
 `;
@@ -73,21 +71,13 @@ export interface RadixMemoProps extends RadixProps {}
  * @param param0
  * @returns
  */
-export const Radix: FC<RadixProps> = ({
-  value,
-  setValue,
-  className,
-  onPointerDown = () => {},
-  onPointerUp = () => {},
-}) => {
+export const Radix: FC<RadixProps> = ({ value,setValue, ...props }) => {
   return (
     <StyledSlider
+      {...props}
       max={100}
       value={[value]}
-      onValueChange={(nextValue) => setValue(nextValue[0])}
-      onPointerDown={() => onPointerDown(value)}
-      onPointerUp={() => onPointerUp(value)}
-      {...{ className }}
+      onValueChange={(nextValue) => setValue && setValue(nextValue[0])}
     >
       <StyledTrack>
         <StyledRange />

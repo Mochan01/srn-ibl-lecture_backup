@@ -1,5 +1,4 @@
-import { StepType } from "src-ibl-lecture-master/variable_types/StepType";
-import _ from "lodash";
+import { Progress, StepType } from "src-ibl-lecture-master/types/stepType";
 
 type Callback<T> = (data: StepType) => T;
 
@@ -10,21 +9,20 @@ type Callback<T> = (data: StepType) => T;
  * @returns
  */
 export const handleStep =
-  (data: StepType | StepType[]) =>
-  <T>(callback: Callback<T>): T => {
-    if (Array.isArray(data)) return;
-    return callback(data);
-  };
+  (data: StepType) =>
+  <T>(callback: Callback<T>): T =>
+    callback(data);
 
 /**
- * questionsがあるstepなら4択の問題文を返す
+ * questionsがあるstepなら問題文を返す
  * @param step
  * @returns
  */
 export const getQuestion: Callback<string[]> = (data: StepType) => {
   const q = data.question as StepType["question"];
-  const result = _.compact([q.button_1, q.button_2, q.button_3, q.button_4]);
-  return result.length ? result : void 0;
+  return [q.button_1, q.button_2, q.button_3, q.button_4].filter(
+    Boolean
+  ) as string[];
 };
 
 /**
@@ -38,12 +36,22 @@ export const getIsResultStep: Callback<StepType["question"]["is_result_step"]> =
   };
 
 /**
+ * 次に進むスライドとステップを取得する
+ * @param data
+ * @returns
+ */
+export const getGoTo: Callback<Progress | void> = (data: StepType) =>
+  data.next_steps.go_to;
+
+/**
  * クイズで正解だった時のために、次に進むステップを取得する
  * @param data
  * @returns
  */
-export const getNextStepIfCorrect: Callback<number> = (data: StepType) => {
-  return Number(data.next_steps.if_correct.split("_")[1]);
+export const getNextStepIfCorrect: Callback<number | void> = (
+  data: StepType
+) => {
+  return data.next_steps.if_correct && data.next_steps.if_correct.step;
 };
 
 /**
@@ -51,14 +59,14 @@ export const getNextStepIfCorrect: Callback<number> = (data: StepType) => {
  * @param data
  * @returns
  */
-export const getNextStepIfWrong: Callback<number> = (data: StepType) => {
-  return Number(data.next_steps.if_wrong.split("_")[1]);
+export const getNextStepIfWrong: Callback<number | void> = (data: StepType) => {
+  return data.next_steps.if_wrong && data.next_steps.if_wrong.step;
 };
 
 /**
  * アニメーションの種類を取得（先生）
- * @param data 
- * @returns 
+ * @param data
+ * @returns
  */
 export const getTeacherAnimation: Callback<StepType["animation"]["teacher"]> = (
   data: StepType
@@ -66,8 +74,8 @@ export const getTeacherAnimation: Callback<StepType["animation"]["teacher"]> = (
 
 /**
  * アニメーションの種類を取得（生徒）
- * @param data 
- * @returns 
+ * @param data
+ * @returns
  */
 export const getStudentAnimation: Callback<StepType["animation"]["student"]> = (
   data: StepType
@@ -75,8 +83,8 @@ export const getStudentAnimation: Callback<StepType["animation"]["student"]> = (
 
 /**
  * 生徒のセリフを取得
- * @param data 
- * @returns 
+ * @param data
+ * @returns
  */
 export const getStudentDialogue: Callback<StepType["narrative"]["speech"]> = (
   data: StepType

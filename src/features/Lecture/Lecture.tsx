@@ -1,23 +1,23 @@
 import React, { FC, useContext } from "react";
-import json from "../../data/mock_data.json";
-import { SeekBar } from "./components/SeekBar";
-import {
-  PlayStatusProviderContext,
-  LectureProvider,
-  ProgressProviderContext,
-} from "../../stores";
+import { GlobalStateContext, LectureProvider } from "../../stores";
 import { Screen } from "./components/Screen";
 import { ScaleWrapper } from "../../elements/ScaleWrapper";
 import { Narration } from "../../elements/Narration";
 import { ControlPanel, ControlBarProps } from "./components/ControlPanel";
-import { useLecture } from "../../hooks";
 import { Characters } from "../../elements/Characters";
 import styled, { css } from "styled-components";
 import { CloseBtn } from "../../elements/CloseBtn";
 import { Container } from "../../elements/Container";
-import { Props } from "../../types";
+import { JsonData, MainComponentProps } from "../../types";
+import { PlayStatusProviderProps } from "../../stores/providers";
+import jsonData from "../../assets/data/lecture1.json";
+import { DebugWindow } from "../../elements/DebugWindow/DebugWindow";
+import { SeekBar } from "./components/SeekBar";
 
-export interface LectureProps extends ControlBarProps, Props {}
+export interface LectureProps
+  extends ControlBarProps,
+    MainComponentProps,
+    Pick<PlayStatusProviderProps, "isPlaying"> {}
 
 const Wrapper = styled.div`
   position: absolute;
@@ -31,19 +31,18 @@ const Wrapper = styled.div`
 `;
 
 const Main: FC<LectureProps> = ({
-  onClickPrev,
+  onLectureLeave,
   onClickClose,
   unitName,
   unitTitle,
   className,
 }) => {
-  useLecture();
-  const { state: playStatus } = useContext(PlayStatusProviderContext);
-  const { state: progress } = useContext(ProgressProviderContext);
+  const { timestamp, isPlaying, progress } = useContext(GlobalStateContext);
   return (
     <div {...{ className }}>
-      {playStatus === "PLAYING" && (
-        <Narration key={`${progress.slide}_${progress.step}`} />
+      {/** スライド、ステップ切替時、また、リプレイ時に再マウントさせたいのでkeyを指定 */}
+      {isPlaying && (
+        <Narration key={timestamp + "_" + progress.slide + "_" + progress.step} />
       )}
       <ScaleWrapper>
         <Container>
@@ -66,16 +65,23 @@ const Main: FC<LectureProps> = ({
           <Wrapper>
             <Screen {...{ unitName, unitTitle }} />
             <SeekBar />
-            <ControlPanel {...{ onClickPrev }} />
+            <ControlPanel {...{ onLectureLeave }} />
           </Wrapper>
         </Container>
       </ScaleWrapper>
+      <DebugWindow />
     </div>
   );
 };
 
-export const Lecture: FC<LectureProps> = (props) => (
-  <LectureProvider json={props.json || json}>
-    <Main {...props} />
-  </LectureProvider>
-);
+export const Lecture: FC<LectureProps> = ({
+  json = jsonData as JsonData,
+  isPlaying,
+  ...props
+}) => {
+  return (
+    <LectureProvider {...{ json, isPlaying }}>
+      <Main {...props} />
+    </LectureProvider>
+  );
+};

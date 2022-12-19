@@ -7,16 +7,13 @@ import { ScaleWrapper } from "../../elements/ScaleWrapper";
 import { Container } from "../../elements/Container";
 import { PresentedBy } from "./components/PresentedBy";
 import { Narration } from "../../elements/Narration";
-import json from "../../data/mock_data.json";
-import {
-  PlayStatusProviderContext,
-  LectureProvider,
-  ProgressProviderContext,
-} from "../../stores";
-import { useLecture } from "../../hooks";
-import { Props } from "../../types";
+import { GlobalStateContext, LectureProvider } from "../../stores";
+import { JsonData, MainComponentProps } from "../../types";
+import jsonData from "../../assets/data/title1.json";
+import { useWatchStepEnd } from "../../hooks/useWatchStepEnd";
+import { useAutoMoveProgress } from "../../hooks/useAutoMoveProgress";
 
-export interface TitleProps extends Props {
+export interface TitleProps extends MainComponentProps {
   onClickSkip?: () => void;
 }
 
@@ -26,15 +23,18 @@ export const Main: FC<TitleProps> = ({
   onClickSkip = () => {},
   onClickClose = () => {},
 }) => {
-  useLecture();
-  const { state: playStatus, setState: setPlayStatus } = useContext(
-    PlayStatusProviderContext
-  );
-  const { state: progress } = useContext(ProgressProviderContext);
+  const { timestamp, isPlaying, progress } = useContext(GlobalStateContext);
+
+  // 自動再生
+  const isStepEnd = useWatchStepEnd();
+  useAutoMoveProgress(isStepEnd);
+
   return (
     <>
-      {playStatus === "PLAYING" && (
-        <Narration key={`${progress.slide}_${progress.step}`} />
+      {isPlaying && (
+        <Narration
+          key={timestamp + "_" + progress.slide + "_" + progress.step}
+        />
       )}
       <ScaleWrapper>
         <Container>
@@ -44,14 +44,6 @@ export const Main: FC<TitleProps> = ({
               bottom: 20px;
               right: 62px;
             `}
-          />
-          <CloseBtn
-            css={css`
-              position: absolute;
-              top: 20px;
-              right: 62px;
-            `}
-            onClick={onClickClose}
           />
           <Characters
             css={css`
@@ -70,8 +62,15 @@ export const Main: FC<TitleProps> = ({
               right: 0;
               margin: auto;
             `}
-            onClickStart={() => setPlayStatus("PLAYING")}
             {...{ unitName, unitTitle, onClickSkip }}
+          />
+          <CloseBtn
+            css={css`
+              position: absolute;
+              top: 20px;
+              right: 62px;
+            `}
+            onClick={onClickClose}
           />
         </Container>
       </ScaleWrapper>
@@ -79,8 +78,11 @@ export const Main: FC<TitleProps> = ({
   );
 };
 
-export const Title: FC<TitleProps> = (props) => (
-  <LectureProvider json={ props.json || json }>
+export const Title: FC<TitleProps> = ({
+  json = jsonData as JsonData,
+  ...props
+}) => (
+  <LectureProvider {...{ json }}>
     <Main {...props} />
   </LectureProvider>
 );

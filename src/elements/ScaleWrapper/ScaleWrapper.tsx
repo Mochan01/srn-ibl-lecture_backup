@@ -26,11 +26,11 @@ export const ScaleWrapper: FC<ScaleWrapperProps> = ({
 }) => {
 
   const [windowWidth, windowHeight] = useResizeWindow();
-  const ref = useRef<HTMLDivElement>();
+  const ref = useRef<HTMLDivElement>(null);
   const [$scale, setScale] = useState(1);
 
   useEffect(() => {
-
+    if (!ref.current) return;
     const { clientWidth, clientHeight } = ref.current.children[0];
 
     const windowRatio = windowHeight / windowWidth;

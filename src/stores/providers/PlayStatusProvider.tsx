@@ -1,15 +1,15 @@
-import React, { FC, createContext, ReactNode, Dispatch, useState } from "react";
+import React, { FC, createContext, ReactNode, Dispatch, useState, SetStateAction } from "react";
 
-interface Props {
+export interface PlayStatusProviderProps {
   children: ReactNode;
+  isPlaying?: boolean;
 }
 
-type State = "PLAYING" | "CONTINUE" | "STOPPED";
-type ContextState = { state: State; setState: Dispatch<State> };
-export const PlayStatusProviderContext = createContext<ContextState>(null);
+type ContextState = { state: boolean; setState: Dispatch<SetStateAction<boolean>> };
+export const PlayStatusProviderContext = createContext<ContextState>({} as ContextState);
 
-export const PlayStatusProvider: FC<Props> = ({ children }) => {
-  const [state, setState] = useState<State>("STOPPED");
+export const PlayStatusProvider: FC<PlayStatusProviderProps> = ({ children, isPlaying = false }) => {
+  const [state, setState] = useState(isPlaying);
 
   return (
     <PlayStatusProviderContext.Provider value={{ state, setState }}>

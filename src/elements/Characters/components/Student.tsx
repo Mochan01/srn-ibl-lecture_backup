@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled, { css } from "styled-components";
-import { AnimationType } from "src-ibl-lecture-master/variable_types/StepType";
+import { AnimationType } from "src-ibl-lecture-master/types/stepType";
 const ImageCommon = new URL("../../../assets/prod/close_character_spritesheet.png", import.meta.url).toString();
 
 export interface StudentProps {
@@ -139,7 +139,7 @@ const animation_6 = css`
   }
 `;
 
-const Main = styled.div<StudentProps>`
+const Main = styled.div<Required<Pick<StudentProps, "animation">>>`
   width: 238px;
   height: 393px;
   background-image: url(${ ImageCommon });

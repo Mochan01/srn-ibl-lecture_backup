@@ -1,88 +1,51 @@
-import React, { FC, useContext, useMemo } from "react";
-import {
-  GetDataProviderContext,
-  ProgressProviderContext,
-  PlayStatusProviderContext,
-  SeekProviderContext,
-} from "../../../../stores/providers";
-import { StepType } from "src-ibl-lecture-master/variable_types/StepType";
+import React, { FC } from "react";
 import { NextBtn } from "./NextBtn";
 import { PrevBtn } from "./PrevBtn";
 import { PlayBtn } from "./PlayBtn";
-import { ControlPanelL } from "./ControlPanelL";
-import { ControlPanelB } from "./ControlPanelB";
-import { ControlPanelA } from "./ControlPanelA";
-import { handleStep, getSeekStart } from "../../../../utils";
+import { ReplayBtn } from "./ReplayBtn";
+import { PageBullet } from "./PageBullet";
+import { SIZE } from "../../../../data/SIZE";
 import styled from "styled-components";
+const ImageLecture = new URL(
+  "../../../../assets/prod/lecture_panel_answer.png",
+  import.meta.url
+).toString();
 
 export interface ControlBarProps {
-  onClickPrev: (progress: number) => void;
+  onLectureLeave: (key: "begin" | "end") => void;
   className?: string;
 }
 
+/* lecture_panel.png */
 const Main = styled.div`
   display: flex;
+  width: ${SIZE.W}px;
+  height: 95px;
+  background-position: 0 -2009px;
+  background-image: url(${ImageLecture});
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 10px;
 `;
 
 /**
  * コントロールパネル
  */
 export const ControlPanel: FC<ControlBarProps> = ({
-  onClickPrev,
+  onLectureLeave,
   className,
 }) => {
-  const { state: progress, setState: setProgress } = useContext(
-    ProgressProviderContext
-  );
-  const { state: playStatus, setState: setPlayStatus } = useContext(
-    PlayStatusProviderContext
-  );
-
-  // ステップの最後に達したらボタンを光らせる
-  const getData = useContext(GetDataProviderContext);
-  const isBlink = useMemo(() => {
-    return (
-      !getData(progress.slide, progress.step + 1) && playStatus === "CONTINUE"
-    );
-  }, [progress.slide, progress.step, playStatus]);
-
-  const slideData = useMemo(() => getData(), []) as StepType[];
-  const { setState: setValue } = useContext(SeekProviderContext);
-
   return (
     <Main {...{ className }}>
-      <ControlPanelL
-        slideLen={slideData[slideData.length - 1].progress.slide}
-        slideIndex={progress.slide}
-        onClick={(slide) => setProgress({ slide })}
+      <PageBullet />
+      <PrevBtn
+        onLeave={() => onLectureLeave("begin")}
+        css="margin-left: 160px;"
       />
-      <ControlPanelB>
-        <PrevBtn
-          onClick={() => {
-            setProgress({ slide: "prev" });
-            // スライドが最初の時にボタンを押すとタイトルに戻るようにしたいとのこと
-            onClickPrev(progress.slide);
-          }}
-        />
-        <PlayBtn
-          isPlay={playStatus === "PLAYING"}
-          onClick={() => {
-            if (playStatus === "PLAYING") {
-              setValue(
-                handleStep(getData(progress.slide, progress.step))(getSeekStart)
-              );
-              setPlayStatus("STOPPED");
-            } else {
-              setPlayStatus("PLAYING");
-            }
-          }}
-        />
-        <NextBtn
-          onClick={() => setProgress({ slide: "next" })}
-          isBlink={isBlink}
-        />
-      </ControlPanelB>
-      <ControlPanelA />
+      <PlayBtn css="margin-left: 30px;" />
+      <NextBtn onLeave={() => onLectureLeave("end")} css="margin-left: 30px;" />
+      <ReplayBtn css="margin-left: 130px;" />
     </Main>
   );
 };

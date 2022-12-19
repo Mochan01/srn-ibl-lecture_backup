@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from "react";
-import { MotionType } from "src-ibl-lecture-master/variable_types/StepType";
+import { MotionType } from "src-ibl-lecture-master/types/stepType";
 import styled from "styled-components";
 import { SIZE } from "../../../../data/SIZE";
 
