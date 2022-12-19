@@ -1,24 +1,17 @@
-import React, {
-  FC,
-  useMemo,
-  useContext,
-  useEffect,
-  useState,
-  useRef,
-} from "react";
+import { FC, useMemo, useContext, useEffect, useState, useRef } from "react";
 import { handleStep, getAudioFileName } from "../../utils";
 import {
   GetDataProviderContext,
   GlobalStateContext,
   TimerContext,
 } from "../../stores";
-import { assetsPath } from "../../data/assetsPath";
+import { useAudio } from "../../hooks/useAudio";
 
 interface NarrationProps {
   /**
    * 擬似的なロードの遅延(デバッグ用)
    */
-  delay: number;
+  delay?: number;
 }
 
 /**
@@ -34,32 +27,35 @@ export const Narration: FC<NarrationProps> = ({ delay = 0 }) => {
     [getData, progress]
   );
 
-  const src = useMemo(() => audioName && assetsPath[audioName], [audioName]);
-  const ref = useRef<HTMLAudioElement>(null);
+  let timer = useRef<NodeJS.Timeout>(); // タイマー デバッグ用 遅延ロード
+  useEffect(() => () => timer.current && clearTimeout(timer.current), [timer]);
+  const [play, stop] = useAudio(audioName, {
+    onload: async () => {
+      timer.current = setTimeout(() => setIsCanPlay(true), delay);
+    },
+  });
 
   // オーディオがロードされたら、再生開始
   const [isCanPlay, setIsCanPlay] = useState(false);
   useEffect(() => {
-    const timer = setTimeout(() => {
-      start();
-      ref.current && ref.current.play();
-    }, delay);
-    return () => clearTimeout(timer);
-  }, [start, isCanPlay, delay]);
+    if (!isCanPlay) return;
+    start();
+    play();
+  }, [isCanPlay, start, play]);
 
   // オーディオが存在しない場合、ロードされたものと見做す
   useEffect(() => {
-    !src && setIsCanPlay(true);
-  }, [src]);
+    !audioName && setIsCanPlay(true);
+  }, [audioName]);
 
-  // アンマウント時にタイマー初期化
-  useEffect(() => () => reset(), [reset]);
-
-  return (
-    <>
-      {src && (
-        <audio {...{ src, ref }} onCanPlayThrough={() => setIsCanPlay(true)} />
-      )}
-    </>
+  // // アンマウント時にタイマー初期化
+  useEffect(
+    () => () => {
+      reset();
+      stop();
+    },
+    [reset, stop]
   );
+
+  return null;
 };

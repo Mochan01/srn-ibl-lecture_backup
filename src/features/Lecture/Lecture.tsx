@@ -42,10 +42,7 @@ const Main: FC<LectureProps> = ({
     <div {...{ className }}>
       {/** スライド、ステップ切替時、また、リプレイ時に再マウントさせたいのでkeyを指定 */}
       {isPlaying && (
-        <Narration
-          key={timestamp + "_" + progress.slide + "_" + progress.step}
-          delay={700}
-        />
+        <Narration key={timestamp + "_" + progress.slide + "_" + progress.step} />
       )}
       <ScaleWrapper>
         <Container>
