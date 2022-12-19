@@ -13,6 +13,11 @@ export const handleStepArray =
   <T>(callback: Callback<T>): T =>
     callback(data);
 
+/**
+ * ステップの数を取得
+ * @param data 
+ * @returns 
+ */
 export const getLength: (steps: StepType[]) => number = (data: StepType[]) => {
   return data.length;
 };

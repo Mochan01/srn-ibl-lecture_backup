@@ -1,5 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, useContext, useMemo } from "react";
 import styled from "styled-components";
+import {
+  GetDataProviderContext,
+  GlobalDispatchContext,
+  GlobalStateContext,
+} from "../../../../stores/providers";
 const ImageLecture = new URL(
   "../../../../assets/prod/lecture_panel_answer.png",
   import.meta.url
@@ -41,19 +46,29 @@ const Bullet = styled.div<{ isActive: boolean }>(
 `
 );
 
-export const PageBullet: FC<PageBulletProps> = ({
-  slideLen,
-  slideIndex,
-  onClick,
-}) => {
+export const PageBullet: FC = () => {
+  const getData = useContext(GetDataProviderContext);
+  const { progress } = useContext(GlobalStateContext);
+  const dispatch = useContext(GlobalDispatchContext);
+
+  const slideLen = useMemo(
+    () => getData()[getData().length - 1].progress.slide,
+    [getData]
+  );
+
   return (
     <Wrapper>
       <Grid>
         {[...Array(slideLen)].map((x, i) => (
           <Bullet
             key={i}
-            isActive={slideIndex === i + 1}
-            onClick={() => onClick(i + 1)}
+            isActive={progress.slide >= i + 1}
+            onClick={() => {
+              dispatch({
+                type: "progress",
+                val: { slide: i + 1, step: 1 },
+              });
+            }}
           />
         ))}
       </Grid>

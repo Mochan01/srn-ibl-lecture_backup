@@ -1,13 +1,9 @@
-import React, { FC, useContext } from "react";
+import React, { FC, useContext, useState } from "react";
 import { Radix } from "./Radix";
-import {
-  ProgressProviderContext,
-  GetDataProviderContext,
-  PlayStatusProviderContext,
-  SeekProviderContext,
-} from "../../../../stores/providers";
-import { StepType } from "src-ibl-lecture-master/types/stepType";
-import { handleStepArray, getSeekStarts } from "../../../../utils";
+import { useSeekBarAutoPlay, useSeekBarAction } from "../../hooks";
+import { useAutoMoveProgress } from "../../../../hooks";
+import { useWatchStepEnd } from "../../../../hooks/useWatchStepEnd";
+import { GlobalDispatchContext } from "../../../../stores/providers";
 
 export interface SeekBarProps {
   className?: string;
@@ -17,40 +13,27 @@ export interface SeekBarProps {
  * シークバー
  */
 export const SeekBar: FC<SeekBarProps> = (props) => {
-  const { state: progress, setState: setProgress } = useContext(
-    ProgressProviderContext
-  );
-  const getData = useContext(GetDataProviderContext);
+  const isStepEnd = useWatchStepEnd();
+  useAutoMoveProgress(isStepEnd);
 
-  // シークバーを マウスアップ / マウスダウン したときのイベント
-  const { state: value, setState: setValue } = useContext(SeekProviderContext);
-  const { setState: setPlayStatus } = useContext(PlayStatusProviderContext);
-  const onPointerDown = () => setPlayStatus("STOPPED");
-  const onPointerUp = (position: number) => {
-    const seekStarts = handleStepArray(getData(progress.slide))(getSeekStarts);
-    // シークバーの位置がデータ上のスタート位置（seekbar_start）より前にいくことがあり、その場合はundefinedが返る
-    let closest = seekStarts.filter((x) => x <= position).reverse()[0];
-    // なので、ここで補正する
-    closest = typeof closest === "number" ? closest : seekStarts[0];
-    let step = seekStarts.indexOf(closest) + 1;
+  const { value: usrValue, setValue, updateProgress } = useSeekBarAction();
+  const autoValue = useSeekBarAutoPlay();
 
-    // 結果発表ステップでは止まらないようにする
-    // https://www.notion.so/1ca89cdacc8a4907b2894b2c29d86ba8#28d778653c7641a8863de578b7bebe46
-    const getIsResultStep = (step: number) => {
-      return !!(getData(progress.slide, step) as StepType).question
-        .is_result_step;
-    };
-    // 結果発表ステップならその一個前のstepに止める
-    if (getIsResultStep(step)) {
-      step = step - 1;
-      // 一個前が正解ステップかもしれないのでそしたらさらにその前のstepに止める
-      if (getIsResultStep(step)) step = step - 1;
-    }
-
-    // 現在の進捗の決定
-    setProgress((s) => ({ ...s, step }));
-    setPlayStatus("PLAYING");
+  const [isPointerDown, setIsPointerDown] = useState(false);
+  const dispatch = useContext(GlobalDispatchContext);
+  const onPointerDown = () => {
+    setIsPointerDown(true);
+    dispatch({ type: "isPlaying", val: false });
+  };
+  const onPointerUp = () => {
+    updateProgress();
+    setIsPointerDown(false);
+    dispatch({ type: "isPlaying", val: true });
   };
 
-  return <Radix {...{ value, setValue, onPointerUp, onPointerDown }} />;
+  return (
+    <div {...props} {...{ onPointerDown, onPointerUp }}>
+      <Radix {...{ setValue }} value={isPointerDown ? usrValue : autoValue} />
+    </div>
+  );
 };

@@ -9,10 +9,8 @@ const ImageLecture = new URL(
 
 export interface RadixProps {
   value: number;
-  setValue: Dispatch<number>;
+  setValue?: Dispatch<number>;
   className?: string;
-  onPointerDown?: (value: number) => void;
-  onPointerUp?: (value: number) => void;
 }
 
 const SLIDER_H = 21;
@@ -73,21 +71,13 @@ export interface RadixMemoProps extends RadixProps {}
  * @param param0
  * @returns
  */
-export const Radix: FC<RadixProps> = ({
-  value,
-  setValue,
-  className,
-  onPointerDown = () => {},
-  onPointerUp = () => {},
-}) => {
+export const Radix: FC<RadixProps> = ({ value,setValue, ...props }) => {
   return (
     <StyledSlider
+      {...props}
       max={100}
       value={[value]}
-      onValueChange={(nextValue) => setValue(nextValue[0])}
-      onPointerDown={() => onPointerDown(value)}
-      onPointerUp={() => onPointerUp(value)}
-      {...{ className }}
+      onValueChange={(nextValue) => setValue && setValue(nextValue[0])}
     >
       <StyledTrack>
         <StyledRange />
