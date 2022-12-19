@@ -1,13 +1,14 @@
-import React, { FC, useState } from "react";
+import React, { FC, useContext, useState } from "react";
 import styled from "styled-components";
 import { MainComponentProps } from "../../../types";
+import { GlobalDispatchContext } from "../../../stores";
 const ImageTitle = new URL(
   "../../../assets/prod/lecture_title.png",
   import.meta.url
 ).toString();
 
-export interface TitleBaseProps extends Pick<MainComponentProps, "unitName" | "unitTitle"> {
-  onClickStart?: () => void;
+export interface TitleBaseProps
+  extends Pick<MainComponentProps, "unitName" | "unitTitle"> {
   onClickSkip?: () => void;
   className?: string;
 }
@@ -83,10 +84,10 @@ const SkipBtn = styled.div<{ isStartClicked: boolean }>(
 export const TitleBase: FC<TitleBaseProps> = ({
   unitName,
   unitTitle,
-  onClickStart,
   onClickSkip,
   className,
 }) => {
+  const dispatch = useContext(GlobalDispatchContext);
   const [isStartClicked, setIsStartClicked] = useState(false);
 
   return (
@@ -104,9 +105,7 @@ export const TitleBase: FC<TitleBaseProps> = ({
               role="button"
               onClick={() => {
                 setIsStartClicked(true);
-
-                if (!onClickStart) return;
-                onClickStart();
+                dispatch({ type: "isPlaying", val: true });
               }}
             />
           )}

@@ -7,14 +7,11 @@ import { ScaleWrapper } from "../../elements/ScaleWrapper";
 import { Container } from "../../elements/Container";
 import { PresentedBy } from "./components/PresentedBy";
 import { Narration } from "../../elements/Narration";
-import {
-  PlayStatusProviderContext,
-  LectureProvider,
-  ProgressProviderContext,
-} from "../../stores";
-import { useLecture } from "../../hooks";
+import { GlobalStateContext, LectureProvider } from "../../stores";
 import { JsonData, MainComponentProps } from "../../types";
 import jsonData from "../../assets/data/title1.json";
+import { useWatchStepEnd } from "../../hooks/useWatchStepEnd";
+import { useAutoMoveProgress } from "../../hooks/useAutoMoveProgress";
 
 export interface TitleProps extends MainComponentProps {
   onClickSkip?: () => void;
@@ -26,15 +23,18 @@ export const Main: FC<TitleProps> = ({
   onClickSkip = () => {},
   onClickClose = () => {},
 }) => {
-  useLecture();
-  const { state: playStatus, setState: setPlayStatus } = useContext(
-    PlayStatusProviderContext
-  );
-  const { state: progress } = useContext(ProgressProviderContext);
+  const { timestamp, isPlaying, progress } = useContext(GlobalStateContext);
+
+  // 自動再生
+  const isStepEnd = useWatchStepEnd();
+  useAutoMoveProgress(isStepEnd);
+
   return (
     <>
-      {playStatus === "PLAYING" && (
-        <Narration key={`${progress.slide}_${progress.step}`} />
+      {isPlaying && (
+        <Narration
+          key={timestamp + "_" + progress.slide + "_" + progress.step}
+        />
       )}
       <ScaleWrapper>
         <Container>
@@ -62,7 +62,6 @@ export const Main: FC<TitleProps> = ({
               right: 0;
               margin: auto;
             `}
-            onClickStart={() => setPlayStatus("PLAYING")}
             {...{ unitName, unitTitle, onClickSkip }}
           />
           <CloseBtn
