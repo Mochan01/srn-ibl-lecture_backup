@@ -2,10 +2,10 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Lecture, LectureProps } from "./Lecture";
 import jsonData from "../../assets/data/lecture2.json";
-import { JsonData } from '../../types';
+import { JsonData } from "../../types";
 
 export default {
-  title: "features/Lecture",
+  title: "templates/Lecture",
   component: Lecture,
 } as Meta;
 
@@ -16,11 +16,11 @@ sample.args = {
   unitName: "unit00",
   unitTitle: "ダミーテキストダミーテキスト",
   onLectureLeave: (key) => {
-    console.log(`onLectureLeave: ${ key }`);
+    console.log(`onLectureLeave: ${key}`);
   },
   onClickClose: () => {
     console.log("onClickClose");
   },
   json: jsonData as JsonData,
-  isPlaying: true
+  isPlaying: true,
 };

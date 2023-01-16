@@ -1,2 +1,2 @@
-export * from "../src/features/Title";
-export * from "../src/features/Lecture";
+export * from "../src/templates/Title";
+export * from "../src/templates/Lecture";
