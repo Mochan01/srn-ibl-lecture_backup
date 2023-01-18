@@ -12,7 +12,7 @@ export interface ParameterProps {
 const Main = styled.div``;
 
 /**
- * 特別レクチャーのパラメータ
+ * 特別レクチャー(衛生組み立て画面）のパラメータ
  */
 export const Parameter: FC<ParameterProps> = (props) => {
   return (
