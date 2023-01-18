@@ -5,7 +5,7 @@ import jsonData from "../../assets/data/title1.json";
 import { JsonData } from "../../types";
 
 export default {
-  title: "features/Title",
+  title: "templates/Title",
   component: Title,
 } as Meta;
 
