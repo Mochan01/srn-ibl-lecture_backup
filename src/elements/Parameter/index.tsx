@@ -1,10 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
 
 export interface ParameterProps {
   value: number;
   limit: number;
   unit: number;
+  children?: ReactNode;
   className?: string;
 }
 

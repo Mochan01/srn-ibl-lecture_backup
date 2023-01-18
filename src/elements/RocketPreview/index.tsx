@@ -7,6 +7,7 @@ export interface RocketPreviewProps {
   powerSupplyPart: string;
   loadedPart: string;
   rocket: string;
+  show?: boolean;
   className?: string;
 }
 

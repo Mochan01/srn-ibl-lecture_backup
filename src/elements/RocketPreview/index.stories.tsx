@@ -18,4 +18,5 @@ sample.args = {
   powerSupplyPart: "電源パーツA",
   loadedPart: "積載パーツA",
   rocket: "打ち上げロケットA",
+  show: true,
 };
