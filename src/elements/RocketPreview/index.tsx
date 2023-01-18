@@ -14,7 +14,7 @@ export interface RocketPreviewProps {
 const Main = styled.div``;
 
 /**
- * 特別レクチャーの衛生・ロケット画像のプレビュー部分
+ * 特別レクチャー(衛生組み立て画面）の衛生・ロケット画像のプレビュー部分
  */
 export const RocketPreview: FC<RocketPreviewProps> = (props) => {
   return (
