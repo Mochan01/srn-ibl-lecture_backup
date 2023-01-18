@@ -10,7 +10,7 @@ export interface PartsSelectSliderProps {
 const Main = styled.div``;
 
 /**
- * 特別レクチャーのパーツセレクト部分のスライダー
+ * 特別レクチャー(衛生組み立て画面）のパーツセレクト部分のスライダー
  */
 export const PartsSelectSlider: FC<PartsSelectSliderProps> = (props) => {
   return (
