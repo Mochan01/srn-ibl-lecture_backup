@@ -9,7 +9,7 @@ export interface PartsSelectTabProps {
 const Main = styled.div``;
 
 /**
- * 特別レクチャーのパーツセレクト部分のタブ
+ * 特別レクチャー(衛生組み立て画面）のパーツセレクト部分のタブ
  */
 export const PartsSelectTab: FC<PartsSelectTabProps> = (props) => {
   return (
