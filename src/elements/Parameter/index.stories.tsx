@@ -13,5 +13,6 @@ export const sample = template.bind({});
 sample.args = {
   value: 50,
   limit: 100,
-  unit: "%",
+  title: "製造コスト",
+  unit: "億円",
 };
