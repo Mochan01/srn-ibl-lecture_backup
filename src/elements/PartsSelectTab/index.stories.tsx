@@ -14,4 +14,5 @@ const template: Story<PartsSelectTabProps> = (args) => (
 export const sample = template.bind({});
 sample.args = {
   onChange: (i) => console.log(`${i}番目を選択した`),
+  index: 0,
 };
