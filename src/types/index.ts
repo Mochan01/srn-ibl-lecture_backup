@@ -6,5 +6,4 @@ export interface MainComponentProps {
   unitName: string;
   unitTitle: string;
   onClickClose?: () => void;
-  json?: JsonData;
 }

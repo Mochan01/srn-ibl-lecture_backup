@@ -1,23 +1,26 @@
 import React, { FC, useContext } from "react";
-import { GlobalStateContext, LectureProvider } from "../../stores";
+import {
+  GlobalStateContext,
+  LectureProvider,
+  LectureProviderProps,
+} from "../../stores";
 import { Screen } from "./components/Screen";
 import { ScaleWrapper } from "../../elements/ScaleWrapper";
 import { Narration } from "../../elements/Narration";
-import { ControlPanel, ControlBarProps } from "./components/ControlPanel";
+import { ControlPanel } from "./components/ControlPanel";
 import { Characters } from "../../elements/Characters";
 import styled, { css } from "styled-components";
 import { CloseBtn } from "../../elements/CloseBtn";
 import { Container } from "../../elements/Container";
-import { JsonData, MainComponentProps } from "../../types";
-import { PlayStatusProviderProps } from "../../stores/providers";
-import jsonData from "../../assets/data/lecture1.json";
 import { DebugWindow } from "../../elements/DebugWindow/DebugWindow";
 import { SeekBar } from "./components/SeekBar";
+import { MainComponentProps } from "../../types";
 
-export interface LectureProps
-  extends ControlBarProps,
-    MainComponentProps,
-    Pick<PlayStatusProviderProps, "isPlaying"> {}
+export interface LectureProps extends LectureProviderProps, MainComponentProps {
+  isPlaying?: boolean;
+  onLectureLeave: (key: "begin" | "end") => void;
+  className?: string;
+}
 
 const Wrapper = styled.div`
   position: absolute;
@@ -42,7 +45,9 @@ const Main: FC<LectureProps> = ({
     <div {...{ className }}>
       {/** スライド、ステップ切替時、また、リプレイ時に再マウントさせたいのでkeyを指定 */}
       {isPlaying && (
-        <Narration key={timestamp + "_" + progress.slide + "_" + progress.step} />
+        <Narration
+          key={timestamp + "_" + progress.slide + "_" + progress.step}
+        />
       )}
       <ScaleWrapper>
         <Container>
@@ -74,14 +79,8 @@ const Main: FC<LectureProps> = ({
   );
 };
 
-export const Lecture: FC<LectureProps> = ({
-  json = jsonData as JsonData,
-  isPlaying,
-  ...props
-}) => {
-  return (
-    <LectureProvider {...{ json, isPlaying }}>
-      <Main {...props} />
-    </LectureProvider>
-  );
-};
+export const Lecture: FC<LectureProps> = (props) => (
+  <LectureProvider json={props.json} autoPlay={props.autoPlay}>
+    <Main {...props} />
+  </LectureProvider>
+);
