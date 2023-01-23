@@ -36,15 +36,63 @@ export const Main = styled(Swiper)`
   object-fit: cover;
 }
 .swiper-button-next {
-  color: ${buttonColor};
+  border-top: 30px solid transparent;
+  border-bottom:30px solid transparent;
+  border-left: 30px solid ${buttonColor};
+}
+.swiper-button-next:after{
+  content: ''
 }
 .swiper-button-prev {
-  color: ${buttonColor};
+  border-top: 30px solid transparent;
+  border-bottom:30px solid transparent;
+  border-right: 30px solid ${buttonColor};
+}
+.swiper-button-prev:after{
+  content: ''
 }
 `;
 const SImage = styled.img`
-  
 `;
+
+// 下に表示するページネーションの棒
+const SBar = styled.div`
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 200px;
+  height: 3px;
+  background-color: gray;
+  position: relative;
+`;
+
+const SCircle = styled.div`
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; 
+  position: absolute; 
+  top: -3px;
+`;
+
+// 選択した画像のindexによって、●を移動する
+const SSelectCircle = styled(SCircle)<{left: number }>(
+  ({ left}) => `
+  top: -6px;
+  width: 15px;
+  height: 15px;
+  background-color: ${buttonColor}; 
+  left: ${left}%;
+`);
+const SLeftCircle = styled(SCircle)`
+  background-color: gray; 
+  left:0;
+`;
+const SRightCircle = styled(SCircle)`
+  background-color: gray; 
+  right:0;
+`;
+
 /**
  * 特別レクチャー(衛生組み立て画面）のパーツセレクト部分のスライダー
  */
@@ -67,7 +115,6 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({selectIndex, imag
       loop={true}
       loopedSlides={images.length}
       navigation={true}
-      pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       onSwiper={onSwiper}
       onSlideChange={onSlideChange}
@@ -77,6 +124,11 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({selectIndex, imag
       <SwiperSlide key={i}><SImage src={image} css={activeIndex === i ? `border: solid 5px ${isActiveColor}`: ""}/></SwiperSlide>
       )}
     </Main>
+    <SBar>
+      <SLeftCircle/>
+      <SSelectCircle left={(100 / images.length) * activeIndex}/>
+      <SRightCircle/>
+    </SBar>
     </div>
   );
 };
