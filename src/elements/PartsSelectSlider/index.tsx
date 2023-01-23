@@ -23,35 +23,38 @@ export interface PartsSelectSliderProps {
 }
 export const Main = styled(Swiper)`
   .swiper-wrapper {
-  width: 100%;
-  height: 100%;
-  padding-top: 8px;
-  padding-bottom: 8px;
+    width: 100%;
+    height: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 
   .swiper-slide img {
-  display: block;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-}
-.swiper-button-next {
-  border-top: 30px solid transparent;
-  border-bottom:30px solid transparent;
-  border-left: 30px solid ${buttonColor};
-}
-.swiper-button-next:after{
-  content: ''
-}
-.swiper-button-prev {
-  border-top: 30px solid transparent;
-  border-bottom:30px solid transparent;
-  border-right: 30px solid ${buttonColor};
-}
-.swiper-button-prev:after{
-  content: ''
-}
-`;
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  .swiper-button-next {
+    top:47%;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 30px solid ${buttonColor};
+  }
+  .swiper-button-next:after{
+    content: ''
+  }
+  .swiper-button-prev {
+    top:47%;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-right: 30px solid ${buttonColor};
+  }
+  .swiper-button-prev:after{
+    content: ''
+  }
+  `;
+
 const SImage = styled.img`
 `;
 
@@ -76,21 +79,23 @@ const SCircle = styled.div`
 `;
 
 // 選択した画像のindexによって、●を移動する
-const SSelectCircle = styled(SCircle)<{left: number }>(
-  ({ left}) => `
+const SSelectCircle = styled(SCircle).attrs<{left: number }>(({left}) => ({
+  style: { left: `${left}%`,},
+})
+)<{left: number}>`
   top: -6px;
   width: 15px;
   height: 15px;
   background-color: ${buttonColor}; 
-  left: ${left}%;
-`);
+`;
+
 const SLeftCircle = styled(SCircle)`
   background-color: gray; 
   left:0;
 `;
 const SRightCircle = styled(SCircle)`
   background-color: gray; 
-  right:0;
+  left:100%;
 `;
 
 /**
@@ -105,12 +110,11 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({selectIndex, imag
   };
 
   return (
-    <div css={"width: 1000px"}>
+    <div css={"width: 928px"}>
     <Main 
      modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={spaceBetween}
       slidesPerView={4}
-      centeredSlides={true}
       initialSlide={selectIndex}
       loop={true}
       loopedSlides={images.length}
@@ -126,8 +130,8 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({selectIndex, imag
     </Main>
     <SBar>
       <SLeftCircle/>
-      <SSelectCircle left={(100 / images.length) * activeIndex}/>
       <SRightCircle/>
+      <SSelectCircle left={(100 / (images.length -1)) * activeIndex}/>
     </SBar>
     </div>
   );
