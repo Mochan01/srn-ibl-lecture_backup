@@ -14,7 +14,8 @@
     "styled-components": "5.3.6",
     "styled-media-query": "2.1.2",
     "use-sound": "^4.0.1",
-    "use-timer": "^2.0.1"
+    "use-timer": "^2.0.1",
+    "swiper": "8.4.4"
   },
   "devDependencies": {
     "@babel/core": "7.20.12",
