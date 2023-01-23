@@ -9,6 +9,7 @@ import {
 } from "../../../../stores/providers";
 import { MainComponentProps } from "../../../../types";
 import { assetsPath } from "../../../../data/assetsPath";
+// import { Quiz } from "../../../../features/Quiz/Quiz";
 
 export interface ScreenProps
   extends Pick<MainComponentProps, "unitName" | "unitTitle"> {}
@@ -27,6 +28,10 @@ export const Screen: FC<ScreenProps> = (props) => {
     );
   }, [getData, progress]);
 
+  // クイズ回答時の処理
+  const onAnswer = (isCorrect: boolean) => {
+  };
+
   return (
     <LectureFrame {...props}>
       {slideData &&
@@ -40,28 +45,9 @@ export const Screen: FC<ScreenProps> = (props) => {
                 motion2={motion && motion.motion_2}
               >
                 {/* 回答ステップなら */}
-                {image.display_object_1 === "question_area" && (
-                  <QuizArea
-                    correctIndex={[
-                      question.ans_1,
-                      question.ans_2,
-                      question.ans_3,
-                      question.ans_4,
-                    ].indexOf(true)}
-                    questions={
-                      [
-                        question.button_1,
-                        question.button_2,
-                        question.button_3,
-                        question.button_4,
-                      ].filter(Boolean) as string[]
-                    }
-                    $x={image.x_axis}
-                    $y={image.y_axis}
-                    $width={image.width}
-                    $height={image.height}
-                  />
-                )}
+                {/* {image.display_object_1 === "question_area" && (
+                  <Quiz {...{ question, onAnswer }} />
+                )} */}
               </Panel>
             )}
           </Fragment>

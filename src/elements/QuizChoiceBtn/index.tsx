@@ -1,10 +1,9 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 const ImageLecture = new URL(
-  "../../../assets/prod/lecture_panel_answer.png",
+  "../../assets/prod/lecture_panel_answer.png",
   import.meta.url
 ).toString();
-import { quizChoiceBtnWidth } from "../config/index";
 
 export const QUIZ_CHOICE_BTN = {
   /**
@@ -50,7 +49,7 @@ const Main = styled.div<MainProps>(
   ({ mutation, sign }) => `
   cursor: pointer;
   position: relative;
-  width: ${quizChoiceBtnWidth}px;
+  width: 246px;
   height: 76px;
   background-image: url(${ImageLecture});
   background-position: ${mutation};

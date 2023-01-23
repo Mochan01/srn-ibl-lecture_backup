@@ -65,7 +65,7 @@ export const QuizArea: FC<QuizAreaProps> = ({
   const [isAlreadyAnswer, setIsAlreadyAnswer] = useState(false);
 
   // 解答ボタンを押したときの処理を生成
-  const answerAction = useCreateAnswerAction(correctIndex, chooseIndex);
+  // const answerAction = useCreateAnswerAction(correctIndex, chooseIndex);
   // 解答ボタンの色生成
   const mutation = useMemo(() => {
     return typeof chooseIndex === "number"
@@ -124,7 +124,7 @@ export const QuizArea: FC<QuizAreaProps> = ({
       <AnswerBtn
         {...{ mutation }}
         onClick={() => {
-          answerAction();
+         //  answerAction();
           setIsAlreadyAnswer(true);
         }}
         isMaxLen={questions.length === 4}

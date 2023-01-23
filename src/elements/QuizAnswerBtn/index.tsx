@@ -1,7 +1,7 @@
 import React, { FC, useMemo } from "react";
 import styled from "styled-components";
 const ImageLecture = new URL(
-  "../../../assets/prod/lecture_panel_answer.png",
+  "../../assets/prod/lecture_panel_answer.png",
   import.meta.url
 ).toString();
 
