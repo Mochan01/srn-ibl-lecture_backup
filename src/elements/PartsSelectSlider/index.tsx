@@ -35,7 +35,9 @@ const SSwiperContainer = styled.div`
 
 const SSwiper = styled(Swiper)`
   .swiper-wrapper {
-    width: 938px;
+    /* (image + spaceBetween + border*2 ) *slidesPerView = width*/
+    /* (200 + 32 + 4*2 ) * 4 = 960px */
+    width: 960px;
     height: 100%;
     padding-top: 16px;
     padding-bottom: 16px;
@@ -43,8 +45,8 @@ const SSwiper = styled(Swiper)`
 
   .swiper-slide img {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
   }
 `;
@@ -138,13 +140,15 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
           speed={duration}
         >
           {images.map((image, i) => (
-            <SwiperSlide
-              key={i}
-              css={
-                activeIndex === i ? `border: solid 4px ${isActiveColor}` : ""
-              }
-            >
-              <SImage src={image} />
+            <SwiperSlide key={i}>
+              <SImage
+                src={image}
+                css={
+                  activeIndex === i
+                    ? `border: solid 4px ${isActiveColor}`
+                    : "padding: 4px"
+                }
+              />
             </SwiperSlide>
           ))}
         </SSwiper>
