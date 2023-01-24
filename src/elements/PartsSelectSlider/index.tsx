@@ -112,7 +112,7 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
   onSelect,
 }) => {
   const [swiperObject, onSwiper] = useState<SwiperRef>();
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(selectIndex);
   const onSlideChange = (swiper: SwiperRef) => {
     onSelect(swiper.realIndex);
     setActiveIndex(swiper.realIndex);
