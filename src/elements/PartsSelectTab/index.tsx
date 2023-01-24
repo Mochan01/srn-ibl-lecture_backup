@@ -44,7 +44,6 @@ export const Tab = styled.div<TabProps>(
   ${variants[variant]}
   width: 25%;
   display: inline-block;
-  // padding無視して文字を入れられるので横だけ削除
   padding: 10px 0;
   border-radius: 6px 6px 0 0;
   font-size: 24px;
