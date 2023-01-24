@@ -1,8 +1,14 @@
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 import { LectureFrame } from "../../elements/LectureFrame";
 import { MasterData } from "./types";
 import { splitIDs } from "../../utils/splitIDs";
-import { handleMissionData, getMissionParts, getBatteryIDs, getBusIDs, getRocketIDs } from "./utils";
+import {
+  handleMissionData,
+  getMissionParts,
+  getBatteryIDs,
+  getBusIDs,
+  getRocketIDs,
+} from "./utils";
 
 export interface SatelliteAssemblyProps {
   /**
@@ -23,7 +29,11 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
   masterData,
 }) => {
   // 当該ミッションのデータを取得
-  const missionData = masterData.mission_list.find((x) => x.mission_id);
+  const missionData = useMemo(
+    () =>
+      masterData.mission_list.find((x) => x.mission_id === selectedMissionID),
+    [masterData, selectedMissionID]
+  );
   if (!missionData) return <></>;
 
   // 何のパーツを読み込むか？判定（タブ順）
