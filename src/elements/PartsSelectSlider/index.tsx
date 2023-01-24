@@ -118,6 +118,10 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
     setActiveIndex(swiper.realIndex);
   };
 
+  const onClick = (index: number) => {
+    setActiveIndex(index);
+  };
+
   return (
     <Main>
       <SSwiperContainer>
@@ -140,7 +144,8 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
           speed={duration}
         >
           {images.map((image, i) => (
-            <SwiperSlide key={i}>
+            <SwiperSlide key={i} onClick={() => onClick(i)}>
+              {i}
               <SImage
                 src={image}
                 css={
@@ -159,6 +164,8 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
         <SRightCircle />
         <SSelectCircle left={(100 / (images.length - 1)) * activeIndex} />
       </SBar>
+      <h1>{activeIndex}</h1>
+      <h1>{swiperObject?.realIndex}</h1>
     </Main>
   );
 };
