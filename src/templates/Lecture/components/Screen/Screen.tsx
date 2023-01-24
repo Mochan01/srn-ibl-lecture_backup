@@ -1,6 +1,6 @@
 import React, { FC, useContext, useMemo, Fragment, useCallback } from "react";
 import { Panel } from "./Panel";
-import { LectureFrame } from "./LectureFrame";
+import { LectureFrame } from "../../../../elements/LectureFrame";
 import { QuizArea } from "../../../../elements/QuizArea";
 import {
   GetDataProviderContext,
