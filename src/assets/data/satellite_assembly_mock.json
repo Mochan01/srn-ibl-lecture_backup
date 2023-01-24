@@ -1,0 +1,956 @@
+{
+  "mission_list": [
+      {
+          "mission_id": "mission_1",
+          "mission_name": "Lv1_アマゾンの危機",
+          "launchable_mass": "geo",
+          "rocket": "1_4,1_5,1_6,1_7",
+          "loading_bus": "2_3,2_4,2_5,2_6,2_7,2_8",
+          "solar_battery": "3_1,3_2,3_3,3_4,3_5",
+          "sensor_item": "4_1,4_3,4_5,4_6,4_7",
+          "transmission_item": "",
+          "computer_item": "",
+          "debris_item": "",
+          "sample_return_item": "",
+          "asteroid_item": "",
+          "max_budget": 270,
+          "preparation_period": 70
+      },
+      {
+          "mission_id": "mission_2",
+          "mission_name": "Lv1_スマートシティって",
+          "launchable_mass": "geo",
+          "rocket": "1_4,1_5,1_6,1_7",
+          "loading_bus": "2_1,2_2,2_3,2_4,2_5,2_6,2_7,2_8",
+          "solar_battery": "3_1,3_2,3_3,3_4,3_5",
+          "sensor_item": "4_4,4_6",
+          "transmission_item": "5_3,5_4",
+          "computer_item": "",
+          "debris_item": "",
+          "sample_return_item": "",
+          "asteroid_item": "",
+          "max_budget": 280,
+          "preparation_period": 117
+      },
+      {
+          "mission_id": "mission_3",
+          "mission_name": "Lv1_魚の群れを追え",
+          "launchable_mass": "leo",
+          "rocket": "1_4,1_5,1_6,1_7",
+          "loading_bus": "2_1,2_2,2_3,2_4,2_5,2_6",
+          "solar_battery": "3_1,3_2,3_3,3_4,3_5",
+          "sensor_item": "4_1,4_3,4_6",
+          "transmission_item": "5_3,5_4",
+          "computer_item": "",
+          "debris_item": "",
+          "sample_return_item": "",
+          "asteroid_item": "",
+          "max_budget": 150,
+          "preparation_period": 86
+      },
+      {
+          "mission_id": "mission_4",
+          "mission_name": "Lv1_災害把握",
+          "launchable_mass": "geo",
+          "rocket": "1_4,1_5,1_6,1_7",
+          "loading_bus": "2_1,2_2,2_3,2_4,2_5,2_6,2_7,2_8",
+          "solar_battery": "3_1,3_2,3_3,3_4,3_5",
+          "sensor_item": "4_1,4_2,4_4,4_8,4_9",
+          "transmission_item": "",
+          "computer_item": "7_1,7_2,7_3,7_4",
+          "debris_item": "",
+          "sample_return_item": "",
+          "asteroid_item": "",
+          "max_budget": 320,
+          "preparation_period": 120
+      },
+      {
+          "mission_id": "mission_5",
+          "mission_name": "Lv1_渡り鳥を追え",
+          "launchable_mass": "leo",
+          "rocket": "1_1,1_2,1_3,1_4,1_5,1_6,1_7",
+          "loading_bus": "2_1,2_2,2_3,2_4,2_5,2_6",
+          "solar_battery": "3_1,3_2,3_3,3_4,3_5",
+          "sensor_item": "4_2,4_4,4_6",
+          "transmission_item": "5_3,5_4",
+          "computer_item": "",
+          "debris_item": "",
+          "sample_return_item": "",
+          "asteroid_item": "",
+          "max_budget": 200,
+          "preparation_period": 70
+      },
+      {
+          "mission_id": "mission_6",
+          "mission_name": "Lv2_サンプルリターン",
+          "launchable_mass": "ooo",
+          "rocket": "1_4,1_5,1_6,1_7",
+          "loading_bus": "2_1,2_2,2_3,2_4,2_5,2_6,2_7,2_8",
+          "solar_battery": "3_1,3_2,3_3,3_4,3_5",
+          "sensor_item": "",
+          "transmission_item": "5_5,5_6\n5_7",
+          "computer_item": "7_1,7_2,7_3,7_4",
+          "debris_item": "",
+          "sample_return_item": "9_1,9_2,9_3,9_4,9_5",
+          "asteroid_item": "10_1,10_2,10_3",
+          "max_budget": 350,
+          "preparation_period": 152
+      },
+      {
+          "mission_id": "mission_7",
+          "mission_name": "Lv2_スペースデブリ",
+          "launchable_mass": "geo",
+          "rocket": "1_1,1_2,1_3,1_4,1_5,1_6,1_7",
+          "loading_bus": "2_1,2_2,2_3,2_4,2_5,2_6,2_7,2_8",
+          "solar_battery": "3_1,3_2,3_3,3_4,3_5",
+          "sensor_item": "",
+          "transmission_item": "",
+          "computer_item": "7_3",
+          "debris_item": "8_1,8_2,8_3,8_4,8_5,8_6",
+          "sample_return_item": "",
+          "asteroid_item": "",
+          "max_budget": 330,
+          "preparation_period": 108
+      },
+      {
+          "mission_id": "mission_8",
+          "mission_name": "Lv2_食料生産",
+          "launchable_mass": "leo",
+          "rocket": "1_1,1_2,1_3,1_4,1_5,1_6,1_7",
+          "loading_bus": "2_1,2_2,2_3,2_4,2_5,2_6",
+          "solar_battery": "3_1,3_2,3_3,3_4,3_5",
+          "sensor_item": "4_2,4_4,4_6,4_7",
+          "transmission_item": "",
+          "computer_item": "",
+          "debris_item": "",
+          "sample_return_item": "",
+          "asteroid_item": "",
+          "max_budget": 200,
+          "preparation_period": 70
+      },
+      {
+          "mission_id": "mission_9",
+          "mission_name": "Lv2_仮想通貨",
+          "launchable_mass": "leo",
+          "rocket": "1_1,1_2,1_3,1_4,1_5,1_6,1_7",
+          "loading_bus": "2_1,2_2,2_3,2_4,2_5,2_6,2_7,2_8",
+          "solar_battery": "3_1,3_2,3_3,3_4,3_5",
+          "sensor_item": "",
+          "transmission_item": "5_1,5_2",
+          "computer_item": "7_2,7_3,7_4",
+          "debris_item": "",
+          "sample_return_item": "",
+          "asteroid_item": "",
+          "max_budget": 140,
+          "preparation_period": 105
+      }
+  ],
+  "category_list": [
+      {
+          "category_id": 1,
+          "category_name": "ロケット",
+          "category_description": "衛星を軌道まで打ち上げる為の輸送機"
+      },
+      {
+          "category_id": 2,
+          "category_name": "衛星バス",
+          "category_description": "衛星の本体。これに太陽電池やミッション装置を取り付けて衛星が完成する"
+      },
+      {
+          "category_id": 3,
+          "category_name": "太陽電池",
+          "category_description": "太陽の光から電気を作り出す装置"
+      },
+      {
+          "category_id": 4,
+          "category_name": "センサー系ミッションアイテム",
+          "category_description": "ミッションを遂行する為のセンサー類"
+      },
+      {
+          "category_id": 5,
+          "category_name": "通信ミッションアイテム",
+          "category_description": "地上や他の衛星との通信（情報のやり取り）に用いる装置"
+      },
+      {
+          "category_id": 7,
+          "category_name": "衛星に搭載する演算装置(コンピュータ）",
+          "category_description": "衛星内で何かの演算処理を行う装置"
+      },
+      {
+          "category_id": 8,
+          "category_name": "デブリミッション",
+          "category_description": "デブリ回収ミッションをする為の専用ツール"
+      },
+      {
+          "category_id": 9,
+          "category_name": "サンプルリターンミッション",
+          "category_description": "サンプルリターンミッションを行う為の専用ツール"
+      },
+      {
+          "category_id": 10,
+          "category_name": "小惑星探査推進装置",
+          "category_description": "小惑星まで衛星を運ぶ専用の推進装置"
+      }
+  ],
+  "item_list": [
+      {
+          "entry_id": "entry_1",
+          "entry_name_eng": "price_hundred_million",
+          "entry_name_jap": "価格（億円）"
+      },
+      {
+          "entry_id": "entry_2",
+          "entry_name_eng": "leo_launchable_mass_kg",
+          "entry_name_jap": "LEO打ち上げ可能質量（kg）"
+      },
+      {
+          "entry_id": "entry_3",
+          "entry_name_eng": "geo_launchable_mass_kg",
+          "entry_name_jap": "GEO打ち上げ可能質量（kg）"
+      },
+      {
+          "entry_id": "entry_4",
+          "entry_name_eng": "ooo_launchable_mass_kg",
+          "entry_name_jap": "地球軌道外宇宙打ち上げ可能質量（kg）"
+      },
+      {
+          "entry_id": "entry_5",
+          "entry_name_eng": "manufacturing_period_months",
+          "entry_name_jap": "製造期間（月）"
+      },
+      {
+          "entry_id": "entry_6",
+          "entry_name_eng": "max_loading_mass_kg",
+          "entry_name_jap": "最大積載可能質量（kg）"
+      },
+      {
+          "entry_id": "entry_7",
+          "entry_name_eng": "body_mass_kg",
+          "entry_name_jap": "本体質量（kg）"
+      },
+      {
+          "entry_id": "entry_8",
+          "entry_name_eng": "required_power_watts",
+          "entry_name_jap": "衛星バス必要電力（W）"
+      },
+      {
+          "entry_id": "entry_9",
+          "entry_name_eng": "satellite_lifespan_years",
+          "entry_name_jap": "衛星寿命（年）"
+      },
+      {
+          "entry_id": "entry_10",
+          "entry_name_eng": "power_supply_watts",
+          "entry_name_jap": "供給電力（W）"
+      }
+  ],
+  "result_list": [
+      {
+          "result_id": "result_1",
+          "part_a": "",
+          "part_a_name": "",
+          "part_b": "",
+          "part_b_name": "",
+          "result_pdf": ""
+      },
+      {
+          "result_id": "result_2",
+          "part_a": "",
+          "part_a_name": "",
+          "part_b": "",
+          "part_b_name": "",
+          "result_pdf": ""
+      },
+      {
+          "result_id": "result_3",
+          "part_a": "",
+          "part_a_name": "",
+          "part_b": "",
+          "part_b_name": "",
+          "result_pdf": ""
+      },
+      {
+          "result_id": "result_4",
+          "part_a": "",
+          "part_a_name": "",
+          "part_b": "",
+          "part_b_name": "",
+          "result_pdf": ""
+      },
+      {
+          "result_id": "result_5",
+          "part_a": "",
+          "part_a_name": "",
+          "part_b": "",
+          "part_b_name": "",
+          "result_pdf": ""
+      },
+      {
+          "result_id": "result_6",
+          "part_a": "",
+          "part_a_name": "",
+          "part_b": "",
+          "part_b_name": "",
+          "result_pdf": ""
+      },
+      {
+          "result_id": "result_7",
+          "part_a": "",
+          "part_a_name": "",
+          "part_b": "",
+          "part_b_name": "",
+          "result_pdf": ""
+      },
+      {
+          "result_id": "result_8",
+          "part_a": "",
+          "part_a_name": "",
+          "part_b": "",
+          "part_b_name": "",
+          "result_pdf": ""
+      },
+      {
+          "result_id": "result_9",
+          "part_a": "",
+          "part_a_name": "",
+          "part_b": "",
+          "part_b_name": "",
+          "result_pdf": ""
+      },
+      {
+          "result_id": "result_10",
+          "part_a": "",
+          "part_a_name": "",
+          "part_b": "",
+          "part_b_name": "",
+          "result_pdf": ""
+      }
+  ],
+  "rocket": [
+      {
+          "category_id": 1,
+          "category_name": "ロケット",
+          "part_id": "1_1",
+          "part_name": "激安ロケット",
+          "description": "コストを重視したロケット",
+          "price_hundred_million": 10,
+          "leo_launchable_mass_kg": 500,
+          "geo_launchable_mass_kg": 0,
+          "ooo_launchable_mass_kg": 0,
+          "manufacturing_period_months": 16
+      },
+      {
+          "category_id": 1,
+          "category_name": "ロケット",
+          "part_id": "1_2",
+          "part_name": "超小型ロケット",
+          "description": "小型の衛星を打ち上げる事を目的に開発されたロケット",
+          "price_hundred_million": 18,
+          "leo_launchable_mass_kg": 700,
+          "geo_launchable_mass_kg": 0,
+          "ooo_launchable_mass_kg": 0,
+          "manufacturing_period_months": 12
+      },
+      {
+          "category_id": 1,
+          "category_name": "ロケット",
+          "part_id": "1_3",
+          "part_name": "小型ロケット",
+          "description": "標準ロケットよりもやや小さめなロケット",
+          "price_hundred_million": 50,
+          "leo_launchable_mass_kg": 3000,
+          "geo_launchable_mass_kg": 0,
+          "ooo_launchable_mass_kg": 0,
+          "manufacturing_period_months": 18
+      },
+      {
+          "category_id": 1,
+          "category_name": "ロケット",
+          "part_id": "1_4",
+          "part_name": "標準ロケット",
+          "description": "標準的なロケット",
+          "price_hundred_million": 100,
+          "leo_launchable_mass_kg": 10000,
+          "geo_launchable_mass_kg": 5000,
+          "ooo_launchable_mass_kg": 2000,
+          "manufacturing_period_months": 20
+      },
+      {
+          "category_id": 1,
+          "category_name": "ロケット",
+          "part_id": "1_5",
+          "part_name": "短納期ロケット",
+          "description": "短納期を重視して設計されたロケット",
+          "price_hundred_million": 120,
+          "leo_launchable_mass_kg": 2000,
+          "geo_launchable_mass_kg": 1000,
+          "ooo_launchable_mass_kg": 800,
+          "manufacturing_period_months": 8
+      },
+      {
+          "category_id": 1,
+          "category_name": "ロケット",
+          "part_id": "1_6",
+          "part_name": "大型ロケット",
+          "description": "大型のロケット。価格は高いが重い衛星を打ち上げることができる。",
+          "price_hundred_million": 150,
+          "leo_launchable_mass_kg": 14000,
+          "geo_launchable_mass_kg": 7000,
+          "ooo_launchable_mass_kg": 2500,
+          "manufacturing_period_months": 24
+      },
+      {
+          "category_id": 1,
+          "category_name": "ロケット",
+          "part_id": "1_7",
+          "part_name": "超大型ロケット",
+          "description": "超大型のロケット。打ち上げられない衛星はないが、コストが高く生産期間も長い。",
+          "price_hundred_million": 200,
+          "leo_launchable_mass_kg": 20000,
+          "geo_launchable_mass_kg": 10000,
+          "ooo_launchable_mass_kg": 4000,
+          "manufacturing_period_months": 36
+      }
+  ],
+  "bus": [
+      {
+          "category_id": 2,
+          "category_name": "衛星バス",
+          "part_id": "2_1",
+          "part_name": "超小型バス",
+          "description": "超小型のLEO専用衛星バスで最大積載量が少ない",
+          "price_hundred_million": 20,
+          "max_loading_mass_kg": 200,
+          "body_mass_kg": 100,
+          "required_power_watts": 100,
+          "manufacturing_period_months": 12
+      },
+      {
+          "category_id": 2,
+          "category_name": "衛星バス",
+          "part_id": "2_2",
+          "part_name": "低消費電力バス",
+          "description": "消費電力を抑えることに特化したLEO専用衛星バス",
+          "price_hundred_million": 90,
+          "max_loading_mass_kg": 300,
+          "body_mass_kg": 300,
+          "required_power_watts": 100,
+          "manufacturing_period_months": 12
+      },
+      {
+          "category_id": 2,
+          "category_name": "衛星バス",
+          "part_id": "2_3",
+          "part_name": "標準バス１",
+          "description": "標準的な衛星バス（LEO、GEOで使用可能）　３つのラインナップがある",
+          "price_hundred_million": 50,
+          "max_loading_mass_kg": 500,
+          "body_mass_kg": 400,
+          "required_power_watts": 150,
+          "manufacturing_period_months": 16
+      },
+      {
+          "category_id": 2,
+          "category_name": "衛星バス",
+          "part_id": "2_4",
+          "part_name": "標準バス２",
+          "description": "標準的な衛星バス（LEO、GEOで使用可能）　３つのラインナップがある",
+          "price_hundred_million": 60,
+          "max_loading_mass_kg": 700,
+          "body_mass_kg": 500,
+          "required_power_watts": 200,
+          "manufacturing_period_months": 18
+      },
+      {
+          "category_id": 2,
+          "category_name": "衛星バス",
+          "part_id": "2_5",
+          "part_name": "標準バス３",
+          "description": "標準的な衛星バス（LEO、GEOで使用可能）　３つのラインナップがある",
+          "price_hundred_million": 70,
+          "max_loading_mass_kg": 1000,
+          "body_mass_kg": 800,
+          "required_power_watts": 300,
+          "manufacturing_period_months": 20
+      },
+      {
+          "category_id": 2,
+          "category_name": "衛星バス",
+          "part_id": "2_6",
+          "part_name": "高積載バス",
+          "description": "積載量に特化して設計された衛星バス（LEO、GEOで使用可能）",
+          "price_hundred_million": 100,
+          "max_loading_mass_kg": 4000,
+          "body_mass_kg": 1000,
+          "required_power_watts": 700,
+          "manufacturing_period_months": 32
+      },
+      {
+          "category_id": 2,
+          "category_name": "衛星バス",
+          "part_id": "2_7",
+          "part_name": "大型バス",
+          "description": "大型のGEO衛星バス",
+          "price_hundred_million": 80,
+          "max_loading_mass_kg": 2500,
+          "body_mass_kg": 3000,
+          "required_power_watts": 500,
+          "manufacturing_period_months": 30
+      },
+      {
+          "category_id": 2,
+          "category_name": "衛星バス",
+          "part_id": "2_8",
+          "part_name": "超大型バス",
+          "description": "超大型のGEO衛星バス",
+          "price_hundred_million": 100,
+          "max_loading_mass_kg": 3500,
+          "body_mass_kg": 6500,
+          "required_power_watts": 800,
+          "manufacturing_period_months": 36
+      }
+  ],
+  "battery": [
+      {
+          "category_id": 3,
+          "category_name": "太陽電池",
+          "part_id": "3_1",
+          "part_name": "超小型太陽電池",
+          "description": "衛星ボディに貼り付け",
+          "price_hundred_million": 2,
+          "body_mass_kg": 10,
+          "power_supply_watts": 150,
+          "manufacturing_period_months": 6
+      },
+      {
+          "category_id": 3,
+          "category_name": "太陽電池",
+          "part_id": "3_2",
+          "part_name": "小型太陽電池",
+          "description": "展開型であるが固定（太陽追尾なし）",
+          "price_hundred_million": 6,
+          "body_mass_kg": 20,
+          "power_supply_watts": 500,
+          "manufacturing_period_months": 12
+      },
+      {
+          "category_id": 3,
+          "category_name": "太陽電池",
+          "part_id": "3_3",
+          "part_name": "中型太陽電池",
+          "description": "展開型であるが固定（太陽追尾なし）",
+          "price_hundred_million": 9,
+          "body_mass_kg": 80,
+          "power_supply_watts": 1500,
+          "manufacturing_period_months": 15
+      },
+      {
+          "category_id": 3,
+          "category_name": "太陽電池",
+          "part_id": "3_4",
+          "part_name": "大型太陽電池",
+          "description": "展開型で太陽追尾型",
+          "price_hundred_million": 12,
+          "body_mass_kg": 200,
+          "power_supply_watts": 5000,
+          "manufacturing_period_months": 18
+      },
+      {
+          "category_id": 3,
+          "category_name": "太陽電池",
+          "part_id": "3_5",
+          "part_name": "超大型太陽電池",
+          "description": "大型、展開型で太陽追尾型",
+          "price_hundred_million": 20,
+          "body_mass_kg": 350,
+          "power_supply_watts": 8000,
+          "manufacturing_period_months": 24
+      }
+  ],
+  "sensor_parts": [
+      {
+          "category_id": 4,
+          "category_name": "センサー系ミッションアイテム",
+          "part_id": "4_1",
+          "part_name": "標準サーモグラフィー\n",
+          "description": "標準的なサーモグラフィー",
+          "price_hundred_million": 10,
+          "body_mass_kg": 150,
+          "required_power_watts": 200,
+          "manufacturing_period_months": 16
+      },
+      {
+          "category_id": 4,
+          "category_name": "センサー系ミッションアイテム",
+          "part_id": "4_2",
+          "part_name": "高分解能サーモグラフィー",
+          "description": "高分解能であるが観測幅が狭いサーモグラフィー",
+          "price_hundred_million": 20,
+          "body_mass_kg": 200,
+          "required_power_watts": 300,
+          "manufacturing_period_months": 20
+      },
+      {
+          "category_id": 4,
+          "category_name": "センサー系ミッションアイテム",
+          "part_id": "4_3",
+          "part_name": "標準SAR\n",
+          "description": "標準的なSAR",
+          "price_hundred_million": 30,
+          "body_mass_kg": 200,
+          "required_power_watts": 800,
+          "manufacturing_period_months": 16
+      },
+      {
+          "category_id": 4,
+          "category_name": "センサー系ミッションアイテム",
+          "part_id": "4_4",
+          "part_name": "高分解能SAR",
+          "description": "高分解能であるが観測幅が狭いSAR",
+          "price_hundred_million": 50,
+          "body_mass_kg": 400,
+          "required_power_watts": 1200,
+          "manufacturing_period_months": 20
+      },
+      {
+          "category_id": 4,
+          "category_name": "センサー系ミッションアイテム",
+          "part_id": "4_5",
+          "part_name": "広域カメラ",
+          "description": "広い領域を一度に見ることが出来るが、分解能が低い可視光カメラ",
+          "price_hundred_million": 20,
+          "body_mass_kg": 100,
+          "required_power_watts": 350,
+          "manufacturing_period_months": 12
+      },
+      {
+          "category_id": 4,
+          "category_name": "センサー系ミッションアイテム",
+          "part_id": "4_6",
+          "part_name": "高分解能カメラ",
+          "description": "高分解能であるが観測幅が狭い可視光カメラ",
+          "price_hundred_million": 50,
+          "body_mass_kg": 300,
+          "required_power_watts": 500,
+          "manufacturing_period_months": 20
+      },
+      {
+          "category_id": 4,
+          "category_name": "センサー系ミッションアイテム",
+          "part_id": "4_7",
+          "part_name": "ハイパースペクトルカメラ",
+          "description": "広範囲に波長の異なる光を観測するカメラ",
+          "price_hundred_million": 80,
+          "body_mass_kg": 400,
+          "required_power_watts": 500,
+          "manufacturing_period_months": 20
+      },
+      {
+          "category_id": 4,
+          "category_name": "センサー系ミッションアイテム",
+          "part_id": "4_8",
+          "part_name": "降雨レーダー",
+          "description": "電波を使って雨の量を見るレーダー",
+          "price_hundred_million": 60,
+          "body_mass_kg": 350,
+          "required_power_watts": 800,
+          "manufacturing_period_months": 18
+      },
+      {
+          "category_id": 4,
+          "category_name": "センサー系ミッションアイテム",
+          "part_id": "4_9",
+          "part_name": "降水レーダー",
+          "description": "電波を使って、雨の量を立体的に見る",
+          "price_hundred_million": 70,
+          "body_mass_kg": 450,
+          "required_power_watts": 1000,
+          "manufacturing_period_months": 22
+      }
+  ],
+  "transmission_parts": [
+      {
+          "category_id": 5,
+          "category_name": "通信ミッションアイテム",
+          "part_id": "5_1",
+          "part_name": "地上の基地局との電波通信装置（標準）",
+          "description": "標準的な地上との電波通信を行う装置。",
+          "price_hundred_million": 5,
+          "body_mass_kg": 200,
+          "required_power_watts": 500,
+          "manufacturing_period_months": 14
+      },
+      {
+          "category_id": 5,
+          "category_name": "通信ミッションアイテム",
+          "part_id": "5_2",
+          "part_name": "地上の基地局との電波通信装置（高速）",
+          "description": "地上との高速電波通信を行う装置。",
+          "price_hundred_million": 6,
+          "body_mass_kg": 500,
+          "required_power_watts": 800,
+          "manufacturing_period_months": 12
+      },
+      {
+          "category_id": 5,
+          "category_name": "通信ミッションアイテム",
+          "part_id": "5_3",
+          "part_name": "地上の携帯電話や小型発信機との通信装置+地上の小型発信機1000個セット",
+          "description": "地上の携帯電話や小型発信機との通信を行う専用の装置と地上で使用する小型発信機1000個のセット",
+          "price_hundred_million": 8,
+          "body_mass_kg": 500,
+          "required_power_watts": 800,
+          "manufacturing_period_months": 17
+      },
+      {
+          "category_id": 5,
+          "category_name": "通信ミッションアイテム",
+          "part_id": "5_4",
+          "part_name": "地上のGPS受信機との通信装置+地上のGPS受信機1000個セット",
+          "description": "地上のGPS受信機で得た位置情報を衛星が受信する専用の装置と地上で使用するGPS受信機1000個のセット",
+          "price_hundred_million": 7,
+          "body_mass_kg": 150,
+          "required_power_watts": 150,
+          "manufacturing_period_months": 15
+      },
+      {
+          "category_id": 5,
+          "category_name": "通信ミッションアイテム",
+          "part_id": "5_5",
+          "part_name": "探査衛星に搭載する通信機器（省電力）",
+          "description": "小惑星探査衛星の観測結果を地球に送信する通信用装置　軽量設計されている",
+          "price_hundred_million": 12,
+          "body_mass_kg": 50,
+          "required_power_watts": 100,
+          "manufacturing_period_months": 15
+      },
+      {
+          "category_id": 5,
+          "category_name": "通信ミッションアイテム",
+          "part_id": "5_6",
+          "part_name": "探査衛星に搭載する通信機器（標準）",
+          "description": "小惑星探査衛星の観測結果を地球に送信する通信用装置　標準速度で通信が可能",
+          "price_hundred_million": 10,
+          "body_mass_kg": 70,
+          "required_power_watts": 200,
+          "manufacturing_period_months": 14
+      },
+      {
+          "category_id": 5,
+          "category_name": "通信ミッションアイテム",
+          "part_id": "5_7",
+          "part_name": "探査衛星に搭載する通信機器（高速）",
+          "description": "小惑星探査衛星の観測結果を地球に送信する通信用装置　高速での通信が可能",
+          "price_hundred_million": 15,
+          "body_mass_kg": 150,
+          "required_power_watts": 240,
+          "manufacturing_period_months": 16
+      }
+  ],
+  "computer": [
+      {
+          "category_id": 7,
+          "category_name": "衛星に搭載する演算装置(コンピュータ）",
+          "part_id": "7_1",
+          "part_name": "限定処理特化型コンピュータ",
+          "description": "ある限定した処理に特化し開発された一般コンピュータ。衛星打ち上げ後のプログラム書き換えは不可能。",
+          "price_hundred_million": 1,
+          "body_mass_kg": 40,
+          "required_power_watts": 40,
+          "manufacturing_period_months": 3
+      },
+      {
+          "category_id": 7,
+          "category_name": "衛星に搭載する演算装置(コンピュータ）",
+          "part_id": "7_2",
+          "part_name": "標準型コンピュータ",
+          "description": "標準的なコンピュータで、衛星が撮った画像処理が行えるコンピュータ",
+          "price_hundred_million": 2,
+          "body_mass_kg": 20,
+          "required_power_watts": 50,
+          "manufacturing_period_months": 6
+      },
+      {
+          "category_id": 7,
+          "category_name": "衛星に搭載する演算装置(コンピュータ）",
+          "part_id": "7_3",
+          "part_name": "高性能コンピュータ",
+          "description": "よりハイスピードな演算処理が可能なコンピュータ。ただし演算スピードを優先している為に、衛星打ち上げ後のプログラム書き換えは不可能",
+          "price_hundred_million": 1.5,
+          "body_mass_kg": 50,
+          "required_power_watts": 300,
+          "manufacturing_period_months": 10
+      },
+      {
+          "category_id": 7,
+          "category_name": "衛星に搭載する演算装置(コンピュータ）",
+          "part_id": "7_4",
+          "part_name": "スーパーコンピュータ",
+          "description": "高度な演算処理が可能なコンピュータで、衛星打ち上げ後のプログラム書き換えが可能",
+          "price_hundred_million": 5,
+          "body_mass_kg": 100,
+          "required_power_watts": 150,
+          "manufacturing_period_months": 24
+      }
+  ],
+  "debris": [
+      {
+          "category_id": 8,
+          "category_name": "デブリミッション",
+          "part_id": "8_1",
+          "part_name": "蠅取り紙を宇宙に設置してデブリをキャッチし大気圏へ",
+          "description": "直径５ｍの蠅取り紙を宇宙に設置して、小さなデブリを回収する。ある程度のデブリが取れたら、大気圏に落下させデブリと共に燃やす。",
+          "price_hundred_million": 10,
+          "body_mass_kg": 500,
+          "required_power_watts": 10,
+          "manufacturing_period_months": 12
+      },
+      {
+          "category_id": 8,
+          "category_name": "デブリミッション",
+          "part_id": "8_2",
+          "part_name": "導電性テザーをデブリに取り付けてテザーの力で大気圏へ",
+          "description": "導電性テザーをデブリに取り付け、その後、導電性テザーに電気を流すことで力が発生し、大気圏にデブリを引き込み燃やす。",
+          "price_hundred_million": 80,
+          "body_mass_kg": 1500,
+          "required_power_watts": 200,
+          "manufacturing_period_months": 22
+      },
+      {
+          "category_id": 8,
+          "category_name": "デブリミッション",
+          "part_id": "8_3",
+          "part_name": "レーザーを照射してレーザーアブレーションを発生させて大気圏へ",
+          "description": "レーザーをデブリに照射させ、デブリの表面を加熱する事で力を発生させ、大気圏にデブリを落下させ燃やす。",
+          "price_hundred_million": 70,
+          "body_mass_kg": 100,
+          "required_power_watts": 1000,
+          "manufacturing_period_months": 16
+      },
+      {
+          "category_id": 8,
+          "category_name": "デブリミッション",
+          "part_id": "8_4",
+          "part_name": "太陽光を収束させて照射し、アブレーションを発生させて大気圏へ",
+          "description": "直径10ｍの鏡で、太陽光を反射、集中させ、デブリ表面を加熱させ力を発生させる。得られた力によりデブリを大気圏に落下させ燃やす。",
+          "price_hundred_million": 120,
+          "body_mass_kg": 300,
+          "required_power_watts": 100,
+          "manufacturing_period_months": 28
+      },
+      {
+          "category_id": 8,
+          "category_name": "デブリミッション",
+          "part_id": "8_5",
+          "part_name": "衛星ごとデブリにドッキングして一緒に大気圏へ",
+          "description": "衛星をデブリにドッキングさせ、デブリごと衛星を地球に落下させ燃やす。",
+          "price_hundred_million": 30,
+          "body_mass_kg": 1000,
+          "required_power_watts": 120,
+          "manufacturing_period_months": 13
+      },
+      {
+          "category_id": 8,
+          "category_name": "デブリミッション",
+          "part_id": "8_6",
+          "part_name": "推進装置をデブリに取り付けて推進装置の力で大気圏へ",
+          "description": "衛星をデブリに近づかせ、デブリに推進装置をセットする。衛星がデブリから離れた後に、推進装置でデブリを加速させ、大気圏に落下させ燃やす。",
+          "price_hundred_million": 100,
+          "body_mass_kg": 2500,
+          "required_power_watts": 100,
+          "manufacturing_period_months": 20
+      }
+  ],
+  "sample_return": [
+      {
+          "category_id": 9,
+          "category_name": "サンプルリターンミッション",
+          "part_id": "9_1",
+          "part_name": "シャベル採取装置",
+          "description": "シャベルで小惑星表面のサンプルを採取する。",
+          "price_hundred_million": 50,
+          "body_mass_kg": 100,
+          "required_power_watts": 150,
+          "manufacturing_period_months": 25
+      },
+      {
+          "category_id": 9,
+          "category_name": "サンプルリターンミッション",
+          "part_id": "9_2",
+          "part_name": "粘着テープ採取装置",
+          "description": "粘着テープを小惑星に落とし、粘着テープに付着させサンプルを採取。",
+          "price_hundred_million": 20,
+          "body_mass_kg": 30,
+          "required_power_watts": 40,
+          "manufacturing_period_months": 15
+      },
+      {
+          "category_id": 9,
+          "category_name": "サンプルリターンミッション",
+          "part_id": "9_3",
+          "part_name": "掃除機（大気がある場合のみ有効。つまりこれを選ばないように誘導しないといけない）",
+          "description": "掃除機で小惑星表面のサンプルを採取する。",
+          "price_hundred_million": 30,
+          "body_mass_kg": 100,
+          "required_power_watts": 300,
+          "manufacturing_period_months": 18
+      },
+      {
+          "category_id": 9,
+          "category_name": "サンプルリターンミッション",
+          "part_id": "9_4",
+          "part_name": "ほうきと塵取り採取装置",
+          "description": "ほうきと塵取りで、小惑星表面のサンプルを採取する。",
+          "price_hundred_million": 100,
+          "body_mass_kg": 200,
+          "required_power_watts": 200,
+          "manufacturing_period_months": 30
+      },
+      {
+          "category_id": 9,
+          "category_name": "サンプルリターンミッション",
+          "part_id": "9_5",
+          "part_name": "タングステン球発射装置",
+          "description": "小惑星表面にタングステン（とても硬い金属）を当て、舞い上がった微粒子と砂を採取する",
+          "price_hundred_million": 60,
+          "body_mass_kg": 200,
+          "required_power_watts": 80,
+          "manufacturing_period_months": 15
+      }
+  ],
+  "asteroid": [
+      {
+          "category_id": 10,
+          "category_name": "小惑星探査推進装置",
+          "part_id": "10_1",
+          "part_name": "Ｓ型小惑星まで行ける推進装置",
+          "description": "軌道：地球近傍を周回\n成分：鉄やマグネシウムなどのケイ酸塩にニッケルや鉄などの金属物が混合した化学組成物質が主成分\n代表的なＳ型小惑星：イトカワである。",
+          "price_hundred_million": 12,
+          "body_mass_kg": 120,
+          "required_power_watts": 100,
+          "manufacturing_period_months": 16
+      },
+      {
+          "category_id": 10,
+          "category_name": "小惑星探査推進装置",
+          "part_id": "10_2",
+          "part_name": "Ｃ型小惑星まで行ける推進装置",
+          "description": "軌道：火星と地球の間の楕円軌道を周回。\n成分：炭素の含有量の多い炭素質コンドライトが主成分。他に水、アミノ酸\n代表的なＣ型小惑星：リュウグウ",
+          "price_hundred_million": 20,
+          "body_mass_kg": 220,
+          "required_power_watts": 180,
+          "manufacturing_period_months": 18
+      },
+      {
+          "category_id": 10,
+          "category_name": "小惑星探査推進装置",
+          "part_id": "10_3",
+          "part_name": "Ｍ型小惑星まで行ける推進装置",
+          "description": "軌道：火星と木星の小惑星帯\n成分：ニッケル、鉄、また少量ながら金、銀、白銀、パラジウムも取れる可能性がある。 \n代表的なＭ型小惑星：プシケ\n表面が非常に硬いと考えられている",
+          "price_hundred_million": 30,
+          "body_mass_kg": 250,
+          "required_power_watts": 190,
+          "manufacturing_period_months": 25
+      }
+  ]
+}
