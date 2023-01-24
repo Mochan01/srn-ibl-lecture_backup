@@ -19,6 +19,11 @@ const Main = styled.div`
   row-gap: ${SIZE.QUIZ_ROW_G}px;
 `;
 
+/**
+ * クイズ回答用（選択式）
+ * @param param0 
+ * @returns 
+ */
 export const QuizSelector: FC<QuizSelectorProps> = ({
   questionSelect,
   onAnswer,

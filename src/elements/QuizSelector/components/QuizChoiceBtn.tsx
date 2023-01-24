@@ -6,7 +6,7 @@ import {
   DetermineButtonColor,
   GetMarkSymbol,
 } from "../utils";
-import { QuizChoiceBtn as Main } from "../../../elements/QuizChoiceBtn";
+import { QuizChoiceBtn as Main } from "../../QuizChoiceBtn";
 import { QuizSelectorProviderContext } from "../providers";
 
 export interface QuizChoiceBtnProps {

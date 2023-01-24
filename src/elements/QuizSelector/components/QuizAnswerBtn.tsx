@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {
   QuizAnswerBtn as Main,
   QUIZ_ANSWER_BTN,
-} from "../../../elements/QuizAnswerBtn";
+} from "../../QuizAnswerBtn";
 import { QuizSelectorProviderContext } from "../providers";
 
 export interface QuizAnswerBtnProps {

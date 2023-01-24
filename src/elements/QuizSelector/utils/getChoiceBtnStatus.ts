@@ -1,4 +1,4 @@
-import { QUIZ_CHOICE_BTN } from "../../../elements/QuizChoiceBtn";
+import { QUIZ_CHOICE_BTN } from "../../QuizChoiceBtn";
 
 type GetButtonEvaluation<T> = (
   isAnswer: boolean,
