@@ -1,7 +1,6 @@
 import React, { FC, useMemo } from "react";
 import { LectureFrame } from "../../elements/LectureFrame";
 import { MasterData } from "./types";
-import { splitIDs } from "../../utils/splitIDs";
 import {
   handleMissionData,
   getMissionParts,
@@ -37,7 +36,7 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
   if (!missionData) return <></>;
 
   // 何のパーツを読み込むか？判定（タブ順）
-  const getIDs = handleMissionData(splitIDs, missionData);
+  const getIDs = handleMissionData(missionData);
   const missionPartsIDs = getIDs(getMissionParts); // ミッションパーツ
   const batteryIDs = getIDs(getBatteryIDs); // 電源パーツ
   const busIDs = getIDs(getBusIDs); // 積載パーツ
