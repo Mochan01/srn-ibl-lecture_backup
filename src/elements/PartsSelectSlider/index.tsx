@@ -17,7 +17,8 @@ export const duration = 250 as const;
 export interface PartsSelectSliderProps {
   images: string[];
   onSelect: (index: number) => void;
-  selectIndex: number;
+  selectIndex?: number;
+  selectedIndexes: number[];
   className?: string;
 }
 
@@ -107,19 +108,18 @@ const SSwiperNextButton = styled.div`
  * 特別レクチャー(衛生組み立て画面）のパーツセレクト部分のスライダー
  */
 export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
-  selectIndex,
+  selectIndex = 0,
+  selectedIndexes,
   images,
   onSelect,
 }) => {
   const [swiperObject, onSwiper] = useState<SwiperRef>();
   const [activeIndex, setActiveIndex] = useState(selectIndex);
-  const onSlideChange = (swiper: SwiperRef) => {
-    onSelect(swiper.realIndex);
-    setActiveIndex(swiper.realIndex);
-  };
 
   const onClick = (index: number) => {
+    // 画像をクリックした時に枠線を移動
     setActiveIndex(index);
+    onSelect(index);
   };
 
   return (
@@ -138,13 +138,17 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
             prevEl: "#button_prev",
             nextEl: "#button_next",
           }}
-          scrollbar={{ draggable: true }}
           onSwiper={onSwiper}
-          onSlideChange={onSlideChange}
           speed={duration}
         >
           {images.map((image, i) => (
-            <SwiperSlide key={i} onClick={() => onClick(i)}>
+            <SwiperSlide
+              // 選択済みの画像は明るくする
+              // TODO:明るくする度合いは画面実装時に調整する
+              css={selectedIndexes.includes(i) ? "filter: brightness(3);" : ""}
+              key={i}
+              onClick={() => onClick(i)}
+            >
               {i}
               <SImage
                 src={image}
@@ -164,8 +168,6 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
         <SRightCircle />
         <SSelectCircle left={(100 / (images.length - 1)) * activeIndex} />
       </SBar>
-      <h1>{activeIndex}</h1>
-      <h1>{swiperObject?.realIndex}</h1>
     </Main>
   );
 };
