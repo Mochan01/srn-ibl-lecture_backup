@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
-const ImageLecture = new URL("../../../../assets/prod/lecture_panel_answer.png", import.meta.url).toString();
+const ImageLecture = new URL("../../assets/prod/lecture_panel_answer.png", import.meta.url).toString();
 
 export interface LectureFrameProps {
   unitName: string;
