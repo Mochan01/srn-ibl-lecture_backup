@@ -1,4 +1,4 @@
-import React, { ElementType, FC, ReactNode } from "react";
+import React, { ElementType, FC, ReactNode, useState } from "react";
 import styled from "styled-components";
 
 export const tabs = [
@@ -11,29 +11,38 @@ export const tabs = [
 export const keys = ["darkBlue", "white"] as const;
 
 export type Variant = typeof keys[number];
+
+/* TODO: 色は画面実装時に再設定 */
 export const variants: { [key in Variant]: string } = {
   darkBlue: `
     color: #F1F6F9;
-    background-color: #007481;
+    background-color: #11548a;
     box-shadow: 0 0 0 1px #B2B2B2 inset;
   `,
   white: `
-    color: #079BAB;
+    color: black;
     background-color: #fff;
-    box-shadow: 0 0 0 3px #079BAB inset;
+    box-shadow: 0 0 0 3px #B2B2B2 inset;
   `,
 } as const;
 
-export interface TabGreenProps {
+const Main = styled.div`
+  /* TODO: 画面実装時に再設定 */
+  width: 1000px;
+  display: flex;
+`;
+
+export interface TabProps {
   variant: Variant;
   children?: ReactNode;
   elementType?: ElementType;
   onClick?: () => void;
   className?: string;
 }
-export const Tab = styled.div<TabGreenProps>(
+export const Tab = styled.div<TabProps>(
   ({ variant }) => `
   ${variants[variant]}
+  width: 25%;
   display: inline-block;
   // padding無視して文字を入れられるので横だけ削除
   padding: 10px 0;
@@ -51,14 +60,10 @@ export const Tab = styled.div<TabGreenProps>(
 );
 
 export interface PartsSelectTabProps {
-  onChange?: (index: number) => void;
+  onChange: (index: number) => void;
   index: number;
   className?: string;
 }
-
-const Main = styled.div`
-  display: flex;
-`;
 
 /**
  * 特別レクチャー(衛生組み立て画面）のパーツセレクト部分のタブ
@@ -67,19 +72,22 @@ export const PartsSelectTab: FC<PartsSelectTabProps> = ({
   onChange,
   index,
 }) => {
+  const [selectedIndex, setSelectedIndex] = useState(index);
+  const onClick = (index: number) => {
+    onChange(index);
+    setSelectedIndex(index);
+  };
   return (
-    <>
-      <Main css="max-width: 1000px; ">
-        {tabs.map((x, i) => (
-          <Tab
-            key={i}
-            css="width: 25%;"
-            variant={index === i ? "white" : "darkBlue"}
-          >
-            {x}
-          </Tab>
-        ))}
-      </Main>
-    </>
+    <Main>
+      {tabs.map((x, i) => (
+        <Tab
+          key={i}
+          variant={i === selectedIndex ? "white" : "darkBlue"}
+          onClick={() => onClick(i)}
+        >
+          {x}
+        </Tab>
+      ))}
+    </Main>
   );
 };
