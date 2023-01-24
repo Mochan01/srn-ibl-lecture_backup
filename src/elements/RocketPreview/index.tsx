@@ -134,7 +134,7 @@ export const RocketPreview: FC<RocketPreviewProps> = ({
           <STitleArea>
             <STitle>選んだパーツ一覧</STitle>
             <Icon
-              onClick={() => setIsShowParts(!isShowParts)}
+              onClick={() => setIsShowParts((isShowParts) => !isShowParts)}
               variant={isShowParts ? "OPEN" : "CLOSE"}
             />
           </STitleArea>
