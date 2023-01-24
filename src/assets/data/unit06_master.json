@@ -1,0 +1,4506 @@
+{
+  "mission": [
+      {
+          "lecture_id": "c01lv01u06m00",
+          "steps": [
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "前回のグループワークで、どのミッションを選ぶか、決めたわよね。"
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "mission_select": {
+                      "m_btn_1": "",
+                      "m_btn_1_goto": "",
+                      "m_btn_2": "",
+                      "m_btn_2_goto": "",
+                      "m_btn_3": "",
+                      "m_btn_3_goto": "",
+                      "m_btn_4": "",
+                      "m_btn_4_goto": "",
+                      "m_btn_5": "",
+                      "m_btn_5_goto": ""
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "今回は、選んだミッションについて詳しく学んでみるわよ。"
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "mission_select": {
+                      "m_btn_1": "",
+                      "m_btn_1_goto": "",
+                      "m_btn_2": "",
+                      "m_btn_2_goto": "",
+                      "m_btn_3": "",
+                      "m_btn_3_goto": "",
+                      "m_btn_4": "",
+                      "m_btn_4_goto": "",
+                      "m_btn_5": "",
+                      "m_btn_5_goto": ""
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "前回のワークシートを手元に出して、"
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "mission_select": {
+                      "m_btn_1": "",
+                      "m_btn_1_goto": "",
+                      "m_btn_2": "",
+                      "m_btn_2_goto": "",
+                      "m_btn_3": "",
+                      "m_btn_3_goto": "",
+                      "m_btn_4": "",
+                      "m_btn_4_goto": "",
+                      "m_btn_5": "",
+                      "m_btn_5_goto": ""
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "グループで決めたミッションを選択してね。"
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "mission_select": {
+                      "m_btn_1": "",
+                      "m_btn_1_goto": "",
+                      "m_btn_2": "",
+                      "m_btn_2_goto": "",
+                      "m_btn_3": "",
+                      "m_btn_3_goto": "",
+                      "m_btn_4": "",
+                      "m_btn_4_goto": "",
+                      "m_btn_5": "",
+                      "m_btn_5_goto": ""
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "さあ、始めるわよ！"
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "mission_select": {
+                      "m_btn_1": "アマゾンの\n危機\n（前編）",
+                      "m_btn_1_goto": "intro_c01lv01u06m01",
+                      "m_btn_2": "スマート\nシティって？\n（前編）",
+                      "m_btn_2_goto": "intro_c01lv01u06m02",
+                      "m_btn_3": "魚の群れを\n追え\n（前編）",
+                      "m_btn_3_goto": "intro_c01lv01u06m03",
+                      "m_btn_4": "自然災害の\n脅威\n（前編）\n",
+                      "m_btn_4_goto": "intro_c01lv01u06m04",
+                      "m_btn_5": "渡り鳥が\nもたらすもの\n（前編）\n",
+                      "m_btn_5_goto": "intro_c01lv01u06m05"
+                  },
+                  "next_steps": {
+                      "next_step": "stop",
+                      "goto_step": ""
+                  }
+              }
+          ]
+      }
+  ],
+  "intro": [
+      {
+          "lecture_id": "c01lv01u06m01",
+          "steps": [
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "ハーイ、今日も私のラボにようこそ。"
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "intro_end",
+                      "goto_lecture": "lecture_c01lv01u06m01",
+                      "goto_step": "1_1"
+                  }
+              }
+          ]
+      }
+  ],
+  "lecture": [
+      {
+          "lecture_id": "c01lv01u06m01",
+          "steps": [
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "アマゾンアマゾンと言っているけれど、\n何を指しているかは分かるかな？",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:04.000Z",
+                      "total_time": "1899-12-29T15:00:04.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [
+                          "btn_1",
+                          "btn_2"
+                      ],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [
+                          "mission_1",
+                          "mission_2"
+                      ],
+                      "record_mission": true,
+                      "display_result": true
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_2",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "私が言っているアマゾンは、日本の裏側、南アメリカ大陸にある、世界最大面積をほこる熱帯雨林のこと！",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:05.000Z",
+                      "total_time": "1899-12-29T15:00:09.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_3",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "地図で見ると、この辺りよ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:06.000Z",
+                      "total_time": "1899-12-29T15:00:15.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_4",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "アマゾンの面積は約550万㎢と言われるわ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:06.000Z",
+                      "total_time": "1899-12-29T15:00:21.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_5",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "アマゾンは日本の面積の約何倍かしら？\n小数第1位を四捨五入して整数で答えて欲しいわ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:10.000Z",
+                      "total_time": "1899-12-29T15:00:31.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_6",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "【Correct answer】さっすがぁ！",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:04.000Z",
+                      "total_time": "1899-12-29T15:00:35.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_7",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "【Wrong answer】社会の知識も確認しておきましょ！",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:02.000Z",
+                      "total_time": "1899-12-29T15:00:35.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_8",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "日本の面積は約38万㎢だから、",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:08.000Z",
+                      "total_time": "1899-12-29T15:00:43.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_9",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 9
+                  },
+                  "narrative": {
+                      "narration": "計算してみると…",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:09.000Z",
+                      "total_time": "1899-12-29T15:00:52.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_10",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 10
+                  },
+                  "narrative": {
+                      "narration": "これだけ広い面積だから、接してる国も多くて8カ国に接しているわ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:05.000Z",
+                      "total_time": "1899-12-29T15:00:57.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_11",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 11
+                  },
+                  "narrative": {
+                      "narration": "もっとも広く接しているブラジルをはじめ、南アメリカ大陸の北部に位置する国と接しているよ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:12.000Z",
+                      "total_time": "1899-12-29T15:01:09.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_12",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 12
+                  },
+                  "narrative": {
+                      "narration": "そして、忘れてはいけないのが、世界最大の流域面積をほこるアマゾン川よね！",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:04.000Z",
+                      "total_time": "1899-12-29T15:01:13.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_13",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 13
+                  },
+                  "narrative": {
+                      "narration": "アマゾン川は世界第1位の流域面積をほこるだけではなく、",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:02.000Z",
+                      "total_time": "1899-12-29T15:01:15.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "slide_end",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 14
+                  },
+                  "narrative": {
+                      "narration": "世界第2位の距離を有する河川よ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:09.000Z",
+                      "total_time": "1899-12-29T15:00:09.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_2",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 15
+                  },
+                  "narrative": {
+                      "narration": "日本第1位の流域面積をほこる利根川と比べてみると…",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:09.000Z",
+                      "total_time": "1899-12-29T15:00:18.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "L1U1_0000_S1-01.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_3",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 16
+                  },
+                  "narrative": {
+                      "narration": "まず、アマゾンには先住民の人たちが暮らしているわ！",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:03.000Z",
+                      "total_time": "1899-12-29T15:00:21.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_4",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 17
+                  },
+                  "narrative": {
+                      "narration": "この広いアマゾンに、305部族、およそ90万人がいるそうなんだけど…",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:08.000Z",
+                      "total_time": "1899-12-29T15:00:29.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_5",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 18
+                  },
+                  "narrative": {
+                      "narration": "そしてそして、生息する生物の数はビックリするくらい多いのよ！",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:08.000Z",
+                      "total_time": "1899-12-29T15:00:37.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_6",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 19
+                  },
+                  "narrative": {
+                      "narration": "これだけの生物種が暮らしているそう。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:02.000Z",
+                      "total_time": "1899-12-29T15:00:39.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "L1U1_0001_S1-02.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_7",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 20
+                  },
+                  "narrative": {
+                      "narration": "地球に生息する全生物種の約4分の1が集結するんですって！！",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "1899-12-29T15:00:04.000Z",
+                      "total_time": "1899-12-29T15:00:43.000Z",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "L1U1_0002_S1-03.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": false,
+                      "button_2": "",
+                      "ans_2": false,
+                      "button_3": "",
+                      "ans_3": false,
+                      "button_4": "",
+                      "ans_4": false
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": false,
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_8",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "さて、前のページでアマゾンにたくさんの生物が暮らしていることは知ってもらえたと思うけれど・・・。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "これについてグループで話し合ってみましょう！",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "アマゾンに沢山の生物が生息している理由を考えてみましょう！",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "目安時間は、表示の通りよ。タイムキーパーを決めて進めてちょうだいね。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "はじめに、自分の考えをまとめてみて。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "その後グループとしての考えをまとめてね！",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "それぞれの時間配分も考えて取り組むのよ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "時間になったら終了して、次のページに進みましょう。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "おかえりなさい！",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "アマゾンに沢山の生物が生息している理由について、グループの意見はまとめられたかしら？",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "良いところに注目してくれたね！　この地域の雨温図を見てみましょ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "暖かい気候と、",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "豊かな水資源が備わっているといえるし、さらに、",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "広大な土地であるが故に、人の手が入らない。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "この3つの条件がそろったことで、アマゾンには豊かな生態系が見られるようになったのよ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "2000年に中央アマゾン保全地域群が世界自然遺産に登録されているよ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 9
+                  },
+                  "narrative": {
+                      "narration": "二酸化炭素の吸収量と酸素の放出量が同じことから、「地球のまるまる」として評価されたとあるわ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 10
+                  },
+                  "narrative": {
+                      "narration": "カッコに入る人間の体の一部は何だと思う？\n漢字1字で答えてみてくれるかしら。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 11
+                  },
+                  "narrative": {
+                      "narration": "【Correct answer】まさにその通り！！",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 12
+                  },
+                  "narrative": {
+                      "narration": "【Wrong answer 】惜しかったなぁ・・。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 13
+                  },
+                  "narrative": {
+                      "narration": "地球の肺とよばれたのよ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 14
+                  },
+                  "narrative": {
+                      "narration": "アマゾンの木々はどんな役割を果たしているのかしら？",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 15
+                  },
+                  "narrative": {
+                      "narration": "その通り！\n近年問題になっている、地球温暖化問題と深くかかわっているの。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 16
+                  },
+                  "narrative": {
+                      "narration": "地球温暖化の原因となっているのが、二酸化炭素をはじめとする温室効果ガスと言われるものよ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 17
+                  },
+                  "narrative": {
+                      "narration": "約40％は、植物や土壌、海洋に吸収されているの。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 18
+                  },
+                  "narrative": {
+                      "narration": "アマゾンだけで、地球全体の森林面積の約5分の1を占めているといわれるわ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 19
+                  },
+                  "narrative": {
+                      "narration": "この場所が無くなったら、地球上の二酸化炭素濃度はぐぅぅんと上がってしまうかもしれない。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 20
+                  },
+                  "narrative": {
+                      "narration": "日本全土の森林面積を合わせても地球全体の約0.6％にしかならないわ…。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "そしてね、アマゾンにすむ生物は、遠く離れた私たちの普段の生活を豊かにすることにも一役かっていると言ったら、驚かない？",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "多様な生物の知恵にヒントを得て、私たちの暮らしに欠かせない、便利な技術が開発されているのよ！",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "4つの例を紹介してみるね。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "ジャジャーン！こんな技術に関わっているのよ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "例えば、蚊は、私たち人間を指すとき痛くないでしょ？",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "この蚊の針の部分を研究して注射器の針に応用することで、\n見事痛くない注射器が発明されたってわけ！",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "その他のものについても開発経緯をまとめてみたわ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "2回目のグループワークをはじめるわよ。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "私が紹介する2種類の生物の特徴から、どんな技術が作れそうか話し合って見て。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "ハチドリと、",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "イルカよ！",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "目安時間は、表示の通りよ。タイムキーパーを決めて進めてちょうだいね。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "グループワークが終わったら、実際にどのような技術として開発されているのか調べてみてね。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "ただし！時間配分には気を付けて。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "時間になったら話し合いを終了して、評価の入力画面に進んでちょうだい。",
+                      "speech": ""
+                  },
+                  "audio": {
+                      "mp3": "",
+                      "time": "",
+                      "total_time": "",
+                      "seekbar_start": "",
+                      "seekbar_end": ""
+                  },
+                  "animation": {
+                      "teacher": "",
+                      "student": ""
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": "",
+                      "display_result": ""
+                  },
+                  "question_select": {
+                      "question_x": "",
+                      "question_y": "",
+                      "button_1": "",
+                      "ans_1": "",
+                      "button_2": "",
+                      "ans_2": "",
+                      "button_3": "",
+                      "ans_3": "",
+                      "button_4": "",
+                      "ans_4": ""
+                  },
+                  "question_input": {
+                      "question_x": "",
+                      "question_y": "",
+                      "ans": ""
+                  },
+                  "result_step": "",
+                  "countdown": "",
+                  "next_steps": {
+                      "next_step": "",
+                      "goto_step": "",
+                      "if_correct": "",
+                      "if_wrong": ""
+                  }
+              }
+          ]
+      }
+  ]
+}

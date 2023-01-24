@@ -9,6 +9,7 @@ import { getCorrectIndex, filQuestion, getQuestionSelect } from "./utils";
 export interface QuizSelectorProps
   extends Pick<QuizAnswerBtnProps, "onAnswer"> {
   questionSelect: Lecture["question_select"];
+  className?: string;
 }
 
 const Main = styled.div`
@@ -27,6 +28,7 @@ const Main = styled.div`
 export const QuizSelector: FC<QuizSelectorProps> = ({
   questionSelect,
   onAnswer,
+  ...props
 }) => {
   const getSelects = useMemo(
     () => getQuestionSelect(questionSelect),
@@ -36,7 +38,7 @@ export const QuizSelector: FC<QuizSelectorProps> = ({
   const questions = useMemo(() => getSelects(filQuestion), [getSelects]);
   return (
     <QuizSelectorProvider {...{ correctIndex }}>
-      <Main>
+      <Main { ...props }>
         <QuizChoiceBtn {...{ questions }} />
         <QuizAnswerBtn {...{ onAnswer }} isMaxLen={questions.length === 4} />
       </Main>

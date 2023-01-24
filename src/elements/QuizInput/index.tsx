@@ -6,11 +6,16 @@ import { TextBox } from "./components/TextBox";
 export interface QuizInputProps {
   answer: string;
   onAnswer?: (isCorrect: boolean) => void;
+  className?: string;
 }
 
 const Main = styled.div``;
 
-export const QuizInput: FC<QuizInputProps> = ({ answer, onAnswer }) => {
+export const QuizInput: FC<QuizInputProps> = ({
+  answer,
+  onAnswer,
+  ...props
+}) => {
   const ref = useRef("");
 
   const onEnter = useCallback(() => {
@@ -19,7 +24,7 @@ export const QuizInput: FC<QuizInputProps> = ({ answer, onAnswer }) => {
   }, [answer, onAnswer]);
 
   return (
-    <Main>
+    <Main {...props}>
       <TextBox {...{ onEnter }} onChange={(value) => (ref.current = value)} />
       <Btn onClick={onEnter} />
     </Main>
