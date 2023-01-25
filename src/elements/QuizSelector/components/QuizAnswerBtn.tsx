@@ -73,7 +73,7 @@ export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
         color = "#fff";
         break;
       case QUIZ_ANSWER_BTN.WHITE:
-        color = "#2365f";
+        color = "#e2365f";
         break;
     }
     return color;
