@@ -41,11 +41,11 @@ export const ControlPanel: FC<ControlBarProps> = ({
       <PageBullet />
       <PrevBtn
         onLeave={() => onLectureLeave("begin")}
-        css="margin-left: 160px;"
+        css="margin-left: 146px;"
       />
-      <PlayBtn css="margin-left: 30px;" />
-      <NextBtn onLeave={() => onLectureLeave("end")} css="margin-left: 30px;" />
-      <ReplayBtn css="margin-left: 130px;" />
+      <PlayBtn css="margin-left: 20px;" />
+      <NextBtn onLeave={() => onLectureLeave("end")} css="margin-left: 20px;" />
+      <ReplayBtn css="margin-left: 80px;" />
     </Main>
   );
 };

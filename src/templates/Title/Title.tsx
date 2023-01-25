@@ -7,13 +7,12 @@ import { ScaleWrapper } from "../../elements/ScaleWrapper";
 import { Container } from "../../elements/Container";
 import { PresentedBy } from "./components/PresentedBy";
 import { Narration } from "../../elements/Narration";
-import { GlobalStateContext, LectureProvider } from "../../stores";
-import { JsonData, MainComponentProps } from "../../types";
-import jsonData from "../../assets/data/title1.json";
+import { GlobalStateContext, LectureProvider, LectureProviderProps } from "../../stores";
+import { MainComponentProps } from "../../types";
 import { useWatchStepEnd } from "../../hooks/useWatchStepEnd";
 import { useAutoMoveProgress } from "../../hooks/useAutoMoveProgress";
 
-export interface TitleProps extends MainComponentProps {
+export interface TitleProps extends LectureProviderProps, MainComponentProps {
   onClickSkip?: () => void;
 }
 
@@ -78,11 +77,8 @@ export const Main: FC<TitleProps> = ({
   );
 };
 
-export const Title: FC<TitleProps> = ({
-  json = jsonData as JsonData,
-  ...props
-}) => (
-  <LectureProvider {...{ json }}>
+export const Title: FC<TitleProps> = (props) => (
+  <LectureProvider json={props.json} autoPlay={props.autoPlay}>
     <Main {...props} />
   </LectureProvider>
 );

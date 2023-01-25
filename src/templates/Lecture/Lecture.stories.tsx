@@ -21,6 +21,5 @@ sample.args = {
   onClickClose: () => {
     console.log("onClickClose");
   },
-  json: jsonData as JsonData,
-  isPlaying: true,
+  json: jsonData as JsonData
 };

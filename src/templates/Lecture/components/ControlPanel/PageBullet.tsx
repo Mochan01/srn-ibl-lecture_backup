@@ -28,6 +28,7 @@ const Grid = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  column-gap: 6px;
   row-gap: 4px;
 `;
 

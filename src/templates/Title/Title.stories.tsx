@@ -15,5 +15,5 @@ export const sample: { args: TitleProps } = template.bind({});
 sample.args = {
   unitName: "unit00",
   unitTitle: "ダミーテキストダミーテキスト",
-  json: jsonData as JsonData,
+  json: jsonData as JsonData
 };

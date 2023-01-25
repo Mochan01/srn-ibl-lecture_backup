@@ -1,11 +1,8 @@
 import React, { FC, useMemo, useState } from "react";
 import styled from "styled-components";
-import {
-  QuizAnswerBtn,
-  QUIZ_ANSWER_BTN,
-  QuizChoiceBtn,
-  QUIZ_CHOICE_BTN,
-} from "./components";
+import { QuizChoiceBtn, QUIZ_CHOICE_BTN } from "./components";
+import { QuizAnswerBtn } from "../QuizAnswerBtn";
+import { Variant } from "../QuizAnswerBtn/types";
 import { SIZE } from "../../data/SIZE";
 import { quizChoiceBtnWidth } from "./config/index";
 
@@ -18,7 +15,7 @@ export interface QuizSelectorProps {
 const Main = styled.div`
   width: fit-content;
   display: grid;
-  grid-template-columns: repeat(2, ${ quizChoiceBtnWidth }px);
+  grid-template-columns: repeat(2, ${quizChoiceBtnWidth}px);
   column-gap: ${SIZE.QUIZ_COLUMN_G}px;
   row-gap: ${SIZE.QUIZ_ROW_G}px;
 `;
@@ -40,13 +37,11 @@ export const QuizSelector: FC<QuizSelectorProps> = ({
   const [chooseIndex, setChooseIndex] = useState<number>();
   const [isAnswer, setIsAnswer] = useState(false);
 
-  const answerBtnColor = useMemo(() => {
-    return typeof chooseIndex === "number"
-      ? isAnswer
-        ? QUIZ_ANSWER_BTN.RED
-        : QUIZ_ANSWER_BTN.WHITE
-      : QUIZ_ANSWER_BTN.GRAY;
-  }, [chooseIndex, isAnswer]);
+  const answerBtnColor: Variant = useMemo(
+    () =>
+      typeof chooseIndex === "number" ? (isAnswer ? "RED" : "WHITE") : "GRAY",
+    [chooseIndex, isAnswer]
+  );
 
   return (
     <Main>
@@ -85,7 +80,7 @@ export const QuizSelector: FC<QuizSelectorProps> = ({
       })}
       {/** 解答ボタン */}
       <AnswerBtn
-        mutation={answerBtnColor}
+        variant={answerBtnColor}
         onClick={() => {
           setIsAnswer(true);
           onAnswer && onAnswer(chooseIndex === correctIndex);

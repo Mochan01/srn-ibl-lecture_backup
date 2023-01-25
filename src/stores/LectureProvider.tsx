@@ -3,31 +3,28 @@ import {
   GetDataProvider,
   SeekProvider,
   TimerProvider,
-  PlayStatusProviderProps,
   GlobalStateProvider,
 } from "./providers";
 import { handleJson } from "../utils";
 import { JsonData } from "../types";
 
-interface LectureProviderProps
-  extends Pick<PlayStatusProviderProps, "isPlaying"> {
+export interface LectureProviderProps {
   json: JsonData;
-  children: ReactNode;
+  autoPlay?: boolean;
+  children?: ReactNode;
 }
 
 export const LectureProvider: FC<LectureProviderProps> = ({
   json,
-  isPlaying,
+  autoPlay = false,
   children,
 }) => {
-  const getData = useMemo(() => handleJson(json), []);
+  const getData = useMemo(() => handleJson(json), [json]);
   return (
-    <GlobalStateProvider {...{ isPlaying }}>
+    <GlobalStateProvider isPlaying={autoPlay}>
       <GetDataProvider {...{ getData }}>
         <TimerProvider>
-          <SeekProvider>
-            {children}
-          </SeekProvider>
+          <SeekProvider>{children}</SeekProvider>
         </TimerProvider>
       </GetDataProvider>
     </GlobalStateProvider>
