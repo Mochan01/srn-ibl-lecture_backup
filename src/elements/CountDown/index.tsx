@@ -36,7 +36,9 @@ const STimer = styled.div`
 const STime = styled.div`
   padding-top: 4px;
 `;
-const SColon = styled.div``;
+const SColon = styled.div`
+  line-height: 46px;
+`;
 
 export interface SEndButtonProps {
   variant: "on" | "off";
@@ -51,7 +53,9 @@ const SEndButton = styled.div<SEndButtonProps>`
   height: 41px;
   position: absolute;
   right: 4px;
-  top: 6px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 `;
 
 export interface CountDownProps {
