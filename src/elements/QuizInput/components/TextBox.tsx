@@ -8,16 +8,17 @@ export interface TextBoxProps {
 
 const STitle = styled.div`
   font-size: 18px;
+  font-family: "UD デジタル 教科書体 NK-B";
   color: #5a5a5a;
-  margin-bottom: 12px;
 `;
 const STextBox = styled.input`
   height: 64px;
   width: 100%;
+  font-family: "UD デジタル 教科書体 NK-B";
   border-radius: 10px;
   font-size: 23px;
   color: #5a5a5a;
-  padding-left: 10px;
+  padding-left: 16px;
   border: solid 1px #5a5a5a;
   background-color: #ffffff;
   &::placeholder {
@@ -34,15 +35,23 @@ const STextBox = styled.input`
 `;
 
 export const TextBox: FC<TextBoxProps> = ({ onChange, onEnter }) => {
+  // タイトルの色を変えるための状態管理
   const [isHover, setIsHover] = useState(false);
+  const [isFocus, setIsFocus] = useState(false);
 
   return (
     <>
-      <STitle css={isHover ? "color: #1a6cf1" : ""}>あなたの解答</STitle>
+      {/* hover時とfocus時には色を変える */}
+      <STitle css={isHover || isFocus ? "color: #1a6cf1" : ""}>
+        あなたの解答
+      </STitle>
+      <div css={"margin-bottom: 12px"}></div>
       <STextBox
         type="text"
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
+        onFocus={() => setIsFocus(true)}
+        onBlur={() => setIsFocus(false)}
         placeholder="ここに答えを入力"
         onChange={(e) => onChange && onChange(e.currentTarget.value)}
         onKeyDown={(e) => onEnter && e.key === "Enter" && onEnter()}
