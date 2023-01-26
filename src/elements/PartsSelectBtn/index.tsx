@@ -20,6 +20,7 @@ const Main = styled.div<Pick<PartsSelectBtnProps, "isSelected">>(
     background-size: contain;
     width: 100px;
     height: 40px;
+    cursor: pointer;
 `;
   }
 );
