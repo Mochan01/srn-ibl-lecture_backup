@@ -131,6 +131,11 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
 }) => {
   const [swiperObject, onSwiper] = useState<SwiperRef>();
   const [activeIndex, setActiveIndex] = useState(selectIndex);
+  const [realIndex, setRealIndex] = useState(selectIndex);
+
+  const onSlideChange = (swiper: SwiperRef) => {
+    setRealIndex(swiper.realIndex);
+  };
 
   const onClick = (index: number) => {
     // 画像をクリックした時に枠線を移動
@@ -155,6 +160,7 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
             nextEl: "#button_next",
           }}
           onSwiper={onSwiper}
+          onSlideChange={onSlideChange}
           speed={duration}
         >
           {items.map((item, i) => (
@@ -178,7 +184,7 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
       <SBar>
         <SLeftCircle />
         <SRightCircle />
-        <SSelectCircle left={(100 / (items.length - 1)) * activeIndex} />
+        <SSelectCircle left={(100 / (items.length - 1)) * realIndex} />
       </SBar>
     </Main>
   );
