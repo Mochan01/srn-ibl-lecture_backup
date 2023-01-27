@@ -9,20 +9,16 @@ const ImgClose = new URL(
   import.meta.url
 ).toString();
 
-export const isSelectedColor = "yellow" as const;
+export const isSelectedColor = "#FFFF00" as const;
 
 export const keys = ["OPEN", "CLOSE"] as const;
 
 export const variants: { [key in Variant]: string } = {
   OPEN: `
     background-image: url(${ImgOpen});
-    width: 24px;
-    height: 24px;
   `,
   CLOSE: `
     background-image: url(${ImgClose});
-    width: 24px;
-    height: 24px;
   `,
 } as const;
 
@@ -34,35 +30,39 @@ export interface IconProps {
 export const Icon = styled.div<IconProps>(
   ({ variant }) => `
   ${variants[variant]}
+  width: 32px;
+  height: 32px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  display: inline-block;
+  display: flex;
   cursor: pointer;
 `
 );
 
 const Main = styled.div`
-  padding: 16px;
   width: 100%;
   height: 100%;
-  /* 確認用必要無かったら消す */
-  /* background-color: gray; */
+  padding-left: 32px;
+  padding-top: 32px;
   position: relative;
 `;
 const STitleArea = styled.div`
+  height: 32px;
   display: flex;
   text-align: center;
 `;
 const STitle = styled.div`
   color: #f1f6f9;
   font-size: 20px;
-  line-height: 24px;
+  line-height: 32px;
   margin-right: 8px;
 `;
 
 const SPartsArea = styled.div`
-  width: 200px;
+  width: 512px;
+  display: flex;
+  justify-content: space-between;
 `;
 const STextsArea = styled.div`
   width: 200px;
@@ -71,36 +71,37 @@ const STextsArea = styled.div`
 
 // TODO:画面実装時に実際の画像サイズやpxなどを調整する
 const SImagesArea = styled.div<Pick<RocketPreviewProps, "images">>`
-  width: 300px;
-  height: 540px;
+  width: 512px;
+  height: 760px;
   /* 配列の中の画像を重ねて表示する */
   background-image: ${({ images }) =>
     images.map((url) => `url(${url})`).join(",")};
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-color: gray;
   position: absolute;
-  left: 20px;
-  top: 40px;
+  left: 32px;
+  top: 98px;
   z-index: 0;
 `;
 const SPartTitle = styled.div`
-  font-size: 10px;
+  font-size: 16px;
+  line-height: 18px;
   font-weight: bold;
   margin-top: 16px;
   color: #f1f6f9;
-  opacity: 0.7;
 `;
 
 const SPartText = styled.div`
-  font-size: 10px;
-  font-weight: bold;
-  padding: 8px;
+  width: 176px;
+  font-size: 16px;
+  line-height: 18px;
   margin-top: 8px;
-  color: #121d24;
-  background-color: #9da9b1;
-  display: inline-block;
-  border-radius: 8px;
-  opacity: 0.7;
+  color: #1e3c64;
+  background-color: #fafbfd;
+  display: block;
+  border-radius: 6px;
+  opacity: 0.5;
 `;
 
 export interface RocketPreviewProps {
@@ -113,6 +114,7 @@ export interface RocketPreviewProps {
   isShow?: boolean;
   className?: string;
 }
+
 /**
  * 特別レクチャー(衛生組み立て画面）の衛生・ロケット画像のプレビュー部分
  */
@@ -140,49 +142,53 @@ export const RocketPreview: FC<RocketPreviewProps> = ({
           </STitleArea>
           {isShowParts && (
             <SPartsArea>
-              <SPartTitle>ミッションパーツ</SPartTitle>
-              {missionParts?.map((missionPart) => (
+              <div>
+                <SPartTitle>ミッションパーツ</SPartTitle>
+                {missionParts?.map((missionPart) => (
+                  <SPartText
+                    key={missionPart}
+                    css={
+                      missionPart === selectedPart
+                        ? `border: solid 3px ${isSelectedColor}`
+                        : "padding: 3px"
+                    }
+                  >
+                    {missionPart}
+                  </SPartText>
+                ))}
+              </div>
+              <div>
+                <SPartTitle>電源パーツ</SPartTitle>
                 <SPartText
-                  key={missionPart}
                   css={
-                    missionPart === selectedPart
-                      ? `border: solid 4px ${isSelectedColor}`
-                      : ""
+                    powerSupplyPart === selectedPart
+                      ? `border: solid 3px ${isSelectedColor}`
+                      : "padding: 3px"
                   }
                 >
-                  {missionPart}
+                  {powerSupplyPart}
                 </SPartText>
-              ))}
-              <SPartTitle>電源パーツ</SPartTitle>
-              <SPartText
-                css={
-                  powerSupplyPart === selectedPart
-                    ? `border: solid 4px ${isSelectedColor}`
-                    : ""
-                }
-              >
-                {powerSupplyPart}
-              </SPartText>
-              <SPartTitle>積載パーツ</SPartTitle>
-              <SPartText
-                css={
-                  loadedPart === selectedPart
-                    ? `border: solid 4px ${isSelectedColor}`
-                    : ""
-                }
-              >
-                {loadedPart}
-              </SPartText>
-              <SPartTitle>打ち上げロケット</SPartTitle>
-              <SPartText
-                css={
-                  rocket === selectedPart
-                    ? `border: solid 4px ${isSelectedColor}`
-                    : ""
-                }
-              >
-                {rocket}
-              </SPartText>
+                <SPartTitle>積載パーツ</SPartTitle>
+                <SPartText
+                  css={
+                    loadedPart === selectedPart
+                      ? `border: solid 3px ${isSelectedColor}`
+                      : "padding: 3px"
+                  }
+                >
+                  {loadedPart}
+                </SPartText>
+                <SPartTitle>打ち上げロケット</SPartTitle>
+                <SPartText
+                  css={
+                    rocket === selectedPart
+                      ? `border: solid 3px ${isSelectedColor}`
+                      : "padding: 3px"
+                  }
+                >
+                  {rocket}
+                </SPartText>
+              </div>
             </SPartsArea>
           )}
         </STextsArea>
