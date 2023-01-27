@@ -49,7 +49,7 @@ const SAnswerArea = styled.div`
 const SAnswer = styled.div`
   font-size: 23px;
   color: #e2365f;
-  font-family: "UD デジタル 教科書体 NK-B";
+  font-family: "UD デジタル 教科書体 N-B";
 `;
 
 export const QuizInput: FC<QuizInputProps> = ({ answer, onAnswer }) => {

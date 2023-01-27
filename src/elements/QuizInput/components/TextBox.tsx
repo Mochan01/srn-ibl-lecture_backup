@@ -8,13 +8,13 @@ export interface TextBoxProps {
 
 const STitle = styled.div`
   font-size: 18px;
-  font-family: "UD デジタル 教科書体 NK-B";
+  font-family: "UD デジタル 教科書体 N-B";
   color: #5a5a5a;
 `;
 const STextBox = styled.input`
   height: 64px;
   width: 100%;
-  font-family: "UD デジタル 教科書体 NK-B";
+  font-family: "UD デジタル 教科書体 N-B";
   border-radius: 10px;
   font-size: 23px;
   color: #5a5a5a;
