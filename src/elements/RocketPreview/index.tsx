@@ -44,10 +44,10 @@ export const Icon = styled.div<IconProps>(
 
 const Main = styled.div`
   padding: 16px;
-  width: 340px;
-  height: 600px;
+  width: 100%;
+  height: 100%;
   /* 確認用必要無かったら消す */
-  background-color: gray;
+  /* background-color: gray; */
   position: relative;
 `;
 const STitleArea = styled.div`
@@ -56,7 +56,7 @@ const STitleArea = styled.div`
 `;
 const STitle = styled.div`
   color: #f1f6f9;
-  font-size: 12px;
+  font-size: 20px;
   line-height: 24px;
   margin-right: 8px;
 `;

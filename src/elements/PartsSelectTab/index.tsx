@@ -15,20 +15,19 @@ export type Variant = typeof keys[number];
 /* TODO: 色は画面実装時に再設定 */
 export const variants: { [key in Variant]: string } = {
   darkBlue: `
-    color: #F1F6F9;
-    background-color: #11548a;
-    box-shadow: 0 0 0 1px #B2B2B2 inset;
+    color: #FAFBFD;
+    background-color: #366F91;
+    // box-shadow: 0 0 0 1px #B2B2B2 inset;
   `,
   white: `
-    color: black;
+    color: #5A5A5A;
     background-color: #fff;
-    box-shadow: 0 0 0 3px #B2B2B2 inset;
+    // box-shadow: 0 0 0 3px #B2B2B2 inset;
   `,
 } as const;
 
 const Main = styled.div`
-  /* TODO: 画面実装時に再設定 */
-  width: 1000px;
+  width: 680px;
   display: flex;
 `;
 
@@ -46,7 +45,7 @@ export const Tab = styled.div<TabProps>(
   display: inline-block;
   padding: 10px 0;
   border-radius: 6px 6px 0 0;
-  font-size: 24px;
+  font-size: 20px;
   line-height: normal;
   cursor: pointer;
   white-space: noWrap;
