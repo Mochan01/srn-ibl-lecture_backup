@@ -26,5 +26,10 @@ export const LaunchBtn: FC<LaunchBtnProps> = ({
   className,
 }) => {
   const onClick = () => variant === "BEFORE" && fn && fn();
-  return <Main role="button" {...{ onClick, variant, className }}></Main>;
+  return (
+    <>
+      <link href={variants["OFF"]} as="image" rel="preload" />
+      <Main role="button" {...{ onClick, variant, className }} />
+    </>
+  );
 };
