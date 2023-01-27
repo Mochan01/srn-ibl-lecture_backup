@@ -1,8 +1,8 @@
 import React, { FC, useMemo } from "react";
 import styled from "styled-components";
+import { SIZE } from "../../data/SIZE";
 import { LaunchBtn } from "../../elements/LaunchBtn";
 import { LectureFrame } from "../../elements/LectureFrame";
-import { Parameter } from "../../elements/Parameter";
 import { PartCost } from "../../elements/PartCost";
 import { PartDetail } from "../../elements/PartDetail";
 import { PartsSelectBtn } from "../../elements/PartsSelectBtn";
@@ -10,6 +10,7 @@ import { PartsSelectSlider } from "../../elements/PartsSelectSlider";
 import { PartsSelectTab } from "../../elements/PartsSelectTab";
 import { ResetBtn } from "../../elements/ResetBtn";
 import { RocketPreview } from "../../elements/RocketPreview";
+import { MissionConditions } from "./components";
 import { MasterData } from "./types";
 import {
   handleMissionData,
@@ -24,12 +25,9 @@ const ImageBackGround = new URL(
   "../../assets/prod/bg_grid.png",
   import.meta.url
 ).toString();
-// height: ${SIZE.H};
-// width: ${SIZE.W};
 const Main = styled.div`
-  height: 890px;
-  width: 1286px;
-  background-color: red;
+  height: ${SIZE.H};
+  width: ${SIZE.W};
   background-image: url(${ImageBackGround});
   display: flex;
   font-family: "UD デジタル 教科書体 N-B";
@@ -38,7 +36,6 @@ const Main = styled.div`
 const PartsViewArea = styled.div`
   height: 890px;
   width: 574px;
-  /* background-color: blue; */
 `;
 const ButtonArea = styled.div`
   height: 59px;
@@ -118,12 +115,6 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
     onClick: () => console.log("リセットの処理を実行"),
   };
 
-  const tmpParameterProps = {
-    value: 50,
-    limit: 100,
-    title: "製造コスト",
-    unit: "億円",
-  };
   const tmpPartDetailProps = {
     part_name:
       "地上の携帯電話や小型発信機との通信装置+地上の小型発信機1000個セット",
@@ -154,23 +145,16 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
           <RocketPreview {...tmpRocketViewProps}></RocketPreview>
         </PartsViewArea>
         <div>
-          <div css={"margin-top: 17px"}></div>
+          <div css={"margin-top: 18px"}></div>
           <ButtonArea>
             <ResetBtn {...tmpResetBtnProps} />
             <LaunchBtn variant="OFF" onClick={() => console.log("launch")} />
           </ButtonArea>
-          <div css={"margin-top: 17px"}></div>
+          <div css={"margin-top: 18px"}></div>
           <ParameterArea>
-            <div>ミッションの条件（上限）</div>
-            <div css={"display: flex"}>
-              <Parameter {...tmpParameterProps} />
-              <Parameter {...tmpParameterProps} />
-              <Parameter {...tmpParameterProps} />
-              <Parameter {...tmpParameterProps} />
-              <Parameter {...tmpParameterProps} />
-            </div>
+            <MissionConditions />
           </ParameterArea>
-          <div css={"margin-top: 17px"}></div>
+          <div css={"margin-top: 18px"}></div>
           <PartsSelectTab index={0} onChange={() => console.log("tabClick")} />
           <PartDetailArea>
             <PartDetail {...tmpPartDetailProps} />

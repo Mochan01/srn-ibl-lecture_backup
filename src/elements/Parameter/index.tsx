@@ -8,19 +8,26 @@ const ImageLecture = new URL(
 
 const Main = styled.div`
   position: relative;
-  width: 100px;
+  width: 94px;
   height: 150px;
 `;
 const SUnit = styled.div`
   text-align: center;
 `;
 
-const TEXT_H = 14;
-const STitle = styled.div`
+const TEXT_H = 18;
+const STitle = styled.div<{ overFlag: boolean }>`
+  height: 40px;
+  width: 94px;
+  line-height: 21px;
   margin-bottom: 8px;
   padding-top: 8px;
-  font-weight: 700;
+  color: ${({ overFlag }) => (overFlag ? "#FF0000" : "#5a5a5a")};
   font-size: ${TEXT_H}px;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  display: flex;
 `;
 const SGraph = styled.div`
   position: relative;
@@ -29,7 +36,8 @@ const SGraph = styled.div`
 const SAlertImage = styled.img`
   height: 24px;
   width: 24px;
-  left: 38px;
+  left: 35px;
+  bottom: -18px;
   position: absolute;
   z-index: 1;
 `;
@@ -43,9 +51,10 @@ const SPie = styled.div<ConicGradientProps>`
   align-items: center;
   margin-right: auto;
   margin-left: auto;
-  width: 100px;
-  height: 100px;
+  width: 94px;
+  height: 94px;
   font-size: 16px;
+  color: #5a5a5a;
   font-weight: 700;
   background-image: radial-gradient(#f2f2f2 55%, transparent 56%),
     conic-gradient(${(props) => props.gradient});
@@ -99,7 +108,7 @@ export const Parameter: FC<ParameterProps> = ({
   return (
     <Main>
       <SUnit>
-        <STitle>{title}</STitle>
+        <STitle {...{ overFlag }}>{title}</STitle>
         <SGraph>
           {overFlag && <SAlertImage src={ImageLecture} />}
           <SPie gradient={gradient}>{value + unit}</SPie>
