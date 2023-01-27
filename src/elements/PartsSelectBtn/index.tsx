@@ -38,5 +38,10 @@ export const PartsSelectBtn: FC<PartsSelectBtnProps> = ({
   onClick,
   isSelected,
 }) => {
-  return <Main {...{ isSelected, onClick }} />;
+  return (
+    <>
+      <link href={ImgSelect} as="image" rel="preload" />
+      <Main {...{ isSelected, onClick }} />
+    </>
+  );
 };
