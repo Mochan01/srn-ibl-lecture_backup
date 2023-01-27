@@ -29,6 +29,8 @@ export const LaunchBtn: FC<LaunchBtnProps> = ({
   return (
     <>
       <link href={variants["OFF"]} as="image" rel="preload" />
+      <link href={variants["BEFORE"]} as="image" rel="preload" />
+      <link href={variants["AFTER"]} as="image" rel="preload" />
       <Main role="button" {...{ onClick, variant, className }} />
     </>
   );
