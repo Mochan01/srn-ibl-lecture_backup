@@ -15,7 +15,7 @@ const SCell = styled.div`
   color: #5a5a5a;
   font-size: 16px;
   line-height: 23px;
-  font-family: "UD デジタル 教科書体 NK-B";
+  font-family: "UD デジタル 教科書体 N-B";
   display: flex;
 `;
 export interface PartDetailProps {
