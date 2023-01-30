@@ -2,12 +2,12 @@ import { useReducer, Reducer } from "react";
 
 export interface SatelliteAssemblyState {
   // 選択済みの各パーツＩＤ
-  selectedMissionPartsIDs: string[] | undefined;
-  selectedRocketID: string | undefined;
-  selectedBusID: string | undefined;
-  selectedBatteryID: string | undefined;
+  selectedMissionPartsIDs?: string[];
+  selectedRocketID?: string;
+  selectedBusID?: string;
+  selectedBatteryID?: string;
   // 黄色の枠線が付くパーツID
-  selectedPartID: string | undefined;
+  selectedPartID?: string | undefined;
   tabIndex: number;
 }
 
@@ -16,7 +16,7 @@ export type SatelliteAssemblyAction =
   | { type: "selectedRocketID"; val: string }
   | { type: "selectedBusID"; val: string }
   | { type: "selectedBatteryID"; val: string }
-  | { type: "selectedPartID"; val: string }
+  | { type: "selectedPartID"; val: string | undefined }
   | { type: "tabIndex"; val: number };
 
 const reducer = (

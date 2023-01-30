@@ -108,6 +108,7 @@ const SSwiperNextButton = styled.div`
 `;
 
 export interface SliderItem {
+  part_id: string;
   name: string;
   image: string;
 }
@@ -116,7 +117,7 @@ export interface PartsSelectSliderProps {
   items: SliderItem[];
   onSelect: (index: number) => void;
   selectIndex?: number;
-  selectedIndexes: number[];
+  selectedIDs: string[];
   className?: string;
 }
 
@@ -125,7 +126,7 @@ export interface PartsSelectSliderProps {
  */
 export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
   selectIndex = 0,
-  selectedIndexes,
+  selectedIDs,
   items,
   onSelect,
 }) => {
@@ -164,9 +165,9 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
           speed={duration}
         >
           {items.map((item, i) => (
-            <SwiperSlide key={item.name} onClick={() => onClick(i)}>
+            <SwiperSlide key={item.part_id} onClick={() => onClick(i)}>
               <SImage
-                selected={selectedIndexes.includes(i)}
+                selected={selectedIDs.includes(item.part_id)}
                 src={item.image}
                 css={
                   activeIndex === i

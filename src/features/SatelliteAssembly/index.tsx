@@ -8,6 +8,7 @@ import {
   PartsPreviewArea,
   PartsSelectArea,
 } from "./components";
+import { SatelliteAssemblyProvider } from "./contexts";
 import { MasterData } from "./types";
 import {
   handleMissionData,
@@ -63,25 +64,30 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
   const busIDs = getIDs(getBusIDs); // 積載パーツ
   const rocketIDs = getIDs(getRocketIDs); // 打ち上げロケット
 
-  console.log("missionPartsIDs", missionPartsIDs);
-  console.log(" batteryIDs", batteryIDs);
-  console.log(" busIDs", busIDs);
-  console.log(" rocketIDs", rocketIDs);
-  console.log(" missionData", missionData);
-  console.log(" masterData", masterData);
+  // console.log("missionPartsIDs", missionPartsIDs);
+  // console.log(" batteryIDs", batteryIDs);
+  // console.log(" busIDs", busIDs);
+  // console.log(" rocketIDs", rocketIDs);
+  // console.log(" missionData", missionData);
+  // console.log(" masterData", masterData);
 
   return (
     <LectureFrame unitName="とりあえず仮" unitTitle="とりあえず仮">
       <Main>
-        <PartsPreviewArea />
-        <div>
-          <div css={"margin-top: 18px"} />
-          <BtnArea />
-          <div css={"margin-top: 18px"} />
-          <ParameterArea />
-          <div css={"margin-top: 18px"} />
-          <PartsSelectArea />
-        </div>
+        <SatelliteAssemblyProvider initialValue={{ tabIndex: 0 }}>
+          <PartsPreviewArea />
+          <div>
+            <div css={"margin-top: 18px"} />
+            <BtnArea />
+            <div css={"margin-top: 18px"} />
+            <ParameterArea />
+            <div css={"margin-top: 18px"} />
+            <PartsSelectArea
+              missionData={missionData}
+              masterData={masterData}
+            />
+          </div>
+        </SatelliteAssemblyProvider>
       </Main>
       {/* ここに衛生組み立て画面の実装を書く */}
     </LectureFrame>

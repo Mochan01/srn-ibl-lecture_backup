@@ -1,7 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import styled from "styled-components";
 import { PartCost } from "../../../elements/PartCost";
 import { PartDetail } from "../../../elements/PartDetail";
+import { SatelliteAssemblyStateContext } from "../contexts";
+import { MasterData } from "../types";
+import { getCategoryDescription, getPartDetailData } from "../utils";
 const Main = styled.div`
   padding-left: 20px;
   padding-top: 12px;
@@ -27,32 +30,101 @@ const SCategoryDescription = styled.div`
   line-height: 24px;
 `;
 
-const tmpPartCostProps = {
-  cost_name: "価格（億円）",
-  cost: 20000,
-  isCostOver: false,
-};
-const tmpPartDetailProps = {
-  part_name:
-    "地上の携帯電話や小型発信機との通信装置+地上の小型発信機1000個セット",
-  description:
-    "地上のGPS受信機で得た位置情報を衛星が受信する専用の装置と地上で使用するGPS受信機1000個のセット",
-};
-export const PartDetailUnit: FC = () => {
-  const categoryTitle = "ロケット";
-  const categoryDescription = "衛星を軌道まで打ち上げるための輸送機";
+interface PartDetailUnitProps {
+  masterData: MasterData;
+}
+
+interface PartType {
+  category_id: string;
+  category_name: string;
+  part_id: string;
+  part_name: string;
+  description: string;
+  price_hundred_million?: number;
+  leo_launchable_mass_kg?: number;
+  geo_launchable_mass_kg?: number;
+  ooo_launchable_mass_kg?: number;
+  manufacturing_period_months?: number;
+  max_loading_mass_kg?: number;
+  body_mass_kg?: number;
+  required_power_watts?: number;
+  power_supply_watts?: number;
+}
+export const PartDetailUnit: FC<PartDetailUnitProps> = ({ masterData }) => {
+  const state = useContext(SatelliteAssemblyStateContext);
+
+  const partData = getPartDetailData(masterData, state.selectedPartID);
+  let partDetail;
+  if (partData) {
+    partDetail = partData as PartType;
+  }
+  const categoryTitle = partDetail?.category_name;
+  const categoryDescription = getCategoryDescription(
+    masterData,
+    partDetail?.category_id
+  );
+  const partName = partDetail ? partDetail.part_name : "";
+  const partDescription = partDetail ? partDetail.description : "";
+  const launchableMassKg =
+    partDetail?.geo_launchable_mass_kg ||
+    partDetail?.leo_launchable_mass_kg ||
+    partDetail?.ooo_launchable_mass_kg;
   return (
-    <Main>
+    <Main key={state.tabIndex}>
       <SCategoryTitle>{categoryTitle}</SCategoryTitle>
       <SCategoryDescription>{categoryDescription}</SCategoryDescription>
-      <PartDetail {...tmpPartDetailProps} />
+      <PartDetail partName={partName} description={partDescription} />
       <div css={"margin-top: 7px"} />
       <STable>
-        <PartCost {...tmpPartCostProps} />
-        <PartCost {...tmpPartCostProps} />
-        <PartCost {...tmpPartCostProps} />
-        <PartCost {...tmpPartCostProps} />
-        <PartCost {...tmpPartCostProps} />
+        {partDetail?.price_hundred_million && (
+          <PartCost
+            cost_name={"価格（億円）"}
+            cost={partDetail?.price_hundred_million}
+            isCostOver={true}
+          />
+        )}
+        {partDetail?.manufacturing_period_months && (
+          <PartCost
+            cost_name={"製造期間（月）"}
+            cost={partDetail?.manufacturing_period_months}
+            isCostOver={true}
+          />
+        )}
+        {launchableMassKg && (
+          <PartCost
+            cost_name={"打ち上げ可能質量（kg）"}
+            cost={launchableMassKg}
+            isCostOver={true}
+          />
+        )}
+        {partDetail?.max_loading_mass_kg && (
+          <PartCost
+            cost_name={"最大積載可能質量（kg）"}
+            cost={partDetail?.max_loading_mass_kg}
+            isCostOver={true}
+          />
+        )}
+        {partDetail?.body_mass_kg && (
+          <PartCost
+            cost_name={"本体質量（kg）"}
+            cost={partDetail?.body_mass_kg}
+            isCostOver={true}
+          />
+        )}
+        {partDetail?.required_power_watts && (
+          <PartCost
+            cost_name={"衛星バス必要電力（W）"}
+            cost={partDetail?.required_power_watts}
+            isCostOver={true}
+          />
+        )}
+        {partDetail?.power_supply_watts && (
+          <PartCost
+            cost_name={"供給電力（W）"}
+            cost={partDetail?.power_supply_watts}
+            isCostOver={true}
+          />
+        )}
       </STable>
     </Main>
   );
