@@ -1,11 +1,13 @@
 import React, { FC, useMemo } from "react";
 import styled from "styled-components";
 import { SIZE } from "../../data/SIZE";
-import { LaunchBtn } from "../../elements/LaunchBtn";
 import { LectureFrame } from "../../elements/LectureFrame";
-import { ResetBtn } from "../../elements/ResetBtn";
-import { RocketPreview } from "../../elements/RocketPreview";
-import { MissionConditions, PartsSelectArea } from "./components";
+import {
+  BtnArea,
+  ParameterArea,
+  PartsPreviewArea,
+  PartsSelectArea,
+} from "./components";
 import { MasterData } from "./types";
 import {
   handleMissionData,
@@ -28,21 +30,6 @@ const Main = styled.div`
   font-family: "UD デジタル 教科書体 N-B";
 `;
 
-const PartsViewArea = styled.div`
-  height: 890px;
-  width: 574px;
-`;
-const ButtonArea = styled.div`
-  height: 59px;
-  width: 680px;
-  display: flex;
-  justify-content: space-between;
-`;
-const ParameterArea = styled.div`
-  height: 210px;
-  width: 680px;
-  background-color: ${backGroundWhiteColor};
-`;
 export interface SatelliteAssemblyProps {
   /**
    * プレイヤーが選択しているミッションID
@@ -83,44 +70,15 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
   console.log(" missionData", missionData);
   console.log(" masterData", masterData);
 
-  const tmpRocketViewProps = {
-    // images: ["https://placekitten.com/600/600"],
-    images: [
-      "https://placekitten.com/601/600",
-      "https://placekitten.com/601/600",
-    ],
-    selectedPart: "ミッションパーツA",
-    missionParts: [
-      "ミッションパーツA",
-      "ミッションパーツB",
-      "ミッションパーツC",
-    ],
-    powerSupplyPart: "電源パーツA",
-    loadedPart: "積載パーツA",
-    rocket: "打ち上げロケットA",
-    isShow: true,
-  };
-
-  const tmpResetBtnProps = {
-    onClick: () => console.log("リセットの処理を実行"),
-  };
-
   return (
     <LectureFrame unitName="とりあえず仮" unitTitle="とりあえず仮">
       <Main>
-        <PartsViewArea>
-          <RocketPreview {...tmpRocketViewProps}></RocketPreview>
-        </PartsViewArea>
+        <PartsPreviewArea />
         <div>
           <div css={"margin-top: 18px"} />
-          <ButtonArea>
-            <ResetBtn {...tmpResetBtnProps} />
-            <LaunchBtn variant="OFF" onClick={() => console.log("launch")} />
-          </ButtonArea>
+          <BtnArea />
           <div css={"margin-top: 18px"} />
-          <ParameterArea>
-            <MissionConditions />
-          </ParameterArea>
+          <ParameterArea />
           <div css={"margin-top: 18px"} />
           <PartsSelectArea />
         </div>

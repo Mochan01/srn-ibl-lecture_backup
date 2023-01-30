@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { Parameter } from "../../../elements/Parameter";
 
+const backGroundWhiteColor = "#fafbfd " as const;
 const tmpPriceProps = {
   value: 50000,
   limit: 10000,
@@ -34,6 +35,9 @@ const tmpWattsProps = {
 };
 
 const Main = styled.div`
+  height: 210px;
+  width: 680px;
+  background-color: ${backGroundWhiteColor};
   padding-left: 12px;
   padding-top: 12px;
 `;
@@ -43,12 +47,12 @@ const STitle = styled.div`
   line-height: 32px;
   margin-bottom: 10px;
 `;
-export interface MissionConditionsProps {
+export interface ParameterAreaProps {
   className?: string;
   onClick?: () => void;
 }
 
-export const MissionConditions: FC<MissionConditionsProps> = (props) => {
+export const ParameterArea: FC<ParameterAreaProps> = (props) => {
   return (
     <Main>
       <STitle>ミッションの条件（上限）</STitle>
