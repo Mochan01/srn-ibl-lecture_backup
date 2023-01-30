@@ -1,13 +1,14 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { QuizAnswerBtn, QuizAnswerBtnProps, QUIZ_ANSWER_BTN } from ".";
+import { QuizAnswerBtn, QuizAnswerBtnProps } from ".";
+import { keys as options } from "./config";
 
 export default {
   title: "elements/QuizAnswerBtn",
   component: QuizAnswerBtn,
   argTypes: {
-    mutation: {
-      options: [QUIZ_ANSWER_BTN.GRAY, QUIZ_ANSWER_BTN.RED, QUIZ_ANSWER_BTN.WHITE],
+    variant: {
+      options,
       control: { type: "radio" },
     },
   },
@@ -19,5 +20,5 @@ const template: Story<QuizAnswerBtnProps> = (args) => (
 
 export const sample: { args: QuizAnswerBtnProps } = template.bind({});
 sample.args = {
-  mutation: QUIZ_ANSWER_BTN.GRAY,
+  variant: "GRAY",
 };

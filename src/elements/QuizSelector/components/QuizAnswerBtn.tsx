@@ -1,9 +1,6 @@
 import React, { FC, useCallback, useMemo, useContext } from "react";
 import styled from "styled-components";
-import {
-  QuizAnswerBtn as Main,
-  QUIZ_ANSWER_BTN,
-} from "../../QuizAnswerBtn";
+import { QuizAnswerBtn as Main } from "../../QuizAnswerBtn";
 import { QuizSelectorProviderContext } from "../providers";
 
 export interface QuizAnswerBtnProps {
@@ -27,12 +24,12 @@ export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
     QuizSelectorProviderContext
   );
 
-  const mutation = useMemo(() => {
+  const variant = useMemo(() => {
     return typeof chooseIndex === "number"
       ? isAnswer
-        ? QUIZ_ANSWER_BTN.RED
-        : QUIZ_ANSWER_BTN.WHITE
-      : QUIZ_ANSWER_BTN.GRAY;
+        ? "RED"
+        : "WHITE"
+      : "GRAY";
   }, [chooseIndex, isAnswer]);
 
   const onClick = useCallback(() => {
@@ -40,5 +37,5 @@ export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
     onAnswer && onAnswer(chooseIndex === correctIndex);
   }, [setState, onAnswer, chooseIndex, correctIndex]);
 
-  return <AnswerBtn {...{ mutation, isMaxLen, onClick }} />;
+  return <AnswerBtn {...{ variant, isMaxLen, onClick }} />;
 };

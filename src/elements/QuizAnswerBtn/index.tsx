@@ -1,49 +1,33 @@
-import React, { FC, useMemo } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
+import { getColor } from "./utils";
+import { Variant } from "./types";
+import { variants } from "./config";
 const ImageLecture = new URL(
   "../../assets/prod/lecture_panel_answer.png",
   import.meta.url
 ).toString();
 
-export const QUIZ_ANSWER_BTN = {
-  /**
-   * Answer_button_greyout.png
-   */
-  GRAY: "0 -3153px",
-  /**
-   * Answer_button_select.png
-   */
-  RED: "0 -3217px",
-  /**
-   * Answer_button.png
-   */
-  WHITE: "0 -3281px",
-} as const;
-
-export interface QuizAnswerBtnProps extends MainProps {
-  mutation: typeof QUIZ_ANSWER_BTN[keyof typeof QUIZ_ANSWER_BTN];
+export interface QuizAnswerBtnProps {
+  variant: Variant;
   onClick?: () => void;
   className?: string;
 }
 
-interface MainProps {
-  mutation: typeof QUIZ_ANSWER_BTN[keyof typeof QUIZ_ANSWER_BTN];
-}
-
-const Main = styled.div<MainProps>(
-  ({ mutation }) => `
+const Main = styled.div<Pick<QuizAnswerBtnProps, "variant">>(
+  ({ variant }) => `
   width: 150px;
   height: 60px;
   background-image: url(${ImageLecture});
-  background-position: ${mutation};
-  cursor: ${mutation === QUIZ_ANSWER_BTN.GRAY ? "auto" : "pointer"};
+  background-position: ${variants[variant]};
+  cursor: ${variant === "GRAY" ? "auto" : "pointer"};
   position: relative;
 `
 );
 
-const Comment = styled.p(
-  ({ color }) => `
-  color: ${color};
+const Comment = styled.p<Pick<QuizAnswerBtnProps, "variant">>(
+  ({ variant }) => `
+  color: ${getColor(variant)};
   font-size: 30px;
   text-align: center;
   user-select: none;
@@ -58,34 +42,14 @@ const Comment = styled.p(
 );
 
 export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
-  mutation,
-  onClick: _onClick,
+  variant,
+  onClick: fn,
   className,
 }) => {
-  // 文字色
-  const color = useMemo(() => {
-    let color: string;
-    switch (mutation) {
-      case QUIZ_ANSWER_BTN.GRAY:
-        color = "#5A5A5A";
-        break;
-      case QUIZ_ANSWER_BTN.RED:
-        color = "#fff";
-        break;
-      case QUIZ_ANSWER_BTN.WHITE:
-        color = "#2365f";
-        break;
-    }
-    return color;
-  }, [mutation]);
-
-  const onClick = () => {
-    mutation !== QUIZ_ANSWER_BTN.GRAY && _onClick && _onClick();
-  };
-
+  const onClick = () => variant !== "GRAY" && fn && fn();
   return (
-    <Main role="button" {...{ onClick, mutation, className }}>
-      <Comment {...{ color }}>解答</Comment>
+    <Main role="button" {...{ onClick, variant, className }}>
+      <Comment {...{ variant }}>解答</Comment>
     </Main>
   );
 };

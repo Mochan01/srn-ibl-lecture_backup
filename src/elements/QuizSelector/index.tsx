@@ -1,14 +1,14 @@
 import React, { FC, useMemo } from "react";
 import styled from "styled-components";
-import { QuizChoiceBtn, QuizAnswerBtn, QuizAnswerBtnProps } from "./components";
+import { QuizChoiceBtn, QuizAnswerBtn } from "./components";
 import { SIZE } from "../../data/SIZE";
 import { QuizSelectorProvider } from "./providers";
 import { Lecture } from "src-ibl-lecture-master-unit/types/lecture";
 import { getCorrectIndex, filQuestion, getQuestionSelect } from "./utils";
 
-export interface QuizSelectorProps
-  extends Pick<QuizAnswerBtnProps, "onAnswer"> {
+export interface QuizSelectorProps {
   questionSelect: Lecture["question_select"];
+  onAnswer?: (isCorrect: boolean) => void;
   className?: string;
 }
 
@@ -22,8 +22,8 @@ const Main = styled.div`
 
 /**
  * クイズ回答用（選択式）
- * @param param0 
- * @returns 
+ * @param param0
+ * @returns
  */
 export const QuizSelector: FC<QuizSelectorProps> = ({
   questionSelect,
@@ -34,11 +34,12 @@ export const QuizSelector: FC<QuizSelectorProps> = ({
     () => getQuestionSelect(questionSelect),
     [questionSelect]
   );
+
   const correctIndex = useMemo(() => getSelects(getCorrectIndex), [getSelects]);
   const questions = useMemo(() => getSelects(filQuestion), [getSelects]);
   return (
     <QuizSelectorProvider {...{ correctIndex }}>
-      <Main { ...props }>
+      <Main {...props}>
         <QuizChoiceBtn {...{ questions }} />
         <QuizAnswerBtn {...{ onAnswer }} isMaxLen={questions.length === 4} />
       </Main>
