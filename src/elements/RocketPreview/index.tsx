@@ -78,7 +78,6 @@ const SImagesArea = styled.div<Pick<RocketPreviewProps, "images">>`
     images.map((url) => `url(${url})`).join(",")};
   background-repeat: no-repeat;
   background-size: contain;
-  background-color: gray;
   position: absolute;
   left: 32px;
   top: 98px;
