@@ -1,4 +1,4 @@
-import { ActionBtnData, LectureData } from "../types";
+import { ActionBtnData, ScreenData } from "../types";
 import { BuildStepData } from "./buildStepData";
 import {
   ImageData,
@@ -12,10 +12,10 @@ import {
   buildQuestionInputData,
 } from "../types";
 
-type GetSingleLectureDataFunc<U> = (lectureData: LectureData) => U[];
+type GetSingleScreenDataFunc<U> = (lectureData: ScreenData) => U[];
 
-type GetMultipleLectureDataFunc<T, U> = (
-  lectureData: LectureData
+type GetMultipleScreenDataFunc<T, U> = (
+  lectureData: ScreenData
 ) => (buildStepData: BuildStepData<T>) => U[];
 
 /**
@@ -24,7 +24,7 @@ type GetMultipleLectureDataFunc<T, U> = (
  * @param buildStepData
  * @returns
  */
-export const getImageStepData: GetMultipleLectureDataFunc<
+export const getImageStepData: GetMultipleScreenDataFunc<
   BuildImageDataReturn,
   ImageData
 > = (lectureData) => (buildStepData) =>
@@ -48,7 +48,7 @@ export const getImageStepData: GetMultipleLectureDataFunc<
  * @param buildStepData
  * @returns
  */
-export const getPopupBtnStepData: GetMultipleLectureDataFunc<
+export const getPopupBtnStepData: GetMultipleScreenDataFunc<
   BuildPopupBtnDataReturn,
   PopupBtnData
 > = (lectureData) => (buildStepData) =>
@@ -62,7 +62,7 @@ export const getPopupBtnStepData: GetMultipleLectureDataFunc<
  * @param buildStepData
  * @returns
  */
-export const getActionBtnStepData: GetMultipleLectureDataFunc<
+export const getActionBtnStepData: GetMultipleScreenDataFunc<
   BuildActionDataReturn,
   ActionBtnData
 > = (lectureData) => (buildStepData) =>
@@ -76,7 +76,7 @@ export const getActionBtnStepData: GetMultipleLectureDataFunc<
  * @param buildStepData
  * @returns
  */
-export const getPopupStepData: GetMultipleLectureDataFunc<
+export const getPopupStepData: GetMultipleScreenDataFunc<
   BuildPopupDataReturn,
   PopupData
 > = (lectureData) => (buildStepData) =>
@@ -89,7 +89,7 @@ export const getPopupStepData: GetMultipleLectureDataFunc<
  * @param lectureData
  * @returns
  */
-export const getQuestionSelect: GetSingleLectureDataFunc<QuestionSelectData> = (
+export const getQuestionSelect: GetSingleScreenDataFunc<QuestionSelectData> = (
   lectureData
 ) =>
   lectureData.flatMap(({ progress, question_select }) => ({
@@ -102,7 +102,7 @@ export const getQuestionSelect: GetSingleLectureDataFunc<QuestionSelectData> = (
  * @param lectureData
  * @returns
  */
-export const getQuestionInput: GetSingleLectureDataFunc<buildQuestionInputData> =
+export const getQuestionInput: GetSingleScreenDataFunc<buildQuestionInputData> =
   (lectureData) =>
     lectureData.flatMap(({ progress, question_input }) => ({
       depth: progress.step,
@@ -119,7 +119,7 @@ export const getQuestionInput: GetSingleLectureDataFunc<buildQuestionInputData> 
 export const getCurrentData = (
   slide: number,
   step: number,
-  lectureData: LectureData
+  lectureData: ScreenData
 ) =>
   lectureData.filter(
     ({ progress }) => progress.slide === slide && progress.step <= step
@@ -128,27 +128,27 @@ export const getCurrentData = (
 /**
  * レクチャーのデータを生成する関数を返す
  * @param currentData
- * @param getLectureDataFunc
+ * @param getScreenDataFunc
  * @returns
  */
-export const createSingleLectureData =
-  (currentData: LectureData) =>
-  <U>(getLectureDataFunc: GetSingleLectureDataFunc<U>) => {
-    return getLectureDataFunc(currentData);
+export const createSingleScreenData =
+  (currentData: ScreenData) =>
+  <U>(getScreenDataFunc: GetSingleScreenDataFunc<U>) => {
+    return getScreenDataFunc(currentData);
   };
 
 /**
  * レクチャーのデータを生成する関数を返す
  * @param currentData
- * @param getLectureDataFunc
+ * @param getScreenDataFunc
  * @param buildStepData
  * @returns
  */
-export const createMultipleLectureData =
-  (currentData: LectureData) =>
+export const createMultipleScreenData =
+  (currentData: ScreenData) =>
   <T, U>(
-    getLectureDataFunc: GetMultipleLectureDataFunc<T, U>,
+    getScreenDataFunc: GetMultipleScreenDataFunc<T, U>,
     buildStepData: BuildStepData<T>
   ) => {
-    return getLectureDataFunc(currentData)(buildStepData);
+    return getScreenDataFunc(currentData)(buildStepData);
   };

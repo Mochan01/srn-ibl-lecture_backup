@@ -23,7 +23,9 @@ const Main = styled.div`
   height: 54px;
   position: relative;
 `;
+
 const TEXT_H = 46;
+
 const STimer = styled.div`
   font-size: ${TEXT_H}px;
   letter-spacing: 2.76px;
@@ -36,6 +38,7 @@ const STimer = styled.div`
 const STime = styled.div`
   padding-top: 4px;
 `;
+
 const SColon = styled.div`
   line-height: 46px;
 `;
@@ -56,11 +59,12 @@ const SEndButton = styled.div<SEndButtonProps>`
   top: 0;
   bottom: 0;
   margin: auto;
+  cursor: pointer;
 `;
 
 export interface CountDownProps {
   initialTimeSeconds: number;
-  onEnd: () => void;
+  onEnd?: () => void;
   className?: string;
 }
 
@@ -84,6 +88,7 @@ const secondsToMinutesAndSeconds = (totalSeconds: number) => {
 export const CountDown: FC<CountDownProps> = ({
   initialTimeSeconds,
   onEnd,
+  ...props
 }) => {
   const { time } = useTimer({
     autostart: true,
@@ -101,18 +106,13 @@ export const CountDown: FC<CountDownProps> = ({
   const { minutes, seconds } = secondsToMinutesAndSeconds(time);
 
   const onClick = () => {
-    if (time <= 0) {
-      onEnd();
-      return;
-    }
     // timeが0より大きい場合は確認のメッセージを出す
-    if (window.confirm("本当に終了しますか？")) {
-      onEnd();
-      return;
-    }
+    if (time > 0 && !window.confirm("本当に終了しますか？")) return;
+    onEnd && onEnd();
   };
+
   return (
-    <Main>
+    <Main {...props}>
       <SEndButton variant={variant} onClick={onClick} />
       <STimer>
         <STime>{minutes}</STime>

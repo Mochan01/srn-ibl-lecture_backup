@@ -1,18 +1,15 @@
-import React, { FC, useContext, useMemo, Fragment, useCallback } from "react";
-import { Panel } from "./Panel";
-import { LectureFrame } from "../../../../elements/LectureFrame";
-import { QuizArea } from "../../../../elements/QuizArea";
+import React, { FC, useContext } from "react";
+import { Lecture } from "src-ibl-lecture-master-unit/types";
 import {
-  GetDataProviderContext,
   GlobalDispatchContext,
   GlobalStateContext,
 } from "../../../../stores/providers";
 import { MainComponentProps } from "../../../../types";
-import { assetsPath } from "../../../../data/assetsPath";
 import data from "../../../../assets/data/unit06_master.json";
 import { Screen as Main } from "../../../../features/Screen";
-import { LectureData } from '../../../../features/Screen/types';
-import { formatSlideStep } from '../../../../utils';
+import { formatSlideStep } from "../../../../utils";
+import { LectureFrame } from "../../../../elements/LectureFrame";
+import { CountDown } from "../../../../elements/CountDown";
 // import { Quiz } from "../../../../features/Quiz/Quiz";
 
 export interface ScreenProps
@@ -40,7 +37,7 @@ export const Screen: FC<ScreenProps> = (props) => {
 
   // @ts-ignore
   // todo: 型をあわせろ
-  const lectureData: LectureData = data.lecture[0].steps;
+  const lectureData: Lecture[] = data.lecture[0].steps;
 
   // クイズ回答時の処理
   const onAnswer = (isCorrect: boolean) => {};
@@ -50,10 +47,22 @@ export const Screen: FC<ScreenProps> = (props) => {
     dispatch({ type: "progress", val: formatSlideStep(value) });
   };
 
+  const countDown = (
+    <CountDown css="margin: 10px 22px 0 0" initialTimeSeconds={60} />
+  );
+
   return (
-    <>
-      <Main { ...progress } {...{ lectureData, onAnswer, actionGoTo }} />
-    </>
+    <LectureFrame
+      {...{ countDown }}
+      unitName="とりあえず仮"
+      unitTitle="とりあえず仮"
+    >
+      <Main
+        {...progress}
+        {...{ onAnswer, actionGoTo }}
+        screenData={lectureData}
+      />
+    </LectureFrame>
   );
 
   // return (

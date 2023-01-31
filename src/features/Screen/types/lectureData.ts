@@ -1,6 +1,6 @@
 import { Lecture } from "src-ibl-lecture-master-unit/types";
 
-export type LectureData = Array<
+export type ScreenData = Array<
   Pick<
     Lecture,
     | "progress"

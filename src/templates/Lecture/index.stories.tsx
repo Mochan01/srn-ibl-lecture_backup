@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Lecture, LectureProps } from "./Lecture";
+import { Lecture, LectureProps } from ".";
 import jsonData from "../../assets/data/lecture2.json";
 import { JsonData } from "../../types";
 
@@ -21,5 +21,5 @@ sample.args = {
   onClickClose: () => {
     console.log("onClickClose");
   },
-  json: jsonData as JsonData
+  json: jsonData as JsonData,
 };
