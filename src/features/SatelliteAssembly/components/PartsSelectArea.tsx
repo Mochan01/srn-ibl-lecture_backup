@@ -57,6 +57,7 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
 }) => {
   const state = useContext(SatelliteAssemblyStateContext);
   const dispatch = useContext(SatelliteAssemblyDispatchContext);
+  const getIDs = handleMissionData(missionData);
 
   // 開いているタブでの選択中のパーツのID
   const isSelectedIDs = useMemo(() => {
@@ -82,7 +83,6 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
 
   // 開いているタブでのパーツの一覧情報
   const partsData = useMemo(() => {
-    const getIDs = handleMissionData(missionData);
     switch (state.tabIndex) {
       case 1:
         return getBatteryData(masterData, getIDs(getBatteryIDs));
@@ -93,7 +93,7 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
       default:
         return getMissionPartsData(masterData, getIDs(getMissionParts));
     }
-  }, [masterData, missionData, state.tabIndex]);
+  }, [getIDs, masterData, state.tabIndex]);
 
   // スライダーで表示するための情報
   const sliderItem: SliderItem[] | undefined = partsData?.map((partData) => {
@@ -122,8 +122,8 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
 
   // tabがクリックされた時の処理
   const onTabChange = (index: number) => {
-    const getIDs = handleMissionData(missionData);
     let action: SatelliteAssemblyAction;
+    // 選択済みのパーツが無い場合は一番最初のパーツを黄色の枠線で囲む
     switch (index) {
       // ミッションパーツ
       case 0:
@@ -171,6 +171,7 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
   const onPartSelectClick = () => {
     if (!state.selectedPartID) return;
     let action: SatelliteAssemblyAction;
+    // すでに選択されているパーツの場合は削除する
     switch (state.tabIndex) {
       // ミッションパーツ
       case 0:
