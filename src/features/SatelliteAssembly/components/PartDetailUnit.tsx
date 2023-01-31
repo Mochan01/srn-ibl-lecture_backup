@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { PartCost } from "../../../elements/PartCost";
 import { PartDetail } from "../../../elements/PartDetail";
 import { SatelliteAssemblyStateContext } from "../contexts";
-import { MasterData, PartType } from "../types";
+import { MasterData } from "../types";
 import { getCategoryDescription, getPartDetailData } from "../utils";
 const Main = styled.div`
   padding-left: 20px;
@@ -54,12 +54,8 @@ interface PartDetailUnitProps {
 export const PartDetailUnit: FC<PartDetailUnitProps> = ({ masterData }) => {
   const state = useContext(SatelliteAssemblyStateContext);
 
-  const partData = getPartDetailData(masterData, state.selectedPartID);
-  // プロパティを持たせるために型をキャストする
-  let partDetail;
-  if (partData) {
-    partDetail = partData as PartType;
-  }
+  // IDに紐づくパーツのデータ
+  const partDetail = getPartDetailData(masterData, state.selectedPartID);
   const categoryTitle = partDetail?.category_name;
   const categoryDescription = getCategoryDescription(
     masterData,

@@ -10,7 +10,7 @@ import {
   SampleReturn,
   Asteroid,
 } from "src-ibl-lecture-master-special/types";
-import { MasterData } from "../types";
+import { MasterData, PartType } from "../types";
 
 type GetParts = (missionData: MissionList) => string[];
 
@@ -34,8 +34,6 @@ export const handleMissionData =
   (missionData: MissionList) => (callback: GetParts) =>
     callback(missionData);
 
-// type GetPartsData = (masterData: MasterData, IDs: string[]) => string[];
-
 export const getMissionPartsData = (masterData: MasterData, IDs: string[]) => {
   const masterMissionParts = [
     ...masterData.sensor_parts,
@@ -58,64 +56,72 @@ export const getRocketData = (masterData: MasterData, IDs: string[]) => {
   return masterData.rocket?.filter((obj) => IDs?.includes(obj.part_id));
 };
 
-interface PartType {
-  category_id: number;
-  category_name: string;
-  part_id: string;
-  part_name: string;
-  description: string;
-  price_hundred_million: number;
-  leo_launchable_mass_kg: number;
-  geo_launchable_mass_kg: number;
-  ooo_launchable_mass_kg: number;
-  manufacturing_period_months: number;
-  max_loading_mass_kg: number;
-  body_mass_kg: number;
-  required_power_watts: number;
-  power_supply_watts: number;
-}
+// export const getPartDetailData = (
+//   masterData: MasterData,
+//   ID?: string
+// ):
+//   | Rocket
+//   | Bus
+//   | Battery
+//   | SensorParts
+//   | TransmissionParts
+//   | Computer
+//   | Debris
+//   | SampleReturn
+//   | Asteroid
+//   | undefined => {
+//   if (!ID) return;
+//   if (masterData.rocket.find((obj) => obj.part_id === ID)) {
+//     return masterData.rocket.find((obj) => obj.part_id === ID);
+//   }
+//   if (masterData.bus.find((obj) => obj.part_id === ID)) {
+//     return masterData.bus.find((obj) => obj.part_id === ID);
+//   }
+//   if (masterData.battery.find((obj) => obj.part_id === ID)) {
+//     return masterData.battery.find((obj) => obj.part_id === ID);
+//   }
+//   if (masterData.sensor_parts.find((obj) => obj.part_id === ID)) {
+//     return masterData.sensor_parts.find((obj) => obj.part_id === ID);
+//   }
+//   if (masterData.transmission_parts.find((obj) => obj.part_id === ID)) {
+//     return masterData.transmission_parts.find((obj) => obj.part_id === ID);
+//   }
+//   if (masterData.computer.find((obj) => obj.part_id === ID)) {
+//     return masterData.computer.find((obj) => obj.part_id === ID);
+//   }
+//   if (masterData.debris.find((obj) => obj.part_id === ID)) {
+//     return masterData.debris.find((obj) => obj.part_id === ID);
+//   }
+//   if (masterData.sample_return.find((obj) => obj.part_id === ID)) {
+//     return masterData.sample_return.find((obj) => obj.part_id === ID);
+//   }
+//   if (masterData.asteroid.find((obj) => obj.part_id === ID)) {
+//     return masterData.asteroid.find((obj) => obj.part_id === ID);
+//   }
+// };
 
+// IDでマスターデータからパーツのオブジェクトを取得する
 export const getPartDetailData = (
   masterData: MasterData,
   ID?: string
-):
-  | Rocket
-  | Bus
-  | Battery
-  | SensorParts
-  | TransmissionParts
-  | Computer
-  | Debris
-  | SampleReturn
-  | Asteroid
-  | undefined => {
+): PartType | undefined => {
   if (!ID) return;
-  if (masterData.rocket.find((obj) => obj.part_id === ID)) {
-    return masterData.rocket.find((obj) => obj.part_id === ID);
-  }
-  if (masterData.bus.find((obj) => obj.part_id === ID)) {
-    return masterData.bus.find((obj) => obj.part_id === ID);
-  }
-  if (masterData.battery.find((obj) => obj.part_id === ID)) {
-    return masterData.battery.find((obj) => obj.part_id === ID);
-  }
-  if (masterData.sensor_parts.find((obj) => obj.part_id === ID)) {
-    return masterData.sensor_parts.find((obj) => obj.part_id === ID);
-  }
-  if (masterData.transmission_parts.find((obj) => obj.part_id === ID)) {
-    return masterData.transmission_parts.find((obj) => obj.part_id === ID);
-  }
-  if (masterData.computer.find((obj) => obj.part_id === ID)) {
-    return masterData.computer.find((obj) => obj.part_id === ID);
-  }
-  if (masterData.debris.find((obj) => obj.part_id === ID)) {
-    return masterData.debris.find((obj) => obj.part_id === ID);
-  }
-  if (masterData.sample_return.find((obj) => obj.part_id === ID)) {
-    return masterData.sample_return.find((obj) => obj.part_id === ID);
-  }
-  if (masterData.asteroid.find((obj) => obj.part_id === ID)) {
-    return masterData.asteroid.find((obj) => obj.part_id === ID);
+  const partTypes = [
+    masterData.rocket,
+    masterData.bus,
+    masterData.battery,
+    masterData.sensor_parts,
+    masterData.transmission_parts,
+    masterData.computer,
+    masterData.debris,
+    masterData.sample_return,
+    masterData.asteroid,
+  ];
+  for (const partType of partTypes) {
+    // プロパティを持たせるために型をキャストする
+    const tmp = partType as PartType[];
+    const part = tmp.find((obj: { part_id: string }) => obj.part_id === ID);
+    if (part) return part;
   }
 };
 
@@ -124,43 +130,18 @@ export const getCategoryDescription = (masterData: MasterData, ID?: string) => {
     ?.category_description;
 };
 
-// interface Part {
-//   part_id: string;
+// interface SavedParts {
+//   missionPartsIDs: string[];
+//   rocketID: string;
+//   busID: string;
+//   batteryID: string;
 // }
 
-// const getPart = <T extends Part>(parts: T[], ID: string) =>
-//   parts.find((obj) => obj.part_id === ID);
-
-// export const getPartDetailData = (masterData: MasterData, ID: string) => {
-//   const partTypes = [
-//     masterData.rocket,
-//     masterData.bus,
-//     masterData.battery,
-//     masterData.sensor_parts,
-//     masterData.transmission_parts,
-//   ];
-//   for (const partType of partTypes) {
-//     const foundPart = getPart(partType, ID);
-//     if (foundPart) return foundPart;
-//   }
+// /**
+//  * ローカルストレージに検索条件を保存
+//  * @param state
+//  */
+// export const saveParts = (state: SavedParts) => {
+//   typeof window !== "undefined" &&
+//     localStorage.setItem("searchStudentsConditionInput", JSON.stringify(state));
 // };
-
-// console.log("missionPartsIDs", missionPartsIDs);
-// console.log(" batteryIDs", batteryIDs);
-// console.log(" busIDs", busIDs);
-// console.log(" rocketIDs", rocketIDs);
-interface SavedParts {
-  missionPartsIDs: string[];
-  rocketID: string;
-  busID: string;
-  batteryID: string;
-}
-
-/**
- * ローカルストレージに検索条件を保存
- * @param state
- */
-export const saveParts = (state: SavedParts) => {
-  typeof window !== "undefined" &&
-    localStorage.setItem("searchStudentsConditionInput", JSON.stringify(state));
-};
