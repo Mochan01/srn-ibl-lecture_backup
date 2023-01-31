@@ -7,9 +7,13 @@ export interface SatelliteAssemblyState {
   selectedBusID?: string | undefined;
   selectedBatteryID?: string | undefined;
   // 黄色の枠線が付くパーツID
-  selectedPartID?: string | undefined;
+  selectedPartID: string;
   tabIndex: number;
   isPriceOver: boolean;
+  isMonthOver: boolean;
+  isLaunchOver: boolean;
+  isLoadingOver: boolean;
+  isWattsOver: boolean;
 }
 
 export type SatelliteAssemblyAction =
@@ -17,9 +21,13 @@ export type SatelliteAssemblyAction =
   | { type: "selectedRocketID"; val: string | undefined }
   | { type: "selectedBusID"; val: string | undefined }
   | { type: "selectedBatteryID"; val: string | undefined }
-  | { type: "selectedPartID"; val: string | undefined }
+  | { type: "selectedPartID"; val: string }
   | { type: "tabIndex"; val: number }
-  | { type: "isPriceOver"; val: boolean };
+  | { type: "isPriceOver"; val: boolean }
+  | { type: "isMonthOver"; val: boolean }
+  | { type: "isLaunchOver"; val: boolean }
+  | { type: "isLoadingOver"; val: boolean }
+  | { type: "isWattsOver"; val: boolean };
 
 const reducer = (
   state: SatelliteAssemblyState,
@@ -40,6 +48,14 @@ const reducer = (
       return { ...state, tabIndex: action.val };
     case "isPriceOver":
       return { ...state, isPriceOver: action.val };
+    case "isMonthOver":
+      return { ...state, isMonthOver: action.val };
+    case "isLaunchOver":
+      return { ...state, isLaunchOver: action.val };
+    case "isLoadingOver":
+      return { ...state, isLoadingOver: action.val };
+    case "isWattsOver":
+      return { ...state, isWattsOver: action.val };
   }
 };
 

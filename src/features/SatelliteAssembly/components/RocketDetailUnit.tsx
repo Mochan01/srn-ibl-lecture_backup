@@ -1,25 +1,11 @@
 import React, { FC, useContext } from "react";
-import {
-  Battery,
-  Bus,
-  Rocket,
-  SensorParts,
-} from "src-ibl-lecture-master-special/types";
+import { Rocket } from "src-ibl-lecture-master-special/types";
 import styled from "styled-components";
 import { PartCost } from "../../../elements/PartCost";
 import { PartDetail } from "../../../elements/PartDetail";
 import { SatelliteAssemblyStateContext } from "../contexts";
 import { MasterData } from "../types";
-import {
-  getCategoryDescription,
-  getMissionParts,
-  getPartDetailData,
-  getBatteryData,
-  handlePartsData,
-  getBatteryPats,
-  getBusPats,
-  getRocketPats,
-} from "../utils";
+import { getCategoryDescription, getPartDetailData } from "../utils";
 const Main = styled.div`
   padding-left: 20px;
   padding-top: 12px;
@@ -45,30 +31,19 @@ const SCategoryDescription = styled.div`
   line-height: 24px;
 `;
 
-interface PartDetailUnitProps {
+interface RocketDetailUnitProps {
   masterData: MasterData;
+  partsData: Rocket[];
 }
 
-export const PartDetailUnit: FC<PartDetailUnitProps> = ({ masterData }) => {
+export const RocketDetailUnit: FC<RocketDetailUnitProps> = ({
+  masterData,
+  partsData,
+}) => {
   const state = useContext(SatelliteAssemblyStateContext);
 
-  const getPartsData = handlePartsData(masterData);
-  const partData = [
-    ...getPartsData(getMissionParts),
-    ...getPartsData(getBatteryPats),
-    ...getPartsData(getBusPats),
-    ...getPartsData(getRocketPats),
-  ];
-
-  const partDetail = getPartDetailData<SensorParts | Battery | Bus | Rocket>(
-    partData,
-    state.selectedPartID
-  );
-  const rocketDetail = getPartDetailData<Rocket>(
-    getPartsData(getRocketPats),
-    state.selectedPartID
-  );
-
+  // // IDに紐づくパーツのデータ
+  const partDetail = getPartDetailData<Rocket>(partsData, state.selectedPartID);
   const categoryTitle = partDetail?.category_name;
   const categoryDescription = getCategoryDescription(
     masterData,
@@ -78,26 +53,10 @@ export const PartDetailUnit: FC<PartDetailUnitProps> = ({ masterData }) => {
   const partDescription = partDetail ? partDetail.description : "";
   // 打ち上げ可能質量は三つのうち、一つになる
   const launchableMassKg =
-    rocketDetail?.geo_launchable_mass_kg ||
-    rocketDetail?.leo_launchable_mass_kg ||
-    rocketDetail?.ooo_launchable_mass_kg;
+    partDetail?.geo_launchable_mass_kg ||
+    partDetail?.leo_launchable_mass_kg ||
+    partDetail?.ooo_launchable_mass_kg;
 
-  // // IDに紐づくパーツのデータ
-  // const partDetail = getPartDetailData(masterData, state.selectedPartID);
-  // const categoryTitle = partDetail?.category_name;
-  // const categoryDescription = getCategoryDescription(
-  //   masterData,
-  //   partDetail?.category_id
-  // );
-  // const partName = partDetail ? partDetail.part_name : "";
-  // const partDescription = partDetail ? partDetail.description : "";
-  // // 打ち上げ可能質量は三つのうち、一つになる
-  // const launchableMassKg =
-  //   partDetail?.geo_launchable_mass_kg ||
-  //   partDetail?.leo_launchable_mass_kg ||
-  //   partDetail?.ooo_launchable_mass_kg;
-
-  // TODO:isOverCostを実装する
   return (
     <Main>
       <SCategoryTitle>{categoryTitle}</SCategoryTitle>
@@ -109,21 +68,21 @@ export const PartDetailUnit: FC<PartDetailUnitProps> = ({ masterData }) => {
           <PartCost
             cost_name={"価格（億円）"}
             cost={partDetail?.price_hundred_million}
-            isCostOver={true}
+            isCostOver={state.isPriceOver}
           />
         )}
         {partDetail?.manufacturing_period_months && (
           <PartCost
             cost_name={"製造期間（月）"}
             cost={partDetail?.manufacturing_period_months}
-            isCostOver={true}
+            isCostOver={state.isMonthOver}
           />
         )}
         {launchableMassKg && (
           <PartCost
             cost_name={"打ち上げ可能質量（kg）"}
             cost={launchableMassKg}
-            isCostOver={true}
+            isCostOver={state.isLaunchOver}
           />
         )}
         {/* {partDetail?.max_loading_mass_kg && (

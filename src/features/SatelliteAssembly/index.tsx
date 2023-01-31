@@ -11,11 +11,11 @@ import {
 import { SatelliteAssemblyProvider } from "./contexts";
 import { MasterData } from "./types";
 import {
-  handleMissionData,
-  getMissionParts,
+  getMissionPartsIDs,
   getBatteryIDs,
   getBusIDs,
   getRocketIDs,
+  handleMissionDataIDs,
 } from "./utils";
 
 export const backGroundWhiteColor = "#fafbfd " as const;
@@ -58,8 +58,8 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
   if (!missionData) return <></>;
 
   // 何のパーツを読み込むか？判定（タブ順）
-  const getIDs = handleMissionData(missionData);
-  const missionPartsIDs = getIDs(getMissionParts); // ミッションパーツ
+  const getIDs = handleMissionDataIDs(missionData);
+  const missionPartsIDs = getIDs(getMissionPartsIDs); // ミッションパーツ
   const batteryIDs = getIDs(getBatteryIDs); // 電源パーツ
   const busIDs = getIDs(getBusIDs); // 積載パーツ
   const rocketIDs = getIDs(getRocketIDs); // 打ち上げロケット
@@ -80,6 +80,10 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
             selectedMissionPartsIDs: [],
             selectedPartID: missionPartsIDs[0],
             isPriceOver: false,
+            isMonthOver: false,
+            isLaunchOver: false,
+            isLoadingOver: false,
+            isWattsOver: false,
           }}
         >
           <PartsPreviewArea />
