@@ -59,16 +59,37 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
   const dispatch = useContext(SatelliteAssemblyDispatchContext);
   console.log("state", state);
 
-  const isSelectedIDs: string[] = useMemo(() => {
-    if (state.tabIndex === 0)
-      return state.selectedMissionPartsIDs ? state.selectedMissionPartsIDs : [];
-    if (state.tabIndex === 1)
-      return state.selectedBatteryID ? [state.selectedBatteryID] : [];
-    if (state.tabIndex === 2)
-      return state.selectedBusID ? [state.selectedBusID] : [];
-    if (state.tabIndex === 3)
-      return state.selectedRocketID ? [state.selectedRocketID] : [];
-    return [];
+  // const isSelectedIDs: string[] = useMemo(() => {
+  //   if (state.tabIndex === 0)
+  //     return state.selectedMissionPartsIDs ? state.selectedMissionPartsIDs : [];
+  //   if (state.tabIndex === 1)
+  //     return state.selectedBatteryID ? [state.selectedBatteryID] : [];
+  //   if (state.tabIndex === 2)
+  //     return state.selectedBusID ? [state.selectedBusID] : [];
+  //   if (state.tabIndex === 3)
+  //     return state.selectedRocketID ? [state.selectedRocketID] : [];
+  //   return [];
+  // }, [
+  //   state.selectedBatteryID,
+  //   state.selectedBusID,
+  //   state.selectedMissionPartsIDs,
+  //   state.selectedRocketID,
+  //   state.tabIndex,
+  // ]);
+
+  const isSelectedIDs = useMemo(() => {
+    switch (state.tabIndex) {
+      case 0:
+        return state.selectedMissionPartsIDs || [];
+      case 1:
+        return state.selectedBatteryID ? [state.selectedBatteryID] : [];
+      case 2:
+        return state.selectedBusID ? [state.selectedBusID] : [];
+      case 3:
+        return state.selectedRocketID ? [state.selectedRocketID] : [];
+      default:
+        return [];
+    }
   }, [
     state.selectedBatteryID,
     state.selectedBusID,
@@ -78,22 +99,25 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
   ]);
 
   useEffect(() => {
-    if (state.selectedPartID) return;
-    const getIDs = handleMissionData(missionData);
-    dispatch({ type: "selectedPartID", val: getIDs(getMissionParts)[0] });
+    if (!state.selectedPartID) {
+      const getIDs = handleMissionData(missionData);
+      const firstPartID = getIDs(getMissionParts)[0];
+      dispatch({ type: "selectedPartID", val: firstPartID });
+    }
   }, [dispatch, missionData, state.selectedPartID]);
+
   const partsData = useMemo(() => {
     const getIDs = handleMissionData(missionData);
-    if (state.tabIndex === 1) {
-      return getBatteryData(masterData, getIDs(getBatteryIDs));
+    switch (state.tabIndex) {
+      case 1:
+        return getBatteryData(masterData, getIDs(getBatteryIDs));
+      case 2:
+        return getBusData(masterData, getIDs(getBusIDs));
+      case 3:
+        return getRocketData(masterData, getIDs(getRocketIDs));
+      default:
+        return getMissionPartsData(masterData, getIDs(getMissionParts));
     }
-    if (state.tabIndex === 2) {
-      return getBusData(masterData, getIDs(getBusIDs));
-    }
-    if (state.tabIndex === 3) {
-      return getRocketData(masterData, getIDs(getRocketIDs));
-    }
-    return getMissionPartsData(masterData, getIDs(getMissionParts));
   }, [masterData, missionData, state.tabIndex]);
 
   const sliderItem: SliderItem[] | undefined = partsData?.map((partData) => {
@@ -116,56 +140,165 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
       dispatch({ type: "selectedPartID", val: sliderItem[index].part_id });
     },
   };
+
   const onTabChange = (index: number) => {
     const getIDs = handleMissionData(missionData);
-    let action: SatelliteAssemblyAction = {
-      type: "selectedPartID",
-      val: state.selectedMissionPartsIDs
-        ? state.selectedMissionPartsIDs[0]
-        : getIDs(getMissionParts)[0],
-    };
-    if (index === 1) {
-      action = {
-        type: "selectedPartID",
-        val: state.selectedBatteryID
-          ? state.selectedBatteryID
-          : getIDs(getBatteryIDs)[0],
-      };
-    }
-    if (index === 2) {
-      action = {
-        type: "selectedPartID",
-        val: state.selectedBusID ? state.selectedBusID : getIDs(getBusIDs)[0],
-      };
-    }
-    if (index === 3) {
-      action = {
-        type: "selectedPartID",
-        val: state.selectedRocketID
-          ? state.selectedRocketID
-          : getIDs(getRocketIDs)[0],
-      };
+    let action: SatelliteAssemblyAction;
+    switch (index) {
+      case 0:
+        action = {
+          type: "selectedPartID",
+          val:
+            state.selectedMissionPartsIDs.length !== 0
+              ? state.selectedMissionPartsIDs[0]
+              : getIDs(getMissionParts)[0],
+        };
+        break;
+      case 1:
+        action = {
+          type: "selectedPartID",
+          val: state.selectedBatteryID
+            ? state.selectedBatteryID
+            : getIDs(getBatteryIDs)[0],
+        };
+        break;
+      case 2:
+        action = {
+          type: "selectedPartID",
+          val: state.selectedBusID ? state.selectedBusID : getIDs(getBusIDs)[0],
+        };
+        break;
+      case 3:
+        action = {
+          type: "selectedPartID",
+          val: state.selectedRocketID
+            ? state.selectedRocketID
+            : getIDs(getRocketIDs)[0],
+        };
+        break;
+      default:
+        return;
     }
     dispatch(action);
     dispatch({ type: "tabIndex", val: index });
   };
+  // const onTabChange = (index: number) => {
+  //   const getIDs = handleMissionData(missionData);
+  //   let action: SatelliteAssemblyAction = {
+  //     type: "selectedPartID",
+  //     val:
+  //       state.selectedMissionPartsIDs.length !== 0
+  //         ? state.selectedMissionPartsIDs[0]
+  //         : getIDs(getMissionParts)[0],
+  //   };
+  //   if (index === 1) {
+  //     action = {
+  //       type: "selectedPartID",
+  //       val: state.selectedBatteryID
+  //         ? state.selectedBatteryID
+  //         : getIDs(getBatteryIDs)[0],
+  //     };
+  //   }
+  //   if (index === 2) {
+  //     action = {
+  //       type: "selectedPartID",
+  //       val: state.selectedBusID ? state.selectedBusID : getIDs(getBusIDs)[0],
+  //     };
+  //   }
+  //   if (index === 3) {
+  //     action = {
+  //       type: "selectedPartID",
+  //       val: state.selectedRocketID
+  //         ? state.selectedRocketID
+  //         : getIDs(getRocketIDs)[0],
+  //     };
+  //   }
+  //   dispatch(action);
+  //   dispatch({ type: "tabIndex", val: index });
+  // };
+
   const onPartSelectClick = () => {
     if (!state.selectedPartID) return;
-    let action: SatelliteAssemblyAction = {
-      type: "selectedRocketID",
-      val: state.selectedPartID,
-    };
-    if (state.tabIndex === 0) {
-      action = { type: "selectedMissionPartsIDs", val: [state.selectedPartID] };
-    }
-    if (state.tabIndex === 1) {
-      action = { type: "selectedBatteryID", val: state.selectedPartID };
-    }
-    if (state.tabIndex === 2) {
-      action = { type: "selectedBusID", val: state.selectedPartID };
+    let action: SatelliteAssemblyAction;
+    switch (state.tabIndex) {
+      case 0:
+        action = {
+          type: "selectedMissionPartsIDs",
+          val: state.selectedMissionPartsIDs?.includes(state.selectedPartID)
+            ? state.selectedMissionPartsIDs.filter(
+                (id) => id !== state.selectedPartID
+              )
+            : [...state.selectedMissionPartsIDs, state.selectedPartID],
+        };
+        break;
+      case 1:
+        action = {
+          type: "selectedBatteryID",
+          val:
+            state.selectedBatteryID === state.selectedPartID
+              ? undefined
+              : state.selectedPartID,
+        };
+        break;
+      case 2:
+        action = {
+          type: "selectedBusID",
+          val:
+            state.selectedBusID === state.selectedPartID
+              ? undefined
+              : state.selectedPartID,
+        };
+        break;
+      case 3:
+        action = {
+          type: "selectedRocketID",
+          val:
+            state.selectedRocketID === state.selectedPartID
+              ? undefined
+              : state.selectedPartID,
+        };
+        break;
+      default:
+        return;
     }
     dispatch(action);
   };
+
+  // const onPartSelectClick = () => {
+  //   if (!state.selectedPartID) return;
+  //   let action: SatelliteAssemblyAction;
+  //   if (state.tabIndex === 0) {
+  //     let newState;
+  //     if (state.selectedMissionPartsIDs?.includes(state.selectedPartID)) {
+  //       newState = state.selectedMissionPartsIDs.filter(
+  //         (id) => id !== state.selectedPartID
+  //       );
+  //       action = { type: "selectedMissionPartsIDs", val: newState };
+  //     } else {
+  //       newState = [...state.selectedMissionPartsIDs, state.selectedPartID];
+  //       action = { type: "selectedMissionPartsIDs", val: newState };
+  //     }
+  //   } else if (state.tabIndex === 1) {
+  //     if (state.selectedBatteryID === state.selectedPartID) {
+  //       action = { type: "selectedBatteryID", val: undefined };
+  //     } else {
+  //       action = { type: "selectedBatteryID", val: state.selectedPartID };
+  //     }
+  //   } else if (state.tabIndex === 2) {
+  //     if (state.selectedBusID === state.selectedPartID) {
+  //       action = { type: "selectedBusID", val: undefined };
+  //     } else {
+  //       action = { type: "selectedBusID", val: state.selectedPartID };
+  //     }
+  //   } else {
+  //     if (state.selectedRocketID === state.selectedPartID) {
+  //       action = { type: "selectedRocketID", val: undefined };
+  //     } else {
+  //       action = { type: "selectedRocketID", val: state.selectedPartID };
+  //     }
+  //   }
+  //   dispatch(action);
+  // };
   return (
     <Main key={state.tabIndex}>
       <PartsSelectTab index={state.tabIndex} onChange={onTabChange} />

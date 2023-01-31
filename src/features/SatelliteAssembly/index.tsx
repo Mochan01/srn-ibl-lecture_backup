@@ -74,7 +74,9 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
   return (
     <LectureFrame unitName="とりあえず仮" unitTitle="とりあえず仮">
       <Main>
-        <SatelliteAssemblyProvider initialValue={{ tabIndex: 0 }}>
+        <SatelliteAssemblyProvider
+          initialValue={{ tabIndex: 0, selectedMissionPartsIDs: [] }}
+        >
           <PartsPreviewArea />
           <div>
             <div css={"margin-top: 18px"} />
