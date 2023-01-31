@@ -108,10 +108,20 @@ export const Parameter: FC<ParameterProps> = ({
   return (
     <Main>
       <SUnit>
-        <STitle {...{ overFlag }}>{title}</STitle>
         <SGraph>
-          {overFlag && <SAlertImage src={ImageLecture} />}
-          <SPie gradient={gradient}>{value + unit}</SPie>
+          {/* リミットが０の場合は非活性 */}
+          {limit === 0 ? (
+            <>
+              <STitle overFlag={false}>{title}</STitle>
+              <SPie gradient={getGradient(0)}>{"???" + unit}</SPie>
+            </>
+          ) : (
+            <>
+              <STitle {...{ overFlag }}>{title}</STitle>
+              {overFlag && <SAlertImage src={ImageLecture} />}
+              <SPie gradient={gradient}>{limit + unit}</SPie>
+            </>
+          )}
         </SGraph>
       </SUnit>
     </Main>

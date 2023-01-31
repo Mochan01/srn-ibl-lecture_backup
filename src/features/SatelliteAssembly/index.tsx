@@ -86,7 +86,11 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
             <div css={"margin-top: 18px"} />
             <BtnArea />
             <div css={"margin-top: 18px"} />
-            <ParameterArea />
+            <ParameterArea
+              masterData={masterData}
+              maxBudget={missionData.max_budget}
+              preparationPeriod={missionData.preparation_period}
+            />
             <div css={"margin-top: 18px"} />
             <PartsSelectArea
               missionData={missionData}

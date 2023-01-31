@@ -44,11 +44,11 @@ export interface PartType {
   part_id: string;
   part_name: string;
   description: string;
-  price_hundred_million?: number;
+  price_hundred_million: number;
   leo_launchable_mass_kg?: number;
   geo_launchable_mass_kg?: number;
   ooo_launchable_mass_kg?: number;
-  manufacturing_period_months?: number;
+  manufacturing_period_months: number;
   max_loading_mass_kg?: number;
   body_mass_kg?: number;
   required_power_watts?: number;
