@@ -37,7 +37,7 @@ const SAlertImage = styled.img`
   height: 24px;
   width: 24px;
   left: 35px;
-  bottom: -18px;
+  bottom: -26px;
   position: absolute;
   z-index: 1;
 `;

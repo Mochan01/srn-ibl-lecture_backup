@@ -2,7 +2,6 @@ export * from "./ParameterArea";
 export * from "./PartsPreviewArea";
 export * from "./BtnArea";
 export * from "./PartsSelectArea";
-export * from "./PartDetailUnit";
 export * from "./RocketSelectArea";
 export * from "./RocketDetailUnit";
 export * from "./MissionPartsSelectArea";

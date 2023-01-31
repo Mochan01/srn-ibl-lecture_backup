@@ -54,3 +54,11 @@ export interface PartType {
   required_power_watts?: number;
   power_supply_watts?: number;
 }
+
+export type MissionParts =
+  | SensorParts
+  | TransmissionParts
+  | Computer
+  | Debris
+  | SampleReturn
+  | Asteroid;

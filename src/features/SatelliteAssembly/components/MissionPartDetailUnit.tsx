@@ -1,17 +1,9 @@
 import React, { FC, useContext } from "react";
-import {
-  Asteroid,
-  Computer,
-  Debris,
-  SampleReturn,
-  SensorParts,
-  TransmissionParts,
-} from "src-ibl-lecture-master-special/types";
 import styled from "styled-components";
 import { PartCost } from "../../../elements/PartCost";
 import { PartDetail } from "../../../elements/PartDetail";
 import { SatelliteAssemblyStateContext } from "../contexts";
-import { MasterData } from "../types";
+import { MasterData, MissionParts } from "../types";
 import { getCategoryDescription, getPartDetailData } from "../utils";
 const Main = styled.div`
   padding-left: 20px;
@@ -37,14 +29,6 @@ const SCategoryDescription = styled.div`
   font-size: 16px;
   line-height: 24px;
 `;
-
-type MissionParts =
-  | SensorParts
-  | TransmissionParts
-  | Computer
-  | Debris
-  | SampleReturn
-  | Asteroid;
 
 interface MissionPartDetailUnitProps {
   masterData: MasterData;

@@ -14,15 +14,15 @@ export const getMissionParts = (masterData: MasterData) => {
   return masterMissionParts;
 };
 
-export const getBatteryPats = (masterData: MasterData) => {
+export const getBatteryParts = (masterData: MasterData) => {
   return masterData.battery;
 };
 
-export const getBusPats = (masterData: MasterData) => {
+export const getBusParts = (masterData: MasterData) => {
   return masterData.bus;
 };
 
-export const getRocketPats = (masterData: MasterData) => {
+export const getRocketParts = (masterData: MasterData) => {
   return masterData.rocket;
 };
 
