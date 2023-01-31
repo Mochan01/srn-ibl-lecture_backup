@@ -9,6 +9,7 @@ export interface SatelliteAssemblyState {
   // 黄色の枠線が付くパーツID
   selectedPartID?: string | undefined;
   tabIndex: number;
+  isPriceOver: boolean;
 }
 
 export type SatelliteAssemblyAction =
@@ -17,7 +18,8 @@ export type SatelliteAssemblyAction =
   | { type: "selectedBusID"; val: string | undefined }
   | { type: "selectedBatteryID"; val: string | undefined }
   | { type: "selectedPartID"; val: string | undefined }
-  | { type: "tabIndex"; val: number };
+  | { type: "tabIndex"; val: number }
+  | { type: "isPriceOver"; val: boolean };
 
 const reducer = (
   state: SatelliteAssemblyState,
@@ -36,6 +38,8 @@ const reducer = (
       return { ...state, selectedPartID: action.val };
     case "tabIndex":
       return { ...state, tabIndex: action.val };
+    case "isPriceOver":
+      return { ...state, isPriceOver: action.val };
   }
 };
 

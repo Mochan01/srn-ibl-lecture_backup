@@ -1,4 +1,4 @@
-import React, { FC, useContext } from "react";
+import React, { FC, useContext, useEffect } from "react";
 import styled from "styled-components";
 import { Parameter } from "../../../elements/Parameter";
 import {
@@ -138,6 +138,11 @@ export const ParameterArea: FC<ParameterAreaProps> = ({
   const loadingLimit = busPart?.max_loading_mass_kg || 0;
   const wattsValue = getTotalWatts(busPart, missionParts);
   const wattsLimit = batteryPart?.power_supply_watts || 0;
+
+  useEffect(() => {
+    dispatch({ type: "isPriceOver", val: maxBudget < priceValue });
+  }, [dispatch, maxBudget, priceValue, rocket]);
+  console.log(state);
 
   const tmpPriceProps = {
     value: priceValue,

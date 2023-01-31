@@ -79,6 +79,7 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
             tabIndex: 0,
             selectedMissionPartsIDs: [],
             selectedPartID: missionPartsIDs[0],
+            isPriceOver: false,
           }}
         >
           <PartsPreviewArea />
