@@ -13,6 +13,9 @@ import {
   getMissionParts,
   getPartDetailData,
   getRocketParts,
+  getTotalLaunchAndLoading,
+  getTotalPriceAndMonth,
+  getTotalWatts,
   handlePartsData,
 } from "../utils";
 
@@ -31,6 +34,7 @@ const STitle = styled.div`
   line-height: 32px;
   margin-bottom: 10px;
 `;
+
 export interface ParameterAreaProps {
   masterData: MasterData;
   maxBudget: number;
@@ -54,121 +58,56 @@ export const ParameterArea: FC<ParameterAreaProps> = ({
         state.selectedRocketID
       )
     : undefined;
+
   const busPart = state.selectedBusID
     ? getPartDetailData<Bus>(getPartsDetail(getBusParts), state.selectedBusID)
     : undefined;
+
   const batteryPart = state.selectedBatteryID
     ? getPartDetailData<Battery>(
         getPartsDetail(getBatteryParts),
         state.selectedBatteryID
       )
     : undefined;
+
   const missionParts = state.selectedMissionPartsIDs.map((id) => {
     return getPartDetailData<MissionParts>(getPartsDetail(getMissionParts), id);
   });
 
-  const getTotalPriceAndMonth = (
-    rocket: Rocket | undefined,
-    busPart: Bus | undefined,
-    batteryPart: Battery | undefined,
-    missionParts: (MissionParts | undefined)[]
-  ) => {
-    let totalPrice: number = 0;
-    let totalMonth: number = 0;
-    if (rocket) {
-      totalPrice += rocket.price_hundred_million;
-      totalMonth += rocket.manufacturing_period_months;
-    }
-    if (busPart) {
-      totalPrice += busPart.price_hundred_million;
-      totalMonth += busPart.manufacturing_period_months;
-    }
-    if (batteryPart) {
-      totalPrice += batteryPart.price_hundred_million;
-      totalMonth += batteryPart.manufacturing_period_months;
-    }
-    for (const missionPart of missionParts) {
-      if (missionPart) {
-        totalPrice += missionPart.price_hundred_million;
-        totalMonth += missionPart.manufacturing_period_months;
-      }
-    }
-    return { totalPrice, totalMonth };
-  };
-
-  const getTotalLaunchAndLoading = (
-    busPart: Bus | undefined,
-    batteryPart: Battery | undefined,
-    missionParts: (MissionParts | undefined)[]
-  ) => {
-    let totalLaunch: number = 0;
-    let totalLoading: number = 0;
-    if (busPart?.body_mass_kg) {
-      totalLaunch += busPart.body_mass_kg;
-    }
-    if (batteryPart?.body_mass_kg) {
-      totalLaunch += batteryPart.body_mass_kg;
-      totalLoading += batteryPart.body_mass_kg;
-    }
-    for (const missionPart of missionParts) {
-      if (missionPart?.body_mass_kg) {
-        totalLaunch += missionPart.body_mass_kg;
-        totalLoading += missionPart.body_mass_kg;
-      }
-    }
-    return { totalLaunch, totalLoading };
-  };
-  const getTotalWatts = (
-    busPart: Bus | undefined,
-    missionParts: (MissionParts | undefined)[]
-  ) => {
-    let totalWatts: number = 0;
-    if (busPart?.required_power_watts) {
-      totalWatts += busPart.required_power_watts;
-    }
-    for (const missionPart of missionParts) {
-      if (missionPart?.required_power_watts) {
-        totalWatts += missionPart.required_power_watts;
-      }
-    }
-    return totalWatts;
-  };
   const { totalPrice, totalMonth } = getTotalPriceAndMonth(
-    rocket,
-    busPart,
+    missionParts,
     batteryPart,
-    missionParts
+    busPart,
+    rocket
   );
+
   const { totalLaunch, totalLoading } = getTotalLaunchAndLoading(
-    busPart,
+    missionParts,
     batteryPart,
-    missionParts
+    busPart
   );
-  const priceValue = totalPrice;
-  const monthValue = totalMonth;
-  const launchValue = totalLaunch;
-  // TODO:要確認
+
   const launchLimit =
     rocket?.geo_launchable_mass_kg ||
     rocket?.leo_launchable_mass_kg ||
     rocket?.ooo_launchable_mass_kg ||
     0;
-  const loadingValue = totalLoading;
+
   const loadingLimit = busPart?.max_loading_mass_kg || 0;
-  const wattsValue = getTotalWatts(busPart, missionParts);
+  const wattsValue = getTotalWatts(missionParts, busPart);
   const wattsLimit = batteryPart?.power_supply_watts || 0;
 
   // costOverのフラグを判定する
   useEffect(() => {
-    dispatch({ type: "isPriceOver", val: maxBudget < priceValue });
+    dispatch({ type: "isPriceOver", val: maxBudget < totalPrice });
     dispatch({ type: "isMonthOver", val: preparationPeriod < totalMonth });
     dispatch({
       type: "isLaunchOver",
-      val: launchLimit === 0 ? false : launchLimit < launchValue,
+      val: launchLimit === 0 ? false : launchLimit < totalLaunch,
     });
     dispatch({
       type: "isLoadingOver",
-      val: loadingLimit === 0 ? false : loadingLimit < loadingValue,
+      val: loadingLimit === 0 ? false : loadingLimit < totalLoading,
     });
     dispatch({
       type: "isWattsOver",
@@ -177,39 +116,38 @@ export const ParameterArea: FC<ParameterAreaProps> = ({
   }, [
     dispatch,
     launchLimit,
-    launchValue,
     loadingLimit,
-    loadingValue,
     maxBudget,
     preparationPeriod,
-    priceValue,
-    rocket,
+    totalLaunch,
+    totalLoading,
     totalMonth,
+    totalPrice,
     wattsLimit,
     wattsValue,
   ]);
   console.log(state);
 
   const PriceProps = {
-    value: priceValue,
+    value: totalPrice,
     limit: maxBudget,
     title: "製造コスト",
     unit: "億円",
   };
   const MonthsProps = {
-    value: monthValue,
+    value: totalMonth,
     limit: preparationPeriod,
     title: "準備期間",
     unit: "ヶ月",
   };
   const LaunchProps = {
-    value: launchValue,
+    value: totalLaunch,
     limit: launchLimit,
     title: "打ち上げ可能質量",
     unit: "kg",
   };
   const LoadingProps = {
-    value: loadingValue,
+    value: totalLoading,
     limit: loadingLimit,
     title: "積載可能質量",
     unit: "kg",
