@@ -75,7 +75,11 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
     <LectureFrame unitName="とりあえず仮" unitTitle="とりあえず仮">
       <Main>
         <SatelliteAssemblyProvider
-          initialValue={{ tabIndex: 0, selectedMissionPartsIDs: [] }}
+          initialValue={{
+            tabIndex: 0,
+            selectedMissionPartsIDs: [],
+            selectedPartID: missionPartsIDs[0],
+          }}
         >
           <PartsPreviewArea />
           <div>
@@ -91,7 +95,6 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
           </div>
         </SatelliteAssemblyProvider>
       </Main>
-      {/* ここに衛生組み立て画面の実装を書く */}
     </LectureFrame>
   );
 };

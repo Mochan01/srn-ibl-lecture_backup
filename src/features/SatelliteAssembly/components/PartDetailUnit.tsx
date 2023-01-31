@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { PartCost } from "../../../elements/PartCost";
 import { PartDetail } from "../../../elements/PartDetail";
 import { SatelliteAssemblyStateContext } from "../contexts";
-import { MasterData } from "../types";
+import { MasterData, PartType } from "../types";
 import { getCategoryDescription, getPartDetailData } from "../utils";
 const Main = styled.div`
   padding-left: 20px;
@@ -34,26 +34,28 @@ interface PartDetailUnitProps {
   masterData: MasterData;
 }
 
-interface PartType {
-  category_id: string;
-  category_name: string;
-  part_id: string;
-  part_name: string;
-  description: string;
-  price_hundred_million?: number;
-  leo_launchable_mass_kg?: number;
-  geo_launchable_mass_kg?: number;
-  ooo_launchable_mass_kg?: number;
-  manufacturing_period_months?: number;
-  max_loading_mass_kg?: number;
-  body_mass_kg?: number;
-  required_power_watts?: number;
-  power_supply_watts?: number;
-}
+// 全てのパーツのプロパティを持った型
+// interface PartType {
+//   category_id: string;
+//   category_name: string;
+//   part_id: string;
+//   part_name: string;
+//   description: string;
+//   price_hundred_million?: number;
+//   leo_launchable_mass_kg?: number;
+//   geo_launchable_mass_kg?: number;
+//   ooo_launchable_mass_kg?: number;
+//   manufacturing_period_months?: number;
+//   max_loading_mass_kg?: number;
+//   body_mass_kg?: number;
+//   required_power_watts?: number;
+//   power_supply_watts?: number;
+// }
 export const PartDetailUnit: FC<PartDetailUnitProps> = ({ masterData }) => {
   const state = useContext(SatelliteAssemblyStateContext);
 
   const partData = getPartDetailData(masterData, state.selectedPartID);
+  // プロパティを持たせるために型をキャストする
   let partDetail;
   if (partData) {
     partDetail = partData as PartType;
@@ -65,12 +67,15 @@ export const PartDetailUnit: FC<PartDetailUnitProps> = ({ masterData }) => {
   );
   const partName = partDetail ? partDetail.part_name : "";
   const partDescription = partDetail ? partDetail.description : "";
+  // 打ち上げ可能質量は三つのうち、一つになる
   const launchableMassKg =
     partDetail?.geo_launchable_mass_kg ||
     partDetail?.leo_launchable_mass_kg ||
     partDetail?.ooo_launchable_mass_kg;
+
+  // TODO:isOverCostを実装する
   return (
-    <Main key={state.tabIndex}>
+    <Main>
       <SCategoryTitle>{categoryTitle}</SCategoryTitle>
       <SCategoryDescription>{categoryDescription}</SCategoryDescription>
       <PartDetail partName={partName} description={partDescription} />

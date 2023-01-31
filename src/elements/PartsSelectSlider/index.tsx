@@ -108,7 +108,7 @@ const SSwiperNextButton = styled.div`
 `;
 
 export interface SliderItem {
-  part_id: string;
+  partID: string;
   name: string;
   image: string;
 }
@@ -165,9 +165,9 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
           speed={duration}
         >
           {items.map((item, i) => (
-            <SwiperSlide key={item.part_id} onClick={() => onClick(i)}>
+            <SwiperSlide key={item.partID} onClick={() => onClick(i)}>
               <SImage
-                selected={selectedIDs.includes(item.part_id)}
+                selected={selectedIDs.includes(item.partID)}
                 src={item.image}
                 css={
                   activeIndex === i

@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect, useMemo } from "react";
+import React, { FC, useContext, useMemo } from "react";
 import { MissionList } from "src-ibl-lecture-master-special/types";
 import styled from "styled-components";
 import { PartsSelectBtn } from "../../../elements/PartsSelectBtn";
@@ -24,7 +24,6 @@ import {
   getBusData,
   getBatteryData,
   getMissionPartsData,
-  getPartDetailData,
 } from "../utils";
 import { PartDetailUnit } from "./PartDetailUnit";
 const Main = styled.div``;
@@ -51,32 +50,15 @@ interface PartsSelectAreaProps {
   masterData: MasterData;
 }
 
+// パーツを選択する部分のエリア
 export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
   missionData,
   masterData,
 }) => {
   const state = useContext(SatelliteAssemblyStateContext);
   const dispatch = useContext(SatelliteAssemblyDispatchContext);
-  console.log("state", state);
 
-  // const isSelectedIDs: string[] = useMemo(() => {
-  //   if (state.tabIndex === 0)
-  //     return state.selectedMissionPartsIDs ? state.selectedMissionPartsIDs : [];
-  //   if (state.tabIndex === 1)
-  //     return state.selectedBatteryID ? [state.selectedBatteryID] : [];
-  //   if (state.tabIndex === 2)
-  //     return state.selectedBusID ? [state.selectedBusID] : [];
-  //   if (state.tabIndex === 3)
-  //     return state.selectedRocketID ? [state.selectedRocketID] : [];
-  //   return [];
-  // }, [
-  //   state.selectedBatteryID,
-  //   state.selectedBusID,
-  //   state.selectedMissionPartsIDs,
-  //   state.selectedRocketID,
-  //   state.tabIndex,
-  // ]);
-
+  // 開いているタブでの選択中のパーツのID
   const isSelectedIDs = useMemo(() => {
     switch (state.tabIndex) {
       case 0:
@@ -98,14 +80,7 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
     state.tabIndex,
   ]);
 
-  useEffect(() => {
-    if (!state.selectedPartID) {
-      const getIDs = handleMissionData(missionData);
-      const firstPartID = getIDs(getMissionParts)[0];
-      dispatch({ type: "selectedPartID", val: firstPartID });
-    }
-  }, [dispatch, missionData, state.selectedPartID]);
-
+  // 開いているタブでのパーツの一覧情報
   const partsData = useMemo(() => {
     const getIDs = handleMissionData(missionData);
     switch (state.tabIndex) {
@@ -120,31 +95,37 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
     }
   }, [masterData, missionData, state.tabIndex]);
 
+  // スライダーで表示するための情報
   const sliderItem: SliderItem[] | undefined = partsData?.map((partData) => {
+    // TODO:画像のファイル名に合わせる
     const image = `${partData.part_id}_slider.png`;
     return {
-      part_id: partData.part_id,
+      partID: partData.part_id,
       name: partData.part_name,
       image: image,
     };
   });
 
-  const tmpPartsSelectSliderProps: PartsSelectSliderProps = {
+  // スライダーコンポーネントに渡すprops
+  const PartsSelectSliderProps: PartsSelectSliderProps = {
     selectIndex: partsData?.findIndex(
       (partData) => partData.part_id === state.selectedPartID
     ),
     selectedIDs: isSelectedIDs,
     items: sliderItem ? sliderItem : [],
+    // スライダーでパーツをクリックした時の処理(黄色の枠線の移動)
     onSelect: (index: number) => {
       if (!sliderItem) return;
-      dispatch({ type: "selectedPartID", val: sliderItem[index].part_id });
+      dispatch({ type: "selectedPartID", val: sliderItem[index].partID });
     },
   };
 
+  // tabがクリックされた時の処理
   const onTabChange = (index: number) => {
     const getIDs = handleMissionData(missionData);
     let action: SatelliteAssemblyAction;
     switch (index) {
+      // ミッションパーツ
       case 0:
         action = {
           type: "selectedPartID",
@@ -154,6 +135,7 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
               : getIDs(getMissionParts)[0],
         };
         break;
+      // 電源パーツ
       case 1:
         action = {
           type: "selectedPartID",
@@ -162,12 +144,14 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
             : getIDs(getBatteryIDs)[0],
         };
         break;
+      // 積載パーツ
       case 2:
         action = {
           type: "selectedPartID",
           val: state.selectedBusID ? state.selectedBusID : getIDs(getBusIDs)[0],
         };
         break;
+      // 打ち上げロケット
       case 3:
         action = {
           type: "selectedPartID",
@@ -182,45 +166,13 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
     dispatch(action);
     dispatch({ type: "tabIndex", val: index });
   };
-  // const onTabChange = (index: number) => {
-  //   const getIDs = handleMissionData(missionData);
-  //   let action: SatelliteAssemblyAction = {
-  //     type: "selectedPartID",
-  //     val:
-  //       state.selectedMissionPartsIDs.length !== 0
-  //         ? state.selectedMissionPartsIDs[0]
-  //         : getIDs(getMissionParts)[0],
-  //   };
-  //   if (index === 1) {
-  //     action = {
-  //       type: "selectedPartID",
-  //       val: state.selectedBatteryID
-  //         ? state.selectedBatteryID
-  //         : getIDs(getBatteryIDs)[0],
-  //     };
-  //   }
-  //   if (index === 2) {
-  //     action = {
-  //       type: "selectedPartID",
-  //       val: state.selectedBusID ? state.selectedBusID : getIDs(getBusIDs)[0],
-  //     };
-  //   }
-  //   if (index === 3) {
-  //     action = {
-  //       type: "selectedPartID",
-  //       val: state.selectedRocketID
-  //         ? state.selectedRocketID
-  //         : getIDs(getRocketIDs)[0],
-  //     };
-  //   }
-  //   dispatch(action);
-  //   dispatch({ type: "tabIndex", val: index });
-  // };
 
+  // 選択ボタンを押下した時の処理
   const onPartSelectClick = () => {
     if (!state.selectedPartID) return;
     let action: SatelliteAssemblyAction;
     switch (state.tabIndex) {
+      // ミッションパーツ
       case 0:
         action = {
           type: "selectedMissionPartsIDs",
@@ -231,6 +183,7 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
             : [...state.selectedMissionPartsIDs, state.selectedPartID],
         };
         break;
+      // 電源パーツ
       case 1:
         action = {
           type: "selectedBatteryID",
@@ -240,6 +193,7 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
               : state.selectedPartID,
         };
         break;
+      // 積載パーツ
       case 2:
         action = {
           type: "selectedBusID",
@@ -249,6 +203,7 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
               : state.selectedPartID,
         };
         break;
+      // 打ち上げロケット
       case 3:
         action = {
           type: "selectedRocketID",
@@ -264,41 +219,6 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
     dispatch(action);
   };
 
-  // const onPartSelectClick = () => {
-  //   if (!state.selectedPartID) return;
-  //   let action: SatelliteAssemblyAction;
-  //   if (state.tabIndex === 0) {
-  //     let newState;
-  //     if (state.selectedMissionPartsIDs?.includes(state.selectedPartID)) {
-  //       newState = state.selectedMissionPartsIDs.filter(
-  //         (id) => id !== state.selectedPartID
-  //       );
-  //       action = { type: "selectedMissionPartsIDs", val: newState };
-  //     } else {
-  //       newState = [...state.selectedMissionPartsIDs, state.selectedPartID];
-  //       action = { type: "selectedMissionPartsIDs", val: newState };
-  //     }
-  //   } else if (state.tabIndex === 1) {
-  //     if (state.selectedBatteryID === state.selectedPartID) {
-  //       action = { type: "selectedBatteryID", val: undefined };
-  //     } else {
-  //       action = { type: "selectedBatteryID", val: state.selectedPartID };
-  //     }
-  //   } else if (state.tabIndex === 2) {
-  //     if (state.selectedBusID === state.selectedPartID) {
-  //       action = { type: "selectedBusID", val: undefined };
-  //     } else {
-  //       action = { type: "selectedBusID", val: state.selectedPartID };
-  //     }
-  //   } else {
-  //     if (state.selectedRocketID === state.selectedPartID) {
-  //       action = { type: "selectedRocketID", val: undefined };
-  //     } else {
-  //       action = { type: "selectedRocketID", val: state.selectedPartID };
-  //     }
-  //   }
-  //   dispatch(action);
-  // };
   return (
     <Main key={state.tabIndex}>
       <PartsSelectTab index={state.tabIndex} onChange={onTabChange} />
@@ -314,7 +234,7 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
             />
           </BtnArea>
         </PartDetailArea>
-        <PartsSelectSlider {...tmpPartsSelectSliderProps} />
+        <PartsSelectSlider {...PartsSelectSliderProps} />
       </SSelectArea>
     </Main>
   );
