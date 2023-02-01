@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { QuizAnswerBtn } from "../QuizAnswerBtn";
 import { TextBox } from "./components/TextBox";
 import { Variant } from "../QuizAnswerBtn/types";
-import { QUIZ_SIGN } from "../QuizArea/components";
+import { QUIZ_SIGN } from "../QuizChoiceBtn";
 
 const ImageLecture = new URL(
   "../../assets/prod/lecture_panel_answer.png",

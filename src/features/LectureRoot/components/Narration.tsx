@@ -1,11 +1,8 @@
-import { FC, useMemo, useContext, useEffect, useState, useRef } from "react";
-import { handleStep, getAudioFileName } from "../../utils";
-import {
-  GetDataProviderContext,
-  GlobalStateContext,
-  TimerContext,
-} from "../../stores";
-import { useAudio } from "../../hooks/useAudio";
+import { FC, useContext, useEffect, useState, useRef } from "react";
+import { GlobalStateContext, TimerContext } from "../providers";
+import { useAudio } from "../../../hooks/useAudio";
+import { JsonDataProviderContext } from "../providers";
+import { handleJsonData, getStepData } from "../utils";
 
 interface NarrationProps {
   /**
@@ -19,17 +16,16 @@ interface NarrationProps {
  */
 export const Narration: FC<NarrationProps> = ({ delay = 0 }) => {
   const { progress } = useContext(GlobalStateContext);
-  const getData = useContext(GetDataProviderContext);
   const { start, reset } = useContext(TimerContext);
 
-  const audioName = useMemo(
-    () => handleStep(getData(progress.slide, progress.step))(getAudioFileName),
-    [getData, progress]
-  );
+  // mp3のパス 取得
+  const data = useContext(JsonDataProviderContext);
+  const getJsonData = handleJsonData(data, progress);
+  const { mp3 } = getJsonData(getStepData).audio;
 
   let timer = useRef<NodeJS.Timeout>(); // タイマー デバッグ用 遅延ロード
   useEffect(() => () => timer.current && clearTimeout(timer.current), [timer]);
-  const [play, stop] = useAudio(audioName, {
+  const [play, stop] = useAudio(mp3, {
     onload: async () => {
       timer.current = setTimeout(() => setIsCanPlay(true), delay);
     },
@@ -45,8 +41,8 @@ export const Narration: FC<NarrationProps> = ({ delay = 0 }) => {
 
   // オーディオが存在しない場合、ロードされたものと見做す
   useEffect(() => {
-    !audioName && setIsCanPlay(true);
-  }, [audioName]);
+    !mp3 && setIsCanPlay(true);
+  }, [mp3]);
 
   // // アンマウント時にタイマー初期化
   useEffect(

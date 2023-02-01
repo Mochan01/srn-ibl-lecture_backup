@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Title, TitleProps } from "./Title";
+import { Title, TitleProps } from ".";
 import jsonData from "../../assets/data/title1.json";
 import { JsonData } from "../../types";
 

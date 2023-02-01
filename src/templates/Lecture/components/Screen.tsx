@@ -1,16 +1,19 @@
 import React, { FC, useContext } from "react";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
 import {
+  JsonDataProviderContext,
   GlobalDispatchContext,
   GlobalStateContext,
-} from "../../../stores/providers";
+} from "../../../features/LectureRoot/providers";
 import { MainComponentProps } from "../../../types";
-import data from "../../../assets/data/unit06_master.json";
 import { Screen as Main } from "../../../features/Screen";
 import { formatSlideStep } from "../../../utils";
 import { LectureFrame } from "../../../elements/LectureFrame";
 import { CountDown } from "../../../elements/CountDown";
-// import { Quiz } from "../../../../features/Quiz/Quiz";
+import {
+  handleJsonData,
+  getStepData,
+} from "../../../features/LectureRoot/utils";
 
 export interface ScreenProps
   extends Pick<MainComponentProps, "unitName" | "unitTitle"> {}
@@ -19,36 +22,46 @@ export interface ScreenProps
  * スライドの画面部分
  */
 export const Screen: FC<ScreenProps> = (props) => {
-  // スライドのデータを取得
-  // const getData = useContext(GetDataProviderContext);
   const { progress } = useContext(GlobalStateContext);
   const dispatch = useContext(GlobalDispatchContext);
 
-  // const slideData = useMemo(() => {
-  //   return getData(progress.slide).filter(
-  //     (x) => x.progress.step <= progress.step
-  //   );
-  // }, [getData, progress]);
+  const lectureData = useContext(JsonDataProviderContext) as Lecture[];
+  const getLectureData = handleJsonData(lectureData, progress);
 
-  // const _data = data.lecture[0].steps.filter(
-  //   (x) =>
-  //     x.progress.step <= progress.step && x.progress.slide <= progress.slide
-  // );
-
-  // @ts-ignore
-  // todo: 型をあわせろ
-  const lectureData: Lecture[] = data.lecture[0].steps;
+  const { countdown, next_steps } = getLectureData(getStepData);
 
   // クイズ回答時の処理
-  const onAnswer = (isCorrect: boolean) => {};
+  const onAnswer = (isCorrect: boolean) => {
+    if (!next_steps.if_correct || !next_steps.if_wrong) {
+      console.error("Undefined: 'if_correct' or 'if_wrong'");
+      return;
+    }
+
+    dispatch({
+      type: "progress",
+      val: formatSlideStep(
+        isCorrect ? next_steps.if_correct : next_steps.if_wrong
+      ),
+    });
+  };
 
   // アクションボタンを押したときの処理
   const actionGoTo = (value: string) => {
     dispatch({ type: "progress", val: formatSlideStep(value) });
   };
 
-  const countDown = (
-    <CountDown css="margin: 10px 22px 0 0" initialTimeSeconds={60} />
+  const countDown = countdown && (
+    <CountDown
+      css="margin: 10px 22px 0 0"
+      initialTimeSeconds={countdown / 1000}
+      onEnd={() => {
+        next_steps.goto_step &&
+          dispatch({
+            type: "progress",
+            val: formatSlideStep(next_steps.goto_step),
+          });
+      }}
+    />
   );
 
   return (
@@ -64,27 +77,4 @@ export const Screen: FC<ScreenProps> = (props) => {
       />
     </LectureFrame>
   );
-
-  // return (
-  //   <LectureFrame {...props}>
-  //     {slideData &&
-  //       slideData.map(({ image, motion, question }, i) => (
-  //         <Fragment key={i}>
-  //           {image && (
-  //             <Panel
-  //               css="position: absolute;"
-  //               image={image.display_file && assetsPath[image.display_file]}
-  //               motion1={motion && motion.motion_1}
-  //               motion2={motion && motion.motion_2}
-  //             >
-  //               {/* 回答ステップなら */}
-  //               {/* {image.display_object_1 === "question_area" && (
-  //                 <Quiz {...{ question, onAnswer }} />
-  //               )} */}
-  //             </Panel>
-  //           )}
-  //         </Fragment>
-  //       ))}
-  //   </LectureFrame>
-  // );
 };

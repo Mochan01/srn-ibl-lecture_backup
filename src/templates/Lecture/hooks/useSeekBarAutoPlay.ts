@@ -1,16 +1,11 @@
-import { useContext, useState, useEffect, useMemo } from "react";
+import { useContext, useState, useEffect } from "react";
+import { Lecture } from "src-ibl-lecture-master-unit/types";
 import {
-  GetDataProviderContext,
   GlobalStateContext,
   TimerContext,
-} from "../../../stores/providers";
-import {
-  handleStepArray,
-  handleStep,
-  getTotalTime,
-  getTime,
-  getLength,
-} from "../../../utils";
+  JsonDataProviderContext,
+} from "../../../features/LectureRoot/providers";
+import { getStepData, handleJsonData, getSlideData } from "../../../features/LectureRoot/utils";
 
 /**
  * シークバーの進捗操作
@@ -19,33 +14,23 @@ import {
  */
 export const useSeekBarAutoPlay = () => {
   const { progress } = useContext(GlobalStateContext);
-  const getData = useContext(GetDataProviderContext);
+  const lectureData = useContext(JsonDataProviderContext) as Lecture[];
+  const getLectureData = handleJsonData(lectureData, progress);
 
-  // そのスライドの一番最後のstepのデータを取得する関数
-  const getLastStepData = useMemo(() => {
-    return handleStep(
-      getData(
-        progress.slide,
-        handleStepArray(getData(progress.slide))(getLength)
-      )
-    );
-  }, [getData, progress.slide]);
+  // そのスライドの一番最後のステップのデータを取得
+  const slideData = getLectureData(getSlideData);
+  const { audio: lastAudio } = slideData[slideData.length - 1];
 
-  // 現在のステップのデータを取得する関数
-  const getStepData = useMemo(
-    () => handleStep(getData(progress.slide, progress.step)),
-    [getData, progress]
-  );
+  // 現在のステップのデータを取得する
+  const { audio: currentAudio } = getLectureData(getStepData);
 
   const { time } = useContext(TimerContext);
   const [value, setValue] = useState(0);
   useEffect(() => {
     // 現在位置を計算して表示
-    const totalTime = getStepData(getTotalTime);
-    const stepTime = getStepData(getTime);
-    const currentTime = totalTime - stepTime + time;
-    setValue((currentTime / getLastStepData(getTotalTime)) * 100);
-  }, [getStepData, getLastStepData, time]);
+    const currentTime = currentAudio.total_time - currentAudio.time + time;
+    setValue((currentTime / lastAudio.total_time) * 100);
+  }, [time, currentAudio, lastAudio, setValue]);
 
   return value;
 };

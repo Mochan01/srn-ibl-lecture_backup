@@ -15,7 +15,7 @@ sample.args = {
   step: 1,
   actionGoTo: (val) => console.log(`${val}に飛ぶ`),
   onAnswer: (isAnswer) => console.log(isAnswer ? "正解" : "不正解"),
-  lectureData: [
+  screenData: [
     {
       progress: {
         slide: 1,

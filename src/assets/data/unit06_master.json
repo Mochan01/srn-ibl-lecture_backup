@@ -134,7 +134,30 @@
                       "narration": "ハーイ、今日も私のラボにようこそ。"
                   },
                   "audio": {
-                      "time": null
+                      "mp3": "ST_L1U1_01.mp3",
+                      "time": 4000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_lecture": "lecture_c01lv01u06m01",
+                      "goto_step": "1_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "私はベガ。ここで、人工衛星の開発をしているの。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_02.mp3",
+                      "time": 5000
                   },
                   "animation": {
                       "teacher": "animation_2",
@@ -143,7 +166,7 @@
                   "next_steps": {
                       "next_step": "intro_end",
                       "goto_lecture": "lecture_c01lv01u06m01",
-                      "goto_step": "1_1"
+                      "goto_step": "1_3"
                   }
               }
           ]
@@ -282,8 +305,9 @@
                   },
                   "question_input": {},
                   "result_step": false,
+                  "countdown": 5000,
                   "next_steps": {
-                      "next_step": "audio_end",
+                      "next_step": "countdown_end",
                       "goto_step": "1_3"
                   }
               },
@@ -329,16 +353,23 @@
                       "display_result": false
                   },
                   "question_select": {
-                      "ans_1": false,
+                      "question_x": 100,
+                      "question_y": 100,
+                      "button_1": "正解",
+                      "ans_1": true,
+                      "button_2": "不正解",
                       "ans_2": false,
+                      "button_3": "不正解",
                       "ans_3": false,
+                      "button_4": "不正解",
                       "ans_4": false
                   },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
-                      "next_step": "audio_end",
-                      "goto_step": "1_4"
+                      "next_step": "on_answer",
+                      "if_correct": "1_4",
+                      "if_wrong": "1_5"
                   }
               },
               {
@@ -347,7 +378,8 @@
                       "step": 4
                   },
                   "narrative": {
-                      "narration": "若いころは、世界のいろんな国のラボに招かれて研究をしていたんだけど、"
+                      "narration": "若いころは、世界のいろんな国のラボに招かれて研究をしていたんだけど、",
+                      "speech": "正解ステップ"
                   },
                   "audio": {
                       "mp3": "ST_L1U1_04.mp3",
@@ -389,10 +421,10 @@
                       "ans_4": false
                   },
                   "question_input": {},
-                  "result_step": false,
+                  "result_step": true,
                   "next_steps": {
                       "next_step": "audio_end",
-                      "goto_step": "1_5"
+                      "goto_step": "1_6"
                   }
               },
               {
@@ -401,7 +433,8 @@
                       "step": 5
                   },
                   "narrative": {
-                      "narration": "今はこうして自分のラボをもって、世界中の人々を幸せにできるような、人工衛星の開発に取り組んでいるの。"
+                      "narration": "今はこうして自分のラボをもって、世界中の人々を幸せにできるような、人工衛星の開発に取り組んでいるの。",
+                      "speech": "不正解ステップ"
                   },
                   "audio": {
                       "mp3": "ST_L1U1_05.mp3",
@@ -443,7 +476,7 @@
                       "ans_4": false
                   },
                   "question_input": {},
-                  "result_step": false,
+                  "result_step": true,
                   "next_steps": {
                       "next_step": "audio_end",
                       "goto_step": "1_6"
@@ -604,11 +637,16 @@
                       "ans_3": false,
                       "ans_4": false
                   },
-                  "question_input": {},
+                  "question_input": {
+                      "question_x": 100,
+                      "question_y": 100,
+                      "ans": "あああ"
+                  },
                   "result_step": false,
                   "next_steps": {
-                      "next_step": "audio_end",
-                      "goto_step": "1_9"
+                      "next_step": "on_answer",
+                      "if_correct": "1_9",
+                      "if_wrong": "1_10"
                   }
               },
               {
@@ -659,7 +697,7 @@
                       "ans_4": false
                   },
                   "question_input": {},
-                  "result_step": false,
+                  "result_step": true,
                   "next_steps": {
                       "next_step": "audio_end",
                       "goto_step": "1_10"
@@ -713,7 +751,7 @@
                       "ans_4": false
                   },
                   "question_input": {},
-                  "result_step": false,
+                  "result_step": true,
                   "next_steps": {
                       "next_step": "audio_end",
                       "goto_step": "1_11"

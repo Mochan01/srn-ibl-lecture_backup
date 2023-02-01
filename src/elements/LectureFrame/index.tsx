@@ -27,7 +27,7 @@ const Frame = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  // これがないとクイズエリアがタップできなくなる
+  // これがないと中の要素がタップできなくなる
   pointer-events: none;
 `;
 
@@ -46,6 +46,7 @@ const LectureHeadLine = styled(HeadLine)`
   display: flex;
   justify-content: space-between;
   margin-top: 9px;
+  pointer-events: auto;
 `;
 
 /* lecture_flame.png */

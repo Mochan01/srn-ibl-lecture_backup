@@ -1,18 +1,14 @@
 import React, { FC } from "react";
-import { LectureProvider, LectureProviderProps } from "../../stores";
-import { ScaleWrapper } from "../../elements/ScaleWrapper";
-import { Narration, Screen, SeekBar, ControlPanel } from "./components";
-import { Characters } from "../../elements/Characters";
-import styled, { css } from "styled-components";
-import { CloseBtn } from "../../elements/CloseBtn";
-import { Container } from "../../elements/Container";
-import { DebugWindow } from "../../elements/DebugWindow/DebugWindow";
+import { Screen, SeekBar, ControlPanel } from "./components";
+import styled from "styled-components";
 import { MainComponentProps } from "../../types";
+import { LectureRoot } from "../../features/LectureRoot";
+import { Lecture as LectureDataType } from "src-ibl-lecture-master-unit/types";
+import data from "../../assets/data/unit06_master.json";
 
-export interface LectureProps extends LectureProviderProps, MainComponentProps {
+export interface LectureProps extends MainComponentProps {
   isPlaying?: boolean;
   onLectureLeave: (key: "begin" | "end") => void;
-  className?: string;
 }
 
 const Wrapper = styled.div`
@@ -26,48 +22,21 @@ const Wrapper = styled.div`
   height: fit-content;
 `;
 
-const Main: FC<LectureProps> = ({
+export const Lecture: FC<LectureProps> = ({
   onLectureLeave,
   onClickClose,
   unitName,
   unitTitle,
-  className,
 }) => {
+  const lectureData: LectureDataType[] = data.lecture[0]
+    .steps as LectureDataType[];
   return (
-    <div {...{ className }}>
-      <Narration />
-      <ScaleWrapper>
-        <Container>
-          <Characters
-            css={css`
-              position: absolute;
-              top: 50%;
-              right: 0px;
-              transform: translateY(-50%);
-            `}
-          />
-          <CloseBtn
-            css={css`
-              position: absolute;
-              top: 20px;
-              right: 62px;
-            `}
-            onClick={onClickClose}
-          />
-          <Wrapper>
-            <Screen {...{ unitName, unitTitle }} />
-            <SeekBar />
-            <ControlPanel {...{ onLectureLeave }} />
-          </Wrapper>
-        </Container>
-      </ScaleWrapper>
-      <DebugWindow />
-    </div>
+    <LectureRoot jsonData={lectureData} onClose={onClickClose}>
+      <Wrapper>
+        <Screen {...{ unitName, unitTitle }} />
+        <SeekBar />
+        <ControlPanel {...{ onLectureLeave }} />
+      </Wrapper>
+    </LectureRoot>
   );
 };
-
-export const Lecture: FC<LectureProps> = (props) => (
-  <LectureProvider json={props.json} autoPlay={props.autoPlay}>
-    <Main {...props} />
-  </LectureProvider>
-);

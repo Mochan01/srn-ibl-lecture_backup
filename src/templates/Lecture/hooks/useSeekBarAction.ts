@@ -1,11 +1,11 @@
 import { useContext, useCallback, useState } from "react";
 import {
-  GetDataProviderContext,
   GlobalStateContext,
   GlobalDispatchContext,
-} from "../../../stores/providers";
-import { handleStepArray, getSeekStarts } from "../../../utils";
-import { StepType } from "src-ibl-lecture-master/types/stepType";
+  JsonDataProviderContext,
+} from "../../../features/LectureRoot/providers";
+import { handleJsonData, getSlideData } from "../../../features/LectureRoot/utils";
+import { Lecture } from "src-ibl-lecture-master-unit/types";
 
 /**
  * シークバーの進捗操作
@@ -16,10 +16,14 @@ export const useSeekBarAction = () => {
   const [value, setValue] = useState(0);
   const { progress } = useContext(GlobalStateContext);
   const dispatch = useContext(GlobalDispatchContext);
-  const getData = useContext(GetDataProviderContext);
+  const lectureData = useContext(JsonDataProviderContext) as Lecture[];
 
   const updateProgress = useCallback(() => {
-    const seekStarts = handleStepArray(getData(progress.slide))(getSeekStarts);
+    // シークバーが止まる位置を取得
+    const getLectureData = handleJsonData(lectureData, progress);
+    const slideData = getLectureData(getSlideData);
+    const seekStarts = slideData.map((x) => x.audio.seekbar_start);
+
     // シークバーの位置がデータ上のスタート位置（seekbar_start）より前にいくことがあり、その場合はundefinedが返る
     let closest = seekStarts.filter((x) => x <= value).reverse()[0];
     // なので、ここで補正する
@@ -27,21 +31,23 @@ export const useSeekBarAction = () => {
     let step = seekStarts.indexOf(closest) + 1;
 
     // 結果発表ステップでは止まらないようにする
+    // 結果発表ステップならその前の結果発表ステップじゃないステップに止める
     // https://www.notion.so/1ca89cdacc8a4907b2894b2c29d86ba8#28d778653c7641a8863de578b7bebe46
-    const getIsResultStep = (step: number) => {
-      return !!(getData(progress.slide, step) as StepType).question
-        .is_result_step;
-    };
-    // 結果発表ステップならその一個前のstepに止める
-    if (getIsResultStep(step)) {
-      step = step - 1;
-      // 一個前が正解ステップかもしれないのでそしたらさらにその前のstepに止める
-      if (getIsResultStep(step)) step = step - 1;
+    // const stepData = getLectureData(getStepData);
+    const dropStep = slideData.find(x => x.progress.step === step);
+    if (dropStep && dropStep.result_step) {
+      const lastNormalStep = slideData
+        .map((x) => x)
+        .filter(({progress}) => progress.step <= step)
+        .reverse()
+        .find((x) => !x.result_step);
+
+      if (lastNormalStep) step = lastNormalStep.progress.step;
     }
 
     dispatch({ type: "progress", val: { ...progress, step } });
     dispatch({ type: "timestamp" });
-  }, [dispatch, getData, progress, value]);
+  }, [dispatch, lectureData, progress.step, value]);
 
   return { value, setValue, updateProgress };
 };

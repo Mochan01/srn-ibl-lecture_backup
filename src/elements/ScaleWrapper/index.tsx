@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { useResizeWindow } from "../../hooks";
+import { useResizeWindow } from "./hooks";
 
 export interface ScaleWrapperProps {
   children: ReactNode;

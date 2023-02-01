@@ -3,7 +3,7 @@ import {
   useGlobalStateReducer,
   GlobalState,
   GlobalStateAction,
-} from "../../hooks";
+} from "../hooks";
 
 export interface GlobalStateProviderProps {
   children: ReactNode;
