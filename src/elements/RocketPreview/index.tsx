@@ -71,7 +71,6 @@ const STextsArea = styled.div`
   position: absolute;
 `;
 
-// TODO:画面実装時に実際の画像サイズやpxなどを調整する
 const SImagesArea = styled.div<Pick<RocketPreviewProps, "images">>`
   width: 512px;
   height: 760px;
@@ -92,17 +91,23 @@ const SPartTitle = styled.div`
   margin-top: 16px;
   color: #f1f6f9;
 `;
-
+const SSelectWrapper = styled.div`
+  margin-top: 8px;
+  border-radius: 9px;
+  object-fit: cover;
+`;
 const SPartText = styled.div`
   width: 176px;
+  padding-top: 7px;
+  padding-bottom: 5px;
+  padding-left: 7px;
   font-size: 16px;
   line-height: 18px;
-  margin-top: 8px;
   color: #1e3c64;
-  background-color: #fafbfd;
+  /* 文字が透過されてしまうためrgbaで設定 */
+  background-color: rgba(250, 251, 253, 0.5);
   display: block;
   border-radius: 6px;
-  opacity: 0.5;
   cursor: pointer;
 `;
 
@@ -155,58 +160,66 @@ export const RocketPreview: FC<RocketPreviewProps> = ({
               <div>
                 <SPartTitle>ミッションパーツ</SPartTitle>
                 {missionParts?.map((missionPart) => (
-                  <SPartText
-                    key={missionPart.part_id}
-                    onClick={() => onClick(missionPart)}
-                    css={
-                      missionPart.part_id === selectedPart
-                        ? `border: solid 3px ${isSelectedColor}`
-                        : "padding: 3px"
-                    }
-                  >
-                    {missionPart.part_name}
-                  </SPartText>
+                  <>
+                    <SSelectWrapper
+                      css={
+                        missionPart.part_id === selectedPart
+                          ? `border: solid 3px ${isSelectedColor}`
+                          : "padding: 3px"
+                      }
+                    >
+                      <SPartText
+                        key={missionPart.part_id}
+                        onClick={() => onClick(missionPart)}
+                      >
+                        {missionPart.part_name}
+                      </SPartText>
+                    </SSelectWrapper>
+                  </>
                 ))}
               </div>
               <div>
                 <SPartTitle>電源パーツ</SPartTitle>
                 {batteryPart && (
-                  <SPartText
-                    onClick={() => onClick(batteryPart)}
+                  <SSelectWrapper
                     css={
                       batteryPart?.part_id === selectedPart
                         ? `border: solid 3px ${isSelectedColor}`
                         : "padding: 3px"
                     }
                   >
-                    {batteryPart?.part_name}
-                  </SPartText>
+                    <SPartText onClick={() => onClick(batteryPart)}>
+                      {batteryPart?.part_name}
+                    </SPartText>
+                  </SSelectWrapper>
                 )}
                 <SPartTitle>積載パーツ</SPartTitle>
                 {busPart && (
-                  <SPartText
-                    onClick={() => onClick(busPart)}
+                  <SSelectWrapper
                     css={
                       busPart?.part_id === selectedPart
                         ? `border: solid 3px ${isSelectedColor}`
                         : "padding: 3px"
                     }
                   >
-                    {busPart?.part_name}
-                  </SPartText>
+                    <SPartText onClick={() => onClick(busPart)}>
+                      {busPart?.part_name}
+                    </SPartText>
+                  </SSelectWrapper>
                 )}
                 <SPartTitle>打ち上げロケット</SPartTitle>
                 {rocket && (
-                  <SPartText
-                    onClick={() => onClick(rocket)}
+                  <SSelectWrapper
                     css={
                       rocket?.part_id === selectedPart
                         ? `border: solid 3px ${isSelectedColor}`
                         : "padding: 3px"
                     }
                   >
-                    {rocket?.part_name}
-                  </SPartText>
+                    <SPartText onClick={() => onClick(rocket)}>
+                      {rocket?.part_name}
+                    </SPartText>
+                  </SSelectWrapper>
                 )}
               </div>
             </SPartsArea>
