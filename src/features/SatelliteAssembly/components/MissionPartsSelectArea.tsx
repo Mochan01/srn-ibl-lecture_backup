@@ -7,7 +7,7 @@ import {
   PartsSelectSliderProps,
   SliderItem,
 } from "../../../elements/PartsSelectSlider";
-import { backGroundWhiteColor, sliderImageFileName } from "../config";
+import { backGroundWhiteColor } from "../config";
 import {
   SatelliteAssemblyDispatchContext,
   SatelliteAssemblyStateContext,
@@ -58,11 +58,9 @@ export const MissionPartsSelectArea: FC<MissionPartsSelectAreaProps> = ({
 
   // スライダーで表示するための情報
   const sliderItem: SliderItem[] | undefined = partsData?.map((partData) => {
-    const image = `${partData.part_id}${sliderImageFileName}`;
     return {
       partID: partData.part_id,
       name: partData.part_name,
-      image: image,
     };
   });
 

@@ -14,7 +14,7 @@ import {
 import { MasterData } from "../types";
 import { getBatteryIDs, getBatteryData, handleMissionDataIDs } from "../utils";
 import { BatteryDetailUnit } from "../components";
-import { backGroundWhiteColor, sliderImageFileName } from "../config";
+import { backGroundWhiteColor } from "../config";
 const Main = styled.div``;
 const PartDetailArea = styled.div`
   height: 340px;
@@ -54,11 +54,9 @@ export const BatterySelectArea: FC<BatterySelectAreaProps> = ({
 
   // スライダーで表示するための情報
   const sliderItem: SliderItem[] | undefined = partsData?.map((partData) => {
-    const image = `${partData.part_id}${sliderImageFileName}`;
     return {
       partID: partData.part_id,
       name: partData.part_name,
-      image: image,
     };
   });
 

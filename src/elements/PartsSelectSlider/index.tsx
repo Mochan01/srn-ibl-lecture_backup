@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
 import styled from "styled-components";
+import { thumbnailPath } from "../../data/thumbnailPath";
 
 const buttonColor = "#F98A3B" as const;
 const isActiveColor = "#FFFF00" as const;
@@ -110,7 +111,6 @@ const SSwiperNextButton = styled.div`
 export interface SliderItem {
   partID: string;
   name: string;
-  image: string;
 }
 
 export interface PartsSelectSliderProps {
@@ -168,7 +168,7 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
             <SwiperSlide key={item.partID} onClick={() => onClick(i)}>
               <SImage
                 selected={selectedIDs.includes(item.partID)}
-                src={item.image}
+                src={thumbnailPath[item.partID]}
                 css={
                   activeIndex === i
                     ? `border: solid ${border}px ${isActiveColor}`
