@@ -39,8 +39,6 @@ export interface ParameterAreaProps {
   masterData: MasterData;
   maxBudget: number;
   preparationPeriod: number;
-  className?: string;
-  onClick?: () => void;
 }
 
 export const ParameterArea: FC<ParameterAreaProps> = ({

@@ -86,7 +86,7 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
             isWattsOver: false,
           }}
         >
-          <PartsPreviewArea />
+          <PartsPreviewArea masterData={masterData} />
           <div>
             <div css={"margin-top: 18px"} />
             <BtnArea />

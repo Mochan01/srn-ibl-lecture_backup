@@ -1,5 +1,7 @@
 import React, { FC, useState } from "react";
+import { Battery, Bus, Rocket } from "src-ibl-lecture-master-special/types";
 import styled from "styled-components";
+import { MissionParts } from "../../features/SatelliteAssembly/types";
 const ImgOpen = new URL(
   "../../assets/prod/button_visiblity_on.png",
   import.meta.url
@@ -101,16 +103,24 @@ const SPartText = styled.div`
   display: block;
   border-radius: 6px;
   opacity: 0.5;
+  cursor: pointer;
 `;
+
+export interface PreviewItem
+  extends Pick<
+    Rocket | Bus | Battery | MissionParts,
+    "part_id" | "part_name" | "category_id"
+  > {}
 
 export interface RocketPreviewProps {
   images: string[];
   selectedPart?: string;
-  missionParts?: string[];
-  powerSupplyPart?: string;
-  loadedPart?: string;
-  rocket?: string;
+  missionParts?: PreviewItem[];
+  batteryPart?: PreviewItem;
+  busPart?: PreviewItem;
+  rocket?: PreviewItem;
   isShow?: boolean;
+  onClick: (partItem: PreviewItem) => void;
   className?: string;
 }
 
@@ -121,10 +131,11 @@ export const RocketPreview: FC<RocketPreviewProps> = ({
   images,
   selectedPart,
   missionParts,
-  powerSupplyPart,
-  loadedPart,
+  batteryPart,
+  busPart,
   rocket,
   isShow,
+  onClick,
 }) => {
   const [isShowParts, setIsShowParts] = useState(isShow);
   return (
@@ -145,48 +156,58 @@ export const RocketPreview: FC<RocketPreviewProps> = ({
                 <SPartTitle>ミッションパーツ</SPartTitle>
                 {missionParts?.map((missionPart) => (
                   <SPartText
-                    key={missionPart}
+                    key={missionPart.part_id}
+                    onClick={() => onClick(missionPart)}
                     css={
-                      missionPart === selectedPart
+                      missionPart.part_id === selectedPart
                         ? `border: solid 3px ${isSelectedColor}`
                         : "padding: 3px"
                     }
                   >
-                    {missionPart}
+                    {missionPart.part_name}
                   </SPartText>
                 ))}
               </div>
               <div>
                 <SPartTitle>電源パーツ</SPartTitle>
-                <SPartText
-                  css={
-                    powerSupplyPart === selectedPart
-                      ? `border: solid 3px ${isSelectedColor}`
-                      : "padding: 3px"
-                  }
-                >
-                  {powerSupplyPart}
-                </SPartText>
+                {batteryPart && (
+                  <SPartText
+                    onClick={() => onClick(batteryPart)}
+                    css={
+                      batteryPart?.part_id === selectedPart
+                        ? `border: solid 3px ${isSelectedColor}`
+                        : "padding: 3px"
+                    }
+                  >
+                    {batteryPart?.part_name}
+                  </SPartText>
+                )}
                 <SPartTitle>積載パーツ</SPartTitle>
-                <SPartText
-                  css={
-                    loadedPart === selectedPart
-                      ? `border: solid 3px ${isSelectedColor}`
-                      : "padding: 3px"
-                  }
-                >
-                  {loadedPart}
-                </SPartText>
+                {busPart && (
+                  <SPartText
+                    onClick={() => onClick(busPart)}
+                    css={
+                      busPart?.part_id === selectedPart
+                        ? `border: solid 3px ${isSelectedColor}`
+                        : "padding: 3px"
+                    }
+                  >
+                    {busPart?.part_name}
+                  </SPartText>
+                )}
                 <SPartTitle>打ち上げロケット</SPartTitle>
-                <SPartText
-                  css={
-                    rocket === selectedPart
-                      ? `border: solid 3px ${isSelectedColor}`
-                      : "padding: 3px"
-                  }
-                >
-                  {rocket}
-                </SPartText>
+                {rocket && (
+                  <SPartText
+                    onClick={() => onClick(rocket)}
+                    css={
+                      rocket?.part_id === selectedPart
+                        ? `border: solid 3px ${isSelectedColor}`
+                        : "padding: 3px"
+                    }
+                  >
+                    {rocket?.part_name}
+                  </SPartText>
+                )}
               </div>
             </SPartsArea>
           )}
