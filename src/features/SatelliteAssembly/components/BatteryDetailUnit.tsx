@@ -4,31 +4,12 @@ import styled from "styled-components";
 import { PartCost } from "../../../elements/PartCost";
 import { PartDetail } from "../../../elements/PartDetail";
 import { SatelliteAssemblyStateContext } from "../contexts";
+import { SCategoryTitle, SCategoryDescription, STable } from "../styles";
 import { MasterData } from "../types";
 import { getCategoryDescription, getPartDetailData } from "../utils";
 const Main = styled.div`
   padding-left: 20px;
   padding-top: 12px;
-`;
-
-const STable = styled.div`
-  width: 640px;
-  height: 40px;
-  display: grid;
-  column-gap: 16px;
-  row-gap: 7px;
-  grid-template-columns: 312px 312px;
-`;
-
-const SCategoryTitle = styled.div`
-  color: #5a5a5a;
-  font-size: 18px;
-  line-height: 24px;
-`;
-const SCategoryDescription = styled.div`
-  color: #5a5a5a;
-  font-size: 16px;
-  line-height: 24px;
 `;
 
 interface BatteryDetailUnitProps {

@@ -28,6 +28,7 @@ export const variants: { [key in Variant]: string } = {
 
 const Main = styled.div`
   width: 680px;
+  /* height: 48px; */
   display: flex;
 `;
 
@@ -46,7 +47,7 @@ export const Tab = styled.div<TabProps>(
   padding: 10px 0;
   border-radius: 6px 6px 0 0;
   font-size: 20px;
-  line-height: normal;
+  line-height: 35px;
   cursor: pointer;
   white-space: noWrap;
   margin-left: 8px;

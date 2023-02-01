@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
 
-const ImageLecture = new URL(
+const ImageAlert = new URL(
   "../../assets/prod/icon_alert.png",
   import.meta.url
 ).toString();
@@ -34,8 +34,8 @@ const SGraph = styled.div`
 `;
 
 const SAlertImage = styled.img`
-  height: 24px;
-  width: 24px;
+  height: 27px;
+  width: 27px;
   left: 35px;
   bottom: -26px;
   position: absolute;
@@ -118,7 +118,7 @@ export const Parameter: FC<ParameterProps> = ({
           ) : (
             <>
               <STitle {...{ overFlag }}>{title}</STitle>
-              {overFlag && <SAlertImage src={ImageLecture} />}
+              {overFlag && <SAlertImage src={ImageAlert} />}
               <SPie gradient={gradient}>{limit + unit}</SPie>
             </>
           )}

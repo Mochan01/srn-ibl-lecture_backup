@@ -22,11 +22,26 @@ import {
   handleMissionDataIDs,
 } from "../utils";
 import { backGroundWhiteColor } from "../config";
-const Main = styled.div``;
 
+const ImageAlert = new URL(
+  "../../../assets/prod/icon_alert.png",
+  import.meta.url
+).toString();
+const Main = styled.div`
+  position: relative;
+`;
+
+const SAlertImage = styled.img`
+  height: 25px;
+  width: 25px;
+  top: -12px;
+  left: 140px;
+  position: absolute;
+  z-index: 1;
+`;
 const SSelectArea = styled.div`
   background-color: ${backGroundWhiteColor};
-  height: 500px;
+  height: 490px;
   width: 680px;
 `;
 interface PartsSelectAreaProps {
@@ -93,7 +108,8 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
   };
 
   return (
-    <Main key={state.tabIndex}>
+    <Main>
+      <SAlertImage src={ImageAlert} />
       <PartsSelectTab index={state.tabIndex} onChange={onTabChange} />
       <SSelectArea>
         {state.tabIndex === 0 && (

@@ -14,20 +14,8 @@ import {
 import { MasterData } from "../types";
 import { getBusIDs, getBusData, handleMissionDataIDs } from "../utils";
 import { BusDetailUnit } from "../components";
-import { backGroundWhiteColor } from "../config";
+import { SBtnArea, SPartDetailArea } from "../styles";
 const Main = styled.div``;
-const PartDetailArea = styled.div`
-  height: 340px;
-  width: 680px;
-  position: relative;
-  background-color: ${backGroundWhiteColor};
-`;
-const BtnArea = styled.div`
-  position: absolute;
-  top: 285px;
-  right: 40px;
-`;
-
 interface BusSelectAreaProps {
   missionData: MissionList;
   masterData: MasterData;
@@ -86,15 +74,15 @@ export const BusSelectArea: FC<BusSelectAreaProps> = ({
 
   return (
     <Main>
-      <PartDetailArea>
+      <SPartDetailArea>
         <BusDetailUnit {...{ partsData, masterData }} />
-        <BtnArea>
+        <SBtnArea>
           <PartsSelectBtn
             isSelected={isSelectedIDs.includes(state.selectedPartID)}
             onClick={onPartSelectClick}
           />
-        </BtnArea>
-      </PartDetailArea>
+        </SBtnArea>
+      </SPartDetailArea>
       <PartsSelectSlider {...PartsSelectSliderProps} />
     </Main>
   );

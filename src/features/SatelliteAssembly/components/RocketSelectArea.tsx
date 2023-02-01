@@ -14,19 +14,8 @@ import {
 import { MasterData } from "../types";
 import { getRocketIDs, getRocketData, handleMissionDataIDs } from "../utils";
 import { RocketDetailUnit } from "../components";
-import { backGroundWhiteColor } from "../config";
+import { SPartDetailArea, SBtnArea } from "../styles";
 const Main = styled.div``;
-const PartDetailArea = styled.div`
-  height: 340px;
-  width: 680px;
-  position: relative;
-  background-color: ${backGroundWhiteColor};
-`;
-const BtnArea = styled.div`
-  position: absolute;
-  top: 285px;
-  right: 40px;
-`;
 
 interface RocketSelectAreaProps {
   missionData: MissionList;
@@ -86,15 +75,15 @@ export const RocketSelectArea: FC<RocketSelectAreaProps> = ({
 
   return (
     <Main>
-      <PartDetailArea>
+      <SPartDetailArea>
         <RocketDetailUnit {...{ partsData, masterData }} />
-        <BtnArea>
+        <SBtnArea>
           <PartsSelectBtn
             isSelected={isSelectedIDs.includes(state.selectedPartID)}
             onClick={onPartSelectClick}
           />
-        </BtnArea>
-      </PartDetailArea>
+        </SBtnArea>
+      </SPartDetailArea>
       <PartsSelectSlider {...PartsSelectSliderProps} />
     </Main>
   );

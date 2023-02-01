@@ -7,7 +7,6 @@ import {
   PartsSelectSliderProps,
   SliderItem,
 } from "../../../elements/PartsSelectSlider";
-import { backGroundWhiteColor } from "../config";
 import {
   SatelliteAssemblyDispatchContext,
   SatelliteAssemblyStateContext,
@@ -19,18 +18,8 @@ import {
   handleMissionDataIDs,
 } from "../utils";
 import { MissionPartDetailUnit } from "../components";
+import { SPartDetailArea, SBtnArea } from "../styles";
 const Main = styled.div``;
-const PartDetailArea = styled.div`
-  height: 340px;
-  width: 680px;
-  position: relative;
-  background-color: ${backGroundWhiteColor};
-`;
-const BtnArea = styled.div`
-  position: absolute;
-  top: 285px;
-  right: 40px;
-`;
 
 interface MissionPartsSelectAreaProps {
   missionData: MissionList;
@@ -91,15 +80,15 @@ export const MissionPartsSelectArea: FC<MissionPartsSelectAreaProps> = ({
 
   return (
     <Main>
-      <PartDetailArea>
+      <SPartDetailArea>
         <MissionPartDetailUnit {...{ partsData, masterData }} />
-        <BtnArea>
+        <SBtnArea>
           <PartsSelectBtn
             isSelected={isSelectedIDs.includes(state.selectedPartID)}
             onClick={onPartSelectClick}
           />
-        </BtnArea>
-      </PartDetailArea>
+        </SBtnArea>
+      </SPartDetailArea>
       <PartsSelectSlider {...PartsSelectSliderProps} />
     </Main>
   );
