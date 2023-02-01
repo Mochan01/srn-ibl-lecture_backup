@@ -64,13 +64,6 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
   const busIDs = getIDs(getBusIDs); // 積載パーツ
   const rocketIDs = getIDs(getRocketIDs); // 打ち上げロケット
 
-  // console.log("missionPartsIDs", missionPartsIDs);
-  // console.log(" batteryIDs", batteryIDs);
-  // console.log(" busIDs", busIDs);
-  // console.log(" rocketIDs", rocketIDs);
-  // console.log(" missionData", missionData);
-  // console.log(" masterData", masterData);
-
   return (
     <LectureFrame unitName="とりあえず仮" unitTitle="とりあえず仮">
       <Main>
@@ -84,6 +77,10 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
             isLaunchOver: false,
             isLoadingOver: false,
             isWattsOver: false,
+            launchableMass: missionData.launchable_mass as
+              | "leo"
+              | "geo"
+              | "ooo",
           }}
         >
           <PartsPreviewArea masterData={masterData} />

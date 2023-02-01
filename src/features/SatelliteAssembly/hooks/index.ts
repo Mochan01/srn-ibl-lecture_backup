@@ -8,12 +8,15 @@ export interface SatelliteAssemblyState {
   selectedBatteryID?: string | undefined;
   // 黄色の枠線が付くパーツID
   selectedPartID: string;
+  // 表示しているタブのインデックス
   tabIndex: number;
+  // 各コストのオバーしているかどうかのフラグ
   isPriceOver: boolean;
   isMonthOver: boolean;
   isLaunchOver: boolean;
   isLoadingOver: boolean;
   isWattsOver: boolean;
+  launchableMass: "leo" | "geo" | "ooo";
 }
 
 export type SatelliteAssemblyAction =

@@ -51,11 +51,16 @@ export const RocketDetailUnit: FC<RocketDetailUnitProps> = ({
   );
   const partName = partDetail ? partDetail.part_name : "";
   const partDescription = partDetail ? partDetail.description : "";
-  // 打ち上げ可能質量は三つのうち、一つになる
-  const launchableMassKg =
-    partDetail?.geo_launchable_mass_kg ||
-    partDetail?.leo_launchable_mass_kg ||
-    partDetail?.ooo_launchable_mass_kg;
+
+  // missionのlaunchable_massによって変える
+  let launchableMassKg;
+  if (state.launchableMass === "leo") {
+    launchableMassKg = partDetail?.leo_launchable_mass_kg;
+  } else if (state.launchableMass === "geo") {
+    launchableMassKg = partDetail?.geo_launchable_mass_kg;
+  } else {
+    launchableMassKg = partDetail?.ooo_launchable_mass_kg;
+  }
 
   return (
     <Main>
@@ -85,34 +90,6 @@ export const RocketDetailUnit: FC<RocketDetailUnitProps> = ({
             isCostOver={state.isLaunchOver}
           />
         )}
-        {/* {partDetail?.max_loading_mass_kg && (
-          <PartCost
-            cost_name={"最大積載可能質量（kg）"}
-            cost={partDetail?.max_loading_mass_kg}
-            isCostOver={true}
-          />
-        )}
-        {partDetail?.body_mass_kg && (
-          <PartCost
-            cost_name={"本体質量（kg）"}
-            cost={partDetail?.body_mass_kg}
-            isCostOver={true}
-          />
-        )}
-        {partDetail?.required_power_watts && (
-          <PartCost
-            cost_name={"衛星バス必要電力（W）"}
-            cost={partDetail?.required_power_watts}
-            isCostOver={true}
-          />
-        )}
-        {partDetail?.power_supply_watts && (
-          <PartCost
-            cost_name={"供給電力（W）"}
-            cost={partDetail?.power_supply_watts}
-            isCostOver={true}
-          />
-        )} */}
       </STable>
     </Main>
   );

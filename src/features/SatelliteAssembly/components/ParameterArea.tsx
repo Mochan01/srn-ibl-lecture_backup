@@ -85,11 +85,14 @@ export const ParameterArea: FC<ParameterAreaProps> = ({
     busPart
   );
 
-  const launchLimit =
-    rocket?.geo_launchable_mass_kg ||
-    rocket?.leo_launchable_mass_kg ||
-    rocket?.ooo_launchable_mass_kg ||
-    0;
+  let launchLimit = 0;
+  if (rocket && state.launchableMass === "leo") {
+    launchLimit = rocket?.leo_launchable_mass_kg;
+  } else if (rocket && state.launchableMass === "geo") {
+    launchLimit = rocket?.geo_launchable_mass_kg;
+  } else if (rocket && state.launchableMass === "ooo") {
+    launchLimit = rocket?.ooo_launchable_mass_kg;
+  }
 
   const loadingLimit = busPart?.max_loading_mass_kg || 0;
   const wattsValue = getTotalWatts(missionParts, busPart);
@@ -124,7 +127,6 @@ export const ParameterArea: FC<ParameterAreaProps> = ({
     wattsLimit,
     wattsValue,
   ]);
-  console.log(state);
 
   const PriceProps = {
     value: totalPrice,
