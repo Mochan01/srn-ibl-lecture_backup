@@ -31,13 +31,26 @@ const Main = styled.div`
   position: relative;
 `;
 
-const SAlertImage = styled.img`
+const SMissionAlertImage = styled.img`
   height: 25px;
   width: 25px;
   top: -12px;
   left: 140px;
   position: absolute;
   z-index: 1;
+`;
+
+const padding = 172;
+const SBatteryAlertImage = styled(SMissionAlertImage)`
+  left: ${140 + padding * 1}px;
+`;
+
+const SBusAlertImage = styled(SMissionAlertImage)`
+  left: ${140 + padding * 2}px;
+`;
+
+const SRocketAlertImage = styled(SMissionAlertImage)`
+  left: ${140 + padding * 3}px;
 `;
 const SSelectArea = styled.div`
   background-color: ${backGroundWhiteColor};
@@ -57,8 +70,6 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
   const state = useContext(SatelliteAssemblyStateContext);
   const dispatch = useContext(SatelliteAssemblyDispatchContext);
   const getIDs = handleMissionDataIDs(missionData);
-
-  console.log("state", state);
 
   // tabがクリックされた時の処理
   const onTabChange = (index: number) => {
@@ -109,7 +120,13 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
 
   return (
     <Main>
-      <SAlertImage src={ImageAlert} />
+      {/* パーツが選択されていない場合はアラートを表示 */}
+      {state.selectedMissionPartsIDs.length === 0 && (
+        <SMissionAlertImage src={ImageAlert} />
+      )}
+      {!state.selectedBatteryID && <SBatteryAlertImage src={ImageAlert} />}
+      {!state.selectedBusID && <SBusAlertImage src={ImageAlert} />}
+      {!state.selectedRocketID && <SRocketAlertImage src={ImageAlert} />}
       <PartsSelectTab index={state.tabIndex} onChange={onTabChange} />
       <SSelectArea>
         {state.tabIndex === 0 && (
