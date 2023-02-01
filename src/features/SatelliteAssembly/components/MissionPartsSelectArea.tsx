@@ -57,7 +57,7 @@ export const MissionPartsSelectArea: FC<MissionPartsSelectAreaProps> = ({
   }, [getIDs, masterData]);
 
   // スライダーで表示するための情報
-  const sliderItem: SliderItem[] | undefined = partsData?.map((partData) => {
+  const sliderItem: SliderItem[] = partsData.map((partData) => {
     return {
       partID: partData.part_id,
       name: partData.part_name,
@@ -66,24 +66,22 @@ export const MissionPartsSelectArea: FC<MissionPartsSelectAreaProps> = ({
 
   // スライダーコンポーネントに渡すprops
   const PartsSelectSliderProps: PartsSelectSliderProps = {
-    selectIndex: partsData?.findIndex(
+    selectIndex: partsData.findIndex(
       (partData) => partData.part_id === state.selectedPartID
     ),
     selectedIDs: isSelectedIDs,
-    items: sliderItem ? sliderItem : [],
+    items: sliderItem,
     // スライダーでパーツをクリックした時の処理(黄色の枠線の移動)
     onSelect: (index: number) => {
-      if (!sliderItem) return;
       dispatch({ type: "selectedPartID", val: sliderItem[index].partID });
     },
   };
 
   // 選択ボタンを押下した時の処理
   const onPartSelectClick = () => {
-    if (!state.selectedPartID) return;
     dispatch({
       type: "selectedMissionPartsIDs",
-      val: state.selectedMissionPartsIDs?.includes(state.selectedPartID)
+      val: state.selectedMissionPartsIDs.includes(state.selectedPartID)
         ? state.selectedMissionPartsIDs.filter(
             (id) => id !== state.selectedPartID
           )

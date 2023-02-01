@@ -116,7 +116,7 @@ export interface SliderItem {
 export interface PartsSelectSliderProps {
   items: SliderItem[];
   onSelect: (index: number) => void;
-  selectIndex?: number;
+  selectIndex: number;
   selectedIDs: string[];
   className?: string;
 }
@@ -125,13 +125,12 @@ export interface PartsSelectSliderProps {
  * 特別レクチャー(衛生組み立て画面）のパーツセレクト部分のスライダー
  */
 export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
-  selectIndex = 0,
+  selectIndex,
   selectedIDs,
   items,
   onSelect,
 }) => {
   const [swiperObject, onSwiper] = useState<SwiperRef>();
-  const [activeIndex, setActiveIndex] = useState(selectIndex);
   const [realIndex, setRealIndex] = useState(selectIndex);
 
   const onSlideChange = (swiper: SwiperRef) => {
@@ -139,8 +138,6 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
   };
 
   const onClick = (index: number) => {
-    // 画像をクリックした時に枠線を移動
-    setActiveIndex(index);
     onSelect(index);
   };
 
@@ -170,7 +167,7 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
                 selected={selectedIDs.includes(item.partID)}
                 src={thumbnailPath[item.partID]}
                 css={
-                  activeIndex === i
+                  selectIndex === i
                     ? `border: solid ${border}px ${isActiveColor}`
                     : `padding: ${border}px`
                 }
