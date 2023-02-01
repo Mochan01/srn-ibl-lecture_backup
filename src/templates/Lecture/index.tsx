@@ -1,19 +1,12 @@
-import React, { FC, useContext } from "react";
-import {
-  GlobalStateContext,
-  LectureProvider,
-  LectureProviderProps,
-} from "../../stores";
-import { Screen } from "./components/Screen";
+import React, { FC } from "react";
+import { LectureProvider, LectureProviderProps } from "../../stores";
 import { ScaleWrapper } from "../../elements/ScaleWrapper";
-import { Narration } from "../../elements/Narration";
-import { ControlPanel } from "./components/ControlPanel";
+import { Narration, Screen, SeekBar, ControlPanel } from "./components";
 import { Characters } from "../../elements/Characters";
 import styled, { css } from "styled-components";
 import { CloseBtn } from "../../elements/CloseBtn";
 import { Container } from "../../elements/Container";
 import { DebugWindow } from "../../elements/DebugWindow/DebugWindow";
-import { SeekBar } from "./components/SeekBar";
 import { MainComponentProps } from "../../types";
 
 export interface LectureProps extends LectureProviderProps, MainComponentProps {
@@ -40,15 +33,9 @@ const Main: FC<LectureProps> = ({
   unitTitle,
   className,
 }) => {
-  const { timestamp, isPlaying, progress } = useContext(GlobalStateContext);
   return (
     <div {...{ className }}>
-      {/** スライド、ステップ切替時、また、リプレイ時に再マウントさせたいのでkeyを指定 */}
-      {isPlaying && (
-        <Narration
-          key={timestamp + "_" + progress.slide + "_" + progress.step}
-        />
-      )}
+      <Narration />
       <ScaleWrapper>
         <Container>
           <Characters

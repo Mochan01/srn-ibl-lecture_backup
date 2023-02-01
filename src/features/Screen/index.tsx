@@ -58,31 +58,28 @@ export const Screen: FC<ScreenProps> = ({
       {/** クイズ（選択式） */}
       {getSingleLectureData(getQuestionSelect).map(
         ({ question_select, depth }, i) => (
-          <>
+          <Fragment key={i}>
             {question_select && (
               <PanelObject
-                key={i}
                 {...{ step, depth }}
                 x={question_select.question_x}
                 y={question_select.question_y}
               >
                 <QuizSelector
-                  key={i}
                   {...{ onAnswer }}
                   questionSelect={question_select}
                 />
               </PanelObject>
             )}
-          </>
+          </Fragment>
         )
       )}
       {/** クイズ（入力式） */}
       {getSingleLectureData(getQuestionInput).map(
         ({ question_input, depth }, i) => (
-          <>
+          <Fragment key={i}>
             {question_input && question_input.ans && (
               <PanelObject
-                key={i}
                 {...{ step, depth }}
                 x={question_input.question_x}
                 y={question_input.question_y}
@@ -93,7 +90,7 @@ export const Screen: FC<ScreenProps> = ({
                 />
               </PanelObject>
             )}
-          </>
+          </Fragment>
         )
       )}
       {/** アクションボタン */}
@@ -121,7 +118,7 @@ export const Screen: FC<ScreenProps> = ({
           <Fragment key={i}>
             {src === popupName && (
               <>
-                <PanelObject key={i} {...{ step, depth, src }}>
+                <PanelObject {...{ step, depth, src }}>
                   <img {...{ src }} onClick={() => setPopupName("")} />
                 </PanelObject>
                 <Narration {...{ narration }} />

@@ -3,13 +3,13 @@ import { Lecture } from "src-ibl-lecture-master-unit/types";
 import {
   GlobalDispatchContext,
   GlobalStateContext,
-} from "../../../../stores/providers";
-import { MainComponentProps } from "../../../../types";
-import data from "../../../../assets/data/unit06_master.json";
-import { Screen as Main } from "../../../../features/Screen";
-import { formatSlideStep } from "../../../../utils";
-import { LectureFrame } from "../../../../elements/LectureFrame";
-import { CountDown } from "../../../../elements/CountDown";
+} from "../../../stores/providers";
+import { MainComponentProps } from "../../../types";
+import data from "../../../assets/data/unit06_master.json";
+import { Screen as Main } from "../../../features/Screen";
+import { formatSlideStep } from "../../../utils";
+import { LectureFrame } from "../../../elements/LectureFrame";
+import { CountDown } from "../../../elements/CountDown";
 // import { Quiz } from "../../../../features/Quiz/Quiz";
 
 export interface ScreenProps
