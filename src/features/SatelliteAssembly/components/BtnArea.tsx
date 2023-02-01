@@ -26,8 +26,10 @@ export const BtnArea: FC = () => {
       !state.selectedBatteryID ||
       !state.selectedBusID ||
       !state.selectedRocketID
-    )
+    ) {
+      setVariant("OFF");
       return;
+    }
     // 一つでもコストがオーバーしている場合はreturn
     if (
       state.isPriceOver ||
@@ -35,8 +37,10 @@ export const BtnArea: FC = () => {
       state.isLaunchOver ||
       state.isLoadingOver ||
       state.isWattsOver
-    )
+    ) {
+      setVariant("OFF");
       return;
+    }
     // 条件を満たしている場合は押下可能にする
     setVariant("BEFORE");
   }, [
