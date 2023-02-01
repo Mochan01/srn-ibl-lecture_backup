@@ -74,18 +74,17 @@ export const PartsPreviewArea: FC<PartsPreviewAreaProps> = ({ masterData }) => {
     dispatch({ type: "tabIndex", val: tabIndex });
   };
 
-  let images = [previewPath[state.selectedPartID]];
+  let image = previewPath[state.selectedPartID];
 
   if (state.tabIndex === 1 && state.selectedBusID) {
-    images = [previewPath[state.selectedBusID], ...images];
+    image = previewPath[`${state.selectedPartID}-${state.selectedBusID}`];
   }
   if (state.tabIndex === 2 && state.selectedBatteryID) {
-    images = [...images, previewPath[state.selectedBatteryID]];
+    image = previewPath[`${state.selectedBatteryID}-${state.selectedPartID}`];
   }
 
   const RocketViewProps = {
-    images: images,
-    // images: [previewPath["3_1"], previewPath["2_1"]],
+    image: image,
     selectedPart: state.selectedPartID,
     missionParts: missionParts,
     batteryPart: batteryPart,

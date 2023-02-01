@@ -47,9 +47,9 @@ const SImage = styled.img<{ selected: boolean }>`
 const SNameArea = styled.div`
   width: 132px;
   height: 24px;
-  background-color: #ffffff;
+  //文字が透過されてしまうためrgbaで設定
+  background-color: rgba(250, 251, 253, 0.5);
   bottom: 0;
-  opacity: 0.6;
   text-align: center;
   letter-spacing: 0px;
   color: #5a5a5a;

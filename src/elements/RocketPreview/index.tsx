@@ -1,3 +1,4 @@
+import { url } from "inspector";
 import React, { FC, useState } from "react";
 import { Battery, Bus, Rocket } from "src-ibl-lecture-master-special/types";
 import styled from "styled-components";
@@ -71,12 +72,11 @@ const STextsArea = styled.div`
   position: absolute;
 `;
 
-const SImagesArea = styled.div<Pick<RocketPreviewProps, "images">>`
+const SImagesArea = styled.div<Pick<RocketPreviewProps, "image">>`
   width: 512px;
   height: 760px;
   /* 配列の中の画像を重ねて表示する */
-  background-image: ${({ images }) =>
-    images.map((url) => `url(${url})`).join(",")};
+  background-image: ${({ image }) => `url(${image})`};
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -118,7 +118,7 @@ export interface PreviewItem
   > {}
 
 export interface RocketPreviewProps {
-  images: string[];
+  image: string;
   selectedPart?: string;
   missionParts?: PreviewItem[];
   batteryPart?: PreviewItem;
@@ -133,7 +133,7 @@ export interface RocketPreviewProps {
  * 特別レクチャー(衛生組み立て画面）の衛生・ロケット画像のプレビュー部分
  */
 export const RocketPreview: FC<RocketPreviewProps> = ({
-  images,
+  image,
   selectedPart,
   missionParts,
   batteryPart,
@@ -146,7 +146,7 @@ export const RocketPreview: FC<RocketPreviewProps> = ({
   return (
     <>
       <Main>
-        <SImagesArea images={images} />
+        <SImagesArea image={image} />
         <STextsArea>
           <STitleArea>
             <STitle>選んだパーツ一覧</STitle>
