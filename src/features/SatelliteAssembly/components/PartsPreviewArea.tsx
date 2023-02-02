@@ -56,29 +56,35 @@ export const PartsPreviewArea: FC<PartsPreviewAreaProps> = ({ masterData }) => {
     })
     .filter((part) => part !== undefined) as MissionParts[];
 
+  // パーツ名をクリックした際の処理
   const onClick = (part: PreviewItem) => {
     let tabIndex: number;
+    // 電源パーツ
     if (part.category_id == "3") {
       tabIndex = 1;
+      // 積載パーツ
     } else if (part.category_id == "2") {
       tabIndex = 2;
+      // ロケット
     } else if (part.category_id == "1") {
       tabIndex = 3;
+      // ミッションパーツ
     } else {
       tabIndex = 0;
     }
-    console.log("tabIndex", tabIndex);
-    console.log("part", part);
 
     dispatch({ type: "selectedPartID", val: part.part_id });
     dispatch({ type: "tabIndex", val: tabIndex });
   };
 
+  // プレビュー画面に表示する画像
   let image = previewPath[state.selectedPartID];
 
+  // 電源パーツのタブかつ積載パーツが選択済みの場合は合体画像にする
   if (state.tabIndex === 1 && state.selectedBusID) {
     image = previewPath[`${state.selectedPartID}-${state.selectedBusID}`];
   }
+  // 積載パーツのタブかつ電源パーツが選択済みの場合は合体画像にする
   if (state.tabIndex === 2 && state.selectedBatteryID) {
     image = previewPath[`${state.selectedBatteryID}-${state.selectedPartID}`];
   }

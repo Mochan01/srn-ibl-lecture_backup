@@ -14,13 +14,13 @@ const template: Story<PartsSelectSliderProps> = (args) => (
 export const sample = template.bind({});
 sample.args = {
   selectIndex: 0,
-  selectedIndexes: [1, 2],
+  selectedIDs: ["1_1", "1_3"],
   items: [
-    { name: "ああああああああ", image: "https://placekitten.com/116/116" },
-    { name: "いいいいいいい", image: "https://placekitten.com/117/116" },
-    { name: "うううううう", image: "https://placekitten.com/118/116" },
-    { name: "えええええ", image: "https://placekitten.com/119/116" },
-    { name: "おおおお", image: "https://placekitten.com/112/116" },
+    { name: "ああああああああ", partID: "1_1" },
+    { name: "いいいいいいい", partID: "1_2" },
+    { name: "うううううう", partID: "1_3" },
+    { name: "えええええ", partID: "1_4" },
+    { name: "おおおお", partID: "1_5" },
   ],
   onSelect: (i) => console.log(`${i}番目を選択した`),
 };

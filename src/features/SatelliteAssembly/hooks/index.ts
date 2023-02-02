@@ -16,6 +16,7 @@ export interface SatelliteAssemblyState {
   isLaunchOver: boolean;
   isLoadingOver: boolean;
   isWattsOver: boolean;
+  // ミッションの対応の打ち上げ可能質量
   launchableMass: "leo" | "geo" | "ooo";
 }
 

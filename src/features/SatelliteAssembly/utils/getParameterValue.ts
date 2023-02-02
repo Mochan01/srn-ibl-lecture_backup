@@ -40,6 +40,7 @@ export const getTotalLaunchAndLoading = (
   }
   return { totalLaunch, totalLoading };
 };
+
 export const getTotalWatts = (
   missionParts: (MissionParts | undefined)[],
   busPart: Bus | undefined

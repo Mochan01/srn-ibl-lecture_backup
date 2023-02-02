@@ -143,19 +143,19 @@ export const ParameterArea: FC<ParameterAreaProps> = ({
   const LaunchProps = {
     value: totalLaunch,
     limit: launchLimit,
-    title: "打ち上げ可能質量",
+    title: "打ち上げ 可能質量",
     unit: "kg",
   };
   const LoadingProps = {
     value: totalLoading,
     limit: loadingLimit,
-    title: "積載可能質量",
+    title: "積載可能 質量",
     unit: "kg",
   };
   const WattsProps = {
     value: wattsValue,
     limit: wattsLimit,
-    title: "使用可能電力",
+    title: "使用可能 電力",
     unit: "W",
   };
   return (

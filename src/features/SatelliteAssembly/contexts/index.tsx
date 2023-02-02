@@ -17,7 +17,7 @@ export const SatelliteAssemblyDispatchContext = createContext<
 >({} as Dispatch<SatelliteAssemblyAction>);
 
 /**
- * ルーブリック設定に必要なデータの管理
+ * 人工衛星の組み立て画面の状態管理
  * @param param0
  * @returns
  */

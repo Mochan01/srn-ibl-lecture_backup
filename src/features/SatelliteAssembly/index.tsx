@@ -10,15 +10,8 @@ import {
 } from "./components";
 import { SatelliteAssemblyProvider } from "./contexts";
 import { MasterData } from "./types";
-import {
-  getMissionPartsIDs,
-  getBatteryIDs,
-  getBusIDs,
-  getRocketIDs,
-  handleMissionDataIDs,
-} from "./utils";
+import { getMissionPartsIDs, handleMissionDataIDs } from "./utils";
 
-export const backGroundWhiteColor = "#fafbfd " as const;
 const ImageBackGround = new URL(
   "../../assets/prod/bg_grid.png",
   import.meta.url
@@ -60,9 +53,6 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
   // 何のパーツを読み込むか？判定（タブ順）
   const getIDs = handleMissionDataIDs(missionData);
   const missionPartsIDs = getIDs(getMissionPartsIDs); // ミッションパーツ
-  const batteryIDs = getIDs(getBatteryIDs); // 電源パーツ
-  const busIDs = getIDs(getBusIDs); // 積載パーツ
-  const rocketIDs = getIDs(getRocketIDs); // 打ち上げロケット
 
   return (
     <LectureFrame unitName="とりあえず仮" unitTitle="とりあえず仮">
@@ -71,6 +61,7 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
           initialValue={{
             tabIndex: 0,
             selectedMissionPartsIDs: [],
+            // 初期表示時はミッションパーツの最初のパーツを選択状態にする
             selectedPartID: missionPartsIDs[0],
             isPriceOver: false,
             isMonthOver: false,

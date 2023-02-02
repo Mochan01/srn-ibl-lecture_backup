@@ -12,23 +12,19 @@ export const keys = ["darkBlue", "white"] as const;
 
 export type Variant = typeof keys[number];
 
-/* TODO: 色は画面実装時に再設定 */
 export const variants: { [key in Variant]: string } = {
   darkBlue: `
     color: #FAFBFD;
     background-color: #366F91;
-    // box-shadow: 0 0 0 1px #B2B2B2 inset;
   `,
   white: `
     color: #5A5A5A;
     background-color: #fff;
-    // box-shadow: 0 0 0 3px #B2B2B2 inset;
   `,
 } as const;
 
 const Main = styled.div`
   width: 680px;
-  /* height: 48px; */
   display: flex;
 `;
 

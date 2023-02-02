@@ -10,18 +10,27 @@ export default {
 const template: Story<RocketPreviewProps> = (args) => (
   <RocketPreview {...args} />
 );
-
 export const sample = template.bind({});
 sample.args = {
-  // images: ["https://placekitten.com/600/600"],
-  images: [
-    "https://placekitten.com/601/600",
-    "https://placekitten.com/601/600",
+  image: "https://placekitten.com/600/600",
+  selectedPart: "1_1",
+  missionParts: [
+    { part_id: "4_1", part_name: "ミッションパーツA", category_id: "4" },
   ],
-  selectedPart: "ミッションパーツA",
-  missionParts: ["ミッションパーツA", "ミッションパーツB", "ミッションパーツC"],
-  powerSupplyPart: "電源パーツA",
-  loadedPart: "積載パーツA",
-  rocket: "打ち上げロケットA",
+  batteryPart: {
+    part_id: "3_1",
+    part_name: "電源パーツA",
+    category_id: "3",
+  },
+  busPart: {
+    part_id: "2_1",
+    part_name: "積載パーツA",
+    category_id: "2",
+  },
+  rocket: {
+    part_id: "1_1",
+    part_name: "ロケットパーツA",
+    category_id: "1",
+  },
   isShow: true,
 };

@@ -21,19 +21,3 @@ export const getRocketIDs: GetParts = (missionData) => missionData.rocket;
 export const handleMissionDataIDs =
   (missionData: MissionList) => (callback: GetParts) =>
     callback(missionData);
-
-// interface SavedParts {
-//   missionPartsIDs: string[];
-//   rocketID: string;
-//   busID: string;
-//   batteryID: string;
-// }
-
-// /**
-//  * ローカルストレージに検索条件を保存
-//  * @param state
-//  */
-// export const saveParts = (state: SavedParts) => {
-//   typeof window !== "undefined" &&
-//     localStorage.setItem("searchStudentsConditionInput", JSON.stringify(state));
-// };

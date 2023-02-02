@@ -1,4 +1,3 @@
-import { url } from "inspector";
 import React, { FC, useState } from "react";
 import { Battery, Bus, Rocket } from "src-ibl-lecture-master-special/types";
 import styled from "styled-components";
@@ -75,7 +74,6 @@ const STextsArea = styled.div`
 const SImagesArea = styled.div<Pick<RocketPreviewProps, "image">>`
   width: 512px;
   height: 760px;
-  /* 配列の中の画像を重ねて表示する */
   background-image: ${({ image }) => `url(${image})`};
   background-repeat: no-repeat;
   background-size: contain;
@@ -160,22 +158,21 @@ export const RocketPreview: FC<RocketPreviewProps> = ({
               <div>
                 <SPartTitle>ミッションパーツ</SPartTitle>
                 {missionParts?.map((missionPart) => (
-                  <>
-                    <SSelectWrapper
-                      css={
-                        missionPart.part_id === selectedPart
-                          ? `border: solid 3px ${isSelectedColor}`
-                          : "padding: 3px"
-                      }
+                  <SSelectWrapper
+                    key={missionPart.part_id}
+                    css={
+                      missionPart.part_id === selectedPart
+                        ? `border: solid 3px ${isSelectedColor}`
+                        : "padding: 3px"
+                    }
+                  >
+                    <SPartText
+                      key={missionPart.part_id}
+                      onClick={() => onClick(missionPart)}
                     >
-                      <SPartText
-                        key={missionPart.part_id}
-                        onClick={() => onClick(missionPart)}
-                      >
-                        {missionPart.part_name}
-                      </SPartText>
-                    </SSelectWrapper>
-                  </>
+                      {missionPart.part_name}
+                    </SPartText>
+                  </SSelectWrapper>
                 ))}
               </div>
               <div>
