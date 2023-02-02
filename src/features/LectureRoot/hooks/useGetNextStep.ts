@@ -2,7 +2,7 @@ import { useContext, useMemo } from "react";
 import { JsonDataProviderContext, GlobalStateContext } from "../providers";
 import { handleJsonData, getStepData, getSlideData } from "../utils";
 
-export const useGetNextStep = (isStepEnd: boolean) => {
+export const useGetNextStep = (isStepEnd: boolean, onLastStep?: () => void) => {
   const { progress } = useContext(GlobalStateContext);
   const data = useContext(JsonDataProviderContext);
 
@@ -32,6 +32,8 @@ export const useGetNextStep = (isStepEnd: boolean) => {
     if (
       getJsonData(getStepData).progress.step >= getJsonData(getSlideData).length
     ) {
+      onLastStep && onLastStep();
+
       console.log(message + "because of last step");
       return;
     }

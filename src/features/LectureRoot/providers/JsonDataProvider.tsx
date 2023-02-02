@@ -3,7 +3,7 @@ import { JsonData } from "../types";
 
 export interface JsonDataProviderProps {
   jsonData: JsonData[];
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export const JsonDataProviderContext = createContext<JsonData[]>([]);

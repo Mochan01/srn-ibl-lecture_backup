@@ -4,16 +4,16 @@ import { JsonDataProvider, JsonDataProviderProps } from "./providers";
 import { SeekProvider, TimerProvider, GlobalStateProvider } from "./providers";
 
 export interface LectureRootProps
-  extends Pick<JsonDataProviderProps, "jsonData">,
+  extends JsonDataProviderProps,
     ChildWrapperProps {
   isPlaying?: boolean;
-  // onLectureLeave: (key: "begin" | "end") => void;
 }
 
 export const LectureRoot: FC<LectureRootProps> = ({
-  isPlaying = true,
+  isPlaying,
   jsonData,
   onClose,
+  onLastStep,
   children,
 }) => {
   return (
@@ -21,7 +21,7 @@ export const LectureRoot: FC<LectureRootProps> = ({
       <JsonDataProvider {...{ jsonData }}>
         <TimerProvider>
           <SeekProvider>
-            <ChildWrapper {...{ onClose, children }} />
+            <ChildWrapper {...{ onClose, onLastStep, children }} />
           </SeekProvider>
         </TimerProvider>
       </JsonDataProvider>

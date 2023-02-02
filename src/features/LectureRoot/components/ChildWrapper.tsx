@@ -10,17 +10,18 @@ import { Container } from "../../../elements/Container";
 
 export interface ChildWrapperProps {
   onClose?: () => void;
+  onLastStep?: () => void;
   children?: ReactNode;
 }
 
-export const ChildWrapper: FC<ChildWrapperProps> = ({ children, onClose }) => {
+export const ChildWrapper: FC<ChildWrapperProps> = ({ onClose, onLastStep, children }) => {
   const { timestamp, isPlaying, progress } = useContext(GlobalStateContext);
 
   // ステップの終了を検知
   const isStepEnd = useWatchStepEnd();
 
   // 次のステップを取得
-  const goToStep = useGetNextStep(isStepEnd);
+  const goToStep = useGetNextStep(isStepEnd, onLastStep);
 
   // 次のステップに進むか、次のステップが取得されなければ停止
   useAutoMoveProgress(goToStep ? formatSlideStep(goToStep) : undefined);

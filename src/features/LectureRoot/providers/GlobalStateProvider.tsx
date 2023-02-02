@@ -21,7 +21,7 @@ export const GlobalDispatchContext = createContext<Dispatch<GlobalStateAction>>(
  */
 export const GlobalStateProvider: FC<GlobalStateProviderProps> = ({
   children,
-  isPlaying = false,
+  isPlaying = true,
 }) => {
   const [state, setState] = useGlobalStateReducer({ isPlaying });
   return (

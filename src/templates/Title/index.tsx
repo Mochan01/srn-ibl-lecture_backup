@@ -5,8 +5,11 @@ import { PresentedBy } from "./components/PresentedBy";
 import { CommonProps } from "../../types";
 import { LectureRoot } from "../../features/LectureRoot";
 import { Intro } from "src-ibl-lecture-master-unit/types";
+import { ChildWrapperProps } from "../../features/LectureRoot/components";
 
-export interface TitleProps extends CommonProps {
+export interface TitleProps
+  extends CommonProps,
+    Pick<ChildWrapperProps, "onLastStep"> {
   onClickSkip?: () => void;
 }
 
@@ -15,12 +18,13 @@ export const Title: FC<TitleProps> = ({
   unitTitle,
   onClickSkip,
   onClose,
+  onLastStep,
   data,
 }) => {
   // introは1つしかないはずなので1番目をとる
   const jsonData: Intro[] = data.intro[0].steps as Intro[];
   return (
-    <LectureRoot {...{ onClose, jsonData }} isPlaying={false}>
+    <LectureRoot {...{ onLastStep, onClose, jsonData }} isPlaying={false}>
       <PresentedBy
         css={css`
           position: absolute;
