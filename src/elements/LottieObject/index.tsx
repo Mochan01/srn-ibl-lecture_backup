@@ -2,7 +2,7 @@ import React, { FC, useEffect, useRef } from "react";
 import styled from "styled-components";
 import lottie from "lottie-web";
 
-export interface LottieProps {
+export interface LottieObjectProps {
   path: string;
   name?: string;
   autoplay?: boolean;
@@ -15,7 +15,7 @@ const Main = styled.div``;
 /**
  * https://www.npmjs.com/package/lottie-web
  */
-export const Lottie: FC<LottieProps> = ({
+export const LottieObject: FC<LottieObjectProps> = ({
   path,
   name,
   autoplay = false,

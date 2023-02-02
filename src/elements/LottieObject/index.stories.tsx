@@ -1,13 +1,13 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Lottie, LottieProps } from ".";
+import { LottieObject, LottieObjectProps } from ".";
 
 export default {
-  title: "elements/Lottie",
-  component: Lottie,
+  title: "elements/LottieObject",
+  component: LottieObject,
 } as Meta;
 
-const template: Story<LottieProps> = (args) => <Lottie {...args} />;
+const template: Story<LottieObjectProps> = (args) => <LottieObject {...args} />;
 
 export const tesuto = template.bind({});
 tesuto.args = {
