@@ -14,7 +14,11 @@ export interface ChildWrapperProps {
   children?: ReactNode;
 }
 
-export const ChildWrapper: FC<ChildWrapperProps> = ({ onClose, onLastStep, children }) => {
+export const ChildWrapper: FC<ChildWrapperProps> = ({
+  onClose,
+  onLastStep,
+  children,
+}) => {
   const { timestamp, isPlaying, progress } = useContext(GlobalStateContext);
 
   // ステップの終了を検知
@@ -48,7 +52,7 @@ export const ChildWrapper: FC<ChildWrapperProps> = ({ onClose, onLastStep, child
           />
         </Container>
       </ScaleWrapper>
-      <DebugWindow />
+      {process.env.NODE_ENV === "development" && <DebugWindow />}
     </>
   );
 };

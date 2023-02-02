@@ -22,14 +22,14 @@ const Green = styled.span`
 `;
 
 export const DebugWindow: FC = () => {
-  const { timestamp, isPlaying, progress } =
-    useContext(GlobalStateContext);
+  const { timestamp, isPlaying, progress } = useContext(GlobalStateContext);
   const { time } = useContext(TimerContext);
   return (
     <Main>
       <div>
         キー：
-        <span>{timestamp}</span>
+        {/** suppressHydrationWarning: nextでエラーが出るので必要 */}
+        <span suppressHydrationWarning={true}>{timestamp}</span>
       </div>
       <div>
         進捗：{progress.slide} / {progress.step}
