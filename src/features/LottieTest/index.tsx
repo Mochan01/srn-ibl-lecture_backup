@@ -1,7 +1,8 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, useEffect } from "react";
 import styled from "styled-components";
 import lottie from "lottie-web";
 import { LottieObject } from "../../elements/LottieObject";
+import { lottiePath } from "../../data/lottiePath";
 
 export interface LottieTestProps {
   path: string;
@@ -28,7 +29,6 @@ export const LottieTest: FC<LottieTestProps> = ({
   loop = false,
   ...props
 }) => {
-
   useEffect(() => {
     lottie.play("object1");
 
@@ -39,8 +39,8 @@ export const LottieTest: FC<LottieTestProps> = ({
 
   return (
     <Main>
-      <LottieObject path="lottie/tesuto.json" name="object1"  />
-      <LottieObject path="lottie/tesuto2.json" name="object2" />
+      <LottieObject path={lottiePath["tesuto.json"]} name="object1" />
+      <LottieObject path={lottiePath["tesuto2.json"]} name="object2" />
     </Main>
   );
 };
