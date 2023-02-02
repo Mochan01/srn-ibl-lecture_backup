@@ -1,7 +1,8 @@
 import React, { FC, Fragment, useState } from "react";
 import { QuizInput } from "../../elements/QuizInput";
 import { QuizSelector } from "../../elements/QuizSelector";
-import { Panel, Narration, PanelObject } from "./components";
+import { Panel, Narration } from "./components";
+import { PanelObject } from "../../elements/PanelObject";
 import { ScreenData } from "./types";
 import {
   createSingleScreenData,
@@ -84,10 +85,7 @@ export const Screen: FC<ScreenProps> = ({
                 x={question_input.question_x}
                 y={question_input.question_y}
               >
-                <QuizInput
-                  {...{ onAnswer }}
-                  answer={question_input.ans}
-                />
+                <QuizInput {...{ onAnswer }} answer={question_input.ans} />
               </PanelObject>
             )}
           </Fragment>
