@@ -119,7 +119,7 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
   };
 
   return (
-    <Main>
+    <Main key={state.tabIndex}>
       {/* パーツが選択されていない場合はアラートを表示 */}
       {state.selectedMissionPartsIDs.length === 0 && (
         <SMissionAlertImage src={ImageAlert} />
