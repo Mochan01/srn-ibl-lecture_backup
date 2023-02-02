@@ -151,7 +151,6 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
           slidesPerView={slidesPerView}
           initialSlide={selectIndex}
           loop={true}
-          loopedSlides={items.length}
           navigation={{
             // パラメータを設定
             prevEl: "#button_prev",
