@@ -1,8 +1,8 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Lecture, LectureProps } from ".";
-import jsonData from "../../assets/data/lecture2.json";
-import { JsonData } from "../../types";
+import data from "../../assets/data/unit06_master.json";
+import { JsonData } from '../../types';
 
 export default {
   title: "templates/Lecture",
@@ -18,8 +18,9 @@ sample.args = {
   onLectureLeave: (key) => {
     console.log(`onLectureLeave: ${key}`);
   },
-  onClickClose: () => {
+  onClose: () => {
     console.log("onClickClose");
   },
-  json: jsonData as JsonData,
+  // @ts-ignore マスターデータちゃんと入力してもらったら型合うはず...
+  data: data as JsonData,
 };

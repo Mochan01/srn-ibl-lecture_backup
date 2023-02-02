@@ -2,28 +2,25 @@ import React, { FC } from "react";
 import { css } from "styled-components";
 import { TitleBase } from "./components/TitleBase";
 import { PresentedBy } from "./components/PresentedBy";
-import { MainComponentProps } from "../../types";
+import { CommonProps } from "../../types";
 import { LectureRoot } from "../../features/LectureRoot";
 import { Intro } from "src-ibl-lecture-master-unit/types";
-import data from "../../assets/data/unit06_master.json";
 
-export interface TitleProps extends MainComponentProps {
+export interface TitleProps extends CommonProps {
   onClickSkip?: () => void;
 }
 
 export const Title: FC<TitleProps> = ({
   unitName,
   unitTitle,
-  onClickSkip = () => {},
-  onClickClose = () => {},
+  onClickSkip,
+  onClose,
+  data,
 }) => {
-  const lectureData: Intro[] = data.intro[0].steps as Intro[];
+  // introは1つしかないはずなので1番目をとる
+  const jsonData: Intro[] = data.intro[0].steps as Intro[];
   return (
-    <LectureRoot
-      jsonData={lectureData}
-      onClose={onClickClose}
-      isPlaying={false}
-    >
+    <LectureRoot {...{ onClose, jsonData }} isPlaying={false}>
       <PresentedBy
         css={css`
           position: absolute;

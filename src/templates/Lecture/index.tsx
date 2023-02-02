@@ -1,13 +1,11 @@
 import React, { FC } from "react";
 import { Screen, SeekBar, ControlPanel } from "./components";
 import styled from "styled-components";
-import { MainComponentProps } from "../../types";
+import { CommonProps } from "../../types";
 import { LectureRoot } from "../../features/LectureRoot";
 import { Lecture as LectureDataType } from "src-ibl-lecture-master-unit/types";
-import data from "../../assets/data/unit06_master.json";
 
-export interface LectureProps extends MainComponentProps {
-  isPlaying?: boolean;
+export interface LectureProps extends CommonProps {
   onLectureLeave: (key: "begin" | "end") => void;
 }
 
@@ -24,14 +22,15 @@ const Wrapper = styled.div`
 
 export const Lecture: FC<LectureProps> = ({
   onLectureLeave,
-  onClickClose,
+  onClose,
   unitName,
   unitTitle,
+  data
 }) => {
-  const lectureData: LectureDataType[] = data.lecture[0]
+  const jsonData: LectureDataType[] = data.lecture[0]
     .steps as LectureDataType[];
   return (
-    <LectureRoot jsonData={lectureData} onClose={onClickClose}>
+    <LectureRoot {...{ onClose, jsonData }}>
       <Wrapper>
         <Screen {...{ unitName, unitTitle }} />
         <SeekBar />

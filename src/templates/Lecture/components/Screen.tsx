@@ -5,7 +5,7 @@ import {
   GlobalDispatchContext,
   GlobalStateContext,
 } from "../../../features/LectureRoot/providers";
-import { MainComponentProps } from "../../../types";
+import { CommonProps } from "../../../types";
 import { Screen as Main } from "../../../features/Screen";
 import { formatSlideStep } from "../../../utils";
 import { LectureFrame } from "../../../elements/LectureFrame";
@@ -16,7 +16,7 @@ import {
 } from "../../../features/LectureRoot/utils";
 
 export interface ScreenProps
-  extends Pick<MainComponentProps, "unitName" | "unitTitle"> {}
+  extends Pick<CommonProps, "unitName" | "unitTitle"> {}
 
 /**
  * スライドの画面部分

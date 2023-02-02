@@ -1,6 +1,6 @@
 import React, { FC, useContext, useState } from "react";
 import styled from "styled-components";
-import { MainComponentProps } from "../../../types";
+import { CommonProps } from "../../../types";
 import { GlobalDispatchContext } from "../../../features/LectureRoot/providers";
 const ImageTitle = new URL(
   "../../../assets/prod/lecture_title.png",
@@ -8,7 +8,7 @@ const ImageTitle = new URL(
 ).toString();
 
 export interface TitleBaseProps
-  extends Pick<MainComponentProps, "unitName" | "unitTitle"> {
+  extends Pick<CommonProps, "unitName" | "unitTitle"> {
   onClickSkip?: () => void;
   className?: string;
 }
@@ -114,8 +114,7 @@ export const TitleBase: FC<TitleBaseProps> = ({
       <SkipBtn
         role="button"
         onClick={() => {
-          if (!onClickSkip) return;
-          onClickSkip();
+          onClickSkip && onClickSkip();
         }}
         {...{ isStart }}
       />
