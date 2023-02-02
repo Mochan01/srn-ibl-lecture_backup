@@ -9,10 +9,7 @@ export const useAutoMoveProgress = (nextProgress?: Progress) => {
   const dispatch = useContext(GlobalDispatchContext);
   const { reset } = useContext(TimerContext);
   useEffect(() => {
-    if (!nextProgress) {
-      console.log("Auto play is stopping");
-      return;
-    }
+    if (!nextProgress) return;
 
     reset();
     dispatch({ type: "progress", val: nextProgress });
