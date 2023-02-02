@@ -60,7 +60,7 @@ export const previewPath: { [key in string]: string } = {
   "3_5-2_6": new URL("../assets/prod/preview/preview-3_5-2_6.png", import.meta.url).toString(),
   "3_5-2_7": new URL("../assets/prod/preview/preview-3_5-2_7.png", import.meta.url).toString(),
   "3_5-2_8": new URL("../assets/prod/preview/preview-3_5-2_8.png", import.meta.url).toString(),
-  // TODO: 画像が追加され次第順次追加 2023/2/2現在
+  // TODO: 画像が追加され次第順次追加 2023/2/2 12:00現在
   // "4_1": new URL("../assets/prod/preview/preview-4_1.png", import.meta.url).toString(),
   "4_2": new URL("../assets/prod/preview/preview-4_2.png", import.meta.url).toString(),
   "4_3": new URL("../assets/prod/preview/preview-4_3.png", import.meta.url).toString(),
