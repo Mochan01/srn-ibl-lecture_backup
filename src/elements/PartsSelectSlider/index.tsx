@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
 import styled from "styled-components";
+import { thumbnailPath } from "../../data/thumbnailPath";
 
 const buttonColor = "#F98A3B" as const;
 const isActiveColor = "#FFFF00" as const;
@@ -46,9 +47,9 @@ const SImage = styled.img<{ selected: boolean }>`
 const SNameArea = styled.div`
   width: 132px;
   height: 24px;
-  background-color: #ffffff;
+  //文字が透過されてしまうためrgbaで設定
+  background-color: rgba(250, 251, 253, 0.5);
   bottom: 0;
-  opacity: 0.6;
   text-align: center;
   letter-spacing: 0px;
   color: #5a5a5a;
@@ -108,15 +109,15 @@ const SSwiperNextButton = styled.div`
 `;
 
 export interface SliderItem {
+  partID: string;
   name: string;
-  image: string;
 }
 
 export interface PartsSelectSliderProps {
   items: SliderItem[];
   onSelect: (index: number) => void;
-  selectIndex?: number;
-  selectedIndexes: number[];
+  selectIndex: number;
+  selectedIDs: string[];
   className?: string;
 }
 
@@ -124,13 +125,12 @@ export interface PartsSelectSliderProps {
  * 特別レクチャー(衛生組み立て画面）のパーツセレクト部分のスライダー
  */
 export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
-  selectIndex = 0,
-  selectedIndexes,
+  selectIndex,
+  selectedIDs,
   items,
   onSelect,
 }) => {
   const [swiperObject, onSwiper] = useState<SwiperRef>();
-  const [activeIndex, setActiveIndex] = useState(selectIndex);
   const [realIndex, setRealIndex] = useState(selectIndex);
 
   const onSlideChange = (swiper: SwiperRef) => {
@@ -138,8 +138,6 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
   };
 
   const onClick = (index: number) => {
-    // 画像をクリックした時に枠線を移動
-    setActiveIndex(index);
     onSelect(index);
   };
 
@@ -153,7 +151,6 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
           slidesPerView={slidesPerView}
           initialSlide={selectIndex}
           loop={true}
-          loopedSlides={items.length}
           navigation={{
             // パラメータを設定
             prevEl: "#button_prev",
@@ -164,12 +161,12 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
           speed={duration}
         >
           {items.map((item, i) => (
-            <SwiperSlide key={item.name} onClick={() => onClick(i)}>
+            <SwiperSlide key={item.partID} onClick={() => onClick(i)}>
               <SImage
-                selected={selectedIndexes.includes(i)}
-                src={item.image}
+                selected={selectedIDs.includes(item.partID)}
+                src={thumbnailPath[item.partID]}
                 css={
-                  activeIndex === i
+                  selectIndex === i
                     ? `border: solid ${border}px ${isActiveColor}`
                     : `padding: ${border}px`
                 }

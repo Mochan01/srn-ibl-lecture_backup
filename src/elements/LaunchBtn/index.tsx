@@ -28,10 +28,24 @@ export const LaunchBtn: FC<LaunchBtnProps> = ({
   const onClick = () => variant === "BEFORE" && fn && fn();
   return (
     <>
-      <link href={variants["OFF"]} as="image" rel="preload" />
-      <link href={variants["BEFORE"]} as="image" rel="preload" />
-      <link href={variants["AFTER"]} as="image" rel="preload" />
-      <Main role="button" {...{ onClick, variant, className }} />
+      {variant === "OFF" && (
+        <>
+          <link href={variants["OFF"]} as="image" rel="preload" />
+          <Main role="button" {...{ onClick, variant, className }} />
+        </>
+      )}
+      {variant === "BEFORE" && (
+        <>
+          <link href={variants["BEFORE"]} as="image" rel="preload" />
+          <Main role="button" {...{ onClick, variant, className }} />
+        </>
+      )}
+      {variant === "AFTER" && (
+        <>
+          <link href={variants["AFTER"]} as="image" rel="preload" />
+          <Main role="button" {...{ onClick, variant, className }} />
+        </>
+      )}
     </>
   );
 };

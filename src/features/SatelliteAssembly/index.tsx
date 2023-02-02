@@ -1,13 +1,28 @@
 import React, { FC, useMemo } from "react";
+import styled from "styled-components";
+import { SIZE } from "../../data/SIZE";
 import { LectureFrame } from "../../elements/LectureFrame";
-import { MasterData } from "./types";
 import {
-  handleMissionData,
-  getMissionParts,
-  getBatteryIDs,
-  getBusIDs,
-  getRocketIDs,
-} from "./utils";
+  BtnArea,
+  ParameterArea,
+  PartsPreviewArea,
+  PartsSelectArea,
+} from "./components";
+import { SatelliteAssemblyProvider } from "./contexts";
+import { MasterData } from "./types";
+import { getMissionPartsIDs, handleMissionDataIDs } from "./utils";
+
+const ImageBackGround = new URL(
+  "../../assets/prod/bg_grid.png",
+  import.meta.url
+).toString();
+const Main = styled.div`
+  height: ${SIZE.H};
+  width: ${SIZE.W};
+  background-image: url(${ImageBackGround});
+  display: flex;
+  font-family: "UD デジタル 教科書体 N-B";
+`;
 
 export interface SatelliteAssemblyProps {
   /**
@@ -36,15 +51,47 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
   if (!missionData) return <></>;
 
   // 何のパーツを読み込むか？判定（タブ順）
-  const getIDs = handleMissionData(missionData);
-  const missionPartsIDs = getIDs(getMissionParts); // ミッションパーツ
-  const batteryIDs = getIDs(getBatteryIDs); // 電源パーツ
-  const busIDs = getIDs(getBusIDs); // 積載パーツ
-  const rocketIDs = getIDs(getRocketIDs); // 打ち上げロケット
+  const getIDs = handleMissionDataIDs(missionData);
+  const missionPartsIDs = getIDs(getMissionPartsIDs); // ミッションパーツ
 
   return (
     <LectureFrame unitName="とりあえず仮" unitTitle="とりあえず仮">
-      {/* ここに衛生組み立て画面の実装を書く */}
+      <Main>
+        <SatelliteAssemblyProvider
+          initialValue={{
+            tabIndex: 0,
+            selectedMissionPartsIDs: [],
+            // 初期表示時はミッションパーツの最初のパーツを選択状態にする
+            selectedPartID: missionPartsIDs[0],
+            isPriceOver: false,
+            isMonthOver: false,
+            isLaunchOver: false,
+            isLoadingOver: false,
+            isWattsOver: false,
+            launchableMass: missionData.launchable_mass as
+              | "leo"
+              | "geo"
+              | "ooo",
+          }}
+        >
+          <PartsPreviewArea masterData={masterData} />
+          <div>
+            <div css={"margin-top: 18px"} />
+            <BtnArea />
+            <div css={"margin-top: 18px"} />
+            <ParameterArea
+              masterData={masterData}
+              maxBudget={missionData.max_budget}
+              preparationPeriod={missionData.preparation_period}
+            />
+            <div css={"margin-top: 18px"} />
+            <PartsSelectArea
+              missionData={missionData}
+              masterData={masterData}
+            />
+          </div>
+        </SatelliteAssemblyProvider>
+      </Main>
     </LectureFrame>
   );
 };
