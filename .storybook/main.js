@@ -1,15 +1,20 @@
 module.exports = {
-  "stories": [
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
-  ],
-  "addons": [
+  stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-interactions"
+    "@storybook/addon-interactions",
   ],
-  "framework": "@storybook/react",
-  "core": {
-    "builder": "webpack5"
+  framework: "@storybook/react",
+  webpackFinal: async (config, { configType }) => {
+    const babelLoaderRule = config.module.rules.find(
+      (rule) => rule.test.toString() === /\.(mjs|tsx?|jsx?)$/.toString()
+    );
+    babelLoaderRule.exclude = [/node_modules\/(?!(srn-ibl-component)\/)/];
+    return config;
   },
-  "typescript" : { "reactDocgen": false }
-}
+  core: {
+    builder: "webpack5",
+  },
+  typescript: { reactDocgen: false },
+};
