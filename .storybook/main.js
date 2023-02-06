@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -10,7 +12,9 @@ module.exports = {
     const babelLoaderRule = config.module.rules.find(
       (rule) => rule.test.toString() === /\.(mjs|tsx?|jsx?)$/.toString()
     );
-    babelLoaderRule.exclude = [/node_modules\/(?!(srn-ibl-component)\/)/];
+    babelLoaderRule.exclude = [
+      new RegExp("node_modules\\" + path.sep + "(?!(srn-ibl-component)\\/).*"),
+    ];
     return config;
   },
   core: {
