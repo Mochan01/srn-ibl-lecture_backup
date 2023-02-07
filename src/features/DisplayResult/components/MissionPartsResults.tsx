@@ -17,6 +17,7 @@ const Main = styled.div`
   text-align: center;
   border: 3px solid #483bcb;
   overflow-y: scroll;
+  background-color: rgba(255, 255, 255, 0.5);
 `;
 const SContents = styled.div`
   display: flex;
@@ -30,11 +31,12 @@ const STitle = styled.div`
   line-height: 38.58px;
   color: #5a5a5a;
 `;
+
 interface MissionPartsResultsProps {
   resultList: ResultList[];
 }
 
-interface SavedParts {
+export interface SavedParts {
   missionPartsIDs: string[];
   batteryID: string;
   busID: string;

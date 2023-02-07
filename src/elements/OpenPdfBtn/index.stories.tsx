@@ -1,6 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { OpenPdfBtn, OpenPdfBtnProps } from ".";
+import { pdfPath } from "../../data/pdfPath";
 
 export default {
   title: "elements/OpenPdfBtn",
@@ -11,5 +12,5 @@ const template: Story<OpenPdfBtnProps> = (args) => <OpenPdfBtn {...args} />;
 
 export const sample = template.bind({});
 sample.args = {
-  onClick: () => console.log("リセットの処理を実行"),
+  filePath: pdfPath["result-4_2.pdf"],
 };

@@ -37,27 +37,25 @@ export interface PartResultCardProps {
   resultList: ResultList;
 }
 /**
- * 結果ののサムネイルと名前を表示する
+ * 結果のサムネイルと名前を表示する
+ * (part_aかpart_bのどちらかは空の場合)
  */
 export const PartResultCard: FC<PartResultCardProps> = ({ resultList }) => {
+  // サムネイルを表示するためのpart_aかpart_bのID
+  const partID = resultList.part_a
+    ? resultList.part_a
+    : resultList.part_b
+    ? resultList.part_b
+    : "";
+
+  const partName = resultList.part_a_name
+    ? resultList.part_a_name
+    : resultList.part_b_name;
+
   return (
     <Main>
-      <SImage
-        image={
-          thumbnailPath[
-            resultList.part_a
-              ? resultList.part_a
-              : resultList.part_b
-              ? resultList.part_b
-              : ""
-          ]
-        }
-      />
-      <SName>
-        {resultList.part_a_name !== ""
-          ? resultList.part_a_name
-          : resultList.part_b_name}
-      </SName>
+      <SImage image={thumbnailPath[partID]} />
+      <SName>{partName}</SName>
     </Main>
   );
 };
