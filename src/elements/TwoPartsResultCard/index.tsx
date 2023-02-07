@@ -5,16 +5,16 @@ import { thumbnailPath } from "../../data/thumbnailPath";
 
 const Main = styled.div`
   width: 816px;
-  height: 88px;
-  display: flex;
+  height: 161px;
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 1px solid #707070;
   border-radius: 12px;
   padding-top: 11px;
   padding-left: 24px;
-  text-align: center;
 `;
-
+const Content = styled.div`
+  display: flex;
+`;
 const SImage = styled.div<{ image: string }>`
   background-image: ${({ image }) => `url(${image})`};
   background-repeat: no-repeat;
@@ -33,31 +33,29 @@ const SName = styled.div`
   align-items: center;
 `;
 
-export interface PartResultCardProps {
+export interface TwoPartsResultCardProps {
   resultList: ResultList;
 }
 /**
- * 結果ののサムネイルと名前を表示する
+ * 結果ののサムネイルと名前を表示する(結果にpart_a,part_b両方ある場合)
  */
-export const PartResultCard: FC<PartResultCardProps> = ({ resultList }) => {
+export const TwoPartsResultCard: FC<TwoPartsResultCardProps> = ({
+  resultList,
+}) => {
   return (
     <Main>
-      <SImage
-        image={
-          thumbnailPath[
-            resultList.part_a
-              ? resultList.part_a
-              : resultList.part_b
-              ? resultList.part_b
-              : ""
-          ]
-        }
-      />
-      <SName>
-        {resultList.part_a_name !== ""
-          ? resultList.part_a_name
-          : resultList.part_b_name}
-      </SName>
+      <Content>
+        <SImage
+          image={thumbnailPath[resultList.part_a ? resultList.part_a : ""]}
+        />
+        <SName>{resultList.part_a_name}</SName>
+      </Content>
+      <Content>
+        <SImage
+          image={thumbnailPath[resultList.part_b ? resultList.part_b : ""]}
+        />
+        <SName>{resultList.part_b_name}</SName>
+      </Content>
     </Main>
   );
 };

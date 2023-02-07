@@ -13,6 +13,12 @@ const template: Story<PartResultCardProps> = (args) => (
 
 export const sample = template.bind({});
 sample.args = {
-  partID: "4_2",
-  partName: "高分解能サーモグラフィー",
+  resultList: {
+    result_id: "result_1",
+    part_a: "4_2",
+    part_a_name: "高分解能サーモグラフィー",
+    part_b: "",
+    part_b_name: "",
+    result_pdf: "result-4_2.pdf",
+  },
 };

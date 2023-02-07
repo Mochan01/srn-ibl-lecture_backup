@@ -36,6 +36,14 @@ const mockResultList: ResultList[] = [
     part_b_name: "高分解能カメラ",
     result_pdf: "result-4_5-4_6.pdf",
   },
+  {
+    result_id: "result_4",
+    part_a: "4_2",
+    part_a_name: "広域カメラ",
+    part_b: "4_7",
+    part_b_name: "高分解能カメラ",
+    result_pdf: "result-4_5-4_6.pdf",
+  },
 ];
 
 export const sample = template.bind({});
