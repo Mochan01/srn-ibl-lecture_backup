@@ -6,6 +6,7 @@ import {
   SatelliteAssemblyStateContext,
   SatelliteAssemblyDispatchContext,
 } from "../contexts";
+import { SAVED_PARTS } from "../../../config";
 const Main = styled.div`
   height: 59px;
   width: 680px;
@@ -68,7 +69,7 @@ export const BtnArea: FC = () => {
     // 各パーツIDをローカルストレージに保存する
     typeof window !== "undefined" &&
       localStorage.setItem(
-        "savedParts",
+        SAVED_PARTS,
         JSON.stringify({
           missionPartsIDs: state.selectedMissionPartsIDs,
           rocketID: state.selectedRocketID,

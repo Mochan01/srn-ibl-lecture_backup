@@ -16,15 +16,13 @@ const Main = styled.div`
 `;
 
 export interface OpenPdfBtnProps {
-  onClick: () => void;
-  className?: string;
   filePath: string;
 }
 
 /**
- * リセットボタン
+ * Pdfを開くボタン
  */
-export const OpenPdfBtn: FC<OpenPdfBtnProps> = ({ onClick, filePath }) => {
+export const OpenPdfBtn: FC<OpenPdfBtnProps> = ({ filePath }) => {
   const openPdf = () => {
     window.open(filePath, "_blank");
   };

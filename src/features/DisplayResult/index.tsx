@@ -1,9 +1,7 @@
-import React, { FC, useMemo } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
-import { LinkText, Spacer, Typography } from "srn-ibl-component";
 import { SIZE } from "../../data/SIZE";
 import { LectureFrame } from "../../elements/LectureFrame";
-import { MasterData } from "../DisplayResult/types";
 import { ResultList } from "src-ibl-lecture-master-special/types";
 import { MissionPartsResults } from "./components/MissionPartsResults";
 
@@ -35,14 +33,13 @@ export interface DisplayResultProps {
 }
 
 /**
- * 衛生組み立て画面
+ * データ確認画面
  */
 export const DisplayResult: FC<DisplayResultProps> = ({ resultList }) => {
   return (
     <LectureFrame unitName="とりあえず仮" unitTitle="とりあえず仮">
       <Main>
         <STitle>■人工衛星が送ってきたデータを確認する</STitle>
-
         <div css={"margin-top: 46px"} />
         <MissionPartsResults {...{ resultList }} />
         <div css={"margin-top: 30px"} />
