@@ -1,5 +1,6 @@
 import React, { FC, useMemo } from "react";
 import { ResultList } from "src-ibl-lecture-master-special/types";
+import { ScrollArea } from "srn-ibl-component";
 import styled from "styled-components";
 import { pdfPath } from "../../../data/pdfPath";
 import { SAVED_PARTS } from "../../../config";
@@ -8,6 +9,7 @@ import { PartResultCard } from "../../../elements/PartResultCard";
 import { TwoPartsResultCard } from "../../../elements/TwoPartsResultCard";
 
 const Main = styled.div`
+  padding-right: 10px;
   margin-left: 85px;
   width: 1024px;
   height: 608px;
@@ -16,7 +18,6 @@ const Main = styled.div`
   color: #5a5a5a;
   text-align: center;
   border: 3px solid #483bcb;
-  overflow-y: scroll;
   background-color: rgba(255, 255, 255, 0.5);
 `;
 const SContents = styled.div`
@@ -59,7 +60,7 @@ export const MissionPartsResults: FC<MissionPartsResultsProps> = ({
 
     return resultList.filter((result) => {
       // part_aとpart_bに両方値がある場合
-      if (!!result.part_a && !!result.part_b) {
+      if (result.part_a && result.part_b) {
         // part_aとpart_bの両方が保存したミッションパーツに含まれる場合をフィルタリング
         return (
           missionPartsIDs.includes(result.part_a ? result.part_a : "") &&
@@ -77,21 +78,23 @@ export const MissionPartsResults: FC<MissionPartsResultsProps> = ({
 
   return (
     <Main>
-      <div css={"margin-top: 26px"} />
-      <STitle>人工衛星による成果を確認しよう</STitle>
-      <div css={"margin-top: 31px"} />
-      {missionParts.map((partsResult) => (
-        <SContents key={partsResult.result_id}>
-          {/* part_aとpart_bに両方値がある場合と片方しかない場合でコンポーネントを分ける */}
-          {!!partsResult.part_a && !!partsResult.part_b ? (
-            <TwoPartsResultCard resultList={partsResult} />
-          ) : (
-            <PartResultCard resultList={partsResult} />
-          )}
-          <div css={"margin-left: 24px"} />
-          <OpenPdfBtn filePath={pdfPath[partsResult.result_pdf]} />
-        </SContents>
-      ))}
+      <ScrollArea css={"height: 600px; "}>
+        <div css={"margin-top: 26px"} />
+        <STitle>人工衛星による成果を確認しよう</STitle>
+        <div css={"margin-top: 31px"} />
+        {missionParts.map((partsResult) => (
+          <SContents key={partsResult.result_id}>
+            {/* part_aとpart_bに両方値がある場合と片方しかない場合でコンポーネントを分ける */}
+            {partsResult.part_a && partsResult.part_b ? (
+              <TwoPartsResultCard resultList={partsResult} />
+            ) : (
+              <PartResultCard resultList={partsResult} />
+            )}
+            <div css={"margin-left: 24px"} />
+            <OpenPdfBtn filePath={pdfPath[partsResult.result_pdf]} />
+          </SContents>
+        ))}
+      </ScrollArea>
     </Main>
   );
 };

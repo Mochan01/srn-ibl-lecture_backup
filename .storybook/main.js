@@ -12,9 +12,7 @@ module.exports = {
     const babelLoaderRule = config.module.rules.find(
       (rule) => rule.test.toString() === /\.(mjs|tsx?|jsx?)$/.toString()
     );
-    babelLoaderRule.exclude = [
-      new RegExp("node_modules\\" + path.sep + "(?!(srn-ibl-component)\\/).*"),
-    ];
+    babelLoaderRule.exclude = [/node_modules(?!(\/|\\)srn-ibl-component)/];
     return config;
   },
   core: {
