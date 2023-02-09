@@ -2,7 +2,7 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { LectureRoot, LectureRootProps } from ".";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
-import data from "../../assets/data/unit06_master.json";
+import data from "../../assets/data/unit00_master.json";
 import { JsonDataProviderProps } from "./providers";
 
 export default {

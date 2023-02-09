@@ -1,6 +1,6 @@
 import React, { FC, createContext, ReactNode } from "react";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
-import data from "../../../assets/data/unit06_master.json";
+import data from "../../../assets/data/unit00_master.json";
 
 interface LectureDataProviderProps {
   children: ReactNode;
