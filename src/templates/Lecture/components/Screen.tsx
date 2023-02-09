@@ -22,7 +22,7 @@ export interface ScreenProps
  * スライドの画面部分
  */
 export const Screen: FC<ScreenProps> = (props) => {
-  const { progress } = useContext(GlobalStateContext);
+  const { progress, timestamp } = useContext(GlobalStateContext);
   const dispatch = useContext(GlobalDispatchContext);
 
   const lectureData = useContext(JsonDataProviderContext) as Lecture[];

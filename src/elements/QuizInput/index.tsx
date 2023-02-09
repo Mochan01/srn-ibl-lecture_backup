@@ -4,6 +4,7 @@ import { QuizAnswerBtn } from "../QuizAnswerBtn";
 import { TextBox } from "./components/TextBox";
 import { Variant } from "../QuizAnswerBtn/types";
 import { QUIZ_SIGN } from "../QuizChoiceBtn";
+import { useAudio } from '../../hooks/useAudio';
 
 const ImageLecture = new URL(
   "../../assets/prod/lecture_panel_answer.png",
@@ -58,12 +59,18 @@ export const QuizInput: FC<QuizInputProps> = ({ answer, onAnswer }) => {
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
 
+  const [play] = useAudio("quiz_correct.mp3");
+
   // 解答ボタン押下またはエンターキーを押下したら発火
   const handleAnswer = useCallback(() => {
     if (inputAnswer === "") return;
     setIsAnswered(true);
-    setIsCorrect(inputAnswer === answer);
-    onAnswer && onAnswer(inputAnswer === answer);
+
+    const isCorrect = inputAnswer === answer;
+
+    setIsCorrect(isCorrect);
+    isCorrect && play();
+    onAnswer && onAnswer(isCorrect);
   }, [answer, inputAnswer, onAnswer]);
 
   const onChange = useCallback((input: string) => {

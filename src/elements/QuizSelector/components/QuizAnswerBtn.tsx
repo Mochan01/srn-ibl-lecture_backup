@@ -1,5 +1,6 @@
 import React, { FC, useCallback, useMemo, useContext } from "react";
 import styled from "styled-components";
+import { useAudio } from '../../../hooks/useAudio';
 import { QuizAnswerBtn as Main } from "../../QuizAnswerBtn";
 import { QuizSelectorProviderContext } from "../providers";
 
@@ -32,9 +33,15 @@ export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
       : "GRAY";
   }, [chooseIndex, isAnswer]);
 
+  const [play] = useAudio("quiz_correct.mp3");
+
   const onClick = useCallback(() => {
     setState((s) => ({ ...s, isAnswer: true }));
-    onAnswer && onAnswer(chooseIndex === correctIndex);
+
+    const isCorrect = chooseIndex === correctIndex;
+
+    isCorrect && play();
+    onAnswer && onAnswer(isCorrect);
   }, [setState, onAnswer, chooseIndex, correctIndex]);
 
   return <AnswerBtn {...{ variant, isMaxLen, onClick }} />;
