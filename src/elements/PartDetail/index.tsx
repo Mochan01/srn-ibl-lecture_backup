@@ -19,7 +19,7 @@ const SCell = styled.div`
   display: flex;
 `;
 export interface PartDetailProps {
-  part_name: string;
+  partName: string;
   description: string;
   className?: string;
 }
@@ -27,7 +27,7 @@ export interface PartDetailProps {
 /**
  * パーツの詳細
  */
-export const PartDetail: FC<PartDetailProps> = ({ part_name, description }) => {
+export const PartDetail: FC<PartDetailProps> = ({ partName, description }) => {
   return (
     <Main>
       <SCell
@@ -37,7 +37,7 @@ export const PartDetail: FC<PartDetailProps> = ({ part_name, description }) => {
       >
         機器名
       </SCell>
-      <SCell css={"border-bottom: 1px solid #bcbcbc;"}>{part_name}</SCell>
+      <SCell css={"border-bottom: 1px solid #bcbcbc;"}>{partName}</SCell>
       <SCell css={"border-right: 1px solid #bcbcbc; justify-content: center"}>
         説明
       </SCell>

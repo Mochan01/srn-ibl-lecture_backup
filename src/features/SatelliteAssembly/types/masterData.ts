@@ -36,3 +36,12 @@ export interface MasterData {
   sample_return: SampleReturn[];
   asteroid: Asteroid[];
 }
+
+// missionPartsのユニオン型
+export type MissionParts =
+  | SensorParts
+  | TransmissionParts
+  | Computer
+  | Debris
+  | SampleReturn
+  | Asteroid;

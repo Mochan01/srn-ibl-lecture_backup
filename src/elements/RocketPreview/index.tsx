@@ -1,5 +1,7 @@
 import React, { FC, useState } from "react";
+import { Battery, Bus, Rocket } from "src-ibl-lecture-master-special/types";
 import styled from "styled-components";
+import { MissionParts } from "../../features/SatelliteAssembly/types";
 const ImgOpen = new URL(
   "../../assets/prod/button_visiblity_on.png",
   import.meta.url
@@ -9,20 +11,16 @@ const ImgClose = new URL(
   import.meta.url
 ).toString();
 
-export const isSelectedColor = "yellow" as const;
+export const isSelectedColor = "#FFFF00" as const;
 
 export const keys = ["OPEN", "CLOSE"] as const;
 
 export const variants: { [key in Variant]: string } = {
   OPEN: `
     background-image: url(${ImgOpen});
-    width: 24px;
-    height: 24px;
   `,
   CLOSE: `
     background-image: url(${ImgClose});
-    width: 24px;
-    height: 24px;
   `,
 } as const;
 
@@ -34,102 +32,119 @@ export interface IconProps {
 export const Icon = styled.div<IconProps>(
   ({ variant }) => `
   ${variants[variant]}
+  width: 32px;
+  height: 32px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  display: inline-block;
+  display: flex;
   cursor: pointer;
 `
 );
 
 const Main = styled.div`
-  padding: 16px;
-  width: 340px;
-  height: 600px;
-  /* 確認用必要無かったら消す */
-  background-color: gray;
+  width: 100%;
+  height: 100%;
+  padding-left: 32px;
+  padding-top: 32px;
   position: relative;
 `;
 const STitleArea = styled.div`
+  height: 32px;
   display: flex;
   text-align: center;
 `;
 const STitle = styled.div`
   color: #f1f6f9;
-  font-size: 12px;
-  line-height: 24px;
+  font-size: 20px;
+  line-height: 32px;
   margin-right: 8px;
 `;
 
 const SPartsArea = styled.div`
-  width: 200px;
+  width: 512px;
+  display: flex;
+  justify-content: space-between;
 `;
 const STextsArea = styled.div`
   width: 200px;
   position: absolute;
 `;
 
-// TODO:画面実装時に実際の画像サイズやpxなどを調整する
-const SImagesArea = styled.div<Pick<RocketPreviewProps, "images">>`
-  width: 300px;
-  height: 540px;
-  /* 配列の中の画像を重ねて表示する */
-  background-image: ${({ images }) =>
-    images.map((url) => `url(${url})`).join(",")};
+const SImagesArea = styled.div<Pick<RocketPreviewProps, "image">>`
+  width: 512px;
+  height: 760px;
+  background-image: ${({ image }) => `url(${image})`};
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   position: absolute;
-  left: 20px;
-  top: 40px;
+  left: 32px;
+  top: 98px;
   z-index: 0;
 `;
 const SPartTitle = styled.div`
-  font-size: 10px;
+  font-size: 16px;
+  line-height: 18px;
   font-weight: bold;
   margin-top: 16px;
   color: #f1f6f9;
-  opacity: 0.7;
+`;
+const SSelectWrapper = styled.div`
+  margin-top: 8px;
+  border-radius: 9px;
+  object-fit: cover;
+`;
+const SPartText = styled.div`
+  width: 176px;
+  padding-top: 7px;
+  padding-bottom: 5px;
+  padding-left: 7px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #1e3c64;
+  /* 文字が透過されてしまうためrgbaで設定 */
+  background-color: rgba(250, 251, 253, 0.5);
+  display: block;
+  border-radius: 6px;
+  cursor: pointer;
 `;
 
-const SPartText = styled.div`
-  font-size: 10px;
-  font-weight: bold;
-  padding: 8px;
-  margin-top: 8px;
-  color: #121d24;
-  background-color: #9da9b1;
-  display: inline-block;
-  border-radius: 8px;
-  opacity: 0.7;
-`;
+export interface PreviewItem
+  extends Pick<
+    Rocket | Bus | Battery | MissionParts,
+    "part_id" | "part_name" | "category_id"
+  > {}
 
 export interface RocketPreviewProps {
-  images: string[];
+  image: string;
   selectedPart?: string;
-  missionParts?: string[];
-  powerSupplyPart?: string;
-  loadedPart?: string;
-  rocket?: string;
+  missionParts?: PreviewItem[];
+  batteryPart?: PreviewItem;
+  busPart?: PreviewItem;
+  rocket?: PreviewItem;
   isShow?: boolean;
+  onClick: (partItem: PreviewItem) => void;
   className?: string;
 }
+
 /**
  * 特別レクチャー(衛生組み立て画面）の衛生・ロケット画像のプレビュー部分
  */
 export const RocketPreview: FC<RocketPreviewProps> = ({
-  images,
+  image,
   selectedPart,
   missionParts,
-  powerSupplyPart,
-  loadedPart,
+  batteryPart,
+  busPart,
   rocket,
   isShow,
+  onClick,
 }) => {
   const [isShowParts, setIsShowParts] = useState(isShow);
   return (
     <>
       <Main>
-        <SImagesArea images={images} />
+        <SImagesArea image={image} />
         <STextsArea>
           <STitleArea>
             <STitle>選んだパーツ一覧</STitle>
@@ -140,49 +155,70 @@ export const RocketPreview: FC<RocketPreviewProps> = ({
           </STitleArea>
           {isShowParts && (
             <SPartsArea>
-              <SPartTitle>ミッションパーツ</SPartTitle>
-              {missionParts?.map((missionPart) => (
-                <SPartText
-                  key={missionPart}
-                  css={
-                    missionPart === selectedPart
-                      ? `border: solid 4px ${isSelectedColor}`
-                      : ""
-                  }
-                >
-                  {missionPart}
-                </SPartText>
-              ))}
-              <SPartTitle>電源パーツ</SPartTitle>
-              <SPartText
-                css={
-                  powerSupplyPart === selectedPart
-                    ? `border: solid 4px ${isSelectedColor}`
-                    : ""
-                }
-              >
-                {powerSupplyPart}
-              </SPartText>
-              <SPartTitle>積載パーツ</SPartTitle>
-              <SPartText
-                css={
-                  loadedPart === selectedPart
-                    ? `border: solid 4px ${isSelectedColor}`
-                    : ""
-                }
-              >
-                {loadedPart}
-              </SPartText>
-              <SPartTitle>打ち上げロケット</SPartTitle>
-              <SPartText
-                css={
-                  rocket === selectedPart
-                    ? `border: solid 4px ${isSelectedColor}`
-                    : ""
-                }
-              >
-                {rocket}
-              </SPartText>
+              <div>
+                <SPartTitle>ミッションパーツ</SPartTitle>
+                {missionParts?.map((missionPart) => (
+                  <SSelectWrapper
+                    key={missionPart.part_id}
+                    css={
+                      missionPart.part_id === selectedPart
+                        ? `border: solid 3px ${isSelectedColor}`
+                        : "padding: 3px"
+                    }
+                  >
+                    <SPartText
+                      key={missionPart.part_id}
+                      onClick={() => onClick(missionPart)}
+                    >
+                      {missionPart.part_name}
+                    </SPartText>
+                  </SSelectWrapper>
+                ))}
+              </div>
+              <div>
+                <SPartTitle>電源パーツ</SPartTitle>
+                {batteryPart && (
+                  <SSelectWrapper
+                    css={
+                      batteryPart?.part_id === selectedPart
+                        ? `border: solid 3px ${isSelectedColor}`
+                        : "padding: 3px"
+                    }
+                  >
+                    <SPartText onClick={() => onClick(batteryPart)}>
+                      {batteryPart?.part_name}
+                    </SPartText>
+                  </SSelectWrapper>
+                )}
+                <SPartTitle>積載パーツ</SPartTitle>
+                {busPart && (
+                  <SSelectWrapper
+                    css={
+                      busPart?.part_id === selectedPart
+                        ? `border: solid 3px ${isSelectedColor}`
+                        : "padding: 3px"
+                    }
+                  >
+                    <SPartText onClick={() => onClick(busPart)}>
+                      {busPart?.part_name}
+                    </SPartText>
+                  </SSelectWrapper>
+                )}
+                <SPartTitle>打ち上げロケット</SPartTitle>
+                {rocket && (
+                  <SSelectWrapper
+                    css={
+                      rocket?.part_id === selectedPart
+                        ? `border: solid 3px ${isSelectedColor}`
+                        : "padding: 3px"
+                    }
+                  >
+                    <SPartText onClick={() => onClick(rocket)}>
+                      {rocket?.part_name}
+                    </SPartText>
+                  </SSelectWrapper>
+                )}
+              </div>
             </SPartsArea>
           )}
         </STextsArea>
