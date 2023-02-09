@@ -19,6 +19,7 @@ import {
   getCurrentData,
   getQuestionInput,
 } from "./utils";
+import { assetsPath } from "../../data/assetsPath";
 
 export interface ScreenProps {
   slide: number;
@@ -52,7 +53,7 @@ export const Screen: FC<ScreenProps> = ({
       {getMultipleLectureData(getImageStepData, buildImageStepData).map(
         ({ src, depth }, i) => (
           <PanelObject key={i} {...{ step, depth }}>
-            <img {...{ src }} />
+            <img src={assetsPath[src]} />
           </PanelObject>
         )
       )}
@@ -96,7 +97,7 @@ export const Screen: FC<ScreenProps> = ({
         ({ src, depth, x, y, actionGoto }, i) => (
           <PanelObject key={i} {...{ step, depth, src, x, y }}>
             <img
-              {...{ src }}
+              src={assetsPath[src]}
               onClick={() => actionGoTo && actionGoTo(actionGoto)}
             />
           </PanelObject>
@@ -106,7 +107,10 @@ export const Screen: FC<ScreenProps> = ({
       {getMultipleLectureData(getPopupBtnStepData, buildPopupBtnStepData).map(
         ({ src, depth, x, y, popupName }, i) => (
           <PanelObject key={i} {...{ step, depth, src, x, y }}>
-            <img {...{ src }} onClick={() => setPopupName(popupName)} />
+            <img
+              src={assetsPath[src]}
+              onClick={() => setPopupName(popupName)}
+            />
           </PanelObject>
         )
       )}
@@ -117,7 +121,7 @@ export const Screen: FC<ScreenProps> = ({
             {src === popupName && (
               <>
                 <PanelObject {...{ step, depth, src }}>
-                  <img {...{ src }} onClick={() => setPopupName("")} />
+                  <img src={assetsPath[src]} onClick={() => setPopupName("")} />
                 </PanelObject>
                 <Narration {...{ narration }} />
               </>

@@ -14,7 +14,7 @@ const Main = styled.div<PanelProps>`
   position: relative;
   width: ${SIZE.W}px;
   height: ${SIZE.H}px;
-  background-color: #ddd;
+  background-color: #efefff;
   z-index: 0;
   & > * {
     position: absolute;

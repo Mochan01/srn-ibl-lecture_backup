@@ -1,7 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Lecture, LectureProps } from ".";
-import data from "../../assets/data/unit00_master.json";
+import data from "../../assets/data/unit01_master.json";
 import { JsonData } from '../../types';
 
 export default {
@@ -21,6 +21,5 @@ sample.args = {
   onClose: () => {
     console.log("onClickClose");
   },
-  // @ts-ignore マスターデータちゃんと入力してもらったら型合うはず...
   data: data as JsonData,
 };
