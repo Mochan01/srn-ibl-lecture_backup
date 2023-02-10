@@ -1136,6 +1136,7 @@
                   "images": {
                       "display_files": [
                           "Lv1U05_slide2-2.png",
+                          "Lv1U05_slide2-2-a.png",
                           "Lv1U05_slide2-2-a-flash.png",
                           "Lv1U05_slide2-2-b.png",
                           "Lv1U05_slide2-2-c.png",
@@ -1199,7 +1200,7 @@
                           "Lv1U05_slide2-2-b-flash.png"
                       ],
                       "delete_files": [
-                          "Lv1U05_slide2-2-b.png"
+                          "Lv1U05_slide2-2-a-flash.png"
                       ]
                   },
                   "popup": {
@@ -1257,7 +1258,7 @@
                           "Lv1U05_slide2-2-c-flash.png"
                       ],
                       "delete_files": [
-                          "Lv1U05_slide2-2-c.png"
+                          "Lv1U05_slide2-2-b-flash.png"
                       ]
                   },
                   "popup": {
@@ -1315,7 +1316,7 @@
                           "Lv1U05_slide2-2-d-flash.png"
                       ],
                       "delete_files": [
-                          "Lv1U05_slide2-2-d.png"
+                          "Lv1U05_slide2-2-c-flash.png"
                       ]
                   },
                   "popup": {
@@ -1373,7 +1374,7 @@
                           "Lv1U05_slide2-2-e-flash.png"
                       ],
                       "delete_files": [
-                          "Lv1U05_slide2-2-e.png"
+                          "Lv1U05_slide2-2-d-flash.png"
                       ]
                   },
                   "popup": {
@@ -1430,7 +1431,9 @@
                       "display_files": [
                           "Lv1U05_slide2-3.png"
                       ],
-                      "delete_files": []
+                      "delete_files": [
+                          "Lv1U05_slide2-2-e-flash.png"
+                      ]
                   },
                   "popup": {
                       "popup_btns": [],
@@ -1658,9 +1661,7 @@
                       "display_files": [
                           "Lv1U05_slide2-6-a-flash.png"
                       ],
-                      "delete_files": [
-                          "Lv1U05_slide2-6-a.png"
-                      ]
+                      "delete_files": []
                   },
                   "popup": {
                       "popup_btns": [],
@@ -1717,7 +1718,7 @@
                           "Lv1U05_slide2-6-b-flash.png"
                       ],
                       "delete_files": [
-                          "Lv1U05_slide2-6-b.png"
+                          "Lv1U05_slide2-6-a-flash.png"
                       ]
                   },
                   "popup": {
@@ -1775,7 +1776,7 @@
                           "Lv1U05_slide2-6-c-flash.png"
                       ],
                       "delete_files": [
-                          "Lv1U05_slide2-6-c.png"
+                          "Lv1U05_slide2-6-b-flash.png"
                       ]
                   },
                   "popup": {
@@ -1833,7 +1834,7 @@
                           "Lv1U05_slide2-6-d-flash.png"
                       ],
                       "delete_files": [
-                          "Lv1U05_slide2-6-d.png"
+                          "Lv1U05_slide2-6-c-flash.png"
                       ]
                   },
                   "popup": {
@@ -1891,7 +1892,7 @@
                           "Lv1U05_slide2-6-e-flash.png"
                       ],
                       "delete_files": [
-                          "Lv1U05_slide2-6-e.png"
+                          "Lv1U05_slide2-6-d-flash.png"
                       ]
                   },
                   "popup": {
@@ -1946,7 +1947,9 @@
                   },
                   "images": {
                       "display_files": [],
-                      "delete_files": []
+                      "delete_files": [
+                          "Lv1U05_slide2-6-e-flash.png"
+                      ]
                   },
                   "popup": {
                       "popup_btns": [],

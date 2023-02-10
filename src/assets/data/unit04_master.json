@@ -290,8 +290,8 @@
                       "display_result": false
                   },
                   "question_select": {
-                      "question_x": 606,
-                      "question_y": 42,
+                      "question_x": 649,
+                      "question_y": 73,
                       "button_1": "20年前くらい",
                       "ans_1": false,
                       "button_2": "50年前くらい",
@@ -3917,9 +3917,7 @@
                       "display_files": [
                           "Lv1U4_slide3-9-a-flash.png"
                       ],
-                      "delete_files": [
-                          "Lv1U4_slide3-9-a.png"
-                      ]
+                      "delete_files": []
                   },
                   "popup": {
                       "popup_btns": [],
@@ -3973,7 +3971,9 @@
                   },
                   "images": {
                       "display_files": [],
-                      "delete_files": []
+                      "delete_files": [
+                          "Lv1U4_slide3-9-a-flash.png"
+                      ]
                   },
                   "popup": {
                       "popup_btns": [],

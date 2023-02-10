@@ -231,7 +231,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -285,7 +287,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -337,7 +341,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -389,7 +395,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -443,7 +451,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -495,7 +505,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -547,7 +559,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -601,7 +615,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -655,7 +671,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -709,7 +727,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -763,7 +783,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -815,7 +837,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -867,7 +891,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -918,7 +944,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -972,7 +1000,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -1026,7 +1056,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -1080,7 +1112,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -1134,7 +1168,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -1188,7 +1224,9 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
                   "question_select": {
                       "ans_1": false,
@@ -1242,9 +1280,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -1291,9 +1336,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -1340,9 +1392,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -1389,9 +1448,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -1436,9 +1502,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -1485,9 +1558,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -1534,9 +1614,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -1581,9 +1668,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -1628,9 +1722,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -1674,9 +1775,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -1721,9 +1829,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -1768,9 +1883,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -1815,9 +1937,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -1842,7 +1971,7 @@
                   },
                   "animation": {
                       "teacher": "animation_2",
-                      "student": "animation_5"
+                      "student": "animation_6"
                   },
                   "images": {
                       "display_files": [
@@ -1864,9 +1993,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -1911,9 +2047,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -1960,9 +2103,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2007,9 +2157,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2054,9 +2211,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2103,9 +2267,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2152,9 +2323,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2199,9 +2377,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2246,9 +2431,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2295,9 +2487,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2342,9 +2541,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2389,9 +2595,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2438,9 +2651,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2487,9 +2707,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2536,9 +2763,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2583,9 +2817,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2630,9 +2871,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2677,9 +2925,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2726,9 +2981,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2773,9 +3035,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2822,9 +3091,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2869,9 +3145,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2917,9 +3200,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -2964,9 +3254,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3011,9 +3308,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3058,9 +3362,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3105,9 +3416,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3152,9 +3470,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3201,9 +3526,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3248,9 +3580,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3295,9 +3634,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3342,9 +3688,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3389,9 +3742,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3438,9 +3798,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3485,9 +3852,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3532,9 +3906,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3579,9 +3960,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3626,9 +4014,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3673,9 +4068,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3722,9 +4124,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3769,9 +4178,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {
@@ -3816,9 +4232,16 @@
                       "action_goto": []
                   },
                   "special_lecture": {
-                      "mission_select": []
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
                   },
-                  "question_select": {},
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
                   "question_input": {},
                   "result_step": false,
                   "next_steps": {

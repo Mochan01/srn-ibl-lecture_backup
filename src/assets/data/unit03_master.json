@@ -402,8 +402,8 @@
                       "display_result": false
                   },
                   "question_select": {
-                      "question_x": 129,
-                      "question_y": 494,
+                      "question_x": 170,
+                      "question_y": 525,
                       "button_1": "100機くらい",
                       "ans_1": false,
                       "button_2": "1000機くらい",
@@ -3480,8 +3480,8 @@
                       "display_result": false
                   },
                   "question_select": {
-                      "question_x": 133,
-                      "question_y": 100,
+                      "question_x": 172,
+                      "question_y": 130,
                       "button_1": "太陽の光をエネルギー<br>に変えている",
                       "ans_1": false,
                       "button_2": "大きなエンジンを<br>積んでいる",
