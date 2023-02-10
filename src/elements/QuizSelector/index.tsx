@@ -1,7 +1,5 @@
 import React, { FC, useMemo } from "react";
-import styled from "styled-components";
-import { QuizChoiceBtn, QuizAnswerBtn } from "./components";
-import { SIZE } from "../../data/SIZE";
+import { QuizChoiceBtn, QuizAnswerBtn, BtnWrapper } from "./components";
 import { QuizSelectorProvider } from "./providers";
 import { Lecture } from "src-ibl-lecture-master-unit/types/lecture";
 import { getCorrectIndex, filQuestion, getQuestionSelect } from "./utils";
@@ -11,14 +9,6 @@ export interface QuizSelectorProps {
   onAnswer?: (isCorrect: boolean) => void;
   className?: string;
 }
-
-const Main = styled.div`
-  width: fit-content;
-  display: grid;
-  grid-template-columns: repeat(2, 246px);
-  column-gap: ${SIZE.QUIZ_COLUMN_G}px;
-  row-gap: ${SIZE.QUIZ_ROW_G}px;
-`;
 
 /**
  * クイズ回答用（選択式）
@@ -39,10 +29,10 @@ export const QuizSelector: FC<QuizSelectorProps> = ({
   const questions = useMemo(() => getSelects(filQuestion), [getSelects]);
   return (
     <QuizSelectorProvider {...{ correctIndex }}>
-      <Main {...props}>
+      <BtnWrapper {...props}>
         <QuizChoiceBtn {...{ questions }} />
         <QuizAnswerBtn {...{ onAnswer }} isMaxLen={questions.length === 4} />
-      </Main>
+      </BtnWrapper>
     </QuizSelectorProvider>
   );
 };
