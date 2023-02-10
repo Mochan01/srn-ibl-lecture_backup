@@ -2,6 +2,7 @@ import React, { FC, useContext, useState } from "react";
 import styled from "styled-components";
 import { CommonProps } from "../../../types";
 import { GlobalDispatchContext } from "../../../features/LectureRoot/providers";
+import { TitleBase as Main } from "../../../elements/TitleBase";
 const ImageTitle = new URL(
   "../../../assets/prod/lecture_title.png",
   import.meta.url
@@ -12,38 +13,6 @@ export interface TitleBaseProps
   onClickSkip?: () => void;
   className?: string;
 }
-
-const Main = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: fit-content;
-  height: fit-content;
-`;
-
-const Base = styled.div`
-  width: 1007px;
-  height: 468px;
-  background-image: url(${ImageTitle});
-  /* lecture_title_base.png */
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  position: relative;
-  margin-bottom: 32px;
-`;
-
-const Wrapper = styled.div`
-  position: absolute;
-  padding: 40px 32px;
-  width: 575px;
-  height: 345px;
-  left: 389px;
-  top: 81px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
 
 const UnitName = styled.h1`
   font-size: 40px;
@@ -65,59 +34,65 @@ const StartBtn = styled.div`
   /* lecture_title_start.png */
   background-position: 0 -581px;
   background-repeat: no-repeat;
-  align-self: center;
   cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
 `;
 
-const SkipBtn = styled.div<{ isStart: boolean }>(
-  ({ isStart }) => `
-  visibility: ${isStart ? "visible" : "hidden"};
+const SkipBtn = styled.div`
   width: 180px;
   height: 59px;
   background-image: url(${ImageTitle});
   /* lecture_title_skip.png */
   background-position: 0 -518px;
   cursor: pointer;
-`
-);
+  position: absolute;
+  right: 455px;
+  bottom: 219px;
+`;
 
 export const TitleBase: FC<TitleBaseProps> = ({
   unitName,
   unitTitle,
   onClickSkip,
-  className,
+  ...props
 }) => {
   const dispatch = useContext(GlobalDispatchContext);
   const [isStart, setIsStart] = useState(false);
 
   return (
-    <Main {...{ className }}>
-      <Base>
-        <Wrapper>
-          {isStart && (
+    <>
+      <Main
+        {...props}
+        css="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto;"
+      >
+        {isStart ? (
+          <>
             <UnitName dangerouslySetInnerHTML={{ __html: unitName }} />
-          )}
-          {isStart && (
             <UnitTitle dangerouslySetInnerHTML={{ __html: unitTitle }} />
-          )}
-          {!isStart && (
-            <StartBtn
-              role="button"
-              onClick={() => {
-                setIsStart(true);
-                dispatch({ type: "isPlaying", val: true });
-              }}
-            />
-          )}
-        </Wrapper>
-      </Base>
-      <SkipBtn
-        role="button"
-        onClick={() => {
-          onClickSkip && onClickSkip();
-        }}
-        {...{ isStart }}
-      />
-    </Main>
+          </>
+        ) : (
+          <StartBtn
+            role="button"
+            onClick={() => {
+              setIsStart(true);
+              dispatch({ type: "isPlaying", val: true });
+            }}
+          />
+        )}
+      </Main>
+      {isStart && (
+        <SkipBtn
+          role="button"
+          onClick={() => {
+            onClickSkip && onClickSkip();
+          }}
+        />
+      )}
+    </>
   );
 };
