@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import { css } from "styled-components";
 import { TitleBase } from "./components/TitleBase";
-import { PresentedBy } from "./components/PresentedBy";
 import { CommonProps } from "../../types";
 import { LectureRoot } from "../../features/LectureRoot";
 import { Intro } from "src-ibl-lecture-master-unit/types";
 import { ChildWrapperProps } from "../../features/LectureRoot/components";
+import { PresentedBy } from "../../elements/PresentedBy";
 
 export interface TitleProps
   extends CommonProps,
