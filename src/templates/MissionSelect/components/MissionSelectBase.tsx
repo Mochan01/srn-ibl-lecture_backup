@@ -1,21 +1,22 @@
 import React, { FC, useContext, useState } from "react";
 import styled from "styled-components";
 import { CommonProps } from "../../../types";
-import { GlobalDispatchContext } from "../../../features/LectureRoot/providers";
-import { TitleBase as Main } from "../../../elements/TitleBase";
 import {
-  NavigationButtons,
-  NavigationButtonsProps,
-} from "../../../elements/NavigationButtons";
+  GlobalDispatchContext,
+  GlobalStateContext,
+} from "../../../features/LectureRoot/providers";
+import { TitleBase as Main } from "../../../elements/TitleBase";
+import { NavigationButtons } from "../../../elements/NavigationButtons";
+import { Mission } from "src-ibl-lecture-master-unit/types";
 const ImageTitle = new URL(
   "../../../assets/prod/lecture_title.png",
   import.meta.url
 ).toString();
 
 export interface MissionSelectBaseProps
-  extends NavigationButtonsProps,
-    Pick<CommonProps, "unitName" | "unitTitle"> {
-  onClickSkip?: () => void;
+  extends Pick<CommonProps, "unitName" | "unitTitle"> {
+  onClick: (goto: string) => void;
+  missions: Mission[];
   className?: string;
 }
 
@@ -58,12 +59,17 @@ const ButtonArea = styled.div`
 export const MissionSelectBase: FC<MissionSelectBaseProps> = ({
   unitName,
   unitTitle,
-  missionSelect,
   onClick,
+  missions,
   ...props
 }) => {
   const dispatch = useContext(GlobalDispatchContext);
   const [isStart, setIsStart] = useState(false);
+  const { progress } = useContext(GlobalStateContext);
+
+  const missionSelect = missions.find(
+    (mission) => mission.progress.step === progress.step
+  )?.mission_select;
 
   return (
     <>
@@ -86,7 +92,7 @@ export const MissionSelectBase: FC<MissionSelectBaseProps> = ({
           />
         )}
       </Main>
-      {isStart && (
+      {missionSelect && (
         <ButtonArea>
           <NavigationButtons {...{ onClick, missionSelect }} />
         </ButtonArea>

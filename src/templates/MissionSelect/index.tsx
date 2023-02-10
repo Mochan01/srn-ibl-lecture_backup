@@ -4,26 +4,25 @@ import { MissionSelectBase } from "./components/MissionSelectBase";
 import { PresentedBy } from "../../elements/PresentedBy";
 import { CommonProps } from "../../types";
 import { LectureRoot } from "../../features/LectureRoot";
-import { Intro } from "src-ibl-lecture-master-unit/types";
+import { Mission } from "src-ibl-lecture-master-unit/types";
 import { ChildWrapperProps } from "../../features/LectureRoot/components";
-import { NavigationButtonsProps } from "../../elements/NavigationButtons";
 
 export interface MissionSelectProps
-  extends CommonProps,
-    NavigationButtonsProps,
-    Pick<ChildWrapperProps, "onLastStep"> {}
+  extends Omit<CommonProps, "data">,
+    Pick<ChildWrapperProps, "onLastStep"> {
+  onClick: (goto: string) => void;
+  missions: Mission[];
+}
 
 export const MissionSelect: FC<MissionSelectProps> = ({
   unitName,
   unitTitle,
-  missionSelect,
+  missions,
   onClick,
   onClose,
   onLastStep,
-  data,
 }) => {
-  // introは1つしかないはずなので1番目をとる
-  const jsonData: Intro[] = data.intro[0].steps as Intro[];
+  const jsonData: Mission[] = missions as Mission[];
   return (
     <LectureRoot {...{ onLastStep, onClose, jsonData }} isPlaying={false}>
       <PresentedBy
@@ -42,7 +41,7 @@ export const MissionSelect: FC<MissionSelectProps> = ({
           right: 0;
           margin: auto;
         `}
-        {...{ unitName, unitTitle, missionSelect, onClick }}
+        {...{ unitName, unitTitle, missions, onClick }}
       />
     </LectureRoot>
   );
