@@ -2,11 +2,13 @@ import React, { FC, useEffect, useMemo, useContext } from "react";
 import { MiniBtn, MiniBtnProps } from "./MiniBtn";
 import { useTimer } from "use-timer";
 import {
-  GetDataProviderContext,
+  JsonDataProviderContext,
   GlobalStateContext,
   GlobalDispatchContext,
-} from "../../../../stores/providers";
-import { useWatchStepEnd } from "../../../../hooks/useWatchStepEnd";
+} from "../../../../features/LectureRoot/providers";
+import { getSlideData, getLastStepData, getStepData, handleJsonData } from "../../../../features/LectureRoot/utils";
+import { useWatchStepEnd } from "../../../../features/LectureRoot/hooks/useWatchStepEnd";
+import { Lecture } from "src-ibl-lecture-master-unit/types";
 
 export interface NextBtnProps extends Pick<MiniBtnProps, "className"> {
   onLeave: () => void;
@@ -16,17 +18,24 @@ export const NextBtn: FC<NextBtnProps> = ({ onLeave, ...props }) => {
   const { progress } = useContext(GlobalStateContext);
   const dispatch = useContext(GlobalDispatchContext);
 
-  // ステップの最後に達したらボタンを光らせる
-  const getData = useContext(GetDataProviderContext);
-  const isLastStep = useMemo(() => {
-    return !getData(progress.slide, progress.step + 1);
-  }, [getData, progress]);
+  const lectureData = useContext(JsonDataProviderContext) as Lecture[];
+  const getLectureData = handleJsonData(lectureData, progress);
 
+  const currentSlideLen = getLectureData(getSlideData).length;
+
+  // ステップの最後に達したらボタンを光らせる
   const isStepEnd = useWatchStepEnd();
-  const isBlink = useMemo(
-    () => isStepEnd && isLastStep,
-    [isStepEnd, isLastStep]
-  );
+  const isBlink = useMemo(() => {
+    return isStepEnd && progress.step >= currentSlideLen;
+  }, [isStepEnd, progress, currentSlideLen]);
+
+  // スライドの最後に達したら「次へ」ボタンの文言を変える
+  const isLeave = useMemo(() => {
+    return (
+      getLectureData(getLastStepData).progress.slide ===
+      getLectureData(getStepData).progress.slide
+    );
+  }, [getLectureData]);
 
   const { time, start, reset } = useTimer();
   useEffect(() => (isBlink ? start() : reset()), [start, reset, isBlink]);
@@ -34,12 +43,6 @@ export const NextBtn: FC<NextBtnProps> = ({ onLeave, ...props }) => {
   const variant = useMemo(
     () => (isBlink ? (time % 2 === 0 ? "flashing1" : "flashing2") : "nextOn"),
     [isBlink, time]
-  );
-
-  // スライドの最後に達したら「次へ」ボタンの文言を変える
-  const isLeave = useMemo(
-    () => !getData(progress.slide + 1).length,
-    [getData, progress.slide]
   );
 
   return (

@@ -1,0 +1,5140 @@
+{
+  "mission": [],
+  "intro": [
+      {
+          "lecture_id": "c01lv01u05m00",
+          "steps": [
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "いよいよ、本格的なミッションの始まりよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_001.mp3",
+                      "time": 4000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "ここまでオリエンテーションとして、人工衛星の使われ方について学んできて、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_002.mp3",
+                      "time": 6000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "今まであまり意識することのなかった人工衛星を、<br><br>少しは身近に感じてもらえるようになったかしら。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_003.mp3",
+                      "time": 8000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "ここからはいよいよ、あなたたちが自分の人工衛星を作る番！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_004.mp3",
+                      "time": 6000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "これまでのワークを振り返りながら、<br><br>どんな人工衛星を作っていくのか考え始めましょ！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_005.mp3",
+                      "time": 8000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_lecture": "lecture_c01lv01u05m00",
+                      "goto_step": "1_1"
+                  }
+              }
+          ]
+      }
+  ],
+  "lecture": [
+      {
+          "lecture_id": "c01lv01u05m00",
+          "steps": [
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "前回のグループワークで、人工衛星は誰かの困りごと、<br><br>つまり課題を解決するために打ち上げられていることがわかったわね。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_006.mp3",
+                      "time": 11000,
+                      "total_time": 11000,
+                      "seekbar_start": 0,
+                      "seekbar_end": 9.32
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide1-1.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "人工衛星が、誰の、どんな課題を解決しているのか整理してもらったけど、<br><br>あなたのグループでは、どんな人工衛星を取り上げたかしら。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_007.mp3",
+                      "time": 12000,
+                      "total_time": 23000,
+                      "seekbar_start": 9.33,
+                      "seekbar_end": 19.49
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "例えば気象衛星の場合、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_008.mp3",
+                      "time": 4000,
+                      "total_time": 27000,
+                      "seekbar_start": 19.5,
+                      "seekbar_end": 22.88
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide1-2.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "気象予報を提供する人は、正確な予報のために、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_009.mp3",
+                      "time": 5000,
+                      "total_time": 32000,
+                      "seekbar_start": 22.89,
+                      "seekbar_end": 27.12
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide1-3.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "雲や大気の動き、<br><br>海水温などをリアルタイムで把握しなくてはならないという課題があるし、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_010.mp3",
+                      "time": 8000,
+                      "total_time": 40000,
+                      "seekbar_start": 27.13,
+                      "seekbar_end": 33.9
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide1-4.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_6"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "研究者も、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_011.mp3",
+                      "time": 2000,
+                      "total_time": 42000,
+                      "seekbar_start": 33.91,
+                      "seekbar_end": 35.59
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide1-5.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_7"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "雲や大気の動き、<br><br>海水温などのデータを研究に使いたいという課題を持っているはずよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_012.mp3",
+                      "time": 8000,
+                      "total_time": 50000,
+                      "seekbar_start": 35.6,
+                      "seekbar_end": 42.37
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide1-6.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_8"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "こうした人たちが人工衛星からとれるデータを利用して、<br><br>気象予報や災害予測をすることで、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_013.mp3",
+                      "time": 8000,
+                      "total_time": 58000,
+                      "seekbar_start": 42.38,
+                      "seekbar_end": 49.15
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_9"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 9
+                  },
+                  "narrative": {
+                      "narration": "私たちは、その気象予報や災害予測を生活に役立てることができているわけね。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_014.mp3",
+                      "time": 7000,
+                      "total_time": 65000,
+                      "seekbar_start": 49.16,
+                      "seekbar_end": 55.08
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide1-7.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_10"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 10
+                  },
+                  "narrative": {
+                      "narration": "同じように通信衛星の場合は、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_015.mp3",
+                      "time": 4000,
+                      "total_time": 69000,
+                      "seekbar_start": 55.09,
+                      "seekbar_end": 58.47
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide1-8.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_11"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 11
+                  },
+                  "narrative": {
+                      "narration": "通信事業者が、<br><br>あらゆる場所にインターネットを提供できるようにしたいと考えたり、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_016.mp3",
+                      "time": 7000,
+                      "total_time": 76000,
+                      "seekbar_start": 58.48,
+                      "seekbar_end": 64.41
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide1-9.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_12"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 12
+                  },
+                  "narrative": {
+                      "narration": "災害時でも通信ができるようにしたい、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_017.mp3",
+                      "time": 4000,
+                      "total_time": 80000,
+                      "seekbar_start": 64.42,
+                      "seekbar_end": 67.8
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide1-10.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_13"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 13
+                  },
+                  "narrative": {
+                      "narration": "高速での通信ができるようにしたいなどと考えたりして、人工衛星を利用する。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_018.mp3",
+                      "time": 7000,
+                      "total_time": 87000,
+                      "seekbar_start": 67.81,
+                      "seekbar_end": 73.73
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide1-11.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_14"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 14
+                  },
+                  "narrative": {
+                      "narration": "通信衛星は、山岳地帯など、今までインターネットにアクセスできなかった<br><br>人々の生活を変える可能性があると期待されているわ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_019.mp3",
+                      "time": 11000,
+                      "total_time": 98000,
+                      "seekbar_start": 73.74,
+                      "seekbar_end": 83.05
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide1-12.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_15"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 15
+                  },
+                  "narrative": {
+                      "narration": "ここでのポイントは、解決したい課題があって、<br><br>そのために人工衛星がうまく利用されているということ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_020.mp3",
+                      "time": 9000,
+                      "total_time": 107000,
+                      "seekbar_start": 83.06,
+                      "seekbar_end": 90.68
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_16"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 16
+                  },
+                  "narrative": {
+                      "narration": "では、あなたが設計する人工衛星は、<br><br>どんな課題を解決できるものにしたいかな。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_021.mp3",
+                      "time": 8000,
+                      "total_time": 115000,
+                      "seekbar_start": 90.69,
+                      "seekbar_end": 97.46
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_17"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 17
+                  },
+                  "narrative": {
+                      "narration": "次のページから考えてみましょう！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_022.mp3",
+                      "time": 3000,
+                      "total_time": 118000,
+                      "seekbar_start": 97.47,
+                      "seekbar_end": 100
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "slide_end"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "これから、グループで1つミッションを選んで、<br><br>それを実現できるような人工衛星を設計し、組み立てていくの。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_023.mp3",
+                      "time": 9000,
+                      "total_time": 9000,
+                      "seekbar_start": 0.01,
+                      "seekbar_end": 11.69
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide2-1.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "今回のユニットはここ。<br><br>まずはグループで取り組むミッションを選ぶことが今日の目標よ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_024.mp3",
+                      "time": 9000,
+                      "total_time": 18000,
+                      "seekbar_start": 11.7,
+                      "seekbar_end": 23.38
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide2-2.png",
+                          "Lv1U05_slide2-2-a-flash.png",
+                          "Lv1U05_slide2-2-b.png",
+                          "Lv1U05_slide2-2-c.png",
+                          "Lv1U05_slide2-2-d.png",
+                          "Lv1U05_slide2-2-e.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "次回からは、ミッションについて詳しく知って、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_025.mp3",
+                      "time": 4000,
+                      "total_time": 22000,
+                      "seekbar_start": 23.39,
+                      "seekbar_end": 28.57
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide2-2-b-flash.png"
+                      ],
+                      "delete_files": [
+                          "Lv1U05_slide2-2-b.png"
+                      ]
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "ミッションへのアプローチを考え、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_026.mp3",
+                      "time": 3000,
+                      "total_time": 25000,
+                      "seekbar_start": 28.58,
+                      "seekbar_end": 32.47
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide2-2-c-flash.png"
+                      ],
+                      "delete_files": [
+                          "Lv1U05_slide2-2-c.png"
+                      ]
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "人工衛星を組み立て、打ち上げて、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_027.mp3",
+                      "time": 4000,
+                      "total_time": 29000,
+                      "seekbar_start": 32.48,
+                      "seekbar_end": 37.66
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide2-2-d-flash.png"
+                      ],
+                      "delete_files": [
+                          "Lv1U05_slide2-2-d.png"
+                      ]
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_6"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "手に入ったデータの活かし方を考える、という流れで進めていくわよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_028.mp3",
+                      "time": 6000,
+                      "total_time": 35000,
+                      "seekbar_start": 37.67,
+                      "seekbar_end": 45.45
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide2-2-e-flash.png"
+                      ],
+                      "delete_files": [
+                          "Lv1U05_slide2-2-e.png"
+                      ]
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_7"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "レベル１の場合、選べるミッションの選択肢は5種類！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_029.mp3",
+                      "time": 5000,
+                      "total_time": 40000,
+                      "seekbar_start": 45.46,
+                      "seekbar_end": 51.95
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide2-3.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_8"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "どれも、社会全体の課題を解決するミッションなんだけど、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_030.mp3",
+                      "time": 5000,
+                      "total_time": 45000,
+                      "seekbar_start": 51.96,
+                      "seekbar_end": 58.44
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide2-4.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_9"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 9
+                  },
+                  "narrative": {
+                      "narration": "特にどの課題を解決してみたいか、<br><br>次のページから5つのミッションを紹介するから、説明を聞いて考えてみて。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_031.mp3",
+                      "time": 10000,
+                      "total_time": 55000,
+                      "seekbar_start": 58.45,
+                      "seekbar_end": 71.43
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide2-5.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_10"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 10
+                  },
+                  "narrative": {
+                      "narration": "５つのミッションはこうよ！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_032.mp3",
+                      "time": 3000,
+                      "total_time": 58000,
+                      "seekbar_start": 71.44,
+                      "seekbar_end": 75.32
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide2-6-a.png",
+                          "Lv1U05_slide2-6-b.png",
+                          "Lv1U05_slide2-6-c.png",
+                          "Lv1U05_slide2-6-d.png",
+                          "Lv1U05_slide2-6-e.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_11"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 11
+                  },
+                  "narrative": {
+                      "narration": "アマゾンの危機"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_033.mp3",
+                      "time": 2000,
+                      "total_time": 60000,
+                      "seekbar_start": 75.33,
+                      "seekbar_end": 77.92
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide2-6-a-flash.png"
+                      ],
+                      "delete_files": [
+                          "Lv1U05_slide2-6-a.png"
+                      ]
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_12"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 12
+                  },
+                  "narrative": {
+                      "narration": "スマートシティって？"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_034.mp3",
+                      "time": 2000,
+                      "total_time": 62000,
+                      "seekbar_start": 77.93,
+                      "seekbar_end": 80.52
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide2-6-b-flash.png"
+                      ],
+                      "delete_files": [
+                          "Lv1U05_slide2-6-b.png"
+                      ]
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_13"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 13
+                  },
+                  "narrative": {
+                      "narration": "魚の群れを追え"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_035.mp3",
+                      "time": 3000,
+                      "total_time": 65000,
+                      "seekbar_start": 80.53,
+                      "seekbar_end": 84.42
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide2-6-c-flash.png"
+                      ],
+                      "delete_files": [
+                          "Lv1U05_slide2-6-c.png"
+                      ]
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_14"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 14
+                  },
+                  "narrative": {
+                      "narration": "自然災害の脅威"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_036.mp3",
+                      "time": 3000,
+                      "total_time": 68000,
+                      "seekbar_start": 84.43,
+                      "seekbar_end": 88.31
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide2-6-d-flash.png"
+                      ],
+                      "delete_files": [
+                          "Lv1U05_slide2-6-d.png"
+                      ]
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_15"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 15
+                  },
+                  "narrative": {
+                      "narration": "渡り鳥がもたらすもの。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_037.mp3",
+                      "time": 3000,
+                      "total_time": 71000,
+                      "seekbar_start": 88.32,
+                      "seekbar_end": 92.21
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide2-6-e-flash.png"
+                      ],
+                      "delete_files": [
+                          "Lv1U05_slide2-6-e.png"
+                      ]
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_16"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 16
+                  },
+                  "narrative": {
+                      "narration": "それぞれ、どのようなミッションなのか、次のページから簡単に紹介するわね。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_038.mp3",
+                      "time": 6000,
+                      "total_time": 77000,
+                      "seekbar_start": 92.22,
+                      "seekbar_end": 100
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "slide_end"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "まずは、ミッション１・アマゾンの危機。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_039.mp3",
+                      "time": 5000,
+                      "total_time": 5000,
+                      "seekbar_start": 0.01,
+                      "seekbar_end": 6.76
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide3-1.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "3_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "アマゾンといえば、南アメリカ大陸にある、世界最大の熱帯雨林のこと。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_040.mp3",
+                      "time": 7000,
+                      "total_time": 12000,
+                      "seekbar_start": 6.77,
+                      "seekbar_end": 16.22
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide3-2.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "3_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "なんと、地球上の森林面積のおよそ5分の1が、<br><br>アマゾンの熱帯雨林なのだそうよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_041.mp3",
+                      "time": 8000,
+                      "total_time": 20000,
+                      "seekbar_start": 16.23,
+                      "seekbar_end": 27.03
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide3-3.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "3_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "そんなアマゾンの熱帯雨林が、年々失われているらしいの……。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_042.mp3",
+                      "time": 6000,
+                      "total_time": 26000,
+                      "seekbar_start": 27.04,
+                      "seekbar_end": 35.14
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide3-4.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "3_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "SDGsの15番「陸の豊かさも守ろう」や、<br><br>13番「気候変動に具体的な対策を」に興味がある人は、<br><br>ぜひ選んでほしいミッションよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_043.mp3",
+                      "time": 14000,
+                      "total_time": 40000,
+                      "seekbar_start": 35.15,
+                      "seekbar_end": 54.05
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide3-5.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "3_6"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "このミッションのポイントは、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_044.mp3",
+                      "time": 3000,
+                      "total_time": 43000,
+                      "seekbar_start": 54.06,
+                      "seekbar_end": 58.11
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide3-6.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "3_7"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "日本のちょうど裏側にあるアマゾンの熱帯雨林の減少が、<br><br>日本に暮らす私たちにどんな影響をもたらすのか、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_045.mp3",
+                      "time": 10000,
+                      "total_time": 53000,
+                      "seekbar_start": 58.12,
+                      "seekbar_end": 71.62
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide3-7.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "3_8"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "そして、その減少を食い止めるにはどうしたらいいのかということよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_046.mp3",
+                      "time": 7000,
+                      "total_time": 60000,
+                      "seekbar_start": 71.63,
+                      "seekbar_end": 81.08
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide3-8.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "3_9"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 9
+                  },
+                  "narrative": {
+                      "narration": "地球の裏側の出来事であるけれど、私たちも決して無関心ではいられないわ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_047.mp3",
+                      "time": 7000,
+                      "total_time": 67000,
+                      "seekbar_start": 81.09,
+                      "seekbar_end": 90.54
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "3_10"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 10
+                  },
+                  "narrative": {
+                      "narration": "人工衛星を使って、この問題にどう取り組むのか、考えていきましょう！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_048.mp3",
+                      "time": 7000,
+                      "total_time": 74000,
+                      "seekbar_start": 90.55,
+                      "seekbar_end": 100
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "slide_end"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "次は、ミッション２・スマートシティ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_049.mp3",
+                      "time": 5000,
+                      "total_time": 5000,
+                      "seekbar_start": 0.01,
+                      "seekbar_end": 7.81
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide4-1.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "スマートシティとは、ICTなどの新しい技術で、<br><br>人々の課題を解決する仕組みをもった新しい街のこと。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_050.mp3",
+                      "time": 10000,
+                      "total_time": 15000,
+                      "seekbar_start": 7.82,
+                      "seekbar_end": 23.44
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide4-2.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "実現したら、私たちの暮らしはどう変わるのかしら？"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_051.mp3",
+                      "time": 5000,
+                      "total_time": 20000,
+                      "seekbar_start": 23.45,
+                      "seekbar_end": 31.25
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide4-3.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "SDGsの11番「住み続けられるまちづくりを」や、<br><br>9番「産業と技術革新の基盤をつくろう」に興味がある人は、<br><br>ぜひ選んでほしいミッションよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_052.mp3",
+                      "time": 13000,
+                      "total_time": 33000,
+                      "seekbar_start": 31.26,
+                      "seekbar_end": 51.56
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide4-4.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "このミッションのポイントは、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_044.mp3",
+                      "time": 3000,
+                      "total_time": 36000,
+                      "seekbar_start": 51.57,
+                      "seekbar_end": 56.25
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide4-5.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_6"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "少しずつ実験が始まっているスマートシティ化の取り組みには、<br><br>どのようなものがあるのか知ることと、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_053.mp3",
+                      "time": 8000,
+                      "total_time": 44000,
+                      "seekbar_start": 56.26,
+                      "seekbar_end": 68.75
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide4-6.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_7"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "街で生活する人々のどんな課題が、ICTの力でどう解決できそうか考えること。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_054.mp3",
+                      "time": 8000,
+                      "total_time": 52000,
+                      "seekbar_start": 68.76,
+                      "seekbar_end": 81.25
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide4-7.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_8"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "あなたの住んでいる街の課題も、<br><br>スマートシティ化によって解決できるかもしれない！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_055.mp3",
+                      "time": 6000,
+                      "total_time": 58000,
+                      "seekbar_start": 81.26,
+                      "seekbar_end": 90.63
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_9"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 9
+                  },
+                  "narrative": {
+                      "narration": "街づくりや地域に興味がある人に、ぜひ取り組んでほしいミッションよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_056.mp3",
+                      "time": 6000,
+                      "total_time": 64000,
+                      "seekbar_start": 90.64,
+                      "seekbar_end": 100
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "slide_end"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "次は、ミッション３・魚の群れを追え！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_057.mp3",
+                      "time": 6000,
+                      "total_time": 6000,
+                      "seekbar_start": 0.01,
+                      "seekbar_end": 7.59
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide5-1.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "お寿司に焼き魚、煮物……魚は、日本食には欠かせないものよね。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_058.mp3",
+                      "time": 8000,
+                      "total_time": 14000,
+                      "seekbar_start": 7.6,
+                      "seekbar_end": 17.72
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "日本近海をはじめとして、世界には多くの魚が集まる「漁場」があって、<br><br>私たちは豊かな水産資源を利用することができているわ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_059.mp3",
+                      "time": 12000,
+                      "total_time": 26000,
+                      "seekbar_start": 17.73,
+                      "seekbar_end": 32.91
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide5-2.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "だけど近年、その水産資源に異変が起きているそうよ……！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_060.mp3",
+                      "time": 6000,
+                      "total_time": 32000,
+                      "seekbar_start": 32.92,
+                      "seekbar_end": 40.51
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide5-3.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "SDGsの14番「海の豊かさを守ろう」や、<br><br>12番「つくる責任つかう責任」に興味がある人は、<br><br>ぜひ選んでほしいミッションよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_061.mp3",
+                      "time": 13000,
+                      "total_time": 45000,
+                      "seekbar_start": 40.52,
+                      "seekbar_end": 56.96
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide5-4.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_6"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "このミッションのポイントは、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_044.mp3",
+                      "time": 3000,
+                      "total_time": 48000,
+                      "seekbar_start": 56.97,
+                      "seekbar_end": 60.76
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide5-5.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_7"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "漁業をめぐる課題には、どのようなものがあるのか、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_062.mp3",
+                      "time": 5000,
+                      "total_time": 53000,
+                      "seekbar_start": 60.77,
+                      "seekbar_end": 67.09
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide5-6.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_8"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "そして、これからも海の豊かさを守り、<br><br>水産資源を利用するにはどうすればよいのかを考えること！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_063.mp3",
+                      "time": 9000,
+                      "total_time": 62000,
+                      "seekbar_start": 67.1,
+                      "seekbar_end": 78.48
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide5-7.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_9"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 9
+                  },
+                  "narrative": {
+                      "narration": "将来、魚が採れなくなってしまったら、<br><br>生態系への影響も、日本の食文化への影響も計り知れないわ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_064.mp3",
+                      "time": 10000,
+                      "total_time": 72000,
+                      "seekbar_start": 78.49,
+                      "seekbar_end": 91.14
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_10"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 10
+                  },
+                  "narrative": {
+                      "narration": "食い止めるために、人工衛星を活用して何ができるか考えてみましょう！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_065.mp3",
+                      "time": 7000,
+                      "total_time": 79000,
+                      "seekbar_start": 91.15,
+                      "seekbar_end": 100
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "slide_end"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 6,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "次は、ミッション４・自然災害の脅威。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_066.mp3",
+                      "time": 6000,
+                      "total_time": 6000,
+                      "seekbar_start": 0.01,
+                      "seekbar_end": 8.11
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide6-1.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "6_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 6,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "地震・洪水・火山の噴火……世界中どこにいても、<br><br>自然災害と無縁ではいられないわ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_067.mp3",
+                      "time": 10000,
+                      "total_time": 16000,
+                      "seekbar_start": 8.12,
+                      "seekbar_end": 21.62
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide6-2.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "6_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 6,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "特に私たちが暮らす日本は、自然災害のリスクが高い国で、<br><br>実際に自然災害に関するニュースを目にすることも多いはずよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_068.mp3",
+                      "time": 11000,
+                      "total_time": 27000,
+                      "seekbar_start": 21.63,
+                      "seekbar_end": 36.49
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide6-3.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "6_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 6,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "自然災害の被害を少しでも少なくする方法はないのかしら……？"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_069.mp3",
+                      "time": 6000,
+                      "total_time": 33000,
+                      "seekbar_start": 36.5,
+                      "seekbar_end": 44.59
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide6-4.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "6_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 6,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "SDGsの11番「住み続けられるまちづくりを」や、<br><br>13番「気候変動に具体的な対策を」に興味がある人は、<br><br>ぜひ選んでほしいミッションよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_070.mp3",
+                      "time": 14000,
+                      "total_time": 47000,
+                      "seekbar_start": 44.6,
+                      "seekbar_end": 63.51
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide6-5.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "6_6"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 6,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "このミッションのポイントは、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_044.mp3",
+                      "time": 3000,
+                      "total_time": 50000,
+                      "seekbar_start": 63.52,
+                      "seekbar_end": 67.57
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide6-6.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "6_7"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 6,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "自然災害にはどのようなものがあって、<br><br>日本で特に起こりやすいのは何なのかを知ることと、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_071.mp3",
+                      "time": 8000,
+                      "total_time": 58000,
+                      "seekbar_start": 67.58,
+                      "seekbar_end": 78.38
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide6-7.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "6_8"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 6,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "自然災害の被害を減らす「減災」をするには、<br><br>どうすればよいのかを考えること！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_072.mp3",
+                      "time": 7000,
+                      "total_time": 65000,
+                      "seekbar_start": 78.39,
+                      "seekbar_end": 87.84
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide6-8.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "6_9"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 6,
+                      "step": 9
+                  },
+                  "narrative": {
+                      "narration": "自分の暮らしに直結する問題だけに、<br><br>人工衛星を活用して何ができるか考えてみたいわね。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_073.mp3",
+                      "time": 9000,
+                      "total_time": 74000,
+                      "seekbar_start": 87.85,
+                      "seekbar_end": 100
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "slide_end"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 7,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "最後は、ミッション５・渡り鳥がもたらすもの。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_074.mp3",
+                      "time": 6000,
+                      "total_time": 6000,
+                      "seekbar_start": 0.01,
+                      "seekbar_end": 8.22
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide7-1.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "7_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 7,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "季節によって移動し、日本にも多く飛来する「渡り鳥」。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_075.mp3",
+                      "time": 6000,
+                      "total_time": 12000,
+                      "seekbar_start": 8.23,
+                      "seekbar_end": 16.44
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide7-2.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "7_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 7,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "生態系において大きな役割を果たす一方で、<br><br>近年では人間の活動によって様々な影響を受けているそうよ……。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_076.mp3",
+                      "time": 11000,
+                      "total_time": 23000,
+                      "seekbar_start": 16.45,
+                      "seekbar_end": 31.51
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide7-3.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "7_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 7,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "普段あまり意識することのない「渡り鳥」のことを知ると、<br><br>私たち人間の活動について考えさせられるわ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_077.mp3",
+                      "time": 9000,
+                      "total_time": 32000,
+                      "seekbar_start": 31.52,
+                      "seekbar_end": 43.84
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "7_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 7,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "SDGsの12番「つくる責任・つかう責任」や、<br><br>15番「陸の豊かさも守ろう」に興味がある人は、<br><br>ぜひ選んでほしいミッションよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_078.mp3",
+                      "time": 13000,
+                      "total_time": 45000,
+                      "seekbar_start": 43.85,
+                      "seekbar_end": 61.64
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide7-4.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "7_6"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 7,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "このミッションのポイントは、"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_044.mp3",
+                      "time": 3000,
+                      "total_time": 48000,
+                      "seekbar_start": 61.65,
+                      "seekbar_end": 65.75
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide7-5.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "7_7"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 7,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "人間の活動が渡り鳥にどんな影響をもたらし、<br><br>それによって自然環境がどう変化しているのか。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_079.mp3",
+                      "time": 9000,
+                      "total_time": 57000,
+                      "seekbar_start": 65.76,
+                      "seekbar_end": 78.08
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide7-6.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "7_8"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 7,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "そして、渡り鳥を守るために私たちにできることは何なのかを考えること。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_080.mp3",
+                      "time": 7000,
+                      "total_time": 64000,
+                      "seekbar_start": 78.09,
+                      "seekbar_end": 87.67
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide7-7.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "7_9"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 7,
+                      "step": 9
+                  },
+                  "narrative": {
+                      "narration": "渡り鳥の知られざる生態についても知ることができるから、<br><br>動物好きの人にはぜひ取り組んでほしいミッションよ！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_081.mp3",
+                      "time": 9000,
+                      "total_time": 73000,
+                      "seekbar_start": 87.68,
+                      "seekbar_end": 100
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "slide_end"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 8,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "さあ、ここまで5つのミッションを簡単に紹介してきたわ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_082.mp3",
+                      "time": 6000,
+                      "total_time": 6000,
+                      "seekbar_start": 0.01,
+                      "seekbar_end": 8
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide8-1.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "8_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 8,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "それじゃあ、<br><br>これからグループで取り組むミッションを１つ選んでいきましょう！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_083.mp3",
+                      "time": 7000,
+                      "total_time": 13000,
+                      "seekbar_start": 8.01,
+                      "seekbar_end": 17.33
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "8_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 8,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "まずは、5つのミッションのうち、<br><br>取り組んでみたいと思ったものと、その理由を共有しあってみて。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_084.mp3",
+                      "time": 9000,
+                      "total_time": 22000,
+                      "seekbar_start": 17.34,
+                      "seekbar_end": 29.33
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide8-2.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "8_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 8,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "どのミッションに興味を持ったかは人それぞれ。<br><br>興味を持った理由にしっかり耳を傾けてみて。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_085.mp3",
+                      "time": 9000,
+                      "total_time": 31000,
+                      "seekbar_start": 29.34,
+                      "seekbar_end": 41.33
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "8_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 8,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "次に、これからグループとして取り組んでいくミッションを、<br><br>話し合って１つに決めましょう。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_086.mp3",
+                      "time": 8000,
+                      "total_time": 39000,
+                      "seekbar_start": 41.34,
+                      "seekbar_end": 52
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide8-3.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "8_6"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 8,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "時間が余ったグループは、決めたミッションに取り組むことが、<br><br>社会のどんな課題解決につながりそうかも話し合ってみて！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_087.mp3",
+                      "time": 10000,
+                      "total_time": 49000,
+                      "seekbar_start": 52.01,
+                      "seekbar_end": 65.33
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide8-4.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "8_7"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 8,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "話し合いをして、終わったら評価の入力画面に進んでね。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_125.mp3",
+                      "time": 6000,
+                      "total_time": 55000,
+                      "seekbar_start": 65.34,
+                      "seekbar_end": 73.33
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U05_slide8-5.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "8_8"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 8,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "自分自身のことはもちろん、一緒に活動したメンバーのことも振り返って、評価を入力してみて。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv2U01_53.mp3",
+                      "time": 8000,
+                      "total_time": 63000,
+                      "seekbar_start": 73.34,
+                      "seekbar_end": 84
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "8_9"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 8,
+                      "step": 9
+                  },
+                  "narrative": {
+                      "narration": "次回は、グループで決めたミッションについて、さらに詳しく学んでいくわよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_088.mp3",
+                      "time": 7000,
+                      "total_time": 70000,
+                      "seekbar_start": 84.01,
+                      "seekbar_end": 93.33
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "8_10"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 8,
+                      "step": 10
+                  },
+                  "narrative": {
+                      "narration": "グループで決めたミッションに関するレクチャーを視聴するようにしてね！"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv1U05_089.mp3",
+                      "time": 5000,
+                      "total_time": 75000,
+                      "seekbar_start": 93.34,
+                      "seekbar_end": 100
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "lecture_end"
+                  }
+              }
+          ]
+      }
+  ]
+}

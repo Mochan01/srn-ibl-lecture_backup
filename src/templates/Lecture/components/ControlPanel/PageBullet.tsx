@@ -1,10 +1,12 @@
-import React, { FC, useContext, useMemo } from "react";
+import React, { FC, useContext } from "react";
 import styled from "styled-components";
+import { getLastStepData, handleJsonData } from "../../../../features/LectureRoot/utils";
 import {
-  GetDataProviderContext,
+  JsonDataProviderContext,
   GlobalDispatchContext,
   GlobalStateContext,
-} from "../../../../stores/providers";
+} from "../../../../features/LectureRoot/providers";
+import { Lecture } from "src-ibl-lecture-master-unit/types";
 const ImageLecture = new URL(
   "../../../../assets/prod/lecture_panel_answer.png",
   import.meta.url
@@ -48,30 +50,29 @@ const Bullet = styled.div<{ isActive: boolean }>(
 );
 
 export const PageBullet: FC = () => {
-  const getData = useContext(GetDataProviderContext);
   const { progress } = useContext(GlobalStateContext);
   const dispatch = useContext(GlobalDispatchContext);
 
-  const slideLen = useMemo(
-    () => getData()[getData().length - 1].progress.slide,
-    [getData]
-  );
+  const lectureData = useContext(JsonDataProviderContext) as Lecture[];
+  const getLectureData = handleJsonData(lectureData, progress);
 
   return (
     <Wrapper>
       <Grid>
-        {[...Array(slideLen)].map((x, i) => (
-          <Bullet
-            key={i}
-            isActive={progress.slide >= i + 1}
-            onClick={() => {
-              dispatch({
-                type: "progress",
-                val: { slide: i + 1, step: 1 },
-              });
-            }}
-          />
-        ))}
+        {[...Array(getLectureData(getLastStepData).progress.slide)].map(
+          (x, i) => (
+            <Bullet
+              key={i}
+              isActive={progress.slide >= i + 1}
+              onClick={() => {
+                dispatch({
+                  type: "progress",
+                  val: { slide: i + 1, step: 1 },
+                });
+              }}
+            />
+          )
+        )}
       </Grid>
     </Wrapper>
   );

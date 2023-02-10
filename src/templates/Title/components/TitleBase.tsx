@@ -1,14 +1,14 @@
 import React, { FC, useContext, useState } from "react";
 import styled from "styled-components";
-import { MainComponentProps } from "../../../types";
-import { GlobalDispatchContext } from "../../../stores";
+import { CommonProps } from "../../../types";
+import { GlobalDispatchContext } from "../../../features/LectureRoot/providers";
 const ImageTitle = new URL(
   "../../../assets/prod/lecture_title.png",
   import.meta.url
 ).toString();
 
 export interface TitleBaseProps
-  extends Pick<MainComponentProps, "unitName" | "unitTitle"> {
+  extends Pick<CommonProps, "unitName" | "unitTitle"> {
   onClickSkip?: () => void;
   className?: string;
 }
@@ -69,9 +69,9 @@ const StartBtn = styled.div`
   cursor: pointer;
 `;
 
-const SkipBtn = styled.div<{ isStartClicked: boolean }>(
-  ({ isStartClicked }) => `
-  visibility: ${isStartClicked ? "visible" : "hidden"};
+const SkipBtn = styled.div<{ isStart: boolean }>(
+  ({ isStart }) => `
+  visibility: ${isStart ? "visible" : "hidden"};
   width: 180px;
   height: 59px;
   background-image: url(${ImageTitle});
@@ -88,23 +88,23 @@ export const TitleBase: FC<TitleBaseProps> = ({
   className,
 }) => {
   const dispatch = useContext(GlobalDispatchContext);
-  const [isStartClicked, setIsStartClicked] = useState(false);
+  const [isStart, setIsStart] = useState(false);
 
   return (
     <Main {...{ className }}>
       <Base>
         <Wrapper>
-          {isStartClicked && (
+          {isStart && (
             <UnitName dangerouslySetInnerHTML={{ __html: unitName }} />
           )}
-          {isStartClicked && (
+          {isStart && (
             <UnitTitle dangerouslySetInnerHTML={{ __html: unitTitle }} />
           )}
-          {!isStartClicked && (
+          {!isStart && (
             <StartBtn
               role="button"
               onClick={() => {
-                setIsStartClicked(true);
+                setIsStart(true);
                 dispatch({ type: "isPlaying", val: true });
               }}
             />
@@ -114,10 +114,9 @@ export const TitleBase: FC<TitleBaseProps> = ({
       <SkipBtn
         role="button"
         onClick={() => {
-          if (!onClickSkip) return;
-          onClickSkip();
+          onClickSkip && onClickSkip();
         }}
-        {...{ isStartClicked }}
+        {...{ isStart }}
       />
     </Main>
   );

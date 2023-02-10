@@ -11,6 +11,6 @@ const template: Story<CountDownProps> = (args) => <CountDown {...args} />;
 
 export const sample = template.bind({});
 sample.args = {
-  initialTimeSeconds: 65,
+  initialTimeSeconds: 5,
   onEnd: () => console.log("終了時の処理"),
 };

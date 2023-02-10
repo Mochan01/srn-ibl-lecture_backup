@@ -1,10 +1,12 @@
 import { MiniBtn, MiniBtnProps } from "./MiniBtn";
-import React, { FC, useMemo, useContext } from "react";
+import React, { FC, useContext } from "react";
 import {
-  GetDataProviderContext,
   GlobalStateContext,
   GlobalDispatchContext,
-} from "../../../../stores/providers";
+  JsonDataProviderContext,
+} from "../../../../features/LectureRoot/providers";
+import { Lecture } from "src-ibl-lecture-master-unit/types";
+import { getStepData, handleJsonData } from "../../../../features/LectureRoot/utils";
 
 export interface PrevBtnProps extends Pick<MiniBtnProps, "className"> {
   onLeave: () => void;
@@ -14,11 +16,8 @@ export const PrevBtn: FC<PrevBtnProps> = ({ onLeave, ...props }) => {
   const { progress } = useContext(GlobalStateContext);
   const dispatch = useContext(GlobalDispatchContext);
 
-  const getData = useContext(GetDataProviderContext);
-  const isLeave = useMemo(
-    () => !getData(progress.slide - 1).length,
-    [progress.slide]
-  );
+  const lectureData = useContext(JsonDataProviderContext) as Lecture[];
+  const getLectureData = handleJsonData(lectureData, progress);
 
   return (
     <MiniBtn
@@ -27,7 +26,8 @@ export const PrevBtn: FC<PrevBtnProps> = ({ onLeave, ...props }) => {
       variant="prevOn"
       hoverVariant="prevOff"
       onClick={() => {
-        if (isLeave) {
+        // スライドが最初の状態で戻ろうとしたらタイトルに戻したいとのこと
+        if (getLectureData(getStepData).progress.slide === 1) {
           onLeave();
           return;
         }

@@ -1,6 +1,6 @@
 import React, { FC, useContext } from "react";
 import { MiniBtn, MiniBtnProps } from "./MiniBtn";
-import { GlobalDispatchContext } from "../../../../stores/providers";
+import { GlobalDispatchContext } from "../../../../features/LectureRoot/providers";
 
 export interface PlayBtnProps
   extends Pick<MiniBtnProps, "className"> {}

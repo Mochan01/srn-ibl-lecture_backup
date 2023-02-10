@@ -11,14 +11,33 @@ const template: Story<QuizSelectorProps> = (args) => <QuizSelector {...args} />;
 
 export const three: { args: QuizSelectorProps } = template.bind({});
 three.args = {
-  questions: ["AはAである", "AはBである", "AはCである", "AはDである"],
-  correctIndex: 0,
-  onAnswer: (isCorrect) => alert(isCorrect)
+  questionSelect: {
+    question_y: 0,
+    question_x: 0,
+    button_1: "100機ぐらい",
+    button_2: "1000機ぐらい",
+    button_3: "3000機ぐらい",
+    ans_1: true,
+    ans_2: false,
+    ans_3: false,
+    ans_4: false,
+  },
+  onAnswer: (isCorrect) => alert(isCorrect),
 };
 
 export const four: { args: QuizSelectorProps } = template.bind({});
 four.args = {
-  questions: ["AはAである", "AはBである", "AはCである"],
-  correctIndex: 0,
-  onAnswer: (isCorrect) => alert(isCorrect)
+  questionSelect: {
+    question_y: 0,
+    question_x: 0,
+    button_1: "100機ぐらい",
+    button_2: "1000機ぐらい",
+    button_3: "3000機ぐらい",
+    button_4: "4500機ぐらい",
+    ans_1: false,
+    ans_2: false,
+    ans_3: false,
+    ans_4: true,
+  },
+  onAnswer: (isCorrect) => alert(isCorrect),
 };

@@ -1,9 +1,7 @@
 import React, { FC, useContext, useState } from "react";
 import { Radix } from "./Radix";
 import { useSeekBarAutoPlay, useSeekBarAction } from "../../hooks";
-import { useAutoMoveProgress } from "../../../../hooks";
-import { useWatchStepEnd } from "../../../../hooks/useWatchStepEnd";
-import { GlobalDispatchContext } from "../../../../stores/providers";
+import { GlobalDispatchContext } from "../../../../features/LectureRoot/providers";
 
 export interface SeekBarProps {
   className?: string;
@@ -13,9 +11,6 @@ export interface SeekBarProps {
  * シークバー
  */
 export const SeekBar: FC<SeekBarProps> = (props) => {
-  const isStepEnd = useWatchStepEnd();
-  useAutoMoveProgress(isStepEnd);
-
   const { value: usrValue, setValue, updateProgress } = useSeekBarAction();
   const autoValue = useSeekBarAutoPlay();
 

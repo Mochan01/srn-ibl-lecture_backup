@@ -1,18 +1,23 @@
 import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
-const ImageLecture = new URL("../../assets/prod/lecture_panel_answer.png", import.meta.url).toString();
+import { fontWeight } from "../../data/fontWeight";
+const ImageLecture = new URL(
+  "../../assets/prod/lecture_panel_answer.png",
+  import.meta.url
+).toString();
 
 export interface LectureFrameProps {
   unitName: string;
   unitTitle: string;
   children?: ReactNode;
+  countDown?: ReactNode;
 }
 
 /* lecture_base.png */
-const LectureBase = styled.div`
-	width: 1286px;
-	height: 965px;
-  background-image: url(${ ImageLecture });
+const Main = styled.div`
+  width: 1286px;
+  height: 965px;
+  background-image: url(${ImageLecture});
   background-repeat: no-repeat;
   background-position: 0 0;
   position: relative;
@@ -22,7 +27,7 @@ const Frame = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  // これがないとクイズエリアがタップできなくなる
+  // これがないと中の要素がタップできなくなる
   pointer-events: none;
 `;
 
@@ -34,21 +39,22 @@ const HeadLine = styled.div`
 
 /* lecture_headline.png */
 const LectureHeadLine = styled(HeadLine)`
-  background-image: url(${ ImageLecture });
+  background-image: url(${ImageLecture});
   background-position: 0 -1938px;
   background-repeat: no-repeat;
   position: absolute;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+  margin-top: 9px;
+  pointer-events: auto;
 `;
 
 /* lecture_flame.png */
 const Rectangle = styled.div`
-  background-image: url(${ ImageLecture });
+  background-image: url(${ImageLecture});
   width: 1286px;
-	height: 965px;
-  background-position:0 -969px;
+  height: 965px;
+  background-position: 0 -969px;
   background-repeat: no-repeat;
   position: relative;
 `;
@@ -61,33 +67,33 @@ const Comment = styled.p`
   overflow: hidden;
 `;
 
-const UnitName = styled(Comment)`
-  font-size: 22px;
-  width: 120px;
-  padding-left: 23px;
-`;
-
-const UnitTitle = styled(Comment)`
-  font-size: 30px;
-  width: 880px;
+const Unit = styled(Comment)`
+  font-size: 23px;
+  font-weight: ${fontWeight["medium"]};
+  margin: 18px 0 0 54px;
 `;
 
 export const LectureFrame: FC<LectureFrameProps> = ({
   unitName,
   unitTitle,
-  children
+  children,
+  countDown,
 }) => {
   return (
-    <LectureBase>
+    <Main>
       <HeadLine />
-      { children }
+      {children}
       <Frame>
         <LectureHeadLine>
-          <UnitName>{ unitName }</UnitName>
-          <UnitTitle>{ unitTitle }</UnitTitle>
+          <Unit>
+            {unitName}
+            <span css="width: 24px; display: inline-block;" />
+            {unitTitle}
+          </Unit>
+          {countDown}
         </LectureHeadLine>
         <Rectangle />
       </Frame>
-    </LectureBase>
+    </Main>
   );
 };

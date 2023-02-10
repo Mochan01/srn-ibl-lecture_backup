@@ -1,1 +1,2 @@
-export * from "./mainComponentProps";
+export * from "./lectureProps";
+export * from "./jsonData";
