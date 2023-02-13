@@ -34,7 +34,7 @@ const Wrapper = styled.div`
 export const TitleBase: FC<TitleBaseProps> = ({ children, ...props }) => {
   return (
     <Main {...props}>
-      <Wrapper>{children}</Wrapper>wq
+      <Wrapper>{children}</Wrapper>
     </Main>
   );
 };

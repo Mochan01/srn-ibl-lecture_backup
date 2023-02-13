@@ -1,9 +1,10 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Lecture, LectureProps } from ".";
-import data from "../../assets/data/unit01_master.json";
+import data from "../../assets/data/unit00_master.json";
 import { JsonData } from "../../types";
 import { Lecture as LectureDataType } from "src-ibl-lecture-master-unit/types";
+
 export default {
   title: "templates/Lecture",
   component: Lecture,

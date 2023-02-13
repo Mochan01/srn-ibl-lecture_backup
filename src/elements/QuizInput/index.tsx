@@ -4,7 +4,7 @@ import { QuizAnswerBtn } from "../QuizAnswerBtn";
 import { TextBox } from "./components/TextBox";
 import { Variant } from "../QuizAnswerBtn/types";
 import { QUIZ_SIGN } from "../QuizChoiceBtn";
-import { useAudio } from '../../hooks/useAudio';
+import { usePingPong } from "../../hooks";
 
 const ImageLecture = new URL(
   "../../assets/prod/lecture_panel_answer.png",
@@ -16,11 +16,14 @@ export interface QuizInputProps {
 }
 
 interface MainProps {
+  isAnswer: boolean;
   sign?: "circle" | "cross";
 }
 
 const Main = styled.div<MainProps>(
-  ({ sign }) => `
+  ({ sign, isAnswer }) => `
+  // 回答したらインタラクションできなくする
+  pointer-events: ${isAnswer ? "none" : "auto"};
   width: 532px;
   height: 182px;
   position: relative;
@@ -56,41 +59,44 @@ const SAnswer = styled.div`
 export const QuizInput: FC<QuizInputProps> = ({ answer, onAnswer }) => {
   // 解答状態の状態管理
   const [inputAnswer, setInputAnswer] = useState<string>("");
-  const [isAnswered, setIsAnswered] = useState(false);
-  const [isCorrect, setIsCorrect] = useState(false);
+  const [isAnswer, setIsAnswer] = useState(false);
 
-  const [play] = useAudio("quiz_correct.mp3");
+  const isCorrect = useMemo(
+    () => inputAnswer === answer,
+    [inputAnswer, answer]
+  );
+
+  const playPingPong = usePingPong(isCorrect);
 
   // 解答ボタン押下またはエンターキーを押下したら発火
-  const handleAnswer = useCallback(() => {
-    if (inputAnswer === "") return;
-    setIsAnswered(true);
+  const handleAnswer = useCallback(async () => {
+    if (!inputAnswer) return;
+    if(isAnswer) return; // 無いとエンターキーで連打できる
 
-    const isCorrect = inputAnswer === answer;
+    setIsAnswer(true);
 
-    setIsCorrect(isCorrect);
-    isCorrect && play();
+    await playPingPong();
     onAnswer && onAnswer(isCorrect);
-  }, [answer, inputAnswer, onAnswer]);
+  }, [inputAnswer, isAnswer, setIsAnswer, playPingPong, onAnswer]);
 
   const onChange = useCallback((input: string) => {
     setInputAnswer(input);
   }, []);
 
   const answerBtnColor: Variant = useMemo(
-    () => (inputAnswer !== "" ? (isAnswered ? "RED" : "WHITE") : "GRAY"),
-    [inputAnswer, isAnswered]
+    () => (inputAnswer !== "" ? (isAnswer ? "RED" : "WHITE") : "GRAY"),
+    [inputAnswer, isAnswer]
   );
 
   // 解答後につくマルバツの記号アイコン判定
-  const sign = isAnswered ? (isCorrect ? "circle" : "cross") : void 0;
+  const sign = isAnswer ? (isCorrect ? "circle" : "cross") : void 0;
 
   return (
-    <Main {...{ sign }}>
+    <Main {...{ isAnswer, sign }}>
       <TextBox {...{ onChange }} onEnter={handleAnswer} />
       <div css={"margin-bottom: 28px"}></div>
       <SAnswerArea>
-        {isAnswered && (
+        {isAnswer && (
           <>
             <SAnswer>答：</SAnswer>
             {/* 答えが10文字以上の場合、改行する */}

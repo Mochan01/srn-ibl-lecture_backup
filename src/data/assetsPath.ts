@@ -1428,7 +1428,7 @@ export const assetsPath: { [key in string]: string } = {
     import.meta.url
   ).toString(),
   "ST_L1U1_127+.mp3": new URL(
-    "../assets/level1/ST_L1U1_127+.mp3",
+    "../assets/level1/ST_L1U1_127.mp3",
     import.meta.url
   ).toString(),
   "ST_L1U1_128.mp3": new URL(
