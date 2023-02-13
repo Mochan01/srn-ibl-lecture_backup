@@ -8,21 +8,20 @@ import { Mission } from "src-ibl-lecture-master-unit/types";
 import { ChildWrapperProps } from "../../features/LectureRoot/components";
 
 export interface MissionSelectProps
-  extends Omit<CommonProps, "data">,
+  extends CommonProps<Mission[]>,
     Pick<ChildWrapperProps, "onLastStep"> {
   onClick: (goto: string) => void;
-  missions: Mission[];
 }
 
 export const MissionSelect: FC<MissionSelectProps> = ({
   unitName,
   unitTitle,
-  missions,
+  data,
   onClick,
   onClose,
   onLastStep,
 }) => {
-  const jsonData: Mission[] = missions as Mission[];
+  const jsonData: Mission[] = data;
   return (
     <LectureRoot {...{ onLastStep, onClose, jsonData }} isPlaying={false}>
       <PresentedBy
@@ -41,7 +40,7 @@ export const MissionSelect: FC<MissionSelectProps> = ({
           right: 0;
           margin: auto;
         `}
-        {...{ unitName, unitTitle, missions, onClick }}
+        {...{ unitName, unitTitle, data, onClick }}
       />
     </LectureRoot>
   );

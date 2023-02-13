@@ -5,7 +5,7 @@ import { CommonProps } from "../../types";
 import { LectureRoot } from "../../features/LectureRoot";
 import { Lecture as LectureDataType } from "src-ibl-lecture-master-unit/types";
 
-export interface LectureProps extends CommonProps {
+export interface LectureProps extends CommonProps<LectureDataType[]> {
   onLectureLeave: (key: "begin" | "end") => void;
 }
 
@@ -25,10 +25,9 @@ export const Lecture: FC<LectureProps> = ({
   onClose,
   unitName,
   unitTitle,
-  data
+  data,
 }) => {
-  const jsonData: LectureDataType[] = data.lecture[0]
-    .steps as LectureDataType[];
+  const jsonData = data as LectureDataType[];
   return (
     <LectureRoot {...{ onClose, jsonData }}>
       <Wrapper>

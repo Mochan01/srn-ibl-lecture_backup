@@ -1,8 +1,10 @@
-import { JsonData } from './jsonData';
+import { Intro, Lecture, Mission } from "src-ibl-lecture-master-unit/types";
 
-export interface CommonProps {
+export type LectureType = Mission | Intro | Lecture;
+
+export interface CommonProps<T extends Array<LectureType>> {
   unitName: string;
   unitTitle: string;
-  data: JsonData;
+  data: T;
   onClose?: () => void;
 }

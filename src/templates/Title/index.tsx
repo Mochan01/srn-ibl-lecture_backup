@@ -8,7 +8,7 @@ import { ChildWrapperProps } from "../../features/LectureRoot/components";
 import { PresentedBy } from "../../elements/PresentedBy";
 
 export interface TitleProps
-  extends CommonProps,
+  extends CommonProps<Intro[]>,
     Pick<ChildWrapperProps, "onLastStep"> {
   onClickSkip?: () => void;
 }
@@ -22,7 +22,7 @@ export const Title: FC<TitleProps> = ({
   data,
 }) => {
   // introは1つしかないはずなので1番目をとる
-  const jsonData: Intro[] = data.intro[0].steps as Intro[];
+  const jsonData: Intro[] = data;
   return (
     <LectureRoot {...{ onLastStep, onClose, jsonData }} isPlaying={false}>
       <PresentedBy

@@ -13,10 +13,8 @@ const ImageTitle = new URL(
   import.meta.url
 ).toString();
 
-export interface MissionSelectBaseProps
-  extends Pick<CommonProps, "unitName" | "unitTitle"> {
+export interface MissionSelectBaseProps extends CommonProps<Mission[]> {
   onClick: (goto: string) => void;
-  missions: Mission[];
   className?: string;
 }
 
@@ -60,12 +58,13 @@ export const MissionSelectBase: FC<MissionSelectBaseProps> = ({
   unitName,
   unitTitle,
   onClick,
-  missions,
+  data,
   ...props
 }) => {
   const dispatch = useContext(GlobalDispatchContext);
   const [isStart, setIsStart] = useState(false);
   const { progress } = useContext(GlobalStateContext);
+  const missions = data as Mission[];
 
   const missionSelect = missions.find(
     (mission) => mission.progress.step === progress.step

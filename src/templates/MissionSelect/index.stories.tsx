@@ -1,8 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { MissionSelect, MissionSelectProps } from ".";
-import data from "../../assets/data/unit01_master.json";
-import { JsonData } from "../../types";
 import { Mission } from "src-ibl-lecture-master-unit/types";
 
 export default {
@@ -142,7 +140,7 @@ export const sample: { args: MissionSelectProps } = template.bind({});
 sample.args = {
   unitName: "unit00",
   unitTitle: "ダミーテキストダミーテキスト",
-  missions: missions,
+  data: missions,
   onClick: (goto: string) => {
     console.log("page遷移処理を実装", goto);
   },
