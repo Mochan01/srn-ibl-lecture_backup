@@ -1,15 +1,14 @@
 import React, { FC, useContext, useState } from "react";
 import styled from "styled-components";
-import { CommonProps } from "../../../types";
 import { GlobalDispatchContext } from "../../../features/LectureRoot/providers";
 import { TitleBase as Main } from "../../../elements/TitleBase";
+import { UnitInfo } from "../../../types/UnitInfo";
 const ImageTitle = new URL(
   "../../../assets/prod/lecture_title.png",
   import.meta.url
 ).toString();
 
-export interface TitleBaseProps
-  extends Pick<CommonProps, "unitName" | "unitTitle"> {
+export interface TitleBaseProps extends UnitInfo {
   onClickSkip?: () => void;
   className?: string;
 }
