@@ -1,5 +1,5 @@
 import { Intro, Lecture, Mission } from "src-ibl-lecture-master-unit/types";
-import { UnitInfo } from "./UnitInfo";
+import { UnitInfo } from "./unitInfo";
 
 export type LectureType = Mission | Intro | Lecture;
 

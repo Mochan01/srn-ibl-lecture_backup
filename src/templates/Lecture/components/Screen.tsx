@@ -5,7 +5,7 @@ import {
   GlobalDispatchContext,
   GlobalStateContext,
 } from "../../../features/LectureRoot/providers";
-import { UnitInfo } from "../../../types/UnitInfo";
+import { UnitInfo } from "../../../types/unitInfo";
 import { Screen as Main } from "../../../features/Screen";
 import { formatSlideStep } from "../../../utils";
 import { LectureFrame } from "../../../elements/LectureFrame";

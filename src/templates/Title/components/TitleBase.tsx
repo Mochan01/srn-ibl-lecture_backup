@@ -2,7 +2,7 @@ import React, { FC, useContext, useState } from "react";
 import styled from "styled-components";
 import { GlobalDispatchContext } from "../../../features/LectureRoot/providers";
 import { TitleBase as Main } from "../../../elements/TitleBase";
-import { UnitInfo } from "../../../types/UnitInfo";
+import { UnitInfo } from "../../../types/unitInfo";
 const ImageTitle = new URL(
   "../../../assets/prod/lecture_title.png",
   import.meta.url
