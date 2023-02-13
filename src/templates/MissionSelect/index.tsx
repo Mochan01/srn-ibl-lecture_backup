@@ -1,28 +1,27 @@
 import React, { FC } from "react";
 import { css } from "styled-components";
-import { TitleBase } from "./components/TitleBase";
+import { MissionSelectBase } from "./components/MissionSelectBase";
+import { PresentedBy } from "../../elements/PresentedBy";
 import { CommonProps } from "../../types";
 import { LectureRoot } from "../../features/LectureRoot";
-import { Intro } from "src-ibl-lecture-master-unit/types";
+import { Mission } from "src-ibl-lecture-master-unit/types";
 import { ChildWrapperProps } from "../../features/LectureRoot/components";
-import { PresentedBy } from "../../elements/PresentedBy";
 
-export interface TitleProps
-  extends CommonProps<Intro[]>,
+export interface MissionSelectProps
+  extends CommonProps<Mission[]>,
     Pick<ChildWrapperProps, "onLastStep"> {
-  onClickSkip?: () => void;
+  onClick: (goto: string) => void;
 }
 
-export const Title: FC<TitleProps> = ({
+export const MissionSelect: FC<MissionSelectProps> = ({
   unitName,
   unitTitle,
-  onClickSkip,
+  data,
+  onClick,
   onClose,
   onLastStep,
-  data,
 }) => {
-  // introは1つしかないはずなので1番目をとる
-  const jsonData: Intro[] = data;
+  const jsonData: Mission[] = data;
   return (
     <LectureRoot {...{ onLastStep, onClose, jsonData }} isPlaying={false}>
       <PresentedBy
@@ -32,7 +31,7 @@ export const Title: FC<TitleProps> = ({
           right: 62px;
         `}
       />
-      <TitleBase
+      <MissionSelectBase
         css={css`
           position: absolute;
           top: 0;
@@ -41,7 +40,7 @@ export const Title: FC<TitleProps> = ({
           right: 0;
           margin: auto;
         `}
-        {...{ unitName, unitTitle, onClickSkip }}
+        {...{ unitName, unitTitle, data, onClick }}
       />
     </LectureRoot>
   );

@@ -6,7 +6,7 @@ import data from "../../assets/data/unit00_master.json";
 import { JsonDataProviderProps } from "./providers";
 
 export default {
-  title: "templates/LectureRoot",
+  title: "features/LectureRoot",
   component: LectureRoot,
 } as Meta;
 
@@ -25,5 +25,5 @@ sample.args = {
   //   console.log("onClickClose");
   // },
   jsonData: lectureData as JsonDataProviderProps["jsonData"],
-  children: <div>あ</div>
+  children: <div>あ</div>,
 };
