@@ -1,16 +1,19 @@
 {
   "extends": [
     "eslint:recommended",
-    "prettier"],
+    "prettier",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["react", "@typescript-eslint", "react-hooks"],
   "rules": {
     "semi": [2, "always"],
     "quotes": [2, "double"],
     "jsx-quotes": [2, "prefer-double"], // jsx内クォート適用
     "no-undef": "off",
     "react/no-unknown-property": ["error", { "ignore": ["css"] }], // styled-componentsのinline-style禁止すな
-    "no-restricted-imports": [
-      "error"
-    ],
-    "no-unused-vars": "off"
+    "no-restricted-imports": ["error"],
+    "no-unused-vars": "off",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }
