@@ -1,3 +1,4 @@
+import { Units } from "src-ibl-lecture-master/types";
 import { Lecture, Intro, Mission } from "src-ibl-lecture-master-unit/types";
 import { LectureSteps } from "./lectureSteps";
 import {
@@ -17,6 +18,8 @@ import {
 } from "src-ibl-lecture-master-special/types";
 
 export interface JsonData {
+  // lecture_masterから
+  units: Units;
   // ユニット別
   lecture: LectureSteps<Lecture>[];
   intro: LectureSteps<Intro>[];
