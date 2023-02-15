@@ -1,9 +1,11 @@
+import { Progress } from "../types";
+
 /**
  * 文字列を「_」で分割して、スライド名とステップ名に分けます。分けられた値をオブジェクトとして返します。
- * @param value 
- * @returns 
+ * @param value
+ * @returns
  */
-export const formatSlideStep = (value: string) => {
+export const formatSlideStep = (value: string): Progress => {
   const [slide, step] = value.split("_");
   return { slide: Number(slide), step: Number(step) };
 };

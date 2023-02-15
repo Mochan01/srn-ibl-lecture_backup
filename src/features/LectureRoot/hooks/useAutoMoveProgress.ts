@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { Progress } from "src-ibl-lecture-master/types/stepType";
+import { Progress } from "../../../types";
 import { TimerContext, GlobalDispatchContext } from "../providers";
 
 /**

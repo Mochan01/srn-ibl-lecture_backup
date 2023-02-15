@@ -1,5 +1,5 @@
 import { useReducer, Reducer } from "react";
-import { Progress } from "src-ibl-lecture-master/types/stepType";
+import { Progress } from "../../../types";
 
 export interface GlobalState {
   isPlaying: boolean;

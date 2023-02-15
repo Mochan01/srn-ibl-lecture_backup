@@ -1,14 +1,21 @@
 import React, { FC, ReactNode } from "react";
-import { MotionType } from "src-ibl-lecture-master/types/stepType";
 import styled from "styled-components";
+
+type Motion =
+  | "fadein"
+  | "slideup"
+  | "slidedown"
+  | "slideleft"
+  | "slideright"
+  | "enlarge";
 
 export interface PanelObjectProps {
   step: number;
   depth: number;
   x?: number;
   y?: number;
-  motion1?: MotionType;
-  motion2?: MotionType;
+  motion1?: Motion;
+  motion2?: Motion;
   children: ReactNode;
 }
 
@@ -79,5 +86,6 @@ const Main = styled.div<PanelObjectProps>(
 export const PanelObject: FC<PanelObjectProps> = ({
   x = 0,
   y = 0,
+  motion1 = "fadein",
   ...props
-}) => <Main {...{ x, y }} {...props} />;
+}) => <Main {...{ x, y, motion1 }} {...props} />;

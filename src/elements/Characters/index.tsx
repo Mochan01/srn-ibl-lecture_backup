@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { Student, Teacher, Bubble } from "./components";
-import { AnimationType } from "src-ibl-lecture-master/types/stepType";
+import { AnimationType } from "src-ibl-lecture-master-unit/types/animation";
 
 export interface CharactersProps {
   isPlaying?: boolean;

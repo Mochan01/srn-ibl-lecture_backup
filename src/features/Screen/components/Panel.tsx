@@ -1,13 +1,10 @@
 import React, { FC, ReactNode } from "react";
-import { MotionType } from "src-ibl-lecture-master/types/stepType";
 import styled from "styled-components";
 import { SIZE } from "../../../data/SIZE";
 
 export interface PanelProps {
-  image?: string;
-  motion1?: MotionType;
-  motion2?: MotionType;
   children?: ReactNode;
+  className?: string;
 }
 
 const Main = styled.div<PanelProps>`
