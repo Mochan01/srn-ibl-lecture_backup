@@ -3,9 +3,9 @@ import { Screen, SeekBar, ControlPanel } from "./components";
 import styled from "styled-components";
 import { CommonProps } from "../../types";
 import { LectureRoot } from "../../features/LectureRoot";
-import { Lecture as LectureDataType } from "src-ibl-lecture-master-unit/types";
+import { Lectures } from "src-ibl-lecture-master-unit/types";
 
-export interface LectureProps extends CommonProps<LectureDataType[]> {
+export interface LectureProps extends CommonProps<Lectures> {
   onLectureLeave: (key: "begin" | "end") => void;
 }
 
@@ -27,7 +27,7 @@ export const Lecture: FC<LectureProps> = ({
   unitTitle,
   data,
 }) => {
-  const jsonData = data as LectureDataType[];
+  const jsonData = data as Lectures;
   return (
     <LectureRoot {...{ onClose, jsonData }}>
       <Wrapper>
