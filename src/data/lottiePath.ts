@@ -1,14 +1,8 @@
 export const lottiePath: { [key in string]: string } = {
-  "tesuto.json": new URL(
-    "../assets/lottie/tesuto.json",
-    import.meta.url
-  ).toString(),
-  "tesuto2.json": new URL(
-    "../assets/lottie/tesuto2.json",
-    import.meta.url
-  ).toString(),
-  "tesuto3.json": new URL(
-    "../assets/lottie/tesuto3.json",
-    import.meta.url
-  ).toString(),
+  "scene1_rocket_countdown.json": new URL("../assets/lottie/scene1_rocket_countdown.json", import.meta.url).toString(),
+  "scene1_rocket_launch_1_1.json": new URL("../assets/lottie/scene1_rocket_launch_1_1.json", import.meta.url).toString(),
+  "scene1_rocket_launch_smog.json": new URL("../assets/lottie/scene1_rocket_launch_smog.json", import.meta.url).toString(),
+  "scene2_rocket_1_1.json": new URL("../assets/lottie/scene2_rocket_1_1.json", import.meta.url).toString(),
+  "scene2_satellitebus_2_1.json": new URL("../assets/lottie/scene2_satellitebus_2_1.json", import.meta.url).toString(),
+  "scene2_solarcell_3_1.json": new URL("../assets/lottie/scene2_solarcell_3_1.json", import.meta.url).toString(),
 };

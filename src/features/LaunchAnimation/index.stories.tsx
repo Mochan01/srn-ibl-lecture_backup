@@ -18,8 +18,7 @@ const template: Story<LaunchAnimationProps> = (args) => <LaunchAnimation {...arg
 
 export const sample = template.bind({});
 sample.args = {
-  // path: "lottie/tesuto.json",
-  // autoplay: true,
-  // loop: true,
+  rocketID: "1_1",
+  busID: "2_1",
+  batteryID: "3_1"
 };
-

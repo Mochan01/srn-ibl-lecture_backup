@@ -52,7 +52,7 @@ export const LaunchAnimation: FC<LaunchAnimationProps> = ({
       <LaunchBg img={scene === "injection" ? scane2_bg : scane1_bg} />
       {/** ↓ これは仮のLottieオブジェクトです */}
       {scene === "standby" && (
-        <LottieObject path={lottiePath["tesuto.json"]} name="object1" />
+        <LottieObject path={lottiePath["scene2_rocket_1_1.json"]} name="object1" />
       )}
     </Main>
   );
