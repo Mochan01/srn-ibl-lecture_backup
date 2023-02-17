@@ -1,7 +1,7 @@
 {
   "name": "srn-ibl-lecture",
   "description": "the lecture of the srn project",
-  "version": "1.1.0-14",
+  "version": "1.1.0-15",
   "author": "Mochan01",
   "bugs": {
     "url": "https://github.com/Fantamstick/srn-ibl-component/issues"
@@ -14,7 +14,6 @@
     "src-ibl-lecture-master": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master.git#semver:1.0.0",
     "src-ibl-lecture-master-special": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master-special.git#semver:1.1.2",
     "src-ibl-lecture-master-unit": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master-unit.git#semver:0.3.1",
-    "srn-ibl-component": "git+ssh://git@github.com:Fantamstick/srn-ibl-component.git#semver:0.1.41",
     "styled-components": "5.3.6",
     "styled-media-query": "2.1.2",
     "swiper": "8.4.4",
@@ -47,7 +46,8 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "4.9.4"
+    "typescript": "4.9.4",
+    "srn-ibl-component": "git+ssh://git@github.com:Fantamstick/srn-ibl-component.git#semver:0.1.41"
   },
   "homepage": "",
   "keywords": [
