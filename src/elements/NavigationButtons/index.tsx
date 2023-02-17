@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Spacer } from "srn-ibl-component";
 import styled from "styled-components";
-import { NavigationButtonsPath } from "../../data/navigationButtonsPath";
+import { navigationButtonsPath } from "../../data/navigationButtonsPath";
 import { MissionSelect } from "src-ibl-lecture-master-unit/types/missionSelect";
 
 const Main = styled.div`
@@ -36,7 +36,7 @@ export const NavigationButtons: FC<NavigationButtonsProps> = ({
     <Main>
       {missionSelect.m_btn_1 && missionSelect.m_btn_1_goto && (
         <NavigationButton
-          image={NavigationButtonsPath[missionSelect.m_btn_1]}
+          image={navigationButtonsPath[missionSelect.m_btn_1]}
           onClick={() => handleClick(missionSelect.m_btn_1_goto)}
         />
       )}
@@ -44,7 +44,7 @@ export const NavigationButtons: FC<NavigationButtonsProps> = ({
         <>
           <Spacer size={64} />
           <NavigationButton
-            image={NavigationButtonsPath[missionSelect.m_btn_2]}
+            image={navigationButtonsPath[missionSelect.m_btn_2]}
             onClick={() => handleClick(missionSelect.m_btn_2_goto)}
           />
         </>
@@ -53,7 +53,7 @@ export const NavigationButtons: FC<NavigationButtonsProps> = ({
         <>
           <Spacer size={64} />
           <NavigationButton
-            image={NavigationButtonsPath[missionSelect.m_btn_3]}
+            image={navigationButtonsPath[missionSelect.m_btn_3]}
             onClick={() => handleClick(missionSelect.m_btn_3_goto)}
           />
         </>
@@ -62,7 +62,7 @@ export const NavigationButtons: FC<NavigationButtonsProps> = ({
         <>
           <Spacer size={64} />
           <NavigationButton
-            image={NavigationButtonsPath[missionSelect.m_btn_4]}
+            image={navigationButtonsPath[missionSelect.m_btn_4]}
             onClick={() => handleClick(missionSelect.m_btn_4_goto)}
           />
         </>
@@ -71,7 +71,7 @@ export const NavigationButtons: FC<NavigationButtonsProps> = ({
         <>
           <Spacer size={64} />
           <NavigationButton
-            image={NavigationButtonsPath[missionSelect.m_btn_5]}
+            image={navigationButtonsPath[missionSelect.m_btn_5]}
             onClick={() => handleClick(missionSelect.m_btn_5_goto)}
           />
         </>

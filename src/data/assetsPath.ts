@@ -1,9 +1,5 @@
+// prettier-ignore
 export const assetsPath: { [key in string]: string } = {
-  "L1U6_button_01.png": new URL("../assets/step/L1U6_button_01.png", import.meta.url).toString(),
-  "L1U6_button_02.png": new URL("../assets/step/L1U6_button_02.png", import.meta.url).toString(),
-  "L1U6_button_03.png": new URL("../assets/step/L1U6_button_03.png", import.meta.url).toString(),
-  "L1U6_button_04.png": new URL("../assets/step/L1U6_button_04.png", import.meta.url).toString(),
-  "L1U6_button_05.png": new URL("../assets/step/L1U6_button_05.png", import.meta.url).toString(),
   "Lv1U1_slide1-1.png": new URL("../assets/step/Lv1U1_slide1-1.png", import.meta.url).toString(),
   "Lv1U1_slide1-2.png": new URL("../assets/step/Lv1U1_slide1-2.png", import.meta.url).toString(),
   "Lv1U1_slide1-3.png": new URL("../assets/step/Lv1U1_slide1-3.png", import.meta.url).toString(),
