@@ -1,12 +1,15 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import { getLastStepData, handleJsonData } from "../../../../features/LectureRoot/utils";
+import {
+  getLastStepData,
+  handleJsonData,
+} from "../../../../features/LectureRoot/utils";
 import {
   JsonDataProviderContext,
-  GlobalDispatchContext,
   GlobalStateContext,
 } from "../../../../features/LectureRoot/providers";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
+import { useMoveProgress } from "../../../../features/LectureRoot/hooks";
 const ImageLecture = new URL(
   "../../../../assets/prod/lecture_panel_answer.png",
   import.meta.url
@@ -51,7 +54,7 @@ const Bullet = styled.div<{ isActive: boolean }>(
 
 export const PageBullet: FC = () => {
   const { progress } = useContext(GlobalStateContext);
-  const dispatch = useContext(GlobalDispatchContext);
+  const moveProgress = useMoveProgress();
 
   const lectureData = useContext(JsonDataProviderContext) as Lecture[];
   const getLectureData = handleJsonData(lectureData, progress);
@@ -64,12 +67,7 @@ export const PageBullet: FC = () => {
             <Bullet
               key={i}
               isActive={progress.slide >= i + 1}
-              onClick={() => {
-                dispatch({
-                  type: "progress",
-                  val: { slide: i + 1, step: 1 },
-                });
-              }}
+              onClick={() => moveProgress({ slide: i + 1, step: 1 })}
             />
           )
         )}
