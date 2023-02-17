@@ -2244,6 +2244,9 @@ export const assetsPath: { [key in string]: string } = {
   "ST_Lv2U01_51.mp3": new URL("../assets/step/ST_Lv2U01_51.mp3", import.meta.url).toString(),
   "ST_Lv2U01_52.mp3": new URL("../assets/step/ST_Lv2U01_52.mp3", import.meta.url).toString(),
   "ST_Lv2U01_53.mp3": new URL("../assets/step/ST_Lv2U01_53.mp3", import.meta.url).toString(),
+  "ST_L1U4-1_S01.mp3": new URL("../assets/step/ST_L1U4-1_S01.mp3", import.meta.url).toString(),
+  "ST_L1U4-1_S02.mp3": new URL("../assets/step/ST_L1U4-1_S02.mp3", import.meta.url).toString(),
+  "ST_L1U4-1_S03.mp3": new URL("../assets/step/ST_L1U4-1_S03.mp3", import.meta.url).toString(),
   // ここから 素材用 共通素材
   "quiz_correct.mp3": new URL("../assets/prod/quiz_correct.mp3", import.meta.url).toString(),
 };
