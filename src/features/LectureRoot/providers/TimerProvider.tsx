@@ -8,12 +8,7 @@ export interface TimerProviderProps {
   children: ReactNode;
 }
 
-interface TimerMethodsProviderProps {
-  time: number;
-  start: () => void;
-  pause: () => void;
-  reset: () => void;
-}
+type TimerMethodsProviderProps = ReturnType<typeof useTimer>;
 
 export const TimerContext = createContext<TimerMethodsProviderProps>(
   {} as TimerMethodsProviderProps
@@ -31,15 +26,11 @@ export const TimerProvider: FC<TimerProviderProps> = ({ children }) => {
   const getJsonData = handleJsonData(data, progress);
   const { time: endTime } = getJsonData(getStepData).audio;
 
-  const { time, start, pause, reset } = useTimer({
+  const value = useTimer({
     interval: 100,
     step: 100,
     endTime,
   });
 
-  return (
-    <TimerContext.Provider value={{ time, start, pause, reset }}>
-      {children}
-    </TimerContext.Provider>
-  );
+  return <TimerContext.Provider {...{ value, children }} />;
 };
