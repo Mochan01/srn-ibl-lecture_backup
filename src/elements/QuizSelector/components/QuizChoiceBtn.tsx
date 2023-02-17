@@ -14,7 +14,7 @@ export interface QuizChoiceBtnProps {
 }
 
 export const QuizChoiceBtn: FC<QuizChoiceBtnProps> = ({ questions }) => {
-  const [{ isAnswer, correctIndex, chooseIndex }, setState] = useContext(
+  const [{ isAnswer, correctIndexes, chooseIndexes }, setState] = useContext(
     QuizSelectorProviderContext
   );
 
@@ -24,14 +24,20 @@ export const QuizChoiceBtn: FC<QuizChoiceBtnProps> = ({ questions }) => {
         const getBtnStatus = getChoiceBtnStatus(
           isAnswer,
           i,
-          correctIndex,
-          chooseIndex
+          correctIndexes,
+          chooseIndexes
         );
 
         const mutation =
           getBtnStatus<DetermineButtonColor>(determineButtonColor);
         const sign = getBtnStatus<GetMarkSymbol>(getMarkSymbol);
-        const onClick = () => setState((s) => ({ ...s, chooseIndex: i }));
+        const onClick = () =>
+          setState((state) => ({
+            ...state,
+            chooseIndexes: state.chooseIndexes.includes(i)
+              ? state.chooseIndexes.filter((index) => index !== i)
+              : [...chooseIndexes, i],
+          }));
 
         return (
           <Main key={i} {...{ mutation, sign, onClick }}>

@@ -21,21 +21,19 @@ export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
   onAnswer,
   isMaxLen,
 }) => {
-  const [{ isAnswer, correctIndex, chooseIndex }, setState] = useContext(
+  const [{ isAnswer, correctIndexes, chooseIndexes }, setState] = useContext(
     QuizSelectorProviderContext
   );
 
   const variant = useMemo(() => {
-    return typeof chooseIndex === "number"
-      ? isAnswer
-        ? "RED"
-        : "WHITE"
-      : "GRAY";
-  }, [chooseIndex, isAnswer]);
+    return chooseIndexes.length !== 0 ? (isAnswer ? "RED" : "WHITE") : "GRAY";
+  }, [chooseIndexes, isAnswer]);
 
   const isCorrect = useMemo(
-    () => chooseIndex === correctIndex,
-    [chooseIndex, correctIndex]
+    () =>
+      correctIndexes.length === chooseIndexes.length &&
+      correctIndexes.every((value, index) => value === chooseIndexes[index]),
+    [chooseIndexes, correctIndexes]
   );
 
   const playPingPong = usePingPong(isCorrect);

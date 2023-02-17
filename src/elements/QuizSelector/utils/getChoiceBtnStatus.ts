@@ -57,8 +57,8 @@ export const getMarkSymbol: GetMarkSymbol = (isAnswer, isChosen, isCorrect) =>
  * @function
  * @param {boolean} isAnswer - 回答済みかどうか
  * @param {number} buttonIdx - ボタンのインデックス
- * @param {number} correctIndex - 正解のインデックス
- * @param {number} [chooseIndex] - 選択したインデックス
+ * @param {number} correctIndexes - 正解のインデックスの配列
+ * @param {number} [chooseIndexes] - 選択したインデックスの配列
  * @param {function} callback - 回答後の状態に応じた処理を行う関数
  * @returns {unknown} - callback関数の返り値
  */
@@ -66,14 +66,14 @@ export const getChoiceBtnStatus =
   (
     isAnswer: boolean,
     buttonIdx: number,
-    correctIndex: number,
-    chooseIndex?: number
+    correctIndexes: number[],
+    chooseIndexes: number[]
   ) =>
   <T extends DetermineButtonColor | GetMarkSymbol>(
     callback: DetermineButtonColor | GetMarkSymbol
   ): ReturnType<T> =>
     callback(
       isAnswer,
-      buttonIdx === chooseIndex,
-      buttonIdx === correctIndex
+      chooseIndexes.includes(buttonIdx),
+      correctIndexes.includes(buttonIdx)
     ) as ReturnType<T>;
