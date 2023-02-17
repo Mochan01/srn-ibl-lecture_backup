@@ -23,7 +23,7 @@ export const Narration: FC<NarrationProps> = ({ delay = 0 }) => {
   const getJsonData = handleJsonData(data, progress);
   const { mp3 } = getJsonData(getStepData).audio;
 
-  let timer = useRef<NodeJS.Timeout>(); // タイマー デバッグ用 遅延ロード
+  const timer = useRef<NodeJS.Timeout>(); // タイマー デバッグ用 遅延ロード
   useEffect(() => () => timer.current && clearTimeout(timer.current), [timer]);
   const [play, stop] = useAudio(mp3, {
     onload: async () => {
