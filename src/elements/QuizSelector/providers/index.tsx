@@ -8,8 +8,8 @@ import React, {
 } from "react";
 
 interface QuizSelectorProviderInitialState {
-  correctIndex: number;
-  chooseIndex: number | undefined;
+  correctIndexes: number[];
+  chooseIndexes: number[];
   isAnswer: boolean;
 }
 
@@ -23,13 +23,13 @@ export const QuizSelectorProviderContext = createContext<ContextState>(
 );
 
 export const QuizSelectorProvider: FC<
-  Pick<QuizSelectorProviderInitialState, "correctIndex"> & {
+  Pick<QuizSelectorProviderInitialState, "correctIndexes"> & {
     children: ReactNode;
   }
-> = ({ correctIndex, children }) => {
+> = ({ correctIndexes, children }) => {
   const [state, setState] = useState<QuizSelectorProviderInitialState>({
-    correctIndex,
-    chooseIndex: undefined,
+    correctIndexes,
+    chooseIndexes: [],
     isAnswer: false,
   });
 

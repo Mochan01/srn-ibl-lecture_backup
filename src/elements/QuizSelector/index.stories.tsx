@@ -41,3 +41,19 @@ four.args = {
   },
   onAnswer: (isCorrect) => alert(isCorrect),
 };
+export const multi: { args: QuizSelectorProps } = template.bind({});
+multi.args = {
+  questionSelect: {
+    question_y: 0,
+    question_x: 0,
+    button_1: "100機ぐらい",
+    button_2: "1000機ぐらい",
+    button_3: "3000機ぐらい",
+    button_4: "4500機ぐらい",
+    ans_1: true,
+    ans_2: false,
+    ans_3: false,
+    ans_4: true,
+  },
+  onAnswer: (isCorrect) => alert(isCorrect),
+};
