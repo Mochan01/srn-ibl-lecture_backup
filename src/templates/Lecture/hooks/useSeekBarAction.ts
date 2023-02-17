@@ -4,8 +4,12 @@ import {
   GlobalDispatchContext,
   JsonDataProviderContext,
 } from "../../../features/LectureRoot/providers";
-import { handleJsonData, getSlideData } from "../../../features/LectureRoot/utils";
+import {
+  handleJsonData,
+  getSlideData,
+} from "../../../features/LectureRoot/utils";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
+import { useMoveProgress } from "../../../features/LectureRoot/hooks";
 
 /**
  * シークバーの進捗操作
@@ -17,6 +21,8 @@ export const useSeekBarAction = () => {
   const { progress } = useContext(GlobalStateContext);
   const dispatch = useContext(GlobalDispatchContext);
   const lectureData = useContext(JsonDataProviderContext) as Lecture[];
+
+  const moveProgress = useMoveProgress();
 
   const updateProgress = useCallback(() => {
     // シークバーが止まる位置を取得
@@ -34,20 +40,20 @@ export const useSeekBarAction = () => {
     // 結果発表ステップならその前の結果発表ステップじゃないステップに止める
     // https://www.notion.so/1ca89cdacc8a4907b2894b2c29d86ba8#28d778653c7641a8863de578b7bebe46
     // const stepData = getLectureData(getStepData);
-    const dropStep = slideData.find(x => x.progress.step === step);
+    const dropStep = slideData.find((x) => x.progress.step === step);
     if (dropStep && dropStep.result_step) {
       const lastNormalStep = slideData
         .map((x) => x)
-        .filter(({progress}) => progress.step <= step)
+        .filter(({ progress }) => progress.step <= step)
         .reverse()
         .find((x) => !x.result_step);
 
       if (lastNormalStep) step = lastNormalStep.progress.step;
     }
 
-    dispatch({ type: "progress", val: { ...progress, step } });
+    moveProgress({ ...progress, step });
     dispatch({ type: "timestamp" });
-  }, [dispatch, lectureData, progress.step, value]);
+  }, [dispatch, lectureData, progress, value, moveProgress]);
 
   return { value, setValue, updateProgress };
 };

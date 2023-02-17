@@ -17,7 +17,6 @@ export const useWatchStepEnd = () => {
   const getJsonData = handleJsonData(data, progress);
   const { time: audioTime } = getJsonData(getStepData).audio;
 
-  // タイマーが動いてるときだけ、判定をいれる
-  const { time, status } = useContext(TimerContext);
-  return !!audioTime && status === "RUNNING" && audioTime <= time;
+  const { time } = useContext(TimerContext);
+  return !!audioTime && audioTime <= time;
 };

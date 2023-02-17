@@ -2,11 +2,14 @@ import { MiniBtn, MiniBtnProps } from "./MiniBtn";
 import React, { FC, useContext } from "react";
 import {
   GlobalStateContext,
-  GlobalDispatchContext,
   JsonDataProviderContext,
 } from "../../../../features/LectureRoot/providers";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
-import { getStepData, handleJsonData } from "../../../../features/LectureRoot/utils";
+import {
+  getStepData,
+  handleJsonData,
+} from "../../../../features/LectureRoot/utils";
+import { useMoveProgress } from "../../../../features/LectureRoot/hooks";
 
 export interface PrevBtnProps extends Pick<MiniBtnProps, "className"> {
   onLeave: () => void;
@@ -14,10 +17,11 @@ export interface PrevBtnProps extends Pick<MiniBtnProps, "className"> {
 
 export const PrevBtn: FC<PrevBtnProps> = ({ onLeave, ...props }) => {
   const { progress } = useContext(GlobalStateContext);
-  const dispatch = useContext(GlobalDispatchContext);
 
   const lectureData = useContext(JsonDataProviderContext) as Lecture[];
   const getLectureData = handleJsonData(lectureData, progress);
+
+  const moveProgress = useMoveProgress();
 
   return (
     <MiniBtn
@@ -31,10 +35,8 @@ export const PrevBtn: FC<PrevBtnProps> = ({ onLeave, ...props }) => {
           onLeave();
           return;
         }
-        dispatch({
-          type: "progress",
-          val: { slide: progress.slide - 1, step: 1 },
-        });
+
+        moveProgress({ slide: progress.slide - 1, step: 1 });
       }}
     />
   );

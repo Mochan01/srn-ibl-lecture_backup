@@ -1,8 +1,7 @@
-import React, { FC, useContext } from "react";
+import React, { FC, useCallback, useContext } from "react";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
 import {
   JsonDataProviderContext,
-  GlobalDispatchContext,
   GlobalStateContext,
 } from "../../../features/LectureRoot/providers";
 import { UnitInfo } from "../../../types/unitInfo";
@@ -14,6 +13,7 @@ import {
   handleJsonData,
   getStepData,
 } from "../../../features/LectureRoot/utils";
+import { useMoveProgress } from "../../../features/LectureRoot/hooks";
 
 export interface ScreenProps extends UnitInfo {}
 
@@ -22,7 +22,7 @@ export interface ScreenProps extends UnitInfo {}
  */
 export const Screen: FC<ScreenProps> = (props) => {
   const { progress } = useContext(GlobalStateContext);
-  const dispatch = useContext(GlobalDispatchContext);
+  const moveProgress = useMoveProgress();
 
   const lectureData = useContext(JsonDataProviderContext) as Lecture[];
   const getLectureData = handleJsonData(lectureData, progress);
@@ -30,24 +30,21 @@ export const Screen: FC<ScreenProps> = (props) => {
   const { countdown, next_steps } = getLectureData(getStepData);
 
   // クイズ回答時の処理
-  const onAnswer = (isCorrect: boolean) => {
-    if (!next_steps.if_correct || !next_steps.if_wrong) {
-      console.error("Undefined: 'if_correct' or 'if_wrong'");
-      return;
-    }
-
-    dispatch({
-      type: "progress",
-      val: formatSlideStep(
-        isCorrect ? next_steps.if_correct : next_steps.if_wrong
-      ),
-    });
-  };
+  const onAnswer = useCallback(
+    (isCorrect: boolean) => {
+      const nextStep = isCorrect ? next_steps.if_correct : next_steps.if_wrong;
+      nextStep
+        ? moveProgress(formatSlideStep(nextStep))
+        : console.error("Undefined: 'if_correct' or 'if_wrong'");
+    },
+    [next_steps, moveProgress]
+  );
 
   // アクションボタンを押したときの処理
-  const actionGoTo = (value: string) => {
-    dispatch({ type: "progress", val: formatSlideStep(value) });
-  };
+  const actionGoTo = useCallback(
+    (value: string) => moveProgress(formatSlideStep(value)),
+    [moveProgress]
+  );
 
   const countDown = countdown && (
     <CountDown
@@ -55,10 +52,7 @@ export const Screen: FC<ScreenProps> = (props) => {
       initialTimeSeconds={countdown / 1000}
       onEnd={() => {
         next_steps.goto_step &&
-          dispatch({
-            type: "progress",
-            val: formatSlideStep(next_steps.goto_step),
-          });
+          moveProgress(formatSlideStep(next_steps.goto_step));
       }}
     />
   );
