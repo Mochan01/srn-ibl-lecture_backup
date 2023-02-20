@@ -16,19 +16,18 @@ interface LectureState {
 }
 
 export type SelectAction = {
-  type: "intros" | "lectures";
-  data: LectureSteps<Intro | LectureData>[];
+  type: "intro" | "lecture";
   lectureID: string;
 };
 
-const reducer = (state: LectureState, action: SelectAction) => {
+const reducer = (data: Pick<JsonData, "intro" | "lecture">) => (state: LectureState, action: SelectAction) => {
   return {
     missions: undefined,
     intros: undefined,
     lectures: undefined,
-    [action.type]: action.data.find(
-      ({ lecture_id }) => lecture_id === action.lectureID
-    )?.steps,
+    [action.type]: (
+      data[action.type] as LectureSteps<Intro | LectureData>[]
+    ).find(({ lecture_id }) => lecture_id === action.lectureID)?.steps,
   };
 };
 
@@ -38,12 +37,15 @@ const reducer = (state: LectureState, action: SelectAction) => {
  * @returns
  */
 export const useLectureState = (data: JsonData) => {
-  const isMission = !!data.mission.length;
+  const isMission = !!data.mission.length; // ミッション選択画面が存在するか？
+
   const initialState = {
+    // ミッション選択画面が存在したら、レクチャーはミッション選択画面から始まる
     missions: isMission ? data.mission[0].steps : undefined,
+    // ミッション選択画面が存在しなかったら、レクチャーはタイトル画面から始まる
     intros: isMission ? undefined : data.intro[0].steps,
     lectures: undefined,
   };
 
-  return useReducer<Reducer<LectureState, SelectAction>>(reducer, initialState);
+  return useReducer<Reducer<LectureState, SelectAction>>(reducer(data), initialState);
 };
