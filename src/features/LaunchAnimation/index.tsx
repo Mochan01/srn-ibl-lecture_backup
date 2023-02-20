@@ -96,15 +96,15 @@ export const LaunchAnimation: FC<LaunchAnimationProps> = ({
       {scene === "injection" && (
         <>
           <LottieObject
-            path={lottiePath[`scene2_rocket_${rocketID}.json`]}
-            name="injectionObject"
-          />
-          <LottieObject
             path={lottiePath[`scene2_satellitebus_${busID}.json`]}
             name="injectionObject"
           />
           <LottieObject
             path={lottiePath[`scene2_solarcell_${batteryID}.json`]}
+            name="injectionObject"
+          />
+          <LottieObject
+            path={lottiePath[`scene2_rocket_${rocketID}.json`]}
             name="injectionObject"
           />
         </>
