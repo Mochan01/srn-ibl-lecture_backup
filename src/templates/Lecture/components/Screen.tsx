@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useContext } from "react";
+import React, { FC, useCallback, useContext, useMemo } from "react";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
 import {
   JsonDataProviderContext,
@@ -14,6 +14,9 @@ import {
   getStepData,
 } from "../../../features/LectureRoot/utils";
 import { useMoveProgress } from "../../../features/LectureRoot/hooks";
+import { SatelliteAssembly } from "../../../features/SatelliteAssembly";
+import masterData from "../../../assets/data/satellite_assembly_mock.json";
+import { MasterData } from "../../../features/SatelliteAssembly/types";
 
 export interface ScreenProps extends UnitInfo {}
 
@@ -61,13 +64,31 @@ export const Screen: FC<ScreenProps> = (props) => {
     />
   );
 
+  // 衛星組み立て画面
+  const satelliteAssembly = useMemo(() => {
+    const selectedMissionID =
+      typeof window !== "undefined" && localStorage.getItem("missionID");
+    return (
+      !!selectedMissionID && (
+        <SatelliteAssembly
+          {...{ selectedMissionID }}
+          masterData={masterData as MasterData}
+        />
+      )
+    );
+  }, []);
+
   return (
     <LectureFrame {...props} {...{ countDown }}>
-      <Main
-        {...progress}
-        {...{ onAnswer, actionGoTo }}
-        screenData={lectureData}
-      />
+      {next_steps.next_step === "goto_satelite" ? (
+        satelliteAssembly
+      ) : (
+        <Main
+          {...progress}
+          {...{ onAnswer, actionGoTo }}
+          screenData={lectureData}
+        />
+      )}
     </LectureFrame>
   );
 };
