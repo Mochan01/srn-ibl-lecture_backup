@@ -30,7 +30,8 @@ export const Screen: FC<ScreenProps> = (props) => {
   const lectureData = useContext(JsonDataProviderContext) as Lecture[];
   const getLectureData = handleJsonData(lectureData, progress);
 
-  const { countdown, next_steps } = getLectureData(getStepData);
+  const { countdown, next_steps, special_lecture } =
+    getLectureData(getStepData);
 
   // クイズ回答時の処理
   const onAnswer = useCallback(
@@ -80,9 +81,10 @@ export const Screen: FC<ScreenProps> = (props) => {
 
   return (
     <LectureFrame {...props} {...{ countDown }}>
-      {next_steps.next_step === "goto_satelite" ? (
-        satelliteAssembly
-      ) : (
+      {/** 衛星組み立て画面 */}
+      {special_lecture.record_mission && satelliteAssembly}
+      {/** 通常のレクチャー */}
+      {!special_lecture.record_mission && (
         <Main
           {...progress}
           {...{ onAnswer, actionGoTo }}
