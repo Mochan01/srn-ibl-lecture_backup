@@ -54,11 +54,12 @@ export const buildPopupBtnStepData: BuildStepData<BuildPopupBtnDataReturn> =
  */
 export const buildActionBtnStepData: BuildStepData<BuildActionDataReturn> =
   (arr, depth) =>
-  ({ action_x, action_y, action_goto }) =>
+  ({ action_x, action_y, action_goto, mission_select }) =>
     arr.map((src, i) => ({
       src,
       x: action_x[i],
       y: action_y[i],
       depth,
       actionGoto: action_goto[i],
+      missionID: mission_select && mission_select[i],
     }));

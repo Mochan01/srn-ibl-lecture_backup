@@ -7,9 +7,10 @@ export interface ActionBtnData {
   x: number;
   y: number;
   actionGoto: string;
+  missionID?: string;
 }
 
 export type BuildActionDataReturn = BuildDataReturn<
-  Lecture["actions"],
+  Lecture["actions"] & Lecture["special_lecture"],
   ActionBtnData
 >;

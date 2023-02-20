@@ -20,12 +20,13 @@ import {
   getQuestionInput,
 } from "./utils";
 import { assetsPath } from "../../data/assetsPath";
+import { solveAssetPath } from "../../utils";
 
 export interface ScreenProps {
   slide: number;
   step: number;
   screenData: ScreenData;
-  actionGoTo?: (key: string) => void;
+  actionGoTo?: (actionGoto: string, missionID?: string) => void;
   onAnswer?: (isAnswer: boolean) => void;
 }
 
@@ -53,7 +54,7 @@ export const Screen: FC<ScreenProps> = ({
       {getMultipleLectureData(getImageStepData, buildImageStepData).map(
         ({ src, depth }, i) => (
           <PanelObject key={i} {...{ step, depth }}>
-            <img src={assetsPath[src]} />
+            <img src={solveAssetPath(assetsPath, src)} />
           </PanelObject>
         )
       )}
@@ -94,11 +95,11 @@ export const Screen: FC<ScreenProps> = ({
       )}
       {/** アクションボタン */}
       {getMultipleLectureData(getActionBtnStepData, buildActionBtnStepData).map(
-        ({ src, depth, x, y, actionGoto }, i) => (
+        ({ src, depth, x, y, actionGoto, missionID }, i) => (
           <PanelObject key={i} {...{ step, depth, src, x, y }}>
             <img
-              src={assetsPath[src]}
-              onClick={() => actionGoTo && actionGoTo(actionGoto)}
+              src={solveAssetPath(assetsPath, src)}
+              onClick={() => actionGoTo && actionGoTo(actionGoto, missionID)}
             />
           </PanelObject>
         )
@@ -108,7 +109,7 @@ export const Screen: FC<ScreenProps> = ({
         ({ src, depth, x, y, popupName }, i) => (
           <PanelObject key={i} {...{ step, depth, src, x, y }}>
             <img
-              src={assetsPath[src]}
+              src={solveAssetPath(assetsPath, src)}
               onClick={() => setPopupName(popupName)}
             />
           </PanelObject>
@@ -121,7 +122,10 @@ export const Screen: FC<ScreenProps> = ({
             {src === popupName && (
               <>
                 <PanelObject {...{ step, depth, src }}>
-                  <img src={assetsPath[src]} onClick={() => setPopupName("")} />
+                  <img
+                    src={solveAssetPath(assetsPath, src)}
+                    onClick={() => setPopupName("")}
+                  />
                 </PanelObject>
                 <Narration {...{ narration }} />
               </>

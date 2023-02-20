@@ -42,7 +42,11 @@ export const Screen: FC<ScreenProps> = (props) => {
 
   // アクションボタンを押したときの処理
   const actionGoTo = useCallback(
-    (value: string) => moveProgress(formatSlideStep(value)),
+    (actionGoto: string, missionID?: string) => {
+      moveProgress(formatSlideStep(actionGoto));
+      // 衛星組み立て画面のために、missionIDがあれば保存
+      missionID && localStorage.setItem("missionID", missionID);
+    },
     [moveProgress]
   );
 
