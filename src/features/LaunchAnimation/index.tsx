@@ -43,16 +43,63 @@ export const LaunchAnimation: FC<LaunchAnimationProps> = ({
 }) => {
   // lottieオブジェクトの再生や停止などはここで行う
   useEffect(() => {
-    lottie.play("object1");
+    if (scene === "standby") {
+      lottie.stop("rocket");
+    }
+    if (scene === "countdown") {
+      lottie.stop("rocket");
+      lottie.play("countdown");
+    }
+    if (scene === "launch") {
+      lottie.play("rocket");
+      lottie.play("smog");
+    }
+    if (scene === "injection") {
+      lottie.play("injectionObject");
+    }
   }, [scene]);
 
   return (
     <Main>
       {/** 背景 */}
       <LaunchBg img={scene === "injection" ? scane2_bg : scane1_bg} />
-      {/** ↓ これは仮のLottieオブジェクトです */}
-      {scene === "standby" && (
-        <LottieObject path={lottiePath["scene2_rocket_1_1.json"]} name="object1" />
+      {(scene === "standby" || scene === "countdown" || scene === "launch") && (
+        <LottieObject
+          path={lottiePath[`scene1_rocket_${rocketID}.json`]}
+          name="rocket"
+        />
+      )}
+      {scene === "countdown" && (
+        <>
+          <LottieObject
+            path={lottiePath["scene1_rocket_countdown.json"]}
+            name="countdown"
+          />
+        </>
+      )}
+      {scene === "launch" && (
+        <>
+          <LottieObject
+            path={lottiePath["scene1_rocket_launch_smog.json"]}
+            name="smog"
+          />
+        </>
+      )}
+      {scene === "injection" && (
+        <>
+          <LottieObject
+            path={lottiePath[`scene2_satellitebus_${busID}.json`]}
+            name="injectionObject"
+          />
+          <LottieObject
+            path={lottiePath[`scene2_solarcell_${batteryID}.json`]}
+            name="injectionObject"
+          />
+          <LottieObject
+            path={lottiePath[`scene2_rocket_${rocketID}.json`]}
+            name="injectionObject"
+          />
+        </>
       )}
     </Main>
   );
