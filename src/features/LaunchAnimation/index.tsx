@@ -63,7 +63,7 @@ export const LaunchAnimation: FC<LaunchAnimationProps> = ({
     <Main>
       {/** 背景 */}
       <LaunchBg img={scene === "injection" ? scane2_bg : scane1_bg} />
-      {scene === "standby" && (
+      {(scene === "standby" || scene === "countdown" || scene === "launch") && (
         <LottieObject
           path={lottiePath[`scene1_rocket_${rocketID}.json`]}
           name="rocket"
@@ -72,10 +72,6 @@ export const LaunchAnimation: FC<LaunchAnimationProps> = ({
       {scene === "countdown" && (
         <>
           <LottieObject
-            path={lottiePath[`scene1_rocket_${rocketID}.json`]}
-            name="rocket"
-          />
-          <LottieObject
             path={lottiePath["scene1_rocket_countdown.json"]}
             name="countdown"
           />
@@ -83,10 +79,6 @@ export const LaunchAnimation: FC<LaunchAnimationProps> = ({
       )}
       {scene === "launch" && (
         <>
-          <LottieObject
-            path={lottiePath[`scene1_rocket_${rocketID}.json`]}
-            name="rocket"
-          />
           <LottieObject
             path={lottiePath["scene1_rocket_launch_smog.json"]}
             name="smog"
