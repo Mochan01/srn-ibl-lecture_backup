@@ -27,6 +27,13 @@ export const useGetNextStep = (isStepEnd: boolean, onLastStep?: () => void) => {
       return;
     }
 
+    // アクションボタンが出る場所は停止
+    // アクションボタンを押して進んでもらう
+    if (next_steps.next_step === "stop") {
+      console.log(message + "by action button");
+      return;
+    }
+
     // 最後のステップなら停止
     // 「次ページ」を押して進んでもらう
     if (
@@ -39,7 +46,7 @@ export const useGetNextStep = (isStepEnd: boolean, onLastStep?: () => void) => {
     }
 
     return getJsonData(getStepData).next_steps.goto_step;
-  }, [isStepEnd, data, progress]);
+  }, [isStepEnd, data, progress, onLastStep]);
 
   return nextStep;
 };
