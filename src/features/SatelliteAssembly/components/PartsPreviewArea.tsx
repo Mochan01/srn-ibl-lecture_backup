@@ -60,13 +60,13 @@ export const PartsPreviewArea: FC<PartsPreviewAreaProps> = ({ masterData }) => {
   const onClick = (part: PreviewItem) => {
     let tabIndex: number;
     // 電源パーツ
-    if (part.category_id == "3") {
+    if (part.category_id == 3) {
       tabIndex = 1;
       // 積載パーツ
-    } else if (part.category_id == "2") {
+    } else if (part.category_id == 2) {
       tabIndex = 2;
       // ロケット
-    } else if (part.category_id == "1") {
+    } else if (part.category_id == 1) {
       tabIndex = 3;
       // ミッションパーツ
     } else {
