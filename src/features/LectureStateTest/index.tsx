@@ -30,17 +30,17 @@ export const LectureStateTest: FC<LectureStateTestProps> = () => {
 
   return (
     <>
-      {state.missions && (
+      {state.mission && (
         <button onClick={() => onClickSelectMission("intro_c01lv01u07m01")}>
           ミッション選択画面
         </button>
       )}
-      {state.intros && (
+      {state.intro && (
         <button onClick={shutDownTitle}>
           タイトル画面（レクチャーid: {lectureID.current}）
         </button>
       )}
-      {state.lectures && (
+      {state.lecture && (
         <button>レクチャー本編（レクチャーid: {lectureID.current}）</button>
       )}
     </>

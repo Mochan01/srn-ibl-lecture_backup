@@ -10,9 +10,9 @@ import { JsonData } from "../types";
 import { LectureSteps } from "../types/lectureSteps";
 
 interface LectureState {
-  missions: Missions | undefined;
-  intros: Intros | undefined;
-  lectures: Lectures | undefined;
+  mission: Missions | undefined;
+  intro: Intros | undefined;
+  lecture: Lectures | undefined;
 }
 
 export type SelectAction = {
@@ -22,9 +22,9 @@ export type SelectAction = {
 
 const reducer = (data: Pick<JsonData, "intro" | "lecture">) => (state: LectureState, action: SelectAction) => {
   return {
-    missions: undefined,
-    intros: undefined,
-    lectures: undefined,
+    mission: undefined,
+    intro: undefined,
+    lecture: undefined,
     [action.type]: (
       data[action.type] as LectureSteps<Intro | LectureData>[]
     ).find(({ lecture_id }) => lecture_id === action.lectureID)?.steps,
@@ -41,10 +41,10 @@ export const useLectureState = (data: JsonData) => {
 
   const initialState = {
     // ミッション選択画面が存在したら、レクチャーはミッション選択画面から始まる
-    missions: isMission ? data.mission[0].steps : undefined,
+    mission: isMission ? data.mission[0].steps : undefined,
     // ミッション選択画面が存在しなかったら、レクチャーはタイトル画面から始まる
-    intros: isMission ? undefined : data.intro[0].steps,
-    lectures: undefined,
+    intro: isMission ? undefined : data.intro[0].steps,
+    lecture: undefined,
   };
 
   return useReducer<Reducer<LectureState, SelectAction>>(reducer(data), initialState);
