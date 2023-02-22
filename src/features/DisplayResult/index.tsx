@@ -10,7 +10,6 @@ import { SAVED_PARTS } from "../../config";
 
 const Main = styled.div`
   padding-right: 10px;
-  margin-left: 85px;
   width: 1024px;
   height: 608px;
   font-size: 30px;
