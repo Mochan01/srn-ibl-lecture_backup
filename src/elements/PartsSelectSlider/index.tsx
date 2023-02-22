@@ -159,6 +159,7 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
           onSwiper={onSwiper}
           onSlideChange={onSlideChange}
           speed={duration}
+          simulateTouch={false} // クリックするとドラッグしちゃうのでもし有効化するなら感度下げる必要あり
         >
           {items.map((item, i) => (
             <SwiperSlide key={item.partID} onClick={() => onClick(i)}>
