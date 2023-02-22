@@ -1,3 +1,4 @@
+import { CategoryList } from "src-ibl-lecture-master-special/types";
 import { MasterData } from "../types";
 
 type GetParts<T> = (masterData: MasterData) => T[];
@@ -61,7 +62,10 @@ export const getRocketData = (masterData: MasterData, IDs: string[]) => {
   return masterData.rocket?.filter((obj) => IDs?.includes(obj.part_id));
 };
 
-export const getCategoryDescription = (masterData: MasterData, ID?: string) => {
+export const getCategoryDescription = (
+  masterData: MasterData,
+  ID?: CategoryList["category_id"]
+) => {
   return masterData.category_list.find((x) => x.category_id === ID)
     ?.category_description;
 };
