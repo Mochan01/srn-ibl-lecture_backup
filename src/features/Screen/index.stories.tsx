@@ -13,7 +13,8 @@ export const sample = template.bind({});
 sample.args = {
   slide: 1,
   step: 1,
-  actionGoTo: (val) => console.log(`${val}に飛ぶ`),
+  actionGoTo: (actionGoto, missionID) =>
+    console.log(`${actionGoto}に飛ぶ、ミッションID: ${missionID}`),
   onAnswer: (isAnswer) => console.log(isAnswer ? "正解" : "不正解"),
   screenData: [
     {
@@ -93,6 +94,9 @@ sample.args = {
         action_x: [300, 600],
         action_y: [300, 600],
         action_goto: ["1_1", "2_1"],
+      },
+      special_lecture: {
+        mission_select: ["ミッションID1", "ミッションID2"],
       },
       question_select: {
         question_x: "",

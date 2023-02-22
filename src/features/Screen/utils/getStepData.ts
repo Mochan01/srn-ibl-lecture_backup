@@ -66,8 +66,11 @@ export const getActionBtnStepData: GetMultipleScreenDataFunc<
   BuildActionDataReturn,
   ActionBtnData
 > = (lectureData) => (buildStepData) =>
-  lectureData.flatMap(({ progress, actions }) =>
-    buildStepData(actions.action_btns, progress.step)(actions)
+  lectureData.flatMap(({ progress, actions, special_lecture }) =>
+    buildStepData(
+      actions.action_btns,
+      progress.step
+    )({ ...actions, ...special_lecture })
   );
 
 /**

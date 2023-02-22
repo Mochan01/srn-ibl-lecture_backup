@@ -9,5 +9,6 @@ export type ScreenData = Array<
     | "actions"
     | "question_select"
     | "question_input"
+    | "special_lecture"
   >
 >;

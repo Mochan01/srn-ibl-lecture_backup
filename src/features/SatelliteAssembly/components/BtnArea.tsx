@@ -7,6 +7,11 @@ import {
   SatelliteAssemblyDispatchContext,
 } from "../contexts";
 import { SAVED_PARTS } from "../../../config";
+
+export interface BtnAreaProps {
+  onClick?: () => void;
+}
+
 const Main = styled.div`
   height: 59px;
   width: 680px;
@@ -14,7 +19,7 @@ const Main = styled.div`
   justify-content: space-between;
 `;
 
-export const BtnArea: FC = () => {
+export const BtnArea: FC<BtnAreaProps> = ({ onClick }) => {
   const [variant, setVariant] = useState<"OFF" | "BEFORE" | "AFTER">("OFF");
   const state = useContext(SatelliteAssemblyStateContext);
   const dispatch = useContext(SatelliteAssemblyDispatchContext);
@@ -78,7 +83,8 @@ export const BtnArea: FC = () => {
         })
       );
     setVariant("AFTER");
-    // TODO: 画面遷移処理を実装
+
+    onClick && onClick();
   };
 
   return (
