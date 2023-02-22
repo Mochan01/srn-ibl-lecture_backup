@@ -16,4 +16,5 @@ export const sample = template.bind({});
 sample.args = {
   selectedMissionID: "mission_1",
   masterData,
+  onClick: () => console.log("打ち上げ開始！")
 };

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { SIZE } from "../../data/SIZE";
 import {
   BtnArea,
+  BtnAreaProps,
   ParameterArea,
   PartsPreviewArea,
   PartsSelectArea,
@@ -23,7 +24,7 @@ const Main = styled.div`
   font-family: "UD デジタル 教科書体 N-B";
 `;
 
-export interface SatelliteAssemblyProps {
+export interface SatelliteAssemblyProps extends Pick<BtnAreaProps, "onClick"> {
   /**
    * プレイヤーが選択しているミッションID
    */
@@ -40,6 +41,7 @@ export interface SatelliteAssemblyProps {
 export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
   selectedMissionID,
   masterData,
+  onClick,
 }) => {
   // 当該ミッションのデータを取得
   const missionData = useMemo(
@@ -72,7 +74,7 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
         <PartsPreviewArea masterData={masterData} />
         <div>
           <div css={"margin-top: 18px"} />
-          <BtnArea />
+          <BtnArea {...{ onClick }} />
           <div css={"margin-top: 18px"} />
           <ParameterArea
             masterData={masterData}
