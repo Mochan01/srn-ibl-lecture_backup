@@ -14,4 +14,8 @@ export const navigationButtonsPath: { [key in string]: string } = {
   "L2U2_button_02.png": new URL("../assets/navigationButtons/L2U2_button_02.png", import.meta.url).toString(),
   "L2U2_button_03.png": new URL("../assets/navigationButtons/L2U2_button_03.png", import.meta.url).toString(),
   "L2U2_button_04.png": new URL("../assets/navigationButtons/L2U2_button_04.png", import.meta.url).toString(),
+  "L2U3_button_01.png": new URL("../assets/navigationButtons/L2U3_button_01.png", import.meta.url).toString(),
+  "L2U3_button_02.png": new URL("../assets/navigationButtons/L2U3_button_02.png", import.meta.url).toString(),
+  "L2U3_button_03.png": new URL("../assets/navigationButtons/L2U3_button_03.png", import.meta.url).toString(),
+  "L2U3_button_04.png": new URL("../assets/navigationButtons/L2U3_button_04.png", import.meta.url).toString(),
 };
