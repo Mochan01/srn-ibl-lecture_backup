@@ -1,4 +1,4 @@
-import React, { FC, useContext, useState } from "react";
+import React, { FC, useCallback, useContext, useMemo, useState } from "react";
 import styled from "styled-components";
 import { CommonProps } from "../../../types";
 import {
@@ -8,6 +8,11 @@ import {
 import { TitleBase as Main } from "../../../elements/TitleBase";
 import { NavigationButtons } from "../../../elements/NavigationButtons";
 import { Mission } from "src-ibl-lecture-master-unit/types";
+import { SkipBtn } from "../../../elements/SkipBtn/SkipBtn";
+import {
+  getLastStepData,
+  handleJsonData,
+} from "../../../features/LectureRoot/utils";
 const ImageTitle = new URL(
   "../../../assets/prod/lecture_title.png",
   import.meta.url
@@ -64,11 +69,20 @@ export const MissionSelectBase: FC<MissionSelectBaseProps> = ({
   const dispatch = useContext(GlobalDispatchContext);
   const [isStart, setIsStart] = useState(false);
   const { progress } = useContext(GlobalStateContext);
-  const missions = data as Mission[];
 
-  const missionSelect = missions.find(
-    (mission) => mission.progress.step === progress.step
-  )?.mission_select;
+  const lastStep = useMemo(() => {
+    const getLectureData = handleJsonData(data, progress);
+    return getLectureData(getLastStepData);
+  }, [data, progress]);
+
+  const missionSelect = useMemo(() => {
+    return data.find((mission) => mission.progress.step === progress.step)
+      ?.mission_select;
+  }, [data, progress.step]);
+
+  const onClickSkip = useCallback(() => {
+    dispatch({ type: "progress", val: lastStep.progress });
+  }, [dispatch, lastStep.progress]);
 
   return (
     <>
@@ -91,10 +105,17 @@ export const MissionSelectBase: FC<MissionSelectBaseProps> = ({
           />
         )}
       </Main>
-      {missionSelect && (
+      {missionSelect && lastStep.progress.step === progress.step && (
         <ButtonArea>
           <NavigationButtons {...{ onClick, missionSelect }} />
         </ButtonArea>
+      )}
+      {isStart && lastStep.progress.step !== progress.step && (
+        <SkipBtn
+          onClick={() => {
+            onClickSkip();
+          }}
+        />
       )}
     </>
   );
