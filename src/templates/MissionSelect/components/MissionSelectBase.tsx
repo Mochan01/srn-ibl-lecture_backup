@@ -13,6 +13,7 @@ import {
   getLastStepData,
   handleJsonData,
 } from "../../../features/LectureRoot/utils";
+import { useMoveProgress } from "../../../features/LectureRoot/hooks";
 const ImageTitle = new URL(
   "../../../assets/prod/lecture_title.png",
   import.meta.url
@@ -69,6 +70,7 @@ export const MissionSelectBase: FC<MissionSelectBaseProps> = ({
   const dispatch = useContext(GlobalDispatchContext);
   const [isStart, setIsStart] = useState(false);
   const { progress } = useContext(GlobalStateContext);
+  const moveProgress = useMoveProgress();
 
   const lastStep = useMemo(() => {
     const getLectureData = handleJsonData(data, progress);
@@ -81,8 +83,8 @@ export const MissionSelectBase: FC<MissionSelectBaseProps> = ({
   }, [data, progress.step]);
 
   const onClickSkip = useCallback(() => {
-    dispatch({ type: "progress", val: lastStep.progress });
-  }, [dispatch, lastStep.progress]);
+    moveProgress(lastStep.progress);
+  }, [lastStep.progress, moveProgress]);
 
   return (
     <>
