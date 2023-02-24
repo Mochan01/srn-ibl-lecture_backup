@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { GlobalDispatchContext } from "../../../features/LectureRoot/providers";
 import { TitleBase as Main } from "../../../elements/TitleBase";
 import { UnitInfo } from "../../../types/unitInfo";
+import { SkipBtn } from "../../../elements/SkipBtn/SkipBtn";
 const ImageTitle = new URL(
   "../../../assets/prod/lecture_title.png",
   import.meta.url
@@ -42,18 +43,6 @@ const StartBtn = styled.div`
   margin: auto;
 `;
 
-const SkipBtn = styled.div`
-  width: 180px;
-  height: 59px;
-  background-image: url(${ImageTitle});
-  /* lecture_title_skip.png */
-  background-position: 0 -518px;
-  cursor: pointer;
-  position: absolute;
-  right: 455px;
-  bottom: 219px;
-`;
-
 export const TitleBase: FC<TitleBaseProps> = ({
   unitName,
   unitTitle,
@@ -86,7 +75,6 @@ export const TitleBase: FC<TitleBaseProps> = ({
       </Main>
       {isStart && (
         <SkipBtn
-          role="button"
           onClick={() => {
             onClickSkip && onClickSkip();
           }}
