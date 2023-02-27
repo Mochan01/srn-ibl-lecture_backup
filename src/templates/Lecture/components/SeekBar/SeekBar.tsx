@@ -2,15 +2,22 @@ import React, { FC, useContext, useState } from "react";
 import { Radix } from "./Radix";
 import { useSeekBarAutoPlay, useSeekBarAction } from "../../hooks";
 import { GlobalDispatchContext } from "../../../../features/LectureRoot/providers";
+import styled from "styled-components";
 
 export interface SeekBarProps {
   className?: string;
+  isActive?: boolean;
 }
 
+const Main = styled.div<Pick<SeekBarProps, "isActive">>`
+  pointer-events: ${({ isActive }) => (isActive ? "auto" : "none")};
+  cursor: ${({ isActive }) => (isActive ? "pointer" : "none")};
+  filter: ${({ isActive }) => (isActive ? "none" : "grayscale(100%)")};
+`;
 /**
  * シークバー
  */
-export const SeekBar: FC<SeekBarProps> = (props) => {
+export const SeekBar: FC<SeekBarProps> = ({ isActive = true, ...props }) => {
   const { value: usrValue, setValue, updateProgress } = useSeekBarAction();
   const autoValue = useSeekBarAutoPlay();
 
@@ -27,8 +34,8 @@ export const SeekBar: FC<SeekBarProps> = (props) => {
   };
 
   return (
-    <div {...props} {...{ onPointerDown, onPointerUp }}>
+    <Main isActive={isActive} {...props} {...{ onPointerDown, onPointerUp }}>
       <Radix {...{ setValue }} value={isPointerDown ? usrValue : autoValue} />
-    </div>
+    </Main>
   );
 };
