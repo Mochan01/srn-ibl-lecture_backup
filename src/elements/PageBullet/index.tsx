@@ -39,7 +39,7 @@ const Bullet = styled.div<{ isFinish: boolean; isActive: boolean }>(
   height: 38px;
   background-position: ${isFinish ? "0 -2215px" : "0 -2173px"};
   pointer-events: ${isActive ? "auto" : "none"};
-  filter: ${isActive ? "none" : "brightness(50%)"};
+  filter: ${isActive ? "none" : "grayscale(100%)"};
   margin: auto;
   cursor: pointer;
 `

@@ -53,13 +53,16 @@ const Button = styled.div<
   background-repeat: no-repeat;
   width: 102px;
   height: 60px;
-  pointer-events: ${({ isActive }) => (isActive ? "auto" : "none")};
-  filter: ${({ isActive }) => (isActive ? "none" : "brightness(50%)")};
+  filter: ${({ isActive }) => (isActive ? "none" : "grayscale(100%)")};
   position: relative;
   margin-bottom: 4px;
   &:hover {
     background-position: ${({ hoverVariant }) => variants[hoverVariant]};
   }
+`;
+const Main = styled.div<Pick<MiniBtnProps, "isActive">>`
+  pointer-events: ${({ isActive }) => (isActive ? "auto" : "none")};
+  cursor: ${({ isActive }) => (isActive ? "pointer" : "none")};
 `;
 
 const TEXT_H = 14;
@@ -84,14 +87,9 @@ export const MiniBtn: FC<MiniBtnProps> = ({
   className,
 }) => {
   return (
-    <div
-      // role="button"
-      tabIndex={0}
-      {...{ onClick, className }}
-      css={isActive ? "cursor: pointer" : ""}
-    >
+    <Main role="button" tabIndex={0} {...{ onClick, className, isActive }}>
       <Button {...{ variant, hoverVariant, isActive }} />
       <Label>{caption}</Label>
-    </div>
+    </Main>
   );
 };

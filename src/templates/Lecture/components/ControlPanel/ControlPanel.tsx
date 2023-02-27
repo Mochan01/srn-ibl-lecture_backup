@@ -30,6 +30,7 @@ const ImageLecture = new URL(
 export interface ControlBarProps {
   onLectureLeave: (key: "begin" | "end") => void;
   className?: string;
+  disableKey?: "full" | "some" | "none";
 }
 
 /* lecture_panel.png */
@@ -50,6 +51,7 @@ const Main = styled.div`
  */
 export const ControlPanel: FC<ControlBarProps> = ({
   onLectureLeave,
+  disableKey,
   className,
 }) => {
   const { progress, isPlaying } = useContext(GlobalStateContext);
@@ -80,6 +82,7 @@ export const ControlPanel: FC<ControlBarProps> = ({
         slideLen={lastStepData}
         slideIndex={currentStepData}
         onClick={(i) => moveProgress({ slide: i + 1, step: 1 })}
+        isActive={disableKey !== "full" && disableKey !== "some"}
       />
       <PrevBtn
         onClick={() => {
@@ -91,6 +94,7 @@ export const ControlPanel: FC<ControlBarProps> = ({
           moveProgress({ slide: progress.slide - 1, step: 1 });
         }}
         css="margin-left: 146px;"
+        isActive={disableKey !== "full" && disableKey !== "some"}
       />
       <PlayBtn
         isPlaying={isPlaying}
@@ -99,6 +103,7 @@ export const ControlPanel: FC<ControlBarProps> = ({
           dispatch({ type: "timestamp" });
         }}
         css="margin-left: 20px;"
+        isActive={disableKey !== "full"}
       />
       <NextBtn
         isBlink={isBlink}
@@ -114,6 +119,7 @@ export const ControlPanel: FC<ControlBarProps> = ({
           });
         }}
         css="margin-left: 20px;"
+        isActive={disableKey !== "full" && disableKey !== "some"}
       />
       <ReplayBtn
         onClick={() => {
@@ -121,6 +127,7 @@ export const ControlPanel: FC<ControlBarProps> = ({
           dispatch({ type: "timestamp" });
         }}
         css="margin-left: 80px;"
+        isActive={disableKey !== "full"}
       />
     </Main>
   );
