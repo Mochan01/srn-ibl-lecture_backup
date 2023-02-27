@@ -17,6 +17,7 @@ const template: Story<NextBtnProps> = (args) => <NextBtn {...args} />;
 export const sample: { args: NextBtnProps } = template.bind({});
 sample.args = {
   onClick: () => console.log("launch"),
-  condition: "isLeave",
+  isBlink: false,
+  isLeave: false,
   isActive: false,
 };

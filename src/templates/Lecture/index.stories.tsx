@@ -1,7 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Lecture, LectureProps } from ".";
-import jsonData from "../../assets/data/unit00_master.json";
+import jsonData from "../../assets/data/unit01_master.json";
 import { Lectures } from "src-ibl-lecture-master-unit/types";
 
 export default {
@@ -11,7 +11,7 @@ export default {
 
 const template: Story<LectureProps> = (args) => <Lecture {...args} />;
 
-const data = jsonData.lecture[0].steps as Lectures;
+const data = jsonData.lecture[0].steps as unknown as Lectures;
 
 export const sample: { args: LectureProps } = template.bind({});
 sample.args = {
@@ -23,5 +23,5 @@ sample.args = {
   onClose: () => {
     console.log("onClickClose");
   },
-  data
+  data,
 };

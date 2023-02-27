@@ -5,29 +5,23 @@ import { MiniBtn, MiniBtnProps } from "../MiniBtn";
 export interface NextBtnProps
   extends Pick<MiniBtnProps, "className" | "isActive"> {
   onClick: () => void;
-  condition: "isNormal" | "isBlink" | "isLeave";
+  isBlink: boolean;
+  isLeave: boolean;
 }
 
 export const NextBtn: FC<NextBtnProps> = ({
   onClick,
-  condition,
+  isBlink,
+  isLeave,
   isActive,
   ...props
 }) => {
   const { time, start, reset } = useTimer();
-  useEffect(
-    () => (condition !== "isNormal" ? start() : reset()),
-    [start, reset, condition]
-  );
+  useEffect(() => (isBlink ? start() : reset()), [start, reset, isBlink]);
 
   const variant = useMemo(
-    () =>
-      condition !== "isNormal"
-        ? time % 2 === 0
-          ? "flashing1"
-          : "flashing2"
-        : "nextOn",
-    [condition, time]
+    () => (isBlink ? (time % 2 === 0 ? "flashing1" : "flashing2") : "nextOn"),
+    [isBlink, time]
   );
 
   return (
@@ -37,7 +31,7 @@ export const NextBtn: FC<NextBtnProps> = ({
       onClick={() => {
         onClick();
       }}
-      caption={condition === "isLeave" ? "レクチャーを終了" : "次ページ"}
+      caption={isLeave ? "レクチャーを終了" : "次ページ"}
       hoverVariant="nextOff"
     />
   );
