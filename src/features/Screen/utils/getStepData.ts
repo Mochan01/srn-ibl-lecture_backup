@@ -1,6 +1,8 @@
-import { ActionBtnData, ScreenData } from "../types";
 import { BuildStepData } from "./buildStepData";
 import {
+  ActionBtnData,
+  LaunchData,
+  ScreenData,
   ImageData,
   PopupBtnData,
   BuildImageDataReturn,
@@ -11,6 +13,8 @@ import {
   QuestionSelectData,
   buildQuestionInputData,
 } from "../types";
+import { SAVED_PARTS } from "../../../config";
+import { SavedParts } from "../../DisplayResult";
 
 type GetSingleScreenDataFunc<U> = (lectureData: ScreenData) => U[];
 
@@ -88,6 +92,25 @@ export const getPopupStepData: GetMultipleScreenDataFunc<
   );
 
 /**
+ * 取得 打ち上げアニメーションのデータ
+ * @param lectureData
+ * @returns
+ */
+export const getLaunchData: GetSingleScreenDataFunc<LaunchData> = (
+  lectureData
+) => {
+  const item = localStorage.getItem(SAVED_PARTS);
+  const savedParts: SavedParts = item && JSON.parse(item);
+  return lectureData.flatMap(({ progress, special_lecture }) => ({
+    depth: progress.step,
+    launch_key: special_lecture.launch_key,
+    rocketID: savedParts.rocketID,
+    busID: savedParts.busID,
+    batteryID: savedParts.batteryID,
+  }));
+};
+
+/**
  * 取得 クイズ 選択式
  * @param lectureData
  * @returns
@@ -119,13 +142,29 @@ export const getQuestionInput: GetSingleScreenDataFunc<buildQuestionInputData> =
  * @param lectureData
  * @returns
  */
-export const getCurrentData = (
+export const getLectureDataUpToStep = (
   slide: number,
   step: number,
   lectureData: ScreenData
 ) =>
   lectureData.filter(
     ({ progress }) => progress.slide === slide && progress.step <= step
+  );
+
+/**
+ * 該当するスライドのうち、現在のステップのみの要素を残す
+ * @param slide 
+ * @param step 
+ * @param lectureData 
+ * @returns 
+ */
+export const getLectureDataAtStep = (
+  slide: number,
+  step: number,
+  lectureData: ScreenData
+) =>
+  lectureData.filter(
+    ({ progress }) => progress.slide === slide && progress.step === step
   );
 
 /**
