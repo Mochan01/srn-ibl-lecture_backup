@@ -1,6 +1,8 @@
-import { ActionBtnData, ScreenData } from "../types";
 import { BuildStepData } from "./buildStepData";
 import {
+  ActionBtnData,
+  LaunchData,
+  ScreenData,
   ImageData,
   PopupBtnData,
   BuildImageDataReturn,
@@ -11,6 +13,8 @@ import {
   QuestionSelectData,
   buildQuestionInputData,
 } from "../types";
+import { SAVED_PARTS } from "../../../config";
+import { SavedParts } from "../../DisplayResult";
 
 type GetSingleScreenDataFunc<U> = (lectureData: ScreenData) => U[];
 
@@ -86,6 +90,25 @@ export const getPopupStepData: GetMultipleScreenDataFunc<
   lectureData.flatMap(({ progress, popup }) =>
     buildStepData(popup.display_popup, progress.step)(popup)
   );
+
+/**
+ * 取得 打ち上げアニメーションのデータ
+ * @param lectureData
+ * @returns
+ */
+export const getLaunchData: GetSingleScreenDataFunc<LaunchData> = (
+  lectureData
+) => {
+  const item = localStorage.getItem(SAVED_PARTS);
+  const savedParts: SavedParts = item && JSON.parse(item);
+  return lectureData.flatMap(({ progress, special_lecture }) => ({
+    depth: progress.step,
+    launch_key: special_lecture.launch_key,
+    rocketID: savedParts.rocketID,
+    busID: savedParts.busID,
+    batteryID: savedParts.batteryID,
+  }));
+};
 
 /**
  * 取得 クイズ 選択式

@@ -1,6 +1,7 @@
 export * from "./lectureData";
 export * from "./buildPopupBtnData";
 export * from "./buildImageData";
+export * from "./buildLaunchData";
 export * from "./buildActionBtnData";
 export * from "./buildDataReturn";
 export * from "./buildPopupData";

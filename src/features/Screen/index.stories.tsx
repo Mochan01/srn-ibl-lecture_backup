@@ -63,6 +63,10 @@ sample.args = {
         question_y: "",
         ans: "",
       },
+      special_lecture: {
+        mission_select: ["ミッションID1", "ミッションID2"],
+        launch_key: "countdown",
+      },
     },
     {
       progress: {
@@ -97,6 +101,7 @@ sample.args = {
       },
       special_lecture: {
         mission_select: ["ミッションID1", "ミッションID2"],
+        launch_key: "standby",
       },
       question_select: {
         question_x: "",
