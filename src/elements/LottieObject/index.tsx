@@ -11,13 +11,6 @@ export interface LottieObjectProps {
   className?: string;
 }
 
-const Main = styled.div`
-  /* 設定しないとscreenコンポーネントに実装時に表示されない */
-  /* srn-ibl-lecture\src\features\LaunchAnimation\components\LaunchBg.tsxと同じ値を設定  */
-  width: 960px;
-  height: 540px;
-`;
-
 /**
  * https://www.npmjs.com/package/lottie-web
  */
@@ -42,5 +35,5 @@ export const LottieObject: FC<LottieObjectProps> = ({
       });
   }, [ref, path, name, autoplay, loop]);
 
-  return <Main {...{ ref }} {...props} />;
+  return <div {...{ ref }} {...props} />;
 };

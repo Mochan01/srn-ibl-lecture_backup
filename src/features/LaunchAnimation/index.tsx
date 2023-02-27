@@ -27,6 +27,8 @@ const Main = styled.div`
   position: relative;
   & > * {
     position: absolute;
+    width: 960px;
+    height: 540px;
   }
 `;
 
