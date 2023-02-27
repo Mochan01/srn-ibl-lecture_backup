@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef } from "react";
 import styled from "styled-components";
 import lottie from "lottie-web";
+import { SIZE } from "../../data/SIZE";
 
 export interface LottieObjectProps {
   path: string;
@@ -10,7 +11,12 @@ export interface LottieObjectProps {
   className?: string;
 }
 
-const Main = styled.div``;
+const Main = styled.div`
+  /* 設定しないとscreenコンポーネントに実装時に表示されない */
+  /* srn-ibl-lecture\src\features\LaunchAnimation\components\LaunchBg.tsxと同じ値を設定  */
+  width: 960px;
+  height: 540px;
+`;
 
 /**
  * https://www.npmjs.com/package/lottie-web
