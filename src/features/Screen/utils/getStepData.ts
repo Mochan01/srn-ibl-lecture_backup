@@ -142,13 +142,29 @@ export const getQuestionInput: GetSingleScreenDataFunc<buildQuestionInputData> =
  * @param lectureData
  * @returns
  */
-export const getCurrentData = (
+export const getLectureDataUpToStep = (
   slide: number,
   step: number,
   lectureData: ScreenData
 ) =>
   lectureData.filter(
     ({ progress }) => progress.slide === slide && progress.step <= step
+  );
+
+/**
+ * 該当するスライドのうち、現在のステップのみの要素を残す
+ * @param slide 
+ * @param step 
+ * @param lectureData 
+ * @returns 
+ */
+export const getLectureDataAtStep = (
+  slide: number,
+  step: number,
+  lectureData: ScreenData
+) =>
+  lectureData.filter(
+    ({ progress }) => progress.slide === slide && progress.step === step
   );
 
 /**
