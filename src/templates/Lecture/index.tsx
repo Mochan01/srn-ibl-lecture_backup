@@ -32,8 +32,7 @@ export const Lecture: FC<LectureProps> = ({
     <LectureRoot {...{ onClose, jsonData }}>
       <Wrapper>
         <Screen {...{ unitName, unitTitle }} />
-        <SeekBar isActive={false} />
-        <ControlPanel disableKey="full" {...{ onLectureLeave }} />
+        <ControlPanel {...{ onLectureLeave }} />
       </Wrapper>
     </LectureRoot>
   );
