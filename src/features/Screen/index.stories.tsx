@@ -66,6 +66,7 @@ sample.args = {
       special_lecture: {
         mission_select: ["ミッションID1", "ミッションID2"],
         launch_key: "countdown",
+        display_result: true,
       },
     },
     {

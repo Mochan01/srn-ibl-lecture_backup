@@ -12,6 +12,7 @@ import {
   BuildPopupDataReturn,
   QuestionSelectData,
   buildQuestionInputData,
+  ResultData,
 } from "../types";
 import { SAVED_PARTS } from "../../../config";
 import { SavedParts } from "../../DisplayResult";
@@ -111,6 +112,20 @@ export const getLaunchData: GetSingleScreenDataFunc<LaunchData> = (
 };
 
 /**
+ * 取得 データ確認のデータ
+ * @param lectureData
+ * @returns
+ */
+export const getResultData: GetSingleScreenDataFunc<ResultData> = (
+  lectureData
+) => {
+  return lectureData.flatMap(({ progress, special_lecture }) => ({
+    depth: progress.step,
+    display_result: special_lecture.display_result,
+  }));
+};
+
+/**
  * 取得 クイズ 選択式
  * @param lectureData
  * @returns
@@ -153,10 +168,10 @@ export const getLectureDataUpToStep = (
 
 /**
  * 該当するスライドのうち、現在のステップのみの要素を残す
- * @param slide 
- * @param step 
- * @param lectureData 
- * @returns 
+ * @param slide
+ * @param step
+ * @param lectureData
+ * @returns
  */
 export const getLectureDataAtStep = (
   slide: number,
