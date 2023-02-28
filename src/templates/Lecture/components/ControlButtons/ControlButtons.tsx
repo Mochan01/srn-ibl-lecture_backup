@@ -47,7 +47,7 @@ const Main = styled.div`
 `;
 
 /**
- * コントロールパネル
+ * コントロールパネルのボタン類
  */
 export const ControlButtons: FC<ControlButtonsProps> = ({
   onLectureLeave,
