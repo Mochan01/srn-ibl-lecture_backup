@@ -213,14 +213,18 @@ export const Screen: FC<ScreenProps> = ({
       {/* * 打ち上げ画面 */}
       {getSingleDataAtStep(getLaunchData).map(
         ({ rocketID, busID, batteryID, launch_key, depth }, i) => (
-          <PanelObject key={i} {...{ step, depth }} x={163} y={92}>
-            <LaunchAnimation
-              scene={launch_key}
-              rocketID={rocketID}
-              busID={busID}
-              batteryID={batteryID}
-            />
-          </PanelObject>
+          <>
+            {launch_key && (
+              <PanelObject key={i} {...{ step, depth }} x={163} y={92}>
+                <LaunchAnimation
+                  scene={launch_key}
+                  rocketID={rocketID}
+                  busID={busID}
+                  batteryID={batteryID}
+                />
+              </PanelObject>
+            )}
+          </>
         )
       )}
       {/* * データ確認画面 */}
