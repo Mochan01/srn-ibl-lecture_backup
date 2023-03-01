@@ -35,7 +35,7 @@ export const SeekBar: FC<SeekBarProps> = ({ isActive = true, ...props }) => {
 
   return (
     <Main isActive={isActive} {...props} {...{ onPointerDown, onPointerUp }}>
-      <Radix {...{ setValue }} value={isPointerDown ? usrValue : autoValue} />
+      <Radix {...{ setValue }} value={isActive ? (isPointerDown ? usrValue : autoValue ): 0} />
     </Main>
   );
 };
