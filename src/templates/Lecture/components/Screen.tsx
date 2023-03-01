@@ -27,8 +27,8 @@ export const Screen: FC<ScreenProps> = (props) => {
   const { progress } = useContext(GlobalStateContext);
   const moveProgress = useMoveProgress();
 
-  const lectureData = useContext(JsonDataProviderContext) as Lecture[];
-  const getLectureData = handleJsonData(lectureData, progress);
+  const screenData = useContext(JsonDataProviderContext) as Lecture[];
+  const getLectureData = handleJsonData(screenData, progress);
 
   const { countdown, next_steps, special_lecture } =
     getLectureData(getStepData);
@@ -96,8 +96,8 @@ export const Screen: FC<ScreenProps> = (props) => {
       {!special_lecture.record_mission && (
         <Main
           {...progress}
-          {...{ onAnswer, actionGoTo }}
-          screenData={lectureData}
+          {...{ onAnswer, actionGoTo, screenData }}
+          resultList={masterData.result_list}
         />
       )}
     </LectureFrame>

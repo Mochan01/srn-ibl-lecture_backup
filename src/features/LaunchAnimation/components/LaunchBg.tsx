@@ -8,8 +8,6 @@ export interface LaunchBgProps {
 const Main = styled.div<LaunchBgProps>(
   ({ img }) => `
   background-image: url(${img});
-  width: 960px;
-  height: 540px;
 `
 );
 

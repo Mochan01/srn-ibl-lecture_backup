@@ -12,5 +12,5 @@ const template: Story<OpenPdfBtnProps> = (args) => <OpenPdfBtn {...args} />;
 
 export const sample = template.bind({});
 sample.args = {
-  filePath: pdfPath["result-4_2.pdf"],
+  filePath: pdfPath["Lv01U09M01_result01.pdf"],
 };

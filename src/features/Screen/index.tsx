@@ -16,16 +16,24 @@ import {
   buildActionBtnStepData,
   buildPopupStepData,
   getQuestionSelect,
-  getCurrentData,
+  getLectureDataUpToStep,
+  getLectureDataAtStep,
   getQuestionInput,
+  getLaunchData,
+  getResultData,
+  getPartsIDs,
 } from "./utils";
 import { assetsPath } from "../../data/assetsPath";
 import { solveAssetPath } from "../../utils";
+import { LaunchAnimation } from "../LaunchAnimation";
+import { DisplayResult } from "../DisplayResult";
+import { ResultList } from "src-ibl-lecture-master-special/types";
 
 export interface ScreenProps {
   slide: number;
   step: number;
   screenData: ScreenData;
+  resultList: ResultList[];
   actionGoTo?: (actionGoto: string, missionID?: string) => void;
   onAnswer?: (isAnswer: boolean) => void;
 }
@@ -37,21 +45,26 @@ export const Screen: FC<ScreenProps> = ({
   slide,
   step,
   screenData,
+  resultList,
   actionGoTo,
   onAnswer,
 }) => {
   const [popupName, setPopupName] = useState("");
 
   // スライドとステップに応じて、描画するものを絞り込み
-  const currentData = getCurrentData(slide, step, screenData);
-  const getMultipleLectureData = createMultipleScreenData(currentData);
-  const getSingleLectureData = createSingleScreenData(currentData);
+  const dataUpToStep = getLectureDataUpToStep(slide, step, screenData);
+  const getMultipleDataUpToStep = createMultipleScreenData(dataUpToStep);
+  const getSingleDataUpToStep = createSingleScreenData(dataUpToStep);
+
+  const dataAtStep = getLectureDataAtStep(slide, step, screenData);
+  const getSingleDataAtStep = createSingleScreenData(dataAtStep);
 
   // 各要素はDOM構造としては並列に出し、重ね順をcssで指定する
+
   return (
     <Panel>
-      {/** メイン画像 */}
-      {getMultipleLectureData(getImageStepData, buildImageStepData).map(
+      {/* * メイン画像 */}
+      {getMultipleDataUpToStep(getImageStepData, buildImageStepData).map(
         ({ src, depth }, i) => (
           <PanelObject key={i} {...{ step, depth }}>
             <img src={solveAssetPath(assetsPath, src)} />
@@ -59,7 +72,7 @@ export const Screen: FC<ScreenProps> = ({
         )
       )}
       {/** クイズ（選択式） */}
-      {getSingleLectureData(getQuestionSelect).map(
+      {getSingleDataUpToStep(getQuestionSelect).map(
         ({ question_select, depth }, i) => (
           <Fragment key={i}>
             {question_select && (
@@ -78,7 +91,7 @@ export const Screen: FC<ScreenProps> = ({
         )
       )}
       {/** クイズ（入力式） */}
-      {getSingleLectureData(getQuestionInput).map(
+      {getSingleDataUpToStep(getQuestionInput).map(
         ({ question_input, depth }, i) => (
           <Fragment key={i}>
             {question_input && question_input.ans && (
@@ -94,18 +107,19 @@ export const Screen: FC<ScreenProps> = ({
         )
       )}
       {/** アクションボタン */}
-      {getMultipleLectureData(getActionBtnStepData, buildActionBtnStepData).map(
-        ({ src, depth, x, y, actionGoto, missionID }, i) => (
-          <PanelObject key={i} {...{ step, depth, src, x, y }}>
-            <img
-              src={solveAssetPath(assetsPath, src)}
-              onClick={() => actionGoTo && actionGoTo(actionGoto, missionID)}
-            />
-          </PanelObject>
-        )
-      )}
+      {getMultipleDataUpToStep(
+        getActionBtnStepData,
+        buildActionBtnStepData
+      ).map(({ src, depth, x, y, actionGoto, missionID }, i) => (
+        <PanelObject key={i} {...{ step, depth, src, x, y }}>
+          <img
+            src={solveAssetPath(assetsPath, src)}
+            onClick={() => actionGoTo && actionGoTo(actionGoto, missionID)}
+          />
+        </PanelObject>
+      ))}
       {/** ポップアップ用のボタン */}
-      {getMultipleLectureData(getPopupBtnStepData, buildPopupBtnStepData).map(
+      {getMultipleDataUpToStep(getPopupBtnStepData, buildPopupBtnStepData).map(
         ({ src, depth, x, y, popupName }, i) => (
           <PanelObject key={i} {...{ step, depth, src, x, y }}>
             <img
@@ -115,8 +129,33 @@ export const Screen: FC<ScreenProps> = ({
           </PanelObject>
         )
       )}
+      {/* * 打ち上げ画面 */}
+      {getSingleDataAtStep(getLaunchData).map(({ launch_key, depth }, i) => {
+        const partsIDs = getPartsIDs();
+        return (
+          <Fragment key={i}>
+            {launch_key && partsIDs && (
+              <PanelObject {...{ step, depth }} x={163} y={92}>
+                <LaunchAnimation scene={launch_key} {...partsIDs} />
+              </PanelObject>
+            )}
+          </Fragment>
+        );
+      })}
+      {/* * データ確認画面 */}
+      {getSingleDataAtStep(getResultData).map(
+        ({ depth, display_result }, i) => (
+          <Fragment key={i}>
+            {display_result && (
+              <PanelObject key={i} {...{ step, depth }} x={123} y={115}>
+                <DisplayResult {...{ resultList }} />
+              </PanelObject>
+            )}
+          </Fragment>
+        )
+      )}
       {/** ポップアップ */}
-      {getMultipleLectureData(getPopupStepData, buildPopupStepData).map(
+      {getMultipleDataUpToStep(getPopupStepData, buildPopupStepData).map(
         ({ src, depth, narration }, i) => (
           <Fragment key={i}>
             {src === popupName && (

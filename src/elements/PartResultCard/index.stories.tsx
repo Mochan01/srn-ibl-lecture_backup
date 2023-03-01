@@ -19,6 +19,6 @@ sample.args = {
     part_a_name: "高分解能サーモグラフィー",
     part_b: "",
     part_b_name: "",
-    result_pdf: "result-4_2.pdf",
+    result_pdf: "Lv01U09M01_result01.pdf",
   },
 };

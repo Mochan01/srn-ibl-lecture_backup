@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef } from "react";
 import styled from "styled-components";
 import lottie from "lottie-web";
+import { SIZE } from "../../data/SIZE";
 
 export interface LottieObjectProps {
   path: string;
@@ -9,8 +10,6 @@ export interface LottieObjectProps {
   loop?: boolean;
   className?: string;
 }
-
-const Main = styled.div``;
 
 /**
  * https://www.npmjs.com/package/lottie-web
@@ -36,5 +35,5 @@ export const LottieObject: FC<LottieObjectProps> = ({
       });
   }, [ref, path, name, autoplay, loop]);
 
-  return <Main {...{ ref }} {...props} />;
+  return <div {...{ ref }} {...props} />;
 };

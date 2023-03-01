@@ -113,10 +113,7 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
             onLectureLeave("end");
             return;
           }
-          dispatch({
-            type: "progress",
-            val: { slide: progress.slide + 1, step: 1 },
-          });
+          moveProgress({ slide: progress.slide + 1, step: 1 });
         }}
         css="margin-left: 20px;"
         isActive={disableKey !== "full" && disableKey !== "some"}

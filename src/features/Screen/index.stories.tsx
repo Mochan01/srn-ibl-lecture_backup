@@ -63,6 +63,10 @@ sample.args = {
         question_y: "",
         ans: "",
       },
+      special_lecture: {
+        mission_select: ["ミッションID1", "ミッションID2"],
+        display_result: true,
+      },
     },
     {
       progress: {
@@ -97,6 +101,7 @@ sample.args = {
       },
       special_lecture: {
         mission_select: ["ミッションID1", "ミッションID2"],
+        launch_key: "launch",
       },
       question_select: {
         question_x: "",
@@ -115,6 +120,32 @@ sample.args = {
         question_y: 200,
         ans: "入力問題です",
       },
+    },
+  ],
+  resultList: [
+    {
+      result_id: "result_1",
+      part_a: "4_2",
+      part_a_name: "高分解能サーモグラフィー",
+      part_b: "",
+      part_b_name: "",
+      result_pdf: "Lv01U09M01_result01.pdf",
+    },
+    {
+      result_id: "result_2",
+      part_a: "",
+      part_a_name: "",
+      part_b: "4_3",
+      part_b_name: "標準SAR\n",
+      result_pdf: "Lv01U09M01_result01.pdf",
+    },
+    {
+      result_id: "result_10",
+      part_a: "4_2",
+      part_a_name: "広域カメラ",
+      part_b: "4_3",
+      part_b_name: "限定処理特化型コンピュータ",
+      result_pdf: "Lv01U09M01_result01.pdf",
     },
   ],
 };

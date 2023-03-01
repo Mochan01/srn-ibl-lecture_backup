@@ -6,7 +6,7 @@ import { pdfPath } from "../../data/pdfPath";
 import { OpenPdfBtn } from "../../elements/OpenPdfBtn";
 import { PartResultCard } from "../../elements/PartResultCard";
 import { TwoPartsResultCard } from "../../elements/TwoPartsResultCard";
-import { SAVED_PARTS } from "../../config";
+import { getPartsIDs } from "../Screen/utils";
 
 const Main = styled.div`
   padding-right: 10px;
@@ -53,16 +53,8 @@ export interface DisplayResultProps {
 export const DisplayResult: FC<DisplayResultProps> = ({ resultList }) => {
   // 画面に表示するパーツ
   const missionParts = useMemo(() => {
-    // ローカルストレージからパーツを取得
-    const item = localStorage.getItem(SAVED_PARTS);
-    const savedParts: SavedParts = item && JSON.parse(item);
-    // missionパーツ
-    const { missionPartsIDs } = savedParts;
-
-    // TODO:表示確認用 必要なくなったら消す
-    // const missionPartsIDs = ["4_2", "4_3", "4_6", "5_2", "7_1"];
-
-    return resultList.filter((result) => {
+    const { missionPartsIDs } = getPartsIDs() || {};
+    return missionPartsIDs && resultList.filter((result) => {
       // part_aとpart_bに両方値がある場合
       if (result.part_a && result.part_b) {
         // part_aとpart_bの両方が保存したミッションパーツに含まれる場合をフィルタリング
@@ -86,18 +78,19 @@ export const DisplayResult: FC<DisplayResultProps> = ({ resultList }) => {
         <div css={"margin-top: 26px"} />
         <STitle>人工衛星による成果を確認しよう</STitle>
         <div css={"margin-top: 31px"} />
-        {missionParts.map((partsResult) => (
-          <SContents key={partsResult.result_id}>
-            {/* part_aとpart_bに両方値がある場合と片方しかない場合でコンポーネントを分ける */}
-            {partsResult.part_a && partsResult.part_b ? (
-              <TwoPartsResultCard resultList={partsResult} />
-            ) : (
-              <PartResultCard resultList={partsResult} />
-            )}
-            <div css={"margin-left: 24px"} />
-            <OpenPdfBtn filePath={pdfPath[partsResult.result_pdf]} />
-          </SContents>
-        ))}
+        {missionParts &&
+          missionParts.map((partsResult) => (
+            <SContents key={partsResult.result_id}>
+              {/* part_aとpart_bに両方値がある場合と片方しかない場合でコンポーネントを分ける */}
+              {partsResult.part_a && partsResult.part_b ? (
+                <TwoPartsResultCard resultList={partsResult} />
+              ) : (
+                <PartResultCard resultList={partsResult} />
+              )}
+              <div css={"margin-left: 24px"} />
+              <OpenPdfBtn filePath={pdfPath[partsResult.result_pdf]} />
+            </SContents>
+          ))}
       </ScrollArea>
     </Main>
   );
