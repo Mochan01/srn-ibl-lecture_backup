@@ -29,94 +29,11 @@ import { LaunchAnimation } from "../LaunchAnimation";
 import { DisplayResult } from "../DisplayResult";
 import { ResultList } from "src-ibl-lecture-master-special/types";
 
-// TODO: dataの取り方が未定なので仮の値 DisplayResult用
-const mockResultList: ResultList[] = [
-  {
-    result_id: "result_1",
-    part_a: "4_2",
-    part_a_name: "高分解能サーモグラフィー",
-    part_b: "",
-    part_b_name: "",
-    result_pdf: "result-4_2.pdf",
-  },
-  {
-    result_id: "result_2",
-    part_a: "",
-    part_a_name: "",
-    part_b: "4_3",
-    part_b_name: "標準SAR\n",
-    result_pdf: "result-4_3.pdf",
-  },
-  {
-    result_id: "result_3",
-    part_a: "",
-    part_a_name: "",
-    part_b: "4_6",
-    part_b_name: "高分解能カメラ",
-    result_pdf: "result-4_5-4_6.pdf",
-  },
-  {
-    result_id: "result_4",
-    part_a: "4_2",
-    part_a_name: "高分解能サーモグラフィー",
-    part_b: "4_7",
-    part_b_name: "高分解能カメラ",
-    result_pdf: "result-4_5-4_6.pdf",
-  },
-  {
-    result_id: "result_5",
-    part_a: "4_2",
-    part_a_name: "高分解能サーモグラフィー",
-    part_b: "4_3",
-    part_b_name: "標準SAR\n",
-    result_pdf: "result-4_2-4_3.pdf",
-  },
-  {
-    result_id: "result_6",
-    part_a: "4_5",
-    part_a_name: "広域カメラ",
-    part_b: "",
-    part_b_name: "",
-    result_pdf: "result-4_5.pdf",
-  },
-  {
-    result_id: "result_7",
-    part_a: "5_2",
-    part_a_name: "地上の基地局との電波通信装置（高速）",
-    part_b: "",
-    part_b_name: "",
-    result_pdf: "result-5_2.pdf",
-  },
-  {
-    result_id: "result_8",
-    part_a: "",
-    part_a_name: "",
-    part_b: "7_1",
-    part_b_name: "限定処理特化型コンピュータ",
-    result_pdf: "result-4_3.pdf",
-  },
-  {
-    result_id: "result_9",
-    part_a: "5_2",
-    part_a_name: "地上の基地局との電波通信装置（高速）",
-    part_b: "7_1",
-    part_b_name: "限定処理特化型コンピュータ",
-    result_pdf: "result-5_2-7_1.pdf",
-  },
-  {
-    result_id: "result_10",
-    part_a: "4_5",
-    part_a_name: "広域カメラ",
-    part_b: "7_1",
-    part_b_name: "限定処理特化型コンピュータ",
-    result_pdf: "result-5_2-7_1.pdf",
-  },
-];
-
 export interface ScreenProps {
   slide: number;
   step: number;
   screenData: ScreenData;
+  resultList: ResultList[];
   actionGoTo?: (actionGoto: string, missionID?: string) => void;
   onAnswer?: (isAnswer: boolean) => void;
 }
@@ -128,6 +45,7 @@ export const Screen: FC<ScreenProps> = ({
   slide,
   step,
   screenData,
+  resultList,
   actionGoTo,
   onAnswer,
 }) => {
@@ -230,7 +148,7 @@ export const Screen: FC<ScreenProps> = ({
           <Fragment key={i}>
             {display_result && (
               <PanelObject key={i} {...{ step, depth }} x={123} y={115}>
-                <DisplayResult resultList={mockResultList} />
+                <DisplayResult {...{ resultList }} />
               </PanelObject>
             )}
           </Fragment>
