@@ -4,11 +4,16 @@ import { useTimer } from "use-timer";
 import {
   JsonDataProviderContext,
   GlobalStateContext,
-  GlobalDispatchContext,
 } from "../../../../features/LectureRoot/providers";
-import { getSlideData, getLastStepData, getStepData, handleJsonData } from "../../../../features/LectureRoot/utils";
+import {
+  getSlideData,
+  getLastStepData,
+  getStepData,
+  handleJsonData,
+} from "../../../../features/LectureRoot/utils";
 import { useWatchStepEnd } from "../../../../features/LectureRoot/hooks/useWatchStepEnd";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
+import { useMoveProgress } from "../../../../features/LectureRoot/hooks";
 
 export interface NextBtnProps extends Pick<MiniBtnProps, "className"> {
   onLeave: () => void;
@@ -16,7 +21,7 @@ export interface NextBtnProps extends Pick<MiniBtnProps, "className"> {
 
 export const NextBtn: FC<NextBtnProps> = ({ onLeave, ...props }) => {
   const { progress } = useContext(GlobalStateContext);
-  const dispatch = useContext(GlobalDispatchContext);
+  const moveProgress = useMoveProgress();
 
   const lectureData = useContext(JsonDataProviderContext) as Lecture[];
   const getLectureData = handleJsonData(lectureData, progress);
@@ -54,10 +59,7 @@ export const NextBtn: FC<NextBtnProps> = ({ onLeave, ...props }) => {
           onLeave();
           return;
         }
-        dispatch({
-          type: "progress",
-          val: { slide: progress.slide + 1, step: 1 },
-        });
+        moveProgress({ slide: progress.slide + 1, step: 1 });
       }}
       caption={isLeave ? "レクチャーを終了" : "次ページ"}
       hoverVariant="nextOff"
