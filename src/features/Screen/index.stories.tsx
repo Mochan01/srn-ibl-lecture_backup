@@ -130,7 +130,7 @@ sample.args = {
       part_a_name: "高分解能サーモグラフィー",
       part_b: "",
       part_b_name: "",
-      result_pdf: "result-4_2.pdf",
+      result_pdf: "Lv01U09M01_result01.pdf",
     },
     {
       result_id: "result_2",
@@ -138,7 +138,7 @@ sample.args = {
       part_a_name: "",
       part_b: "4_3",
       part_b_name: "標準SAR\n",
-      result_pdf: "result-4_3.pdf",
+      result_pdf: "Lv01U09M01_result01.pdf",
     },
     {
       result_id: "result_3",
@@ -186,7 +186,7 @@ sample.args = {
       part_a_name: "",
       part_b: "7_1",
       part_b_name: "限定処理特化型コンピュータ",
-      result_pdf: "result-4_3.pdf",
+      result_pdf: "Lv01U09M01_result01.pdf",
     },
     {
       result_id: "result_9",
