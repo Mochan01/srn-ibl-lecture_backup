@@ -213,9 +213,9 @@ export const Screen: FC<ScreenProps> = ({
       {/* * 打ち上げ画面 */}
       {getSingleDataAtStep(getLaunchData).map(
         ({ rocketID, busID, batteryID, launch_key, depth }, i) => (
-          <>
+          <Fragment key={i}>
             {launch_key && (
-              <PanelObject key={i} {...{ step, depth }} x={163} y={92}>
+              <PanelObject {...{ step, depth }} x={163} y={92}>
                 <LaunchAnimation
                   scene={launch_key}
                   rocketID={rocketID}
@@ -224,19 +224,19 @@ export const Screen: FC<ScreenProps> = ({
                 />
               </PanelObject>
             )}
-          </>
+          </Fragment>
         )
       )}
       {/* * データ確認画面 */}
       {getSingleDataAtStep(getResultData).map(
         ({ depth, display_result }, i) => (
-          <>
+          <Fragment key={i}>
             {display_result && (
               <PanelObject key={i} {...{ step, depth }} x={123} y={115}>
                 <DisplayResult resultList={mockResultList} />
               </PanelObject>
             )}
-          </>
+          </Fragment>
         )
       )}
       {/** ポップアップ */}
