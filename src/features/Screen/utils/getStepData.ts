@@ -14,8 +14,6 @@ import {
   buildQuestionInputData,
   ResultData,
 } from "../types";
-import { SAVED_PARTS } from "../../../config";
-import { SavedParts } from "../../DisplayResult";
 
 type GetSingleScreenDataFunc<U> = (lectureData: ScreenData) => U[];
 
@@ -100,14 +98,9 @@ export const getPopupStepData: GetMultipleScreenDataFunc<
 export const getLaunchData: GetSingleScreenDataFunc<LaunchData> = (
   lectureData
 ) => {
-  const item = localStorage.getItem(SAVED_PARTS);
-  const savedParts: SavedParts = item && JSON.parse(item);
   return lectureData.flatMap(({ progress, special_lecture }) => ({
     depth: progress.step,
-    launch_key: special_lecture.launch_key,
-    rocketID: savedParts.rocketID,
-    busID: savedParts.busID,
-    batteryID: savedParts.batteryID,
+    launch_key: special_lecture.launch_key
   }));
 };
 

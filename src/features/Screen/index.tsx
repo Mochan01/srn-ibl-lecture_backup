@@ -21,6 +21,7 @@ import {
   getQuestionInput,
   getLaunchData,
   getResultData,
+  getPartsIDs,
 } from "./utils";
 import { assetsPath } from "../../data/assetsPath";
 import { solveAssetPath } from "../../utils";
@@ -211,22 +212,18 @@ export const Screen: FC<ScreenProps> = ({
         )
       )}
       {/* * 打ち上げ画面 */}
-      {getSingleDataAtStep(getLaunchData).map(
-        ({ rocketID, busID, batteryID, launch_key, depth }, i) => (
+      {getSingleDataAtStep(getLaunchData).map(({ launch_key, depth }, i) => {
+        const partsIDs = getPartsIDs();
+        return (
           <Fragment key={i}>
-            {launch_key && (
+            {launch_key && partsIDs && (
               <PanelObject {...{ step, depth }} x={163} y={92}>
-                <LaunchAnimation
-                  scene={launch_key}
-                  rocketID={rocketID}
-                  busID={busID}
-                  batteryID={batteryID}
-                />
+                <LaunchAnimation scene={launch_key} {...partsIDs} />
               </PanelObject>
             )}
           </Fragment>
-        )
-      )}
+        );
+      })}
       {/* * データ確認画面 */}
       {getSingleDataAtStep(getResultData).map(
         ({ depth, display_result }, i) => (
