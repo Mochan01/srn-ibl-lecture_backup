@@ -32,7 +32,6 @@ export const Lecture: FC<LectureProps> = ({
     <LectureRoot {...{ onClose, jsonData }}>
       <Wrapper>
         <Screen {...{ unitName, unitTitle }} />
-        <SeekBar />
         <ControlPanel {...{ onLectureLeave }} />
       </Wrapper>
     </LectureRoot>

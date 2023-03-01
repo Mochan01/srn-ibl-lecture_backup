@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 const ImageLecture = new URL(
-  "../../../../assets/prod/lecture_panel_answer.png",
+  "../../assets/prod/lecture_panel_answer.png",
   import.meta.url
 ).toString();
 
@@ -39,23 +39,30 @@ const variants = {
 export interface MiniBtnProps {
   variant: keyof typeof variants;
   hoverVariant: keyof typeof variants;
+  isActive?: boolean;
   caption: string;
   onClick?: () => void;
   className?: string;
 }
 
-const Button = styled.div<Pick<MiniBtnProps, "variant" | "hoverVariant">>`
+const Button = styled.div<
+  Pick<MiniBtnProps, "variant" | "hoverVariant" | "isActive">
+>`
   background-image: url(${ImageLecture});
   background-position: ${({ variant }) => variants[variant]};
   background-repeat: no-repeat;
   width: 102px;
   height: 60px;
-  cursor: pointer;
+  filter: ${({ isActive }) => (isActive ? "none" : "grayscale(100%)")};
   position: relative;
   margin-bottom: 4px;
   &:hover {
     background-position: ${({ hoverVariant }) => variants[hoverVariant]};
   }
+`;
+const Main = styled.div<Pick<MiniBtnProps, "isActive">>`
+  pointer-events: ${({ isActive }) => (isActive ? "auto" : "none")};
+  cursor: ${({ isActive }) => (isActive ? "pointer" : "none")};
 `;
 
 const TEXT_H = 14;
@@ -74,14 +81,15 @@ const Label = styled.p`
 export const MiniBtn: FC<MiniBtnProps> = ({
   variant,
   hoverVariant,
+  isActive = true,
   caption,
   onClick,
   className,
 }) => {
   return (
-    <div role="button" tabIndex={0} {...{ onClick, className }}>
-      <Button {...{ variant, hoverVariant }} />
+    <Main role="button" tabIndex={0} {...{ onClick, className, isActive }}>
+      <Button {...{ variant, hoverVariant, isActive }} />
       <Label>{caption}</Label>
-    </div>
+    </Main>
   );
 };

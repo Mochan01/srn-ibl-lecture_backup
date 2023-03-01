@@ -1,0 +1,4016 @@
+{
+  "mission": [],
+  "intro": [
+      {
+          "lecture_id": "c01lv01u01m00",
+          "steps": [
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "はじめまして！私のラボへようこそ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_01.mp3",
+                      "time": 4000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "私はベガ。ここで、人工衛星の開発をしているの。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_02.mp3",
+                      "time": 5000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "小さいころから宇宙が好きで、よく父と、天体観測をしていたのよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_03.mp3",
+                      "time": 6000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "若いころは、世界のいろんな国のラボに招かれて研究をしていたんだけど、"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_04.mp3",
+                      "time": 6000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "今はこうして自分のラボをもって、世界中の人々を幸せにできるような、人工衛星の開発に取り組んでいるの。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_05.mp3",
+                      "time": 10000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_6"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "そして、ここにいるのが助手のレオン。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_06.mp3",
+                      "time": 4000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_7"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "よろしくね！"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_07.mp3",
+                      "time": 2000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_8"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "そうだ！せっかく来てくれたんだし、あなたにも、私の研究開発を手伝ってほしいわ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_08.mp3",
+                      "time": 8000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_9"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 9
+                  },
+                  "narrative": {
+                      "narration": "まずはオリエンテーションで、ラボの一員になるための心構えや、基本的な知識を紹介するわね。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_128.mp3",
+                      "time": 9000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_10"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 10
+                  },
+                  "narrative": {
+                      "narration": "そのあとで、実際に開発を手伝ってちょうだい！"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_10.mp3",
+                      "time": 5000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_11"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 11
+                  },
+                  "narrative": {
+                      "narration": "第一回目の今日は、そもそも「探究学習って何？」「しかも人工衛星がテーマって、どういうこと？」と思っているあなたのために、"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_11.mp3",
+                      "time": 12000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_12"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 12
+                  },
+                  "narrative": {
+                      "narration": "これから学んでいくことを紹介していくわ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_12.mp3",
+                      "time": 4000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_13"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 13
+                  },
+                  "narrative": {
+                      "narration": "さっそく始めましょう！"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_13.mp3",
+                      "time": 2000
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "next_steps": {
+                      "next_step": "lecture_end",
+                      "goto_lecture": "lecture_c01lv01u01m00",
+                      "goto_step": "1_1"
+                  }
+              }
+          ]
+      }
+  ],
+  "lecture": [
+      {
+          "lecture_id": "c01lv01u01m00",
+          "steps": [
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "そもそも、あなたがなぜこのラボに加わることになったのか、理由を説明しておかないといけないわね。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_14.mp3",
+                      "time": 9000,
+                      "total_time": 9000,
+                      "seekbar_start": 0,
+                      "seekbar_end": 10.47
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "このラボでの活動を通して、あなたにはぜひ「社会に出てから求められる力」を身につけてほしいのよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_15.mp3",
+                      "time": 9000,
+                      "total_time": 18000,
+                      "seekbar_start": 10.48,
+                      "seekbar_end": 20.93
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide1-1.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "ちょっと唐突だったわよね（笑）"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_16.mp3",
+                      "time": 3000,
+                      "total_time": 21000,
+                      "seekbar_start": 20.94,
+                      "seekbar_end": 24.42
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "どんな力が社会に出てから必要になるのか、これからちょっと説明させてちょうだい！"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_17.mp3",
+                      "time": 8000,
+                      "total_time": 29000,
+                      "seekbar_start": 24.43,
+                      "seekbar_end": 33.72
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "今もそうだけど、あなたたちが社会に出るときには、今よりもーーーっと"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_18.mp3",
+                      "time": 8000,
+                      "total_time": 37000,
+                      "seekbar_start": 33.73,
+                      "seekbar_end": 43.02
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_6"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "グローバル化"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_19.mp3",
+                      "time": 2000,
+                      "total_time": 39000,
+                      "seekbar_start": 43.03,
+                      "seekbar_end": 45.35
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide1-2.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_7"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "情報化が進んだ社会になっているはずよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_20.mp3",
+                      "time": 4000,
+                      "total_time": 43000,
+                      "seekbar_start": 45.36,
+                      "seekbar_end": 50
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide1-3.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_8"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "グローバル化が進めば、異なる文化の人と関わり、価値観や前提の違う人とコミュニケーションする機会が増えるし、"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_21.mp3",
+                      "time": 10000,
+                      "total_time": 53000,
+                      "seekbar_start": 50.01,
+                      "seekbar_end": 61.63
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide1-4.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_9"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 9
+                  },
+                  "narrative": {
+                      "narration": "情報化社会が進めば、だいたいのことは、調べれば情報を手に入れられる世の中になる。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_22.mp3",
+                      "time": 7000,
+                      "total_time": 60000,
+                      "seekbar_start": 61.64,
+                      "seekbar_end": 69.77
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide1-5.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_10"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 10
+                  },
+                  "narrative": {
+                      "narration": "こんな社会では、あなたにとっては常識なことを、他の人は知らないかもしれないし、"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_23.mp3",
+                      "time": 8000,
+                      "total_time": 68000,
+                      "seekbar_start": 69.78,
+                      "seekbar_end": 79.07
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_11"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 11
+                  },
+                  "narrative": {
+                      "narration": "調べればわかることを、一生懸命暗記する必要性も、以前ほどなくなるのかもしれないわ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_24.mp3",
+                      "time": 8000,
+                      "total_time": 76000,
+                      "seekbar_start": 79.08,
+                      "seekbar_end": 88.37
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "1_12"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 1,
+                      "step": 12
+                  },
+                  "narrative": {
+                      "narration": "つまり、「知識があること」よりも、「身につけた知識をうまく使う」力のほうが、より重要になってくるのよ！"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_25.mp3",
+                      "time": 10000,
+                      "total_time": 86000,
+                      "seekbar_start": 88.38,
+                      "seekbar_end": 100
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide1-6.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "slide_end"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "社会に出てから求められる力、イコール、身につけた知識をうまく使う力だとすると、"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_26.mp3",
+                      "time": 8000,
+                      "total_time": 8000,
+                      "seekbar_start": 0.01,
+                      "seekbar_end": 9.09
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide2-1.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "この力には「21世紀型スキル」という名前がついているの。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_27.mp3",
+                      "time": 7000,
+                      "total_time": 15000,
+                      "seekbar_start": 9.1,
+                      "seekbar_end": 17.05
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide2-2.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "普段、あなたたちが学校が塾で学んでいるのが、各教科の基礎知識だとすると、"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_28.mp3",
+                      "time": 8000,
+                      "total_time": 23000,
+                      "seekbar_start": 17.06,
+                      "seekbar_end": 26.14
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide2-3.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "その他に、ITを使いこなす力もとっても大切で、それがベースの力になる。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_29.mp3",
+                      "time": 9000,
+                      "total_time": 32000,
+                      "seekbar_start": 26.15,
+                      "seekbar_end": 36.36
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide2-4.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "ただ、それだけじゃなくて、"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_30.mp3",
+                      "time": 3000,
+                      "total_time": 35000,
+                      "seekbar_start": 36.37,
+                      "seekbar_end": 39.77
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_6"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "自分で問題を見つけ、解決する力などの「思考力」や"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_31.mp3",
+                      "time": 6000,
+                      "total_time": 41000,
+                      "seekbar_start": 39.78,
+                      "seekbar_end": 46.59
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide2-5.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_7"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "主体的に活動し、社会に関心をもつ「実践力」も、ぜーんぶまとめて「21世紀型スキル」というのよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_32.mp3",
+                      "time": 10000,
+                      "total_time": 51000,
+                      "seekbar_start": 46.6,
+                      "seekbar_end": 57.95
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide2-6.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_8"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "あなたには、ぜひこの「21世紀型スキル」を身につけてほしいの。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_33.mp3",
+                      "time": 6000,
+                      "total_time": 57000,
+                      "seekbar_start": 57.96,
+                      "seekbar_end": 64.77
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_9"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 9
+                  },
+                  "narrative": {
+                      "narration": "・・・といっても、壮大すぎて、何をしたら身につけられるのか、不安に思うかもしれないわね。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_34.mp3",
+                      "time": 8000,
+                      "total_time": 65000,
+                      "seekbar_start": 64.78,
+                      "seekbar_end": 73.86
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_10"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 10
+                  },
+                  "narrative": {
+                      "narration": "こういった力は、ただ授業を聞いているだけで身につくものではないわ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_35.mp3",
+                      "time": 6000,
+                      "total_time": 71000,
+                      "seekbar_start": 73.87,
+                      "seekbar_end": 80.68
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide2-7.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_11"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 11
+                  },
+                  "narrative": {
+                      "narration": "21世紀型スキルを身につけるには、自分で問題を見つけて解決する「探究型」の学びが必要なの！"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_36.mp3",
+                      "time": 10000,
+                      "total_time": 81000,
+                      "seekbar_start": 80.69,
+                      "seekbar_end": 92.05
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide2-8.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "2_12"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 2,
+                      "step": 12
+                  },
+                  "narrative": {
+                      "narration": "そして、探究型の学びをするのに、私のラボはもってこいの環境なのよ！"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_37.mp3",
+                      "time": 7000,
+                      "total_time": 88000,
+                      "seekbar_start": 92.06,
+                      "seekbar_end": 100
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "slide_end"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "前置きが長くなって悪いわね。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_38.mp3",
+                      "time": 3000,
+                      "total_time": 3000,
+                      "seekbar_start": 0.01,
+                      "seekbar_end": 6.12
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "3_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "これからあなたと一緒にやっていきたいのは、ずばり「探究学習」よ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_39.mp3",
+                      "time": 7000,
+                      "total_time": 10000,
+                      "seekbar_start": 6.13,
+                      "seekbar_end": 20.41
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide3-1.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "3_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "自分でテーマを設定し、それに答えていったり、"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_40.mp3",
+                      "time": 5000,
+                      "total_time": 15000,
+                      "seekbar_start": 20.42,
+                      "seekbar_end": 30.61
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide3-2.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "3_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "情報の収集や整理、他の人との意見交換をしていくこと。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_41.mp3",
+                      "time": 7000,
+                      "total_time": 22000,
+                      "seekbar_start": 30.62,
+                      "seekbar_end": 44.9
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide3-3.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "3_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "それを何度も繰り返すことで、将来絶対役に立つ、21世紀型スキルがどんどん身についていくわ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_42.mp3",
+                      "time": 10000,
+                      "total_time": 32000,
+                      "seekbar_start": 44.91,
+                      "seekbar_end": 65.31
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide3-4.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "3_6"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "特に私は、人工衛星の開発が専門よ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_43.mp3",
+                      "time": 5000,
+                      "total_time": 37000,
+                      "seekbar_start": 65.32,
+                      "seekbar_end": 75.51
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "3_7"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 3,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "このラボでの活動、「サテライザー」プロジェクトでは、人工衛星をテーマに、探究学習のプロセスを一緒に体験してみましょう！"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_44.mp3",
+                      "time": 12000,
+                      "total_time": 49000,
+                      "seekbar_start": 75.52,
+                      "seekbar_end": 100
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide3-5.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "slide_end"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "さっそく人工衛星の話に入っていきたいところだけど・・・"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_45.mp3",
+                      "time": 5000,
+                      "total_time": 5000,
+                      "seekbar_start": 0.01,
+                      "seekbar_end": 4.42
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "ごめんなさい、もう一つだけ前置きさせてちょうだい！"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_46.mp3",
+                      "time": 5000,
+                      "total_time": 10000,
+                      "seekbar_start": 4.43,
+                      "seekbar_end": 8.85
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "あなたは、高校の数学や物理を勉強していて、「こんなの、将来何かの役に立つのかな？」って疑問に思ったこと、ないかしら。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_47.mp3",
+                      "time": 11000,
+                      "total_time": 21000,
+                      "seekbar_start": 8.86,
+                      "seekbar_end": 18.58
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide4-1.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "苦手な人ほど、あるかもしれないわねーー。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_48.mp3",
+                      "time": 4000,
+                      "total_time": 25000,
+                      "seekbar_start": 18.59,
+                      "seekbar_end": 22.12
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "確かに、身の回りの生活で、高校数学や物理の内容がどんな役になっているのか、分かりにくいわよね。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_49.mp3",
+                      "time": 10000,
+                      "total_time": 35000,
+                      "seekbar_start": 22.13,
+                      "seekbar_end": 30.97
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_6"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "じゃあ、ここで一つご紹介。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_50.mp3",
+                      "time": 4000,
+                      "total_time": 39000,
+                      "seekbar_start": 30.98,
+                      "seekbar_end": 34.51
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_7"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "サテライザープロジェクトは、NECスペーステクノロジー株式会社という、"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_51.mp3",
+                      "time": 7000,
+                      "total_time": 46000,
+                      "seekbar_start": 34.52,
+                      "seekbar_end": 40.71
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide4-2.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_8"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "人工衛星に搭載する機器の開発、製造などを行っている会社が、全面的にバックアップしてくれているわ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_52.mp3",
+                      "time": 10000,
+                      "total_time": 56000,
+                      "seekbar_start": 40.72,
+                      "seekbar_end": 49.56
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide4-3.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_9"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 9
+                  },
+                  "narrative": {
+                      "narration": "NECスペーステクノロジー株式会社の社員さんによるとね、"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_53.mp3",
+                      "time": 5000,
+                      "total_time": 61000,
+                      "seekbar_start": 49.57,
+                      "seekbar_end": 53.98
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_10"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 10
+                  },
+                  "narrative": {
+                      "narration": "高校で学ぶ数学や物理は、人工衛星の開発の場面で、たっくさん使われているんだって。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_54.mp3",
+                      "time": 9000,
+                      "total_time": 70000,
+                      "seekbar_start": 53.99,
+                      "seekbar_end": 61.95
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide4-4.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_11"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 11
+                  },
+                  "narrative": {
+                      "narration": "詳しくはここでは説明しないけど、"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_55.mp3",
+                      "time": 3000,
+                      "total_time": 73000,
+                      "seekbar_start": 61.96,
+                      "seekbar_end": 64.6
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_12"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 12
+                  },
+                  "narrative": {
+                      "narration": "人工衛星をどういうルートで、どんな速さで打ち上げるかを考えるには「運動方程式」が必要だし、"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_56.mp3",
+                      "time": 10000,
+                      "total_time": 83000,
+                      "seekbar_start": 64.61,
+                      "seekbar_end": 73.45
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide4-5.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_13"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 13
+                  },
+                  "narrative": {
+                      "narration": "人工衛星からの電波を、地上で受け止めるためのアンテナの角度を決めるには、「三角関数」を使うんだって。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_57.mp3",
+                      "time": 9000,
+                      "total_time": 92000,
+                      "seekbar_start": 73.46,
+                      "seekbar_end": 81.42
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide4-6.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_14"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 14
+                  },
+                  "narrative": {
+                      "narration": "あ、もちろん、サテライザープロジェクトでは、実際に数学や物理の計算をすることはないから安心して！"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_58.mp3",
+                      "time": 9000,
+                      "total_time": 101000,
+                      "seekbar_start": 81.43,
+                      "seekbar_end": 89.38
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "4_15"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 4,
+                      "step": 15
+                  },
+                  "narrative": {
+                      "narration": "ただ、数学や物理は、実際に身の回りで役に立っていて、それを毎日使って仕事をしている人がいるってことを、覚えておいてほしいの。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_59.mp3",
+                      "time": 12000,
+                      "total_time": 113000,
+                      "seekbar_start": 89.39,
+                      "seekbar_end": 100
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "slide_end"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 1
+                  },
+                  "narrative": {
+                      "narration": "さあ、今日はここまで。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_129.mp3",
+                      "time": 3000,
+                      "total_time": 3000,
+                      "seekbar_start": 0.01,
+                      "seekbar_end": 1.92
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide5-1.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_2"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 2
+                  },
+                  "narrative": {
+                      "narration": "これからサテライザーでは、ユニットの途中や最後に、いくつか質問を投げかけるわ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_130.mp3",
+                      "time": 8000,
+                      "total_time": 11000,
+                      "seekbar_start": 1.93,
+                      "seekbar_end": 7.05
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_3"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 3
+                  },
+                  "narrative": {
+                      "narration": "その質問に、グループで協力して、答えを出してみてちょうだい！"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_117.mp3",
+                      "time": 6000,
+                      "total_time": 17000,
+                      "seekbar_start": 7.06,
+                      "seekbar_end": 10.9
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_4"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 4
+                  },
+                  "narrative": {
+                      "narration": "ワークシートを手元に用意して話し合うと便利よ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_118.mp3",
+                      "time": 5000,
+                      "total_time": 22000,
+                      "seekbar_start": 10.91,
+                      "seekbar_end": 14.1
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_5"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 5
+                  },
+                  "narrative": {
+                      "narration": "まず、今回は初めての授業だから、グループワークをするときの役割分担を決めてほしいの。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_131.mp3",
+                      "time": 9000,
+                      "total_time": 31000,
+                      "seekbar_start": 14.11,
+                      "seekbar_end": 19.87
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_6"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 6
+                  },
+                  "narrative": {
+                      "narration": "みんなに発言の機会を回していく「司会」。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_132.mp3",
+                      "time": 5000,
+                      "total_time": 36000,
+                      "seekbar_start": 19.88,
+                      "seekbar_end": 23.08
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_7"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 7
+                  },
+                  "narrative": {
+                      "narration": "話し合いが長引きすぎないように残り時間を知らせる「タイムキーパー」。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_133.mp3",
+                      "time": 7000,
+                      "total_time": 43000,
+                      "seekbar_start": 23.09,
+                      "seekbar_end": 27.56
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_8"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 8
+                  },
+                  "narrative": {
+                      "narration": "みんなの発言やアイデアを記録して整理する「書記」。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_134.mp3",
+                      "time": 6000,
+                      "total_time": 49000,
+                      "seekbar_start": 27.57,
+                      "seekbar_end": 31.41
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_9"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 9
+                  },
+                  "narrative": {
+                      "narration": "話し合った内容を、他のチームやクラスに紹介する「発表係」"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_135.mp3",
+                      "time": 7000,
+                      "total_time": 56000,
+                      "seekbar_start": 31.42,
+                      "seekbar_end": 35.9
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_10"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 10
+                  },
+                  "narrative": {
+                      "narration": "他にも必要だと思う係があったら、プラスしてもかまわないわ！"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_136.mp3",
+                      "time": 6000,
+                      "total_time": 62000,
+                      "seekbar_start": 35.91,
+                      "seekbar_end": 39.74
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_11"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 11
+                  },
+                  "narrative": {
+                      "narration": "必ず、一人につき、一つ以上の役割を引き受けるようにしてね。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_137.mp3",
+                      "time": 6000,
+                      "total_time": 68000,
+                      "seekbar_start": 39.75,
+                      "seekbar_end": 43.59
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_12"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 12
+                  },
+                  "narrative": {
+                      "narration": "逆に、誰か一人の負担が重くなりすぎたりしないようようにも、気をつけて！"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_138.mp3",
+                      "time": 7000,
+                      "total_time": 75000,
+                      "seekbar_start": 43.6,
+                      "seekbar_end": 48.08
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_13"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 13
+                  },
+                  "narrative": {
+                      "narration": "役割分担が決まったら、今日は次のテーマについて話し合ってみて。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_139.mp3",
+                      "time": 7000,
+                      "total_time": 82000,
+                      "seekbar_start": 48.09,
+                      "seekbar_end": 52.56
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_14"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 14
+                  },
+                  "narrative": {
+                      "narration": "まず、今の自分がどんな21世紀型スキルを持っているか、考えて。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_140.mp3",
+                      "time": 8000,
+                      "total_time": 90000,
+                      "seekbar_start": 52.57,
+                      "seekbar_end": 57.69
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide5-2.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_15"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 15
+                  },
+                  "narrative": {
+                      "narration": "それから、他のメンバーがどんな21世紀型スキルを持っているか、考えてみて。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_141.mp3",
+                      "time": 8000,
+                      "total_time": 98000,
+                      "seekbar_start": 57.7,
+                      "seekbar_end": 62.82
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_3"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide5-4.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_16"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 16
+                  },
+                  "narrative": {
+                      "narration": "考え終わったら、自分がどんなスキルを持っている思うか、他のメンバーがどんなスキルを持っていると思うか、グループの中で話し合うの。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_142.mp3",
+                      "time": 13000,
+                      "total_time": 111000,
+                      "seekbar_start": 62.83,
+                      "seekbar_end": 71.15
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_17"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 17
+                  },
+                  "narrative": {
+                      "narration": "意外なギャップが見つかったりして、面白いと思うわよ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_143.mp3",
+                      "time": 5000,
+                      "total_time": 116000,
+                      "seekbar_start": 71.16,
+                      "seekbar_end": 74.36
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_18"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 18
+                  },
+                  "narrative": {
+                      "narration": "最後には、今回の探究学習を通して、どんな21世紀型スキルを伸ばしたいかが、メンバー全員決まるようにしてみて。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_144.mp3",
+                      "time": 12000,
+                      "total_time": 128000,
+                      "seekbar_start": 74.37,
+                      "seekbar_end": 82.05
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_19"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 19
+                  },
+                  "narrative": {
+                      "narration": "お互いが伸ばしたいスキルを伸ばせるように、これから協力しあってね。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_145.mp3",
+                      "time": 6000,
+                      "total_time": 134000,
+                      "seekbar_start": 82.06,
+                      "seekbar_end": 85.9
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_20"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 20
+                  },
+                  "narrative": {
+                      "narration": "話し合いをして、終わったら評価の入力画面に進んでね。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_125.mp3",
+                      "time": 6000,
+                      "total_time": 140000,
+                      "seekbar_start": 85.91,
+                      "seekbar_end": 89.74
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [
+                          "Lv1U1_slide5-6.png"
+                      ],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_21"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 21
+                  },
+                  "narrative": {
+                      "narration": "自分自身のことはもちろん、一緒に活動したメンバーのことも振り返って、評価を入力してみて。"
+                  },
+                  "audio": {
+                      "mp3": "ST_Lv2U01_53.mp3",
+                      "time": 8000,
+                      "total_time": 148000,
+                      "seekbar_start": 89.75,
+                      "seekbar_end": 94.87
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "audio_end",
+                      "goto_step": "5_22"
+                  }
+              },
+              {
+                  "progress": {
+                      "slide": 5,
+                      "step": 22
+                  },
+                  "narrative": {
+                      "narration": "じゃ、用意はいいかしら。私とは、また次回のユニットでお会いしましょ。"
+                  },
+                  "audio": {
+                      "mp3": "ST_L1U1_127.mp3",
+                      "time": 8000,
+                      "total_time": 156000,
+                      "seekbar_start": 94.88,
+                      "seekbar_end": 100
+                  },
+                  "animation": {
+                      "teacher": "animation_2",
+                      "student": "animation_1"
+                  },
+                  "images": {
+                      "display_files": [],
+                      "delete_files": []
+                  },
+                  "popup": {
+                      "popup_btns": [],
+                      "popup_x": [],
+                      "popup_y": [],
+                      "display_popup": [],
+                      "popup_narration": []
+                  },
+                  "actions": {
+                      "action_btns": [],
+                      "action_x": [],
+                      "action_y": [],
+                      "action_goto": []
+                  },
+                  "special_lecture": {
+                      "mission_select": [],
+                      "record_mission": false,
+                      "display_result": false
+                  },
+                  "question_select": {
+                      "ans_1": false,
+                      "ans_2": false,
+                      "ans_3": false,
+                      "ans_4": false
+                  },
+                  "question_input": {},
+                  "result_step": false,
+                  "next_steps": {
+                      "next_step": "lecture_end"
+                  }
+              }
+          ]
+      }
+  ]
+}
