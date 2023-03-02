@@ -130,18 +130,21 @@ export const Screen: FC<ScreenProps> = ({
         )
       )}
       {/* * 打ち上げ画面 */}
-      {getSingleDataAtStep(getLaunchData).map(({ launch_key, depth }, i) => {
+      {(() => {
+        const { depth, launch_key } = getSingleDataUpToStep(getLaunchData)
+          .filter(({ launch_key }) => launch_key)
+          .slice(-1)[0] || {};
         const partsIDs = getPartsIDs();
         return (
-          <Fragment key={i}>
+          <>
             {launch_key && partsIDs && (
               <PanelObject {...{ step, depth }} x={163} y={92}>
-                <LaunchAnimation scene={launch_key} {...partsIDs} />
+                <LaunchAnimation {...partsIDs} {...{ launch_key }} />
               </PanelObject>
             )}
-          </Fragment>
+          </>
         );
-      })}
+      })()}
       {/* * データ確認画面 */}
       {getSingleDataAtStep(getResultData).map(
         ({ depth, display_result }, i) => (

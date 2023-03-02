@@ -7,7 +7,7 @@ export default {
   title: "features/LaunchAnimation",
   component: LaunchAnimation,
   argTypes: {
-    scene: {
+    launch_key: {
       options,
       control: { type: "radio" },
     },
