@@ -18,7 +18,7 @@ interface GetJsonData {
   (getData: GetStepData): JsonData;
 }
 
-interface GetLectureData {
+export interface GetLectureData {
   (getData: GetSlideData): Lecture[];
   (getData: GetLastStepData): Lecture;
   (getData: GetStepData): Lecture;

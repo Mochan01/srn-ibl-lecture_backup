@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useContext, useMemo } from "react";
+import React, { FC, useCallback, useContext } from "react";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
 import {
   JsonDataProviderContext,
@@ -8,15 +8,16 @@ import { UnitInfo } from "../../../types/unitInfo";
 import { Screen as Main } from "../../../features/Screen";
 import { formatSlideStep } from "../../../utils";
 import { LectureFrame } from "../../../elements/LectureFrame";
-import { CountDown } from "../../../elements/CountDown";
 import {
   handleJsonData,
   getStepData,
 } from "../../../features/LectureRoot/utils";
 import { useMoveProgress } from "../../../features/LectureRoot/hooks";
-import { SatelliteAssembly } from "../../../features/SatelliteAssembly";
 import masterData from "../../../assets/data/satellite_assembly_mock.json";
-import { MasterData } from "../../../features/SatelliteAssembly/types";
+import {
+  useCreateCountDownComponent,
+  useCreateSatelliteAssemblyComponent,
+} from "../hooks";
 
 export interface ScreenProps extends UnitInfo {}
 
@@ -30,8 +31,7 @@ export const Screen: FC<ScreenProps> = (props) => {
   const screenData = useContext(JsonDataProviderContext) as Lecture[];
   const getLectureData = handleJsonData(screenData, progress);
 
-  const { countdown, next_steps, special_lecture } =
-    getLectureData(getStepData);
+  const { next_steps, special_lecture } = getLectureData(getStepData);
 
   // クイズ回答時の処理
   const onAnswer = useCallback(
@@ -54,49 +54,17 @@ export const Screen: FC<ScreenProps> = (props) => {
     [moveProgress]
   );
 
-  // カウントダウンを表示するコンポーネント
-  const countDown = useMemo(
-    () =>
-      countdown && (
-        <CountDown
-          css="margin: 10px 22px 0 0"
-          initialTimeSeconds={countdown / 1000}
-          onEnd={() => {
-            next_steps.goto_step &&
-              moveProgress(formatSlideStep(next_steps.goto_step));
-          }}
-        />
-      ),
-    [countdown, moveProgress, next_steps.goto_step]
-  );
-
-  // 衛星組み立て画面のコンポーネント
-  const satelliteAssembly = useMemo(() => {
-    const selectedMissionID =
-      typeof window !== "undefined" && localStorage.getItem("missionID");
-    return (
-      !!selectedMissionID && (
-        <SatelliteAssembly
-          {...{ selectedMissionID }}
-          masterData={masterData as MasterData}
-          onClick={() =>
-            next_steps.goto_step &&
-            moveProgress(formatSlideStep(next_steps.goto_step))
-          }
-        />
-      )
-    );
-  }, [moveProgress, next_steps.goto_step]);
+  const countDown = useCreateCountDownComponent(getLectureData);
+  const satelliteAssembly = useCreateSatelliteAssemblyComponent(getLectureData);
 
   return (
-    <LectureFrame {...props} {...{ countDown }}>
+    <LectureFrame {...{ ...props, ...{ countDown } }}>
       {/** 衛星組み立て画面 */}
       {special_lecture.record_mission && satelliteAssembly}
       {/** 通常のレクチャー */}
       {!special_lecture.record_mission && (
         <Main
-          {...progress}
-          {...{ onAnswer, actionGoTo, screenData }}
+          {...{ ...progress, ...{ onAnswer, actionGoTo, screenData } }}
           resultList={masterData.result_list}
         />
       )}
