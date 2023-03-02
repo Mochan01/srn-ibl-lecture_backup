@@ -2,6 +2,7 @@ import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
 
 type Motion =
+  | "none"
   | "fadein"
   | "slideup"
   | "slidedown"
@@ -32,6 +33,8 @@ const Main = styled.div<PanelObjectProps>(
   user-select: none;
   animation-name: ${motion1 || "none"}, ${motion2 || "none"};
   animation-duration: .3s;
+  @keyframes none {
+  }
   @keyframes fadein {
     from {
       opacity: 0;

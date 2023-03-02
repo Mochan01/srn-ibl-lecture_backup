@@ -14,11 +14,14 @@ export default {
   },
 } as Meta;
 
-const template: Story<LaunchAnimationProps> = (args) => <LaunchAnimation {...args} />;
+const template: Story<LaunchAnimationProps> = (args) => (
+  <LaunchAnimation {...args} />
+);
 
 export const sample = template.bind({});
 sample.args = {
   rocketID: "1_1",
   busID: "2_1",
-  batteryID: "3_1"
+  batteryID: "3_1",
+  isStart: true,
 };

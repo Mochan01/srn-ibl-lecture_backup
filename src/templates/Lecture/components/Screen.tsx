@@ -1,8 +1,9 @@
-import React, { FC, useCallback, useContext } from "react";
+import React, { FC, useCallback, useContext, useEffect } from "react";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
 import {
   JsonDataProviderContext,
   GlobalStateContext,
+  TimerContext,
 } from "../../../features/LectureRoot/providers";
 import { UnitInfo } from "../../../types/unitInfo";
 import { Screen as Main } from "../../../features/Screen";
@@ -57,6 +58,8 @@ export const Screen: FC<ScreenProps> = (props) => {
   const countDown = useCreateCountDownComponent(getLectureData);
   const satelliteAssembly = useCreateSatelliteAssemblyComponent(getLectureData);
 
+  const { time } = useContext(TimerContext);
+
   return (
     <LectureFrame {...{ ...props, ...{ countDown } }}>
       {/** 衛星組み立て画面 */}
@@ -66,6 +69,7 @@ export const Screen: FC<ScreenProps> = (props) => {
         <Main
           {...{ ...progress, ...{ onAnswer, actionGoTo, screenData } }}
           resultList={masterData.result_list}
+          isStart={time > 0}
         />
       )}
     </LectureFrame>

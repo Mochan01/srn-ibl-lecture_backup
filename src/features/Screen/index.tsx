@@ -25,11 +25,11 @@ import {
 } from "./utils";
 import { assetsPath } from "../../data/assetsPath";
 import { solveAssetPath } from "../../utils";
-import { LaunchAnimation } from "../LaunchAnimation";
+import { LaunchAnimation, LaunchAnimationProps } from "../LaunchAnimation";
 import { DisplayResult } from "../DisplayResult";
 import { ResultList } from "src-ibl-lecture-master-special/types";
 
-export interface ScreenProps {
+export interface ScreenProps extends Pick<LaunchAnimationProps, "isStart"> {
   slide: number;
   step: number;
   screenData: ScreenData;
@@ -48,6 +48,7 @@ export const Screen: FC<ScreenProps> = ({
   resultList,
   actionGoTo,
   onAnswer,
+  isStart,
 }) => {
   const [popupName, setPopupName] = useState("");
 
@@ -131,15 +132,18 @@ export const Screen: FC<ScreenProps> = ({
       )}
       {/* * 打ち上げ画面 */}
       {(() => {
-        const { depth, launch_key } = getSingleDataUpToStep(getLaunchData)
-          .filter(({ launch_key }) => launch_key)
-          .slice(-1)[0] || {};
+        const { depth, launch_key } =
+          getSingleDataUpToStep(getLaunchData)
+            .filter(({ launch_key }) => launch_key)
+            .slice(-1)[0] || {};
         const partsIDs = getPartsIDs();
         return (
           <>
             {launch_key && partsIDs && (
-              <PanelObject {...{ step, depth }} x={163} y={92}>
-                <LaunchAnimation {...partsIDs} {...{ launch_key }} />
+              <PanelObject {...{ step, depth }} x={163} y={92} motion1="none">
+                <LaunchAnimation
+                  {...{ ...partsIDs, ...{ launch_key, isStart } }}
+                />
               </PanelObject>
             )}
           </>

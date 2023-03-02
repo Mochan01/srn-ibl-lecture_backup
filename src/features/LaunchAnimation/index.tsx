@@ -1,9 +1,9 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import { keys } from "./config";
 import { LaunchBg } from "./components/LaunchBg";
 import { LottieObject } from "../../elements/LottieObject";
 import { lottiePath } from "../../data/lottiePath";
-import lottie from "lottie-web";
+import { useControlAnimation } from "./hooks";
 import styled from "styled-components";
 const scane1_bg = new URL(
   "../../assets/prod/scane1_bg.png",
@@ -21,6 +21,7 @@ export interface LaunchAnimationProps {
   rocketID: string;
   busID: string;
   batteryID: string;
+  isStart?: boolean;
 }
 
 const Main = styled.div`
@@ -42,30 +43,17 @@ export const LaunchAnimation: FC<LaunchAnimationProps> = ({
   rocketID,
   busID,
   batteryID,
+  isStart,
 }) => {
-  // lottieオブジェクトの再生や停止などはここで行う
-  useEffect(() => {
-    if (launch_key === "standby") {
-      lottie.stop("rocket");
-    }
-    if (launch_key === "countdown") {
-      lottie.stop("rocket");
-      lottie.play("countdown");
-    }
-    if (launch_key === "launch") {
-      lottie.play("rocket");
-      lottie.play("smog");
-    }
-    if (launch_key === "injection") {
-      lottie.play("injectionObject");
-    }
-  }, [launch_key]);
+  useControlAnimation(launch_key, isStart);
 
   return (
     <Main>
       {/** 背景 */}
       <LaunchBg img={launch_key === "injection" ? scane2_bg : scane1_bg} />
-      {(launch_key === "standby" || launch_key === "countdown" || launch_key === "launch") && (
+      {(launch_key === "standby" ||
+        launch_key === "countdown" ||
+        launch_key === "launch") && (
         <LottieObject
           path={lottiePath[`scene1_rocket_${rocketID}.json`]}
           name="rocket"
