@@ -17,7 +17,6 @@ import {
   buildPopupStepData,
   getQuestionSelect,
   getLectureDataUpToStep,
-  getLectureDataAtStep,
   getQuestionInput,
   getLaunchData,
   getResultData,
@@ -57,8 +56,9 @@ export const Screen: FC<ScreenProps> = ({
   const getMultipleDataUpToStep = createMultipleScreenData(dataUpToStep);
   const getSingleDataUpToStep = createSingleScreenData(dataUpToStep);
 
-  const dataAtStep = getLectureDataAtStep(slide, step, screenData);
-  const getSingleDataAtStep = createSingleScreenData(dataAtStep);
+  // データ確認画面で使うかもしれなかった関数
+  // const dataAtStep = getLectureDataAtStep(slide, step, screenData);
+  // const getSingleDataAtStep = createSingleScreenData(dataAtStep);
 
   // 各要素はDOM構造としては並列に出し、重ね順をcssで指定する
 
@@ -160,8 +160,12 @@ export const Screen: FC<ScreenProps> = ({
           </>
         );
       })()}
-      {/* * データ確認画面 */}
-      {getSingleDataAtStep(getResultData).map(
+      {/**
+       * データ確認画面
+       * 当該画面出現後にさらにstepを出すユースケースがあったので、
+       * getSingleDataAtStep -> getSingleDataUpToStepに変更した
+       */}
+      {getSingleDataUpToStep(getResultData).map(
         ({ depth, display_result }, i) => (
           <Fragment key={i}>
             {display_result && (
