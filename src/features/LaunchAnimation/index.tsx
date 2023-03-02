@@ -15,7 +15,7 @@ const scane2_bg = new URL(
 ).toString();
 
 export interface LaunchAnimationProps {
-  launch_key: typeof keys[number];
+  launch_animation: typeof keys[number];
   // > ロケットと衛星はユーザーが選択したパーツを表示したいため、アニメーションをプログラムで組む必要がある
   // https://www.notion.so/8f048516867b4679a6e6c41d1cf9c044?pvs=4#69a3acb5fda948ffb779ecbe53904c5c
   rocketID: string;
@@ -39,27 +39,27 @@ const Main = styled.div`
  * @returns
  */
 export const LaunchAnimation: FC<LaunchAnimationProps> = ({
-  launch_key,
+  launch_animation,
   rocketID,
   busID,
   batteryID,
   isStart,
 }) => {
-  useControlAnimation(launch_key, isStart);
+  useControlAnimation(launch_animation, isStart);
 
   return (
     <Main>
       {/** 背景 */}
-      <LaunchBg img={launch_key === "injection" ? scane2_bg : scane1_bg} />
-      {(launch_key === "standby" ||
-        launch_key === "countdown" ||
-        launch_key === "launch") && (
+      <LaunchBg img={launch_animation === "injection" ? scane2_bg : scane1_bg} />
+      {(launch_animation === "standby" ||
+        launch_animation === "countdown" ||
+        launch_animation === "launch") && (
         <LottieObject
           path={lottiePath[`scene1_rocket_${rocketID}.json`]}
           name="rocket"
         />
       )}
-      {launch_key === "countdown" && (
+      {launch_animation === "countdown" && (
         <>
           <LottieObject
             path={lottiePath["scene1_rocket_countdown.json"]}
@@ -67,7 +67,7 @@ export const LaunchAnimation: FC<LaunchAnimationProps> = ({
           />
         </>
       )}
-      {launch_key === "launch" && (
+      {launch_animation === "launch" && (
         <>
           <LottieObject
             path={lottiePath["scene1_rocket_launch_smog.json"]}
@@ -75,7 +75,7 @@ export const LaunchAnimation: FC<LaunchAnimationProps> = ({
           />
         </>
       )}
-      {launch_key === "injection" && (
+      {launch_animation === "injection" && (
         <>
           <LottieObject
             path={lottiePath[`scene2_satellitebus_${busID}.json`]}

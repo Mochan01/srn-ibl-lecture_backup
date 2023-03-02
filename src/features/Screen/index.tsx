@@ -132,17 +132,17 @@ export const Screen: FC<ScreenProps> = ({
       )}
       {/* * 打ち上げ画面 */}
       {(() => {
-        const { depth, launch_key } =
+        const { depth, launch_animation } =
           getSingleDataUpToStep(getLaunchData)
-            .filter(({ launch_key }) => launch_key)
+            .filter(({ launch_animation }) => launch_animation)
             .slice(-1)[0] || {};
         const partsIDs = getPartsIDs();
         return (
           <>
-            {launch_key && partsIDs && (
+            {launch_animation && partsIDs && (
               <PanelObject {...{ step, depth }} x={163} y={92} motion1="none">
                 <LaunchAnimation
-                  {...{ ...partsIDs, ...{ launch_key, isStart } }}
+                  {...{ ...partsIDs, ...{ launch_animation, isStart } }}
                 />
               </PanelObject>
             )}

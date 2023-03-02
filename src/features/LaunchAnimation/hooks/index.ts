@@ -4,10 +4,10 @@ import { keys } from "../config";
 
 /**
  * lottieオブジェクトの再生や停止などはここで行う
- * @param launch_key 
+ * @param launch_animation 
  * @param isStart 
  */
-export const useControlAnimation = (launch_key: typeof keys[number], isStart = false) => {
+export const useControlAnimation = (launch_animation: typeof keys[number], isStart = false) => {
   useEffect(() => {
     lottie.stop("countdown");
     lottie.stop("rocket");
@@ -16,7 +16,7 @@ export const useControlAnimation = (launch_key: typeof keys[number], isStart = f
 
     if (!isStart) return;
 
-    switch (launch_key) {
+    switch (launch_animation) {
       // standbyは特に動かすものないので今のところはナシ
       // case "standby":
       //   break;
@@ -31,5 +31,5 @@ export const useControlAnimation = (launch_key: typeof keys[number], isStart = f
         lottie.play("injectionObject");
         break;
     }
-  }, [launch_key, isStart]);
+  }, [launch_animation, isStart]);
 };

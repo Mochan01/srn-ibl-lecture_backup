@@ -82,7 +82,10 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
         slideLen={lastStepData}
         slideIndex={currentStepData}
         onClick={(i) => moveProgress({ slide: i + 1, step: 1 })}
-        isActive={disableKey !== "full" && disableKey !== "some"}
+        isActive={
+          process.env.NODE_ENV === "development" ||
+          (disableKey !== "full" && disableKey !== "some")
+        }
       />
       <PrevBtn
         onClick={() => {
