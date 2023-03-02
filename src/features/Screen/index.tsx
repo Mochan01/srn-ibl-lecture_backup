@@ -3,7 +3,7 @@ import { QuizInput } from "../../elements/QuizInput";
 import { QuizSelector } from "../../elements/QuizSelector";
 import { Panel, Narration } from "./components";
 import { PanelObject } from "../../elements/PanelObject";
-import { ScreenData } from "./types";
+import { LaunchData, ScreenData } from "./types";
 import {
   createSingleScreenData,
   createMultipleScreenData,
@@ -48,7 +48,7 @@ export const Screen: FC<ScreenProps> = ({
   resultList,
   actionGoTo,
   onAnswer,
-  isStart,
+  isStart: isStartLaunchAnimation,
 }) => {
   const [popupName, setPopupName] = useState("");
 
@@ -132,11 +132,22 @@ export const Screen: FC<ScreenProps> = ({
       )}
       {/* * 打ち上げ画面 */}
       {(() => {
+        const singleDataUpToStep = getSingleDataUpToStep(getLaunchData);
+        const getLast = (arr: LaunchData[]) => arr.slice(-1)[0];
+
         const { depth, launch_animation } =
-          getSingleDataUpToStep(getLaunchData)
-            .filter(({ launch_animation }) => launch_animation)
-            .slice(-1)[0] || {};
+          getLast(
+            singleDataUpToStep.filter(
+              ({ launch_animation }) => launch_animation
+            )
+          ) || {};
+
         const partsIDs = getPartsIDs();
+        // キーがないとこでisStartLaunchAnimationを渡し続けるとアニメーションを初期化し続けてしまうためキーが有るところでだけ渡すようにする
+        const isStart =
+          !getLast(singleDataUpToStep).launch_animation ||
+          isStartLaunchAnimation;
+
         return (
           <>
             {launch_animation && partsIDs && (
