@@ -101,7 +101,7 @@ sample.args = {
       },
       special_lecture: {
         mission_select: ["ミッションID1", "ミッションID2"],
-        launch_key: "launch",
+        launch_animation: "launch",
       },
       question_select: {
         question_x: "",

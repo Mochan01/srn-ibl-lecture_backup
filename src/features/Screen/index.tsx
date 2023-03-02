@@ -130,13 +130,13 @@ export const Screen: FC<ScreenProps> = ({
         )
       )}
       {/* * 打ち上げ画面 */}
-      {getSingleDataAtStep(getLaunchData).map(({ launch_key, depth }, i) => {
+      {getSingleDataAtStep(getLaunchData).map(({ launch_animation, depth }, i) => {
         const partsIDs = getPartsIDs();
         return (
           <Fragment key={i}>
-            {launch_key && partsIDs && (
+            {launch_animation && partsIDs && (
               <PanelObject {...{ step, depth }} x={163} y={92}>
-                <LaunchAnimation scene={launch_key} {...partsIDs} />
+                <LaunchAnimation scene={launch_animation} {...partsIDs} />
               </PanelObject>
             )}
           </Fragment>

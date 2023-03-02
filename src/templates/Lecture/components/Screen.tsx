@@ -91,9 +91,9 @@ export const Screen: FC<ScreenProps> = (props) => {
   return (
     <LectureFrame {...props} {...{ countDown }}>
       {/** 衛星組み立て画面 */}
-      {special_lecture.record_mission && satelliteAssembly}
+      {special_lecture.display_assembly && satelliteAssembly}
       {/** 通常のレクチャー */}
-      {!special_lecture.record_mission && (
+      {!special_lecture.display_assembly && (
         <Main
           {...progress}
           {...{ onAnswer, actionGoTo, screenData }}

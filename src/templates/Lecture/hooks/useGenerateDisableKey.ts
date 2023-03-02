@@ -18,10 +18,10 @@ export const useGenerateDisableKey = () => {
     const { special_lecture } = getLectureData(getStepData);
 
     // 衛星組み立て画面の場合
-    if (special_lecture.record_mission) return "full";
+    if (special_lecture.display_assembly) return "full";
 
     // 特別レクチャーのうち、衛星組み立て画面以外の場合
-    if (lectureData.find((x) => x.special_lecture.record_mission))
+    if (lectureData.find((x) => x.special_lecture.display_assembly))
       return "some";
 
     return "none";

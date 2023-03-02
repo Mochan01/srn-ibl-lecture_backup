@@ -13,7 +13,7 @@
     "lottie-web": "^5.10.2",
     "src-ibl-lecture-master": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master.git#semver:1.0.0",
     "src-ibl-lecture-master-special": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master-special.git#semver:1.1.3",
-    "src-ibl-lecture-master-unit": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master-unit.git#semver:0.3.3-0",
+    "src-ibl-lecture-master-unit": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master-unit.git#semver:0.3.3",
     "styled-components": "5.3.6",
     "styled-media-query": "2.1.2",
     "swiper": "8.4.4",

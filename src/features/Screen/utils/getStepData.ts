@@ -100,7 +100,7 @@ export const getLaunchData: GetSingleScreenDataFunc<LaunchData> = (
 ) => {
   return lectureData.flatMap(({ progress, special_lecture }) => ({
     depth: progress.step,
-    launch_key: special_lecture.launch_key
+    launch_animation: special_lecture.launch_animation
   }));
 };
 
