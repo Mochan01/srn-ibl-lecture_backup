@@ -29,7 +29,9 @@ const Main = styled.div<PanelObjectProps>(
   left: ${x}px;
   top: ${y}px;
   cursor: pointer;
-  pointer-events: ${step === depth ? "auto" : "none"};
+  // 現在のstepじゃないstepのボタンとかは押せないようにしてたが、
+  // ボタンを出した後にstepを追加されるユースケースがあったので一旦コメントアウト
+  // pointer-events: ${step === depth ? "auto" : "none"};
   user-select: none;
   animation-name: ${motion1 || "none"}, ${motion2 || "none"};
   animation-duration: .3s;
