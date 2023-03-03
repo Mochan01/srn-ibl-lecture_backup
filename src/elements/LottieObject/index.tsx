@@ -1,7 +1,5 @@
 import React, { FC, useEffect, useRef } from "react";
-import styled from "styled-components";
 import lottie from "lottie-web";
-import { SIZE } from "../../data/SIZE";
 
 export interface LottieObjectProps {
   path: string;
@@ -22,8 +20,13 @@ export const LottieObject: FC<LottieObjectProps> = ({
   ...props
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const render = useRef(false);
 
   useEffect(() => {
+    // useEffect走るたびに無限にlottieオブジェクトが追加されるので阻止すること
+    if (render.current) return;
+    render.current = true;
+
     ref.current &&
       lottie.loadAnimation({
         container: ref.current, // the dom element that will contain the animation
@@ -35,5 +38,5 @@ export const LottieObject: FC<LottieObjectProps> = ({
       });
   }, [ref, path, name, autoplay, loop]);
 
-  return <div {...{ ref }} {...props} />;
+  return <div {...{ ...props, ref }} />;
 };
