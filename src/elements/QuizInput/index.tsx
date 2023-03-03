@@ -2,6 +2,7 @@ import React, { FC, useCallback, useMemo, useState } from "react";
 import styled from "styled-components";
 import { QuizAnswerBtn } from "../QuizAnswerBtn";
 import { TextBox } from "./components/TextBox";
+import { convertToHalf } from "./utils/convertToHalf";
 import { Variant } from "../QuizAnswerBtn/types";
 import { QUIZ_SIGN } from "../QuizChoiceBtn";
 import { usePingPong } from "../../hooks";
@@ -24,7 +25,7 @@ const Main = styled.div<MainProps>(
   ({ sign, isAnswer }) => `
   // 回答したらインタラクションできなくする
   pointer-events: ${isAnswer ? "none" : "auto"};
-  width: 532px;
+  width: 442px;
   height: 182px;
   position: relative;
   &:after {
@@ -62,7 +63,7 @@ export const QuizInput: FC<QuizInputProps> = ({ answer, onAnswer }) => {
   const [isAnswer, setIsAnswer] = useState(false);
 
   const isCorrect = useMemo(
-    () => inputAnswer === answer,
+    () => convertToHalf(inputAnswer) === convertToHalf(answer),
     [inputAnswer, answer]
   );
 
@@ -71,13 +72,13 @@ export const QuizInput: FC<QuizInputProps> = ({ answer, onAnswer }) => {
   // 解答ボタン押下またはエンターキーを押下したら発火
   const handleAnswer = useCallback(async () => {
     if (!inputAnswer) return;
-    if(isAnswer) return; // 無いとエンターキーで連打できる
+    if (isAnswer) return; // 無いとエンターキーで連打できる
 
     setIsAnswer(true);
 
     await playPingPong();
     onAnswer && onAnswer(isCorrect);
-  }, [inputAnswer, isAnswer, setIsAnswer, playPingPong, onAnswer]);
+  }, [inputAnswer, isAnswer, playPingPong, onAnswer, isCorrect]);
 
   const onChange = useCallback((input: string) => {
     setInputAnswer(input);
