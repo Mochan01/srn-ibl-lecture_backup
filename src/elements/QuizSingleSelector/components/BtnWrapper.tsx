@@ -1,7 +1,7 @@
 import React, { FC, ReactNode, useContext } from "react";
 import { SIZE } from "../../../data/SIZE";
 import styled from "styled-components";
-import { QuizSelectorProviderContext } from "../providers";
+import { QuizSingleSelectorProviderContext } from "../providers";
 
 export interface BtnWrapper {
   children?: ReactNode;
@@ -26,6 +26,6 @@ const Main = styled.div<{ isAnswer: boolean }>(
  * @returns
  */
 export const BtnWrapper: FC<BtnWrapper> = (props) => {
-  const [{ isAnswer }] = useContext(QuizSelectorProviderContext);
+  const [{ isAnswer }] = useContext(QuizSingleSelectorProviderContext);
   return <Main {...props} {...{ isAnswer }} />;
 };

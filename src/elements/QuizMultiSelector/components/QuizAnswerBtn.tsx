@@ -2,7 +2,7 @@ import React, { FC, useCallback, useMemo, useContext } from "react";
 import styled from "styled-components";
 import { usePingPong } from "../../../hooks";
 import { QuizAnswerBtn as Main } from "../../QuizAnswerBtn";
-import { QuizSelectorProviderContext } from "../providers";
+import { QuizMultiSelectorProviderContext } from "../providers";
 
 export interface QuizAnswerBtnProps {
   onAnswer?: (isCorrect: boolean) => void;
@@ -22,7 +22,7 @@ export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
   isMaxLen,
 }) => {
   const [{ isAnswer, correctIndexes, chooseIndexes }, setState] = useContext(
-    QuizSelectorProviderContext
+    QuizMultiSelectorProviderContext
   );
 
   const variant = useMemo(() => {

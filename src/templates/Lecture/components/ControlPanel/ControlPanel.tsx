@@ -15,7 +15,9 @@ export const ControlPanel: FC<ControlBarProps> = ({
   onLectureLeave,
   className,
 }) => {
-  const disableKey = useGenerateDisableKey();
+  // const disableKey = useGenerateDisableKey();
+  const disableKey = "none";
+
   return (
     <div {...{ className }}>
       <SeekBar isActive={disableKey === "none"} />

@@ -7,15 +7,15 @@ import {
   GetMarkSymbol,
 } from "../utils";
 import { QuizChoiceBtn as Main } from "../../QuizChoiceBtn";
-import { QuizSelectorProviderContext } from "../providers";
+import { QuizSingleSelectorProviderContext } from "../providers";
 
 export interface QuizChoiceBtnProps {
   questions: string[];
 }
 
 export const QuizChoiceBtn: FC<QuizChoiceBtnProps> = ({ questions }) => {
-  const [{ isAnswer, correctIndexes, chooseIndexes }, setState] = useContext(
-    QuizSelectorProviderContext
+  const [{ isAnswer, correctIndex, chooseIndex }, setState] = useContext(
+    QuizSingleSelectorProviderContext
   );
 
   return (
@@ -24,20 +24,14 @@ export const QuizChoiceBtn: FC<QuizChoiceBtnProps> = ({ questions }) => {
         const getBtnStatus = getChoiceBtnStatus(
           isAnswer,
           i,
-          correctIndexes,
-          chooseIndexes
+          correctIndex,
+          chooseIndex
         );
 
         const mutation =
           getBtnStatus<DetermineButtonColor>(determineButtonColor);
         const sign = getBtnStatus<GetMarkSymbol>(getMarkSymbol);
-        const onClick = () =>
-          setState((state) => ({
-            ...state,
-            chooseIndexes: state.chooseIndexes.includes(i)
-              ? state.chooseIndexes.filter((index) => index !== i)
-              : [...chooseIndexes, i],
-          }));
+        const onClick = () => setState((s) => ({ ...s, chooseIndex: i }));
 
         return (
           <Main key={i} {...{ mutation, sign, onClick }}>
