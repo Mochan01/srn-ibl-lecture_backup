@@ -1,9 +1,9 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import { keys } from "./config";
 import { LaunchBg } from "./components/LaunchBg";
 import { LottieObject } from "../../elements/LottieObject";
 import { lottiePath } from "../../data/lottiePath";
-import lottie from "lottie-web";
+import { useControlAnimation } from "./hooks";
 import styled from "styled-components";
 const scane1_bg = new URL(
   "../../assets/prod/scane1_bg.png",
@@ -15,12 +15,13 @@ const scane2_bg = new URL(
 ).toString();
 
 export interface LaunchAnimationProps {
-  scene: typeof keys[number];
+  launch_animation: typeof keys[number];
   // > ロケットと衛星はユーザーが選択したパーツを表示したいため、アニメーションをプログラムで組む必要がある
   // https://www.notion.so/8f048516867b4679a6e6c41d1cf9c044?pvs=4#69a3acb5fda948ffb779ecbe53904c5c
   rocketID: string;
   busID: string;
   batteryID: string;
+  isStart?: boolean;
 }
 
 const Main = styled.div`
@@ -38,40 +39,27 @@ const Main = styled.div`
  * @returns
  */
 export const LaunchAnimation: FC<LaunchAnimationProps> = ({
-  scene,
+  launch_animation,
   rocketID,
   busID,
   batteryID,
+  isStart,
 }) => {
-  // lottieオブジェクトの再生や停止などはここで行う
-  useEffect(() => {
-    if (scene === "standby") {
-      lottie.stop("rocket");
-    }
-    if (scene === "countdown") {
-      lottie.stop("rocket");
-      lottie.play("countdown");
-    }
-    if (scene === "launch") {
-      lottie.play("rocket");
-      lottie.play("smog");
-    }
-    if (scene === "injection") {
-      lottie.play("injectionObject");
-    }
-  }, [scene]);
+  useControlAnimation(launch_animation, isStart);
 
   return (
     <Main>
       {/** 背景 */}
-      <LaunchBg img={scene === "injection" ? scane2_bg : scane1_bg} />
-      {(scene === "standby" || scene === "countdown" || scene === "launch") && (
+      <LaunchBg img={launch_animation === "injection" ? scane2_bg : scane1_bg} />
+      {(launch_animation === "standby" ||
+        launch_animation === "countdown" ||
+        launch_animation === "launch") && (
         <LottieObject
           path={lottiePath[`scene1_rocket_${rocketID}.json`]}
           name="rocket"
         />
       )}
-      {scene === "countdown" && (
+      {launch_animation === "countdown" && (
         <>
           <LottieObject
             path={lottiePath["scene1_rocket_countdown.json"]}
@@ -79,7 +67,7 @@ export const LaunchAnimation: FC<LaunchAnimationProps> = ({
           />
         </>
       )}
-      {scene === "launch" && (
+      {launch_animation === "launch" && (
         <>
           <LottieObject
             path={lottiePath["scene1_rocket_launch_smog.json"]}
@@ -87,7 +75,7 @@ export const LaunchAnimation: FC<LaunchAnimationProps> = ({
           />
         </>
       )}
-      {scene === "injection" && (
+      {launch_animation === "injection" && (
         <>
           <LottieObject
             path={lottiePath[`scene2_satellitebus_${busID}.json`]}

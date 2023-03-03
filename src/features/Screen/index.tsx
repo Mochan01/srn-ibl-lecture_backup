@@ -3,7 +3,7 @@ import { QuizInput } from "../../elements/QuizInput";
 import { QuizSelector } from "../../elements/QuizSelector";
 import { Panel, Narration } from "./components";
 import { PanelObject } from "../../elements/PanelObject";
-import { ScreenData } from "./types";
+import { LaunchData, ScreenData } from "./types";
 import {
   createSingleScreenData,
   createMultipleScreenData,
@@ -17,7 +17,6 @@ import {
   buildPopupStepData,
   getQuestionSelect,
   getLectureDataUpToStep,
-  getLectureDataAtStep,
   getQuestionInput,
   getLaunchData,
   getResultData,
@@ -25,11 +24,11 @@ import {
 } from "./utils";
 import { assetsPath } from "../../data/assetsPath";
 import { solveAssetPath } from "../../utils";
-import { LaunchAnimation } from "../LaunchAnimation";
+import { LaunchAnimation, LaunchAnimationProps } from "../LaunchAnimation";
 import { DisplayResult } from "../DisplayResult";
 import { ResultList } from "src-ibl-lecture-master-special/types";
 
-export interface ScreenProps {
+export interface ScreenProps extends Pick<LaunchAnimationProps, "isStart"> {
   slide: number;
   step: number;
   screenData: ScreenData;
@@ -48,6 +47,7 @@ export const Screen: FC<ScreenProps> = ({
   resultList,
   actionGoTo,
   onAnswer,
+  isStart: isStartLaunchAnimation,
 }) => {
   const [popupName, setPopupName] = useState("");
 
@@ -56,8 +56,9 @@ export const Screen: FC<ScreenProps> = ({
   const getMultipleDataUpToStep = createMultipleScreenData(dataUpToStep);
   const getSingleDataUpToStep = createSingleScreenData(dataUpToStep);
 
-  const dataAtStep = getLectureDataAtStep(slide, step, screenData);
-  const getSingleDataAtStep = createSingleScreenData(dataAtStep);
+  // データ確認画面で使うかもしれなかった関数
+  // const dataAtStep = getLectureDataAtStep(slide, step, screenData);
+  // const getSingleDataAtStep = createSingleScreenData(dataAtStep);
 
   // 各要素はDOM構造としては並列に出し、重ね順をcssで指定する
 
@@ -130,20 +131,41 @@ export const Screen: FC<ScreenProps> = ({
         )
       )}
       {/* * 打ち上げ画面 */}
-      {getSingleDataAtStep(getLaunchData).map(({ launch_animation, depth }, i) => {
+      {(() => {
+        const singleDataUpToStep = getSingleDataUpToStep(getLaunchData);
+        const getLast = (arr: LaunchData[]) => arr.slice(-1)[0];
+
+        const { depth, launch_animation } =
+          getLast(
+            singleDataUpToStep.filter(
+              ({ launch_animation }) => launch_animation
+            )
+          ) || {};
+
         const partsIDs = getPartsIDs();
+        // キーがないとこでisStartLaunchAnimationを渡し続けるとアニメーションを初期化し続けてしまうためキーが有るところでだけ渡すようにする
+        const isStart =
+          !getLast(singleDataUpToStep).launch_animation ||
+          isStartLaunchAnimation;
+
         return (
-          <Fragment key={i}>
+          <>
             {launch_animation && partsIDs && (
-              <PanelObject {...{ step, depth }} x={163} y={92}>
-                <LaunchAnimation scene={launch_animation} {...partsIDs} />
+              <PanelObject {...{ step, depth }} x={163} y={92} motion1="none">
+                <LaunchAnimation
+                  {...{ ...partsIDs, ...{ launch_animation, isStart } }}
+                />
               </PanelObject>
             )}
-          </Fragment>
+          </>
         );
-      })}
-      {/* * データ確認画面 */}
-      {getSingleDataAtStep(getResultData).map(
+      })()}
+      {/**
+       * データ確認画面
+       * 当該画面出現後にさらにstepを出すユースケースがあったので、
+       * getSingleDataAtStep -> getSingleDataUpToStepに変更した
+       */}
+      {getSingleDataUpToStep(getResultData).map(
         ({ depth, display_result }, i) => (
           <Fragment key={i}>
             {display_result && (
