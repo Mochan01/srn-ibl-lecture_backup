@@ -40,7 +40,6 @@ const Main = styled.div`
   height: 95px;
   background-position: 0 -2009px;
   background-image: url(${ImageLecture});
-  display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 0 10px;
@@ -123,10 +122,10 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
       />
       <ReplayBtn
         onClick={() => {
-          moveProgress({ slide: 1, step: 1 });
+          moveProgress({ slide: progress.slide, step: 1 });
           dispatch({ type: "timestamp" });
         }}
-        css="margin-left: 80px;"
+        css="position: absolute; left: 870px"
         isActive={disableKey !== "full"}
       />
     </Main>
