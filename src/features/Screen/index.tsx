@@ -20,8 +20,8 @@ import {
   getQuestionInput,
   getLaunchData,
   getResultData,
-  getPartsIDs,
 } from "./utils";
+import { getPartsIDs } from "../../utils";
 import { assetsPath } from "../../data/assetsPath";
 import { solveAssetPath } from "../../utils";
 import { LaunchAnimation, LaunchAnimationProps } from "../LaunchAnimation";

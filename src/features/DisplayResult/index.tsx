@@ -6,7 +6,7 @@ import { pdfPath } from "../../data/pdfPath";
 import { OpenPdfBtn } from "../../elements/OpenPdfBtn";
 import { PartResultCard } from "../../elements/PartResultCard";
 import { TwoPartsResultCard } from "../../elements/TwoPartsResultCard";
-import { getPartsIDs, getSelectedMissionID } from "../Screen/utils";
+import { getPartsIDs, getSelectedMissionID } from "../../utils";
 
 const Main = styled.div`
   padding-right: 10px;

@@ -1,5 +1,5 @@
-import { SAVED_PARTS } from "../../../config";
-import { SavedParts } from "../../DisplayResult";
+import { SAVED_PARTS } from "../config";
+import { SavedParts } from "../features/DisplayResult";
 
 const mockString =
   // eslint-disable-next-line quotes
