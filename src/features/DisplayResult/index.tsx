@@ -6,7 +6,7 @@ import { pdfPath } from "../../data/pdfPath";
 import { OpenPdfBtn } from "../../elements/OpenPdfBtn";
 import { PartResultCard } from "../../elements/PartResultCard";
 import { TwoPartsResultCard } from "../../elements/TwoPartsResultCard";
-import { getPartsIDs } from "../Screen/utils";
+import { getPartsIDs, getSelectedMissionID } from "../../utils";
 
 const Main = styled.div`
   padding-right: 10px;
@@ -54,22 +54,30 @@ export const DisplayResult: FC<DisplayResultProps> = ({ resultList }) => {
   // 画面に表示するパーツ
   const missionParts = useMemo(() => {
     const { missionPartsIDs } = getPartsIDs() || {};
-    return missionPartsIDs && resultList.filter((result) => {
-      // part_aとpart_bに両方値がある場合
-      if (result.part_a && result.part_b) {
-        // part_aとpart_bの両方が保存したミッションパーツに含まれる場合をフィルタリング
-        return (
-          missionPartsIDs.includes(result.part_a ? result.part_a : "") &&
-          missionPartsIDs.includes(result.part_b ? result.part_b : "")
-        );
-      } else {
-        // missionPartがpart_a または part_bに含まれるものフィルタリング
-        return (
-          missionPartsIDs.includes(result.part_a ? result.part_a : "") ||
-          missionPartsIDs.includes(result.part_b ? result.part_b : "")
-        );
-      }
-    });
+    const selectedMissionID = getSelectedMissionID();
+
+    return (
+      missionPartsIDs &&
+      selectedMissionID &&
+      resultList.filter((result) => {
+        // 選択したmissionでは無い場合はfalseを返す
+        if (result.mission_id !== selectedMissionID) return false;
+        // part_aとpart_bに両方値がある場合
+        if (result.part_a && result.part_b) {
+          // part_aとpart_bの両方が保存したミッションパーツに含まれる場合をフィルタリング
+          return (
+            missionPartsIDs.includes(result.part_a ? result.part_a : "") &&
+            missionPartsIDs.includes(result.part_b ? result.part_b : "")
+          );
+        } else {
+          // missionPartがpart_a または part_bに含まれるものフィルタリング
+          return (
+            missionPartsIDs.includes(result.part_a ? result.part_a : "") ||
+            missionPartsIDs.includes(result.part_b ? result.part_b : "")
+          );
+        }
+      })
+    );
   }, [resultList]);
 
   return (

@@ -2,12 +2,15 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Screen, ScreenProps } from ".";
 
+import masterData from "../../assets/data/satellite_assembly_mock.json";
 export default {
   title: "features/Screen",
   component: Screen,
 } as Meta;
 
 const template: Story<ScreenProps> = (args) => <Screen {...args} />;
+
+const resultList = masterData.result_list;
 
 export const sample = template.bind({});
 sample.args = {
@@ -122,30 +125,5 @@ sample.args = {
       },
     },
   ],
-  resultList: [
-    {
-      result_id: "result_1",
-      part_a: "4_2",
-      part_a_name: "高分解能サーモグラフィー",
-      part_b: "",
-      part_b_name: "",
-      result_pdf: "Lv01U09M01_result01.pdf",
-    },
-    {
-      result_id: "result_2",
-      part_a: "",
-      part_a_name: "",
-      part_b: "4_3",
-      part_b_name: "標準SAR\n",
-      result_pdf: "Lv01U09M01_result01.pdf",
-    },
-    {
-      result_id: "result_10",
-      part_a: "4_2",
-      part_a_name: "広域カメラ",
-      part_b: "4_3",
-      part_b_name: "限定処理特化型コンピュータ",
-      result_pdf: "Lv01U09M01_result01.pdf",
-    },
-  ],
+  resultList: resultList,
 };
