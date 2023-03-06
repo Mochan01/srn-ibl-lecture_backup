@@ -11,5 +11,7 @@ const template: Story<CharactersProps> = (args) => <Characters {...args} />;
 
 export const sample = template.bind({});
 sample.args = {
-  studentDialog: "ダミーテキストダミーテキスト"
+  // max40文字
+  studentDialog:
+    "あいうえおかきくけこあいうえおかきくけこあいうえおかきくけこあいうえおかきくけこ",
 };

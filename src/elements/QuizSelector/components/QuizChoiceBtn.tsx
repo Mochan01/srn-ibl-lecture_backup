@@ -32,12 +32,21 @@ export const QuizChoiceBtn: FC<QuizChoiceBtnProps> = ({ questions }) => {
           getBtnStatus<DetermineButtonColor>(determineButtonColor);
         const sign = getBtnStatus<GetMarkSymbol>(getMarkSymbol);
         const onClick = () =>
-          setState((state) => ({
-            ...state,
-            chooseIndexes: state.chooseIndexes.includes(i)
-              ? state.chooseIndexes.filter((index) => index !== i)
-              : [...chooseIndexes, i],
-          }));
+          setState((state) =>
+            // 正解が一つの場合は入れ替え
+            correctIndexes.length === 1
+              ? {
+                  ...state,
+                  chooseIndexes: [i],
+                }
+              : // 正解が複数の場合は追加
+                {
+                  ...state,
+                  chooseIndexes: state.chooseIndexes.includes(i)
+                    ? state.chooseIndexes.filter((index) => index !== i)
+                    : [...chooseIndexes, i],
+                }
+          );
 
         return (
           <Main key={i} {...{ mutation, sign, onClick }}>
