@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from "react";
+import React, { FC, useEffect, useMemo } from "react";
 import styled from "styled-components";
 import { useTimer } from "use-timer";
 
@@ -95,6 +95,14 @@ export const CountDown: FC<CountDownProps> = ({
     initialTime: initialTimeSeconds,
     timerType: "DECREMENTAL",
   });
+
+  const isTimeOver = useMemo(() => time <= 0, [time]);
+
+  useEffect(() => {
+    if (isTimeOver) {
+      onEnd && onEnd();
+    }
+  }, [isTimeOver, onEnd]);
 
   // timeが0未満になった場合は一秒ごとにonとoffが切り替わる
   const variant = useMemo(
