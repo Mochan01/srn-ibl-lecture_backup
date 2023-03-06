@@ -11,6 +11,6 @@ const template: Story<QuizInputProps> = (args) => <QuizInput {...args} />;
 
 export const sample: { args: QuizInputProps } = template.bind({});
 sample.args = {
-  answer: "あいうえおかきくけこあいうえおかきくけこあ",
+  answer: "000ｱｲｳ０００アイウ",
   onAnswer: (isCorrect) => alert(isCorrect),
 };
