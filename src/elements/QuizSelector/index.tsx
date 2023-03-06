@@ -1,8 +1,8 @@
 import React, { FC, useMemo } from "react";
 import { Lecture } from "src-ibl-lecture-master-unit/types/lecture";
 import { filQuestion, getCorrectIndexes, getQuestionSelect } from "./utils";
-import { QuizMultiSelector } from "../QuizMultiSelector";
-import { QuizSingleSelector } from "../QuizSingleSelector";
+import { BtnWrapper, QuizChoiceBtn, QuizAnswerBtn } from "./components";
+import { QuizSelectorProvider } from "./providers";
 
 export interface QuizSelectorProps {
   questionSelect: Lecture["question_select"];
@@ -32,17 +32,11 @@ export const QuizSelector: FC<QuizSelectorProps> = ({
 
   const questions = useMemo(() => getSelects(filQuestion), [getSelects]);
   return (
-    <>
-      {correctIndexes.length === 1 ? (
-        <QuizSingleSelector
-          correctIndex={correctIndexes[0]}
-          {...{ questions, onAnswer, props }}
-        />
-      ) : (
-        <QuizMultiSelector
-          {...{ questions, correctIndexes, onAnswer, props }}
-        />
-      )}
-    </>
+    <QuizSelectorProvider {...{ correctIndexes }}>
+      <BtnWrapper {...props}>
+        <QuizChoiceBtn {...{ questions }} />
+        <QuizAnswerBtn {...{ onAnswer }} isMaxLen={questions.length === 4} />
+      </BtnWrapper>
+    </QuizSelectorProvider>
   );
 };
