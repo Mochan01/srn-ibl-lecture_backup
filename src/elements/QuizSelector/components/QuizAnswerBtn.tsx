@@ -32,7 +32,10 @@ export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
   const isCorrect = useMemo(
     () =>
       correctIndexes.length === chooseIndexes.length &&
-      correctIndexes.every((value, index) => value === chooseIndexes[index]),
+      correctIndexes.every(
+        // この比較は選択順に依存するのでソート必須
+        (value, index) => value === chooseIndexes.sort((a, b) => a - b)[index]
+      ),
     [chooseIndexes, correctIndexes]
   );
 
