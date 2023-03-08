@@ -20,7 +20,7 @@ export const thumbnailPath: { [key in string]: string } = {
   "3_3": new URL("../assets/prod/thumbnail/thumbnail-3_3.png", import.meta.url).toString(),
   "3_4": new URL("../assets/prod/thumbnail/thumbnail-3_4.png", import.meta.url).toString(),
   "3_5": new URL("../assets/prod/thumbnail/thumbnail-3_5.png", import.meta.url).toString(),
-  // TODO: 画像が追加され次第順次追加 2023/2/2 16:30現在
+  // TODO: 画像が追加され次第順次追加 2023/3/8 12:30現在
   // "4_1": new URL("../assets/prod/thumbnail/thumbnail-4_1.png", import.meta.url).toString(),
   "4_2": new URL("../assets/prod/thumbnail/thumbnail-4_2.png", import.meta.url).toString(),
   "4_3": new URL("../assets/prod/thumbnail/thumbnail-4_3.png", import.meta.url).toString(),
@@ -29,7 +29,7 @@ export const thumbnailPath: { [key in string]: string } = {
   "4_6": new URL("../assets/prod/thumbnail/thumbnail-4_6.png", import.meta.url).toString(),
   // "4_7": new URL("../assets/prod/thumbnail/thumbnail-4_7.png", import.meta.url).toString(),
   "4_8": new URL("../assets/prod/thumbnail/thumbnail-4_8.png", import.meta.url).toString(),
-  // "4_9": new URL("../assets/prod/thumbnail/thumbnail-4_9.png", import.meta.url).toString(),
+  "4_9": new URL("../assets/prod/thumbnail/thumbnail-4_9.png", import.meta.url).toString(),
   "4_10": new URL("../assets/prod/thumbnail/thumbnail-4_10.png", import.meta.url).toString(),
   "4_11": new URL("../assets/prod/thumbnail/thumbnail-4_11.png", import.meta.url).toString(),
   "4_12": new URL("../assets/prod/thumbnail/thumbnail-4_12.png", import.meta.url).toString(),
