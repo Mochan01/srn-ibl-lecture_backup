@@ -26,7 +26,7 @@ const Main = styled.div<MainProps>(
   // 回答したらインタラクションできなくする
   pointer-events: ${isAnswer ? "none" : "auto"};
   width: 442px;
-  height: 182px;
+  height: 130px;
   position: relative;
   &:after {
     content: "";
@@ -95,25 +95,16 @@ export const QuizInput: FC<QuizInputProps> = ({ answer, onAnswer }) => {
   return (
     <Main {...{ isAnswer, sign }}>
       <TextBox {...{ onChange }} onEnter={handleAnswer} />
-      <div css={"margin-bottom: 28px"}></div>
+      <div css={"margin-bottom: 16px"}></div>
       <SAnswerArea>
         {isAnswer && (
           <>
             <SAnswer>答：</SAnswer>
-            {/* 答えが10文字以上の場合、改行する */}
-            {answer.length > 10 ? (
-              <SAnswer>
-                {answer.slice(0, 10)}
-                <br />
-                {answer.slice(10)}
-              </SAnswer>
-            ) : (
-              <SAnswer>{answer}</SAnswer>
-            )}
+            <SAnswer>{answer}</SAnswer>
           </>
         )}
         <QuizAnswerBtn
-          css={"position: absolute; right:0"}
+          css={"position: absolute; right:0 ; bottom:0"}
           variant={answerBtnColor}
           onClick={handleAnswer}
         />
