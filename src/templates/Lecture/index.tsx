@@ -1,12 +1,13 @@
 import React, { FC } from "react";
-import { Screen, SeekBar, ControlPanel } from "./components";
+import { Screen, ControlPanel } from "./components";
 import styled from "styled-components";
-import { CommonProps } from "../../types";
+import { CommonProps, SlideTransitionsData } from "../../types";
 import { LectureRoot } from "../../features/LectureRoot";
 import { Lectures } from "src-ibl-lecture-master-unit/types";
 
 export interface LectureProps extends CommonProps<Lectures> {
   onLectureLeave: (key: "begin" | "end") => void;
+  slideTransitionsData: SlideTransitionsData;
 }
 
 const Wrapper = styled.div`
@@ -26,13 +27,14 @@ export const Lecture: FC<LectureProps> = ({
   unitName,
   unitTitle,
   data,
+  slideTransitionsData,
 }) => {
   const jsonData = data as Lectures;
   return (
     <LectureRoot {...{ onClose, jsonData }}>
       <Wrapper>
         <Screen {...{ unitName, unitTitle }} />
-        <ControlPanel {...{ onLectureLeave }} />
+        <ControlPanel {...{ onLectureLeave, slideTransitionsData }} />
       </Wrapper>
     </LectureRoot>
   );

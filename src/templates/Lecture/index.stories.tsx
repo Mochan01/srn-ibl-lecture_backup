@@ -12,6 +12,7 @@ export default {
 const template: Story<LectureProps> = (args) => <Lecture {...args} />;
 
 const data = jsonData.lecture[0].steps as unknown as Lectures;
+const slideTransitionsData = jsonData.slideTransition;
 
 export const sample: { args: LectureProps } = template.bind({});
 sample.args = {
@@ -24,4 +25,5 @@ sample.args = {
     console.log("onClickClose");
   },
   data,
+  slideTransitionsData,
 };

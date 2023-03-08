@@ -1,7 +1,7 @@
 import React, { FC, useContext, useMemo } from "react";
 import { SIZE } from "../../../../data/SIZE";
 import styled from "styled-components";
-import { Lecture } from "src-ibl-lecture-master-unit/types";
+import { Lecture, SlideTransitions } from "src-ibl-lecture-master-unit/types";
 import {
   useMoveProgress,
   useWatchStepEnd,
@@ -22,14 +22,13 @@ import { ReplayBtn } from "../../../../elements/ReplayBtn";
 import { PlayBtn } from "../../../../elements/PlayBtn";
 import { PrevBtn } from "../../../../elements/PrevBtn";
 import { NextBtn } from "../../../../elements/NextBtn";
+import { ControlPanelProps } from "../ControlPanel";
 const ImageLecture = new URL(
   "../../../../assets/prod/lecture_panel_answer.png",
   import.meta.url
 ).toString();
 
-export interface ControlButtonsProps {
-  onLectureLeave: (key: "begin" | "end") => void;
-  className?: string;
+export interface ControlButtonsProps extends ControlPanelProps {
   disableKey?: "full" | "some" | "none";
 }
 
@@ -50,6 +49,7 @@ const Main = styled.div`
  */
 export const ControlButtons: FC<ControlButtonsProps> = ({
   onLectureLeave,
+  slideTransitionsData,
   disableKey,
   className,
 }) => {
@@ -74,6 +74,8 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
   const isLeave = useMemo(() => {
     return lastStepData === currentStepData;
   }, [currentStepData, lastStepData]);
+
+  const tmp: SlideTransitions = [];
 
   return (
     <Main {...{ className }}>
