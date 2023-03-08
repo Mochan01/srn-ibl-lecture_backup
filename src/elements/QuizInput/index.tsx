@@ -35,7 +35,7 @@ const Main = styled.div<MainProps>(
     width: 54px;
     padding-top: 54px;
     top: 0px;
-    right: -10px;
+    right: 175px;
     background-position: ${
       sign === "circle" ? QUIZ_SIGN.CORRECT : QUIZ_SIGN.INCORRECT
     };
