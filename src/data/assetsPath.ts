@@ -5426,6 +5426,9 @@ export const assetsPath: { [key in string]: string } = {
   "ST_Lv2U6_037.mp3": new URL("../assets/step/ST_Lv2U6_037.mp3", import.meta.url).toString(),
   "ST_Lv2U6_038.mp3": new URL("../assets/step/ST_Lv2U6_038.mp3", import.meta.url).toString(),
   "ST_Lv2U6_039.mp3": new URL("../assets/step/ST_Lv2U6_039.mp3", import.meta.url).toString(),
+  "button_mask.png": new URL("../assets/step/button_mask.png", import.meta.url).toString(),
+  "parameters_mask.png": new URL("../assets/step/parameters_mask.png", import.meta.url).toString(),
+  "parts_mask.png": new URL("../assets/step/parts_mask.png", import.meta.url).toString(),
   // ここから 素材用 共通素材
   "quiz_correct.mp3": new URL("../assets/prod/quiz_correct.mp3", import.meta.url).toString(),
 };
