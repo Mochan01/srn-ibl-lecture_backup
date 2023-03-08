@@ -41,10 +41,11 @@ export const TextBox: FC<TextBoxProps> = ({ onChange, onEnter }) => {
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // 入力文字が確定しているかの状態管理(変換前かどうか)
-  const [isComposing, setIsComposing] = useState(false);
+  // 入力文字が確定しているかのフラグ(変換前かどうか)
+  const isComposing = useRef(false);
+
   const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && !isComposing) {
+    if (e.key === "Enter" && !isComposing.current) {
       // 変換のためのエンターキー押下のときはここに到達しない
       e.preventDefault();
       onEnter && onEnter();
@@ -70,8 +71,8 @@ export const TextBox: FC<TextBoxProps> = ({ onChange, onEnter }) => {
         onBlur={() => setIsFocus(false)}
         placeholder="ここに答えを入力"
         onChange={(e) => onChange && onChange(e.currentTarget.value)}
-        onCompositionStart={() => setIsComposing(true)}
-        onCompositionEnd={() => setIsComposing(false)}
+        onCompositionStart={() => (isComposing.current = true)}
+        onCompositionEnd={() => (isComposing.current = false)}
         onKeyDown={onKeyDownHandler}
       />
     </>
