@@ -57,9 +57,9 @@ const StyledRange = styled(SliderPrimitive.Range)`
 const StyledThumb = styled(SliderPrimitive.Thumb)`
   all: unset;
   display: block;
-  width: ${SLIDER_H}px;
-  height: ${SLIDER_H}px;
-  background-position: 0 -2133px;
+  width: 32px;
+  height: 32px;
+  background-position: 0 -3699px;
   background-image: url(${ImageLecture});
   background-repeat: no-repeat;
 `;
@@ -71,7 +71,7 @@ export interface RadixMemoProps extends RadixProps {}
  * @param param0
  * @returns
  */
-export const Radix: FC<RadixProps> = ({ value,setValue, ...props }) => {
+export const Radix: FC<RadixProps> = ({ value, setValue, ...props }) => {
   return (
     <StyledSlider
       {...props}
