@@ -14,7 +14,7 @@ three.args = {
   questionSelect: {
     question_y: 0,
     question_x: 0,
-    button_1: "100機ぐらい",
+    button_1: "あいうえおかきくけこあいうえおかきくけこ",
     button_2: "1000機ぐらい",
     button_3: "3000機ぐらい",
     ans_1: true,
