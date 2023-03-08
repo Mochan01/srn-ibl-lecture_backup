@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from "react";
+import React, { FC, useRef } from "react";
 import styled from "styled-components";
 
 export interface TextBoxProps {
@@ -35,16 +35,17 @@ const STextBox = styled.input`
 `;
 
 export const TextBox: FC<TextBoxProps> = ({ onChange, onEnter }) => {
-  // タイトルの色を変えるための状態管理
-  const [isHover, setIsHover] = useState(false);
-  const [isFocus, setIsFocus] = useState(false);
-
+  // エンターキー押下時にfocusを外すのに使用
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // 入力文字が確定しているかの状態管理(変換前かどうか)
-  const [isComposing, setIsComposing] = useState(false);
+  // タイトルの色を変えるためのフラグ
+  const isHover = useRef(false);
+  const isFocus = useRef(false);
+  // 入力文字が確定しているかのフラグ(変換前かどうか)
+  const isComposing = useRef(false);
+
   const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && !isComposing) {
+    if (e.key === "Enter" && !isComposing.current) {
       // 変換のためのエンターキー押下のときはここに到達しない
       e.preventDefault();
       onEnter && onEnter();
@@ -64,14 +65,14 @@ export const TextBox: FC<TextBoxProps> = ({ onChange, onEnter }) => {
       <STextBox
         type="text"
         ref={inputRef}
-        onMouseEnter={() => setIsHover(true)}
-        onMouseLeave={() => setIsHover(false)}
-        onFocus={() => setIsFocus(true)}
-        onBlur={() => setIsFocus(false)}
+        onMouseEnter={() => (isHover.current = true)}
+        onMouseLeave={() => (isHover.current = false)}
+        onFocus={() => (isFocus.current = true)}
+        onBlur={() => (isFocus.current = false)}
         placeholder="ここに答えを入力"
         onChange={(e) => onChange && onChange(e.currentTarget.value)}
-        onCompositionStart={() => setIsComposing(true)}
-        onCompositionEnd={() => setIsComposing(false)}
+        onCompositionStart={() => (isComposing.current = true)}
+        onCompositionEnd={() => (isComposing.current = false)}
         onKeyDown={onKeyDownHandler}
       />
     </>
