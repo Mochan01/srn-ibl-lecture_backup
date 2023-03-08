@@ -3,7 +3,7 @@ import { Variant } from "../types";
 export const getColor = (variant: Variant) => {
   switch (variant) {
     case "GRAY":
-      return "#5A5A5A";
+      return "#222222";
     case "RED":
       return "#fff";
     case "WHITE":
