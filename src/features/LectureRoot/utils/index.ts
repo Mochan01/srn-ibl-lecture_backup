@@ -1,6 +1,7 @@
 import { JsonData } from "../types";
 import { Progress } from "src-ibl-lecture-master-unit/types/progress";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
+import { SlideTransitionsData } from "../../../types";
 
 type GetSlideData = (data: JsonData[], slide: number) => JsonData[];
 
@@ -63,3 +64,16 @@ export const handleJsonData: Bundle =
   (steps, { slide, step }) =>
   (getData) =>
     getData(steps, slide, step) as JsonData[] & JsonData & Lecture[] & Lecture;
+
+/**
+ * 現在のスライドの次ページと前ページの遷移先のデータを取得
+ * @param slideTransitionsData
+ * @param currentSlide
+ * @returns
+ */
+export const getTransitionData = (
+  slideTransitionsData: SlideTransitionsData,
+  currentSlide: number
+) => {
+  return slideTransitionsData.find((x) => x.slide === currentSlide);
+};
