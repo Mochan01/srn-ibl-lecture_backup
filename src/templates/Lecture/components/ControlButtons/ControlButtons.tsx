@@ -95,7 +95,7 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
           }
           moveProgress({ slide: backSlide, step: 1 });
         }}
-        css="margin-left: 99px;"
+        css="margin-left: 51px;"
         isActive={disableKey !== "full" && disableKey !== "some"}
       />
       <PlayBtn
@@ -127,7 +127,7 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
           moveProgress({ slide: progress.slide, step: 1 });
           dispatch({ type: "timestamp" });
         }}
-        css="position: absolute; left: 870px"
+        css="position: absolute; left: 898px"
         isActive={disableKey !== "full"}
       />
     </Main>
