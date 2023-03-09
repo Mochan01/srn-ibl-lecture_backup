@@ -118,6 +118,8 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
             return;
           }
           moveProgress({ slide: progress.slide + 1, step: 1 });
+          // 停止中の場合は次ページで再生させるためにtrueを設定
+          dispatch({ type: "isPlaying", val: true });
         }}
         css="margin-left: 20px;"
         isActive={disableKey !== "full" && disableKey !== "some"}

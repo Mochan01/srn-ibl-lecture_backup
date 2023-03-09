@@ -31,7 +31,7 @@ export const QUIZ_SIGN = {
   INCORRECT: "0 -3643px",
 } as const;
 
-type Mutation = typeof QUIZ_CHOICE_BTN[keyof typeof QUIZ_CHOICE_BTN];
+type Mutation = (typeof QUIZ_CHOICE_BTN)[keyof typeof QUIZ_CHOICE_BTN];
 
 export interface QuizChoiceBtnProps extends MainProps {
   children: string;
@@ -78,8 +78,9 @@ const handleColor = (mutation: Mutation) => {
     case QUIZ_CHOICE_BTN.ORANGE:
       return "#fff";
     case QUIZ_CHOICE_BTN.WHITE:
+      return "#222222";
     case QUIZ_CHOICE_BTN.GRAY:
-      return "#5A5A5A";
+      return "#222222";
   }
 };
 
@@ -95,9 +96,10 @@ const Text = styled.p<{ mutation: Mutation }>(
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  line-height: 1.2;
+  line-height: 30px;
   user-select: none;
-  font-size: 18px;
+  font-size: 24px;
+  font-family: "UD デジタル 教科書体 N-B";
   text-align: center;
 `
 );
@@ -106,7 +108,7 @@ export const QuizChoiceBtn: FC<QuizChoiceBtnProps> = ({
   mutation,
   children,
   sign,
-  onClick = () => {},
+  onClick,
   className,
 }) => {
   return (
