@@ -29,7 +29,7 @@ export interface JsonData {
   lecture: LectureSteps<Lecture>[];
   intro: LectureSteps<Intro>[];
   mission: LectureSteps<Mission>[];
-  slideTransitions: SlideTransitions;
+  slideTransition: SlideTransitions;
   // 特別レクチャー
   missionList?: MissionList;
   categoryList?: CategoryList;
