@@ -1,5 +1,10 @@
 import { Units } from "src-ibl-lecture-master/types";
-import { Lecture, Intro, Mission } from "src-ibl-lecture-master-unit/types";
+import {
+  Lecture,
+  Intro,
+  Mission,
+  SlideTransitions,
+} from "src-ibl-lecture-master-unit/types";
 import { LectureSteps } from "./lectureSteps";
 import {
   MissionList,
@@ -24,6 +29,7 @@ export interface JsonData {
   lecture: LectureSteps<Lecture>[];
   intro: LectureSteps<Intro>[];
   mission: LectureSteps<Mission>[];
+  slideTransitions: SlideTransitions;
   // 特別レクチャー
   missionList?: MissionList;
   categoryList?: CategoryList;
