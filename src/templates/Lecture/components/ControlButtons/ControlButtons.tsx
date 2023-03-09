@@ -15,21 +15,20 @@ import {
   handleJsonData,
   getSlideData,
   getLastStepData,
-  getStepData,
+  getTransitionData,
 } from "../../../../features/LectureRoot/utils";
 import { PageBullet } from "../../../../elements/PageBullet";
 import { ReplayBtn } from "../../../../elements/ReplayBtn";
 import { PlayBtn } from "../../../../elements/PlayBtn";
 import { PrevBtn } from "../../../../elements/PrevBtn";
 import { NextBtn } from "../../../../elements/NextBtn";
+import { ControlPanelProps } from "../ControlPanel";
 const ImageLecture = new URL(
   "../../../../assets/prod/lecture_panel_answer.png",
   import.meta.url
 ).toString();
 
-export interface ControlButtonsProps {
-  onLectureLeave: (key: "begin" | "end") => void;
-  className?: string;
+export interface ControlButtonsProps extends ControlPanelProps {
   disableKey?: "full" | "some" | "none";
 }
 
@@ -50,6 +49,7 @@ const Main = styled.div`
  */
 export const ControlButtons: FC<ControlButtonsProps> = ({
   onLectureLeave,
+  slideTransitionsData,
   disableKey,
   className,
 }) => {
@@ -61,8 +61,7 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
   const getLectureData = handleJsonData(lectureData, progress);
 
   const currentSlideLen = getLectureData(getSlideData).length;
-  const currentStepData = getLectureData(getStepData).progress.slide;
-  const lastStepData = getLectureData(getLastStepData).progress.slide;
+  const lastSlide = getLectureData(getLastStepData).progress.slide;
 
   // ステップの最後に達したらボタンを光らせる
   const isStepEnd = useWatchStepEnd();
@@ -70,16 +69,17 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
     return isStepEnd && progress.step >= currentSlideLen;
   }, [isStepEnd, progress, currentSlideLen]);
 
-  // スライドの最後に達したら「次へ」ボタンの文言を変える
-  const isLeave = useMemo(() => {
-    return lastStepData === currentStepData;
-  }, [currentStepData, lastStepData]);
+  const currentSlide = progress.slide;
+  // 現在のスライドの前ページと次ページの遷移先のスライドを取得
+  const transitionData = getTransitionData(slideTransitionsData, currentSlide);
+  const nextSlide = transitionData?.next;
+  const backSlide = transitionData?.back;
 
   return (
     <Main {...{ className }}>
       <PageBullet
-        slideLen={lastStepData}
-        slideIndex={currentStepData}
+        slideLen={lastSlide}
+        slideIndex={currentSlide}
         onClick={(i) => moveProgress({ slide: i + 1, step: 1 })}
         isActive={
           process.env.NODE_ENV === "development" ||
@@ -89,11 +89,11 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
       <PrevBtn
         onClick={() => {
           // スライドが最初の状態で戻ろうとしたらタイトルに戻したいとのこと
-          if (currentStepData === 1) {
+          if (!backSlide) {
             onLectureLeave("begin");
             return;
           }
-          moveProgress({ slide: progress.slide - 1, step: 1 });
+          moveProgress({ slide: backSlide, step: 1 });
         }}
         css="margin-left: 99px;"
         isActive={disableKey !== "full" && disableKey !== "some"}
@@ -109,13 +109,13 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
       />
       <NextBtn
         isBlink={isBlink}
-        isLeave={isLeave}
+        isLeave={!nextSlide}
         onClick={() => {
-          if (isLeave) {
+          if (!nextSlide) {
             onLectureLeave("end");
             return;
           }
-          moveProgress({ slide: progress.slide + 1, step: 1 });
+          moveProgress({ slide: nextSlide, step: 1 });
           // 停止中の場合は次ページで再生させるためにtrueを設定
           dispatch({ type: "isPlaying", val: true });
         }}
