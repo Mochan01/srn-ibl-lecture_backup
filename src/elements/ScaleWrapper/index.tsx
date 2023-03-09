@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   background-image: url(${ImgBg});
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   width: 100vw;
   height: 100vh;
   display: flex;
