@@ -24,8 +24,8 @@ const Grid = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  column-gap: 6px;
-  row-gap: 4px;
+  column-gap: 18px;
+  row-gap: 7px;
 `;
 
 /* lecture_star_on.png */
