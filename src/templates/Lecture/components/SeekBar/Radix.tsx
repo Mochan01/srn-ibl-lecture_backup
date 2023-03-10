@@ -1,7 +1,8 @@
-import React, { FC, Dispatch } from "react";
+import React, { FC, Dispatch, useContext } from "react";
 import styled from "styled-components";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 import { SIZE } from "../../../../data/SIZE";
+import { GlobalDispatchContext } from "../../../../features/LectureRoot/providers";
 const ImageLecture = new URL(
   "../../../../assets/prod/lecture_panel_answer.png",
   import.meta.url
@@ -72,12 +73,22 @@ export interface RadixMemoProps extends RadixProps {}
  * @returns
  */
 export const Radix: FC<RadixProps> = ({ value, setValue, ...props }) => {
+  const dispatch = useContext(GlobalDispatchContext);
+  const handleValueChange = (nextValue: number[]) => {
+    if (nextValue[0] >= 99) {
+      dispatch({ type: "isMaxValue", val: true });
+      return;
+    }
+    setValue && setValue(nextValue[0]);
+    dispatch({ type: "isMaxValue", val: false });
+  };
+
   return (
     <StyledSlider
       {...props}
       max={100}
       value={[value]}
-      onValueChange={(nextValue) => setValue && setValue(nextValue[0])}
+      onValueChange={handleValueChange}
     >
       <StyledTrack>
         <StyledRange />

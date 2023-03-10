@@ -1,7 +1,10 @@
 import React, { FC, useContext, useState } from "react";
 import { Radix } from "./Radix";
 import { useSeekBarAutoPlay, useSeekBarAction } from "../../hooks";
-import { GlobalDispatchContext } from "../../../../features/LectureRoot/providers";
+import {
+  GlobalDispatchContext,
+  GlobalStateContext,
+} from "../../../../features/LectureRoot/providers";
 import styled from "styled-components";
 
 export interface SeekBarProps {
@@ -22,6 +25,8 @@ export const SeekBar: FC<SeekBarProps> = ({ isActive = true, ...props }) => {
   const autoValue = useSeekBarAutoPlay();
 
   const [isPointerDown, setIsPointerDown] = useState(false);
+  const { isMaxValue } = useContext(GlobalStateContext);
+
   const dispatch = useContext(GlobalDispatchContext);
   const onPointerDown = () => {
     setIsPointerDown(true);
@@ -35,7 +40,18 @@ export const SeekBar: FC<SeekBarProps> = ({ isActive = true, ...props }) => {
 
   return (
     <Main isActive={isActive} {...props} {...{ onPointerDown, onPointerUp }}>
-      <Radix {...{ setValue }} value={isActive ? (isPointerDown ? usrValue : autoValue ): 0} />
+      <Radix
+        {...{ setValue }}
+        value={
+          isActive
+            ? isMaxValue
+              ? 100
+              : isPointerDown
+              ? usrValue
+              : autoValue
+            : 0
+        }
+      />
     </Main>
   );
 };

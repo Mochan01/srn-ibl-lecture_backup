@@ -3,12 +3,15 @@ import { Progress } from "../../../types";
 
 export interface GlobalState {
   isPlaying: boolean;
+  // シークバーが最大値かどうか
+  isMaxValue: boolean;
   progress: Progress;
   timestamp: number;
 }
 
 export type GlobalStateAction =
   | { type: "isPlaying"; val: boolean }
+  | { type: "isMaxValue"; val: boolean }
   | { type: "progress"; val: Progress }
   | { type: "timestamp" };
 
@@ -28,6 +31,7 @@ const reducer = (state: GlobalState, action: GlobalStateAction) => {
 export const useGlobalStateReducer = (initVal: Partial<GlobalState>) =>
   useReducer<Reducer<GlobalState, GlobalStateAction>>(reducer, {
     isPlaying: false,
+    isMaxValue: false,
     progress: { slide: 1, step: 1 },
     timestamp: new Date().getTime(),
     ...initVal,
