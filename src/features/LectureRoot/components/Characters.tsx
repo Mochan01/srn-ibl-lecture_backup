@@ -1,4 +1,4 @@
-import React, { FC, useContext, useMemo } from "react";
+import React, { FC, useContext } from "react";
 import { Characters as Main } from "../../../elements/Characters";
 import { css } from "styled-components";
 import {
@@ -10,18 +10,14 @@ import { handleJsonData, getStepData } from "../utils";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
 
 export const Characters: FC = () => {
-  const { isPlaying, progress } = useContext(GlobalStateContext);
+  const { progress } = useContext(GlobalStateContext);
+  // timeが0のときは、音声が流れていないので、口パクを止める
+  const { time } = useContext(TimerContext);
 
   const data = useContext(JsonDataProviderContext) as Lecture[];
   const getLectureData = handleJsonData(data, progress);
 
-  const { animation, narrative, audio } = getLectureData(getStepData);
-
-  const { time } = useContext(TimerContext);
-  const isBlink = useMemo(() => {
-    if (!audio.mp3) return true;
-    return time >= audio.time;
-  }, [audio.mp3, audio.time, time]);
+  const { animation, narrative } = getLectureData(getStepData);
 
   return (
     <Main
@@ -31,10 +27,10 @@ export const Characters: FC = () => {
         right: 0px;
         transform: translateY(-50%);
       `}
-      {...{ isPlaying }}
+      isPlaying={time !== 0}
       studentDialog={narrative.speech}
-      teacherAnimation={isBlink ? "animation_1" : animation.teacher}
-      studentAnimation={isBlink ? "animation_1" : animation.student}
+      teacherAnimation={animation.teacher}
+      studentAnimation={animation.student}
     />
   );
 };
