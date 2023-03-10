@@ -10,7 +10,7 @@ import { handleJsonData, getStepData } from "../utils";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
 
 export const Characters: FC = () => {
-  const { isPlaying, progress } = useContext(GlobalStateContext);
+  const { isPlaying, progress, isMaxValue } = useContext(GlobalStateContext);
 
   const data = useContext(JsonDataProviderContext) as Lecture[];
   const getLectureData = handleJsonData(data, progress);
@@ -19,9 +19,10 @@ export const Characters: FC = () => {
 
   const { time } = useContext(TimerContext);
   const isBlink = useMemo(() => {
+    if (isMaxValue) return true;
     if (!audio.mp3) return true;
     return time >= audio.time;
-  }, [audio.mp3, audio.time, time]);
+  }, [audio.mp3, audio.time, isMaxValue, time]);
 
   return (
     <Main

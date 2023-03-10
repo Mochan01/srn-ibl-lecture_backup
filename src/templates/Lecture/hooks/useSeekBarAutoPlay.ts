@@ -5,7 +5,11 @@ import {
   TimerContext,
   JsonDataProviderContext,
 } from "../../../features/LectureRoot/providers";
-import { getStepData, handleJsonData, getSlideData } from "../../../features/LectureRoot/utils";
+import {
+  getStepData,
+  handleJsonData,
+  getSlideData,
+} from "../../../features/LectureRoot/utils";
 
 /**
  * シークバーの進捗操作

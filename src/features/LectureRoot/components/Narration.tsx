@@ -15,7 +15,7 @@ interface NarrationProps {
  * ナレーションの再生
  */
 export const Narration: FC<NarrationProps> = ({ delay = 0 }) => {
-  const { progress } = useContext(GlobalStateContext);
+  const { progress, isMaxValue } = useContext(GlobalStateContext);
   const { start, reset } = useContext(TimerContext);
 
   // mp3のパス 取得
@@ -34,10 +34,12 @@ export const Narration: FC<NarrationProps> = ({ delay = 0 }) => {
   // オーディオがロードされたら、再生開始
   const [isCanPlay, setIsCanPlay] = useState(false);
   useEffect(() => {
+    // シークバーで最大値にされた場合は再生しない
+    if (isMaxValue) return;
     if (!isCanPlay) return;
     start();
     play();
-  }, [isCanPlay, start, play]);
+  }, [isCanPlay, start, play, isMaxValue]);
 
   // オーディオが存在しない場合、ロードされたものと見做す
   useEffect(() => {
