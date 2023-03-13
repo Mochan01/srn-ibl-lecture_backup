@@ -5457,6 +5457,10 @@ export const assetsPath: { [key in string]: string } = {
   "Lv1U7M3_slide3-16-flash.png": new URL("../assets/step/Lv1U7M3_slide3-16-flash.png", import.meta.url).toString(),
   "Lv1U7M3_slide4-11-flash.png": new URL("../assets/step/Lv1U7M3_slide4-11-flash.png", import.meta.url).toString(),
   "Lv1U7M3_slide4-6-flash.png": new URL("../assets/step/Lv1U7M3_slide4-6-flash.png", import.meta.url).toString(),
+  "Lv1U10_slide3-7-b.png": new URL("../assets/step/Lv1U10_slide3-7-b.png", import.meta.url).toString(),
+  "ST_L3U1_S20-a.mp3": new URL("../assets/step/ST_L3U1_S20-a.mp3", import.meta.url).toString(),
+  "ST_L3U1_S20-b.mp3": new URL("../assets/step/ST_L3U1_S20-b.mp3", import.meta.url).toString(),
+  "scene2_bgm.mp3": new URL("../assets/step/scene2_bgm.mp3", import.meta.url).toString(),
   // ここから 素材用 共通素材
   "quiz_correct.mp3": new URL("../assets/prod/quiz_correct.mp3", import.meta.url).toString(),
 };
