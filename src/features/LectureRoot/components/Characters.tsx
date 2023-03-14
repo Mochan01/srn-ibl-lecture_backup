@@ -10,19 +10,16 @@ import { handleJsonData, getStepData } from "../utils";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
 
 export const Characters: FC = () => {
-  const { isPlaying, progress, isMaxValue } = useContext(GlobalStateContext);
+  const { progress } = useContext(GlobalStateContext);
 
   const data = useContext(JsonDataProviderContext) as Lecture[];
   const getLectureData = handleJsonData(data, progress);
 
   const { animation, narrative, audio } = getLectureData(getStepData);
 
+  // timeが0のときは、音声が流れていないので、口パクを止める
   const { time } = useContext(TimerContext);
-  const isBlink = useMemo(() => {
-    if (isMaxValue) return true;
-    if (!audio.mp3) return true;
-    return time >= audio.time;
-  }, [audio.mp3, audio.time, isMaxValue, time]);
+  const isSync = useMemo(() => time >= audio.time, [audio.time, time]);
 
   return (
     <Main
@@ -32,10 +29,10 @@ export const Characters: FC = () => {
         right: 0px;
         transform: translateY(-50%);
       `}
-      {...{ isPlaying }}
+      isPlaying={time !== 0 && !isSync}
       studentDialog={narrative.speech}
-      teacherAnimation={isBlink ? "animation_1" : animation.teacher}
-      studentAnimation={isBlink ? "animation_1" : animation.student}
+      teacherAnimation={animation.teacher}
+      studentAnimation={animation.student}
     />
   );
 };
