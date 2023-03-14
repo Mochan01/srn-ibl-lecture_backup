@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 import { ResultList } from "src-ibl-lecture-master-special/types";
 import styled from "styled-components";
-import { thumbnailPath } from "../../data/thumbnailPath";
+import { createThumbnailFileName } from "../../features/SatelliteAssembly/utils";
+import { createAssetUri } from "../../utils";
 
 const Main = styled.div`
   width: 816px;
@@ -12,16 +13,19 @@ const Main = styled.div`
   padding-top: 11px;
   padding-left: 24px;
 `;
+
 const Content = styled.div`
   display: flex;
 `;
-const SImage = styled.div<{ image: string }>`
-  background-image: ${({ image }) => `url(${image})`};
+
+const SImage = styled.div<{ image?: string }>`
+  background-image: ${({ image }) => (image ? `url(${image})` : "none")};
   background-repeat: no-repeat;
   background-size: contain;
   width: 66px;
   height: 66px;
 `;
+
 const SName = styled.div`
   font-size: 23px;
   line-height: 23px;
@@ -46,13 +50,19 @@ export const TwoPartsResultCard: FC<TwoPartsResultCardProps> = ({
     <Main>
       <Content>
         <SImage
-          image={thumbnailPath[resultList.part_a ? resultList.part_a : ""]}
+          image={
+            resultList.part_a &&
+            createAssetUri(createThumbnailFileName(resultList.part_a))
+          }
         />
         <SName>{resultList.part_a_name}</SName>
       </Content>
       <Content>
         <SImage
-          image={thumbnailPath[resultList.part_b ? resultList.part_b : ""]}
+          image={
+            resultList.part_b &&
+            createAssetUri(createThumbnailFileName(resultList.part_b))
+          }
         />
         <SName>{resultList.part_b_name}</SName>
       </Content>

@@ -2,11 +2,10 @@ import React, { FC, useMemo } from "react";
 import styled from "styled-components";
 import { ResultList } from "src-ibl-lecture-master-special/types";
 import { ScrollArea } from "srn-ibl-component";
-import { pdfPath } from "../../data/pdfPath";
 import { OpenPdfBtn } from "../../elements/OpenPdfBtn";
 import { PartResultCard } from "../../elements/PartResultCard";
 import { TwoPartsResultCard } from "../../elements/TwoPartsResultCard";
-import { getPartsIDs, getSelectedMissionID } from "../../utils";
+import { createAssetUri, getPartsIDs, getSelectedMissionID } from "../../utils";
 
 const Main = styled.div`
   padding-right: 10px;
@@ -96,7 +95,7 @@ export const DisplayResult: FC<DisplayResultProps> = ({ resultList }) => {
                 <PartResultCard resultList={partsResult} />
               )}
               <div css={"margin-left: 24px"} />
-              <OpenPdfBtn filePath={pdfPath[partsResult.result_pdf]} />
+              <OpenPdfBtn filePath={createAssetUri(partsResult.result_pdf)} />
             </SContents>
           ))}
       </ScrollArea>
