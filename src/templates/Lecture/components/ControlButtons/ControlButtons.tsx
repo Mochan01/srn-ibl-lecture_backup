@@ -53,7 +53,7 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
   disableKey,
   className,
 }) => {
-  const { progress, isPlaying } = useContext(GlobalStateContext);
+  const { progress, isPlaying, isMaxValue } = useContext(GlobalStateContext);
   const dispatch = useContext(GlobalDispatchContext);
 
   const moveProgress = useMoveProgress();
@@ -66,8 +66,9 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
   // ステップの最後に達したらボタンを光らせる
   const isStepEnd = useWatchStepEnd();
   const isBlink = useMemo(() => {
+    if (isMaxValue) return true;
     return isStepEnd && progress.step >= currentSlideLen;
-  }, [isStepEnd, progress, currentSlideLen]);
+  }, [isMaxValue, isStepEnd, progress.step, currentSlideLen]);
 
   const currentSlide = progress.slide;
   // 現在のスライドの前ページと次ページの遷移先のスライドを取得
@@ -80,7 +81,10 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
       <PageBullet
         slideLen={lastSlide}
         slideIndex={currentSlide}
-        onClick={(i) => moveProgress({ slide: i + 1, step: 1 })}
+        onClick={(i) => {
+          moveProgress({ slide: i + 1, step: 1 });
+          dispatch({ type: "isMaxValue", val: false });
+        }}
         isActive={
           process.env.NODE_ENV === "development" ||
           (disableKey !== "full" && disableKey !== "some")
@@ -94,6 +98,7 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
             return;
           }
           moveProgress({ slide: backSlide, step: 1 });
+          dispatch({ type: "isMaxValue", val: false });
         }}
         css="margin-left: 51px;"
         isActive={disableKey !== "full" && disableKey !== "some"}
@@ -118,6 +123,7 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
           moveProgress({ slide: nextSlide, step: 1 });
           // 停止中の場合は次ページで再生させるためにtrueを設定
           dispatch({ type: "isPlaying", val: true });
+          dispatch({ type: "isMaxValue", val: false });
         }}
         css="margin-left: 20px;"
         isActive={disableKey !== "full" && disableKey !== "some"}
@@ -126,6 +132,7 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
         onClick={() => {
           moveProgress({ slide: progress.slide, step: 1 });
           dispatch({ type: "timestamp" });
+          dispatch({ type: "isMaxValue", val: false });
         }}
         css="position: absolute; left: 898px"
         isActive={disableKey !== "full"}
