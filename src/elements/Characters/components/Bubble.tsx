@@ -26,13 +26,13 @@ const Main = styled.div`
 
 const Wrapper = styled.div`
   overflow: hidden;
-  line-height: 30px;
+  line-height: 25px;
   font-size: 20px;
   font-family: "UD デジタル 教科書体 N-B";
   text-align: center;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 5;
   width: 200px;
 `;
 
