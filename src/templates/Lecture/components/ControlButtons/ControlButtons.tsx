@@ -83,6 +83,8 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
         slideIndex={currentSlide}
         onClick={(i) => {
           moveProgress({ slide: i + 1, step: 1 });
+          // ページをまたいだ場合は再生させる
+          dispatch({ type: "isPlaying", val: true });
           dispatch({ type: "isMaxValue", val: false });
         }}
         isActive={
@@ -98,6 +100,8 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
             return;
           }
           moveProgress({ slide: backSlide, step: 1 });
+          // ページをまたいだ場合は再生させる
+          dispatch({ type: "isPlaying", val: true });
           dispatch({ type: "isMaxValue", val: false });
         }}
         css="margin-left: 51px;"
@@ -121,7 +125,7 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
             return;
           }
           moveProgress({ slide: nextSlide, step: 1 });
-          // 停止中の場合は次ページで再生させるためにtrueを設定
+          // ページをまたいだ場合は再生させる
           dispatch({ type: "isPlaying", val: true });
           dispatch({ type: "isMaxValue", val: false });
         }}
