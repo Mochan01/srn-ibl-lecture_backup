@@ -18,6 +18,5 @@ export const sample: { args: MiniBtnProps } = template.bind({});
 sample.args = {
   variant: "nextOn",
   hoverVariant: "nextOff",
-  caption: "next",
   onClick: () => console.log("launch"),
 };
