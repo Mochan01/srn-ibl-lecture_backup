@@ -6,13 +6,11 @@ export interface NextBtnProps
   extends Pick<MiniBtnProps, "className" | "isActive"> {
   onClick: () => void;
   isBlink: boolean;
-  isLeave: boolean;
 }
 
 export const NextBtn: FC<NextBtnProps> = ({
   onClick,
   isBlink,
-  isLeave,
   isActive,
   ...props
 }) => {
@@ -31,7 +29,6 @@ export const NextBtn: FC<NextBtnProps> = ({
       onClick={() => {
         onClick();
       }}
-      caption={isLeave ? "レクチャーを終了" : "次ページ"}
       hoverVariant="nextOff"
     />
   );

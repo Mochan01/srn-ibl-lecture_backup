@@ -24,7 +24,6 @@ export const PlayBtn: FC<PlayBtnProps> = ({
       onClick={() => {
         onClick();
       }}
-      caption={!isPlaying ? "再生" : "一時停止"}
       variant={!isPlaying ? "playOn" : "pauseOn"}
       hoverVariant={!isPlaying ? "playOff" : "pauseOff"}
       isActive={isActive}

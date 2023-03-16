@@ -10,7 +10,6 @@ export const PrevBtn: FC<PrevBtnProps> = ({ onClick, isActive, ...props }) => {
   return (
     <MiniBtn
       {...props}
-      caption="前ページ"
       variant="prevOn"
       hoverVariant="prevOff"
       onClick={() => {

@@ -17,7 +17,6 @@ export const ReplayBtn: FC<ReplayBtnProps> = ({
       onClick={() => {
         onClick();
       }}
-      caption="もう一度"
       variant="againOn"
       hoverVariant="againOff"
       isActive={isActive}
