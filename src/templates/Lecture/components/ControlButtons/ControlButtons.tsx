@@ -114,7 +114,6 @@ export const ControlButtons: FC<ControlButtonsProps> = ({
       />
       <NextBtn
         isBlink={isBlink}
-        isLeave={!nextSlide}
         onClick={() => {
           if (!nextSlide) {
             onLectureLeave("end");

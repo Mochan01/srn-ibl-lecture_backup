@@ -40,7 +40,6 @@ export interface MiniBtnProps {
   variant: keyof typeof variants;
   hoverVariant: keyof typeof variants;
   isActive?: boolean;
-  caption: string;
   onClick?: () => void;
   className?: string;
 }
@@ -55,7 +54,6 @@ const Button = styled.div<
   height: 60px;
   filter: ${({ isActive }) => (isActive ? "none" : "grayscale(100%)")};
   position: relative;
-  margin-bottom: 4px;
   &:hover {
     background-position: ${({ hoverVariant }) => variants[hoverVariant]};
   }
@@ -65,31 +63,16 @@ const Main = styled.div<Pick<MiniBtnProps, "isActive">>`
   cursor: ${({ isActive }) => (isActive ? "pointer" : "none")};
 `;
 
-const TEXT_H = 14;
-const Label = styled.p`
-  bottom: -${TEXT_H + 2}px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  line-height: 1;
-  white-space: nowrap;
-  font-size: ${TEXT_H}px;
-  height: ${TEXT_H}px;
-  color: #fff;
-`;
-
 export const MiniBtn: FC<MiniBtnProps> = ({
   variant,
   hoverVariant,
   isActive = true,
-  caption,
   onClick,
   className,
 }) => {
   return (
     <Main role="button" tabIndex={0} {...{ onClick, className, isActive }}>
       <Button {...{ variant, hoverVariant, isActive }} />
-      <Label>{caption}</Label>
     </Main>
   );
 };
