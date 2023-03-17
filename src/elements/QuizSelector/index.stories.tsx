@@ -9,6 +9,20 @@ export default {
 
 const template: Story<QuizSelectorProps> = (args) => <QuizSelector {...args} />;
 
+export const two: { args: QuizSelectorProps } = template.bind({});
+two.args = {
+  questionSelect: {
+    question_y: 0,
+    question_x: 0,
+    button_1: "あいうえおかきくけこあいうえおかきくけこ",
+    button_2: "1000機ぐらい",
+    ans_1: true,
+    ans_2: false,
+    ans_3: false,
+    ans_4: false,
+  },
+  onAnswer: (isCorrect) => alert(isCorrect),
+};
 export const three: { args: QuizSelectorProps } = template.bind({});
 three.args = {
   questionSelect: {

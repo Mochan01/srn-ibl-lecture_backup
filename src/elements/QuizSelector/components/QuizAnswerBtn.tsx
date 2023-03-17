@@ -6,21 +6,18 @@ import { QuizSelectorProviderContext } from "../providers";
 
 export interface QuizAnswerBtnProps {
   onAnswer?: (isCorrect: boolean) => void;
-  isMaxLen: boolean;
+  isEven: boolean;
 }
 
-const AnswerBtn = styled(Main)<{ isMaxLen: boolean }>(
-  ({ isMaxLen }) => `
-  justify-self: ${isMaxLen ? "center" : "end"};
-  ${isMaxLen ? "grid-column: 1 / 3; grid-row: 3 / 4;" : ""}
+const AnswerBtn = styled(Main)<{ isEven: boolean }>(
+  ({ isEven }) => `
+  justify-self: ${isEven ? "center" : "end"};
+  ${isEven ? "grid-column: 1 / 3;" : ""}
   align-self: end;
 `
 );
 
-export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
-  onAnswer,
-  isMaxLen,
-}) => {
+export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({ onAnswer, isEven }) => {
   const [{ isAnswer, correctIndexes, chooseIndexes }, setState] = useContext(
     QuizSelectorProviderContext
   );
@@ -48,5 +45,5 @@ export const QuizAnswerBtn: FC<QuizAnswerBtnProps> = ({
     onAnswer && onAnswer(isCorrect);
   }, [setState, onAnswer, isCorrect, playPingPong]);
 
-  return <AnswerBtn {...{ variant, isMaxLen, onClick }} />;
+  return <AnswerBtn {...{ variant, isEven, onClick }} />;
 };

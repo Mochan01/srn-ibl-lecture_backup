@@ -35,7 +35,7 @@ export const QuizSelector: FC<QuizSelectorProps> = ({
     <QuizSelectorProvider {...{ correctIndexes }}>
       <BtnWrapper {...props}>
         <QuizChoiceBtn {...{ questions }} />
-        <QuizAnswerBtn {...{ onAnswer }} isMaxLen={questions.length === 4} />
+        <QuizAnswerBtn {...{ onAnswer }} isEven={questions.length % 2 === 0} />
       </BtnWrapper>
     </QuizSelectorProvider>
   );
