@@ -1,17 +1,16 @@
-
 export const fontVariants = [
-  'thin',
-  'extraLight',
-  'light',
-  'normal',
-  'medium',
-  'semiBold',
-  'bold',
-  'extraBold',
-  'black',
+  "thin",
+  "extraLight",
+  "light",
+  "normal",
+  "medium",
+  "semiBold",
+  "bold",
+  "extraBold",
+  "black",
 ] as const;
 
-export const fontWeight: { [key in typeof fontVariants[number]]: number } = {
+export const fontWeight: { [key in (typeof fontVariants)[number]]: number } = {
   thin: 100,
   extraLight: 200,
   light: 300,

@@ -7,7 +7,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
 import styled from "styled-components";
-import { thumbnailPath } from "../../data/thumbnailPath";
+import { createThumbnailFileName } from "../../features/SatelliteAssembly/utils";
+import { createAssetUri } from "../../utils";
 
 const buttonColor = "#F98A3B" as const;
 const isActiveColor = "#FFFF00" as const;
@@ -165,7 +166,7 @@ export const PartsSelectSlider: FC<PartsSelectSliderProps> = ({
             <SwiperSlide key={item.partID} onClick={() => onClick(i)}>
               <SImage
                 selected={selectedIDs.includes(item.partID)}
-                src={thumbnailPath[item.partID]}
+                src={createAssetUri(createThumbnailFileName(item.partID))}
                 css={
                   selectIndex === i
                     ? `border: solid ${border}px ${isActiveColor}`

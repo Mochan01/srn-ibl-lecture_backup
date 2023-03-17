@@ -1,7 +1,6 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
 import { PreviewItem, RocketPreview } from "../../../elements/RocketPreview";
-import { previewPath } from "../../../data/previewPath";
 import { Rocket, Bus, Battery } from "src-ibl-lecture-master-special/types";
 import {
   SatelliteAssemblyStateContext,
@@ -15,7 +14,9 @@ import {
   getBusParts,
   getBatteryParts,
   getMissionParts,
+  createPreviewFileName,
 } from "../utils";
+import { createAssetUri } from "../../../utils";
 const Main = styled.div`
   height: 890px;
   width: 574px;
@@ -78,15 +79,21 @@ export const PartsPreviewArea: FC<PartsPreviewAreaProps> = ({ masterData }) => {
   };
 
   // プレビュー画面に表示する画像
-  let image = previewPath[state.selectedPartID];
+  let image = createAssetUri(createPreviewFileName(state.selectedPartID));
 
   // 電源パーツのタブかつ積載パーツが選択済みの場合は合体画像にする
   if (state.tabIndex === 1 && state.selectedBusID) {
-    image = previewPath[`${state.selectedPartID}-${state.selectedBusID}`];
+    image = createAssetUri(
+      createPreviewFileName(`${state.selectedPartID}-${state.selectedBusID}`)
+    );
   }
   // 積載パーツのタブかつ電源パーツが選択済みの場合は合体画像にする
   if (state.tabIndex === 2 && state.selectedBatteryID) {
-    image = previewPath[`${state.selectedBatteryID}-${state.selectedPartID}`];
+    image = createAssetUri(
+      createPreviewFileName(
+        `${state.selectedBatteryID}-${state.selectedPartID}`
+      )
+    );
   }
 
   const RocketViewProps = {

@@ -1,3 +1,3 @@
 export * from "./formatSlideStep";
-export * from "./solveAssetPath";
 export * from "./getLocalStorageData";
+export * from "./createAssetUri";

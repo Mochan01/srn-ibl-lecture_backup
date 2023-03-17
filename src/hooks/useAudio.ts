@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import useSound from "use-sound";
-import { assetsPath } from "../data/assetsPath";
+import { createAssetUri } from "../utils";
 
 // After component is unmounted, sound is still playing
 // https://github.com/joshwcomeau/use-sound/issues/106
@@ -24,7 +24,10 @@ export const useAudio = (
   audio?: string,
   { onload, volume = VOLUME }: UseAudio = { volume: VOLUME }
 ) => {
-  const [play] = useSound(audio ? assetsPath[audio] : "", { onload, volume });
+  const [play] = useSound(audio ? createAssetUri(audio) : "", {
+    onload,
+    volume,
+  });
   const stop = useCallback(
     () => typeof Howler === "object" && Howler.stop(),
     []

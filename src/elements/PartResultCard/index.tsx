@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 import { ResultList } from "src-ibl-lecture-master-special/types";
 import styled from "styled-components";
-import { thumbnailPath } from "../../data/thumbnailPath";
+import { createThumbnailFileName } from "../../features/SatelliteAssembly/utils";
+import { createAssetUri } from "../../utils";
 
 const Main = styled.div`
   width: 816px;
@@ -15,8 +16,8 @@ const Main = styled.div`
   text-align: center;
 `;
 
-const SImage = styled.div<{ image: string }>`
-  background-image: ${({ image }) => `url(${image})`};
+const SImage = styled.div<{ image?: string }>`
+  background-image: ${({ image }) => (image ? `url(${image})` : "none")};
   background-repeat: no-repeat;
   background-size: contain;
   width: 66px;
@@ -46,7 +47,7 @@ export const PartResultCard: FC<PartResultCardProps> = ({ resultList }) => {
     ? resultList.part_a
     : resultList.part_b
     ? resultList.part_b
-    : "";
+    : undefined;
 
   const partName = resultList.part_a_name
     ? resultList.part_a_name
@@ -54,7 +55,9 @@ export const PartResultCard: FC<PartResultCardProps> = ({ resultList }) => {
 
   return (
     <Main>
-      <SImage image={thumbnailPath[partID]} />
+      <SImage
+        image={partID && createAssetUri(createThumbnailFileName(partID))}
+      />
       <SName>{partName}</SName>
     </Main>
   );

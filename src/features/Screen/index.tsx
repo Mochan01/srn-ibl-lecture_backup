@@ -21,9 +21,7 @@ import {
   getLaunchData,
   getResultData,
 } from "./utils";
-import { getPartsIDs } from "../../utils";
-import { assetsPath } from "../../data/assetsPath";
-import { solveAssetPath } from "../../utils";
+import { createAssetUri, getPartsIDs } from "../../utils";
 import { LaunchAnimation, LaunchAnimationProps } from "../LaunchAnimation";
 import { DisplayResult } from "../DisplayResult";
 import { ResultList } from "src-ibl-lecture-master-special/types";
@@ -68,7 +66,7 @@ export const Screen: FC<ScreenProps> = ({
       {getMultipleDataUpToStep(getImageStepData, buildImageStepData).map(
         ({ src, depth }, i) => (
           <PanelObject key={i} {...{ step, depth }}>
-            <img src={solveAssetPath(assetsPath, src)} />
+            <img src={createAssetUri(src)} />
           </PanelObject>
         )
       )}
@@ -114,7 +112,7 @@ export const Screen: FC<ScreenProps> = ({
       ).map(({ src, depth, x, y, actionGoto, missionID }, i) => (
         <PanelObject key={i} {...{ step, depth, src, x, y }}>
           <img
-            src={solveAssetPath(assetsPath, src)}
+            src={createAssetUri(src)}
             onClick={() => actionGoTo && actionGoTo(actionGoto, missionID)}
           />
         </PanelObject>
@@ -124,7 +122,7 @@ export const Screen: FC<ScreenProps> = ({
         ({ src, depth, x, y, popupName }, i) => (
           <PanelObject key={i} {...{ step, depth, src, x, y }}>
             <img
-              src={solveAssetPath(assetsPath, src)}
+              src={createAssetUri(src)}
               onClick={() => setPopupName(popupName)}
             />
           </PanelObject>
@@ -184,7 +182,7 @@ export const Screen: FC<ScreenProps> = ({
               <>
                 <PanelObject {...{ step, depth, src }}>
                   <img
-                    src={solveAssetPath(assetsPath, src)}
+                    src={createAssetUri(src)}
                     onClick={() => setPopupName("")}
                   />
                 </PanelObject>
