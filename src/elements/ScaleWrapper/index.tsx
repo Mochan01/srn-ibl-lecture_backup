@@ -2,20 +2,12 @@ import React, { FC, ReactNode, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { useResizeWindow } from "./hooks";
 
-const ImgBg = new URL(
-  "../../assets/prod/lecture_bg.png",
-  import.meta.url
-).toString();
-
 export interface ScaleWrapperProps {
   children: ReactNode;
 }
 
 const Wrapper = styled.div`
-  background-image: url(${ImgBg});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: #000;
   width: 100vw;
   height: 100vh;
   display: flex;
