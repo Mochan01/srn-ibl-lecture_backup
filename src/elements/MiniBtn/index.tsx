@@ -54,8 +54,11 @@ const Button = styled.div<
   height: 60px;
   filter: ${({ isActive }) => (isActive ? "none" : "grayscale(100%)")};
   position: relative;
-  &:hover {
-    background-position: ${({ hoverVariant }) => variants[hoverVariant]};
+
+  @media (hover: hover) {
+    &:hover {
+      background-position: ${({ hoverVariant }) => variants[hoverVariant]};
+    }
   }
 `;
 const Main = styled.div<Pick<MiniBtnProps, "isActive">>`
