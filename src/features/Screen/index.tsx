@@ -30,7 +30,7 @@ export interface ScreenProps extends Pick<LaunchAnimationProps, "isStart"> {
   slide: number;
   step: number;
   screenData: ScreenData;
-  resultList: ResultList[];
+  resultList?: ResultList[];
   actionGoTo?: (actionGoto: string, missionID?: string) => void;
   onAnswer?: (isAnswer: boolean) => void;
 }
@@ -163,17 +163,18 @@ export const Screen: FC<ScreenProps> = ({
        * 当該画面出現後にさらにstepを出すユースケースがあったので、
        * getSingleDataAtStep -> getSingleDataUpToStepに変更した
        */}
-      {getSingleDataUpToStep(getResultData).map(
-        ({ depth, display_result }, i) => (
-          <Fragment key={i}>
-            {display_result && (
-              <PanelObject key={i} {...{ step, depth }} x={123} y={115}>
-                <DisplayResult {...{ resultList }} />
-              </PanelObject>
-            )}
-          </Fragment>
-        )
-      )}
+      {resultList &&
+        getSingleDataUpToStep(getResultData).map(
+          ({ depth, display_result }, i) => (
+            <Fragment key={i}>
+              {display_result && (
+                <PanelObject key={i} {...{ step, depth }} x={123} y={115}>
+                  <DisplayResult {...{ resultList }} />
+                </PanelObject>
+              )}
+            </Fragment>
+          )
+        )}
       {/** ポップアップ */}
       {getMultipleDataUpToStep(getPopupStepData, buildPopupStepData).map(
         ({ src, depth, narration }, i) => (

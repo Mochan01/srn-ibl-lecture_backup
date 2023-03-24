@@ -70,7 +70,7 @@ export const Screen: FC<ScreenProps> = ({ specialLectureData, ...props }) => {
       {/** 衛星組み立て画面 */}
       {special_lecture.display_assembly && satelliteAssembly}
       {/** 通常のレクチャー */}
-      {!special_lecture.display_assembly && specialLectureData.result_list && (
+      {!special_lecture.display_assembly && (
         <Main
           {...{ ...progress, ...{ onAnswer, actionGoTo, screenData } }}
           resultList={specialLectureData.result_list}
