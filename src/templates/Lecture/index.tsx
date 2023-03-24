@@ -5,10 +5,11 @@ import {
   ControlPanelProps,
   ScreenProps,
 } from "./components";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { CommonProps } from "../../types";
 import { LectureRoot } from "../../features/LectureRoot";
 import { Lectures } from "src-ibl-lecture-master-unit/types";
+import { PresentedBy2 } from "../../elements/PresentedBy2";
 
 export interface LectureProps
   extends CommonProps<Lectures>,
@@ -39,6 +40,13 @@ export const Lecture: FC<LectureProps> = ({
   return (
     <LectureRoot {...{ onClose, jsonData }}>
       <Wrapper>
+        <PresentedBy2
+          css={css`
+            position: absolute;
+            bottom: 3px;
+            right: -245px;
+          `}
+        />
         <Screen {...{ unitName, unitTitle, specialLectureData }} />
         <ControlPanel {...{ onLectureLeave, slideTransitionsData }} />
       </Wrapper>

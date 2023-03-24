@@ -10,7 +10,7 @@ export interface PresentedByProps {
 }
 
 const Main = styled.div`
-  width: 600px;
+  width: 680px;
   height: 42px;
   background-image: url(${ImageTitle});
   /* lecture_title_offer.png; */
