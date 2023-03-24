@@ -6,16 +6,22 @@ import {
 import { SatelliteAssembly } from "../../../features/SatelliteAssembly";
 import { useMoveProgress } from "../../../features/LectureRoot/hooks";
 import { formatSlideStep } from "../../../utils";
-import masterData from "../../../assets/data/satellite_assembly_mock.json";
-import { MasterData } from "../../../features/SatelliteAssembly/types";
+import { MasterData as SpecialLectureData } from "../../../features/SatelliteAssembly/types";
+
+const isSpecialLectureData = (
+  data: Partial<SpecialLectureData>
+): data is SpecialLectureData => {
+  return Object.values(data).every((value) => value !== undefined);
+};
 
 /**
  * 生成：衛星組み立て画面のコンポーネント
- * @param getLectureData 
- * @returns 
+ * @param getLectureData
+ * @returns
  */
 export const useCreateSatelliteAssemblyComponent = (
-  getLectureData: GetLectureData
+  getLectureData: GetLectureData,
+  masterData: Partial<SpecialLectureData>
 ) => {
   const moveProgress = useMoveProgress();
 
@@ -24,11 +30,12 @@ export const useCreateSatelliteAssemblyComponent = (
 
     const selectedMissionID =
       typeof window !== "undefined" && localStorage.getItem("missionID");
+
     return (
-      !!selectedMissionID && (
+      !!selectedMissionID &&
+      isSpecialLectureData(masterData) && (
         <SatelliteAssembly
-          {...{ selectedMissionID }}
-          masterData={masterData as MasterData}
+          {...{ selectedMissionID, masterData }}
           onClick={() =>
             next_steps.goto_step &&
             moveProgress(formatSlideStep(next_steps.goto_step))
@@ -36,5 +43,5 @@ export const useCreateSatelliteAssemblyComponent = (
         />
       )
     );
-  }, [moveProgress, getLectureData]);
+  }, [moveProgress, getLectureData, masterData]);
 };

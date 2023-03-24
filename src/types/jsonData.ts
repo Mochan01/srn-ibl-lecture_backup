@@ -6,23 +6,9 @@ import {
   SlideTransitions,
 } from "src-ibl-lecture-master-unit/types";
 import { LectureSteps } from "./lectureSteps";
-import {
-  MissionList,
-  CategoryList,
-  ItemList,
-  ResultList,
-  Rocket,
-  Bus,
-  Battery,
-  SensorParts,
-  TransmissionParts,
-  Computer,
-  Debris,
-  SampleReturn,
-  Asteroid,
-} from "src-ibl-lecture-master-special/types";
+import { MasterData } from "../features/SatelliteAssembly/types";
 
-export interface JsonData {
+export interface JsonData extends Partial<MasterData> {
   // lecture_masterから
   units: Units;
   // ユニット別
@@ -30,18 +16,4 @@ export interface JsonData {
   intro: LectureSteps<Intro>[];
   mission: LectureSteps<Mission>[];
   slideTransition: SlideTransitions;
-  // 特別レクチャー
-  missionList?: MissionList;
-  categoryList?: CategoryList;
-  itemList?: ItemList;
-  resultList?: ResultList;
-  rocket?: Rocket;
-  bus?: Bus;
-  battery?: Battery;
-  sensorParts?: SensorParts;
-  transmissionParts?: TransmissionParts;
-  computer?: Computer;
-  debris?: Debris;
-  sampleReturn?: SampleReturn;
-  asteroid?: Asteroid;
 }

@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useContext, useEffect } from "react";
+import React, { FC, useCallback, useContext } from "react";
 import { Lecture } from "src-ibl-lecture-master-unit/types";
 import {
   JsonDataProviderContext,
@@ -14,18 +14,20 @@ import {
   getStepData,
 } from "../../../features/LectureRoot/utils";
 import { useMoveProgress } from "../../../features/LectureRoot/hooks";
-import masterData from "../../../assets/data/satellite_assembly_mock.json";
+import { MasterData as SpecialLectureData } from "../../../features/SatelliteAssembly/types";
 import {
   useCreateCountDownComponent,
   useCreateSatelliteAssemblyComponent,
 } from "../hooks";
 
-export interface ScreenProps extends UnitInfo {}
+export interface ScreenProps extends UnitInfo {
+  specialLectureData: Partial<SpecialLectureData>;
+}
 
 /**
  * スライドの画面部分
  */
-export const Screen: FC<ScreenProps> = (props) => {
+export const Screen: FC<ScreenProps> = ({ specialLectureData, ...props }) => {
   const { progress } = useContext(GlobalStateContext);
   const moveProgress = useMoveProgress();
 
@@ -56,7 +58,10 @@ export const Screen: FC<ScreenProps> = (props) => {
   );
 
   const countDown = useCreateCountDownComponent(getLectureData);
-  const satelliteAssembly = useCreateSatelliteAssemblyComponent(getLectureData);
+  const satelliteAssembly = useCreateSatelliteAssemblyComponent(
+    getLectureData,
+    specialLectureData
+  );
 
   const { time } = useContext(TimerContext);
 
@@ -65,10 +70,10 @@ export const Screen: FC<ScreenProps> = (props) => {
       {/** 衛星組み立て画面 */}
       {special_lecture.display_assembly && satelliteAssembly}
       {/** 通常のレクチャー */}
-      {!special_lecture.display_assembly && (
+      {!special_lecture.display_assembly && specialLectureData.result_list && (
         <Main
           {...{ ...progress, ...{ onAnswer, actionGoTo, screenData } }}
-          resultList={masterData.result_list}
+          resultList={specialLectureData.result_list}
           isStart={time > 0}
         />
       )}

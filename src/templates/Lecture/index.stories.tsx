@@ -2,6 +2,7 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Lecture, LectureProps } from ".";
 import jsonData from "../../assets/data/unit01_master.json";
+import specialLectureData from "../../assets/data/satellite_assembly_mock.json";
 import { Lectures } from "src-ibl-lecture-master-unit/types";
 import { SlideTransitionsData } from "../../types";
 
@@ -32,4 +33,5 @@ sample.args = {
   },
   data,
   slideTransitionsData,
+  specialLectureData,
 };

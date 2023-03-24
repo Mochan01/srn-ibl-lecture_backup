@@ -1,5 +1,10 @@
 import React, { FC } from "react";
-import { Screen, ControlPanel, ControlPanelProps } from "./components";
+import {
+  Screen,
+  ControlPanel,
+  ControlPanelProps,
+  ScreenProps,
+} from "./components";
 import styled from "styled-components";
 import { CommonProps } from "../../types";
 import { LectureRoot } from "../../features/LectureRoot";
@@ -7,7 +12,8 @@ import { Lectures } from "src-ibl-lecture-master-unit/types";
 
 export interface LectureProps
   extends CommonProps<Lectures>,
-    ControlPanelProps {}
+    ControlPanelProps,
+    Pick<ScreenProps, "specialLectureData"> {}
 
 const Wrapper = styled.div`
   position: absolute;
@@ -27,12 +33,13 @@ export const Lecture: FC<LectureProps> = ({
   unitTitle,
   data,
   slideTransitionsData,
+  specialLectureData,
 }) => {
   const jsonData = data as Lectures;
   return (
     <LectureRoot {...{ onClose, jsonData }}>
       <Wrapper>
-        <Screen {...{ unitName, unitTitle }} />
+        <Screen {...{ unitName, unitTitle, specialLectureData }} />
         <ControlPanel {...{ onLectureLeave, slideTransitionsData }} />
       </Wrapper>
     </LectureRoot>
