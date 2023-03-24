@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { GlobalStyle } from "../../config/globalStyle";
 import { ChildWrapper, ChildWrapperProps } from "./components";
 import { JsonDataProvider, JsonDataProviderProps } from "./providers";
 import { SeekProvider, TimerProvider, GlobalStateProvider } from "./providers";
@@ -21,7 +22,10 @@ export const LectureRoot: FC<LectureRootProps> = ({
       <JsonDataProvider {...{ jsonData }}>
         <TimerProvider>
           <SeekProvider>
-            <ChildWrapper {...{ onClose, onLastStep, children }} />
+            <GlobalStyle />
+            <div className="lectureFont">
+              <ChildWrapper {...{ onClose, onLastStep, children }} />
+            </div>
           </SeekProvider>
         </TimerProvider>
       </JsonDataProvider>
