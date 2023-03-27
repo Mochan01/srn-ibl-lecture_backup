@@ -1,4 +1,3 @@
-
 /**
  * Creates a URI for an asset.
  * @param fileName The name of the asset.
@@ -7,5 +6,6 @@
  * createAssetUri('test.mp4');
  */
 export const createAssetUri = (fileName: string): string => {
-  return `https://resources.ibl.surala.dev/lecture/${fileName}`;
+  const prefix = process.env.NEXT_PUBLIC_ENV === "production" ? "net" : "dev";
+  return `https://resources.ibl.surala.${prefix}/lecture/${fileName}`;
 };
