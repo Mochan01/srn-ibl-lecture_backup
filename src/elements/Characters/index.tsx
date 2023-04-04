@@ -1,7 +1,8 @@
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 import styled from "styled-components";
 import { Student, Teacher, Bubble } from "./components";
 import { AnimationType } from "src-ibl-lecture-master-unit/types/animation";
+import { handleAnimation } from "./utils";
 
 export interface CharactersProps {
   isPlaying?: boolean;
@@ -25,10 +26,15 @@ export const Characters: FC<CharactersProps> = ({
   studentDialog,
   ...props
 }) => {
+  const _handleAnimation = useMemo(
+    () => handleAnimation(isPlaying),
+    [isPlaying]
+  );
+
   return (
     <Main {...props}>
       <Teacher
-        animation={isPlaying ? teacherAnimation : "animation_1"}
+        animation={_handleAnimation(teacherAnimation)}
         css="margin-bottom: 32px;"
       />
       {studentDialog && (
@@ -36,7 +42,7 @@ export const Characters: FC<CharactersProps> = ({
           {studentDialog}
         </Bubble>
       )}
-      <Student animation={studentAnimation} />
+      <Student animation={_handleAnimation(studentAnimation)} />
     </Main>
   );
 };
