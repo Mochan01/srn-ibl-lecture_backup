@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { Student, Teacher, Bubble } from "./components";
 import { AnimationType } from "src-ibl-lecture-master-unit/types/animation";
+import { handleAnimation } from "./utils";
 
 export interface CharactersProps {
   isPlaying?: boolean;
@@ -28,7 +29,7 @@ export const Characters: FC<CharactersProps> = ({
   return (
     <Main {...props}>
       <Teacher
-        animation={isPlaying ? teacherAnimation : "animation_1"}
+        animation={handleAnimation(teacherAnimation, isPlaying)}
         css="margin-bottom: 32px;"
       />
       {studentDialog && (
@@ -36,7 +37,7 @@ export const Characters: FC<CharactersProps> = ({
           {studentDialog}
         </Bubble>
       )}
-      <Student animation={studentAnimation} />
+      <Student animation={handleAnimation(studentAnimation, isPlaying)} />
     </Main>
   );
 };
