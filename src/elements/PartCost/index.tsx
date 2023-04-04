@@ -1,23 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 
-const Main = styled.div`
-  width: 312px;
-  height: 40px;
-  display: grid;
-  grid-template-columns: 256px 56px;
-  border: 1px solid #bcbcbc;
-`;
-
-const SCell = styled.div<Pick<PartCostProps, "isCostOver">>`
-  align-items: center;
-  color: ${({ isCostOver }) => (isCostOver ? "#FF0000" : "#5a5a5a")};
-  padding-left: 4px;
-  font-size: 20px;
-  font-family: "UD デジタル 教科書体 N-B";
-  display: flex;
-  letter-spacing: 0px;
-`;
 export interface PartCostProps {
   cost_name: string;
   cost: number;
@@ -25,20 +8,44 @@ export interface PartCostProps {
   className?: string;
 }
 
+const Main = styled.div`
+  width: 312px;
+  height: 40px;
+  display: grid;
+  border: 1px solid #bcbcbc;
+  display: flex;
+`;
+
+const SCell = styled.div<Pick<PartCostProps, "isCostOver">>`
+  color: ${({ isCostOver }) => (isCostOver ? "#FF0000" : "#5a5a5a")};
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+`;
+
 /**
  * パーツのコストを表示する
+ * @param cost_name 最大文字の表記：打ち上げ可能質量(kg)
+ * @param cost 最大桁数：5
  */
 export const PartCost: FC<PartCostProps> = ({
   cost_name,
   cost,
   isCostOver,
-}) => {
-  return (
-    <Main>
-      <SCell isCostOver={isCostOver} css={"border-right: 1px solid #bcbcbc;"}>
-        {cost_name}
-      </SCell>
-      <SCell isCostOver={isCostOver}>{cost}</SCell>
-    </Main>
-  );
-};
+  ...props
+}) => (
+  <Main {...props}>
+    <SCell
+      {...{ isCostOver }}
+      css="padding-left: 4px; border-right: 1px solid #bcbcbc; flex-grow: 1;"
+    >
+      {cost_name}
+    </SCell>
+    <SCell {...{ isCostOver }} css="width: 90px; justify-content: center;">
+      {cost}
+    </SCell>
+  </Main>
+);

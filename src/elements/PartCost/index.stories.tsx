@@ -11,7 +11,7 @@ const template: Story<PartCostProps> = (args) => <PartCost {...args} />;
 
 export const sample = template.bind({});
 sample.args = {
-  cost_name: "価格（億円）",
+  cost_name: "打ち上げ可能質量(kg)",
   cost: 20000,
   isCostOver: false,
 };
