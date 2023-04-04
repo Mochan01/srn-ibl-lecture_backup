@@ -22,45 +22,23 @@ import {
   handleMissionDataIDs,
 } from "../utils";
 import { backGroundWhiteColor } from "../config";
+import { ExclamationIcons } from "./ExclamationIcons";
+import { getCategoryID } from "../utils";
 
-const ImageAlert = new URL(
-  "../../../assets/prod/icon_alert.png",
-  import.meta.url
-).toString();
+interface PartsSelectAreaProps {
+  missionData: MissionList;
+  masterData: MasterData;
+}
+
 const Main = styled.div`
   position: relative;
 `;
 
-const SMissionAlertImage = styled.img`
-  height: 25px;
-  width: 25px;
-  top: -12px;
-  left: 140px;
-  position: absolute;
-  z-index: 1;
-`;
-
-const padding = 172;
-const SBatteryAlertImage = styled(SMissionAlertImage)`
-  left: ${140 + padding * 1}px;
-`;
-
-const SBusAlertImage = styled(SMissionAlertImage)`
-  left: ${140 + padding * 2}px;
-`;
-
-const SRocketAlertImage = styled(SMissionAlertImage)`
-  left: ${140 + padding * 3}px;
-`;
 const SSelectArea = styled.div`
   background-color: ${backGroundWhiteColor};
   height: 490px;
   width: 680px;
 `;
-interface PartsSelectAreaProps {
-  missionData: MissionList;
-  masterData: MasterData;
-}
 
 // パーツを選択する部分のエリア
 export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
@@ -120,13 +98,10 @@ export const PartsSelectArea: FC<PartsSelectAreaProps> = ({
 
   return (
     <Main key={state.tabIndex}>
-      {/* パーツが選択されていない場合はアラートを表示 */}
-      {state.selectedMissionPartsIDs.length === 0 && (
-        <SMissionAlertImage src={ImageAlert} />
-      )}
-      {!state.selectedBatteryID && <SBatteryAlertImage src={ImageAlert} />}
-      {!state.selectedBusID && <SBusAlertImage src={ImageAlert} />}
-      {!state.selectedRocketID && <SRocketAlertImage src={ImageAlert} />}
+      <ExclamationIcons
+        categoryIDGetter={getCategoryID(masterData)}
+        requiredCategory={missionData.required_category}
+      />
       <PartsSelectTab index={state.tabIndex} onChange={onTabChange} />
       <SSelectArea>
         {state.tabIndex === 0 && (

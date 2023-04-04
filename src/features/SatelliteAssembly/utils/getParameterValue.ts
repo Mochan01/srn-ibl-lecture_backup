@@ -23,8 +23,8 @@ export const getTotalLaunchAndLoading = (
   batteryPart: Battery | undefined,
   busPart: Bus | undefined
 ) => {
-  let totalLaunch: number = 0;
-  let totalLoading: number = 0;
+  let totalLaunch = 0;
+  let totalLoading = 0;
   if (busPart) {
     totalLaunch += busPart.body_mass_kg;
   }
@@ -45,7 +45,7 @@ export const getTotalWatts = (
   missionParts: (MissionParts | undefined)[],
   busPart: Bus | undefined
 ) => {
-  let totalWatts: number = 0;
+  let totalWatts = 0;
   [busPart, ...missionParts].forEach((part) => {
     if (part) {
       totalWatts += part.required_power_watts;

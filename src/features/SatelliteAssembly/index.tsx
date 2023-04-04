@@ -21,7 +21,6 @@ const Main = styled.div`
   width: ${SIZE.W}px;
   background-image: url(${ImageBackGround});
   display: flex;
-  font-family: "UD デジタル 教科書体 N-B";
 `;
 
 export interface SatelliteAssemblyProps extends Pick<BtnAreaProps, "onClick"> {
@@ -71,10 +70,13 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
           launchableMass: missionData.launchable_mass as "leo" | "geo" | "ooo",
         }}
       >
-        <PartsPreviewArea masterData={masterData} />
+        <PartsPreviewArea {...{ masterData }} />
         <div>
           <div css={"margin-top: 18px"} />
-          <BtnArea {...{ onClick }} />
+          <BtnArea
+            {...{ masterData, onClick }}
+            requiredCategory={missionData.required_category}
+          />
           <div css={"margin-top: 18px"} />
           <ParameterArea
             masterData={masterData}
@@ -82,7 +84,7 @@ export const SatelliteAssembly: FC<SatelliteAssemblyProps> = ({
             preparationPeriod={missionData.preparation_period}
           />
           <div css={"margin-top: 18px"} />
-          <PartsSelectArea missionData={missionData} masterData={masterData} />
+          <PartsSelectArea {...{ missionData, masterData }} />
         </div>
       </SatelliteAssemblyProvider>
     </Main>

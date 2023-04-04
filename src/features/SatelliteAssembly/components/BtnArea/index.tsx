@@ -1,14 +1,20 @@
 import React, { FC, useContext, useEffect, useState } from "react";
 import styled from "styled-components";
-import { LaunchBtn } from "../../../elements/LaunchBtn";
-import { ResetBtn } from "../../../elements/ResetBtn";
+import { LaunchBtn } from "../../../../elements/LaunchBtn";
+import { ResetBtn } from "../../../../elements/ResetBtn";
 import {
   SatelliteAssemblyStateContext,
   SatelliteAssemblyDispatchContext,
-} from "../contexts";
-import { SAVED_PARTS } from "../../../config";
+} from "../../contexts";
+import { SAVED_PARTS } from "../../../../config";
+import { MasterData } from "../../types";
+import { getCategoryID } from "../../utils";
+import { isAllSelected } from "./utils";
+import { MissionList } from "src-ibl-lecture-master-special/types";
 
 export interface BtnAreaProps {
+  masterData: MasterData;
+  requiredCategory: MissionList["required_category"];
   onClick?: () => void;
 }
 
@@ -19,7 +25,11 @@ const Main = styled.div`
   justify-content: space-between;
 `;
 
-export const BtnArea: FC<BtnAreaProps> = ({ onClick }) => {
+export const BtnArea: FC<BtnAreaProps> = ({
+  masterData,
+  requiredCategory,
+  onClick,
+}) => {
   const [variant, setVariant] = useState<"OFF" | "BEFORE" | "AFTER">("OFF");
   const state = useContext(SatelliteAssemblyStateContext);
   const dispatch = useContext(SatelliteAssemblyDispatchContext);
@@ -27,12 +37,7 @@ export const BtnArea: FC<BtnAreaProps> = ({ onClick }) => {
   // ボタンの状態を管理
   useEffect(() => {
     // 全てのパーツが選択されていない場合はreturn
-    if (
-      state.selectedMissionPartsIDs.length === 0 ||
-      !state.selectedBatteryID ||
-      !state.selectedBusID ||
-      !state.selectedRocketID
-    ) {
+    if (isAllSelected(requiredCategory, state, getCategoryID(masterData))) {
       setVariant("OFF");
       return;
     }
@@ -49,17 +54,7 @@ export const BtnArea: FC<BtnAreaProps> = ({ onClick }) => {
     }
     // 条件を満たしている場合は押下可能にする
     setVariant("BEFORE");
-  }, [
-    state.isLaunchOver,
-    state.isLoadingOver,
-    state.isMonthOver,
-    state.isPriceOver,
-    state.isWattsOver,
-    state.selectedBatteryID,
-    state.selectedBusID,
-    state.selectedMissionPartsIDs.length,
-    state.selectedRocketID,
-  ]);
+  }, [requiredCategory, state, masterData]);
 
   // 全ての選択状態をリセットする
   const handleReset = () => {
