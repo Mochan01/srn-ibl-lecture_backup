@@ -11,6 +11,7 @@ const ImageLecture = new URL(
   "../../assets/prod/lecture_panel_answer.png",
   import.meta.url
 ).toString();
+
 export interface QuizInputProps {
   answer: string;
   onAnswer?: (isCorrect: boolean) => void;
@@ -51,10 +52,10 @@ const Main = styled.div<MainProps>(
 const SAnswerArea = styled.div`
   display: flex;
 `;
+
 const SAnswer = styled.div`
   font-size: 23px;
   color: #e2365f;
-  font-family: "UD デジタル 教科書体 N-B";
 `;
 
 export const QuizInput: FC<QuizInputProps> = ({ answer, onAnswer }) => {
@@ -97,7 +98,7 @@ export const QuizInput: FC<QuizInputProps> = ({ answer, onAnswer }) => {
       <TextBox {...{ onChange }} onEnter={handleAnswer} />
       <div css={"margin-bottom: 16px"}></div>
       <SAnswerArea>
-        {isAnswer && (
+        {isAnswer && !isCorrect && (
           <>
             <SAnswer>答：</SAnswer>
             <SAnswer>{answer}</SAnswer>
