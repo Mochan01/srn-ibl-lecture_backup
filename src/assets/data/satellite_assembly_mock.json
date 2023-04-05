@@ -38,7 +38,12 @@
           "sample_return_item": [],
           "asteroid_item": [],
           "max_budget": 270,
-          "preparation_period": 64
+          "preparation_period": 64,
+          "required_category": [
+              1,
+              2,
+              3
+          ]
       },
       {
           "mission_id": "mission_2",
@@ -80,13 +85,21 @@
           "sample_return_item": [],
           "asteroid_item": [],
           "max_budget": 280,
-          "preparation_period": 99
+          "preparation_period": 99,
+          "required_category": [
+              1,
+              2,
+              3
+          ]
       },
       {
           "mission_id": "mission_3",
           "mission_name": "Lv1_魚の群れを追え",
           "launchable_mass": "leo",
           "rocket": [
+              "1_1",
+              "1_2",
+              "1_3",
               "1_4",
               "1_5",
               "1_6",
@@ -121,7 +134,12 @@
           "sample_return_item": [],
           "asteroid_item": [],
           "max_budget": 150,
-          "preparation_period": 80
+          "preparation_period": 80,
+          "required_category": [
+              1,
+              2,
+              3
+          ]
       },
       {
           "mission_id": "mission_4",
@@ -168,7 +186,13 @@
           "sample_return_item": [],
           "asteroid_item": [],
           "max_budget": 320,
-          "preparation_period": 135
+          "preparation_period": 135,
+          "required_category": [
+              1,
+              2,
+              3,
+              7
+          ]
       },
       {
           "mission_id": "mission_5",
@@ -211,13 +235,21 @@
           "sample_return_item": [],
           "asteroid_item": [],
           "max_budget": 180,
-          "preparation_period": 72
+          "preparation_period": 72,
+          "required_category": [
+              1,
+              2,
+              3
+          ]
       },
       {
           "mission_id": "mission_6",
           "mission_name": "Lv2_サンプルリターン",
           "launchable_mass": "ooo",
           "rocket": [
+              "1_1",
+              "1_2",
+              "1_3",
               "1_4",
               "1_5",
               "1_6",
@@ -243,7 +275,8 @@
           "sensor_item": [],
           "transmission_item": [
               "5_5",
-              "5_6\n5_7"
+              "5_6",
+              "5_7"
           ],
           "computer_item": [
               "7_1",
@@ -265,7 +298,14 @@
               "10_3"
           ],
           "max_budget": 350,
-          "preparation_period": 140
+          "preparation_period": 140,
+          "required_category": [
+              1,
+              2,
+              3,
+              5,
+              7
+          ]
       },
       {
           "mission_id": "mission_7",
@@ -313,7 +353,13 @@
           "sample_return_item": [],
           "asteroid_item": [],
           "max_budget": 330,
-          "preparation_period": 99
+          "preparation_period": 99,
+          "required_category": [
+              1,
+              2,
+              3,
+              7
+          ]
       },
       {
           "mission_id": "mission_8",
@@ -355,7 +401,12 @@
           "sample_return_item": [],
           "asteroid_item": [],
           "max_budget": 200,
-          "preparation_period": 96
+          "preparation_period": 96,
+          "required_category": [
+              1,
+              2,
+              3
+          ]
       },
       {
           "mission_id": "mission_9",
@@ -401,7 +452,13 @@
           "sample_return_item": [],
           "asteroid_item": [],
           "max_budget": 140,
-          "preparation_period": 87
+          "preparation_period": 87,
+          "required_category": [
+              1,
+              2,
+              3,
+              7
+          ]
       }
   ],
   "category_list": [
@@ -562,7 +619,7 @@
           "part_b_name": "",
           "result_pdf": "Lv01U09M02_result01.pdf",
           "mission_id": "mission_2",
-          "mission_name": "スマートシティって"
+          "mission_name": "スマートシティって？"
       },
       {
           "result_id": "result_7",
@@ -572,7 +629,7 @@
           "part_b_name": "",
           "result_pdf": "Lv01U09M02_result02.pdf",
           "mission_id": "mission_2",
-          "mission_name": "スマートシティって"
+          "mission_name": "スマートシティって？"
       },
       {
           "result_id": "result_8",
@@ -582,7 +639,7 @@
           "part_b_name": "",
           "result_pdf": "Lv01U09M02_result03.pdf",
           "mission_id": "mission_2",
-          "mission_name": "スマートシティって"
+          "mission_name": "スマートシティって？"
       },
       {
           "result_id": "result_9",
@@ -592,7 +649,7 @@
           "part_b_name": "",
           "result_pdf": "Lv01U09M02_result04.pdf",
           "mission_id": "mission_2",
-          "mission_name": "スマートシティって"
+          "mission_name": "スマートシティって？"
       },
       {
           "result_id": "result_10",
@@ -767,7 +824,7 @@
       {
           "result_id": "result_27",
           "part_a": "9_4",
-          "part_a_name": "ほうきとちりとり採取装置",
+          "part_a_name": "ほうきとちり取り採取装置",
           "part_b": "10_1",
           "part_b_name": "Ｓ型小惑星まで行ける推進装置",
           "result_pdf": "Lv02U05M01_result04.pdf",
@@ -817,7 +874,7 @@
       {
           "result_id": "result_32",
           "part_a": "9_4",
-          "part_a_name": "ほうきとちりとり採取装置",
+          "part_a_name": "ほうきとちり取り採取装置",
           "part_b": "10_2",
           "part_b_name": "Ｃ型小惑星まで行ける推進装置",
           "result_pdf": "Lv02U05M01_result09.pdf",
@@ -867,7 +924,7 @@
       {
           "result_id": "result_37",
           "part_a": "9_4",
-          "part_a_name": "ほうきとちりとり採取装置",
+          "part_a_name": "ほうきとちり取り採取装置",
           "part_b": "10_3",
           "part_b_name": "Ｍ型小惑星まで行ける推進装置",
           "result_pdf": "Lv02U05M01_result14.pdf",
@@ -952,7 +1009,7 @@
           "part_b_name": "",
           "result_pdf": "Lv02U05M03_result01.pdf",
           "mission_id": "mission_8",
-          "mission_name": "食料生産"
+          "mission_name": "食糧生産を考える"
       },
       {
           "result_id": "result_46",
@@ -962,7 +1019,7 @@
           "part_b_name": "",
           "result_pdf": "Lv02U05M03_result02.pdf",
           "mission_id": "mission_8",
-          "mission_name": "食料生産"
+          "mission_name": "食糧生産を考える"
       },
       {
           "result_id": "result_47",
@@ -972,7 +1029,7 @@
           "part_b_name": "",
           "result_pdf": "Lv02U05M03_result03.pdf",
           "mission_id": "mission_8",
-          "mission_name": "食料生産"
+          "mission_name": "食糧生産を考える"
       },
       {
           "result_id": "result_48",
@@ -982,7 +1039,7 @@
           "part_b_name": "",
           "result_pdf": "Lv02U05M03_result04.pdf",
           "mission_id": "mission_8",
-          "mission_name": "食料生産"
+          "mission_name": "食糧生産を考える"
       },
       {
           "result_id": "result_51",
@@ -992,7 +1049,7 @@
           "part_b_name": "標準型コンピュータ",
           "result_pdf": "Lv02U05M04_result01.pdf",
           "mission_id": "mission_9",
-          "mission_name": "仮想通貨"
+          "mission_name": "仮想通貨のエネルギー問題"
       },
       {
           "result_id": "result_52",
@@ -1002,7 +1059,7 @@
           "part_b_name": "標準型コンピュータ",
           "result_pdf": "Lv02U05M04_result02.pdf",
           "mission_id": "mission_9",
-          "mission_name": "仮想通貨"
+          "mission_name": "仮想通貨のエネルギー問題"
       },
       {
           "result_id": "result_53",
@@ -1012,7 +1069,7 @@
           "part_b_name": "高性能コンピュータ",
           "result_pdf": "Lv02U05M04_result03.pdf",
           "mission_id": "mission_9",
-          "mission_name": "仮想通貨"
+          "mission_name": "仮想通貨のエネルギー問題"
       },
       {
           "result_id": "result_54",
@@ -1022,7 +1079,7 @@
           "part_b_name": "高性能コンピュータ",
           "result_pdf": "Lv02U05M04_result04.pdf",
           "mission_id": "mission_9",
-          "mission_name": "仮想通貨"
+          "mission_name": "仮想通貨のエネルギー問題"
       },
       {
           "result_id": "result_55",
@@ -1032,7 +1089,7 @@
           "part_b_name": "スーパーコンピュータ",
           "result_pdf": "Lv02U05M04_result05.pdf",
           "mission_id": "mission_9",
-          "mission_name": "仮想通貨"
+          "mission_name": "仮想通貨のエネルギー問題"
       },
       {
           "result_id": "result_56",
@@ -1042,7 +1099,7 @@
           "part_b_name": "スーパーコンピュータ",
           "result_pdf": "Lv02U05M04_result06.pdf",
           "mission_id": "mission_9",
-          "mission_name": "仮想通貨"
+          "mission_name": "仮想通貨のエネルギー問題"
       }
   ],
   "rocket": [
@@ -1291,7 +1348,7 @@
           "category_id": 4,
           "category_name": "センサー系ミッションアイテム",
           "part_id": "4_1",
-          "part_name": "標準サーモグラフィー\n",
+          "part_name": "標準サーモグラフィー",
           "description": "標準的なサーモグラフィー",
           "price_hundred_million": 10,
           "body_mass_kg": 150,
@@ -1313,7 +1370,7 @@
           "category_id": 4,
           "category_name": "センサー系ミッションアイテム",
           "part_id": "4_3",
-          "part_name": "標準SAR\n",
+          "part_name": "標準SAR",
           "description": "標準的なSAR",
           "price_hundred_million": 30,
           "body_mass_kg": 200,
@@ -1494,7 +1551,7 @@
           "category_name": "衛星に搭載する演算装置(コンピュータ）",
           "part_id": "7_2",
           "part_name": "標準型コンピュータ",
-          "description": "標準的なコンピュータで、衛星が撮った画像処理が行えるコンピュータ",
+          "description": "標準的なコンピュータで、衛星が撮った画像処理が行えるコンピュータ。",
           "price_hundred_million": 2,
           "body_mass_kg": 20,
           "required_power_watts": 50,
@@ -1505,7 +1562,7 @@
           "category_name": "衛星に搭載する演算装置(コンピュータ）",
           "part_id": "7_3",
           "part_name": "高性能コンピュータ",
-          "description": "よりハイスピードな演算処理が可能なコンピュータ。ただし演算スピードを優先している為に、衛星打ち上げ後のプログラム書き換えは不可能",
+          "description": "よりハイスピードな演算処理が可能なコンピュータ。ただし演算スピードを優先している為に、衛星打ち上げ後のプログラム書き換えは不可能。",
           "price_hundred_million": 1.5,
           "body_mass_kg": 50,
           "required_power_watts": 300,
@@ -1516,7 +1573,7 @@
           "category_name": "衛星に搭載する演算装置(コンピュータ）",
           "part_id": "7_4",
           "part_name": "スーパーコンピュータ",
-          "description": "高度な演算処理が可能なコンピュータで、衛星打ち上げ後のプログラム書き換えが可能",
+          "description": "高度な演算処理が可能なコンピュータで、衛星打ち上げ後のプログラム書き換えが可能。",
           "price_hundred_million": 5,
           "body_mass_kg": 100,
           "required_power_watts": 150,
@@ -1542,7 +1599,7 @@
           "part_name": "導電性テザーをデブリに取り付けてテザーの力で大気圏へ",
           "description": "導電性テザーをデブリに取り付け、その後、導電性テザーに電気を流すことで力が発生し、大気圏にデブリを引き込み燃やす。",
           "price_hundred_million": 80,
-          "body_mass_kg": 1500,
+          "body_mass_kg": 1200,
           "required_power_watts": 200,
           "manufacturing_period_months": 22
       },
@@ -1553,7 +1610,7 @@
           "part_name": "レーザーを照射してレーザーアブレーションを発生させて大気圏へ",
           "description": "レーザーをデブリに照射させ、デブリの表面を加熱する事で力を発生させ、大気圏にデブリを落下させ燃やす。",
           "price_hundred_million": 70,
-          "body_mass_kg": 100,
+          "body_mass_kg": 200,
           "required_power_watts": 1000,
           "manufacturing_period_months": 16
       },
@@ -1564,7 +1621,7 @@
           "part_name": "太陽光を収束させて照射し、アブレーションを発生させて大気圏へ",
           "description": "直径10ｍの鏡で、太陽光を反射、集中させ、デブリ表面を加熱させ力を発生させる。得られた力によりデブリを大気圏に落下させ燃やす。",
           "price_hundred_million": 120,
-          "body_mass_kg": 300,
+          "body_mass_kg": 800,
           "required_power_watts": 100,
           "manufacturing_period_months": 28
       },
@@ -1629,8 +1686,8 @@
           "category_id": 9,
           "category_name": "サンプルリターンミッション",
           "part_id": "9_4",
-          "part_name": "ほうきと塵取り採取装置",
-          "description": "ほうきと塵取りで、小惑星表面のサンプルを採取する。",
+          "part_name": "ほうきとちり取り採取装置",
+          "description": "ほうきとちり取りで、小惑星表面のサンプルを採取する。",
           "price_hundred_million": 100,
           "body_mass_kg": 200,
           "required_power_watts": 200,
@@ -1654,7 +1711,7 @@
           "category_name": "小惑星探査推進装置",
           "part_id": "10_1",
           "part_name": "Ｓ型小惑星まで行ける推進装置",
-          "description": "軌道：地球近傍を周回\n成分：鉄やマグネシウムなどのケイ酸塩にニッケルや鉄などの金属物が混合した化学組成物質が主成分\n代表的なＳ型小惑星：イトカワである。",
+          "description": "軌道：地球近傍を周回成分：鉄やマグネシウムなどのケイ酸塩にニッケルや鉄などの金属物が混合した化学組成物質が主成分代表的なＳ型小惑星：イトカワ",
           "price_hundred_million": 12,
           "body_mass_kg": 120,
           "required_power_watts": 100,
@@ -1665,7 +1722,7 @@
           "category_name": "小惑星探査推進装置",
           "part_id": "10_2",
           "part_name": "Ｃ型小惑星まで行ける推進装置",
-          "description": "軌道：火星と地球の間の楕円軌道を周回。\n成分：炭素の含有量の多い炭素質コンドライトが主成分。他に水、アミノ酸\n代表的なＣ型小惑星：リュウグウ",
+          "description": "軌道：火星と地球の間の楕円軌道を周回。成分：炭素の含有量の多い炭素質コンドライトが主成分。他に水、アミノ酸代表的なＣ型小惑星：リュウグウ",
           "price_hundred_million": 20,
           "body_mass_kg": 220,
           "required_power_watts": 180,
@@ -1676,7 +1733,7 @@
           "category_name": "小惑星探査推進装置",
           "part_id": "10_3",
           "part_name": "Ｍ型小惑星まで行ける推進装置",
-          "description": "軌道：火星と木星の小惑星帯\n成分：ニッケル、鉄、また少量ながら金、銀、白銀、パラジウムも取れる可能性がある。 \n代表的なＭ型小惑星：プシケ\n表面が非常に硬いと考えられている",
+          "description": "軌道：火星と木星の小惑星帯成分：ニッケル、鉄、また少量ながら金、銀、白金、パラジウムも取れる可能性がある。 代表的なＭ型小惑星：プシケ表面が非常に硬いと考えられている",
           "price_hundred_million": 30,
           "body_mass_kg": 250,
           "required_power_watts": 190,

@@ -12,7 +12,7 @@
     "css-reset-and-normalize": "^2.3.6",
     "lottie-web": "^5.10.2",
     "src-ibl-lecture-master": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master.git#semver:1.0.0",
-    "src-ibl-lecture-master-special": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master-special.git#semver:1.1.4",
+    "src-ibl-lecture-master-special": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master-special.git#semver:1.1.5",
     "src-ibl-lecture-master-unit": "git+ssh://git@github.com:Fantamstick/src-ibl-lecture-master-unit.git#semver:0.4.0",
     "styled-components": "5.3.9",
     "styled-media-query": "2.1.2",
