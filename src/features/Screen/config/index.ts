@@ -93,4 +93,48 @@ export const screenData = [
       display_result: true,
     },
   },
+  {
+    progress: {
+      slide: 1,
+      step: 3,
+    },
+    images: {
+      display_files: [],
+      delete_files: [],
+    },
+    popup: {
+      popup_btns: [
+        "https://placehold.jp/30/fcba03/22ff22/300x80.png?text=ポップアップボタン2",
+      ],
+      popup_x: [400],
+      popup_y: [500],
+      display_popup: [
+        "https://placehold.jp/30/ff00ff/222222/500x500.png?text=ポップアップ2",
+      ],
+      popup_narration: ["quiz_correct.mp3"],
+    },
+    actions: {
+      action_btns: [],
+      action_x: [],
+      action_y: [],
+      action_goto: [],
+    },
+    question_select: {
+      question_x: 450,
+      question_y: 200,
+      ans_1: false,
+      ans_2: false,
+      ans_3: true,
+      ans_4: false,
+    },
+    question_input: {
+      question_x: "",
+      question_y: "",
+      ans: "",
+    },
+    special_lecture: {
+      mission_select: [],
+      display_result: true,
+    },
+  },
 ] as const;
