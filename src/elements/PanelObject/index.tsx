@@ -1,14 +1,6 @@
-import React, { FC, ReactNode } from "react";
-import styled from "styled-components";
-
-type Motion =
-  | "none"
-  | "fadein"
-  | "slideup"
-  | "slidedown"
-  | "slideleft"
-  | "slideright"
-  | "enlarge";
+import React, { FC, ReactNode, useState, useEffect } from "react";
+import { Main } from "./styles";
+import { Motion } from "./types";
 
 export interface PanelObjectProps {
   step: number;
@@ -20,77 +12,22 @@ export interface PanelObjectProps {
   children: ReactNode;
 }
 
-const distance = 200;
-
-const Main = styled.div<PanelObjectProps>(
-  ({ step, x, y, depth, motion1, motion2 }) => `
-  position: absolute;
-  z-index: ${depth};
-  left: ${x}px;
-  top: ${y}px;
-  cursor: pointer;
-  // 現在のstepじゃないstepのボタンとかは押せないようにしてたが、
-  // ボタンを出した後にstepを追加されるユースケースがあったので一旦コメントアウト
-  // pointer-events: ${step === depth ? "auto" : "none"};
-  user-select: none;
-  animation-name: ${motion1 || "none"}, ${motion2 || "none"};
-  animation-duration: .3s;
-  @keyframes none {
-  }
-  @keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @keyframes slideup {
-    from {
-      transform: translateY(-${distance}px);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-  @keyframes slidedown {
-    from {
-      transform: translateY(${distance}px);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-  @keyframes slideleft {
-    from {
-      transform: translateX(${distance}px);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-  @keyframes slideright {
-    from {
-      transform: translateX(-${distance}px);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-  @keyframes enlarge {
-    from {
-      transform: scale(.5);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
-`
-);
-
 export const PanelObject: FC<PanelObjectProps> = ({
   x = 0,
   y = 0,
   motion1 = "fadein",
+  step,
+  depth,
   ...props
-}) => <Main {...{ x, y, motion1 }} {...props} />;
+}) => {
+  const [renderKey, setRenderKey] = useState(0);
+
+  // このコンポーネントが現在のstepのdepthに属している場合 renderKey をインクリメントする
+  useEffect(() => {
+    depth === step && setRenderKey((s) => s + 1);
+  }, [depth, step]);
+
+  // renderKey が変更されるたびにコンポーネントが再描画される
+  // つまり、現在のステップに展開されているオブジェクトのみが再描画される
+  return <Main key={renderKey} {...{ x, y, motion1, depth, step, ...props }} />;
+};
