@@ -1,11 +1,24 @@
 /**
  * Creates a URI for an asset.
- * @param fileName The name of the asset.
- * @returns The URI for the asset.
- * @example
- * createAssetUri('test.mp4');
  */
-export const createAssetUri = (fileName: string): string => {
-  const prefix = process.env.NEXT_PUBLIC_ENV === "production" ? "net" : "dev";
-  return `https://resources.ibl.surala.${prefix}/lecture/${fileName}`;
+const getPrefix = () => {
+  switch (process.env.NEXT_PUBLIC_ENV) {
+    case "production":
+      return "net";
+    case "development":
+      return "dev";
+    default:
+      return;
+  }
 };
+
+/**
+ * Creates a URI for an asset.
+ */
+export const createAssetUri = (
+  fileName: string,
+  prefix = getPrefix()
+): string =>
+  prefix
+    ? `https://resources.ibl.surala.${prefix}/lecture/${fileName}`
+    : fileName;
