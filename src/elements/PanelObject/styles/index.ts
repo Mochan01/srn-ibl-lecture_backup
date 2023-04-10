@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { PanelObjectProps } from "..";
-import { keyframes } from "../assets";
+import { keyframes } from "../config";
 
 export const Main = styled.div<PanelObjectProps>(
   ({ step, x, y, depth, motion1, motion2 }) => `

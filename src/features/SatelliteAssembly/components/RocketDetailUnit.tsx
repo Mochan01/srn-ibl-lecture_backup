@@ -7,15 +7,16 @@ import { SatelliteAssemblyStateContext } from "../contexts";
 import { SCategoryTitle, SCategoryDescription, STable } from "../styles";
 import { MasterData } from "../types";
 import { getCategoryDescription, getPartDetailData } from "../utils";
-const Main = styled.div`
-  padding-left: 20px;
-  padding-top: 12px;
-`;
 
 interface RocketDetailUnitProps {
   masterData: MasterData;
   partsData: Rocket[];
 }
+
+const Main = styled.div`
+  padding-left: 20px;
+  padding-top: 12px;
+`;
 
 export const RocketDetailUnit: FC<RocketDetailUnitProps> = ({
   masterData,
@@ -50,21 +51,21 @@ export const RocketDetailUnit: FC<RocketDetailUnitProps> = ({
       <PartDetail partName={partName} description={partDescription} />
       <div css={"margin-top: 7px"} />
       <STable>
-        {partDetail?.price_hundred_million && (
+        {!!partDetail?.price_hundred_million && (
           <PartCost
             cost_name={"価格（億円）"}
             cost={partDetail?.price_hundred_million}
             isCostOver={state.isPriceOver}
           />
         )}
-        {partDetail?.manufacturing_period_months && (
+        {!!partDetail?.manufacturing_period_months && (
           <PartCost
             cost_name={"製造期間（月）"}
             cost={partDetail?.manufacturing_period_months}
             isCostOver={state.isMonthOver}
           />
         )}
-        {launchableMassKg && (
+        {!!launchableMassKg && (
           <PartCost
             cost_name={"打ち上げ可能質量（kg）"}
             cost={launchableMassKg}
