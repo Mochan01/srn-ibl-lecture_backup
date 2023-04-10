@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useMemo } from "react";
 import { SatelliteAssemblyDispatchContext } from "../../../contexts";
 import { MasterData } from "../../../types";
 import { getTotalLaunchAndLoading } from "../../../utils";
@@ -14,13 +14,13 @@ export const useLoadingParameter = (masterData: MasterData) => {
     busPart
   );
 
-  const loadingLimit = busPart?.max_loading_mass_kg || 0;
+  const loadingLimit = useMemo(() => busPart?.max_loading_mass_kg, [busPart]);
 
   const dispatch = useContext(SatelliteAssemblyDispatchContext);
   useEffect(() => {
     dispatch({
       type: "isLoadingOver",
-      val: loadingLimit === 0 ? false : loadingLimit < totalLoading,
+      val: loadingLimit === undefined ? false : loadingLimit < totalLoading,
     });
   }, [dispatch, loadingLimit, totalLoading]);
 

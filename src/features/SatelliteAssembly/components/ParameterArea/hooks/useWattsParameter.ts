@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useMemo } from "react";
 import { SatelliteAssemblyDispatchContext } from "../../../contexts";
 import { useSelectedPartsDetails } from "./useSelectedPartsDetails";
 import { MasterData } from "../../../types";
@@ -8,13 +8,13 @@ export const useWattsParameter = (masterData: MasterData) => {
   const { missionParts, batteryPart, busPart } = useSelectedPartsDetails(masterData);
 
   const totalWatts = getTotalWatts(missionParts, busPart);
-  const wattsLimit = batteryPart?.power_supply_watts || 0;
+  const wattsLimit = useMemo(() => batteryPart?.power_supply_watts, [batteryPart]);
 
   const dispatch = useContext(SatelliteAssemblyDispatchContext);
   useEffect(() => {
     dispatch({
       type: "isWattsOver",
-      val: wattsLimit === 0 ? false : wattsLimit < totalWatts,
+      val: wattsLimit === undefined ? false : wattsLimit < totalWatts,
     });
   }, [dispatch, wattsLimit, totalWatts]);
 

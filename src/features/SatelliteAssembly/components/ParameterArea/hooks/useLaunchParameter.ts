@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useMemo } from "react";
 import {
   SatelliteAssemblyStateContext,
   SatelliteAssemblyDispatchContext,
@@ -20,19 +20,20 @@ export const useLaunchParameter = (masterData: MasterData) => {
     busPart
   );
 
-  let launchLimit = 0;
-  if (rocket && state.launchableMass === "leo") {
-    launchLimit = rocket?.leo_launchable_mass_kg;
-  } else if (rocket && state.launchableMass === "geo") {
-    launchLimit = rocket?.geo_launchable_mass_kg;
-  } else if (rocket && state.launchableMass === "ooo") {
-    launchLimit = rocket?.ooo_launchable_mass_kg;
-  }
+  const launchLimit = useMemo(() => {
+    if (rocket && state.launchableMass === "leo") {
+      return rocket.leo_launchable_mass_kg;
+    } else if (rocket && state.launchableMass === "geo") {
+      return rocket.geo_launchable_mass_kg;
+    } else if (rocket && state.launchableMass === "ooo") {
+      return rocket.ooo_launchable_mass_kg;
+    }
+  }, [rocket, state.launchableMass]);
 
   useEffect(() => {
     dispatch({
       type: "isLaunchOver",
-      val: launchLimit === 0 ? false : launchLimit < totalLaunch,
+      val: launchLimit === undefined ? false : launchLimit < totalLaunch,
     });
   }, [dispatch, launchLimit, totalLaunch]);
 
