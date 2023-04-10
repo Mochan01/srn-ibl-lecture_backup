@@ -37,7 +37,7 @@ export const Parameter: FC<ParameterProps> = ({
 
   // グラフに占める色を算出
   const gradient = useMemo(
-    () => getGradient(isPercentageInteger ? percentage : 0),
+    () => getGradient(isPercentageInteger ? percentage : 100),
     [isPercentageInteger, percentage]
   );
 
